@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>JDT UI 3.0.x</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
+	type="text/css">
+</head>
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" width="72%"><font class="indextop"> jdt ui R3.1.x</font>
+			<br>
+			<font class="indexsub"> java development tooling ui </font></td>
+			<td style="vertical-align: top"><br>
+			</td>
+			<td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg"
+				height="86" width="120"></td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<a NAME="Overall_Planning">
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Overall 3.1 Plan</font></font></b></td>
+			</a>
+		</tr>
+		<tr>
+			<td colspan="2">The 3.1 plan below is a proto plan and input from the
+			community is very welcome</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Theme Built to last</b>
+			<table border="0" cellspacing="10" width="100%">
+				<tbody>
+					<tr>
+						<td><i><u>Refactoring</u></i>
+						<ul>
+							<li>Remove dependency between LTK/Core and JDT/Core</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><u><i>Code Manipulation</i></u>
+						<ul>
+							<li>Convert source and refactoring code to use one code
+							manipulation infrastructure that honors formatting, comment and
+							code style settings</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><u><i>All ???</i></u>
+						<ul>
+							<li>Identify functions which are critical important speed and space performance wise</li>
+							<li>Write performance tests for the critical functions</li>
+							<li>Look into way to improve performace where the functions don't meet expectations</li>
+						</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Theme Simple to use</b>
+			<table border="0" cellspacing="10" width="100%">
+				<tbody>
+					<tr>
+						<td><i><u>Refactoring</u></i>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Theme J2SE 5 support</b>
+			<table border="0" cellspacing="10" width="100%">
+				<tbody>
+					<tr>
+						<td><i><u>Refactoring</u></i><ul>
+							<li>Provide a refactoring that converts usages of raw collection
+							classes into the corresponding generic collection class. The
+							refactoring should infer the least specific element type of the
+							collection which allows removal of all casts,</li>
+							<li>Extend existing refactorings to new language constructs
+							<ul>
+								<li>rename of type parameters</li>
+								<li>rename and move of annotations</li>
+							</ul>
+							</li>
+							<li>Investigate in a refactoring to convert static final int field into a enum type</li>
+							<li>Investigate in a refactoring to Introduce a type parameter into a non generic class</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><i><u>Source Actions</u></i><ul>
+							<li>Provide a New Enum type wizard</li>
+							<li>Provide a New Annotation type wizard</li>
+						</ul></td>
+					</tr>
+					<tr>
+						<td><i><u>Quick Fix & Quick Assist</u></i><ul>
+							<li>Provide a Quick Assist to convert old for loops into new for each style</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><i><u>Alll ???</u></i><ul>
+							<li>convert all AST clients to use the new JSL3 API.</li>
+							<li>Make all source, quick fix, quick assist and refactorings J2SE 5 aware<ul><li>identify new language constructs and their general impact</li>
+							</ul>
+							</li>
+						</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Theme Large-scale development</b>
+			<ul>
+				<li>Architecture Browsing support</li>
+				<li>Formatting, remove unused import, ... on commit</li>
+				<li>Support better sharing of preferences via the repository (compiler settings, formatter settings, user libraries, ....)</li>
+				<li>Support searching for code snippets instead of single references or declarations. For example allow searching for all method calls to IRunnableContext#run where the first argument is boolean 'false'.</li>
+				<li>Investigate in generic rewriting of compilation units based on the result of snippet based searching. For example rewrite all method calls to IRunnableContext#run(false, ?, ?) to IRunnbleContext#run(true, ?, ?)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Articles</b>
+			<ul>
+				<li>How to contribute a quick assist/quick fix</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Dependencies</b>
+			<ul>
+				<li>Track Changes in other plug-ins</li>
+				<ul>
+					<li>Platform: templates, consolidated action contribution, snap
+					shotting, background activities, and named sharable preference
+					sets, encoding.</li>
+					<li>Platform: Generic navigator</li>
+					<li>JDT/Core: JDK 1.5, working copy support, tags in Javadoc, Java
+					elements for local types, and new formatter.</li>
+				</ul>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="4" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></b></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="../images/progress.gif" nosave=""
+				height="5" width="14" border="0"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="../images/glass.gif" nosave="" height="10"
+				width="10" border="0"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="../images/ok.gif" nosave="" height="10"
+				width="10" border="0"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="top"><font class="indexsub" color="#8080ff">[&gt;3.1]</font></td>
+			<td width="50%">item is deferred.</td>
+			<td valign="top"><font class="indexsub"><img border="0"
+				src="../images/new.gif"></font></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<a name="Milestone_Planning"> </a>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
+				face="Arial,Helvetica"><font color="#ffffff"> M2 Milestone Plan
+			(under construction)</font></font></b></td>
+			<a></a>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Overall goals for M9</b>
+
+			<ul>
+				<li></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Conferences/Vacations</b>
+			<ul>
+				<li>vacation: 10 days</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Getting the sources</font></font></b></td>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+				</li>
+				<li>Check out <a
+					href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui"><code>HEAD</code></a>
+				branch of the project <code>org.eclipse.jdt.ui</code>.</li>
+				<li>Make sure to import the prerequisite plug-ins (usually from the
+				latest SDK R3.1.x <a
+					href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
+				Prerequisite plug-ins are already referenced on the project build
+				path ( <code>.classpath</code> file).</li>
+				<li>The sources of this project require JDK 1.4.</li>
+
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
