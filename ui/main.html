@@ -94,14 +94,14 @@ page for more information about the plugins.
 </tr>
 </table>
 
-<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="894" >
 <tr>
-<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What's
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="876"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What's
 Happening?&nbsp;</font></font></b></td>
 </tr>
 
 <tr>
-<td>Over the <b>next 6 months</b> the major focus points are:
+<td width="707">Over the <b>next 6 months</b> the major focus points are:
 <ul>
 <li>
 Address usability issues</li>
@@ -130,15 +130,10 @@ Refactoring&nbsp;</li>
 <li>
 additional refactorings</li>
 
-<li>
-expose API to the refactoring infrastructure</li>
 </ul>
 
 <li>
 String externalization support</li>
-
-<li>
-JUnit integration</li>
 
 <li>
 Investigate in additional Java specific project browsing</li>
@@ -153,9 +148,11 @@ In addition, to the work items below we will also address P1 bugs.
 <ul>
 <li>
 Proposal for package/code browsing alternatives</li>
+<li>
+Investigate menu structure</li>
 </ul>
 
-<p><br>JAR Packager
+<p>JAR Packager
 <ul>
 <li>
 Improved progress reporting</li>
@@ -166,23 +163,10 @@ Prevent UI from blocking on large set of files</li>
 Search
 <ul>
 <li>
-Allow to search case-insensitve</li>
+Support case-insensitve searching</li>
 
 <li>
 Reduce UI thread load in working set dialog</li>
-</ul>
-<b>End of November Milestone</b>
-<p>The work items below are planned for the end of November milestone.
-In addition, to the work items below we will also address P1 bugs.
-<p>UI
-<ul>
-<li>
-NLS support released in stream&nbsp;</li>
-
-<ul>
-<li>
-address pending PRs</li>
-</ul>
 </ul>
 Refactoring
 <ul>
@@ -195,59 +179,36 @@ depends on Search engine API</li>
 </ul>
 
 <li>
-Investigate reorder parameters refactoring&nbsp;</li>
-
-<li>
-Migrate to new text change infrastructure&nbsp;</li>
-
-<li>
 Refactoring test suite ready to be released&nbsp;</li>
 
 <li>
-Code change infrastructure&nbsp;</li>
-
-<ul>
-<li>
-support for moving of ranges (required for reorder parameter refactoring)</li>
-</ul>
-
-<li>
 Surround selection with try/catch block</li>
+
+<li>
+renaming a resource should not show up as a refactoring</li>
 </ul>
+  Code generation
+  <ul>
+    <li>Add unimplemented methods: show a check box dialog tree with the
+      unimplemented methods so that the user can pick from.&nbsp;</li>
+  </ul>
 Java Editor
 <ul>
-<li>
-Template support finish</li>
-
-<li>
-Proposal for how to add key binding support</li>
 
 <li>
 Code assist&nbsp;</li>
 
 <ul>
 <li>
-completions to generate stubs for anonymous inner classes</li>
+completions to generate stubs for anonymous inner classes
+<ul>
+  <li>use the same dialog as in add unimplemented methods</li>
+</ul>
+</li>
 
 <li>
 indicate deprecated methods</li>
 
-<li>
-additional preference settings for:&nbsp;</li>
-
-<ul>
-<li>
-constrain visibility (default off)</li>
-
-<li>
-auto complete (default off)</li>
-
-<li>
-auto import (default on)</li>
-
-<li>
-show java doc hints (default on)</li>
-</ul>
 </ul>
 
 <li>
@@ -257,18 +218,8 @@ Improve working copy management infrastructure&nbsp;</li>
 <li>
 eliminate duplication of buffer contents</li>
 
-<li>
-provide a generalized working copy manager</li>
 </ul>
 
-<li>
-Improve value hovering when debugging</li>
-
-<li>
-Infrastructure to show error feedback as user types</li>
-
-<li>
-Support separation of Java Debug UI package into a separate plug-in</li>
 </ul>
 Packages Browsing
 <ul>
@@ -294,59 +245,32 @@ replace from local history/add from local history are misplaced</li>
 <li>
 Filter for hiding non Java resources&nbsp;</li>
 </ul>
-Code Generation&nbsp;
-<ul>
-<li>
-Migrate code generation support to new text change infrastructure&nbsp;</li>
-
-<ul>
-<li>
-text change object for adding imports</li>
-</ul>
-
-<li>
-Generate getter/setter improvements&nbsp;</li>
-
-<ul>
-<li>
-add dialog to provide more control over javadoc, name.</li>
-</ul>
-
-<li>
-Support for CU header and class/interface comment templates&nbsp;</li>
-
-<ul>
-<li>
-headers can be customized in the preferences page</li>
-
-<li>
-templates supports variables like user, date, etc.</li>
-</ul>
-</ul>
 Building/running
 <ul>
-<li>
-UI to control whether source folder resources should be copied to output
-folder</li>
 
 <li>
 Proposal for building against different JREs inside a workspace</li>
 
 <li>
-Eclipse self hosting tool&nbsp;</li>
+Improvements to class path definition - editing an existing entry</li>
 
-<ul>
-<li>
-support for source extraction</li>
-
-<li>
-ready to be made available outside of JDT</li>
 </ul>
-</ul>
+  <p>org.eclipse.pde.selfhosting</p>
+  <ul>
+    <li>Address usability issues raised by users</li>
+  </ul>
 <b>Work items completed in the 2.0 stream:</b>
 <ul>
 <li>
 Error tick support everywhere</li>
+
+<li>
+Java Editor
+<ul>
+  <li>
+Improve value hovering when debugging</li>
+</ul>
+</li>
 
 <li>
 Code assist improvements&nbsp;</li>
@@ -360,6 +284,23 @@ JavaDoc hints</li>
 
 <li>
 add import statement on type completions if needed</li>
+
+<li>
+additional preference settings for:&nbsp;</li>
+
+<ul>
+<li>
+constrain visibility (default off)</li>
+
+<li>
+auto complete (default off)</li>
+
+<li>
+auto import (default on)</li>
+
+<li>
+show java doc hints (default on)</li>
+</ul>
 </ul>
 
 <li>
@@ -388,6 +329,15 @@ rename parameter</li>
 
 <li>
 integrate move refactoring with drag&amp;drop in packages view</li>
+
+<li>
+new code change infrastructure&nbsp;</li>
+
+<ul>
+<li>
+support for moving of ranges (required for reorder parameter refactoring)</li>
+</ul>
+
 </ul>
 
 <li>
@@ -397,13 +347,42 @@ Packages view&nbsp;</li>
 <li>
 optionally show the children of a compilation unit or class file</li>
 </ul>
+<li>
+String Externalization support&nbsp;</li>
+
+<li>
+Code generation
+<ul>
+  <li>Generate getter/setter improvements&nbsp;
+    <ul>
+      <li>
+add dialog to provide more control over javadoc, name.</li>
+    </ul>
+  </li>
+  <li>
+Support for CU header and class/interface comment templates&nbsp;</li>
+</ul>
+</li>
+
+<li>Other
+  <ul>
+    <li>
+Eclipse PDE self hosting tool&nbsp;early access
+      <ul>
+        <li>
+support for source extraction</li>
+        <li> made available outside of JDT</li>
+      </ul>
+    </li>
+  </ul>
+</li>
 </ul>
 For more detailed information, check out the <a href="dev.html">Development
 Resources</a>.</td>
 </tr>
 
 <tr>
-<td></td>
+<td width="707"></td>
 </tr>
 </table>
 
