@@ -26,4 +26,5 @@
 	- all help context ids are defined as constants
 	
 - CVS file types checking
+	- informing releng about exceptions (e.g. binary files)
 		
