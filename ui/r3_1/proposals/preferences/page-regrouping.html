@@ -132,8 +132,8 @@ dialogs or always on</li>
       <ul>
         <li>Find box currently not so useful. Remove.<br>
         </li>
-        <>Improve Categories: why 'Basic' and 'Workbench'? Maybe not
-a tree but tabs, drop down or two panes. Instead: </>
+Improve Categories: why 'Basic' and 'Workbench'? Maybe not
+a tree but tabs, drop down or two panes. Instead:
         <ul>
           <li>use a dropdown instead of the tree (users would usually
 use the preview, and only seldom the dropdown).</li>
@@ -351,8 +351,174 @@ Perspective page)?</li>
       </ul>
       </td>
     </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt=""
+ src="text_editor_prefs.png"></td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">Remove
+Preferences (to Advanced / Hidden):</span><br>
+      <ul>
+        <li>move Caret options to
+'Accessibility'</li>
+        <li>remove OverviewRuler option</li>
+        <li>do not display "folding provider selection" as long as
+there is just
+one provider</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt=""
+ src="java_vs_text_prefs.png"></td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;">Concentrate Appearance Prefs:<br>
+      <br>
+      </span></span>User Settings independent of
+content:<br>
+      <ul>
+        <li>Line Numbers</li>
+        <li>Highlight current line (!! some people may use the color to
+distinguish editors)<br>
+        </li>
+        <li>Print margin column</li>
+        <li>Caret</li>
+        <li>Quick Diff</li>
+        <li>Colors for all the above</li>
+        <li>Colors for Content Assist</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Overrideable Settings depending
+on editor / content:<br>
+&nbsp;(Note: these will likely be also per-project settings)<br>
+      <ul>
+        <li>Tab width (do we need this per editor type? per project
+would make a lot more sense! -&gt; have one default option and
+per-project overriding)</li>
+      </ul>
+Highlighting: per language, with two-way-linking /
+affordance (e.g. language element in preview blinks when selected in
+drop-down, drop down selection is updated when clicked into preview)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;">Pseude-Common
+Prefs:<br>
+      <br>
+      </span></span></span>
+      <ul>
+        <li>Preferences that appear in many
+text editors but not all:</li>
+        <li>matching (brackets, peers, etc.) highlighting (this is hard
+-&nbsp;
+"highlight peers" is too abstract, but repeating it is bad. Better:
+treat it like annotations).</li>
+        <li>Ctrl+click navigation (this should be general, people can
+participate
+or not)</li>
+        <li>Content Assist (while the intricate details should be
+configurable
+per language, the color settings should be global)</li>
+        <li>All "push-downs" to text</li>
+        <li>Annotations</li>
+      </ul>
+      <br>
+      <br>
+-&gt; Move to "Source" Plug-in?</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img alt=""
+ src="line_numbers.png"></td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;">Change Preference (Voreinstellung) to
+Remembering Last Setting:<br>
+      </span></span></span></span>
+      <ul>
+        <li><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"></span></span></span></span></span>Stuff
+that a user may want to change from time to time (e.g. quickly see line
+numbers, then hide them).</li>
+        <li>reduces number of preferences <span
+ style="font-weight: bold;">a lot</span></li>
+        <li>works well for UI element toggling that can be pointed at
+("direct
+manipulation")</li>
+        <li>may need to introduce direct preference pages (e.g. for the
+"initial
+folding" preferences).</li>
+      </ul>
+      <span style="font-weight: bold;">Problem:</span>
+      <ul>
+        <li><span style="font-weight: bold;"></span>may inflate context
+menus greatly</li>
+        <li>direct manipulation on UI elements configure or
+turn them off is fine - but how do you turn them back on?</li>
+      </ul>
+      <br>
+      <span style="font-weight: bold;">Example:</span><br>
+      <ul>
+        <li>Show Line Numbers -&gt; make
+this configurable via the ruler menu (where you would expect them),
+then remember the last state. No preference, no nothing.</li>
+        <li>Quick Diff: same thing only colors need to be configurable
+(-&gt;
+annotations)</li>
+        <li>Folding: same thing (configure what is initially folded,
+but remember
+the folded state from the last time I touched the editor.</li>
+        <li>mark occurrences on/off and highlighting types.</li>
+      </ul>
+      <br>
+      <span style="font-weight: bold;">Question:</span><br>
+What do open editors do upon a change in another editor?<br>
+      <ul>
+        <li>stay as they are (only newly opened editors will pick up
+the change)</li>
+        <li>adapt to the change (either all editors show line numbers
+or none)</li>
+      </ul>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;"><span
+ style="font-weight: bold;"><span style="font-weight: bold;">Geek Mode<br>
+      </span></span></span></span></span>
+      <ul>
+        <li>a lot more geeks with
+eclipse
+than, say, firefox</li>
+        <li>a lot of people that like to fine-tune their settings for
+maximal
+productivity (power users)</li>
+        <li>we should still not frighten the beginner and especially
+the
+perpetuate intermediate.</li>
+      </ul>
+      <br>
+-&gt; show reduced preferences in easy to understand UI<br>
+-&gt; enalbe some geeky direct control similar to gconf or
+"about:config" that simply contains a modifieable list of {preference
+key, value, description}.<br>
+      <ul>
+        <li>this will please the geek</li>
+        <li>this will enable Tweak-Eclipse add-ons to provide
+the additional stuff.</li>
+      </ul>
+      </td>
+    </tr>
   </tbody>
 </table>
-<br>
+<span style="font-weight: bold;"><br>
+</span><br>
 </body>
 </html>
