@@ -311,5 +311,7 @@ one file. Since it can't be defined up-front what the best solution is, a
 participant can be tagged as sharable. If it is tagged so, it will be
 reused for all elements which match the same extension as the sharable
 participant.</p>
+<h3>Sharable Precondition checking</h3>
+<p>Preconditions like validateEdit must be check together for the processor and all participants (otherwise the user would see multiple dialogs). Participants can therefore contribute to shared precondition checkers instead of implementing the check by themselves.</p>
 </body>
 </html>
