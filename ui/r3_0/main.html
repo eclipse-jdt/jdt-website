@@ -100,11 +100,12 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Code Manipulation</b>
 			<ul>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Improve comment handling in AST rewriter.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10"
+					width="10" border="0">Improve comment handling in AST rewriter.</li>
 				<li><img src="../images/glass.gif" nosave="" height="10" width="10"
 					border="0"> Improve sorting capability for compilation units (by
 				visibility, by defining type, ...).</li>
+				<li>Enable contributions to code generation templates.</li>
 			</ul>
 			</td>
 		</tr>
@@ -135,7 +136,9 @@
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Type hierarchy pop-up for a method. It allows to
 				navigate up and down in the type hierarchy (overrides/
-				implementors).</li>
+				implementors). </li>
+				<li>Generalize Type hierarchy pop-up to structured selections
+				in Java views</li>
 				<li><font color="#000000">Investigate Tab navigator contributions</font>.&nbsp;</li>
 				<li>Introduce code folding.</li>
 				<li>Present URLs in Javadoc as interactive links.</li>
@@ -150,7 +153,8 @@
 				<li>Show more outliner information directly in the Java editors.</li>
 				<li>Generalize matching delimiter highlighting to Javadoc tags such
 				as &lt;code&gt; ... &lt;/code&gt;.</li>
-				<li>Use syntax coloring in source hover.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10"
+					width="10" border="0">Use syntax coloring in source hover.</li>
 				<li>Investigate method separator lines.</li>
 				<li>Leverage Platform Text mechanisms to show more information about
 				elements such as all referenced types, call sit<font color="#000000">es,
@@ -164,7 +168,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Quick Fix / Assist</b>
 			<ul>
-				<li>Enable the contribution of quick fixes and quick assists.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10"
+					width="10" border="0">Enable the contribution of quick fixes and quick assists.</li>
 				<li>Additional quick fixes, e.g., add parameter to existing method,
 				remove unused parameters, convert unused parameter to field.</li>
 			</ul>
@@ -178,20 +183,21 @@
 				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Enable other plug-ins to participate in
 				rename, move and delete refactorings.</li>
-				<li>Enable other plug-ins to contribute new refactorings.</li>
 				<li>Make refactorings Javadoc aware (@see, @link, etc.).</li>
+				<li>Enable other plug-ins to contribute new refactorings.</li>
+				<li>Publish change infrastructure as API.</li>
 				<li><img src="../images/ok.gif" nosave=""
 					height="10" width="10" border="0"> Reduce memory consumption.</li>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Investigate using type constraints for type
+				<li><img src="../images/progress.gif" nosave="" height="10"
+					width="10" border="0"> Investigate using type constraints for type
 				related refactorings (extract interface, user supertype, ....).</li>
 				<li>Add new refactorings, e.g., add parameter, convert constructor
-				to&nbsp; factory method, extract super class and Java 1.5 specific
+				to&nbsp; factory method, extract super class, migrate packages and Java 1.5 specific
 				refactorings.</li>
 				<ul>
 				</ul>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Rearchitecture rename, move, delete, cut,
+				<li><img src="../images/ok.gif" nosave="" height="10"
+					width="10" border="0">Rearchitecture rename, move, delete, cut,
 				copy and paste functionality.</li>
 			</ul>
 			</td>
@@ -205,6 +211,8 @@
 				<li>Allow other plug-ins to participate in Java element searches to
 				find matches in non-Java files (for example JSPs, plugin.xml).</li>
 				<li>Add option on the Java Search page to use regular expressions.</li>
+				<li>Add option to search in "current" project.</li>
+				<li>Improve global search/replace.</li>
 			</ul>
 			</td>
 		</tr>
@@ -215,6 +223,17 @@
 			<td style="vertical-align: top"><b>Build Path</b>
 			<ul>
 				<li>Investigate in user configurable containers.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>JUnit</b>
+			<ul>
+				<li>Participate in refactoring operations and update test class/package references.</li>
+				<li>Enable transition of pde.junit to pde.</li>
 			</ul>
 			</td>
 		</tr>
@@ -254,6 +273,16 @@
 			<td style="vertical-align: top"><img
 				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
 				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Articles</b>
+			<ul>
+				<li>How to contribute a quick assist/quick fix</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Dependencies</b>
 			<ul>
 				<li>Regular expression search depends on JDT Core support: <a
@@ -264,7 +293,8 @@
 				<ul>
 					<li>Platform: templates, consolidated action contribution, snap
 					shotting, background activities, and named sharable preference
-					sets.</li>
+					sets, encoding.</li>
+					<li>Platform: Generic navigator</li>
 					<li>JDT/Core: JDK 1.5, working copy support, tags in Javadoc, Java
 					elements for local types, and new formatter.</li>
 				</ul>
@@ -310,30 +340,36 @@
 			<a NAME="Milestone_Planning">
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
 				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			M2 Milestone Plan</font></font></b></td>
+			M3 Milestone Plan</font></font></b></td>
 			</a>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Overall goals for M2</b><ul>
-				<li>Open up JDT/UI (support participants for key functionality)</li>
-				<li>Finish rewriting reorg functionality</li>
-				<li>Improve user interface
-				<ul>
-					<li>linked edit mode in quick fix and quick assist</li>
-				</ul>
-				</li>
+			<td><b>Overall goals for M3</b><ul>
+				<li>Finish refactoring participation (doesn't include publishing the API)</li>
+				<li>Finish Java family example that demonstrates how to extend the Java family</li>
+				<li>Finish migration to new working copy support</li>
 			</ul></td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>General Items</b>
+			<td><b>Overhead Items</b>
 			<ul>
 				<li>inbox tracking (10 days)</li>
 				<li>testing (6 days)</li>
 				<li>bug fixing (16 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>General</b>
+			<ul>
+				<li>migrate to new working copies (5 days)</li>
+				<li>investigate in using decorators for error ticks and override indicators (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -345,15 +381,8 @@
 				<li>improve delete next/previous word (myFooBar -&gt; my Foo Bar) (1
 				day)</li>
 				<li>improve go to next/previous word (0.5 days)</li>
-				<li>integrate tab navigation (3 days)</li>
 				<li>smart tab on empty lines (1 day)</li>
-				<li>improve smart semicolon and smart opening brace (4 days)
-				<ul>
-					<li>investigate statement completion action</li>
-				</ul>
-				</li>
 				<li>comment/uncomment with block comment (0.5 days)</li>
-				<li>choice selector in templates (3 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -361,21 +390,27 @@
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Compare</b><ul>
-				<li>enhancing Compare editor for new Life Synchronize view (#38770 and #38836) (5 days)</li>
+				<li>work on CompareEditor and compare operations for supporting new synchronize story (#38770, #40727, #39757) (4 days)
+				<li>address validateEdit issues (#35380, #22546) (7 days)</li>		
 			</ul>
-			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Search</b><ul>
+				<li>Search in project (2 days)</li>
+				<li>Java family search (4 days)</li>		
+				<li>Investigate in search improvements (participation, responsiveness, UI improvements) (10 days)</li>		
+			</ul>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Code Manipulation</b>
 			<ul>
-				<li>improve comment handling in AST rewriting (3 days)</li>
-				<li>write unit test for new generate setter/getter, generate
-				delegates and override/implement method functionality (3 days)</li>
+				<li>investigate in using new formatter (3 days)</li>
+				<li>finish generate constructor from fields (3 days)</li>
 				<li>improve sorting capability for compilation units (8 days)</li>
-				<li>generate constructor from fields (3 days)</li>
-				<li>open external Javadoc hosted in a Jar (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -384,23 +419,11 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Quick Fix</b>
 			<ul>
-				<li>allow quick fix and assist participants (3 days)</li>
-				<li>fix identical unknown identifier errors with one quick fix (3
-				days)</li>
-				<li>linked edit mode for (6 days)
+				<li>finish quick assist indication, perform the assist availability computation in the background (2 days)</li>
+				<li>additional quick fixes/quick assist (4 days)
 				<ul>
-					<li>introduce field, introduce variable, create method, ...</li>
-					<li>multiple choices for return statement</li>
-					<li>edit method signature (rename arguments and relax argument
-					types)</li>
-				</ul>
-				</li>
-				<li>investigate in quick assist affordance (light bulb in annotation
-				bar) (2 days)</li>
-				<li>new quick fixes (4 days)
-				<ul>
-					<li>remove method body for native methods (2 days)</li>
 					<li>create field from constructor parameter (2 days)</li>
+					<li>split join declaration (2 days)</li>
 				</ul>
 				</li>
 			</ul>
@@ -413,50 +436,49 @@
 			<ul>
 				<li>Refactoring participants
 				<ul>
-					<li>open up refactoring UI to support participants for preview and
-					error page (5 days)</li>
-					<li>investigate how to avoid plug-in loading (object state and
-					scope based) (2 days)</li>
-					<li>provide rename and delete processor/participant infrastructure
-					(8 days)
-					<ul>
-						<li>support resource only participants on package rename (notify about move of resources)</li>
-						<li>convert rename refactorings to processor/participant
-						infrastructure</li>
-						<li>convert delete refactorings to processor/participant
-						infrastructure</li>
-					</ul>
-					</li>
-					<li>write refactoring participant proposal (3 days)</li>
-				</ul>
+					<li>delete processor/participant support (2 days)</li>
 				</li>
-				<li>base <i>Extract interface</i> and <i>Use supertypes where
-				possible</i> refactoring on type constraints (5 days)</li>
-				<li>re-architecture reorg functionality
-				<ul>
-					<li>move &amp; copy (10 days)</li>
-					<li>DnD (5 days)</li>
-				</ul>
-				</li>
-
+				<li>finish type constraint based refactorings (eliminate references to AST node) (2 days)</li>
+				<li>make the structured edit infrastructure ready for publication in org.eclipse.text (10 days)</li>
+				<li>improve move static members, help with dependent calls</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Build Path</b>
+			<ul>
+				<li>Investigate in user configurable containers. (3 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Dependencies</b>
+			<ul>
+				<li>Provide feedback on the generic navigator prototype. (2 days)</li>
+			</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Other</b><ul>
+				<li>productize java_swt (replacement for bin/java that starts the VM in the correct thread (5 days)</li>
 			</ul>
 			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Absorb new functionality from required plug-ins</b><ul>
-				<li>adopt JDT/UI to new handle stable working copy support (4 days)
-				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Absences</b><ul>
-				<li>vacation 5 days</li>
-				<li>conference 5 days</li>
+			<td><b>Conferences/Vacations</b><ul>
+				<li>vacation 39 days</li>
+				<li>conference 1 days</li>
 			</ul>
 			</td>
 		</tr>
