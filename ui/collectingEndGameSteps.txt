@@ -76,3 +76,9 @@
 - User doc
 	- welcome page up to date
 	- screenshots
+	
+- Overall (ISV doc, User doc, other files) - to just at the end
+	- run tool (e.g. HTML Power Tools) which ensures ALT attribute is set
+	- run tool (e.g. HTML Power Tools) which computes images size and correctly sets width and height attributes
+	- run tool (e.g. HTML Power Tools) which checks spelling
+	- run tool which checks that no links are broken (must be run against Linux or special web server to find capitalization bugs)
