@@ -16,7 +16,7 @@ ul { margin-top:3pt;}
 </head>
 
 <body>
-<h2> 3.1 M5 Test Grid (preliminary as of 2005-02-15 20:00) </h2>
+<h2> 3.1 M5 Test Grid (preliminary as of 2005-02-15 23:00) </h2>
 
 Test day: Wednesday, February 16, 2005<br>
 Components: JDT/Text, JDT/UI, Platform/Search, and Platform/Text<br>
@@ -51,44 +51,70 @@ Verify P1 and P2 bugs fixed during M5.<br>
   </li>
 </ul>
 
-<hr>
 
-<h4>Misc</h4>
+<h3>Misc</h3>
+
+<h4>Icons for new java elements (Tom, Martin)</h4>
 <ul>
-  <li>check icons for new java elements:
-    <ul>
-      <li>check correct modifiers (final, static, ...) for annotations, enums, and their children</li>
-    </ul>
-  </li>
-  <li>new Help view
-	<ul>
-	  <li>verify correct content of all our views and editors</li>
-	</ul>
-  </li>
+	<li>check correct modifiers (final, static, ...) for annotations, enums, and their children</li>
 </ul>
 
-<h4>Source Actions</h4>
+<h4>new Help view (Markus, Tobias)</h4>
+<ul>
+  <li>verify correct content of all our views and editors</li>
+</ul>
+
+<h4>Quick Fixes (Dani, Tom)</h4>
+<ul>
+	<li>quick fixes in 5.0 code: generic types, annotations, enums</li>
+	<li>new advanced quick assist, see bug 82220</li>
+</ul>
+
+
+<h4>Project Specific Settings (Markus, Tobias)</h4>
+<ul>
+	<li>code templates, formatter</li>
+</ul>
+
+
+<h4>Search (Dani, Tom</h4>
+<ul>
+	<li>search for type parameters</li><li>search for parametrized types</li>
+	<li>search for enum types and constants</li>
+</ul>
+
+
+<h4>New Java Project Wizard (Markus, Dani)</h4>
+<ul>
+	<li>test new source folder wizard page</li>
+</ul>
+
+
+<h4>Source Actions (Dani, Markus)</h4>
 <ul>
   <li>test all source actions (actions in the workbench or context menu "Source") according to the
 		<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
   </li>
   <li>test Override/Implement Methods with varargs and generics</li>
-  <li>test Organize Imports with annotations<li>
+  <li>test Organize Imports with annotations</li>
 </ul>
 
-<h4>Rename Refactorings</h4>
+<h3>Refactorings</h3>
+
+<h4>Rename Refactorings (Tobias, Martin)</h4>
 <ul>
   <li>test all rename refactorings according to the
 		<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
   </li>
 </ul>
 
-<h4>Method refactorings</h4>
+<h4>Method refactorings (Tobias, Tom)</h4>
 <ul>
   <li>Change Method Signature
     <ul>
       <li>test the refactoring according to the
 			<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
+      </li>
       <li>change signatures of generic methods and of methods with parameterized types as parameters</li>
       <li>check content assist in the parameters table</li>
       <li>change signatures of varargs methods</li>
@@ -105,7 +131,7 @@ Verify P1 and P2 bugs fixed during M5.<br>
   
 </ul>
 
-<h4>Other refactorings</h4>
+<h4>Other refactorings (Markus, Tom)</h4>
 <ul>
 	<li>Inline Constant</li>
 	<li>Inline and Extract Local Variable</li>
@@ -124,50 +150,23 @@ Verify P1 and P2 bugs fixed during M5.<br>
 </ul>
 
 
-<hr>
-
-<h4>Quick Fixes</h4>
-<ul>
-  <li>quick fixes in 5.0 code: generic types, annotations, enums</li>
-  <li>new advanced quick assist, see bug 82220</li>
-</ul>
-
-<h4>Project Specific Settings</h4>
-<ul>
-  <li>code templates, formatter</li>
-</ul>
-
-<h4>Search</h4>
-<ul>
-  <li>search for type parameters</li>
-  <li>search for parametrized types</li>
-  <li>search for enum types and constants</li>
-</ul>
-
-<h4>New Java Project Wizard</h4>
-<ul>
-  <li>test new source folder wizard page</li>
-</ul>
-
-
-
 <h3>Text</h3>
 
 
-<h4>Encoding</h4>
+<h4>Encoding (Martin, Tom)</h4>
 <ul>
-  <li>verify that Edit > Encoding is available in all editors</li>
+  <li>verify that Edit &gt; Encoding is available in all editors</li>
   <li>verify that encoding change dialog now rejects invalid encodings</li>
 </ul>
 
 
-<h4>Word Completion</h4>
+<h4>Word Completion (Tobias, Markus)</h4>
 <ul>
-  <li>Test word completion (Edit > Word Complete) in both Text and Java editors</li>
+  <li>Test word completion (Edit &gt; Word Complete) in both Text and Java editors</li>
 </ul>
 
 
-<h4>Content Assist</h4>
+<h4>Content Assist (Dani, Tobias)</h4>
 <ul>
   <li>check enhanced for-loop template</li>
   <li>check completion of enum types and constants</li>
@@ -209,7 +208,7 @@ Verify P1 and P2 bugs fixed during M5.<br>
 </ul>
 
 
-<h4>Syntax coloring</h4>
+<h4>Syntax coloring (Martin, Markus)</h4>
 <ul>
   <li>test the following colorings (see the preference page coloring preview to find out what they mean)<br>
   </li>
@@ -226,7 +225,7 @@ Verify P1 and P2 bugs fixed during M5.<br>
   </ul>
 </ul>
 
-<h4>Folding</h4>
+<h4>Folding (Markus, Tom)</h4>
 <ul>
   <li>Test that annotated java elements are properly folded (the caption line should display the element name)</li>
   <li>Test header comment folding</li>
@@ -238,12 +237,12 @@ Verify P1 and P2 bugs fixed during M5.<br>
   </li>
 </ul>
 
-<h4>Typing</h4>
+<h4>Typing(Tobias, Dani)</h4>
 <ul>
   <li>Test auto-insertion of &lt;angle brackets&gt; in 5.0 code</li>
 </ul>
 
-<h4>Mark Occurrences</h4>
+<h4>Mark Occurrences (Tobias, Markus)</h4>
 <ul>
   <li>Test occurrences marking of</li>
   <ul>
@@ -254,7 +253,7 @@ Verify P1 and P2 bugs fixed during M5.<br>
   </ul>
 </ul>
 
-<h4>File Actions</h4>
+<h4>File Actions (Tom, Martin)</h4>
 <ul>
 	<li>close editors (text and Java) of file which is open in two workbench windows (both dirty, only one dirty, none dirty)</li>
 	<li>test Save As
@@ -266,9 +265,6 @@ Verify P1 and P2 bugs fixed during M5.<br>
 	</li>
 </ul>
 
-
-</body>
-</html>
 
 <!-- 
 
@@ -283,3 +279,4 @@ Verify P1 and P2 bugs fixed during M5.<br>
 </ul>
 
 -->
+</body></html>
