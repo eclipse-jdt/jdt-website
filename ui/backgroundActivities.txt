@@ -1,6 +1,7 @@
 
 Section added by MA:
-Current shortcomings of the operation model in Eclipse.
+Current shortcomings of the operation model in Eclipse.  I'm hoping that the "Support
+background activity" efford can be used to bring clarity into this area.
 
 1. To have a progress monitor that can be cancelled, an operation can not
 be run in the display thread but has to be forked (see IRunnableContext.run).
