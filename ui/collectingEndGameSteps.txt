@@ -7,7 +7,7 @@
 
 - Javadoc
 	- spelling
-		(tool opportunity, see also bug 35036 - the current tool only collects the property files into one file and removes the '&' and keys)
+		(tool opportunity)
 	- grammar
 	- completeness
 	- @since tags
@@ -33,7 +33,7 @@
 
 - properties files
 	- spelling
-		(tool: extract property file)
+		(tool: extract property file - see also bug 35036 - the current tool only collects the property files into one file and removes the '&' and keys)
 	- grammar
 	- style (in particular error messages)
 		see: Jeff Johnson GUI Bloopers
