@@ -145,15 +145,16 @@ Measure and improve the performance of key operations
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Provide a New Annotation type wizard [J2SE 5.0 support]
 				[committed]</li>
-				<li>Improve comment handling in AST rewriting. Clients need more
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Improve comment handling in AST rewriting. Clients need more
 				control over when comments have to be preserved and when they can be
 				deleted. For example when inlining a method, a comment in front of
 				the original method call should be preserved.[Built to Last]</li>
 				<li>Apply coding conventions (like formatting, organize import, nls,
 				...) on save, compile or commit. This requires support from
 				Platform/Team, Platform/Text and JDT/Core. [Large-scale]</li>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Improve Java project creation for existing
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Improve Java project creation for existing
 				folder structures [Simple to Use] [committed]</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Code generation operations for hash, equals and toString</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Infer
@@ -196,29 +197,26 @@ Measure and improve the performance of key operations
 				class. The refactoring should infer the least specific element type
 				of the collection which allows removal of all (most) casts. [J2SE
 				5.0 support] [committed]</li>
-				<li>Extend existing refactorings to new language constructs [J2SE
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Extend existing refactorings to new language constructs [J2SE
 				5.0 support] [committed]
 				<ul>
 					<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 						border="0"> rename of type parameters, rename of enum constants</li>
-					<li>rename and move of annotations</li>
+					<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+						border="0"> rename and move of annotations</li>
 				</ul>
 				</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Make Ripple Method finder J2SE 5.0 aware [J2SE 5.0 support]
 				[committed]</li>
-				<li>Remove dependency between LTK/UI and JDT/Core [Built to Last]
-				[committed]</li>
-				<li>Additional refactorings: Extract Superclass [committed], Inline
+				<li>Additional refactorings: Extract Superclass [proposed], Inline
 				Supertype [proposed]</li>
-				<li>Convert Extract interface, Use Supertype and Generalize Type to
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Convert Extract interface, Use Supertype and Generalize Type to
 				new type constraint infrastructure [committed]</li>
-				<li>Investigate in a refactoring to introduce a type parameter into
-				a non generic class [J2SE 5.0 support]</li>
-				<li>Open more refactorings for participation. Candidates are: Copy,
-				Change method signature, Inline method, Introduce Parameter,
-				Introduce Factory, Move Member Type to New File and Self Encapsulate
-				Field. [Built to Last]</li>
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Convert Copy/Paste into processor/participant architecture [Built to Last]</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Investigate in non disjoint file manipulation for
 				refactoring participants. Currently a participant can't manipulate
@@ -233,8 +231,8 @@ Measure and improve the performance of key operations
 					members to destinations where they are not visible anymore for all
 					references. Either compute the right visibility or let the user
 					pick a visibility [committed]</li>
-					<li><img src="../images/progress.gif" nosave="" height="5"
-						width="14" border="0"> Unused import handling. Currently
+					<li><img src="../images/ok.gif" nosave=""
+						height="10" width="10" border="0"> Unused import handling. Currently
 					refactorings don't remove imports which can lead to unused import
 					warnings/errors if this compiler option is enabled. [committed]</li>
 					<li>More use of code assist in dialog fields (extract constant,
@@ -252,6 +250,9 @@ Measure and improve the performance of key operations
 				</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate in a refactoring to convert static final int field
 				into a enum type. [J2SE 5.0 support]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate in a refactoring to introduce a type parameter into
+				a non generic class [J2SE 5.0 support]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Remove dependency between LTK/UI and JDT/Core [Built to Last]</li>
 			</ul>
 			</td>
 		</tr>
@@ -264,7 +265,7 @@ Measure and improve the performance of key operations
 				<li>Support inclusion filters when in hierarchical layout mode (see
 				bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
 				[committed]</li>
-				<li>Support better grouping mechanisms for referenced libraries
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Support better grouping mechanisms for referenced libraries
 				(jars) [Large-scale]</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate to use sync exec instead of async exec to update the
 				package explorer when receiving a Java model delta</li>
@@ -303,11 +304,11 @@ Measure and improve the performance of key operations
 
 			<td><b>Search</b>
 			<ul>
-				<li>Support searching for code snippets instead of single references
+				<li><font class="indexsub" color="#8080ff"></font>Support searching for code snippets instead of single references
 				or declarations. For example allow searching for all method calls to
 				IRunnableContext#run where the first argument is boolean 'false'.
 				[Large-Scale]</li>
-				<li>Investigate in generic rewriting of compilation units based on
+				<li><font class="indexsub" color="#8080ff"></font>Investigate in generic rewriting of compilation units based on
 				the result of snippet based searching. For example rewrite all
 				method calls to IRunnableContext#run(false, ?, ?) to
 				IRunnbleContext#run(true, ?, ?). [Large-Scale]</li>
@@ -527,8 +528,8 @@ Measure and improve the performance of key operations
 		<tr>
 			<a name="Milestone_Planning"> </a>
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
-				face="Arial,Helvetica"><font color="#ffffff"> M5 Milestone Plan
-			(Jan. 03 - Feb. 18) - Under Constrcution</font></font></b></td>
+				face="Arial,Helvetica"><font color="#ffffff"> M6 Milestone Plan
+			(Feb. 21 - Apr. 1) - Under Constrcution</font></font></b></td>
 			<a></a>
 		</tr>
 		<tr>
@@ -538,7 +539,8 @@ Measure and improve the performance of key operations
 			<td width="848"><b>Overall goals for M5</b>
 
 			<ul>
-				<li>Finish, where possible, J2SE 5.0</li>
+				<li>Finish J2SE 5.0 effort</li>
+				<li>Finish API</li>
 			</ul>
 			</td>
 		</tr>
@@ -548,10 +550,12 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>General Items</b>
 			<ul>
-				<li>3.0.2 bug fixing</li>
-				<li>Bug clean-up</li>
-				<li>Prepare EclipseCon 2005</li>
+				<li>3.0.2 test fix pass</li>
+				<li>Bug fixing &amp; clean-up</li>
+				<li>EclipseCon 2005</li>
 				<li>Inbox tracking (7 days)</li>
+				<li>CPL to EPL conversion</li>
+				<li>Component.xml file</li>
 			</ul>
 			</td>
 		</tr>
@@ -562,16 +566,14 @@ Measure and improve the performance of key operations
 			<td width="848"><b>Refactoring</b>
 			<ul>
 				<li>Finish effort to make refactorings J2SE 5.0 aware. A detailed status can be found <a
-					href="j2se50/Status.html">here</a>. (All)</li><li>Finish &quot;Infer Element Type refactoring&quot;
-				(Markus)<ul>
-					<li>use of new batch AST creation API</li>
-					<li>handle all JDK classes</li>
-					<li>support multi project scenario</li>
-					<li>clean-up type constraint implementation so that it can be used for other refactorings as well.</li>
+					href="j2se50/Status.html">here</a>. (All)</li><li>Infer Element Type refactoring<ul>
+					<li>improve user interface</li>
+					<li>handle cases where code already contains generic collection classes (use case is a third party library that ships an updated version using generic collections)</li>
 				</ul>
 				</li>
-				<li>Decouple LTK.UI from JDT/Core (Dirk)</li>
-				<li>Convert Copy/Paste refactorings to processor/participant architecture (Dirk)</li>
+				<li>Convert refactoring Undo/Redo to unified Undo implementation</li>
+				<li>Make use of the new IResource#revertModificationStamp API</li>
+				<li>Improve performance and memory consumption where necessary for refactorings touching lots of resources (like rename, move, ...)</li>
 			</ul>
 			</td>
 		</tr>
@@ -581,23 +583,20 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Code Manipulation</b>
 			<ul>
-				<li>Finish effort to make source actions J2SE 5.0 aware. A detailed status can be found <a
-					href="j2se50/Status.html">here</a>. Item depends on JDT/Core work to make source manipulation J2SE 5.0 aware (Tobias)</li>
-				<li>Continue effort to make quick fix &amp; quick assists J2SE 5.0 aware (Martin)</li>
-				<li>Make Organize Import and Import rewriter fully static import
-				aware (Martin)</li>
-				<li>Improve Java project creation for existing
-				folder structures (Erol, Martin)</li>
-				<li>New type wizard
+				<li>Continue effort to make quick fix &amp; quick assists J2SE 5.0 aware
 				<ul>
-					<li>support generics in code assist for super  class (Markus)</li>
-					<li>investigate in supporting generics for super interfaces (Markus)</li>
+					<li>varargs suppurt</li>
 				</ul>
 				</li>
-				<li>Work on code manipulation infrastructure (Martin):
+				<li>More quick fixes for J2SE 5.0</li>
+				<li>New type wizard
 				<ul>
-					<li>provide import rewriter on JDT/Core level</li>
-					<li>investigate pushing down coding preferences to JDT/Core</li>
+					<li>support generics in code assist for super  class</li>
+					<li>investigate in supporting generics for super interfaces</li>
+				</ul>
+				</li>
+				<li>Work on code manipulation infrastructure<ul>
+					<li>investigate providing import rewriter on JDT/Core level (depends on progress with search and all type cache)</li>
 				</ul>
 				</li>
 			</ul>
@@ -609,13 +608,22 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Package Explorer</b>
 			<ul>
-				<li>Improve working set support for the package explorer (Dirk)
-				<ul>
-					<li>make more actions available on working sets</li>
-					<li>fix refresh problems</li>
-				</ul>
+				<li>Improve startup performance of the package explorer
 				</li>
+				<li>Support inclusion filters when in hierarchical layout mode (see
+				bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
+				[committed]</li>
 			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Type Hierarchy</b>
+			<ul>
+				<li>Make lock mode generics aware [J2SE 5.0 support] [committed]</li>
+			</ul>
+
 			</td>
 		</tr>
 		<tr>
@@ -624,11 +632,12 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Preferences</b>
 			<ul>
-				<li>Contribute to the preferences dynamic team (Martin)</li>
-				<li>Support more preference settings on project level (formatter,
-				user libraries, code style, ...)
-				(Martin)<ul>
-					<li>port preferences to new preferences API</li>
+				<li>Import/Export of preferences</li>
+				<li>Page polishing
+				<ul>
+					<li>link from pref page to per project page</li>
+					<li>investigate in finer grained code styles per project</li>
+					<li>improve type restriction user interface</li>
 				</ul>
 				</li>
 			</ul>
@@ -647,19 +656,9 @@ Measure and improve the performance of key operations
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Cross Team</b>
-			<ul>
-				<li>Contribute to Unified Undo team (Dirk)</li>
-			</ul>
-
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Conferences/Vacations</b>
-			
-			</td>
+			<td><b>Conferences/Vacations</b><ul>
+				<li>EclipseCon</li>
+			</ul></td>
 		</tr>
 	</tbody>
 </table>
