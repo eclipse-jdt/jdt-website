@@ -718,7 +718,7 @@
     </tr>
     <tr>
     <tr>
-      <td>Content Assist<br><br><br><small>Additional info: need more code assist in javadoc for @value.</small></td>
+      <td><img src="../../images/progress.gif" alt="in progress" height="5" width="14" border="0"> Content Assist (70% - better support for type parameters, support varargs)<br><br><br><small>Javadoc: code assist should support extended <tt>@value</tt> syntax.</small></td>
       <td>partially works<br>
       	  <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> inserts angular brackets when completing a type (no guesswork yet).<br>
           <img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> should propose type parameters in javadoc.</td>
@@ -732,7 +732,7 @@
           proposals from core do not yet consider auto(un)boxing, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84720">84720</a></td>
       <td>inside import section: N/A, we don't offer content assist here<br>
           <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> in code</td>
-      <td>&nbsp;</td>
+      <td>Avoid auto-activating content assist when typing an ellipsis (<tt>...</tt>)</td>
     </tr>
     <tr>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> Typing</td>
@@ -747,7 +747,7 @@
       <td>parameter insertion / guessing should propose <em>one<em> (?) parameter</td>
     </tr>
     <tr>
-      <td>Mark Occurrences</td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> Mark Occurrences</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> type variables<br>
           <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> generic types (we only highlighted if type parameters match exactly)<br>
       <td>N/A</td>
@@ -757,16 +757,16 @@
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
       <td>N/A</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> normal occurrences<br>
-          not yet working: static method import highlighting (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80945">bug 80945</a>)</td>
+          <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> static method import highlighting</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Folding</td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> Folding</td>
       <td>not affected (type parameters lists are hardly going to be long)</td>
       <td>N/A</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
       <td>N/A</td>
-      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> annotations get folded away without obscuring the method name</td>
       <td>N/A</td>
       <td>N/A</td>
       <td>N/A</td>
@@ -794,7 +794,7 @@
       <th>Varargs</th>
     </tr>
     <tr>
-      <td>Syntax Coloring</td>
+      <td><img src="../../images/progress.gif" alt="in progress" height="5" width="14" border="0"> Syntax Coloring (90% - more colorings)</td>
       <td>partially works. 
           <br>Method highlighting needs be aware of generic constructors.
           <br><img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> color <tt>extends</tt> and <tt>super</tt> differently inside type bounds.
@@ -806,18 +806,17 @@
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> <tt>@  interface</tt> is colored</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> <tt>@  Deprecated</tt> is colored. See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=82452">bug 82452</a> for what's missing (P4)<br>
       	  <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0">semantic highlighting for the element names of element-value pairs.</td>
-      <td><img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> color autoboxing (semantic coloring).</td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> auto(un-)boxed expressions are highlighted</td>
       <td><img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> color static imports (semantic coloring).</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Java Outline Page<p><small>Have to make sure that updating works.</small></p></td>
+      <td><img src="../../images/progress.gif" alt="in progress" height="5" width="14" border="0"> Java Outline Page (80% - provide decorations for standard annotations)</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
-      <td>generally works.<br>
-          concrete Enum implementations are rendered as anonymous subclasses.</td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> concrete Enum implementations are rendered as anonymous subclasses.</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
-      <td>works<br>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0">works<br>
       <img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> introduce decorations for the standard annotations and perhaps even a way to specify custom decorations for custom annotations.</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"></td>
       <td>not affected</td>
@@ -825,7 +824,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Javadoc Hover</td>
+      <td><img src="../../images/progress.gif" alt="in progress" height="5" width="14" border="0"> Javadoc Hover (80% - add annotation info to hover)</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> <tt>@param <T></tt> is rendered<br>
           methods of parameterized types: show the type bound in the header (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=81154">bug 81154</a>)</td>
       <td>N/A</td>
@@ -851,7 +850,7 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Templates</td>
+      <td><img src="../../images/progress.gif" alt="in progress" height="5" width="14" border="0"> Templates (80% - more templates, autoboxing)</td>
       <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> enhanced for loop</td>
       <td>N/A</td>
       <td><img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> enum templates, e.g. for a switch statement?</td>
