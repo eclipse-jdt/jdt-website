@@ -23,9 +23,12 @@
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
 	<tbody>
 		<tr>
+		    <a NAME="Overall_Planning">
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
-				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">What's
-			Happening?&nbsp;</font></font></b></td>
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Overall 3.0 Plan</font></font></b>
+			</td>
+			</a>
 		</tr>
 		<tr>
 			<td colspan="2">The 3.0 plan below is a proto plan and input from the
@@ -58,12 +61,12 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Aritectural Issues</b>
+			<td><b>Architectrual Issues</b>
 			<ul>
 				<li>Support an IJavaElement adapter in all actions and filters in
 				the same way as the workspace supports an IResource adapter
 				(IAdapter.getAdapter(IJavaElement.class).</li>
-				<li>Investigate in IActionFiler support for Java elements (see bug
+				<li>Investigate in IActionFilter support for Java elements (see bug
 				30948).</li>
 				<li>Investigate to use platform's decorator mechanism for error
 				ticks and running man decoration.</li>
@@ -98,7 +101,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Code Manipulation</b>
 			<ul>
-				<li>Improve comment handling in AST rewriter.</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Improve comment handling in AST rewriter.</li>
 				<li>Improve sorting capability for compilation units (by visibility,
 				by defining type, ...).</li>
 			</ul>
@@ -123,7 +127,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Navigation</b>
 			<ul>
-				<li>Type hierarchy pop-up for a method. It allows to navigate up and
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Type hierarchy pop-up for a method. It allows to navigate up and
 				down in the type hierarchy (overrides/ implementors).&nbsp;</li>
 				<li>Introduce code folding.</li>
 				<li>Present URLs in Javadoc as interactive links.</li>
@@ -163,19 +168,23 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Refactoring</b>
 			<ul>
-				<li>Enable other plug-ins to participate in rename, move and delete
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Enable other plug-ins to participate in rename, move and delete
 				refactorings.</li>
 				<li>Enable other plug-ins to contribute new refactorings.</li>
 				<li>Make refactorings Javadoc aware (@see, @link, etc.).</li>
-				<li>Reduce memory consumption.</li>
-				<li>Investigate using type constraints for type related refactorings
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Reduce memory consumption.</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Investigate using type constraints for type related refactorings
 				(extract interface, user supertype, ....).</li>
 				<li>Add new refactorings, e.g., add parameter, convert constructor
 				to&nbsp; factory method, extract super class and Java 1.5 specific
 				refactorings.</li>
 				<ul>
 				</ul>
-				<li>Rearchitecture rename, move, delete, cut, copy and paste
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Rearchitecture rename, move, delete, cut, copy and paste
 				functionality.</li>
 			</ul>
 			</td>
@@ -255,13 +264,133 @@
 			</ul>
 			</td>
 		</tr>
+		
+		
+		<tr>
+		    <a NAME="Milestone_Planning">
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+				Next Milestone Plan</font></font></b></td>
+			</a>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave=""
+				border="0" height="16" width="16"></td>
+			<td><b>General Items</b><ul>
+				<li>Working on 2.1.1 maintenance stream</li>
+				<li>Working on PR backlog</li>
+				<li>Integrate call hierarchy contribution</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave=""
+				border="0" height="16" width="16"></td>
+			<td><b>Code Manipulation</b><ul>
+				<li>improve comment handling in AST rewriting
+				<ul>
+					<li>comments around statements</li>
+					<li>comments following closing bracket of body declarations (e.g. } // end of method foo).</li>
+				</ul>
+				</li>
+				<li>improve Generate Getter/Setter, Override and Implements dialog
+				<ul>
+					<li>add insert point</li>
+					<li>support controlling visibility of generated members</li>
+					<li>support controlling order of generated methods</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave=""
+				border="0" height="16" width="16"></td>
+			<td><b>Navigation</b><ul>
+				<li>Type hierarchy pop-up for a method. It allows to navigate up and
+				down in the type hierarchy (overrides/ implementors)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Quick Fix</b><ul>
+				<li>unresolved method call:
+				add/remove parameter to/from existing method
+				</li>
+				<li>unused local: remove local</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave=""
+				border="0" height="16" width="16"></td>
+			<td><b>Refactoring</b><ul>
+				<li>allow participating in rename refactoring for IJavaElements</li>
+				<li>investigate using type constraints for extract interface and use
+				super where possible</li>
+				<li>rearchitecture delete functionality and investigate in move/copy</li>
+				<li>reduce memory consumption of refactorings</li>
+				<li>convert refactorings using code blocks to use AST rewriting
+				<ul>
+					<li>extract method</li>
+					<li>surround with try/catch</li>
+					<li>convert nested to top level class</li>
+				</ul>
+				</li>
+				<li>Inline method:
+				<ul>
+					<li>solve issue with introducing unneeded local variables (bug <a
+						href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=34997">34997</a>)</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+	
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="4" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Planning Agenda</font></font></b></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="../images/progress.gif" nosave="" height="5" width="14" border="0">
+			</td>
+			<td width="50%">item is under development.
+			</td>
+			<td valign="top"><img src="../images/ok.gif" nosave="" height="10" width="10" border="0">
+			</td>
+			<td width="50%">item is finished.
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><font class="indexsub">[&gt;3.0]</font>
+			</td>
+			<td width="50%">item is deferred.
+			</td>
+			<td valign="top">( )
+			</td>
+			<td width="50%">item is time permitted.
+			</td>
+		</tr>
+	</tbody>
+</table>
+	
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
 		<tr>
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
 				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			Getting the sources</font></font></b></td>
+			Getting the sources</font></font></b>
+			</td>
 		</tr>
 		<tr>
-			<td colspan="2">
+		  <td>
 			<ul>
 				<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
 				</li>
@@ -279,9 +408,10 @@
 				taken place yet.</li>
 
 			</ul>
-			</td>
+		  </td>
 		</tr>
 	</tbody>
 </table>
+
 </body>
 </html>
