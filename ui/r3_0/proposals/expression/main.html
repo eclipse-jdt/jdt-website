@@ -328,7 +328,7 @@ contribution can be described as follows:</p>
 <p>Since XML is typically verbose we could provide an additional adapt
 attribute for the iterate element to avoid to many nested XML elements.</p>
 
-<h3>How to convert existing extension points</h3>
+<h3>How to convert the existing Platform/UI mechanism</h3>
 <p>The enablement logic used for action contribution looks similar to the proposed solution. To avoid unnecassry proliferation the existing mechanism should be deprecated and the standard XML expression language should be used instead. To ensure backward compatibility the current action filters can be made accessable through type extenders in the following way:</p>
 <blockquote>
 <blockquote><pre>&lt;extension point=&quot;org.eclipse.jdt.typeExtenders&quot;&gt;
