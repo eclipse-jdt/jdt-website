@@ -173,11 +173,12 @@ Refactoring
       API</li>
     <li>refactoring wizard usability improvements</li>
     <li>Self encapsulate field improvements</li>
+    <li>move static members and fields</li>
     <li>investigate in smart delete support
       <ul>
         <li>deleting top-level type provides option to delete Compilation Unit</li>
-        <li>deleting a CU provides option to remove corresponding imports in
-          other Compilation Units</li>
+        <li>deleting a CU checks for references and if there are only import
+          references removes them&nbsp;</li>
       </ul>
     </li>
     <li>investigate rename field refactoring that updates corresponding getters
