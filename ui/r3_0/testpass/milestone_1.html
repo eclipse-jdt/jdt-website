@@ -30,7 +30,9 @@ corresponding write accesses<br>
   <li>test deleting all sorts of different elements like projects,
 source folders, packages, compilation units, members, normal resources
 and linked elements.</li>
-  <li>check accessibility of new dialogs (see document <a
+  <li>test deleting read-only files.<br>
+  </li>
+  <li>check accessibility of new dialog(s) (see document <a
  href="http://www.eclipse.org/articles/Article-Accessibility/accessibility.html">Designing
 Accessible Plug-ins in Eclipse</a>)</li>
 </ul>
@@ -74,7 +76,7 @@ Accessible Plug-ins in Eclipse</a>) of new dialogs.<br>
 <ul>
   <li>Inline method: locals where generated for parameters and return
 values even though not needed. Local should only be generated to avoid
-side effects<br>
+side effects.<br>
   </li>
 </ul>
 <h4>Type Hierarchy (Kai-Uwe, Randy)<br>
@@ -103,9 +105,9 @@ Accessible Plug-ins in Eclipse</a>)<br>
 <h4>Java Editor (Martin, Erich)<br>
 </h4>
 <ul>
-  <li>test raw and smart mode (use Insert key to toggle between the
-modes)</li>
-  <li>in smart mode test (to enable smart typing go to
+  <li>insert and smart insert mode (use Insert key to toggle between
+the modes)</li>
+  <li>in smart insert mode test (to enable smart typing go to
 Preferences-&gt;Java-&gt;Work in Progress):</li>
   <ul>
     <li>smart semicolon (inserts semicolon at end of line)</li>
@@ -120,9 +122,9 @@ enabled via editor preferences)<br>
 </h4>
 <ul>
   <li>stepping through test failures</li>
-  <li>test new JUNIT_HOME variable. When creating a new test case    
-with the test case wizard then the user has the option to put
-JUNIT_HOME on the build     class path.</li>
+  <li>test new JUNIT_HOME variable. When creating a new test case
+with the test case wizard then the user has the option to put JUNIT_HOME
+on the build     class path.</li>
 </ul>
 <h4>MAC (Andre)<br>
 </h4>
