@@ -81,7 +81,7 @@ generic either. They still refer to concrete processors. Additionally
 the actions determines the user interface to use. Pluggable status and
 preview viewers are implemented, however the tree showing the modified
 resources is still JDT specific (no pluggable content provider; the
-implementation of such a tree as very much in common with a generic
+implementation of such a tree has very much in common with a generic
 Navigator).</font></p>
 <p>The picture below presents an overview of the new
 processor/participant split. Classes labeled as &quot;generic&quot; are
@@ -92,10 +92,7 @@ extension points. Solid lines indicate a fixed reference not
 configurable by client plug-ins.</p>
 <p align="center"><img border="0" src="Diagramm.gif"></p>
 <p>The details of the processor/participant architecture are illustrated
-by examples. Please note that JDT/UI is the home of the current
-implementation. Hence all extension points are prefixed with
-org.eclipse.jdt.ui. This will change when the code is moved into a
-separate plug-in.</p>
+by the examples below. </p>
 <h3>Renaming a Java method</h3>
 <p>Renaming method A#foo() into A#bar() takes place according to the
 following steps:</p>
