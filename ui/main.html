@@ -66,7 +66,7 @@
   </tr>
   <tr> 
     <td> 
-      <p>Over the next 6 months the major focus points are:</p>
+      <p>Over the <b> next 6 months</b> the major focus points are:</p>
       <ul>
         <li>Address usability issues</li>
         <li>Java Editor enhancements (templates/macros)
@@ -89,44 +89,109 @@
         <li>Investigate in additional Java specific project browsing</li>
         <li>Performance</li>
       </ul>
-      <p>In the more immediate term, efforts for the next milestone (end of November) 
-        are focused on:</p>
+      <p><b>End of November Milestone</b></p>
+      <p>The work items below are planned for the end of November milestone. In
+      addition, to the work items below we will also address P1 bugs.</p>
+      <p>UI</p>
       <ul>
-        <li>Refactoring
+        <li>NLS support released in stream
           <ul>
-            <li>implement a new code change infrastructure</li>
-            <li>push-up method and fields&nbsp;</li>
+            <li>address pending PRs</li>
           </ul>
         </li>
-        <li>Code generation
+      </ul>
+      <p>Refactoring</p>
+      <ul>
+        <li>Push-up element refactoring in the build
           <ul>
-            <li>surround text selection with try/catch</li>
+            <li>depends on Search engine API</li>
+          </ul>
+        <li>Investigate reorder parameters refactoring
+        <li>Migrate to new text change infrastructure
+        <li>Refactoring test suite ready to be released
+        <li>Code change infrastructure
+          <ul>
+            <li>support for moving of ranges (required for reorder parameter
+              refactoring)</li>
+          </ul>
+          <ul>
           </ul>
         </li>
-        <li>Search
+        <li>Surround selection with try/catch block</li>
+      </ul>
+      <p>Java Editor</p>
+      <ul>
+        <li>Template support finish</li>
+        <li>Proposal for how to add key binding support</li>
+        <li>Code assist
           <ul>
-            <li>working set scoped searching</li>
+            <li>completions to generate stubs for anonymous inner classes</li>
+            <li>indicate deprecated methods</li>
+            <li>additional preference settings for:
+              <ul>
+                <li>constrain visibility (default off)</li>
+                <li>auto complete (default off)</li>
+                <li>auto import (default on)</li>
+                <li>show java doc hints (default on)</li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li>Packages view
+        <li>Improve working copy management infrastructure
           <ul>
-            <li>working set filtering support</li>
+            <li>eliminate duplication of buffer contents</li>
+            <li>provide a generalized working copy manager</li>
           </ul>
         </li>
-        <li>Type hierarchy
+        <li>Improve value hovering when debugging</li>
+        <li>Infrastructure to show error feedback as user types</li>
+        <li>Support separation of Java Debug UI package into a separate plug-in</li>
+      </ul>
+      <p>Packages Browsing</p>
+      <ul>
+        <li>Show members in packages view
           <ul>
-            <li>show type hierarchy scoped to packages and projects</li>
+            <li>support filtering based on member attributes</li>
+          </ul>
+        <li>Make context menu more consistent&nbsp;
+          <ul>
+            <li>generate getter/setter is missing</li>
+            <li>replace from local history/add from local history are misplaced</li>
+          </ul>
+        <li>Filter for hiding non Java resources
+      </ul>
+      Code Generation
+      <ul>
+        <li>Migrate code generation support to new text change infrastructure
+          <ul>
+            <li>text change object for adding imports</li>
           </ul>
         </li>
-        <li>Java Editor
+        <li>Generate getter/setter improvements
           <ul>
-            <li>macros/template support</li>
-            <li>matching bracket highlighting&nbsp;</li>
-            <li>revisit working copy management</li>
+            <li>add dialog to provide more control over javadoc, name.</li>
           </ul>
         </li>
-        </ul>
-      <p>Work items completed in the 2.0 stream:</p>
+        <li>Support for CU header and class/interface comment templates
+          <ul>
+            <li>headers can be customized in the preferences page</li>
+            <li>templates supports variables like (user, date, etc.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Building/running</p>
+      <ul>
+        <li>UI to control whether source folder resources should be copied to
+          output folder</li>
+        <li>Proposal for building against different JREs inside a workspace</li>
+        <li>Eclipse self hosting tool&nbsp;
+          <ul>
+            <li>support for source extraction</li>
+            <li>ready to be made available outside of JDT</li>
+          </ul>
+        </li>
+      </ul>
+      <p><b>Work items completed in the 2.0 stream:</b></p>
       <ul>
         <li>Error tick support everywhere</li>
         <li>Code assist improvements
