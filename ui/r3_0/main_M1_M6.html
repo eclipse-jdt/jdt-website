@@ -30,32 +30,32 @@
 			</a>
 		</tr>
 		<tr>
-			<td colspan="2">The 3.0 plan below is a revised plan for the milestones M7 - M9 and still under developement. Input from the community is very welcome. The original 3.0 plan can be found <a
-				href="main_M1_M6.html">here</a>.</td>
+			<td colspan="2">The 3.0 plan below is a proto plan and input from the
+			community is very welcome.</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Top
-			Five Items</b><ul>
-				<li>Improve support for Java like languages
+			<td><b>Overall JDT/UI themes</b>
+			<ul>
+				<li>Open up JDT:
 				<ul>
-					<li>allow other plug-ins to contribute and participate in search, refactoring
-					
-					as well as code
-					generation and templates</li>
+					<li>allow other plug-ins to contribute to and participate in
+					searching, refactoring, quick fix, hovering, as well as code
+					generation and templates.&nbsp;</li>
+					<li>support reusing Java editor actions (source and refactoring) in
+					other plug-ins.</li>
+					<li><font color="#000000">support to contribute to the reconciling
+					of a compilation unit, e.g., enable adding a spelling checker</font>
+					</li>
 				</ul>
 				</li>
-				<li>Improved Java Search
-				<ul>
-					<li>searching in background</li>
-					<li>tree based result presentation</li>
-				</ul>
-				</li>
-				<li>Abstract syntax tree rewriting</li>
-				<li>Surface JDK 1.5 features</li>
-				<li>Polish work</li>
-			</ul></td>
+				<li>Improve user experience. Besides reducing gestures this includes
+				additional navigation support for Java code and more lightweight
+				interactions.</li>
+				<li>Surface JDK 1.5 features.</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
@@ -63,19 +63,15 @@
 
 			<td><b>Architectrual Issues</b>
 			<ul>
-				<li><font class="indexsub"></font>Support an IJavaElement adapter in all actions and filters in
+				<li>Support an IJavaElement adapter in all actions and filters in
 				the same way as the workspace supports an IResource adapter
 				(IAdapter.getAdapter(IJavaElement.class)).</li>
-				<li><font class="indexsub"></font>Support reusing Java editor actions (source and refactoring) in
-					other plug-ins.</li>
 				<li>Investigate in IActionFilter support for Java elements (see bug
 				30948).</li>
-				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Investigate to use platform's decorator mechanism for error
+				<li>Investigate to use platform's decorator mechanism for error
 				ticks and running man decoration.</li>
 				<li>Remove separation between source manipulation actions,
 				refactorings and quick assists.</li>
-				<li> <img border="0" src="../images/new.gif" width="16" height="16"> Adapt to dyniamic plug-in loading (new runtime)</li>
 				<li>Allow non-Java partitions in the Java editors.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Introduce concept of a reconciling pipeline:
@@ -101,7 +97,6 @@
 				assist actions (e.g. not via cascading context menus).</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Simplify filter management in JDT views.</li>
-				<li>(new) Investigate use of activities in JDT/UI</li>
 			</ul>
 			</td>
 		</tr>
@@ -112,7 +107,8 @@
 			<ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Improve comment handling in AST rewriter.</li>
-				<li> <font class="indexsub">[&gt;3.0]</font> Improve sorting capability for compilation units (by
+				<li><img src="../images/glass.gif" nosave="" height="10" width="10"
+					border="0"> Improve sorting capability for compilation units (by
 				visibility, by defining type, ...).</li>
 				<li>Enable contributions to code generation templates.</li>
 			</ul>
@@ -217,7 +213,6 @@
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0">Rearchitecture rename, move, delete, cut, copy and paste
 				functionality.</li>
-				<li><img border="0" src="../images/new.gif" width="16" height="16"> Improve NLS refactoring</li>
 			</ul>
 			</td>
 		</tr>
@@ -280,8 +275,7 @@
 				height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Type Hierarchy</b>
 			<ul>
-				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Support type hierarchy presentation scoped to a working set.</li>
+				<li>Support type hierarchy presentation scoped to a working set.</li>
 			</ul>
 			</td>
 		</tr>
@@ -358,77 +352,6 @@
 		<tr>
 			<td valign="top"><font class="indexsub">[&gt;3.0]</font></td>
 			<td width="50%">item is deferred.</td>
-			<td valign="top"><font class="indexsub"><img border="0"
-				src="../images/new.gif" width="16" height="16"></font></td>
-			<td width="50%">new</td>
-		</tr>
-	</tbody>
-</table>
-
-<table border="0" cellspacing="5" cellpadding="2" width="100%">
-	<tbody>
-		<tr>
-			<a NAME="Milestone_Planning">
-			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			M7 Milestone Plan (under constrcution)</font></font></b></td>
-			</a>
-		</tr>
-		<tr>
-			<td valign="top" width="23"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td width="848"><b>Overall goals for M7</b>
-			<ul>
-				<li></li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Overhead Items</b>
-			<ul>
-				<li>inbox tracking</li>
-				<li>testing</li>
-			</ul>
-		</tr>
-
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Conferences/Vacations</b>
-			<ul>
-				<li>vacation 2 days</li>
-				<li>EclipseCon</li>
-			</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<table border="0" cellspacing="5" cellpadding="2" width="100%">
-	<tbody>
-		<tr>
-			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
-				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			Getting the sources</font></font></b></td>
-		</tr>
-		<tr>
-			<td>
-			<ul>
-				<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
-				</li>
-				<li>Check out <a
-					href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui"><code>HEAD</code></a>
-				branch of the project <code>org.eclipse.jdt.ui</code>.</li>
-				<li>Make sure to import the prerequisite plug-ins (usually from the
-				latest SDK R2.1.x <a
-					href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
-				Prerequisite plug-ins are already referenced on the project build
-				path ( <code>.classpath</code> file).</li>
-				<li>The sources of this project require JDK 1.4.</li>
-
-			</ul>
-			</td>
 		</tr>
 	</tbody>
 </table>
