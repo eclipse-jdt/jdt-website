@@ -39,14 +39,18 @@
 
 			<td><b>Overall JDT/UI Themes</b>
 			[committed]<ul>
-				<li> Make all source, quick fix, quick assist and
+				<li> <img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Make all source, quick fix, quick assist and
 				refactoring actions J2SE 5 aware [J2SE 5.0 support]
 				</li>
-				<li>Provide refactorings, source actions and quick fixes for new J2SE 5 features. This includes features like rename and move of annotations or the creation of enum and annotation units. [J2SE 5.0 support]</li>
-				<li>Provide refactorings and quick assists that convert JDK 1.4 source into J2SE 5.0 source. Examples are &quot;Convert usages
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Provide refactorings, source actions and quick fixes for new J2SE 5 features. This includes features like rename and move of annotations or the creation of enum and annotation units. [J2SE 5.0 support]</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Provide refactorings and quick assists that convert JDK 1.4 source into J2SE 5.0 source. Examples are &quot;Convert usages
 				of raw collection classes into the corresponding generic collection
 				class&quot; or &quot;Convert to enhanced for loop&quot;. [J2SE 5.0 support]</li>
-				<li>Identify functions which are critical important speed and space
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Identify functions which are critical important speed and space
 				performance wise [Built to Last]
 				<ul>
 					<li>Open workspace in Java perspective, open &amp; populate Package
@@ -58,7 +62,8 @@
 					extract interface, generalize types)</li>
 				</ul>
 				</li>
-				<li>Write performance tests for the critical functions and identify
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Write performance tests for the critical functions and identify
 				speed / space targets [Built to Last]</li>
 				<li>Look into ways to improve performance where the functions don't
 				meet the targets [Built to Last]</li>
@@ -102,7 +107,8 @@
 				org.eclipse.swt.widgets.List when opening a type) these operations
 				should built a histroy of the selected elements and use that history
 				to sort the elements accordingly. [Simple to Use] [committed]</li>
-				<li>Identify code that is better hosted in JDT/Core [Built to Last]
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Identify code that is better hosted in JDT/Core [Built to Last]
 				[committed]</li>
 				<li>Cleanup usages of deprecated code [Built to Last]
 				[committed]</li>
@@ -170,18 +176,17 @@
 				<li>Extend existing refactorings to new language constructs [J2SE
 				5.0 support] [committed]
 				<ul>
-					<li>rename of type parameters</li>
+					<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+						border="0"> rename of type parameters</li>
 					<li>rename and move of annotations</li>
 				</ul>
 				</li>
+				<li>Make Ripple Method finder J2SE 5.0 aware [J2SE
+				5.0 support] [committed]</li>
 				<li>Remove dependency between LTK/Core and JDT/Core [Built to Last]
 				[committed]</li>
 				<li>Additional refactorings: Extract Superclass [committed], Inline
 				Supertype [proposed]</li>
-				<li>Improve visibility handling when moving members to destinations
-				where they are not visible anymore for all references. Either
-				compute the right visibility or let the user pick a visibility
-				[committed]</li>
 				<li>Convert Extract method, Use Supertype and Generalize Type to new
 				type constraint infrastructure [committed]</li>
 				<li>Investigate in a refactoring to convert static final int field
@@ -197,13 +202,17 @@
 				editor where appropriate</li>
 				<li>Improve existing refactorings:
 				<ul>
+					<li>Improve visibility handling when moving members to destinations
+				where they are not visible anymore for all references. Either
+				compute the right visibility or let the user pick a visibility
+				[committed]</li>
 					<li>Unused import handling. Currently refactorings don't remove
 					imports which can lead to unused import warnings/errors if this
 					compiler option is enabled. [committed]</li>
 					<li>More use of code assist in dialog fields (extract constant,
 					extract method, ...) [committed]</li>
 					<li>User interface polishing (pull-up, push down) [committed]</li>
-					<li>Javadoc handling of moved (pull-up, push down)and created
+					<li>Javadoc handling of moved (pull-up, push down) and created
 					methods</li>
 					<li>Support creation of delegate methods to provide API
 					compatibility (change method signature, rename, move, ...)</li>
@@ -229,6 +238,16 @@
 				<li>Investigate to use sync exec instead of async exec to update the
 				package explorer when receiving a Java model delta</li>
 			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Type Hierarchy</b>
+			<ul>
+				<li>Make lock mode generics aware [J2SE
+				5.0 support] [committed]</li></ul>
 			</td>
 		</tr>
 		<tr>
@@ -548,14 +567,124 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>vacation: 13 days</li>
-				<li>military service: 15 days</li>
+				<li>vacation: 23 days</li>
+				<li>military service: 10 days</li>
 			</ul>
 			</td>
 		</tr>
 	</tbody>
 </table>
 
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
+				face="Arial,Helvetica"><font color="#ffffff"> M3 Milestone Plan (Sept. 27. - Nov. 5) - Under Construction</font></font></b></td>
+			<a></a>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Overall goals for M3</b>
+
+			<ul>
+				<li>Improve J2SE 5 support</li>
+				<li>Continue work on performance tests</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>General Items</b>
+			<ul>
+				<li>3.0.2 bug fixing</li>
+				<li>PR triage</li>
+				<li>Inbox tracking (7 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Cross Team Issues</b><ul>
+				<li>Generic Navigator</li>
+				<li>Push Down action groups for working sets and filters (MRU user experience)</li>
+				<li>Look into WTPOperation and satellietes and compare them to the refactoring processor/participant architecture.</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Refactoring</b>
+			<ul>
+				<li>Write more performance tests<ul><li>For type constraints refactoring like Extract interface and use super type where possible</li>
+					<li>For change method signature, introduce parameter and introduce factory</li>
+				</ul>
+				</li>
+				<li>Continue work on Augment Raw Collection Clients</li>
+				<li>Continue work on making refactorings and source actions J2SE 5.0 aware
+				<ul>
+					<li>Move instance method</li>
+					<li>Convert anonymous to nested</li>
+					<li>Move member type to new file</li>
+					<li>Extract constant</li>
+					<li>Extract method</li>
+					<li>Inline method</li>
+					<li>write test cases that use Generics for all refactorings</li>
+				</ul>
+				</li>
+				<li>Consolidate rewriting code
+				<ul>
+					<li>get rid of OldASTRewrite</li>
+				</ul>
+				</li>
+				<li>Remove unused imports in refactorings like push up, pull down, move instance method, move nested to top, inline method</li>
+				<li>Make Ripple Method finder J2SE 5.0 aware (requires support from JDT/Core)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Code Manipulation</b>
+			<ul>
+				<li>Consolidate code manipulation infrastructure
+				<ul>
+					<li>API for rewriting imports</li>
+					<li>API for inserting members honoring coding styles/sorting order</li>
+					<li>API for code templates and code styles (prefixes, suffixes)</li>
+				</ul>
+				</li></ul></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Preferences</b>
+			<ul>
+				<li>Support better sharing of preferences in a team (compiler
+				settings, formatter settings, user libraries, organize imports, ...)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Conferences/Vacations</b>
+			<ul>
+				<li>vacation: 18 days</li>
+				<li>military service: 5 days</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
 	<tbody>
