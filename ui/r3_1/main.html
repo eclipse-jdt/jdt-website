@@ -37,10 +37,17 @@
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 
-			<td><b>Overall JDT/UI items</b>
-			<ul>
+			<td><b>Overall JDT/UI Themes</b>
+			[committed]<ul>
+				<li> Make all source, quick fix, quick assist and
+				refactoring actions J2SE 5 aware [J2SE 5.0 support]
+				</li>
+				<li>Provide refactorings, source actions and quick fixes for new J2SE 5 features. This includes features like rename and move of annotations or the creation of enum and annotation units. [J2SE 5.0 support]</li>
+				<li>Provide refactorings and quick assists that convert JDK 1.4 source into J2SE 5.0 source. Examples are &quot;Convert usages
+				of raw collection classes into the corresponding generic collection
+				class&quot; or &quot;Convert to enhanced for loop&quot;. [J2SE 5.0 support]</li>
 				<li>Identify functions which are critical important speed and space
-				performance wise [Built to Last] [committed]
+				performance wise [Built to Last]
 				<ul>
 					<li>Open workspace in Java perspective, open &amp; populate Package
 					Explorer, open &amp; populate Type Hierarchy,</li>
@@ -52,15 +59,14 @@
 				</ul>
 				</li>
 				<li>Write performance tests for the critical functions and identify
-				speed / space targets [Built to Last] [committed]</li>
+				speed / space targets [Built to Last]</li>
 				<li>Look into ways to improve performance where the functions don't
-				meet the targets [Built to Last] [committed]</li>
-				<li>Add a history to Open Type, Open Hierarchy, Organize Import, Quick Fix, Quick Assist... In the case of an element ambiguity (for example java.awt.List versus java.util.List versus org.eclipse.swt.widgets.List when opening a type) these operations should built a histroy of the selected elements and use that history to sort the elements accordingly. [Simple to Use] [committed]</li>
-				<li>Identify code that is better hosted in JDT/Core [Built to Last]
-				[committed]</li>
+				meet the targets [Built to Last]</li>
+				<li>Convert source and refactoring code to use one code manipulation
+				infrastructure that honors formatting, comment and code style
+				settings [Built to Last] [proposed]</li>
 				<li>Investigate in improved filtering/grouping functionality to
-				support workspace with lots of projects. [Large-scale]
-				[committed]<ul>
+				support workspace with lots of projects. [Large-scale]<ul>
 					<li>Use of shared working sets to adjust views all at once (must be
 					coordinated with Platform/UI)</li>
 					<li>Grouping of projects (sub project relationship) in the package
@@ -74,8 +80,9 @@
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 
-			<td><b>Code manipulation</b>
+			<td><b>Component Independent</b>
 			<ul>
+				
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Convert all AST clients to use the new JLS3 API [J2SE
 				5.0 support] [committed]</li>
@@ -87,14 +94,30 @@
 					existing JDT/UI functionality</li>
 					<li>write new test cases for the new J2SE 5 language features</li>
 					<li>adapt where necessary the code to J2SE 5</li>
-				</ul>
-				</li>
+				</ul></li>
+				<li>
+				Add a history to Open Type, Open Hierarchy, Organize Import,
+				Quick Fix, Quick Assist... In the case of an element ambiguity (for
+				example java.awt.List versus java.util.List versus
+				org.eclipse.swt.widgets.List when opening a type) these operations
+				should built a histroy of the selected elements and use that history
+				to sort the elements accordingly. [Simple to Use] [committed]</li>
+				<li>Identify code that is better hosted in JDT/Core [Built to Last]
+				[committed]</li>
+				<li>Cleanup usages of deprecated code [Built to Last]
+				[committed]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Code manipulation</b>
+			<ul>
 				<li>Provide a New Enum type wizard [J2SE 5.0 support] [committed]</li>
 				<li>Provide a New Annotation type wizard [J2SE 5.0 support]
 				[committed]</li>
-				<li>Convert source and refactoring code to use one code manipulation
-				infrastructure that honors formatting, comment and code style
-				settings [Built to Last] [committed]</li>
 				<li>Improve comment handling in AST rewriting. Clients need more
 				control over when comments have to be preserved and when they can be
 				deleted. For example when inlining a method, a comment in front of
@@ -103,9 +126,11 @@
 				<li>Apply coding conventions (like formatting, organize import, nls,
 				...) on save, compile or commit. This requires support from
 				Platform/Team, Platform/Text and JDT/Core. [Large-scale] [committed]</li>
-				<li>Improve Java project creation for existing folder structures [Simple to Use] [committed]</li>
-				<li>Infer code style settings (formatter, prefixes, ...) from existing source code [Simple to Use] [proposed]</li>
-				<li>Code generation operations for hash, equals and toString [proposed]</li>
+				<li>Improve Java project creation for existing folder structures
+				[Simple to Use] [committed]</li>
+				<li>Infer code style settings (formatter, prefixes, ...) from
+				existing source code [Simple to Use]</li>
+				<li>Code generation operations for hash, equals and toString</li>
 			</ul>
 			</td>
 		</tr>
@@ -123,10 +148,11 @@
 				<li>Investigate how to improve the scalability of quick fix. We have
 				situations where the list of possible quick fixes is getting really
 				long [Simple to Use]</li>
-				<li>Investigate in automatic code corrections (for example if an
-				import is missing and it isn't ambiguous insert it automatically)
-				[Simple to Use]</li>
-				<li>Investigate in applying all quick fixes of a certain type all together (fixing all exception problems) (needs support from Platform/UI)</li>
+				<li>Provide quick 
+				fixes for auto correct on typing (see JDT/Text item) [Simple to Use]</li>
+				<li>Investigate in applying all quick fixes of a certain type all
+				together (fixing all exception problems) (needs support from
+				Platform/UI)</li>
 			</ul>
 			</td>
 		</tr>
@@ -151,20 +177,22 @@
 				<li>Remove dependency between LTK/Core and JDT/Core [Built to Last]
 				[committed]</li>
 				<li>Additional refactorings: Extract Superclass [committed], Inline
-				Supertype</li>
+				Supertype [proposed]</li>
 				<li>Improve visibility handling when moving members to destinations
 				where they are not visible anymore for all references. Either
 				compute the right visibility or let the user pick a visibility
 				[committed]</li>
-				<li>Convert Extract method, Use Supertype and Generalize Type to new type constraint infrastructure [committed]</li>
+				<li>Convert Extract method, Use Supertype and Generalize Type to new
+				type constraint infrastructure [committed]</li>
 				<li>Investigate in a refactoring to convert static final int field
 				into a enum type. [J2SE 5.0 support]</li>
 				<li>Investigate in a refactoring to introduce a type parameter into
-				a none generic class [J2SE 5.0 support]</li>
+				a non generic class [J2SE 5.0 support]</li>
 				<li>Open more refactorings for participation. Candidates are: Copy,
 				Change method signature, Inline method, Introduce Parameter,
 				Introduce Factory, Move Member Type to New File and Self Encapsulate
 				Field. [Built to Last]</li>
+				<li>Investigate in non disjoint file manipulation for refactoring participants. Currently a participant can't manipulate the content of a file if its is manipulated by another participant or the processor even if the changes are disjoint. [Build to Last]</li>
 				<li>Refactorings should reuse the shared AST provided by the Java
 				editor where appropriate</li>
 				<li>Improve existing refactorings:
@@ -172,12 +200,17 @@
 					<li>Unused import handling. Currently refactorings don't remove
 					imports which can lead to unused import warnings/errors if this
 					compiler option is enabled. [committed]</li>
-					<li>More use of code assist in dialog fields (extract constant, extract method, ...) [committed]</li>
+					<li>More use of code assist in dialog fields (extract constant,
+					extract method, ...) [committed]</li>
 					<li>User interface polishing (pull-up, push down) [committed]</li>
-					<li>Javadoc handling of moved (pull-up, push down)and created methods</li>
-					<li>Support creation of delegate methods to provide API compatibility (change method signature, rename, move, ...)</li>
-					<li>Update derived names on rename (e.g when renaming a type update field names and locals if parts of the name match the type name)</li>
-					<li>Extract Method: improve duplicate finding (replace with existing method)</li>
+					<li>Javadoc handling of moved (pull-up, push down)and created
+					methods</li>
+					<li>Support creation of delegate methods to provide API
+					compatibility (change method signature, rename, move, ...)</li>
+					<li>Update derived names on rename (e.g when renaming a type update
+					field names and locals if parts of the name match the type name)</li>
+					<li>Extract Method: improve duplicate finding (replace with
+					existing method)</li>
 				</ul>
 				</li>
 			</ul></td>
@@ -193,7 +226,8 @@
 				[committed]</li>
 				<li>Support better grouping mechanisms for referenced libraries
 				(jars) [Large-scale]</li>
-				<li>Investigate to use sync exec instead of async exec to update the package explorer when receiving a Java model delta</li>
+				<li>Investigate to use sync exec instead of async exec to update the
+				package explorer when receiving a Java model delta</li>
 			</ul>
 			</td>
 		</tr>
@@ -218,7 +252,7 @@
 				<li>Support searching for code snippets instead of single references
 				or declarations. For example allow searching for all method calls to
 				IRunnableContext#run where the first argument is boolean 'false'.
-				[Large-Scale] [committed]</li>
+				[Large-Scale]</li>
 				<li>Investigate in generic rewriting of compilation units based on
 				the result of snippet based searching. For example rewrite all
 				method calls to IRunnableContext#run(false, ?, ?) to
@@ -253,6 +287,61 @@
 			</td>
 		</tr>
 		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Platform/Compare</b>
+			<ul>
+				<li>Improve performance and memory consumption of text compare
+				[Large-scale development] [committed]</li>
+				<li>Write performance tests for the critical functions and identify
+				speed / space targets [Built to Last] [committed]</li>
+				<li>Convert Patch code to use TextBuffers and address ValidateEdit,
+				encoding, and locking issues [Built to Last] [committed]</li>
+				<li>Harmonize Compare infrastructure with Team use cases [Built to
+				Last]</li>
+				<li>Investigate in reusing editors in the implementation of the
+				compare editor [Simple to use]</li>
+				<li>Simplify Patch UI [Simple to use]</li>
+				<li>Split compare plugin into separate core and ui plugins [Built to
+				Last]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>Java/Compare</b>
+			<ul>
+				<li>Make all structure compare functionality J2SE 5 aware [J2SE 5.0
+				support] [committed]</li>
+				<li>Convert all source  manipulation code to use shared
+				code manipulation infrastructure [Built to Last] [committed]</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+
+			<td><b>
+
+			
+
+			Mac OS X
+			</b>
+			<ul>
+				<li>Eliminate java_swt and adapt launching and application exporter
+				plugins [Simple to use] [committed]</li>
+				<li>Indentify and address Mac OS X specific Java 1.5 issues [J2SE
+				5.0 support]</li>
+				<li>Indentify and address Mac OS X 10.4 (Tiger) issues related to
+				jdt.ui [Built to Last]</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
 			<td style="vertical-align: top"><img
 				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
 				height="16" width="16"></td>
@@ -261,7 +350,14 @@
 				<li>How to use the AST rewrite to manipulate source code</li>
 				<li>How to contribute a quick assist/quick fix</li>
 				<li>How to write your own refactoring</li>
+				<li>How to write a correct action for manipulating text resources
+				[committed]</li>
 			</ul>
+
+
+			
+
+			
 			</td>
 		</tr>
 		<tr>
@@ -270,6 +366,11 @@
 				height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Dependencies</b>
 			<ul>
+				<li>SWT
+				<ul>
+					<li>preferred width &amp; height in grid layouts (see bug 30804)</li>
+				</ul>
+				</li>
 				<li>Platform/Core:
 				<ul>
 					<li>Snap shotting</li>
@@ -278,20 +379,42 @@
 				</li>
 				<li>Platform/UI:
 				<ul>
-					<li>					Cancellation of label and content provider calls (e.g. cancelling getChildren)</li>
+					<li>Cancellation of label and content provider calls (e.g.
+					cancelling getChildren)</li>
 					<li>Preference Dialog and shared preferences</li>
 					<li>Action contribution mechanism</li>
-					<li>Ordering of menu contributions (duplication of search menu structure)</li>
+					<li>Ordering of menu contributions (duplication of search menu
+					structure)</li>
 					<li>Free event loop and unwanted execution of async exec</li>
 					<li>Universal Navigator</li>
-					<li>Extensible actions and pluggable actions (define rename action for different file extensions and allow participation in rename)</li>
-					<li>Better filtering and grouping in large workspace (JDT/UI should be aligned with Platform/UI behavior)</li>
+					<li>Unified Undo Manager</li>
+					<li>Extensible actions and pluggable actions (define rename action
+					for different file extensions and allow participation in rename)</li>
+					<li>Better filtering and grouping in large workspace (JDT/UI should
+					be aligned with Platform/UI behavior)</li>
+				</ul>
+				</li>
+				<li>Platform/Team
+				<ul>
+					<li>Commit hook to apply code styles</li>
+					<li>Logical resources</li>
+				</ul>
+				</li>
+				<li>Platform/Text
+				<ul>
+					<li>Save hook to apply code styles</li>
 				</ul>
 				</li>
 				<li>JDT/Core
 				<ul>
 					<li>Track J2SE 5.0 progress</li>
 					<li>On the fly dependency analysis</li>
+					<li>Compile hook to apply code styles</li>
+				</ul>
+				</li>
+				<li>Other
+				<ul>
+					<li>JEM: EMF based Java Model</li>
 				</ul>
 				</li>
 			</ul>
@@ -360,6 +483,9 @@
 				height="16" width="16"></td>
 			<td width="848"><b>General Items</b>
 			<ul>
+				<li>3.1 planning</li>
+				<li>Resolve cross team issues</li>
+				<li>PR triage</li>
 				<li>Inbox tracking (7 days)</li>
 			</ul>
 			</td>
@@ -377,8 +503,8 @@
 				</ul>
 				</li>
 				<li>Implement a first version to convert usages of non generic
-				collection classes into the corresponding generic collection classes.
-				This includes (20 days)
+				collection classes into the corresponding generic collection
+				classes. This includes (20 days)
 				<ul>
 					<li>new type constraint infrastructure with better memory and
 					performance characteristics</li>
