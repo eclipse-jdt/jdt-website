@@ -56,10 +56,10 @@ major characteristics of processors and participants are:</p>
 points. XML expressions (comparable to those used for contributing to a
 pop-up menu) are used to describe their availability. <font
 	color="#0000ff">For 3.0 only participants can be contributed via XML.
-Processors are still hardcoded. We had a prototype running where
+Processors are still contributed via code. We had a prototype running where
 processors where contributed as well. The concerns were: performance,
-since on selection change we evelatued extension points, the fact that
-there can be more than one precessor that handles an element (user
+since on selection change we evaluated extension points, the fact that
+there can be more than one processor that handles an element (user
 arbitration), and problems to pick processors when multiple elements
 were selected</font>.</p>
 <p>For each refactoring that is split into a processor/participant there
@@ -310,9 +310,9 @@ to define a preferred processor to avoid unnecessary user arbitration.</p>
 <p>When refactoring more than one element, for example moving two HTML
 files from one folder to another, there could be one participant
 instance handling both file or two participant instances each handling
-one file. Since it can't be defined upfront what the best solution is, a
+one file. Since it can't be defined up-front what the best solution is, a
 participant can be tagged as sharable. If it is tagged so, it will be
-resued for all elements which match the same extension as the sharable
-paraticipant.</p>
+reused for all elements which match the same extension as the sharable
+participant.</p>
 </body>
 </html>
