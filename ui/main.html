@@ -85,8 +85,6 @@ Eclipse SDK but can be downloaded from here. Consult the plugin description
 page for more information about the plugins.
 <p><b>Plugins:</b>
   <ul>
-    <li><a href="plugins/org.eclipse.pde.selfhosting/index.html">org.eclipse.pde.selfhosting</a>
-- PDE extension for creating and maintaining self hosting workspaces.&nbsp;</li>
     <li><a href="plugins/org.eclipse.jdt.junit/index.html">org.eclipse.jdt.junit</a>
       - JUnit support</li>
   </ul>
@@ -141,50 +139,20 @@ Investigate in additional Java specific project browsing</li>
 <li>
 Performance</li>
 </ul>
-  <b>Milestone 3 (15<sup>th</sup>  February)&nbsp;</b>
-<p>Java Doc
+  <b>Milestone 4 (15<sup>th</sup>   March)&nbsp;</b>
+  <p>UI</p>
   <ul>
-    <li>Access to external JavaDoc associated with a JAR (without support for
-      sharing JavaDoc associations in the team)</li>
-    <li>JavaDoc generation support</li>
+    <li>Support clipboard based copying of resources</li>
+    <li>Support Decorators in all Java Views (Outline, Browsing Views, Type
+      Hierarchy)</li>
+    <li>Preferences: enable &quot;one stop switching&quot; to JDK level 1.4
+      (currently several options have to be set in a consistent fashion)</li>
+    <li>Surface UI to exclude non-Java resources of a particular type from
+      copying to the output folder after a build</li>
+    <li>Progress on reorganizing the menu items (with Platform UI)</li>
+    <li>Auto fix, error fix tips: investigate in UI</li>
   </ul>
-  <p>Browsing</p>
-  <ul>
-    <li>package browsing support a la VA/Java</li>
-    <li>investigate filtering improvements in packages browser (provide more
-      filtering options, improved UI for enabling/disabling a filter)</li>
-    <li>indicator for overridden methods</li>
-  </ul>
-  JUnit
-  <ul>
-    <li>JUnit integration - JUnit plugin becomes part of JDT UI</li>
-    <li>Test case and test suite generation wizards</li>
-    <li>org.eclipse.pde.junit - support for launching plugin tests</li>
-  </ul>
-  <p>Compare</p>
-  <ul>
-    <li>support for comparing two methods with each other</li>
-    <li>patch usability improvements (part of base Compare component)</li>
-    <li>generating patches independent of CVS (part of base Compare component)</li>
-  </ul>
-Refactoring
-  <ul>
-    <li>New AST API - migrate the Self Encapsulate Field refactoring to new AST
-      API</li>
-    <li>refactoring wizard usability improvements</li>
-    <li>Self encapsulate field improvements</li>
-    <li>move static members and fields</li>
-    <li>investigate in smart delete support
-      <ul>
-        <li>deleting top-level type provides option to delete Compilation Unit</li>
-        <li>deleting a CU checks for references and if there are only import
-          references removes them&nbsp;</li>
-      </ul>
-    </li>
-    <li>investigate rename field refactoring that updates corresponding getters
-      and setters</li>
-  </ul>
-Java Editor
+  <p>Java Editor</p>
 <ul>
 
 <li>
@@ -197,23 +165,80 @@ eliminate duplication of buffer contents</li>
 </ul>
 
 <li>
-error feedback during reconciling</li>
+error feedback as you type (requires SWT support)</li>
+
+<li>
+Find/Replace improvements: Find Next, Find in Selection, Incremental Find (first
+cut)</li>
+
+<li>
+Undo improvements, restore and reveal selection</li>
+
+<li>
+Support for shifting non-block selection</li>
 
 </ul>
-  <p>Autofix</p>
+  <font FACE="Helv" SIZE="2"></font>
+<p>Java Doc
   <ul>
-    <li>first cut at error correction support</li>
+    <li>Support to browse generated Java Doc from the export wizard</li>
+    <li>Investigate how the F2 based access to external Java Doc can be
+      integrated in the Help browsing infrastructure (currently a separate
+      Browser window is opened)</li>
+    <li>Support to define location of Java Doc associated with a source project</li>
+    <li>Support to persist the JavaDoc generation settings</li>
+  </ul>
+  <p>Compare</p>
+  <ul>
+    <li>Support comparing two methods</li>
+    <li>Re-enable that structure compare is shown by default in synchronize view</li>
+    <li>Support optional birds-eye view control to see overview of changes
+      inside a resource. Provide an indicator for resolved conflicts (belongs to
+      base Compare component).</li>
+  </ul>
+  <p>API</p>
+  <ul>
+    <li>Start reworking internal Actions so that they can be exposed as API</li>
+    <li>Make the existing filters and sorters available as API</li>
+    <li>Promote the TypePage for creating classes to API</li>
+  </ul>
+  <p>Search</p>
+  <ul>
+    <li>Enable searching and showing matches in working copies</li>
+  </ul>
+  <p>JUnit</p>
+  <ul>
+    <li>Migrate to new Launch configuration API.</li>
+    <li>Wizards for creating TestCases and TestSuites</li>
+  </ul>
+  <p>Browsing</p>
+  <ul>
+    <li>Improve VA/Java style package browsing perspective - make more actions
+      available, support filtering options as is done in other Java views.</li>
+  </ul>
+Refactoring
+  <ul>
+    <li>		Migrate to new AST (except the refactorings that use scopes for
+      precondition checking)</li>
+    <li>investigate Validate edit support in refactoring</li>
   </ul>
 <b>Work items completed in the 2.0 stream:</b>
 <ul>
 <li>
-Error ticks everywhere in JDT views</li>
+UI
+<ul>
+  <li>Error ticks everywhere in JDT views</li>
+  <li>Override indicator in outline</li>
+</ul>
+</li>
 
 <li>
 Java Editor
 <ul>
   <li>
 Improve value hovering when debugging</li>
+  <li>
+Templates/macros</li>
 </ul>
 </li>
 
@@ -306,10 +331,23 @@ support for moving of ranges (required for reorder parameter refactoring)</li>
 Push-up element refactoring in the build&nbsp;</li>
 
 <li>
+Move static methods and fields</li>
+
+<li>
+Rename field refactoring updates getters and setters</li>
+
+<li>
 Refactoring test suite ready to be released&nbsp;</li>
+
+</ul>
+
+<ul>
 
 <li>
 Surround selection with try/catch block</li>
+
+<li>
+Externalize String</li>
 
 <li>
 renaming a resource should not show up as a refactoring</li>
@@ -320,17 +358,22 @@ extract local variable</li>
 <li>
 structured selection support</li>
 
+<li>
+smart delete of top-level type</li>
+
 </ul>
 
 <li>
-Packages view&nbsp;</li>
+Package&nbsp; browsing</li>
 
 <ul>
 <li>
 optionally show the children of a compilation unit or class file</li>
-</ul>
 <li>
-String Externalization support&nbsp;</li>
+VA/Java style package browsing support (Java Browser perspective)</li>
+<li>
+Support package name compression</li>
+</ul>
 
 <li>
 Code generation
@@ -366,7 +409,15 @@ support filtering based on member attributes</li>
 
 <li>JUnit integration
   <ul>
-    <li>JUnit launching and running support becomes part of the JDT ui.</li>
+    <li>JUnit launching and running is part of the JDT UI</li>
+    <li>Support launch configurations for JUnit test cases</li>
+    <li>PDE JUnit launching</li>
+  </ul>
+</li>
+<li>Java Doc
+  <ul>
+    <li>Java Doc exporter</li>
+    <li>access to external Java Doc (in progress)</li>
   </ul>
 </li>
 </ul>
