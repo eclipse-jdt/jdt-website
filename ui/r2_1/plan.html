@@ -41,8 +41,8 @@
             <li>memory leak pass</li>
           </ul>
         </li>
-		<li><img SRC="progress.gif"> Improve test coverage</li>
-        <li>General UI issues
+        <li><img SRC="progress.gif"> Improve test coverage</li>
+        <li>General UI issues 
           <ul>
             <li> hierarchical package browsing</li>
             <li>sorting methods by defining interface/class</li>
@@ -75,10 +75,10 @@
         </li>
         <li>Java Editor 
           <ul>
-            <li>adapt to changes in Platform Text</li>
+            <li><img src="progress.gif"> adapt to changes in Platform Text</li>
             <li>folding of 
               <ul>
-                <li> JavaDoc comments</li>
+                <li> Javadoc comments</li>
                 <li>methods</li>
                 <li>import statements</li>
               </ul>
@@ -93,10 +93,12 @@
             <li>improved navigation and typing support 
               <ul>
                 <li>jump to matching bracket</li>
-                <li>simplify invocation of quickfix</li>
+                <li>simplify invocation of Quick fix</li>
                 <li>smart paste</li>
-                <li>smart JavaDoc comments</li>
-                <li>automatic insertion of closing '}'</li>
+                <li><img src="ok.gif" height=10 width=10> smart JavaDoc comments</li>
+                <li><img src="progress.gif"> automatic insertion of closing '}', 
+                  ')', ']'</li>
+                <li><img src="ok.gif" height=10 width=10> smart splitting of strings</li>
                 <li>additional interactive behavior in vertical ruler (e.g., selecting 
                   lines when dragging)</li>
                 <li>commenting/uncommenting multi-line comments</li>
@@ -107,7 +109,7 @@
             <li>user defined and controlled hover behavior (e.g, hover shows JavaDoc 
               or declaration of element depending on pressed modifier)</li>
             <li>Java editor and non-resources</li>
-            <li>outline of compilation unit in a content assist like light weight 
+            <li>outline of compilation unit in a content assist like lightweight 
               window available inside the editor</li>
             <li>overview ruler 
               <ul>
@@ -120,12 +122,13 @@
             <li>code assist 
               <ul>
                 <li>configurable code assist completion triggers</li>
-                <li>code assist method complete (add parentheses or not) #22125</li>
+                <li>code assist method complete (add parentheses or not)</li>
+                <li>eating code assist</li>
                 <li> investigate improvement/separation of templates from completions</li>
               </ul>
             </li>
           </ul>
-        <li>Search
+        <li>Search 
           <ul>
             <li>investigate into support for presenting matches in non-Java resources</li>
           </ul>
@@ -163,15 +166,16 @@
             <li>new refactorings 
               <ul>
                 <li><img SRC="ok.gif" height=10 width=10> extract interface</li>
-                <li><img SRC="ok.gif" height=10 width=10> use super type where possible</li>
+                <li><img SRC="ok.gif" height=10 width=10> use super type where 
+                  possible</li>
                 <li><img SRC="ok.gif" height=10 width=10> inner to outer class</li>
-                <li><img SRC="progress.gif"> change signature (add/remove parameter, change return type, 
-                  reorder)</li>
+                <li><img SRC="progress.gif"> change signature (add/remove parameter, 
+                  change return type, reorder)</li>
                 <li><img SRC="progress.gif"> inline method</li>
                 <li><img SRC="progress.gif"> extract/inline constant</li>
                 <li>promote local to field</li>
                 <li>pull down member</li>
-				<li>convert anonymous class to inner class</li>
+                <li>convert anonymous class to inner class</li>
               </ul>
             </li>
           </ul>
@@ -189,11 +193,13 @@
           </ul>
         <li> Quick fix 
           <ul>
-            <li><img SRC="ok.gif" height=10 width=10> implement AST rewriting support</li>
+            <li><img SRC="ok.gif" height=10 width=10> implement AST rewriting 
+              support</li>
             <li>more quick fixes 
               <ul>
                 <li><img SRC="progress.gif"> make field/method visible</li>
-                <li><img SRC="progress.gif"> suggest abstract class when a method is abstract</li>
+                <li><img SRC="progress.gif"> suggest abstract class when a method 
+                  is abstract</li>
                 <li><img SRC="progress.gif"> remove unreachable catch clause</li>
                 <li>add catch clause to existing try/catch block</li>
                 <li>add parameter instead of creating a method</li>
@@ -206,14 +212,15 @@
             <li>status number of incoming/outgoing</li>
             <li>indicate resolution of a change</li>
             <li>auto merge: accept all incoming</li>
-			<li>help context IDs</li>
+            <li>help context IDs</li>
           </ul>
         <li>JUnit integration 
           <ul>
-            <li><img SRC="ok.gif" height=10 width=10> support running all tests inside a package 
+            <li><img SRC="ok.gif" height=10 width=10> support running all tests 
+              inside a package 
             <li>rerun a single failed test</li>
-			<li><img SRC="progress.gif"> adapt to new JUnit version</li>
-			<li>help context IDs</li>
+            <li><img SRC="progress.gif"> adapt to new JUnit version</li>
+            <li>help context IDs</li>
           </ul>
       </ul>
   </tr>
@@ -236,7 +243,7 @@
         2(October 18th, 2002)</font></font></b></td>
   </tr>
   <tr> 
-    <td WIDTH="100%">
+    <td WIDTH="100%"> 
       <h4><a name="Milestone_Planning"></a>JDT UI</h4>
       <ul>
         <li> Bug fixing - Fixing defects</li>
@@ -265,31 +272,44 @@
         </ul>
         <li> Investigate how to improve startup performance (JDT/UI plugin)</li>
       </ul>
-      <h4> JDT Text (under construction)</h4>
+      <h4> JDT Text</h4>
       <ul>
         <li> Bug fixing - Reduce number of open problem reports that are not classified 
           as enhancements</li>
         <li> Improve navigation</li>
         <ul>
-          <li> Jump to previous/next member/statement/inner type</li>
           <li> Jump to matching bracket</li>
-          <li> Home key semantics</li>
-          <li> Simplified activation of quick fix</li>
+          <li> Simplified activation of Quick fix</li>
         </ul>
-        <li> Smarter typing support</li>
+        <li> Code assist improvement</li>
         <ul>
-          <li> Automatic closing of comments</li>
-          <li> Javadoc generation on typing</li>
-          <li> Automatic fragmentation of strings</li>
+          <li> Eating code assist 
+            <ul>
+              <li>Relation to auto insertion preference must be defined</li>
+              <li>Visual indication of what will be replaced</li>
+            </ul>
+          </li>
+          <li> Configurable addition of parentheses on method completions</li>
         </ul>
-        <li> Experimental work item</li>
+        <li>User defined and controlled hover behavior (e.g, hover shows Javadoc 
+          or declaration of element depending on pressed modifier). Hover types 
+          to be added.</li>
+        <li>Presentation of extra markers in editor 
+          <ul>
+            <li>Color of squiggly lines</li>
+            <li>Vertical ruler icon</li>
+            <li>Appearance in overview ruler</li>
+          </ul>
+        </li>
+        <li> Experimental work items (may not surface in the milestone build)</li>
         <ul>
           <li> Dynamic linking of Java editors (may not surface in the milestone 
             build)</li>
+          <li>Folding of methods, import statements, Javadoc comments</li>
         </ul>
       </ul>
-	  <h4>Vacation</h4>
-   </tr> 
+      <h4>Vacation</h4>
+  </tr> 
   <tr> 
     <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Resolution 
         </font></font></b></td>
