@@ -26,7 +26,7 @@ plugin.xml files. The effort and the document is a spin-off of the
 <a href="../refactoring/participants.html">refactoring participant</a>
 work for which the presented solution got implemented. Feedback is
 strongly encouraged and may be provided on the ?? mailing list.
-<p>Last modified: November 28, 2003</p>
+<p>Last modified: December 1, 2003</p>
 <h3>Motivation</h3>
 <p>One of JDT's plan item is to provide support for other plug-ins to
 participate in operations like refactoring (e.g. rename, move, delete,
@@ -166,7 +166,7 @@ like this:</p>
 
   public Object invoke(Object receiver, String method, Object[] args) {
     IResource resource= (IResource)receiver;
-    if (PROPERTY_MATCHES_PATTERN.equals(method)) { //$NON-NLS-1$
+    if (PROPERTY_MATCHES_PATTERN.equals(method)) {
       String fileName= resource.getName();
       StringMatcher matcher= new StringMatcher((String)args[0], false, false);
       return Boolean.valueOf(matcher.match(fileName));
@@ -209,7 +209,7 @@ IWorkspace.validateName looks as follows:</p>
   &lt;string&gt;FILE&lt;/string&gt;
 &lt;/test&gt;</pre>
 </blockquote>
-<p>Instead of wrappering existing methods with a type extender there
+<p>Instead of wrapping existing methods with a type extender there
 could be a default type extender that uses reflection to call the
 method. Doing so will support testing if a Java method (and object of type org.eclipse.jdt.core.IMethod) is a main method without providing a special type extender for Java methods.
 IMethod already provides a method isMainMethod(). An additional advantage
@@ -251,7 +251,7 @@ evaluates refactoring participants provides the follow variables:</p>
 	is active. Is an alias for the variable selection.</li>
 </ul>
 <p>If the variable doesn't exist, the with expression will throw a core exception. Analogous to the test expression a type extender can be used to
-allow contributers to extends the set of available variables.</p>
+allow contributors to extends the set of available variables.</p>
 <p>Most of the time child expression will be combined using the and
 operator. To avoid deep nesting XML &quot;and&quot; will be the default
 for combining children. It can therefore be omitted. The same applies to
@@ -349,8 +349,7 @@ element. Its use is as follows:</p>
 <p><u><i>Extension Point Schema</i></u></p>
 <p>PDE supports to check the syntax of an extension point contribution.
 To do so the extension point provider has to provide a XML schema file
-that defines the point's structure. To define a schema for the common
-expression language support the following schema elements is needed:</p>
+that defines the point's structure. PDE currently supports a subset of the schema language provided by W3C. Due to the fact, that the set of expressions is open (in contrast to the expression language provided by Platform/UI) the following schema concepts have to be supported by PDE to enble schema validation for the common expression language:</p>
 <ul>
 	<li><a href="http://www.w3.org/TR/xmlschema-0/#SubsGroups">substitution
 	groups</a>: to be able to define composite expression like and, or,
@@ -359,12 +358,7 @@ expression language support the following schema elements is needed:</p>
 	elements and extension</a>: to define the inheritance relationship
 	between the XML expression elements.This is a prerequisite to be able
 	to use substitution groups.</li>
-	<li><a href="http://www.w3.org/TR/xmlschema-0/#SchemaInMultDocs">schema
-	inclusion</a>: to be able to reuse the schema of the common expression
-	languages in schema files for concrete extension points.</li>
-</ul>
-The expression language implemented by Platform/UI provides a schema.
-<h4><a name="converting">Converting XML elements into expressions</a></h4>
+</ul><h4><a name="converting">Converting XML elements into expressions</a></h4>
 <p>Having a set of common expressions is not enough. We also need a
 mechanism to convert XML elements into expressions. The platform already
 converts XML elements into configuration elements while reading plug-in
