@@ -1,43 +1,36 @@
+Current shortcomings of the current operation model in Eclipse. 
+I'm hoping that the "Support background activity" effort can be used to bring solutions into this area.
 
-Section added by MA:
-Current shortcomings of the operation model in Eclipse.  I'm hoping that the "Support
-background activity" efford can be used to bring solutions into this area.
-
-1. To have a progress monitor that can be cancelled, an operation can not
-be run in the display thread but has to be forked (see IRunnableContext.run).
+1. To have a cancelable progress monitor an operation can not be run in the display thread but has to be forked (see IRunnableContext.run).
 
 2. There is a lot of functionality in the workbench which is bound to the display thread.
-Even some model operations have to run in the display thread as the document is directly
-coupled with the text widget. There is no real documentation (afaik) about which calls
-can or cannot be invoked in a non-UI thread.
+Even some model operations have to run in the display thread as the document is directly coupled with the text widget. There is no real documentation (AFAIK) about which calls can or cannot be invoked in a non-UI thread.
 
-3. To use functionality as described in 2., but to still have a progress monitor, a trick
-can be used to slice the operation in smaller parts that are then run from the forked
-thread but called using syncExec. 
+3. To use functionality as described in 2. but to still have a progress monitor, a trick to work around 1. is to slice the operation in smaller parts that are run using syncExec from the forked thread.
 Example is OrganizeImportsAction on a project
 
-4. Operations usually are run as an atomic workspace operation using IWorkspace.run so
-that all resource deltas are folded and only broadcasted at the end of an operation.
-An (undocumented) restriction of the current implementation is that folding is
-bound to the thread where the operation was called. So if an operation uses the method
-described in 3., folding happens only for deltas issued in the forked thread. All
-deltas resulting from functionality that is run with syncExec are not folded but
-broadcasted immediately.
+4. Operations usually are run as an atomic workspace operation using IWorkspace.run so that all resource deltas are folded and only broadcasted at the end of an operation.
+An (undocumented) restriction of the current implementation is that folding is bound to the thread where the operation was called. So if an operation uses the trick described in 3., folding happens only for deltas issued in the forked thread. All deltas resulting from functionality that is run with syncExec are not folded but broadcasted immediately: Operations using method 3. are resulting in flashing of views.
 
-5. JavaCore also allows folding of it Java element deltas, but to do this, JavaCore.run
-has to be used instead of IWorkspace.run.
+5. JavaCore also allows folding of it Java element deltas, but to do this, JavaCore.run has to be used instead of IWorkspace.run. I think this should be reviewed as it forces clients to know JavaCore in order to have Java operations folded.
 
-6. In the past we were hit by several deadlocks. Most of them occurred because there
-was no defined lock ordering. We should have a design document that defines how locks
-must be used.
+6. In the past we were hit by several deadlocks. Most of them occurred because there was no defined lock ordering. We should have a design document that defines how locks must be used.
 
-7. We don't know the rules that should apply to resource change listeners. They process
-the deltas and as a result have to do some update work like refreshing a view. Can this
-operation be directly invoked? It has to be asumned that we're not in the display thread
-so the a refresh has run using syncExec. This is dangerous as it can lead to a deadlock.
+7. We don't know the rules that should apply to resource change listeners. They process the deltas and as a result have to do some update work like refreshing a view. Can this operation be directly invoked? It has to be assumed that we are not in the display thread so e.g. a viewer refresh has run using syncExec. This is dangerous as it can lead to a deadlock: The display thread could be waiting for the workspace lock.
 So in most cases we decide to 'post' the refresh. 
 
-8. In the scenarion decribed in 7., we want to post a result of a resource listener. The
-problem is that asycExec only works correctly if the listeners were called in the display thread.
-If it occured in a forked thread, the operation posted with asycExec will be invoked when
-the forked operation probes the progress monitor: In the middle of the forked operation.
+8. In the scenario described in 7., we want to post a result of a resource listener. The problem is that asycExec only works correctly if the listeners were called in the display thread.
+If it occurred in a forked thread, the operation posted with asycExec will be invoked when the forked operation probes the progress monitor: In the middle of the forked operation.
+
+Ideas for solutions:
+a.) Solve 1. (Have a progress monitor that is cancelable even when operation runs in display thread), and define that all operations have to be run in the display thread.
++ no deadlocks as described in 7., resource listeners can use syncExec to update
++ problem 8 is solved
++ no problems as described in 4
+- UI is not repainted while in an operation
+
+b.) core resources should offer an infrastructure for client locks. The infrastructure makes sure that a client lock only can be retrieved when the workspace lock is owned.
+
+c.) Don’t do 1.) but offer a better environment for forked operations:
+Facility to post behind an operation
+Facility to merge folded deltas when a Runnable has to be executed in syncExec.
