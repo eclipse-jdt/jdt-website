@@ -576,11 +576,11 @@
     </tr>
     <tr>
       <td>Typing</td>
-      <td>works, angular bracket auto-insertion</td>
+      <td>partially works, angular bracket auto-insertion</td>
       <td>not applicable</td>
       <td>not affected</td>
       <td>not applicable</td>
-      <td>not started, double-click strategy should be @-aware.</td>
+      <td>works, double-click strategy is @-aware.</td>
       <td>not applicable</td>
       <td>not affected</td>
       <td>not affected</td>
@@ -627,8 +627,9 @@
       <td>not applicable</td>
       <td>works (enum keyword is colored)</td>
       <td>works. Consider coloring enum constants differently (semantic coloring).</td>
-      <td>works (<tt>@interface</tt> keyword is colored)</td>
-      <td>does not work: references to annotations are not colored.</td>
+      <td>works (<tt>@  interface</tt> is colored)</td>
+      <td>works (<tt>@  Deprecated</tt> is colored). See bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=82452 for what's missing (P4)<br>
+      			value assignments are rendered as abstract method invocations by semantic coloring.</td>
       <td>Consider coloring autoboxing (semantic coloring).</td>
       <td>Consider coloring static imports (semantic coloring).</td>
       <td>&nbsp;</td>
@@ -672,7 +673,7 @@
     </tr>
     <tr>
       <td>Templates</td>
-      <td>need templates for enhanced for loop, typed iterators etc.</td>
+      <td>completed: enhanced for loop, awaiting: typed iterators etc.</td>
       <td>not applicable</td>
       <td>enum templates, e.g. for a switch statement?</td>
       <td>not applicable</td>
