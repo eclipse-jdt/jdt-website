@@ -358,19 +358,15 @@
 			<a NAME="Milestone_Planning">
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
 				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			M3 Milestone Plan</font></font></b></td>
+			M5 Milestone Plan</font></font></b></td>
 			</a>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Overall goals for M4</b>
+			<td><b>Overall goals for M5</b>
 			<ul>
-				<li>Clean-up text edit infrastructure and move it to
-				org.eclipse.text plug-in.</li>
-				<li>Finish migration to new working copy support</li>
-				<li>Define refactoring requirements regarding locking of resources
-				and execution of IWorkbenchRunnables.</li>
+				<li>Progress on API for both AST Rewrite and Refactoring.</li>
 			</ul>
 			</td>
 		</tr>
@@ -383,24 +379,14 @@
 				<li>testing (6 days)</li>
 				<li>bug fixing (16 days)</li>
 			</ul>
-			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>General</b>
 			<ul>
-				<li>migrate to new working copies (3 days)</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Improve User Experience</b>
-			<ul>
-
-				<li>Simplify filter management in JDT views by providing MRU list (2 days)</li>
+				<li>XML parsing remove dependency on xerces and use JDK 1.4 XML parsing APIs (1 day)</li>
+				<li>Investigate in support for RCP API changes (migration to removed API methods) (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -417,7 +403,6 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-
 			<td><b>JDT Text</b>
 			
       <ul>
@@ -441,20 +426,13 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Compare</b>
-			<ul>
-				<li>investigate using text edits for patch (3 days)
-				<li>investigate in ui/core split for compare (1 days)</li>
-			</ul>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Search</b>
 			<ul>
 
-				<li><img src="../images/ok.gif" nosave="" height="10" width="10" border="0"> provide regex support in search (requires 1.4 JDK) (1 day)</li>
-				<li>provide responsive text search (10 days)</li>
+				<li>Improve global search/replace (bug 24008) (5 days)</li>
+				<li>Progress on new search: hierarchical resource and Java result page (10 days)</li>
+				<li>Initial definition of new Search API, investigate in compatibility layer for existing searches (5 days)</li>
+				<li>Work on search index API with JDT core (3 days)</li>
 			</ul>
 		</tr>
 		<tr>
@@ -462,9 +440,9 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Code Manipulation</b>
 			<ul>
-				<li>convert JDT/UI to use new formatter (this doesn't include new
-				formatter preference page(s)) (4 days)</li>
-				<li>support filtering for code assist and organize imports (3 days)</li>
+				<li>work with JDT core on AST Rewriting API (10 days)</li>
+				<li>Preference settings for new formatter (20 days) </li>
+				<li>Quick fix improvements (quick fix for Javadoc tags) (5 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -473,32 +451,15 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Refactoring</b>
 			<ul>
-
-				<li>move text edit infrastructure to org.eclipse.text (5 days)</li>
-				<li>provide scalable enablement implementation for processors and
-				participants (5 days)</li>
-				<li>define refactoring requirements regarding resource locking and
-				execution of runnables (5 days)</li>
-				<li>investigate in moving refactoring change infrastructure to new
-				org.eclipse.core.filebuffers plug-in (3 days)</li>
-				<li>implement introduce paramter refactoring (10 days)</li>
-				<li>support moving of static member types (3 days)</li>
-				<li>improve change method signature refactoring (4 days)
+				<li>proposal for general XML expression evaluation support (5 days)</li>
+				<li>improve refactorings for local types (5 days)</li>
+				<li>start working on refactoring API (10 days)</li>
+				<li>improve change method signature refactoring (5 days)
 				<ul>
 					<li>support exceptions</li>
-					<li>allow rename of method</li>
-					<li>renaming equal parameters in reimplementation</li>
+					<li>support method renaming</li>
 				</ul>
 				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td style="vertical-align: top"><b>Build Path</b>
-			<ul>
-				<li>simplify creation and management of library projects. (3 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -509,8 +470,7 @@
 			<ul>
 				<li>JDT/Core
 				<ul>
-					<li>formatter API</li>
-					<li>handle stable working copies &amp; type hierarchies</li>
+					<li>Reconciling and validating Javadoc tags</li>
 				</ul>
 				</li>
 				<li>Platform/Text
@@ -523,7 +483,6 @@
 					<li>enriched file buffer listener support</li>
 				</ul>
 				</li>
-				<li>provide feedback on the generic navigator prototype (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -531,21 +490,15 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Other</b>
-			<ul>
-				<li>work on integrating Safari Web-Kit into SWT Browser widget (2
-				days)</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>military service 10 days</li>
-				<li>vacation 12 days</li>
-				<li>conference 5 days</li>
+				<li>military service 15 days</li>
+				<li>vacation 20 days</li>
+				<li>conference 15 days</li>
+			</td>
+				
+				
+				
 			</ul>
 			</td>
 		</tr>
@@ -572,10 +525,7 @@
 					href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
 				Prerequisite plug-ins are already referenced on the project build
 				path ( <code>.classpath</code> file).</li>
-				<li>The sources of this project are currently either 1.3 or 1.4
-				compatible, however the compiler compliance setting should be set to
-				1.3. Eclipse 3.0 will make use of JDK 1.4, but the conversion hasn't
-				taken place yet.</li>
+				<li>The sources of this project require JDK 1.4.</li>
 
 			</ul>
 			</td>
