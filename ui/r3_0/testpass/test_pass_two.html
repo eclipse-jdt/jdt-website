@@ -62,7 +62,7 @@ workspace style:</p>
 	<li>use multiple output folder (Danny)</li>
 	<li>use combination of exclusion &amp; inclustion filters (Christof)</li>
 	<li>use user defined library containers (JUnit as a user defined
-	library) (Michael, Dani)
+	library) (Michael, Carolyn)
 	<ul>
 		<li>quick fixes for unbound user libraries</li>
 		<li>quick fixes for build path problems</li>
@@ -88,7 +88,7 @@ workspace style:</p>
 	<li>watch for wrong window poping to front</li>
 	<li>watch for wrong dialog parenting</li>
 </ul>
-<h3>Multiple Editor Areas (Martin, Dani, Christof, Danny)</h3>
+<h3>Multiple Editor Areas (Martin, Carolyn, Christof, Danny)</h3>
 <ul>
 	<li>test with multiple editor areas, i.e. multiple editor tab folders</li>
 	<li>watch for focus problems</li>
@@ -98,7 +98,7 @@ workspace style:</p>
 <ul>
 	<li>half of the team tests in browsing perspective</li>
 </ul>
-<h3>Automatic workspace refresh (Martin, Michael, Dani, Thomas)</h3>
+<h3>Automatic workspace refresh (Martin, Michael, Carolyn, Thomas)</h3>
 <ul>
 	<li>half of the team tests wth automatic workspace refresh enabled
 	(Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
@@ -119,7 +119,7 @@ workspace style:</p>
 	</ul>
 	</li>
 </ul>
-<h3>Hierarchical Layout in Package Explorer and Packages View (Dani, Michael)</h3>
+<h3>Hierarchical Layout in Package Explorer and Packages View (Thomas)</h3>
 <ul>
 	<li>test add and delete of package<font color="#000000"></font></li>
 	<li>test add and remove of compilation units to empty leaf and non leaf
@@ -128,7 +128,7 @@ workspace style:</p>
 	package, ....)</li>
 	<li>test logical packages in packages view</li>
 </ul>
-<h3>Operations and Locked Workspace (Thomas, Danny)</h3>
+<h3>Operations and Locked Workspace (Danny)</h3>
 <ul>
 	<li>To lock the workspace use the org.eclipse.ui.examples.job plug-in
 	from the Eclipse repository</li>
@@ -140,7 +140,7 @@ workspace style:</p>
 	<li>Cancel the user action. Make sure that no OperationCancelException
 	or other exceptions appear in the log</li>
 </ul>
-<h3>Validate-Edit (Christof, Michael)</h3>
+<h3>Validate-Edit (Michael)</h3>
 <ul>
 	<li>Check-out code from the repository in CVS Watch/Edit mode (stores
 	file in read-only mode)</li>
@@ -160,7 +160,7 @@ workspace style:</p>
 	</li>
 	<li>Expected result: actions should complete without errors</li>
 </ul>
-<h3>Search - enhanced (Dani, Andre)</h3>
+<h3>Search - enhanced (Dirk)</h3>
 <ul>
 	<li>Removing selected matches from the tree view: make sure the correct
 	items are removed.</li>
@@ -198,7 +198,7 @@ workspace style:</p>
 	</li>
 </ul>
 
-<h3>JUnit - enhanced (Dirk, Thomas) </h3>
+<h3>JUnit - enhanced (Thomas) </h3>
 <ul>
 	<li>run a single test method</li>
 	<li>run a single test</li>
@@ -206,13 +206,13 @@ workspace style:</p>
 	<li>change lanuch configs from single test to all tests and vice versa</li>
 	<li>generating of test cases using the test case wizard</li>
 </ul>
-<h3><font color="#000000">Workspace compatibility (Danny, Tom)</font></h3>
+<h3><font color="#000000">Workspace compatibility (Danny)</font></h3>
 <ul>
 	<li>upgrade a 2.1 workspace to 3.0</li>
 	<li>ensure that all settings are migrated/taken correctly (except code formatter)</li>
 </ul>
 
-<h3>Javadoc (Christof &amp; Martin)</h3>
+<h3>Javadoc (Christof)</h3>
 <ul>
 	<li>Javadoc for libraries (rt.jar) class, source folders
 	<ul>
@@ -223,7 +223,7 @@ workspace style:</p>
 	<li>Generation of Javadoc (use of Export to Javadoc)</li>
 </ul>
 
-<h3>Refactoring (Danny, Tom)</h3>
+<h3>Refactoring (Danny)</h3>
 <ul>
 	<li>Test refactoring undo/redo
 	<ul>
@@ -247,7 +247,7 @@ workspace style:</p>
 	</ul>
 	</li>
 </ul>
-<h3>Source Actions (Thomas, Dani)</h3>
+<h3>Source Actions (Michael)</h3>
 <ul>
 	<li>Sanity check source actions (Override/Implements, Generate
 	getter/setter, Generate Delegate methods, Constructor using fields, Add
@@ -258,7 +258,7 @@ workspace style:</p>
 	<li>Sort Members actions: check sorting members within a category by
 	visibility</li>
 </ul>
-<h3>Compilation Units not on Build Path (Michael, Dirk)</h3>
+<h3>Compilation Units not on Build Path (Michael)</h3>
 <ul>
 	<li>Test Edit, Source and Refactoring actions for compilation units not
 	on the build path.</li>
@@ -273,13 +273,15 @@ workspace style:</p>
 	present a dialog that the CU is not on the build path</li>
 </ul>
 
-<h3>Compare (Martin, Christof)</h3>
+<h3>Compare (Martin)</h3>
 <ul>
 	<li>exercise &quot;Compare with Each Other&quot; on files with
 	different encodings</li>
 	<li>exercise &quot;Compare with Each Other&quot; and new Progress
 	Services: compare large folder hierarchies containing large files with
 	lots of differences</li>
+	<li>exercise &quot;Compare with local history&quot; on files with different explicit and implicit encodings (see bug #59232 which contains test data; please note that due to platform limitation #61986 the local history isn't able to track encoding changes over time; the encoding of a history entry is always the same as the underlying resource)</li>
+	<li>Mac OS X: test fast scrolling of large files and moving the sashes in the Compare editor (see bug #55876 and #65205 for details).</li>
 </ul>
 <h3><font color="#000000"></font>Additional text items</h3>
 <h4>New editor functionality</h4>
@@ -287,7 +289,7 @@ workspace style:</p>
   editor. In case of selection changing action check whether selection sensitive 
   actions such as 'cut' get enabled/disabled and the caret indication in the status 
   line gets updated.</p>
-<h5>Block 1 (Dirk, Tom)</h5>
+<h5>Block 1 ( Tom)</h5>
 <ul>
   <li>move lines</li>
   <li>copy lines on move</li>
@@ -310,7 +312,7 @@ workspace style:</p>
   <li>override indicators</li>
   <li>mark occurrences</li>
 </ul>
-<h5>Block 2 (Dani, Thomas)</h5>
+<h5>Block 2 (Carolyn)</h5>
 <ul>
   <li>quick diff</li>
   <li>semantic syntax highlighting
@@ -341,7 +343,7 @@ workspace style:</p>
     </ul>
   </li>
 </ul>
-<h5>Block 3 (Michael, Andre)</h5>
+<h5>Block 3 (Carolyn, Christof)</h5>
 <ul>
 	<li>Folding
 	<ul>
@@ -371,7 +373,7 @@ workspace style:</p>
 	</ul>
 	</li>
 </ul>
-<h4>File buffers with annotation model suport (Christof, Martin)</h4>
+<h4>File buffers with annotation model suport (Martin)</h4>
 <ul>
 	<li>files open in multiple, different editors, check hot updating of
 	content and annotations</li>
@@ -385,7 +387,7 @@ workspace style:</p>
 	</ul>
 	</li>
 </ul>
-<h4>Memory scenarios (Michael, Tom)</h4>
+<h4>Memory scenarios (Carolyn)</h4>
 <ul>
 	<li>Replace all 'e' by xxx in a larger file in the default editor and
 	Java editor</li>
