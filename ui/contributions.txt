@@ -1,0 +1,55 @@
+Things to remember when contributing code to jdt ui:
+
+- legal issues: all code/icons/doc etc. that is _not_ authored by the contributor should be 
+   indicated as such. we then need PMC approval, about.html etc. Ideally, there's no third-party code in the contribution.
+   
+- all files should have appropriate copyright notices, indicating the original contributor
+  The triggering bug report number is good to have, for easier tracking.
+  
+- code had to adhere to jdt ui's naming convention 
+(ideally, also to our style conventions, like compact assignments, but that it harded to enforce or check)
+
+- the contributor should write junit test cases and contribute them as well
+
+- for new views: all 1-view specific settings should be located as close to the view as possible. Often, 
+the view's dropdown manu (the triangle) is the right place.
+
+- for new views: adapters should be used, and standard jdt ui actions groups (ccp, source, refactor etc) added.
+
+- exceptions should be handled by using JavaPlugin or ExceptionHandler classes
+
+- general: no RuntimeExceptions or Errors should be caught in the code
+
+- in general, code should adhere to out 'endgame' standards: 
+   --no calls to System.out.println 
+   --no use of internal API
+   --no illegal subclassing of API classes
+
+   --no unused imports [compiler opt], 
+   --no unused private members [compiler opt], 
+   --no ignored exceptions [compiler opt],
+   --no non-nls strings [compiler opt],
+   --no use of deprecated API [compiler opt]
+   --no methods with constructor name [compiler opt]
+   --no static references made in a non-static way [compiler opt]
+   --no 'methods overriden but package visible' [compiler opt]
+   --no hidden catch blocks [compiler opt]
+   --no-op assignments [compiler opt]
+   --no unreachable code [compiler opt]
+   --no unresolved imports [compiler opt]
+   --etc.
+
+- all translatable strings should be externalized - also plugin.xml
+(note that .properties files should include copyright notices as well)
+
+- all actions, views, dialogs should have help context ids and register them
+
+- key bindings should not be hard-coded (by KeyListeners) - instead, the platform mechanism should be used
+
+- when appropriate, IJavaElements should be displayes using JavaElementLabel provider. That way, they look consistent.
+
+- all menu entries, labels in dialogs etc should have unique mnemonics
+
+- all menu entries, toolbar tooltips, etc should use chapter capitalization 
+(note that it's ok to capitalize a short word if it's the last in the label)
+
