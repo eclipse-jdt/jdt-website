@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="IBM WebSphere Studio">
+<TITLE>M6LeakPass.html</TITLE>
+</HEAD>
+<BODY>
+<H1>Scenarios for finding leaks in M6</H1>
+<P>The following are the scenarios that have been checked for leaks. The method used to check for leaks was to execute the scenario in question, then manually look for leaking objects with a heap analysis tool. </P>
+<H2>Views</H2>
+<P>checked all views contributed by ZRH. The scenario was: </P>
+<UL>
+	<LI>Open View</LI>
+	<LI>Close View</LI>
+	<LI>Check that the view (and associated objects) have gone away.</LI>
+</UL>
+<P>The following views have been checked: Package Navigator, Type Hierarchy, Projects, Packages, Types, Members, Call Hierarchy, Declaration, Javadoc, Search.</P>
+<H2>Perspectives</H2>
+<P>The three perspectives Java, Java Browsing and Type Hierarchy have been checked with the following Scenario</P>
+<UL>
+	<LI>Open the perspective</LI>
+	<LI>Close the perspective</LI>
+	<LI>Check that the perspective object has gone away.</LI>
+</UL>
+<H2>Smoke Test</H2>
+<P>Followed the JDT Smoke Test up to (but not including) the editing section, inspecting the heap after each step. Additionally, the following sections where checked for leaks:</P><UL>
+	<LI>
+	<P>Type Hierarchy Secion</P>
+	</LI>
+	<LI>Compare Section</LI>
+	<LI>Local History</LI>
+</UL>
+<H2>Editors
+</H2>
+<P>Opened and closed CompilationUnitEditor, ClassFileEditor and TextEditor and check that the editor instances went away.</P>
+<H2>Refactoring</H2>
+<P>Checked the following refactorings: Rename, Move, Inline, Extract method, Generalize Type. Checked that no TextChanges stick around and that the preview editor goes away.</P>
+<H2>Other</H2>
+<P>We also ran Eclipse in normal development for a day and inspected a heap dump afterwards.</P>
+</BODY>
+</HTML>
