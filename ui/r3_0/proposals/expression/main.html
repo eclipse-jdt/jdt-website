@@ -32,7 +32,7 @@ work for which the presented solution got implemented. Feedback is
 strongly encouraged and may be provided on the ?? mailing list.
 
 
-<p>Last modified: October 24, 2003</p>
+<p>Last modified: October 29, 2003</p>
 <h3>Motivation</h3>
 <p>One of the JDT plan items is to provide means for other plug-ins to
 participate in operations like refactoring (e.g. rename, move, delete,
@@ -99,7 +99,7 @@ ignore strange package names or extension point ids. As always you
 understand ideas better after you have written them down. Therefore the
 proposal contains some concepts not yet implemented or implemented in a
 different way.</p>
-<h4>Converting XML elements into expressions</h4>
+<h4><a name="converting">Converting XML elements into expressions</a></h4>
 <p>As already explained above this component is responsible for
 converting XML elements into expressions. The component is formed by the
 following types:</p>
@@ -116,47 +116,49 @@ following types:</p>
 	a list of element handlers. The expression creator is responsible for
 	converting an IConfigurationElement into an expression.</li>
 </ul>
-<p><i>TBD: give an example of an IElementHandler implementation and how
-an configuration element is converted. Note that this opens the set of
-expressions. So if we would like to add beanshell support in the future
-this can be done by a new expression element
-&lt;beanshell&gt;statements....&lt;/beanshell&gt;.</i></p>
-<p>The approach of converting &quot;existing&quot; configuration
+<p>A typicall element handler looks like follows:</p>
+<pre><font size="-1">public class StandardElementHandler implements IElementHandler {
+	public Expression create(IConfigurationElement element, ExpressionCreator creator) throws CoreException {
+		String name= element.getName();
+		if (TestExpression.NAME.equals(name)) {
+			return new TestExpression(element);
+		} else if (OrExpression.NAME.equals(name)) {
+			OrExpression result= new OrExpression();
+			creator.processChildren(result, element);
+			return result;
+		} else if (AndExpression.NAME.equals(name)) {
+			AndExpression result= new AndExpression();
+			creator.processChildren(result, element);
+			return result;
+		} else if (NotExpression.NAME.equals(name)) {
+			return new NotExpression(creator.parse(element.getChildren()[0]));
+		}
+		return null;
+	}
+}</font></pre>
+<p>The plug-in that defines an extension point, also determines the set of valid expressions that can be used by a contribution. Internally, the plug-in defining the extension point passes a collection of IElementHandlers to the expression creator. So plug-ins contributing to an extension point can't dynamically add and use new expression types. However, the current implementation allows adding such a support in the future if necessary. If we do so, the case that the plug-in providing a special expression type isn't loaded yet, must be handled. This can be done by creating a proxy expression that returns NOT_LOADED in the case that the class implementing an expression can't be instantiated. Note, that the standard XML expression <a
+	href="#test_expression">&lt;test .../&gt;</a> has support to dynamically add special test methods. From my experiences this seems to be sufficient.</p><p>The approach of converting existing configuration
 elements into expressions has the disadvantage that both structures have
 to be managed and that both consume memory. The following proposals may
 handle this disadvantage:</p>
 <ol>
 	<li type="1">we live with this situation.</li>
-	<li type="1">after a tree of configuration elements has been converted
-	into the corresponding expression the root configuration element gets
-	replaced with one keeping only a reference to the expression (not to
-	the config element children). The problem with this approach is that
-	the config tree structure doesn't fully reflect the content of the
-	plugin.xml file anymore. But since extension points are typically only
-	interpreted by the plugin that defines the extension point this
-	shouldn't cause any harm. Additionally the conversion doesn't take
-	place automatically so it is fully backwards compatible.</li>
 	<li type="1">the plug-in registry converts XML elements representing
 	expressions into a corresponding expression tree while reading the
 	plug-in XML file. This ensures minimal memory consumption and a nice
 	API for clients (they can directly call a method getExpression()). But
 	to avoid unnecessary plug-in loading during registry creation the set
-	of expressions must be fixed so that they are known to the component
-	creating the registry.</li>
+	of expressions must be fixed for all extension points or the mechanism uses proxies as outlined above as well.</li>
 	<li type="1">the configuration element itself (or a special subclass)
 	offers a method to convert the element and its children into a
-	corresponding expression. This can be done by either passing an
-	expression creator explicitly or by managing expression creators and/or
-	element handlers via extension points. Pluggability raises the issue
-	what to do if the plug-in providing a special handler isn't loaded yet.
-	This would result in the fact that the whole expression can't be
-	created (and therefore not evaluated) or that we have to create some sort of proxies which fail
-	during evaluation. Due to the fact that most enablement expressions evaluate to false (due to unmatching instanceof checks) expression should be evaluatable whenever possible.</li>
+	corresponding expression. A possible API could be IConfigurationElement.convertToExpression(ExpressionCreator creator) to convert the config element and a method IConfigurationElement.getExpression() to access it. If the element hasn't been converted yet, getExpression() returns null. The problem with this approach is that
+	the config tree structure doesn't fully reflect the content of the
+	plugin.xml file anymore. But since extension points are typically only
+	interpreted by the plugin that defines the extension point this
+	shouldn't cause any harm. Additionally the conversion doesn't take
+	place automatically so it is fully backwards compatible.</li>
 </ol>
-<p>I am not sure, which solution to propose. I &quot;currently&quot;
-prefer 4a. This means: the set of XML elements/expression is in general
-open, but limited per extension point by the plug-in defining the
-extension point.</p>
+<p>I personally opt for solution 3.</p>
 <h4>Standard XML expression language</h4>
 
 <p>An examination of the existing &quot;expression languages&quot;
@@ -167,7 +169,7 @@ expression creator and element handlers.</p>
 <p><i><u>Boolean operators</u></i></p>
 <p>The expression language provides standard expressions for the Boolean
 operators and, or and not.</p>
-<p><u><i>Test expression</i></u></p>
+<p><u><i><a name="test_expression">Test expression</a></i></u></p>
 <p>One of the most used expression in current XML files is the one to
 test a certain property of an object, including instance of checks. They
 are either represented by a XML element (for example the XML element
@@ -187,7 +189,7 @@ to test must be open. To avoid the drawbacks associated with
 IActionFilters listed above a new mechanism was implemented. The major
 characteristics of this mechanism are:</p>
 <ul>
-	<li>new properties are implemented by a extender which gets contributed
+	<li>new properties are implemented by an extender which gets contributed
 	to a specific type</li>
 	<li>the extender and its methods are defined in XML. This is necessary
 	to know if an extender provides a certain property test method but the
@@ -216,7 +218,7 @@ following way:</p>
 </ul>
 
 <p>The implementation of a type extender is comparable to the
-implementation of a IActionFilter, except that more than one argument
+implementation of an IActionFilter, except that more than one argument
 can be passed and that the signature is Object and not String based. For
 concrete implementations have a look at subclasses of TypeExtender.</p>
 <p>An XML expression using one of the new properties might look like:</p>
@@ -231,7 +233,7 @@ additional classes TypeExtension which acts as a facade and the private
 classes ITypeExtender, TypeExtenderDescriptor, Method and LRUCache.
 These classes are responsible for lazily creating a hierarchy of type
 extenders and to cache the least-recently used properties.</p>
-<p>Sometime a property test needs more than one arguments. In this case the attribute args instead of value can be used to pass a comma separated list of arguments. Due to the nature of XML (attribute values are strings), the set of literals is limited to the following items:</p>
+<p>Sometime a property test needs more than one arguments. In this case the attribute args instead of the attribute value can be used to pass a comma separated list of arguments. Due to the nature of XML (attribute values are strings), the set of literals is limited to the following items:</p>
 <ul>
 	<li>Boolean: false and true.</li>
 	<li>Integer: as in Java</li>
@@ -268,14 +270,17 @@ extenders and to cache the least-recently used properties.</p>
 </blockquote>
 </blockquote>
 
+<p>The implementation of the type extender will easily allow dispatching non found methods to the element itself using the Java reflection mechanism. Doing so will support testing if an instance of IType</p>
+<blockquote><pre>&lt;test property=&quot;isInterface&quot;/&gt;</pre></blockquote>
+<p>is an interface without providing a special type extender for Java types (IType already provides a method isInterface). This has the advantage that only those test methods must be provided by a type extender which aren't already present in Java code. Additionally it results in more tests that can be evaluated if plug-ins aren't loaded yet (the class of the element to be tested is already loaded since an instance exists). I did some performace measurements: dispatching one million method calls via reflaction takes 250ms on my PC, dispatching the same number of methods via a type extender takes 50ms. Given these numbers and the advantages of such an support I opt to add it.</p>
 <p><i><u>With expression</u></i></p>
-<p>As noted above the test expression operates on a default element. This default element is in most cases a collection of the selected elements and are provided by the plug-in that evaluates the extension point contribution. However the enablement logic of some extension points need to test other objects as well. The with expression can be used to change the default element:</p>
+<p>As noted above the test expression operates on a focus/default element. This default element is in most cases a collection of the selected elements and are provided by the plug-in that evaluates the extension point contribution. However the enablement logic of some extension points need to test other objects as well. The with expression can be used to change the default element:</p>
 <blockquote><pre>&lt;with variable=&quot;affectedProjects&quot;&gt;
   &lt;iterate operator=&quot;or&quot;&gt;
      &lt;test property=&quot;hasNature&quot; value=&quot;org.eclipse.jdt.core&quot;/&gt;
   &lt;/iterate&gt;
 &lt;/with&gt;</pre></blockquote>
-<p>As for test attributes a type extender can be used to provide the necessary Java code to compute a new variable.</p>
+<p>If the variable doesn't exist, the with expression evaluates to false. As for test expression a type extender can be used to provide the necessary Java code to compute new variables.</p>
 <p><u><i>Adapt expression</i></u></p>
 <p>As noted in the motivation section it isn't sufficient to support
 IResource adaption only. To solve this porblem, an XML element of the
@@ -283,7 +288,7 @@ form:</p>
 <blockquote><pre>&lt;adapt type=&quot;org.eclipse.jdt.core.IType&quot;&gt;
   &lt;test property=&quot;hasMainMethod&quot;/&gt;
 &lt;/adapt&gt;</pre></blockquote>
-<p>is provided. This changes the element in focus to the one that is
+<p>is provided. This changes the element in focus to one that is
 adapted to the specified type. All child expressions of the adapt
 expression will then use the adapted object. If the element can't be
 adapted to the given type, the expression evaluates to false.</p>
@@ -294,12 +299,12 @@ class loading. The class loader of the plug-in containing the &lt;adapt
 type=&quot;...&quot;&gt; element is used to convert the class name into
 a <code>Class</code>. Therefore only required plug-ins might be loaded
 by this mechanism (no upcalls). Additionally, availability checks take
-place on user actions, hence no unnecessary plug-in loading takes place
+usually place on user actions, hence no unnecessary plug-in loading takes place
 on start-up.</p>
 <p><u><i>Dealing with collection of elements</i></u></p>
-<p>Lots of expressions are typically evaluated on a set of elements (for
+<p>Lots of expressions are typically evaluated on a collection of elements (for
 example refactoring participants, menu contributions, ..). Up to now the
-iteration over sets is implicitly coded into the enclosing XML element,
+iteration over collections is implicitly coded into the enclosing XML element,
 which isn't part of the expression itself. The new mechanism provides
 explicit expression elements to deal with collection of elements. The
 following element</p>
@@ -324,7 +329,7 @@ contribution can be described as follows:</p>
 attribute for the iterate element to avoid to many nested XML elements.</p>
 
 <h3>How to convert existing extension points</h3>
-<p>The enablement logic used for action contribution looks similar to the proposed solution. To avoid unnecassry proliferation the existing mechanism should be deprecated and the standard XML expression language should be used instead. The ensure backward compatibility the current action filters can be made accessable through type extenders in the following way:</p>
+<p>The enablement logic used for action contribution looks similar to the proposed solution. To avoid unnecassry proliferation the existing mechanism should be deprecated and the standard XML expression language should be used instead. To ensure backward compatibility the current action filters can be made accessable through type extenders in the following way:</p>
 <blockquote>
 <blockquote><pre>&lt;extension point=&quot;org.eclipse.jdt.typeExtenders&quot;&gt;
     id=&quot;org.eclipse.jdt.ui.IResourceTypeExtender&quot;
@@ -333,14 +338,27 @@ attribute for the iterate element to avoid to many nested XML elements.</p>
     class=&quot;org.eclipse.core.resources.ResourceExtender&quot;/&gt;
 &lt;/extension&gt;</pre></blockquote>
 </blockquote>
-<p>The implemenation of the resource extender can be an adapter to the existing resource action filter or a new implementation is provided. The adapter looks like follows:</p>
+<p>The implemenation of the resource extender can either be an adapter to the existing resource action filter or a new implementation is provided. The adapter looks like follows:</p>
 <pre>public class ResourceExtender extends TypeExtender {
     private WorkbenchResource fActionFilter;
     public Object invoke(Object receiver, String method, Object[] args) {
        return Boolean.valueOf(fActionFilter.testAttribute(receiver, method, (String)args[0]));
     }
 }</pre>
-<p>Additionally, corresponding XML elements have to be provided for &lt;objectClass&gt;, &lt;objectState&gt;, &lt;pluginState&gt; and &lt;systemProperty&gt;. The elements &lt;objectState&gt; and &lt;objectClass&gt; can be mapped to the &lt;test&gt; element. The elements &lt;pluginState&gt; and &lt;systemproperty&gt; can be implemented similar to the &lt;with&gt; and &lt;test&gt; elements. So Platform/UI only needs to provide corresponding expressions and a special element handler to convert the configuration elements into those expressions when reading the extension point contribution.</p>
+<p>Additionally, corresponding XML elements have to be provided for &lt;objectClass&gt;, &lt;objectState&gt;, &lt;pluginState&gt; and &lt;systemProperty&gt;. The elements &lt;objectState&gt; and &lt;objectClass&gt; can be mapped to the &lt;test&gt; element. The elements &lt;pluginState&gt; and &lt;systemProperty&gt; can be implemented similar to the &lt;with&gt; and &lt;test&gt; elements. So Platform/UI only needs to provide corresponding expressions and a special element handler to convert the configuration elements into those expressions when reading the extension point contribution.</p>
+
+<h3>Adding a new language</h3>
+<p>For really complex expression evaluation the proposed mechanism might not be sufficient. If this is the case, additional expression languages can be plugged in by encapsulating them as XML expression elements. For example bean shell support can be integrated using a new XML element &lt;beanshell&gt;. An example looks like this:</p>
+<pre>&lt;with variable=&quot;selection&quot;&gt;
+  &lt;test property=&quot;instanceof&quot; value=&quot;org.eclipse.jdt.core.IType&quot;&gt;
+  &lt;beanshell&gt;
+     IJavaElement parent= ((IType)selection).getParent();
+     if (parent .....) {
+        return true;
+     }
+     return false;
+  &lt;/beanshell&gt;
+&lt;/with&gt;</pre>
 
 <h3>The new Home</h3>
 <p>The last remaining question is, where to put this new mechanism.
@@ -352,9 +370,9 @@ expressions I see two possible solutions:</p>
 	package name is org.eclipse.core.expressions</li>
 	<li type="1">only the conversion mechanism is hosted by
 	org.eclipse.core.runtime. This is necessary to avoid doubling the
-	structure in memory as outlines in section &quot;Converting XML
-	elements into expressions&quot;. The standard XML expression language
-	can be located in a separate plug-in org.eclipse.core.expressions.</li>
+	structure in memory as outlined in section <a href="#converting">Converting
+	XML elements into expressions</a>. The standard XML expression language
+	is located in a separate plug-in org.eclipse.core.expressions.</li>
 </ol>
 <p>I opt for solution 2.</p>
 </body>
