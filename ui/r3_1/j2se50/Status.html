@@ -1,0 +1,1099 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>JDT_1.5_status</title>
+</head>
+<body>
+<table cellpadding="2" cellspacing="2" border="1"
+ style="text-align: left;">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Operation<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">&nbsp;Members
+in generics<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Generic
+Element</td>
+      <td style="vertical-align: top; text-align: center;">Enum<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Enum as <br>
+member<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Annotation<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Annotation
+as member<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Autoboxing<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Static Import<br>
+      </td>
+      <td style="vertical-align: top;">Varargs<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rename Type<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+done<br>
+JDT/Core bug: 79691<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test Cases:
+missing<br>
+JDT/Core bug: 79691<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top;">not affected<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rename Method<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (search only)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test Cases:
+partly done<br>
+JDT/Core bug: 80264</td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (search only)<br>
+Have to exclude special methods<br>
+like Enum.valueOf.(), ...<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+Open question is how references<br>
+are updated. Have to check <br>
+search engine result and ranges<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">Test cases: missing</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rename Field<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (search only)</td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (search only)</td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (depends on search only)</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work (depends on search only)</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rename Local<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work</td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work</td>
+      <td style="vertical-align: top; text-align: center;">Test cases:
+missing<br>
+should work</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">support missing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rename type parameter<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Move Type<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top;">not affected</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Move Method<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing<br>
+      </td>
+      <td style="vertical-align: top;">test cases missing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Move Static Member<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing<br>
+      </td>
+      <td style="vertical-align: top;">support missing</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Change Method Signature<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">should work<br>
+Test cases: missing<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">In Progress<br>
+Test cases: missing</td>
+      <td style="vertical-align: top; text-align: center;"> should work<br>
+Test cases: missing</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">disable, not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;">in progress: <br>
+test cases missing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Convert Anonymous to Nested<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Move Member Type to New File<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Push Down<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">no support
+for moving members between enums. Doesn't work for anonymous classes
+either. So no critical.</td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">no support
+for moving members<br>
+between annotations. Doesn't work for interfaces either. So not critical<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">support
+missing<br>
+      </td>
+      <td style="vertical-align: top;">support missing </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Pull Up<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done for
+enums as member<br>
+no support yet for moving members between enums</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done for
+annotations as member<br>
+no support yet for moving <br>
+members between enums</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing</td>
+      <td style="vertical-align: top;">support missing </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Extract Interface<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">partly done.
+Can extract generic interface, however use super type where possible
+doesn't replace all possible matches<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing</td>
+      <td style="vertical-align: top;">support missing </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Generalize Type<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Use Supertype where possible<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Test Cases:
+missing<br>
+should work<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">support
+missing</td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Inline Method<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">support
+missing</td>
+      <td style="vertical-align: top; text-align: center;">support
+missing<br>
+      </td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Extract Method<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">+<br>
+      </td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Inline Local<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Extract Local<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Inline Constant<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Extract Constant<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Introduce Parameter<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Introduce Factory<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Convert Local Variable to Field<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started<br>
+disallow: <br>
+&lt;T&gt; void foo() { T local; }<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Encapsulate Field<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done</td>
+      <td style="vertical-align: top; text-align: center;">+<br>
+      </td>
+      <td style="vertical-align: top;">not affected </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Organize import</td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started. Problems are annotation references e.g. @annotation("Eclipse).<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">we will not
+provide support here since this would require searching for all static
+methods and fiels (all types cache)<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Add Import</td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Sort Members<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Overide/Implement Methods<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work
+started, no test cases</td>
+      <td style="vertical-align: top; text-align: center;">JDT/Core
+problem with old DOM. Open if we rewrite using AST<br>
+(clarify with Philippe)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">JDT/Core
+problem with old DOM. Open if we rewrite using AST<br>
+(clarify with Philippe)</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">work not started</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Generate Setter/Getter<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started (not critical for&nbsp; 3.1. Can be disabled)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Generate Delegate<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started (should use erasure as "delegate type")<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started (not critical for 3.1. Can be disabled)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Enum as
+field type<br>
+work not started (not critical for 3.1. Can be disabled)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Generate Constructor using fields<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">works, but
+no test cases</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started (not critical for 3.1. Can be disabled)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Add Constructors<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not
+applicable</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">work not started </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Externalize Strings<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">work not
+started</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Surround With Try/Catch<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">done<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top; text-align: center;">not affected</td>
+      <td style="vertical-align: top;">not affected<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
