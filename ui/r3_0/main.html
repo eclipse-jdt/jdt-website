@@ -1,299 +1,287 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>JDT UI 3.0.x</title>
-  <meta http-equiv="Content-Type"
- content="text/html; charset=iso-8859-1">
-  <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
- type="text/css">
+<title>JDT UI 3.0.x</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
+	type="text/css">
 </head>
-<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
-  <tbody>
-    <tr>
-      <td align="left" width="72%"> <font class="indextop"> jdt ui R3.0.x</font> <br>
-      <font class="indexsub"> java development tooling ui </font> </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-      <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg"
- height="86" width="120"></td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<td align="left" width="72%"><font class="indextop"> jdt ui R3.0.x</font>
+			<br>
+			<font class="indexsub"> java development tooling ui </font></td>
+			<td style="vertical-align: top"><br>
+			</td>
+			<td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg"
+				height="86" width="120"></td>
+		</tr>
+	</tbody>
 </table>
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
-  <tbody>
-    <tr>
-      <td align="left" valign="top" colspan="2" bgcolor="#0080c0"
- width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">What's
-Happening?&nbsp;</font></font></b></td>
-    </tr>
-    <tr>
-      <td colspan="2">The 3.0 plan below is a proto plan and input from
-the community is very welcome.</td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%"> <span style="font-weight: bold;">Overall JDT/UI
-themes</span><br>
-      <ul>
-        <li>Open up JDT:
-          <ul>
-            <li>allow other plug-ins to contribute to and participate
-in searching, refactoring, quick fix, hovering, as well as code
-generation and templates.&nbsp; </li>
-            <li>support reusing Java editor actions (source and
-refactoring) in other plug-ins. </li>
-            <li><font color="#000000">support to contribute to the
-reconciling of a compilation unit, e.g., enable adding a spelling checker</font> </li>
-          </ul>
-        </li>
-        <li>Improve user experience. Besides reducing gestures this
-includes additional navigation support for Java code and more
-lightweight interactions. </li>
-        <li>Surface JDK 1.5 features.</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td> <b>Aritectural Issues</b>
-      <ul>
-        <li>Support an IJavaElement adapter in all actions and filters
-in the same way as the workspace supports an IResource adapter
-(IAdapter.getAdapter(IJavaElement.class). </li>
-        <li>Investigate in IActionFiler support for Java elements (see
-bug 30948). </li>
-        <li>Investigate to use platform's decorator mechanism for error
-ticks and running man decoration. </li>
-        <li>Remove separation between source manipulation actions,
-refactorings and quick assists. </li>
-        <li>Allow non-Java partitions in the Java editors. </li>
-        <li>Introduce concept of a reconciling pipeline:
-          <ul>
-            <li>each element of the pipeline uses the result of the
-previous </li>
-            <li>mapping between editor content and the several
-intermediate formats.</li>
-          </ul>
-        </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td><b>Improve User Experience</b>
-      <ul>
-        <li>Investigate in customizable hovers in views (like in
-editor) to show java doc, implementors of method, etc.</li>
-        <li>Investigate how to "quick access" source, refactoring and
-quick assist actions (e.g. not via cascading context menus).</li>
-        <li>Simplify filter management in JDT views. </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td style="vertical-align: top;"><b>Code Manipulation</b>
-      <ul>
-        <li>Improve comment handling in AST rewriter.</li>
-        <li>Improve sorting capability for compilation units (by
-visibility, by defining type, ...). </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><b>Typing</b>
-      <ul>
-        <li>Smart semicolon, braces, parenthesis in Java code. </li>
-        <li>Investigate auto correct in Java code. </li>
-        <li>Allow typing actions to be executed in "raw" mode.</li>
-        <li>Improve commenting/uncommenting of code.</li>
-        <li><font color="#000000">S</font><font color="#000000">upport
-code completion after &lt;code&gt;Te| or &lt;tt&gt;Te.</font> </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"> <b>Navigation</b>
-      <ul>
-        <li>Type hierarchy pop-up for a method. It allows to navigate
-up and down in the type hierarchy (overrides/ implementors).&nbsp; </li>
-        <li>Introduce code folding. </li>
-        <li>Present URLs in Javadoc as interactive links.</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"> <b>Presentation</b>
-      <ul>
-        <li>Show more outliner information directly in the Java
-editors. </li>
-        <li>Generalize matching delimiter highlighting to Javadoc tags
-such as &lt;code&gt; ... &lt;/code&gt;.</li>
-        <li>Use syntax coloring in source hover.</li>
-        <li>Investigate method separator lines.</li>
-        <li>Leverage Platform Text mechanisms to show more information
-about elements such as all referenced types, call sit<font
- color="#000000">es, overriders, implementors, declaration</font> (see
-also Navigation section).</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"> <b>Quick Fix / Assist</b>
-      <ul>
-        <li>Enable the contribution of quick fixes and quick assists. </li>
-        <li>Additional quick fixes, e.g., add parameter to existing
-method, remove unused parameters, convert unused parameter to field. </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"> <b>Refactoring</b>
-      <ul>
-        <li>Enable other plug-ins to participate in rename, move and
-delete refactorings.</li>
-        <li>Enable other plug-ins to contribute new refactorings. </li>
-        <li>Make refactorings Javadoc aware (@see, @link, etc.). </li>
-        <li>Reduce memory consumption.</li>
-        <li>Investigate using type constraints for type related
-refactorings (extract interface, user supertype, ....). </li>
-        <li>Add new refactorings, e.g., add parameter, convert
-constructor to&nbsp; factory method, extract super class and Java 1.5
-specific refactorings. </li>
-        <ul>
-        </ul>
-        <li>Rearchitecture rename, move, delete, cut, copy and paste
-functionality.</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><b>Search</b>
-      <ul>
-        <li>Allow other plug-ins to participate in Java element
-searches to find matches     in non-Java files (for example JSPs,
-plugin.xml).</li>
-        <li>Add option on the Java Search page to use regular
-expressions.</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><b>Build Path</b>
-      <ul>
-        <li>Investigate in user configurable containers. </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><b>Java Browsing</b>
-      <ul>
-        <li>Use of containers to group Java archives in Projects view. </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><b>Type Hierarchy</b>
-      <ul>
-        <li>Support type hierarchy presentation scoped to a working set.</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"> <b>Preferences</b>
-      <ul>
-        <li>Adapt to user-oriented preferences.</li>
-        <li>Syntax highlighting preview on the preference page should
-background highlight     all occurrences of the selected type. </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"> <img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td style="vertical-align: top;"> <b>Dependencies</b>
-      <ul>
-        <li>Regular expression search depends on JDT Core support: <a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a></li>
-        <li>Javadoc support for refactoring depends on Java doc support
-in AST. </li>
-        <li>Track Changes in other plug-ins</li>
-        <ul>
-          <li>Platform: templates, consolidated action contribution,
-snap shotting, background activities, and named sharable preference
-sets. </li>
-          <li>JDT/Core: JDK 1.5, working copy support, tags in Javadoc,
-Java elements for local types, and new formatter.</li>
-        </ul>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td align="left" valign="top" colspan="2" bgcolor="#0080c0"
- width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-Getting the sources</font></font></b></td>
-    </tr>
-    <tr>
-      <td colspan="2">
-      <ul>
-        <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code> </li>
-        <li>Check out <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui"><code>HEAD</code></a>
-branch of the project <code>org.eclipse.jdt.ui</code>. </li>
-        <li>Make sure to import the prerequisite plug-ins (usually from
-the latest SDK R2.1.x <a
- href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
-Prerequisite plug-ins are already referenced on the project build path
-( <code>.classpath</code> file). </li>
-        <li>The sources of this project are currently either 1.3 or 1.4
-compatible, however the             compiler compliance setting should
-be set to 1.3. Eclipse 3.0 will make use of             JDK 1.4, but
-the conversion hasn't taken place yet. </li>
-	
-      </ul>
-      </td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">What's
+			Happening?&nbsp;</font></font></b></td>
+		</tr>
+		<tr>
+			<td colspan="2">The 3.0 plan below is a proto plan and input from the
+			community is very welcome.</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Overall JDT/UI themes</b>
+			<ul>
+				<li>Open up JDT:
+				<ul>
+					<li>allow other plug-ins to contribute to and participate in
+					searching, refactoring, quick fix, hovering, as well as code
+					generation and templates.&nbsp;</li>
+					<li>support reusing Java editor actions (source and refactoring) in
+					other plug-ins.</li>
+					<li><font color="#000000">support to contribute to the reconciling
+					of a compilation unit, e.g., enable adding a spelling checker</font>
+					</li>
+				</ul>
+				</li>
+				<li>Improve user experience. Besides reducing gestures this includes
+				additional navigation support for Java code and more lightweight
+				interactions.</li>
+				<li>Surface JDK 1.5 features.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Aritectural Issues</b>
+			<ul>
+				<li>Support an IJavaElement adapter in all actions and filters in
+				the same way as the workspace supports an IResource adapter
+				(IAdapter.getAdapter(IJavaElement.class).</li>
+				<li>Investigate in IActionFiler support for Java elements (see bug
+				30948).</li>
+				<li>Investigate to use platform's decorator mechanism for error
+				ticks and running man decoration.</li>
+				<li>Remove separation between source manipulation actions,
+				refactorings and quick assists.</li>
+				<li>Allow non-Java partitions in the Java editors.</li>
+				<li>Introduce concept of a reconciling pipeline:
+				<ul>
+					<li>each element of the pipeline uses the result of the previous</li>
+					<li>mapping between editor content and the several intermediate
+					formats.</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Improve User Experience</b>
+			<ul>
+				<li>Investigate in customizable hovers in views (like in editor) to
+				show java doc, implementors of method, etc.</li>
+				<li>Investigate how to "quick access" source, refactoring and quick
+				assist actions (e.g. not via cascading context menus).</li>
+				<li>Simplify filter management in JDT views.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Code Manipulation</b>
+			<ul>
+				<li>Improve comment handling in AST rewriter.</li>
+				<li>Improve sorting capability for compilation units (by visibility,
+				by defining type, ...).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Typing</b>
+			<ul>
+				<li>Smart semicolon, braces, parenthesis in Java code.</li>
+				<li>Investigate auto correct in Java code.</li>
+				<li>Allow typing actions to be executed in "raw" mode.</li>
+				<li>Improve commenting/uncommenting of code.</li>
+				<li><font color="#000000">S</font><font color="#000000">upport code
+				completion after &lt;code&gt;Te| or &lt;tt&gt;Te.</font></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Navigation</b>
+			<ul>
+				<li>Type hierarchy pop-up for a method. It allows to navigate up and
+				down in the type hierarchy (overrides/ implementors).&nbsp;</li>
+				<li>Introduce code folding.</li>
+				<li>Present URLs in Javadoc as interactive links.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Presentation</b>
+			<ul>
+				<li>Show more outliner information directly in the Java editors.</li>
+				<li>Generalize matching delimiter highlighting to Javadoc tags such
+				as &lt;code&gt; ... &lt;/code&gt;.</li>
+				<li>Use syntax coloring in source hover.</li>
+				<li>Investigate method separator lines.</li>
+				<li>Leverage Platform Text mechanisms to show more information about
+				elements such as all referenced types, call sit<font color="#000000">es,
+				overriders, implementors, declaration</font> (see also Navigation
+				section).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Quick Fix / Assist</b>
+			<ul>
+				<li>Enable the contribution of quick fixes and quick assists.</li>
+				<li>Additional quick fixes, e.g., add parameter to existing method,
+				remove unused parameters, convert unused parameter to field.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Refactoring</b>
+			<ul>
+				<li>Enable other plug-ins to participate in rename, move and delete
+				refactorings.</li>
+				<li>Enable other plug-ins to contribute new refactorings.</li>
+				<li>Make refactorings Javadoc aware (@see, @link, etc.).</li>
+				<li>Reduce memory consumption.</li>
+				<li>Investigate using type constraints for type related refactorings
+				(extract interface, user supertype, ....).</li>
+				<li>Add new refactorings, e.g., add parameter, convert constructor
+				to&nbsp; factory method, extract super class and Java 1.5 specific
+				refactorings.</li>
+				<ul>
+				</ul>
+				<li>Rearchitecture rename, move, delete, cut, copy and paste
+				functionality.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Search</b>
+			<ul>
+				<li>Allow other plug-ins to participate in Java element searches to
+				find matches in non-Java files (for example JSPs, plugin.xml).</li>
+				<li>Add option on the Java Search page to use regular expressions.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Build Path</b>
+			<ul>
+				<li>Investigate in user configurable containers.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Java Browsing</b>
+			<ul>
+				<li>Use of containers to group Java archives in Projects view.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Type Hierarchy</b>
+			<ul>
+				<li>Support type hierarchy presentation scoped to a working set.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Preferences</b>
+			<ul>
+				<li>Adapt to user-oriented preferences.</li>
+				<li>Syntax highlighting preview on the preference page should
+				background highlight all occurrences of the selected type.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Dependencies</b>
+			<ul>
+				<li>Regular expression search depends on JDT Core support: <a
+					href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a></li>
+				<li>Javadoc support for refactoring depends on Java doc support in
+				AST.</li>
+				<li>Track Changes in other plug-ins</li>
+				<ul>
+					<li>Platform: templates, consolidated action contribution, snap
+					shotting, background activities, and named sharable preference
+					sets.</li>
+					<li>JDT/Core: JDK 1.5, working copy support, tags in Javadoc, Java
+					elements for local types, and new formatter.</li>
+				</ul>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Getting the sources</font></font></b></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<ul>
+				<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+				</li>
+				<li>Check out <a
+					href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui"><code>HEAD</code></a>
+				branch of the project <code>org.eclipse.jdt.ui</code>.</li>
+				<li>Make sure to import the prerequisite plug-ins (usually from the
+				latest SDK R2.1.x <a
+					href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
+				Prerequisite plug-ins are already referenced on the project build
+				path ( <code>.classpath</code> file).</li>
+				<li>The sources of this project are currently either 1.3 or 1.4
+				compatible, however the compiler compliance setting should be set to
+				1.3. Eclipse 3.0 will make use of JDK 1.4, but the conversion hasn't
+				taken place yet.</li>
+
+			</ul>
+			</td>
+		</tr>
+	</tbody>
 </table>
 </body>
 </html>
