@@ -179,9 +179,10 @@
 			<td><b>Quick Fix / Assist</b>
 			<ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0">Enable the contribution of quick fixes and quick
+					border="0"> Enable the contribution of quick fixes and quick
 				assists.</li>
-				<li>Additional quick fixes, e.g., add parameter to existing method,
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Additional quick fixes, e.g., add parameter to existing method,
 				remove unused parameters, convert unused parameter to field.</li>
 			</ul>
 			</td>
@@ -203,8 +204,9 @@
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Investigate using type constraints for type related
 				refactorings (extract interface, user supertype, ....).</li>
-				<li>Add new refactorings, e.g., add parameter, convert constructor
-				to&nbsp; factory method, extract super class, migrate packages and
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Add new refactorings, e.g., add parameter, convert constructor
+				to factory method, extract super class, migrate packages and
 				Java 1.5 specific refactorings.</li>
 				<ul>
 				</ul>
@@ -228,7 +230,8 @@
 				<li>Add option on the Java Search page to use regular expressions.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Add option to search in "current" project.</li>
-				<li>Improve global search/replace.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Improve global search/replace.</li>
 			</ul>
 			</td>
 		</tr>
@@ -251,7 +254,8 @@
 			<ul>
 				<li>Participate in refactoring operations and update test
 				class/package references.</li>
-				<li>Enable transition of pde.junit to pde.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Enable transition of pde.junit to pde.</li>
 			</ul>
 			</td>
 		</tr>
@@ -356,17 +360,16 @@
 	<tbody>
 		<tr>
 			<a NAME="Milestone_Planning">
-			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
-				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-			M5 Milestone Plan</font></font></b></td>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			M6 Milestone Plan</font></font></b></td>
 			</a>
 		</tr>
 		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			<td valign="top" width="23"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Overall goals for M5</b>
+			<td width="848"><b>Overall goals for M6</b>
 			<ul>
-				<li>Progress on API for both AST Rewrite and Refactoring.</li>
+				<li>The overall goals for M6 are stabilization, bug fixing, and memory and performance tuning</li>
 			</ul>
 			</td>
 		</tr>
@@ -375,9 +378,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Overhead Items</b>
 			<ul>
-				<li>inbox tracking (10 days)</li>
+				<li>inbox tracking (5 days)</li>
 				<li>testing (6 days)</li>
-				<li>bug fixing (16 days)</li>
 			</ul>
 		</tr>
 		<tr>
@@ -385,90 +387,18 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>General</b>
 			<ul>
-				<li>XML parsing remove dependency on xerces and use JDK 1.4 XML
-				parsing APIs (1 day)</li>
-				<li>Investigate in support for RCP API changes (migration to removed
-				API methods) (2 days)</li>
+				<li>bug fixing (click <a
+					href="https://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=UI&amp;target_milestone=3.0+M6&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;changedin=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;namedcmd=Assigned+to+me&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">here</a> for a list of bugs tagged with the M6 milestone) (25 days)</li>
+				<li>memory and performance pass (10 days)</li>
 			</ul>
 			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Navigation</b>
-			<ul>
-				<li>Support sub and super type hierarchy in type hierarchy info
-				pop-up (Ctrl+T) (1 day)</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-
-			<td><b>JDT Text</b>
-			<ul>
-				<li>finish Javadoc spell checking including quick fix (10 days)</li>
-				<li>improve declarations view to show ranges found in search (2
-				days, depends on Platform Text support)</li>
-				<li>provide &quot;Occurrences in File&quot; as post selection
-				listener functionality, show results in place rather than the search
-				result view (2 days, depends on Platform Text support)</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Search</b>
-			<ul>
-				<li>Progress on new search: hierarchical resource and Java result
-				page (10 days)</li>
-				<li>Work on search index API with JDT core (3 days)</li>
-				<li>for platform search related items click 
-				<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-search-home/plan.html#Milestone_Planning">
-				here</a>.</li>
-			</ul>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Code Manipulation</b>
 			<ul>
-				<li>work with JDT core on AST Rewriting API (10 days)</li>
-				<li>Preference settings for new formatter (20 days)</li>
-				<li>Quick fix improvements (quick fix for Javadoc tags) (5 days)</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Refactoring</b>
-			<ul>
-				<li>proposal for general XML expression evaluation support (5 days)</li>
-				<li>improve refactorings for local types (5 days)</li>
-				<li>start working on refactoring API (10 days)</li>
-				<li>improve change method signature refactoring (5 days)
-				<ul>
-					<li>support exceptions</li>
-					<li>support method renaming</li>
-				</ul>
-				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td style="vertical-align: top"><b>Dependencies</b>
-
-			<ul>
-				<li>JDT/Core
-				<ul>
-					<li>Reconciling and validating Javadoc tag</li>
-				</ul>
-				</li>
+				<li>Preference settings for new formatter (5 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -478,16 +408,10 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>military service 15 days</li>
-				<li>vacation 20 days</li>
-				<li>conference 15 days</li>
+				<li>vacation 2 days</li>
+				<li>code camp 5 days</li>
 			</ul>
 			</td>
-
-
-
-
-
 		</tr>
 	</tbody>
 </table>
