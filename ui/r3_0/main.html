@@ -30,20 +30,20 @@
 			</a>
 		</tr>
 		<tr>
-			<td colspan="2">The 3.0 plan below is a revised plan for the milestones M7 - M9 and still under development. Input from the community is very welcome. The original 3.0 plan can be found <a
+			<td colspan="2">The 3.0 plan below is a revised plan for the
+			milestones M7 - M9 and still under development. Input from the
+			community is very welcome. The original 3.0 plan can be found <a
 				href="main_M1_M6.html">here</a>.</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Top
-			Five Items</b><ul>
+			<td><b>Top Five Items</b>
+			<ul>
 				<li>Improve support for Java like languages
 				<ul>
-					<li>allow other plug-ins to contribute and participate in search, refactoring
-					
-					as well as code
-					generation and templates</li>
+					<li>allow other plug-ins to contribute and participate in search,
+					refactoring as well as code generation and templates</li>
 				</ul>
 				</li>
 				<li>Improved Java Search
@@ -55,7 +55,8 @@
 				<li>Abstract syntax tree rewriting</li>
 				<li>Surface JDK 1.5 features</li>
 				<li>Polish and performance work</li>
-			</ul></td>
+			</ul>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
@@ -64,20 +65,23 @@
 			<td><b>Architectural Issues</b>
 			<ul>
 				<li><font class="indexsub"></font><font class="indexsub"
-					color="#8080ff">[&gt;3.0]</font> Support an IJavaElement adapter in all actions and filters in
-				the same way as the workspace supports an IResource adapter
-				(IAdapter.getAdapter(IJavaElement.class)).</li>
+					color="#8080ff">[&gt;3.0]</font> Support an IJavaElement adapter in
+				all actions and filters in the same way as the workspace supports an
+				IResource adapter (IAdapter.getAdapter(IJavaElement.class)).</li>
 				<li><font class="indexsub"></font><font class="indexsub"
-					color="#8080ff">[&gt;3.0]</font> Support reusing Java editor actions (source and refactoring) in
-					other plug-ins.</li>
-				<li>Investigate in IActionFilter support for Java elements (see bug
-				30948).</li>
+					color="#8080ff">[&gt;3.0]</font> Support reusing Java editor
+				actions (source and refactoring) in other plug-ins.</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.0]</font>
+				Investigate in IActionFilter support for Java elements (see bug
+				30948). This is obsolete with the new expression language</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Investigate to use platform's decorator mechanism for error
-				ticks and running man decoration.</li>
-				<li>Remove separation between source manipulation actions,
-				refactorings and quick assists.</li>
-				<li><img border="0" src="../images/new.gif"> Adapt to dynamic plug-in loading (new runtime)</li>
+					border="0"> Investigate to use platform's decorator mechanism for
+				error ticks and running man decoration.</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.0]</font> Remove
+				separation between source manipulation actions, refactorings and
+				quick assists.</li>
+				<li><img border="0" src="../images/new.gif"> Adapt to dynamic
+				plug-in loading (new runtime)</li>
 				<li>Allow non-Java partitions in the Java editors.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Introduce concept of a reconciling pipeline:
@@ -99,11 +103,14 @@
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Investigate in customizable hovers in views (like in
 				editor) to show java doc, implementors of method, etc.</li>
-				<li>Investigate how to "quick access" source, refactoring and quick
-				assist actions (e.g. not via cascading context menus).</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Investigate how to "quick access" source,
+				refactoring and quick assist actions (e.g. not via cascading context
+				menus).</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Simplify filter management in JDT views.</li>
-				<li><img border="0" src="../images/new.gif"> Investigate use of activities in JDT/UI</li>
+				<li><img border="0" src="../images/new.gif"> Investigate use of
+				activities in JDT/UI</li>
 			</ul>
 			</td>
 		</tr>
@@ -114,8 +121,9 @@
 			<ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Improve comment handling in AST rewriter.</li>
-				<li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> Improve sorting capability for compilation units (by
-				visibility, by defining type, ...).</li>
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Improve sorting capability for compilation units (by visibility, by
+				defining type, ...).</li>
 				<li>Enable contributions to code generation templates.</li>
 			</ul>
 			</td>
@@ -125,69 +133,72 @@
 				nosave="" border="0" height="16" width="16"></td>
 
 
-			
-    <td><b>Typing</b> 
-      <ul>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+
+			<td><b>Typing</b>
+			<ul>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0">Smart semicolon, braces, parenthesis in Java code.</li>
-        <li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          Investigate auto correct in Java code.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Investigate auto correct in Java code.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0">Allow typing actions to be executed in "raw" mode.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Improve commenting/uncommenting of code.</li>
-        <li><font color="#000000"> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          S</font><font color="#000000">upport code completion after &lt;code&gt;Te| 
-          or &lt;tt&gt;Te.</font></li>
-      </ul>
+				<li><font color="#000000"> <font class="indexsub"><font
+					class="indexsub" color="#8080ff">[&gt;3.0]</font></font> S</font><font
+					color="#000000">upport code completion after &lt;code&gt;Te| or
+				&lt;tt&gt;Te.</font></li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 
-			
-    <td><b>Navigation</b> 
-      <ul>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Type hierarchy pop-up for a method. It allows 
-          to navigate up and down in the type hierarchy (overrides/ implementors).</li>
-        <li>Generalize Type hierarchy pop-up to structured selections in Java 
-          views</li>
-        <li><font color="#000000"><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Investigate Tab navigator contributions</font>&nbsp;</li>
-        <li>Introduce code folding.</li>
-        <li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          Present URLs in Javadoc as interactive links.</li>
-      </ul>
+
+			<td><b>Navigation</b>
+			<ul>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Type hierarchy pop-up for a method. It allows to
+				navigate up and down in the type hierarchy (overrides/
+				implementors).</li>
+				<li>Generalize Type hierarchy pop-up to structured selections in
+				Java views</li>
+				<li><font color="#000000"><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Investigate Tab navigator
+				contributions</font>&nbsp;</li>
+				<li>Introduce code folding.</li>
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Present URLs in Javadoc as interactive links.</li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 
-			
-    <td><b>Presentation</b> 
-      <ul>
-        <li>Show more outliner information directly in the Java editors.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+
+			<td><b>Presentation</b>
+			<ul>
+				<li>Show more outliner information directly in the Java editors.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Show inherited members in the light-weight outline</li>
-        <li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          Generalize matching delimiter highlighting to Javadoc tags such as &lt;code&gt; 
-          ... &lt;/code&gt;.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Generalize matching delimiter highlighting to Javadoc tags such as
+				&lt;code&gt; ... &lt;/code&gt;.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Use syntax coloring in source hover.</li>
-        <li>Introduce semantic syntax highlighting</li>
-        <li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          Investigate method separator lines.</li>
-        <li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Leverage Platform Text mechanisms to 
-          show more information about elements such as all referenced types, call 
-          sit<font color="#000000">es, overriders, implementors, declaration</font> 
-          (see also Navigation section).</li>
-        <li><img src="../images/progress.gif" nosave="" height="5"
+				<li>Introduce semantic syntax highlighting</li>
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Investigate method separator lines.</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Leverage Platform Text mechanisms to show
+				more information about elements such as all referenced types, call
+				sit<font color="#000000">es, overriders, implementors, declaration</font>
+				(see also Navigation section).</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Support spell checking comments</li>
-      </ul>
+			</ul>
 			</td>
 		</tr>
 		<tr>
@@ -199,8 +210,8 @@
 					border="0"> Enable the contribution of quick fixes and quick
 				assists.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Additional quick fixes, e.g., add parameter to existing method,
-				remove unused parameters, convert unused parameter to field.</li>
+					border="0"> Additional quick fixes, e.g., add parameter to existing
+				method, remove unused parameters, convert unused parameter to field.</li>
 			</ul>
 			</td>
 		</tr>
@@ -212,8 +223,11 @@
 				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Enable other plug-ins to participate in
 				rename, move and delete refactorings.</li>
-				<li>Make refactorings Javadoc aware (@see, @link, etc.).</li>
-				<li>Enable other plug-ins to contribute new refactorings.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Make refactorings Javadoc aware (@see, @link, etc.).</li>
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Enable other plug-ins to contribute new
+				refactorings.</li>
 				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Publish change infrastructure as API.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
@@ -221,9 +235,10 @@
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Investigate using type constraints for type related
 				refactorings (extract interface, user supertype, ....).</li>
-				<li><img src="../images/progress.gif" nosave="" border="0"> Add new refactorings, e.g., add parameter, convert constructor
-				to factory method, extract super class, migrate packages and
-				Java 1.5 specific refactorings.</li>
+				<li><img src="../images/progress.gif" nosave="" border="0"> Add new
+				refactorings, e.g., add parameter, convert constructor to factory
+				method, extract super class, migrate packages and Java 1.5 specific
+				refactorings.</li>
 				<ul>
 				</ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
@@ -244,7 +259,8 @@
 					width="14" border="0"> Allow other plug-ins to participate in Java
 				element searches to find matches in non-Java files (for example
 				JSPs, plugin.xml).</li>
-				<li>Add option on the Java Search page to use regular expressions.</li>
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Add option on the Java Search page to use regular expressions.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Add option to search in "current" project.</li>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
@@ -258,8 +274,8 @@
 				height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Build Path</b>
 			<ul>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Investigate in user configurable containers.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Investigate in user configurable containers.</li>
 			</ul>
 			</td>
 		</tr>
@@ -293,7 +309,8 @@
 			<td style="vertical-align: top"><b>Type Hierarchy</b>
 			<ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Support type hierarchy presentation scoped to a working set.</li>
+					border="0"> Support type hierarchy presentation scoped to a working
+				set.</li>
 			</ul>
 			</td>
 		</tr>
@@ -301,14 +318,14 @@
 			<td style="vertical-align: top"><img
 				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
 				height="16" width="16"></td>
-			
-    <td style="vertical-align: top"><b>Preferences</b> 
-      <ul>
-        <li>Adapt to user-oriented preferences.</li>
-        <li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> 
-          Syntax highlighting preview on the preference page should background 
-          highlight all occurrences of the selected type.</li>
-      </ul>
+
+			<td style="vertical-align: top"><b>Preferences</b>
+			<ul>
+				<li>Adapt to user-oriented preferences.</li>
+				<li><font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font>
+				Syntax highlighting preview on the preference page should background
+				highlight all occurrences of the selected type.</li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
@@ -380,133 +397,186 @@
 </table>
 
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
-  <tbody> 
-  <tr> <a NAME="Milestone_Planning"> 
-    <td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font face="Arial,Helvetica"><font color="#ffffff"> 
-      M8 Milestone Plan</font></font></b></td>
-    </a> </tr>
-  <tr> 
-    <td valign="top" width="23"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-    <td width="848"><b>Overall goals for M8</b> 
-      <ul>
-        <li>Finish AST rewriting</li>
-        <li>Provide Java search participants</li>
-        <li>Release common expression language API</li>
-				<li>Provide refactoring participant API</li>
+	<tbody>
+		<tr>
+			<a NAME="Milestone_Planning">
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
+				face="Arial,Helvetica"><font color="#ffffff"> M9 Milestone Plan (under construction)</font></font></b></td>
+			</a>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Overall goals for M9</b>
+			<ul>
+				<li>Polish work</li>
+				<li>Finish Java search participants</li>
+				<li>Finish refactoring participant API</li>
 			</ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Overhead Items</b> 
-      <ul>
-        <li>Inbox tracking (12 days)</li>
-        <li>Testing (8 days)</li>
-      </ul>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			<td><b>Overhead Items</b>
+			<ul>
+				<li>Inbox tracking (12 days)</li>
+				<li>Testing (8 days)</li>
+			</ul>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Code Manipulation</b>
-      <ul>
-        <li>AST rewriting (10 days)</li>
-				<li>Provide AST View as an example plug-in (2 days)</li>
-				<li>Restructure Javadoc compiler preference page (1 days)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			<td><b>General</b>
+			<ul>
+				<li>NLS pass (3 days)</li>
+				<li>Provide Javadoc for new API classes (3 days)</li>
+				<li>Investigate where we can use more specific scheduling rules to avoid blocking dialogs (2 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Refactoring</b> 
-      <ul>
-        <li>Make refactoring Javadoc aware (rename, move, change method signature, Pull Up, Push Down, Move Member Type) (12 days)</li>
-				<li>Investigate in a Javadoc &lt;code&gt;Name&lt;/code&gt; verifier (3 days
-				)
+			<td><b>Type Hierarchy</b>
+			<ul>
+				<li>Use label decorators to compute override/implements indicator (1 day)</li>
+				<li>View initialization in background (1 day)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Refactoring</b>
+			<ul>
+				<li>Make common expression language dynamic plug-in loadiung aware (2 days)</li>
+				<li>Move refactoring into new plug-in org.eclipse.ltk.*.refactoring (8 days)</li>
+				<li>Make refactorings more responsive to cancel (1 day)</li>
+				<li>Provide code assist in local and field name entry fields (1 day)</li>
+				<li>Extract Method: allow destination to be outer class if outer class in non-static (1 day)</li>
+				<li>Investigate in better import handling
+				(2 days)<ul>
+					<li>remove unused imports for move and inline refactoring</li>
+					<li>don't generate .* imports on move</li>
+				</ul>
 				</li>
-				<li>Continue work on refactoring and refactoring participant
-				API (8 days)</li>
-				<li>Release common expression language (4 days)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Build path</b> 
-      <ul>
-        <li>Provide user definable containers (4 days)</li>
-        <li>Support optimistic looking when changing build path (<a
-					href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=32378">Java 
-          Build Path properties page [general issue] [build path]</a>) (3 days)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Search</b> 
-      <ul>
-        <li>Provide search participants (7 days)</li>
-				<li>Provide compressed tree search result presentation (3 days)</li>
-				<li>Migrate find occurrences to new Search (2 days)</li>
+				<li>Rename (3 days)<ul><li>imporve ripple method computation</li>
+					<li>investigate in hierarchical package rename</li>
+				</ul>
+				</li>
+				<li>Move (2 days)
+				<ul>
+					<li>only show resonable targets in move destination dialog</li>
+					<li>disable reorg moves via refactoring move dialog</li>
+				</ul>
+				</li>
+				<li>Pull Up
+				(2 days)
+				<ul>
+					<li>investigate to run use super type where possible after pull up
+					has completed</li>
+					<li>support pulling up into interfaces</li>
+				</ul></li>
 			</ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Compare</b> 
-      <ul>
-        <li>Move the structured viewer from compare editor into 
-          outliner (3 days)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			<td><b>Quick Fix</b><ul>
+				<li>Use common expression language for Quick fix extension point (1 day)</li>
+				<li>New quick fixes: change compiler preferences, add interface to class, change field &amp; method return type (4 days)</li>
+				<li>Improve quick fixes for Javadoc errors (1 day)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td> 
-      <p><b>Typing, Presentation, and Source Manipulation</b></p>
-      <ul>
-        <li>Override indicators in vertical ruler (2 days)</li>
-        <li>Prepare semantic syntax highlighting (10 days)</li>
-        <li>Prepare Java conformant folding (2 days)</li>
-        <li>Improve lightweight outline for being a better outline replacement 
-          (3 days)</li>
-        <li>Provide thread-safe problem requestor implementation (1 day)</li>
-        <li>Transfer ownership for spell checking and comment formatting (10 days)</li>
-        <li>Smart typing improvements (5 days)</li>
-      </ul>
-      </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			<td><b>Code Manipulation</b><ul>
+				<li>Support code generation at cursor location (1 day)</li>
+				<li>Investigate in import aware copy &amp; paste (2 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Miscellaneous</b> 
-      <ul>
-        <li>Integrate leak testing into automatic build (1 day)</li>
-        <li>Non uniform file encodings
-				(5 days)<ul>
+			<td><b>Build path</b>
+			<ul>
+				<li>Provide inclusion filter user interface (1 day)</li>
+				<li>Investigate moving user library container support into JDT/Core (1 day)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Search</b>
+			<ul>
+				<li>Finish search participants (3 days)</li>
+				<li>Migrate find occurrences to new Search (2 days)</li>
+				<li>Provide read/write indication for fields (1.5 days)</li>
+				<li>Provide filters for matches in imports, Javadoc, read and write
+				access (3 days)</li>
+				<li>Provide an occurrences finder to mark method exit points (1 day)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Compare</b>
+			<ul>
+				<li>Move the structured viewer from compare editor into outliner (3
+				days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td>
+			<p><b>Typing, Presentation, and Source Manipulation</b></p>
+			<ul>
+				<li>Override indicators in vertical ruler (2 days)</li>
+				<li>Prepare semantic syntax highlighting (10 days)</li>
+				<li>Prepare Java conformant folding (2 days)</li>
+				<li>Improve lightweight outline for being a better outline
+				replacement (3 days)</li>
+				<li>Provide thread-safe problem requestor implementation (1 day)</li>
+				<li>Transfer ownership for spell checking and comment formatting (10
+				days)</li>
+				<li>Smart typing improvements (5 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Miscellaneous</b>
+			<ul>
+				<li>Non uniform file encodings (5 days)
+				<ul>
 					<li>provide user interface</li>
 					<li>adapt JDT/UI, Compare and Search to new file encoding API</li>
 				</ul>
 				</li>
 			</ul>
-    </td>
-  </tr>
-  <tr> 
-    <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-    <td><b>Conferences/Vacations</b> 
-      <ul>
-        <li>vacation: 17 days</li>
-      </ul>
-    </td>
-  </tr>
-  </tbody> 
+			<td><b>Conferences/Vacations</b>
+			<ul>
+				<li>vacation: 10 days</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
 </table>
 
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
