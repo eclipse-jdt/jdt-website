@@ -9,9 +9,9 @@
   <title>Fix Pass</title>
 </head>
 <body>
-Test-Fix Pass milestone M1<br>
-<br>
-<h4>Quick Fix/Quick Assist</h4>
+<h2> Test-Fix Pass milestone M1</h2>
+<h4>Quick Fix/Quick Assist (Kai-Uwe, Randy)<br>
+</h4>
 <ul>
   <li>mismatching parameters:</li>
   <ul>
@@ -24,26 +24,113 @@ constructor</li>
 corresponding write accesses<br>
   </li>
 </ul>
-<br>
-Delete and<br>
-<br>
-<h4>Smart Typing</h4>
+<h4> Delete (Dirk, Martin)<br>
+</h4>
 <ul>
-  <li>to enable smart typing go to Preferences-&gt;Java-&gt;Work in
-Progress<br>
+  <li>test deleting all sorts of different elements like projects,
+source folders, packages, compilation units, members, normal resources
+and linked elements.</li>
+  <li>check accessibility of new dialogs (see document <a
+ href="http://www.eclipse.org/articles/Article-Accessibility/accessibility.html">Designing
+Accessible Plug-ins in Eclipse</a>)</li>
+</ul>
+<h4>Browsing (Dirk, Tom)<br>
+</h4>
+<ul>
+  <li>views follow caret position if "Linked with Editor" is enabled in
+view menu.<br>
   </li>
-  <li>test raw and smart mode (use Ctrl+M to toggle between the two
+</ul>
+<h4>Code Manipulation (Andre, Adam)<br>
+</h4>
+<ul>
+  <li>check accessibility (see document <a
+ href="http://www.eclipse.org/articles/Article-Accessibility/accessibility.html">Designing
+Accessible Plug-ins in Eclipse</a>) of new dialogs.<br>
+  </li>
+  <li>Generate Getter/Setter</li>
+  <ul>
+    <li>insertion point, sort by, access modifiers, comment generation,
+...</li>
+    <li>code templates for getter and setter<br>
+    </li>
+  </ul>
+  <li>Generate Delegate Methods</li>
+  <ul>
+    <li>new function: insertion point, comment generation</li>
+  </ul>
+  <li>Add Unimplemented Constructors</li>
+  <ul>
+    <li>constructor selection UI.<br>
+    </li>
+  </ul>
+  <li>Override/Implement Methods</li>
+  <ul>
+    <li>new function: insertion point, comment generation</li>
+  </ul>
+</ul>
+<h4>Refactoring (Adam)<br>
+</h4>
+<ul>
+  <li>Inline method: locals where generated for parameters and return
+values even though not needed. Local should only be generated to avoid
+side effects<br>
+  </li>
+</ul>
+<h4>Type Hierarchy (Kai-Uwe, Randy)<br>
+</h4>
+<ul>
+  <li>structured view (Ctrl+T)</li>
+  <ul>
+    <li>test for type, method and package<br>
+    </li>
+  </ul>
+</ul>
+<h4>Caller/Callee view (Tom, Dani)<br>
+</h4>
+<ul>
+  <li>scalability</li>
+  <li>call graphs for source and binaries</li>
+  <li>call graphs for working sets (?)<br>
+  </li>
+  <li>usability<br>
+  </li>
+  <li>check accessibility (see document <a
+ href="http://www.eclipse.org/articles/Article-Accessibility/accessibility.html">Designing
+Accessible Plug-ins in Eclipse</a>)<br>
+  </li>
+</ul>
+<h4>Java Editor (Martin, Erich)<br>
+</h4>
+<ul>
+  <li>test raw and smart mode (use Insert key to toggle between the
 modes)</li>
-  <li>in smart mode test:</li>
+  <li>in smart mode test (to enable smart typing go to
+Preferences-&gt;Java-&gt;Work in Progress):</li>
   <ul>
     <li>smart semicolon (inserts semicolon at end of line)</li>
     <li>smart open brace (closing brace is now inserted on enter).</li>
   </ul>
-</ul>
-JUnit<br>
-<ul>
-  <li>stepping through test failures<br>
+  <li>delayed synchronization of Outliner with caret position</li>
+  <li>range indication synchronizes with caret positions (must be
+enabled via editor preferences)<br>
   </li>
+</ul>
+<h4> JUnit (Tom, Dani)<br>
+</h4>
+<ul>
+  <li>stepping through test failures</li>
+  <li>test new JUNIT_HOME variable. When creating a new test case    
+with the test case wizard then the user has the option to put
+JUNIT_HOME on the build     class path.</li>
+</ul>
+<h4>MAC (Andre)<br>
+</h4>
+<ul>
+  <li>test update manager on startup.</li>
+</ul>
+<br>
+<ul>
 </ul>
 <br>
 <ul>
