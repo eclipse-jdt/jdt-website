@@ -5,8 +5,8 @@
 	- completeness
 	- @since tags
 	- correctness
-		- return value
-		- parameter list
+		- return value (can null be returned?)
+		- parameter list (can null be passed as parameter?)
 		- exceptions
 	- package.html files
 		-copyright/licence
@@ -16,6 +16,12 @@
 	- list of contributors
 		
 - checking NLS
+ - no not-externalized strings (we have a tool)
+ - no duplicated keys in .properties files (we have a tool)
+ - no unused keys in .properties files (we have a tool)
+ - no missing keys in .properties files (we have a tool)
+ - no single quotes in .properties files 
+    (we use CHPII now, but it's not publicly available)
 
 - properties files
 	- spelling
@@ -34,10 +40,14 @@
 	
 - CVS file types checking
 	- informing releng about exceptions (e.g. binary files)
-	
+
 - code
 	- no System.out.println in source
 	- no empty catch blocks (we have never done this)
+	- no unused elements (imports, members, temps)
+	- no use of deprecated APIs (where possible)
+	- no use of internal APIs (where possible)
+	- no mixed line delimiters (minor)
 	
 - UI
 	- default values pass over preferences
@@ -52,6 +62,3 @@
 - User doc
 	- welcome page up to date
 	- screenshots
-	
-	
-		
