@@ -50,12 +50,12 @@
 	- informing releng about exceptions (e.g. binary files)
 
 - code
-	- no System.out.println in source
-	- no empty catch blocks (we have never done this)
-	- no unused elements (imports, members, temps)
-	- no use of deprecated APIs (where possible)
-	- no use of internal APIs (where possible)
-	- no mixed line delimiters (minor)
+	- no System.out.println in source (easy to search for)
+	- no empty catch blocks (we have never done this) 
+	- no unused elements (imports, members, temps) (compiler checks that)
+	- no use of deprecated APIs (where possible) (compiler checks that)
+	- no use of internal APIs (where possible) (we have a tool)
+	- no mixed line delimiters (we have a tool)
 	
 - UI
 	- default values pass over preferences
