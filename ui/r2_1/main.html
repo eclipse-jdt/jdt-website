@@ -166,8 +166,12 @@
 	</tr>
 
 	<tr>
-		<td COLSPAN="2">
-
+		<td COLSPAN="2">Official plug-in version ID from 2.1 Rollup 2 is 2.1.2. 
+		These patches are not yet part of any official release or rollup, but provide 
+		an early access to the next delivery for quality assessment. If you find any 
+		regression using these patches, please inform the JDT/UI team by entering a 
+		<a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT">bug
+		report</a>.
 		<table border="0" cellspacing="1" cellpadding="0" width="100%">
 			<tbody>
 				<tr>
@@ -181,9 +185,17 @@
 					<td>2.1.2</td>
 				</tr>
 				<tr>
+					<td><i>requires: </i></td>
+					<td>JDT/Core <a
+						href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-core-home/r2.1/main.html#updates">2.1.3
+					preview</a></td>
+				</tr>
+				<tr>
 					<td valign="top"><i>description: </i></td>
-					<td>Addresses the following issues:<ul>
-						<li>package rename is the present of multiple package fragments with same name (bug <a
+					<td>Addresses the following issues:
+					<ul>
+						<li>package rename in the present of multiple package fragments
+						with same name (bug <a
 							href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=47509">47509</a>)</li>
 						<li>rebuild after compiler setting changes (bug <a
 							href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=46039">46039</a>)</li>
