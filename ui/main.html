@@ -141,72 +141,53 @@ Investigate in additional Java specific project browsing</li>
 <li>
 Performance</li>
 </ul>
-<b>Milestone 1 (21<sup>th</sup> December) - Draft</b>
-<p>The work items below are planned for the December 21th milestone.&nbsp;
-<p>UI
-<ul>
-<li>
-Proposal for package/code browsing alternatives</li>
-<li>
-Investigate menu structure</li>
-</ul>
-
-<p>JAR Packager
-<ul>
-<li>
-Improved progress reporting</li>
-
-<li>
-Prevent UI from blocking on large set of files</li>
-</ul>
-Search
-<ul>
-<li>
-Support case-insensitve searching</li>
-
-<li>
-Reduce UI thread load in working set dialog</li>
-</ul>
-Refactoring
-<ul>
-<li>
-Push-up element refactoring in the build&nbsp;</li>
-
-<li>
-Refactoring test suite ready to be released&nbsp;</li>
-
-<li>
-Surround selection with try/catch block</li>
-
-<li>
-renaming a resource should not show up as a refactoring</li>
-</ul>
-  Code generation
+  <b>Milestone 3 (15<sup>th</sup>  February)&nbsp;</b>
+<p>Java Doc
   <ul>
-    <li>Add unimplemented methods: show a check box dialog tree with the
-      unimplemented methods so that the user can pick from.&nbsp;</li>
+    <li>Access to external JavaDoc associated with a JAR (without support for
+      sharing JavaDoc associations in the team)</li>
+    <li>JavaDoc generation support</li>
+  </ul>
+  <p>Browsing</p>
+  <ul>
+    <li>package browsing support a la VA/Java</li>
+    <li>investigate filtering improvements in packages browser (provide more
+      filtering options, improved UI for enabling/disabling a filter)</li>
+    <li>indicator for overridden methods</li>
+  </ul>
+  JUnit
+  <ul>
+    <li>JUnit integration - JUnit plugin becomes part of JDT UI</li>
+    <li>Test case and test suite generation wizards</li>
+    <li>org.eclipse.pde.junit - support for launching plugin tests</li>
+  </ul>
+  <p>Compare</p>
+  <ul>
+    <li>support for comparing two methods with each other</li>
+    <li>patch usability improvements (part of base Compare component)</li>
+    <li>generating patches independent of CVS (part of base Compare component)</li>
+  </ul>
+Refactoring
+  <ul>
+    <li>New AST API - migrate the Self Encapsulate Field refactoring to new AST
+      API</li>
+    <li>refactoring wizard usability improvements</li>
+    <li>Self encapsulate field improvements</li>
+    <li>investigate in smart delete support
+      <ul>
+        <li>deleting top-level type provides option to delete Compilation Unit</li>
+        <li>deleting a CU provides option to remove corresponding imports in
+          other Compilation Units</li>
+      </ul>
+    </li>
+    <li>investigate rename field refactoring that updates corresponding getters
+      and setters</li>
   </ul>
 Java Editor
 <ul>
 
 <li>
-Code assist&nbsp;</li>
-
-<ul>
-<li>
-completions to generate stubs for anonymous inner classes
-<ul>
-  <li>use the same dialog as in add unimplemented methods</li>
-</ul>
-</li>
-
-<li>
-indicate deprecated methods</li>
-
-</ul>
-
-<li>
-Improve working copy management infrastructure&nbsp;</li>
+improve working copy management implementation&nbsp;</li>
 
 <ul>
 <li>
@@ -214,49 +195,18 @@ eliminate duplication of buffer contents</li>
 
 </ul>
 
-</ul>
-  Package Browsing
-<ul>
 <li>
-Show members in packages view&nbsp;</li>
-
-<ul>
-<li>
-support filtering based on member attributes</li>
-</ul>
-
-<li>
-Make context menu more consistent&nbsp;</li>
-
-<ul>
-<li>
-generate getter/setter is missing</li>
-
-<li>
-replace from local history/add from local history are misplaced</li>
-</ul>
-
-<li>
-(deferred) Filter for hiding non Java resources</li>
-</ul>
-Building/running
-<ul>
-
-<li>
-Proposal for building against different JREs inside a workspace</li>
-
-<li>
-(deferred) Improvements to class path definition - editing an existing entry</li>
+error feedback during reconciling</li>
 
 </ul>
-  <p>org.eclipse.pde.selfhosting</p>
+  <p>Autofix</p>
   <ul>
-    <li>Address usability issues raised by users</li>
+    <li>first cut at error correction support</li>
   </ul>
 <b>Work items completed in the 2.0 stream:</b>
 <ul>
 <li>
-Error tick support everywhere</li>
+Error ticks everywhere in JDT views</li>
 
 <li>
 Java Editor
@@ -278,6 +228,20 @@ JavaDoc hints</li>
 
 <li>
 add import statement on type completions if needed</li>
+
+<li>
+completions to generate stubs for anonymous inner classes
+<ul>
+  <li>use the same dialog as in add unimplemented methods</li>
+</ul>
+</li>
+
+<li>
+indicate deprecated methods</li>
+
+</ul>
+
+<ul>
 
 <li>
 additional preference settings for:&nbsp;</li>
@@ -312,6 +276,11 @@ searching scoped to the current selection</li>
 
 <li>
 search scoped to working sets</li>
+<li>
+Support case-insensitve searching</li>
+
+<li>
+Reduce UI thread load in working set dialog</li>
 </ul>
 
 <li>
@@ -331,6 +300,24 @@ new code change infrastructure&nbsp;</li>
 <li>
 support for moving of ranges (required for reorder parameter refactoring)</li>
 </ul>
+
+<li>
+Push-up element refactoring in the build&nbsp;</li>
+
+<li>
+Refactoring test suite ready to be released&nbsp;</li>
+
+<li>
+Surround selection with try/catch block</li>
+
+<li>
+renaming a resource should not show up as a refactoring</li>
+
+<li>
+extract local variable</li>
+
+<li>
+structured selection support</li>
 
 </ul>
 
@@ -355,19 +342,30 @@ add dialog to provide more control over javadoc, name.</li>
   </li>
   <li>
 Support for CU header and class/interface comment templates&nbsp;</li>
+  <li>
+Add unimplemented methods: show a check box dialog tree with the
+      unimplemented methods so that the user can pick from.&nbsp;</li>
 </ul>
 </li>
 
 <li>Other
   <ul>
     <li>
-Eclipse PDE self hosting tool&nbsp;early access
-      <ul>
-        <li>
-support for source extraction</li>
-        <li> made available outside of JDT</li>
-      </ul>
+Eclipse PDE self hosting tool&nbsp;(it is now an official part of PDE)
     </li>
+  </ul>
+</li>
+<li>
+Show members in packages view&nbsp;</li>
+
+<ul>
+<li>
+support filtering based on member attributes</li>
+</ul>
+
+<li>JUnit integration
+  <ul>
+    <li>JUnit launching and running support becomes part of the JDT ui.</li>
   </ul>
 </li>
 </ul>
