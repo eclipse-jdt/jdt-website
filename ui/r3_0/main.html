@@ -54,7 +54,7 @@
 				</li>
 				<li>Abstract syntax tree rewriting</li>
 				<li>Surface JDK 1.5 features</li>
-				<li>Polish work</li>
+				<li>Polish and performance work</li>
 			</ul></td>
 		</tr>
 		<tr>
@@ -63,10 +63,12 @@
 
 			<td><b>Architectural Issues</b>
 			<ul>
-				<li><font class="indexsub"></font>Support an IJavaElement adapter in all actions and filters in
+				<li><font class="indexsub"></font><font class="indexsub"
+					color="#8080ff">[&gt;3.0]</font> Support an IJavaElement adapter in all actions and filters in
 				the same way as the workspace supports an IResource adapter
 				(IAdapter.getAdapter(IJavaElement.class)).</li>
-				<li><font class="indexsub"></font>Support reusing Java editor actions (source and refactoring) in
+				<li><font class="indexsub"></font><font class="indexsub"
+					color="#8080ff">[&gt;3.0]</font> Support reusing Java editor actions (source and refactoring) in
 					other plug-ins.</li>
 				<li>Investigate in IActionFilter support for Java elements (see bug
 				30948).</li>
@@ -112,7 +114,7 @@
 			<ul>
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Improve comment handling in AST rewriter.</li>
-				<li> <font class="indexsub">[&gt;3.0]</font> Improve sorting capability for compilation units (by
+				<li> <font class="indexsub"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></font> Improve sorting capability for compilation units (by
 				visibility, by defining type, ...).</li>
 				<li>Enable contributions to code generation templates.</li>
 			</ul>
@@ -355,7 +357,7 @@
 			<td width="50%">item is time permitted.</td>
 		</tr>
 		<tr>
-			<td valign="top"><font class="indexsub">[&gt;3.0]</font></td>
+			<td valign="top"><font class="indexsub" color="#8080ff">[&gt;3.0]</font></td>
 			<td width="50%">item is deferred.</td>
 			<td valign="top"><font class="indexsub"><img border="0"
 				src="../images/new.gif"></font></td>
@@ -377,7 +379,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td width="848"><b>Overall goals for M7</b>
 			<ul>
-				<li></li>
+				<li>Finish AST rewriting</li>
+				<li>Release first version of refactoring and refactoring participant API</li>
 			</ul>
 			</td>
 		</tr>
@@ -386,18 +389,113 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Overhead Items</b>
 			<ul>
-				<li>inbox tracking</li>
-				<li>testing</li>
+				<li>Inbox tracking (16 days)</li>
+				<li>Testing (8 days)</li>
 			</ul>
 		</tr>
-
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Code
+			Manipulation</b><ul>
+				<li>Finish AST rewriting (5 days)</li>
+				<li>Imporve project creation wizard (3 days)</li>
+				<li>Make organize imports Javadoc aware (1 day)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Quick Assist / Quick Fix</b><ul>
+				<li>Add quick fixes for build path problems</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Refactoring</b>
+			<ul>
+				<li>Release first version of refactoring and refactoring participant API (15 days)</li>
+				<li>Merge bug <a href="show_bug.cgi?id=47509">47509</a> back to head (3 days)</li>
+				<li>Support method rename in &quot;Change method signature&quot; refactoring (1 day)</li>
+				<li>Provide code assist in type and package entry fields (3 days)</li>
+				<li>Improve reference updating in Javadoc (6 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Build path</b>
+			<ul>
+				<li>Provide library projects (3 days)</li>
+				<li>Investigate in <a
+					href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=32378">Java
+				Build Path properties page [general issue] [build path]</a> (3 days)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Search</b>
+			<ul>
+				<li>Exchange workspace scope with a scope that only considers element able to reference the element to search for (2 days)</li>
+				<li>Add filter to hide matches in import statements (minimal solution is to remove the matches without a filter)</li>
+				<li>Background Java search</li>
+				<li>Hierarchical search result presentation</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Compare</b>
+			<ul>
+				<li>Investigate to move the structured viewer from compare editor into outliner</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>JUnit</b>
+			<ul>
+				<li>Improved string equals failures (see <a
+					href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44680">44680</a>)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Performance</b>
+			<ul>
+				<li>Investigate reported performace degradations</li>
+				<li>Improve AST sharing (Quick Assist, Mark Occurrences in File)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Miscellaneous</b>
+			<ul>
+				<li>Integrate  leak testing into automatic build</li>
+				<li>Non uniform file encodings</li>
+				<li>Application bundle exporter for Mac OS</li>
+			</ul>
+			</td>
+		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>vacation 2 days</li>
-				<li>EclipseCon</li>
+				<li>vacation: 2 days</li>
+				<li>EclipseCon: 24 days (includes 4 days to prepare talks, posters, ....)</li>
 			</ul>
 			</td>
 		</tr>
