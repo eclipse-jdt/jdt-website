@@ -8,12 +8,12 @@ be run in the display thread but has to be forked (see IRunnableContext.run).
 
 2. There is a lot of functionality in the workbench which is bound to the display thread.
 Even some model operations have to run in the display thread as the document is directly
-coupled with the text widget. There is no real documentation afaik) about which calls are
-possible to call in a non-UI thread.
+coupled with the text widget. There is no real documentation (afaik) about which calls
+can or cannot be invoked in a non-UI thread.
 
 3. To use functionality as described in 2., but to still have a progress monitor, a trick
 can be used to slice the operation in smaller parts that are then run from the forked
-thread but called using syncExec
+thread but called using syncExec. 
 Example is OrganizeImportsAction on a project
 
 4. Operations usually are run as an atomic workspace operation using IWorkspace.run so
