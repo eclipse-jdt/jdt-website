@@ -396,13 +396,15 @@
 	</tbody>
 </table>
 
+
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
 	<tbody>
 		<tr>
-			<a NAME="Milestone_Planning">
+			<a name="Milestone_Planning"> </a>
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
-				face="Arial,Helvetica"><font color="#ffffff"> M9 Milestone Plan (under construction)</font></font></b></td>
-			</a>
+				face="Arial,Helvetica"><font color="#ffffff"> M9 Milestone Plan
+			(under construction)</font></font></b></td>
+			<a></a>
 		</tr>
 		<tr>
 			<td valign="top" width="23"><img
@@ -424,6 +426,7 @@
 				<li>Inbox tracking (12 days)</li>
 				<li>Testing (8 days)</li>
 			</ul>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
@@ -432,7 +435,9 @@
 			<ul>
 				<li>NLS pass (3 days)</li>
 				<li>Provide Javadoc for new API classes (3 days)</li>
-				<li>Investigate where we can use more specific scheduling rules to avoid blocking dialogs (2 days)</li>
+				<li>Investigate where we can use more specific scheduling rules to
+				avoid blocking dialogs (2 days)</li>
+				<li>Make ZRH components activities aware (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -441,7 +446,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Type Hierarchy</b>
 			<ul>
-				<li>Use label decorators to compute override/implements indicator (1 day)</li>
+				<li>Use label decorators to compute override/implements indicator (1
+				day)</li>
 				<li>View initialization in background (1 day)</li>
 			</ul>
 			</td>
@@ -451,18 +457,23 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Refactoring</b>
 			<ul>
-				<li>Make common expression language dynamic plug-in loadiung aware (2 days)</li>
-				<li>Move refactoring into new plug-in org.eclipse.ltk.*.refactoring (8 days)</li>
+				<li>Make common expression language dynamic plug-in loadiung aware
+				(2 days)</li>
+				<li>Move refactoring into new plug-in org.eclipse.ltk.*.refactoring
+				(10 days)</li>
 				<li>Make refactorings more responsive to cancel (1 day)</li>
 				<li>Provide code assist in local and field name entry fields (1 day)</li>
-				<li>Extract Method: allow destination to be outer class if outer class in non-static (1 day)</li>
-				<li>Investigate in better import handling
-				(2 days)<ul>
+				<li>Extract Method: allow destination to be outer class if outer
+				class in non-static (1 day)</li>
+				<li>Investigate in better import handling (2 days)
+				<ul>
 					<li>remove unused imports for move and inline refactoring</li>
 					<li>don't generate .* imports on move</li>
 				</ul>
 				</li>
-				<li>Rename (3 days)<ul><li>imporve ripple method computation</li>
+				<li>Rename (3 days)
+				<ul>
+					<li>imporve ripple method computation</li>
 					<li>investigate in hierarchical package rename</li>
 				</ul>
 				</li>
@@ -472,22 +483,25 @@
 					<li>disable reorg moves via refactoring move dialog</li>
 				</ul>
 				</li>
-				<li>Pull Up
-				(2 days)
+				<li>Pull Up (2 days)
 				<ul>
 					<li>investigate to run use super type where possible after pull up
 					has completed</li>
 					<li>support pulling up into interfaces</li>
-				</ul></li>
+				</ul>
+				</li>
 			</ul>
 			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Quick Fix</b><ul>
-				<li>Use common expression language for Quick fix extension point (1 day)</li>
-				<li>New quick fixes: change compiler preferences, add interface to class, change field &amp; method return type (4 days)</li>
+			<td><b>Quick Fix</b>
+			<ul>
+				<li>Use common expression language for Quick fix extension point (1
+				day)</li>
+				<li>New quick fixes: change compiler preferences, add interface to
+				class, change field &amp; method return type (4 days)</li>
 				<li>Improve quick fixes for Javadoc errors (1 day)</li>
 			</ul>
 			</td>
@@ -495,7 +509,8 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Code Manipulation</b><ul>
+			<td><b>Code Manipulation</b>
+			<ul>
 				<li>Support code generation at cursor location (1 day)</li>
 				<li>Investigate in import aware copy &amp; paste (2 days)</li>
 			</ul>
@@ -507,7 +522,8 @@
 			<td><b>Build path</b>
 			<ul>
 				<li>Provide inclusion filter user interface (1 day)</li>
-				<li>Investigate moving user library container support into JDT/Core (1 day)</li>
+				<li>Investigate moving user library container support into JDT/Core
+				(1 day)</li>
 			</ul>
 			</td>
 		</tr>
@@ -528,10 +544,13 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Compare</b>
+			<td><b>Compare</b> (8 dyas)
 			<ul>
-				<li>Move the structured viewer from compare editor into outliner (3
-				days)</li>
+				<li>Allow headless diff and merge (#54091)</li>
+				<li>Allow binding filenames to compare viewers (#51791)</li>
+				<li>improve compare support for new sync viewer (#55081, #41564,
+				#52261)</li>
+				<li>Show word level diffs using a background color (#54822)</li>
 			</ul>
 			</td>
 		</tr>
@@ -556,12 +575,17 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Miscellaneous</b>
-			<ul>
-				<li>Non uniform file encodings (5 days)
+			<td><b>Miscellaneous</b> <ul>
+				<li>Non uniform file encodings (2 days)
 				<ul>
-					<li>provide user interface</li>
-					<li>adapt JDT/UI, Compare and Search to new file encoding API</li>
+					<li>Provide UI for setting default encoding for files, folders, and
+					projects</li>
+				</ul>
+				</li>
+				<li>Progress View: (8 days)
+				<ul>
+					<li>Improved progress view</li>
+					<li>Local progress indicator for Search</li>
 				</ul>
 				</li>
 			</ul>
@@ -578,6 +602,7 @@
 		</tr>
 	</tbody>
 </table>
+
 
 <table border="0" cellspacing="5" cellpadding="2" width="100%">
 	<tbody>
