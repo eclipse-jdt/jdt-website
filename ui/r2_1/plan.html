@@ -1,0 +1,313 @@
+<html>
+<head>
+<title>JDT UI Component</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+  <tr> 
+    <td align=left width="72%"> <font class=indextop> jdt ui R2.1</font> <br>
+      <font class=indexsub> java development tooling ui </font></td>
+    <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg" height=86 width=120></td>
+  </tr>
+</table>
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Overall 2.1 Plan</font></font></b></td>
+  </tr>
+  <tr> 
+    <td WIDTH="100%"> 
+      <a name="Overall_Planning"></a>
+	  The 2.1 plan below is a proto plan and input from the community is very <b></b>welcome.
+      <h4>The overall themes for JUI are:</h4>
+      <ul>
+        <li>reduce gestures, improve navigation</li>
+        <li>more refactoring support</li>
+        <li>smarter editing</li>
+      </ul>
+      <h4>Planned<b></b> Items</h4>
+      <ul>
+        <li>Architectural issues 
+          <ul>
+            <li>address not present exception issue</li>
+            <li>consistent use of validateEdit in Actions</li>
+            <li>migrate to use JavaElementDelta batching support</li>
+            <li>push some JDT independent editor function into Platform Text component</li>
+          </ul>
+        <li>Performance 
+          <ul>
+            <li><img SRC="progress.gif"> investigate start-up performance</li>
+            <li>memory leak pass</li>
+          </ul>
+        </li>
+		<li>Improve test coverage</li>
+        <li>General UI issues
+          <ul>
+            <li> hierarchical package browsing</li>
+            <li>sorting methods by defining interface/class</li>
+            <li> navigate to implementors of a selected method</li>
+            <li>option to hide imports in outline view</li>
+            <li>use drag&amp;drop for more operations</li>
+            <li>improved &quot;go to&quot; support for both Java and non-Java 
+              resources</li>
+            <li>surface generating markers from code support (To Do comments)</li>
+            <li>support per project compiler settings</li>
+            <li>address inconsistency between view filters, appearance, and filter 
+              buttons in local toolbar</li>
+            <li>preferences UI: tabbed folders vs. subpages</li>
+            <li>more code assist support in input fields asking for Java elements</li>
+          </ul>
+        </li>
+        <li>Class path 
+          <ul>
+            <li>migrate to use the JRE class path container by default with support 
+              for migrating existing project)</li>
+            <li>support adding class path entries in the packages view with the 
+              context menu: 
+              <ul>
+                <li>add JAR</li>
+                <li>add folder</li>
+                <li>use as output folde</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Java Editor 
+          <ul>
+            <li>adapt to changes in Platform Text</li>
+            <li>folding of 
+              <ul>
+                <li> JavaDoc comments</li>
+                <li>methods</li>
+                <li>import statements</li>
+              </ul>
+            </li>
+            <li>improved syntax highlighting/error feedback 
+              <ul>
+                <li>potentially AST based to show fields/members/type names</li>
+                <li>supporting different colors for different marker types in 
+                  squiggly line painter (depends on Platform Text painter support)</li>
+              </ul>
+            </li>
+            <li>improved navigation and typing support 
+              <ul>
+                <li>jump to matching bracket</li>
+                <li>simplify invocation of quickfix</li>
+                <li>smart paste</li>
+                <li>smart JavaDoc comments</li>
+                <li>automatic insertion of closing '}'</li>
+                <li>additional interactive behavior in vertical ruler (e.g., selecting 
+                  lines when dragging)</li>
+                <li>commenting/uncommenting multi-line comments</li>
+                <li>smart joining/deleting (e.g., inverse operation for splitting 
+                  strings, inserting closing brackets etc.)</li>
+              </ul>
+            </li>
+            <li>user defined and controlled hover behavior (e.g, hover shows JavaDoc 
+              or declaration of element depending on pressed modifier)</li>
+            <li>Java editor and non-resources</li>
+            <li>outline of compilation unit in a content assist like light weight 
+              window available inside the editor</li>
+            <li>overview ruler 
+              <ul>
+                <li>hover support</li>
+                <li>investigate the presentation of more marker types such as 
+                  tasks, bookmarks, search results</li>
+              </ul>
+            </li>
+            <li>project preference for line terminator of newly created files</li>
+            <li>code assist 
+              <ul>
+                <li>configurable code assist completion triggers</li>
+                <li>code assist method complete (add parentheses or not) #22125</li>
+                <li> investigate improvement/separation of templates from completions</li>
+              </ul>
+            </li>
+          </ul>
+        <li>Search
+          <ul>
+            <li>investigate into support for presenting matches in non-Java resources</li>
+          </ul>
+        <li>Refactoring 
+          <ul>
+            <li>general 
+              <ul>
+                <li>no more save before file "local" refactorings extract method, 
+                  rename local, inline tmp, extract temp (there will only be textual 
+                  undo).</li>
+                <li>investigate support &quot;refactoring participants&quot; for 
+                  rename/move refactorings so that non-Java resources can be updated 
+                  as well (requires surfacing additional API).</li>
+                <li>enable clients to contribute additional refactorings to the 
+                  refactoring menu</li>
+              </ul>
+            </li>
+            <li>improve existing refactorings 
+              <ul>
+                <li>extract method&nbsp; 
+                  <ul>
+                    <li>find duplicated code inside a CU</li>
+                    <li><img SRC="progress.gif"> rename of parameters</li>
+                    <li><img SRC="ok.gif" height=10 width=10> reorder of parameters</li>
+                  </ul>
+                </li>
+                <li>pull-up 
+                  <ul>
+                    <li>help with referenced methods</li>
+                    <li>support to declare a base method abstract</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>new refactorings 
+              <ul>
+                <li><img SRC="ok.gif" height=10 width=10> extract interface</li>
+                <li><img SRC="ok.gif" height=10 width=10> use super type where possible</li>
+                <li><img SRC="ok.gif" height=10 width=10> inner to outer class</li>
+                <li><img SRC="progress.gif"> change signature (add/remove parameter, change return type, 
+                  reorder)</li>
+                <li><img SRC="progress.gif"> inline method</li>
+                <li><img SRC="progress.gif"> extract/inline constant</li>
+                <li>promote local to field</li>
+                <li>pull down member</li>
+				<li>convert anonymous class to inner class</li>
+              </ul>
+            </li>
+          </ul>
+        <li>Code reorg 
+          <ul>
+            <li>more code reorg via drag and drop (e.g. reorder members)</li>
+          </ul>
+        </li>
+        <li>Code generation 
+          <ul>
+            <li>investigate more customizable code generation</li>
+            <li>generate forwarding methods</li>
+            <li>support for adding methods to a CU</li>
+            <li>new class wizard offers choice about the editor to be opened</li>
+          </ul>
+        <li> Quick fix 
+          <ul>
+            <li><img SRC="ok.gif" height=10 width=10> implement AST rewriting support</li>
+            <li>more quick fixes 
+              <ul>
+                <li><img SRC="progress.gif"> make field/method visible</li>
+                <li><img SRC="progress.gif"> suggest abstract class when a method is abstract</li>
+                <li><img SRC="progress.gif"> remove unreachable catch clause</li>
+                <li>add catch clause to existing try/catch block</li>
+                <li>add parameter instead of creating a method</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Compare 
+          <ul>
+            <li>status number of incoming/outgoing</li>
+            <li>indicate resolution of a change</li>
+            <li>auto merge: accept all incoming</li>
+			<li>help context IDs</li>
+          </ul>
+        <li>JUnit integration 
+          <ul>
+            <li><img SRC="ok.gif" height=10 width=10> support running all tests inside a package 
+            <li>rerun a single failed test</li>
+			<li><img SRC="progress.gif"> adapt to new JUnit version</li>
+			<li>help context IDs</li>
+          </ul>
+      </ul>
+  </tr>
+  <tr>
+    <td ALIGN=CENTER>
+	   <table BORDER=0 CELLSPACING=5 CELLPADDING=0>
+	   <tr>
+	     <td>
+	       <img SRC="progress.gif"> item is under development
+		 </td>
+		<td>
+			<img SRC="ok.gif" height=10 width=10> item is finished
+		</td>
+	   </tr>
+	   </table>
+    </td>
+  </tr>
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">2.1 Development Effort - Milestone 
+        2(October 18th, 2002)</font></font></b></td>
+  </tr>
+  <tr> 
+    <td WIDTH="100%">
+      <h4><a name="Milestone_Planning"></a>JDT UI</h4>
+      <ul>
+        <li> Bug fixing - Fixing defects</li>
+        <li> Refactoring&nbsp;</li>
+        <ul>
+          <li> Change method signature 
+            <ul>
+              <li>add parameter</li>
+              <li>change visibility</li>
+            </ul>
+          </li>
+          <li>Extract/Inline constant</li>
+          <li>Inline method</li>
+          <li>Enhance extract method to allow parameter renaming</li>
+        </ul>
+        <li>Quick Fix&nbsp;</li>
+        <ul>
+          <li>Make field/method visible</li>
+          <li>Suggest abstract class when method is abstract</li>
+          <li>Remove unreachable catch clause</li>
+        </ul>
+        <li> JUnit</li>
+        <ul>
+          <li> Add support for JUnit 3.8.1 (requires Ant 1.5)</li>
+        </ul>
+        <li> Investigate how to improve startup performance (JDT/UI plugin)</li>
+      </ul>
+      <h4> JDT Text (under construction)</h4>
+      <ul>
+        <li> Bug fixing - Reduce number of open problem reports that are not classified 
+          as enhancements</li>
+        <li> Improve navigation</li>
+        <ul>
+          <li> Jump to previous/next member/statement/inner type</li>
+          <li> Jump to matching bracket</li>
+          <li> Home key semantics</li>
+          <li> Simplified activation of quick fix</li>
+        </ul>
+        <li> Smarter typing support</li>
+        <ul>
+          <li> Automatic closing of comments</li>
+          <li> Javadoc generation on typing</li>
+          <li> Automatic fragmentation of strings</li>
+        </ul>
+        <li> Experimental work item</li>
+        <ul>
+          <li> Dynamic linking of Java editors (may not surface in the milestone 
+            build)</li>
+        </ul>
+      </ul>
+	  <h4>Vacation</h4>
+   </tr> 
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Resolution 
+        </font></font></b></td>
+  </tr>
+  <tr>
+    <td>
+	  <ul>
+	    <li>Milestone-1, 2002/09/20: (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=UI&target_milestone=2.1+M1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">all</a>)
+	                                 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=UI&target_milestone=2.1+M1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</a>) 
+		</li>
+	    <li>Milestone-2, 2002/10/18: (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=UI&target_milestone=2.1+M2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">all</a>)
+	                                 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=UI&target_milestone=2.1+M2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</a>) 
+		</li>
+	  </ul>
+	</td>
+  </tr>
+</table>
+
+<br>
+&nbsp; 
+</body>
+</html>

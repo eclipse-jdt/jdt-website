@@ -107,144 +107,32 @@ page for more information about the plugins.
 </tr>
 </table>
 
-<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="894" >
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
 <tr>
-<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="876"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What's
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What's
 Happening?&nbsp;</font></font></b></td>
 </tr>
 
-<tr>
-<td WIDTH="707">
-<h4>
-2.0.1 Maintenance effort</h4>
-
-<ul>
-<li>
-Corresponding sources are released in branch "R2_0_1".</li>
-
-<li>
-Plug-in revision ID got changed to "2.0.1".&nbsp;</li>
-
-<li>
-Bug resolution: (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">planned
-fixes</a>) (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&resolution=FIXED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">resolved
-fixes</a>) (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved
-fixes</a>).&nbsp;</li>
-
-<li>
-To find the latest Eclipse development on the 2.0.1 branch please go <a href="http://64.38.198.171/downloads/201Index.php">here</a></li>
-</ul>
-
-      <h4> <a name="Milestone_Planning"></a>2.1 Development Effort - Milestone 1 (September 
-        20, 2002)</h4>
-
-<h5>
-JDT UI</h5>
-
-<ul>
-<li>
-Bug fixing - Fixing backlog of defects discovered in the 2.0 release</li>
-
-<li>
-Refactoring&nbsp;</li>
-
-<ul>
-<li>
-Extract interface (new)</li>
-
-<li>
-Move inner type to top level (new)</li>
-
-<li>
-Enhance extract method to allow parameter ordering and renaming</li>
-</ul>
-
-<li>
-AST rewriting (new)&nbsp;</li>
-
-<ul>
-<li>
-Enhance text edit infrastructure to better support AST rewriting (org.eclipse.jdt.internal.corext.textmanipulation.enhanced)</li>
-
-<li>
-Convert refactoring change infrastructure to new text edits</li>
-</ul>
-
-<li>
-Quick Fix&nbsp;</li>
-
-<ul>
-<li>
-Use new AST rewriting for new quick fixes</li>
-
-<li>
-Add/Remove parameter if method call doesn't match signature (new)</li>
-</ul>
-
-<li>
-JUnit&nbsp;</li>
-
-<ul>
-<li>
-Run all tests in a package (new)</li>
-
-<li>
-Add support for JUnit 3.8</li>
-</ul>
-
-<li>
-Investigate how to improve startup performance (JDT/UI plugin)</li>
-</ul>
-
-<h5>
-JDT Text</h5>
-
-<ul>
-<li>
-Bug fixing - Reduce number of open problem reports that are not classified
-as enhancements</li>
-
-<li>
-Improve navigation</li>
-
-<ul>
-<li>
-Jump to previous/next member/statement/inner type</li>
-
-<li>
-Jump to matching bracket</li>
-
-<li>
-Home key semantics</li>
-
-<li>
-Simplified activation of quick fix</li>
-</ul>
-
-<li>
-Smarter typing support</li>
-
-<ul>
-<li>
-Automatic closing of comments</li>
-
-<li>
-Javadoc generation on typing</li>
-
-<li>
-Automatic fragmentation of strings</li>
-</ul>
-
-<li>
-Experimental work item</li>
-
-<ul>
-<li>
-Dynamic linking of Java editors (may not surface in the milestone build)</li>
-</ul>
-</ul>
-For more detailed information, check out the <a href="dev.html">Development
-Resources</a>.&nbsp;</td>
+  <tr> 
+    <td WIDTH="100%"> 
+      <h4> 2.0.1 Maintenance effort</h4>
+      <ul>
+        <li> Corresponding sources are released in branch "R2_0_1".</li>
+        <li> Plug-in revision ID got changed to "2.0.1".&nbsp;</li>
+        <li> Bug resolution: (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">planned 
+          fixes</a>) (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&resolution=FIXED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">resolved 
+          fixes</a>) (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&version=2.0&component=UI&target_milestone=2.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned+to+me&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved 
+          fixes</a>).&nbsp;</li>
+        <li> To find the latest Eclipse development on the 2.0.1 branch please 
+          go <a href="http://64.38.198.171/downloads/201Index.php">here</a></li>
+      </ul>
+      <h4> <a name="Milestone_Planning"></a>2.1 Development Effort</h4>
+	  <ul>
+	    <li>Most active development goes into this stream.</li>
+		<li>The 2.1 plan is posted <a href=r2_1/plan.html#Overall_Planning>here</a>.</li>
+		<li>The 2.1 next-milestone plan is posted <a href=r2_1/plan.html#Milestone_Planning>here</a>.</li>
+	  </ul>
+      For more detailed information, check out the <a href="dev.html">Development Resources</a>.</td>
 </tr>
 
 <tr>
