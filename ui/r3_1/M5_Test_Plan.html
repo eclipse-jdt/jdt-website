@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>M5 Test Plan</title>
+</head>
+
+<body>
+<h2> 3.1 M5 Test Grid</h2>
+
+Test day: Wednesday, February 15, 2005<br>
+Components: JDT/Text, JDT/UI, Platform/Search, and Platform/Text<br>
+Testers: Martin Aeschlimann, Daniel Megert, Markus Keller, Tobias Widmer, Tom Eicher<br>
+
+<h4>Introduction (all)</h4>
+A big part of this test pass is devoted to verifying support for new Java 5.0 language features, namely:
+<ul>
+  <li>Generics</li>
+  <li>Annotations</li>
+  <li>Enums</li>
+  <li>Varargs</li>
+  <li>Static Imports</li>
+  <li>Autoboxing</li>
+  <li>Enhanced For Loop</li>
+</ul>
+
+Check the
+<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">JDT UI and Text 5.0 status</a>
+to see what's already done and what's still in the works.
+
+<h4>Bug verification (all)</h4>
+Verify P1 and P2 bugs fixed during M5.<br>
+<ul>
+  <li><a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M5&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;changedin=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;namedcmd=Assigned+to+me&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">P1
+&amp; P2 bugs in JDT/UI &amp; JDT/Text (11)<br>
+    </a></li>
+  <li><a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Search&amp;component=Text&amp;target_milestone=3.1+M5&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;changedin=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;namedcmd=Assigned+to+me&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">P1
+&amp; P2 bugs in Platform/Search &amp; Platform/Text (10)</a><br>
+  </li>
+</ul>
+
+<hr>
+
+<h4>Misc</h4>
+<ul>
+  <li>check icons for new java elements:</li>
+  <ul>
+    <li>check correct modifiers (final, static, ...) for annotations, enums, and their children</li>
+  </ul>
+</ul>
+
+<h4>Source Actions</h4>
+<ul>
+  <li>test all source actions (actions in the workbench or context menu "Source") according to the
+		<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
+  </li>
+  <li>test Override/Implement Methods with varargs and generics</li>
+</ul>
+
+<h4>Rename Refactorings</h4>
+<ul>
+  <li>test all rename refactorings according to the
+		<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
+  </li>
+</ul>
+
+<h4>Method refactorings</h4>
+<ul>
+  <li>Change Method Signature
+    <ul>
+      <li>test the refactoring according to the
+			<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
+      <li>change signatures of generic methods and of methods with parameterized types as parameters</li>
+      <li>check content assist in the parameters table</li>
+      <li>change signatures of varargs methods</li>
+    </ul>
+  </li>
+  
+	<li>Inline Method
+		<ul>
+		  <li>test methods with type parameters (both from generic and parameterized types)</li>
+		  <li>test methods with varargs</li>
+		  <li>test inlining methods referring to static imports</li>
+		</ul>
+	</li>
+  
+</ul>
+
+<h4>Other refactorings</h4>
+<ul>
+	<li>Inline Constant</li>
+	<li>Inline and Extract Local Variable</li>
+	<li>Extract Interface</li>
+	<li>Introduce Factory
+		<ul>
+		  <li>test constructors with type parameters</li>
+		  <li>test constructors with varargs (be aware of bug 84724)</li>
+		</ul>
+	</li>
+	<li>Generalize Type
+		<ul>
+		  <li>test generalizing parameterized types</li>
+		</ul>
+	</li>
+</ul>
+
+
+<hr>
+
+<h4>Quick Fixes</h4>
+<ul>
+  <li>TODO</li>
+</ul>
+
+<h4>Preference Pages</h4>
+<ul>
+  <li>TODO</li>
+</ul>
+
+<h4>Content Assist</h4>
+<ul>
+  <li>check enums and generic types</li>
+</ul>
+
+<h4>Syntax coloring</h4>
+<ul>
+  <li>check syntax coloring for new language features</li>
+</ul>
+
+
+</body>
+</html>
+
+<!-- 
+
+<h4></h4>
+<ul>
+	<li></li>
+	<li>
+		<ul>
+			<li></li>
+		</ul>
+	</li>
+</ul>
+
+-->
