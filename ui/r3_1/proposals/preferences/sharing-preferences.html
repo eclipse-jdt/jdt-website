@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Preferences</title>
+</head>
+<body>
+<h4>Sharing peferrence settings<br>
+</h4>
+<span style="text-decoration: underline;">Problem:</span> Settings on a
+preference pages can depend on settings on other pages. Some settings
+are even shared. We are currently forced to keep this kind of settings
+on the same page.<br>
+In the current implementation of the preference page, each page keeps
+the actual value of a setting in its own temporary store. This store is
+not visible to other pages. The user can switch between pages and make
+changes to them, but only when 'apply' is pressed the pages apply their
+changes to the preference store where they become 'common' knowledge.<br>
+<br>
+Existing problem scenarios:<br>
+<ol>
+  <li>The webapp build path depends on the Java build path <a href="#1">*:</a><br>
+The Java build path is configured in the project properties. The webapp
+plugin has its own page that also works on the build path. Changes in
+the webapp pages should be visible in the Java build path page and vice
+versa. Have a look at bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=32378">32378</a>
+which contains the discussion we had with the IBM guys about that. <br>
+In the Eclipse's extension point philisophy 'add, don't replace', we
+can't filter away the Java build path, so the actual settings must be
+shared.<br>
+Our implementation now forces an apply when the page looses the focus.
+It is a bit of an effort to implement and also not perfect due to bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=52368">52368</a>.</li>
+  <li>Java class path variables are also configured by PDE <a href="#2">**:</a><br>
+The Java class path variable page shows all classpath variable and
+their current values. PDE configures some of the variables depending on
+the settings of its source locations page. When you change settings on
+both pages and press then 'OK', you can get random results. The page
+wins that is applied last (by the preference page container).</li>
+  <li>Preview of syntax coloring also shows other configured
+settings, e.g. font, editor background, configured on another page.<br>
+This is definitely a detail, but it is less irritating if the settings
+used in this preview correspond to what you just changed on the other
+page</li>
+</ol>
+<a name="1"></a>* I am here considering property pages and preference
+pages as similar as I
+assume with the new project scope capabilities these two concepts will
+come closer.<br>
+<a name="2"></a>** classpath variables are currently accessed through a
+Java-Core API which stores them in the preference store.<br>
+<br>
+My conclusion is: Private temporary stores that is
+not accessible to others pages is a big problem<br>
+We have to either force an 'apply' when a page is left, or we introduce
+a common store where pages can communicate.<br>
+<br>
+More motivational points:<br>
+<ol>
+  <li>With the effort of finding a better structure of preference
+pages, I could imagine to allow settings to be available on
+more than one page: e.g. CVS decorators font selection could be at the
+CVS page
+but also be found on the 'font and color' preference page. Obviously
+the two pages must be in sync and can not have two different states of
+the settings at the same time</li>
+  <li>One approach to better structure preference options is to
+introduce
+links on pages to quickly navigate to related settings. That means
+information is coming closer together, more linked</li>
+  <li>Inspired by Tod's prototype (nr 3), I think we should try to
+break up some of the currently huge pages in smaller parts. That,
+however, will add more pressure on options interfering with each other
+e.g. when having a shared preview.</li>
+</ol>
+<br>
+<span style="text-decoration: underline;">Solution:</span><br>
+Two approaches:<br>
+<ol style="list-style-type: lower-alpha;">
+  <li>The setting of every page are automatically applied when the page
+is left. The user could be prompted or it is just done automatically. <br>
++ easy to implement, no problems with existing pages, no changes needed
+for existing pages<br>
+- New use model, dialogs could be disruptive.<br>
+- Need a solution for the 'needs rebuild' problem and similar other
+changes that result in bigger updates.<br>
+- Pages still need an internal model until applied<br>
+- Still only one page visible at a time as page.setVisible is used to
+apply changes<br>
+- Not possible to experiment with combination of settings if these
+settings are on multiple pages (as leaving a page requires to save the
+change) (-&gt; could be solved with a (new) global revert button)<br>
+  </li>
+  <li>The preference pages work on a copy of the preference settings (a
+'working copy'). Pages can use this model directly and don't need to
+keep an internal model. The per page 'apply' button would go away<br>
++ No triggering of updates until the preference page is ok'ed.
+Implementations of pages get simpler as they can use the working copy
+settings directly<br>
++ Would allow showing multiple pages at once (-&gt; Tod's prototype)<br>
+- New use model<br>
+- Pages need to be rewritten, need compatibility mode for old pages:
+Settings applied directly to the preferences must be also reapplied to
+the working copy, can result in conflicts (should not happen as each
+setting should be configured only by one page)<br>
+  </li>
+</ol>
+First implementation thoughts:<br>
+<ol style="list-style-type: lower-alpha;">
+  <li>preference container calls 'page.okPressed' when before a page
+becomes invisible. To offer a dialog ''You have unsaved changes, apply
+now?', an additional API 'hasChanges()' is needed on the page<br>
+  </li>
+</ol>
+<br>
+Related issues:<br>
+<ol>
+  <li>Negotiation of settings (shared validation). A page that relies
+on settings of an other page might have to veto a certain setting, e.g.
+a web project requires a certain build path entry to be present (jar,
+container, ect.)<br>
+  </li>
+  <li>Batching of preference change events: preference change events
+are currently sent out one by one, resulting in multiple updates. Idea:
+new listener to register, that is is able to report more than one
+change at once</li>
+  <li>Mechanism to share a required full build or other long running
+operations (currently solved with jobs of same family: second job start
+tests for other jobs of same family and will ask if job should be
+restarted)</li>
+</ol>
+</body>
+</html>
