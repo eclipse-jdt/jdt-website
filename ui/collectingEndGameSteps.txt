@@ -1,5 +1,6 @@
-- JavaDoc
+- Javadoc
 	- spelling
+		(tool opportunity)
 	- grammar
 	- completeness
 	- @since tags
@@ -15,16 +16,42 @@
 	- list of contributors
 		
 - checking NLS
-- Property files
+
+- properties files
 	- spelling
+		(tool: extract property file)
 	- grammar
-	- wording
+	- style (in particular error messages)
+		see: Jeff Johnson GUI Bloopers
+	- capitalization
+		booktitle capitalization vs. sentence capitalization
 	
 - help context ids
 	- completeness
 	- cross checking with the xml files
 	- all help context ids are defined as constants
+		(including the ones define in XML)
 	
 - CVS file types checking
 	- informing releng about exceptions (e.g. binary files)
+	
+- code
+	- no System.out.println in source
+	- no empty catch blocks (we have never done this)
+	
+- UI
+	- default values pass over preferences
+	- artwork finish pass
+	- mnemonics
+	- accessibility (e.g. view toolbar actions)
+	
+- ISV doc
+	- schema file completeness
+	- examples up to date
+	
+- User doc
+	- welcome page up to date
+	- screenshots
+	
+	
 		
