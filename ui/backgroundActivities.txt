@@ -1,7 +1,7 @@
 
 Section added by MA:
 Current shortcomings of the operation model in Eclipse.  I'm hoping that the "Support
-background activity" efford can be used to bring clarity into this area.
+background activity" efford can be used to bring solutions into this area.
 
 1. To have a progress monitor that can be cancelled, an operation can not
 be run in the display thread but has to be forked (see IRunnableContext.run).
@@ -31,3 +31,13 @@ has to be used instead of IWorkspace.run.
 was no defined lock ordering. We should have a design document that defines how locks
 must be used.
 
+7. We don't know the rules that should apply to resource change listeners. They process
+the deltas and as a result have to do some update work like refreshing a view. Can this
+operation be directly invoked? It has to be asumned that we're not in the display thread
+so the a refresh has run using syncExec. This is dangerous as it can lead to a deadlock.
+So in most cases we decide to 'post' the refresh. 
+
+8. In the scenarion decribed in 7., we want to post a result of a resource listener. The
+problem is that asycExec only works correctly if the listeners were called in the display thread.
+If it occured in a forked thread, the operation posted with asycExec will be invoked when
+the forked operation probes the progress monitor: In the middle of the forked operation.
