@@ -711,16 +711,17 @@
     <tr>
     <tr>
       <td>Content Assist<br><br><br><small>Additional info: need more code assist in javadoc for @value.</small></td>
-      <td>partially works, should insert angular brackets when completing a type / constructor.<br>
-          should propose type parameters in javadoc.</td>
+      <td>partially works<br>
+      	  <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> inserts angular brackets when completing a type (no guesswork yet).<br>
+          <img src="../../images/glass.gif" alt="consider" height="10" width="10" border="0"> should propose type parameters in javadoc.</td>
       <td>N/A</td>
-      <td>Enum types are not proposed yet. Enum constants are proposed.</td>
+      <td><img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> Enum types are proposed.<br>
+      	  <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> Enum constants are proposed.</td>
       <td>N/A</td>
       <td>annotations are proposed by their name, but without the '@'</td>
       <td>N/A</td>
       <td>proposal ranking is wrong, as autoboxing candidates should be ranked as high as non-autoboxed proposals.<br>
-          Parameter guessing should also propose autoboxing candidates (and mark them accordingly?)<br>
-          content assist at caret location: <i>primitive</i>.|</td>
+          Parameter guessing should also propose autoboxing candidates (and mark them accordingly?)</td>
       <td>inside import section: N/A, we don't offer content assist here<br>
           <img src="../../images/ok.gif" alt="works" height="10" width="10" border="0"> in code</td>
       <td>&nbsp;</td>
@@ -735,7 +736,7 @@
       <td>N/A</td>
       <td>not affected</td>
       <td>not affected</td>
-      <td>&nbsp;</td>
+      <td>parameter insertion / guessing should propose <em>one<em> (?) parameter</td>
     </tr>
     <tr>
       <td>Mark Occurrences</td>
