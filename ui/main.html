@@ -1,21 +1,457 @@
- 
-<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
 <head>
+<title>JDT UI Component</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>JDT UI</title>
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
 </head>
-<frameset rows="48,*" frameborder=0 framespacing=0 border="0"> 
-  <frame name="banner" scrolling="no" noresize target="home" 
-                          src="http://dev.eclipse.org/banner.html"  marginwidth="0" marginheight="0" frameborder="NO">
-  <frameset cols="126,*" frameborder=0 framespacing=0 border="0"> 
-    <frame name="home_nav" scrolling="no" noresize target="main" 
-                          src="http://dev.eclipse.org/home_nav.html"  marginwidth="0" marginheight="0" frameborder="NO">
-    <frame name="main" marginwidth=10 marginheight=10 noresize frameborder="NO" src="main.html">
-  </frameset>
-  <noframes> 
-  <body>
-  <p>This page uses frames, but your browser doesn't support them.</p>
-  </body>
-  </noframes> </frameset>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+  <tr> 
+    <td align=left width="72%"> <font class=indextop> jdt ui </font> <br>
+      <font class=indexsub> java development tooling ui </font></td>
+    <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg" height=86 width=120></td>
+  </tr>
+</table>
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Development
+Resources&nbsp;</font></font></b></td>
+</tr>
+
+<tr>
+<td>If you are already a JDT UI developer, check out the <a href="dev.html">Development
+Resources</a>.</td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" HEIGHT="62" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP HEIGHT="21" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">JDT
+UI</font></font></b></td>
+</tr>
+
+<tr>
+<td HEIGHT="21">The JDT UI implements the user interface for the Java IDE.
+It provides several workbench contributions for viewing and manipulating
+Java code:
+<ul>
+<li>
+Packages View - shows the Java element tree as defined by a project's build
+class path</li>
+
+<li>
+Type Hierarchy View - shows the sub- and supertype hierarchies</li>
+
+<li>
+Java Outline View - shows the structure of a Java compilation unit or class
+file</li>
+
+<li>
+Wizards for creating Java elements - Java project, package, class, interface</li>
+
+<li>
+Java Editor - syntax coloring, content specific code assist, code resolve,
+method level edit, import assistance</li>
+</ul>
+In addition to these workbench elements the following functions are provided:
+<ul>
+<li>
+Refactoring support - <i>Extract Method</i>, <i>Safe Rename </i>and <i>Moving</i>
+with reference updates, <i>Self Encapsulate Field</i> etc.</li>
+
+<li>
+Java searching - find declarations of and/or references to packages, types,
+methods, and fields, scoped to the workspace, a working set, or the current
+selection.</li>
+
+<li>
+Java aware structured compare - determine and present changes to individual
+Java methods. It supports to replace individual Java elements with a version
+of an element from the local history.</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td ALIGN=LEFT VALIGN=TOP HEIGHT="21" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Optional
+Plugins Downloads</font></font></b></td>
+</tr>
+
+<tr>
+<td HEIGHT="21">JDT UI contributes some plugins that are not part of the
+Eclipse SDK but can be downloaded from here. Consult the plugin description
+page for more information about the plugins.
+<p><b>Plugins:</b>
+  <ul>
+    <li><a href="plugins/org.eclipse.jdt.junit/index.html">org.eclipse.jdt.junit</a>
+      - JUnit support</li>
+  </ul>
+</td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="894" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="876"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What's
+Happening?&nbsp;</font></font></b></td>
+</tr>
+
+<tr>
+<td width="707">Over the <b>next 6 months</b> the major focus points are:
+<ul>
+<li>
+Address usability issues</li>
+
+<li>
+Java Editor enhancements (templates/macros)&nbsp;</li>
+
+<li>
+Code assist improvements&nbsp;</li>
+
+<ul>
+<li>
+method argument hints</li>
+
+<li>
+Java doc hints</li>
+
+<li>
+automatic triggering of code assist</li>
+</ul>
+
+<li>
+Refactoring&nbsp;</li>
+
+<ul>
+<li>
+additional refactorings</li>
+
+</ul>
+
+<li>
+String externalization support</li>
+
+<li>
+Investigate in additional Java specific project browsing</li>
+
+<li>
+Performance</li>
+</ul>
+  <b>Milestone 5&nbsp;</b>
+  <p>UI</p>
+  <ul>
+    <li>Improve responsiveness of the Open Type dialog (populate table from a
+      separate thread)</li>
+    <li>Moving, copying top-level type should move, copy Compilation Unit</li>
+    <li>Investigate in leveraging the new actions set view association support</li>
+    <li>Investigate in reconcile everywhere again
+      <ul>
+        <li>adapt WorkingCopyManager to new Core supported managed working
+          copies</li>
+      </ul>
+    </li>
+    <li>Progress on menu restructuring</li>
+  </ul>
+  <p>Java Editor</p>
+  <ul>
+    <li>Error bar that shows birds-eye view of errors inside a compilation unit</li>
+    <li>Progress on error clueing/fix assist</li>
+    <li>Key binding support</li>
+    <li>Enable debugger to contribute changing marker properties via menu in
+      vertical ruler</li>
+    <li>Leverage new editor/contribution view activation support</li>
+    <li>Performance scenarios</li>
+  </ul>
+<p>Java Doc
+  <ul>
+    <li>Stabilize current support</li>
+  </ul>
+  <p>Compare</p>
+  <ul>
+    <li>UI to recover deletions from local history</li>
+    <li>Indicate resolved changes</li>
+  </ul>
+  <p>API</p>
+  <ul>
+    <li>Progress on making the Actions API</li>
+    <li>Surface JarPackager support classes</li>
+  </ul>
+  <p>Search</p>
+  <ul>
+    <li>Support Java and text searching in working copies</li>
+  </ul>
+  <p>Wizards</p>
+  <ul>
+    <li>Migrate to new Capability based Project wizard.</li>
+  </ul>
+Refactoring
+  <ul>
+    <li>Improve handling of read-only files, validateEdit support</li>
+  </ul>
+<b>Work items completed in the 2.0 stream:</b>
+<ul>
+<li>
+UI
+<ul>
+  <li>Error ticks everywhere in JDT views</li>
+  <li>Override indicator in outline</li>
+    <li>Support clipboard based copying of resources
+    </li>
+    <li>Support decorators in all views
+    </li>
+</ul>
+</li>
+
+<li>
+Java Editor
+<ul>
+  <li>
+Improve value hovering when debugging</li>
+  <li>
+Templates/macros</li>
+
+<li>
+error feedback as you type (requires SWT support)</li>
+
+<li>
+Find/Replace improvements:&nbsp;
+<ul>
+  <li> Find Next, Find in Selection, Incremental Find</li>
+</ul>
+  </li>
+
+</ul>
+</li>
+
+<li>
+Code assist improvements&nbsp;</li>
+
+<ul>
+<li>
+method argument hints</li>
+
+<li>
+JavaDoc hints</li>
+
+<li>
+add import statement on type completions if needed</li>
+
+<li>
+completions to generate stubs for anonymous inner classes
+<ul>
+  <li>use the same dialog as in add unimplemented methods</li>
+</ul>
+</li>
+
+<li>
+indicate deprecated methods</li>
+
+</ul>
+
+<ul>
+
+<li>
+additional preference settings for:&nbsp;</li>
+
+<ul>
+<li>
+constrain visibility (default off)</li>
+
+<li>
+auto complete (default off)</li>
+
+<li>
+auto import (default on)</li>
+
+<li>
+show java doc hints (default on)</li>
+</ul>
+</ul>
+
+<li>
+Search&nbsp;</li>
+
+<ul>
+<li>
+search in hierarchy</li>
+
+<li>
+read/write access distinction in field reference searches</li>
+
+<li>
+searching scoped to the current selection</li>
+
+<li>
+search scoped to working sets</li>
+<li>
+Support case-insensitve searching</li>
+
+</ul>
+
+<li>
+Refactoring&nbsp;
+<ul>
+  <li>converted to new AST API</li>
+</ul>
+</li>
+
+<ul>
+<li>
+rename parameter</li>
+
+<li>
+integrate move refactoring with drag&amp;drop in packages view</li>
+
+<li>
+new code change infrastructure&nbsp;</li>
+
+<ul>
+<li>
+support for moving of ranges (required for reorder parameter refactoring)</li>
+</ul>
+
+<li>
+Push-up element refactoring in the build&nbsp;</li>
+
+<li>
+Move static methods and fields</li>
+
+<li>
+Rename field refactoring updates getters and setters</li>
+
+<li>
+Refactoring test suite ready to be released&nbsp;</li>
+
+</ul>
+
+<ul>
+
+<li>
+Surround selection with try/catch block</li>
+
+<li>
+Externalize String</li>
+
+<li>
+renaming a resource should not show up as a refactoring</li>
+
+<li>
+extract local variable</li>
+
+<li>
+structured selection support</li>
+
+<li>
+smart delete of top-level type</li>
+
+</ul>
+
+<li>
+Package&nbsp; browsing</li>
+
+<ul>
+<li>
+optionally show the children of a compilation unit or class file</li>
+<li>
+VA/Java style package browsing support (Java Browser perspective)</li>
+<li>
+Support package name compression</li>
+</ul>
+
+<li>
+Code generation
+<ul>
+  <li>Generate getter/setter improvements&nbsp;
+    <ul>
+      <li>
+add dialog to provide more control over javadoc, name.</li>
+    </ul>
+  </li>
+  <li>
+Support for CU header and class/interface comment templates&nbsp;</li>
+  <li>
+Add unimplemented methods: show a check box dialog tree with the
+      unimplemented methods so that the user can pick from.&nbsp;</li>
+</ul>
+</li>
+
+<li>Compre
+  <ul>
+    <li>Compare two methods with each other</li>
+    <li>Birds-eye view of changes</li>
+  </ul>
+</li>
+
+<li>Other
+  <ul>
+    <li>
+Eclipse PDE self hosting tool&nbsp;(it is now an official part of PDE)
+    </li>
+  </ul>
+</li>
+<li>
+Show members in packages view&nbsp;</li>
+
+<ul>
+<li>
+support filtering based on member attributes</li>
+</ul>
+
+<li>JUnit integration
+  <ul>
+    <li>JUnit launching and running is part of the JDT UI</li>
+    <li>Support launch configurations for JUnit test cases</li>
+    <li>PDE JUnit launching</li>
+    <li>Wizards for creating TestSuites and TestCases</li>
+  </ul>
+</li>
+<li>Java Doc
+  <ul>
+    <li>Java Doc exporter</li>
+    <li>access to external Java Doc integrated with help (F1 support)&nbsp;</li>
+    <li>Support to browse generated Java Doc from the export wizard</li>
+  </ul>
+</li>
+<li>API
+  <ul>
+    <li>surface filters and sorters as API</li>
+    <li>surface the CreateTypePage as API</li>
+  </ul>
+</li>
+</ul>
+For more detailed information, check out the <a href="dev.html">Development
+Resources</a>.</td>
+</tr>
+
+<tr>
+<td width="707"></td>
+</tr>
+</table>
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Get
+Involved!</font></font></b></td>
+</tr>
+
+<tr>
+<td>If you are interested in participating in the development of the JDT
+UI component, check out the developer's mailing list: <a href="http://dev.eclipse.org/mailman/listinfo/jdt-ui-dev">jdt-ui-dev@eclipse.org</a>.
+Chat with people there about your problems and interests, and find out
+what you can do to help.
+<p>If you have a background in the development of user interfaces, are
+interested in making the development and exploration of Java code fun,
+then don't hesitate to contact the JDT UI team. There is upcoming work
+in many areas like the Java editor or refactoring support. We need help for implementing many
+more refactorings. However be warned, the refactoring work is done in a
+strict test-first style, so get used to write tests before code!
+<p>For more detailed information, check out the <a href="dev.html">Development
+Resources</a>.</td>
+</tr>
+</table>
+
+<br>&nbsp;
+</body>
 </html>
