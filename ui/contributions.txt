@@ -5,7 +5,7 @@ Things to remember when contributing code to jdt ui:
    
 - all files should have appropriate copyright notices, indicating the original contributor
   The triggering bug report number is good to have, for easier tracking.
-  
+   
 - code had to adhere to jdt ui's naming convention 
 (ideally, also to our style conventions, like compact assignments, but that it harded to enforce or check)
 
