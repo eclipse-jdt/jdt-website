@@ -99,125 +99,10 @@ Happening?&nbsp;</font></font></b></td>
 </tr>
 
 <tr>
-<td width="707">Over the <b>next 6 months</b> the major focus points are:
-<ul>
-<li>
-Address usability issues</li>
-
-<li>
-Java Editor enhancements (templates/macros)&nbsp;</li>
-
-<li>
-Code assist improvements&nbsp;</li>
-
-<ul>
-<li>
-method argument hints</li>
-
-<li>
-Java doc hints</li>
-
-<li>
-automatic triggering of code assist</li>
-</ul>
-
-<li>
-Refactoring&nbsp;</li>
-
-<ul>
-<li>
-additional refactorings</li>
-
-</ul>
-
-<li>
-String externalization support</li>
-
-<li>
-Investigate in additional Java specific project browsing</li>
-
-<li>
-Performance</li>
-</ul>
-  <b>Milestone 6&nbsp;</b>
-  <p>UI</p>
-  <ul>
-    <li>Reconcile everywhere support
-      <ul>
-        <li>evaluate first implementation if experience is positive support it
-          in all JDT views</li>
-      </ul>
-    </li>
-    <li>Context menu reorganization</li>
-    <li>Enable single click to open support from workbench in Java views.</li>
-    <li>Support for opening and closing projects in the packages view</li>
-    <li>Java working set creation wizard</li>
-    <li>Use new FrameList API from workbench</li>
-    <li>Quick fix
-      <ul>
-        <li>support creating a non-existing type</li>
-      </ul>
-    </li>
-    <li>Support copy/move members by drag&amp;drop</li>
-  </ul>
-  <p>Java Editor</p>
-  <ul>
-    <li>Performance</li>
-    <li>Publish key bindings</li>
-    <li>Enable vertical ruler menu for accessability</li>
-    <li>Quick fix improvements (remove fixed errors)</li>
-    <li>Support different file encodings</li>
-    <li>Performance scenarios</li>
-    <li>Return to last modified position inside a file</li>
-    <li>Support to open Java editor on repository resources</li>
-    <li>Support team actions for types</li>
-    <li>Address &quot;template completions appear to popular&quot; in code
-      assist</li>
-    <li>Class path improvements
-      <ul>
-        <li>support finding source folders in existing projects on the file
-          system</li>
-        <li>support new class path container entries</li>
-        <li>help converting from a project without source folders to a project
-          that is using source folders</li>
-      </ul>
-    </li>
-  </ul>
-  <p>Code Generation</p>
-  <ul>
-    <li>Organize import improvements</li>
-    <li>Support to create getters/setters on a type</li>
-  </ul>
-<p>Java Doc
-  <ul>
-    <li>Support F1 Java doc access in the editor</li>
-  </ul>
-  <p>Compare</p>
-  <ul>
-    <li>Indicate resolved changes in the overview bar</li>
-    <li>Support to add more than one deleted file from the local history</li>
-    <li>Address issue of opening large file initially</li>
-  </ul>
-  <p>API</p>
-  <ul>
-    <li>Surface support for creating Views with error tick adornments</li>
-  </ul>
-  <p>Search</p>
-  <ul>
-    <li>Add Search menu to menu bar</li>
-    <li>Support searching in multiple working sets</li>
-  </ul>
-  <p>Package Browsing</p>
-  <ul>
-    <li>improve filtering support</li>
-  </ul>
-Refactoring
-  <ul>
-    <li>remove dependencies on old AST API</li>
-    <li>honor formatting options in generated code</li>
-    <li>make the refactoring actions retargetable</li>
-  </ul>
+<td width="707">We are now in the test/fix passes for 2.0
+  <p>
 <b>Work items completed in the 2.0 stream:</b>
+  </p>
 <ul>
 <li>
 UI
@@ -228,13 +113,36 @@ UI
     </li>
     <li>Support decorators in all views
     </li>
-    <li>New menu bar structure
+    <li>Menus
+      <ul>
+        <li>new menu bar structure</li>
+        <li>context menu reorganization</li>
+      </ul>
     </li>
     <li>Improve responsiveness of the Open Type dialog (populate table from a
       separate thread)
     </li>
+    <li>Reconcile everywhere support
+      <ul>
+        <li>evaluate first implementation if experience is positive support it
+          in all JDT views</li>
+      </ul>
+    </li>
+  <li>Enable single click to open support from workbench in Java views</li>
+  <li>Support object contributions (team menus) on top-level types</li>
 </ul>
 </li>
+
+    <li>Class path improvements
+      <ul>
+        <li>support finding source folders in existing projects on the file
+          system</li>
+        <li>support new class path container entries</li>
+        <li>help converting from a project without source folders to a project
+          that is using source folders</li>
+        <li>support for editing existing entries</li>
+      </ul>
+    </li>
 
 <li>
 Java Editor
@@ -258,6 +166,13 @@ Find/Replace improvements:&nbsp;
   <li>Key binding support</li>
   <li>Show errors as user types</li>
   <li>Support contributions to the vertical ruler menu</li>
+
+    <li>Quick fix
+    </li>
+    <li>F1 Java doc access in the editor
+    </li>
+    <li>Enable vertical ruler menu for accessability
+    </li>
 
 </ul>
 </li>
@@ -321,9 +236,9 @@ read/write access distinction in field reference searches</li>
 searching scoped to the current selection</li>
 
 <li>
-search scoped to working sets</li>
+search scoped to working sets, searching in multiple working sets</li>
 <li>
-Support case-insensitve searching</li>
+Support for case-insensitve searching</li>
 
 <li>
 Search for files and contents</li>
@@ -331,7 +246,7 @@ Search for files and contents</li>
 </ul>
 
 <li>
-Refactoring&nbsp;
+Refactoring/Code reorg
 <ul>
   <li>converted to new AST API</li>
 </ul>
@@ -389,6 +304,9 @@ smart delete of top-level type</li>
 <li>
 Improve handling of read-only files, validateEdit support</li>
 
+<li>
+honor formatting options in generated code</li>
+
 </ul>
 
 <li>
@@ -401,6 +319,12 @@ optionally show the children of a compilation unit or class file</li>
 VA/Java style package browsing support (Java Browser perspective)</li>
 <li>
 Support package name compression</li>
+<li>
+Support for opening and closing projects in the packages view</li>
+<li>
+Java working set creation wizard</li>
+<li>
+more filtering support, user defined filters</li>
 </ul>
 
 <li>
@@ -410,13 +334,19 @@ Code generation
     <ul>
       <li>
 add dialog to provide more control over javadoc, name.</li>
+      <li>
+support getter/setter creation on types</li>
     </ul>
   </li>
   <li>
 Support for CU header and class/interface comment templates&nbsp;</li>
   <li>
 Add unimplemented methods: show a check box dialog tree with the
-      unimplemented methods so that the user can pick from.&nbsp;</li>
+      unimplemented methods so that the user can pick from.&nbsp;
+<ul>
+  <li>support a flat list of methods to override</li>
+</ul>
+  </li>
 </ul>
 </li>
 
@@ -424,13 +354,16 @@ Add unimplemented methods: show a check box dialog tree with the
   <ul>
     <li>Compare two methods with each other</li>
     <li>Birds-eye view of changes</li>
-    <li>UI to recover deletions from local history</li>
+    <li>UI to recover deletions from local history (support adding multiple
+      files)</li>
+    <li>Indicate resolved changes in the overview bar</li>
   </ul>
 </li>
 
 <li>Reorg
   <ul>
     <li>Moving, copying top-level type should move, copy Compilation Unit</li>
+    <li>Support copy/move members by drag&amp;drop</li>
   </ul>
 </li>
 
@@ -461,6 +394,7 @@ support filtering based on member attributes</li>
   <ul>
     <li>Java Doc exporter</li>
     <li>access to external Java Doc integrated with help (F1 support)&nbsp;</li>
+    <li>show full Java doc on F2</li>
     <li>Support to browse generated Java Doc from the export wizard</li>
     <li>Support the link option (e.g. refer to other JavaDoc from generated
       JavaDoc)</li>
