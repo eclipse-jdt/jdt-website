@@ -1,0 +1,29 @@
+- JavaDoc
+	- spelling
+	- grammar
+	- completeness
+	- @since tags
+	- correctness
+		- return value
+		- parameter list
+		- exceptions
+	- package.html files
+		-copyright/licence
+		
+- copyright/license
+	- every file
+	- list of contributors
+		
+- checking NLS
+- Property files
+	- spelling
+	- grammar
+	- wording
+	
+- help context ids
+	- completeness
+	- cross checking with the xml files
+	- all help context ids are defined as constants
+	
+- CVS file types checking
+		
