@@ -60,25 +60,28 @@
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			
-    <td><b>Architectrual Issues</b> 
-      <ul>
-        <li>Support an IJavaElement adapter in all actions and filters in the 
-          same way as the workspace supports an IResource adapter (IAdapter.getAdapter(IJavaElement.class)).</li>
-        <li>Investigate in IActionFilter support for Java elements (see bug 30948).</li>
-        <li>Investigate to use platform's decorator mechanism for error ticks 
-          and running man decoration.</li>
-        <li>Remove separation between source manipulation actions, refactorings 
-          and quick assists.</li>
-        <li>Allow non-Java partitions in the Java editors.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Introduce concept of a reconciling pipeline: 
-          <ul>
-            <li>each element of the pipeline uses the result of the previous</li>
-            <li>mapping between editor content and the several intermediate formats.</li>
-          </ul>
-        </li>
-      </ul>
+
+			<td><b>Architectrual Issues</b>
+			<ul>
+				<li>Support an IJavaElement adapter in all actions and filters in
+				the same way as the workspace supports an IResource adapter
+				(IAdapter.getAdapter(IJavaElement.class)).</li>
+				<li>Investigate in IActionFilter support for Java elements (see bug
+				30948).</li>
+				<li>Investigate to use platform's decorator mechanism for error
+				ticks and running man decoration.</li>
+				<li>Remove separation between source manipulation actions,
+				refactorings and quick assists.</li>
+				<li>Allow non-Java partitions in the Java editors.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Introduce concept of a reconciling pipeline:
+				<ul>
+					<li>each element of the pipeline uses the result of the previous</li>
+					<li>mapping between editor content and the several intermediate
+					formats.</li>
+				</ul>
+				</li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
@@ -114,37 +117,39 @@
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 
-			
-    <td><b>Typing</b> 
-      <ul>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+
+			<td><b>Typing</b>
+			<ul>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0">Smart semicolon, braces, parenthesis in Java code.</li>
-        <li>Investigate auto correct in Java code.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+				<li>Investigate auto correct in Java code.</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0">Allow typing actions to be executed in "raw" mode.</li>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Improve commenting/uncommenting of code.</li>
-        <li><font color="#000000">S</font><font color="#000000">upport code completion 
-          after &lt;code&gt;Te| or &lt;tt&gt;Te.</font></li>
-      </ul>
+				<li><font color="#000000">S</font><font color="#000000">upport code
+				completion after &lt;code&gt;Te| or &lt;tt&gt;Te.</font></li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
-			
-    <td><b>Navigation</b> 
-      <ul>
-        <li><img src="../images/ok.gif" nosave="" height="10" width="10"
-					border="0"> Type hierarchy pop-up for a method. It allows 
-          to navigate up and down in the type hierarchy (overrides/ implementors).</li>
-        <li>Generalize Type hierarchy pop-up to structured selections in Java 
-          views</li>
-        <li><font color="#000000"><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Investigate Tab navigator contributions</font>.&nbsp;</li>
-        <li>Introduce code folding.</li>
-        <li>Present URLs in Javadoc as interactive links.</li>
-      </ul>
+
+			<td><b>Navigation</b>
+			<ul>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Type hierarchy pop-up for a method. It allows to
+				navigate up and down in the type hierarchy (overrides/
+				implementors).</li>
+				<li>Generalize Type hierarchy pop-up to structured selections in
+				Java views</li>
+				<li><font color="#000000"><img src="../images/progress.gif"
+					nosave="" height="5" width="14" border="0"> Investigate Tab
+				navigator contributions</font>.&nbsp;</li>
+				<li>Introduce code folding.</li>
+				<li>Present URLs in Javadoc as interactive links.</li>
+			</ul>
 			</td>
 		</tr>
 		<tr>
@@ -395,8 +400,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Improve User Experience</b>
 			<ul>
-				
-        <li>Simplify filter management in JDT views by providing MRU list</li>
+
+				<li>Simplify filter management in JDT views by providing MRU list (2 days)</li>
 			</ul>
 			</td>
 		</tr>
@@ -415,23 +420,23 @@
 				nosave="" border="0" height="16" width="16"></td>
 
 			<td><b>JDT Text</b>
-			
-      <ul>
-        <li>finish Javadoc formatting</li>
-        <li>Javadoc spell checking including quick fix</li>
-        <li>improve Javadoc content assist with words from the spell checking 
-          word list and from open editors </li>
-        <li>Smart Tab handling / improving auto indent</li>
-        <li>improve content outline (or find equivalent solution) 
-          <ul>
-            <li> show inherited members</li>
-            <li>sorting </li>
-          </ul>
-        </li>
-        <li>improve declarations view to show ranges found in search (depends 
-          on Platform Text support</li>
-      </ul>
-      </td>
+
+			<ul>
+				<li>finish Javadoc formatting</li>
+				<li>Javadoc spell checking including quick fix</li>
+				<li>improve Javadoc content assist with words from the spell
+				checking word list and from open editors</li>
+				<li>Smart Tab handling / improving auto indent</li>
+				<li>improve content outline (or find equivalent solution)
+				<ul>
+					<li>show inherited members</li>
+					<li>sorting</li>
+				</ul>
+				</li>
+				<li>improve declarations view to show ranges found in search
+				(depends on Platform Text support)</li>
+			</ul>
+			</td>
 		</tr>
 		<tr>
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
@@ -447,8 +452,8 @@
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Search</b>
 			<ul>
-				
-        <li>provide regex support in search (requires 1.4 JDK)</li>
+
+				<li>provide regex support in search (requires 1.4 JDK) (1 day)</li>
 				<li>provide responsive text search (10 days)</li>
 			</ul>
 		</tr>
@@ -489,9 +494,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td valign="top"><img
-				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
-				height="16" width="16"></td>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Build Path</b>
 			<ul>
 				<li>simplify creation and management of library projects. (3 days)</li>
@@ -499,9 +503,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td valign="top"><img
-				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
-				height="16" width="16"></td>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
 			<td style="vertical-align: top"><b>Dependencies</b>
 			<ul>
 				<li>JDT/Core
@@ -512,12 +515,12 @@
 				</li>
 				<li>Platform/Text
 				<ul>
-					
-            <li>annotation management for file buffers</li>
+
+					<li>annotation management for file buffers</li>
 				</ul>
 				<ul>
-					
-            <li>enriched file buffer listener support</li>
+
+					<li>enriched file buffer listener support</li>
 				</ul>
 				</li>
 				<li>provide feedback on the generic navigator prototype (2 days)</li>
