@@ -7,25 +7,26 @@ be run in the display thread but has to be forked (see IRunnableContext.run).
 
 2. There is a lot of functionality in the workbench which is bound to the display thread.
 Even some model operations have to run in the display thread as the document is directly
-coupled with the text widget. There is no real doumentation (afaik) about which calls are
+coupled with the text widget. There is no real documentation afaik) about which calls are
 possible to call in a non-UI thread.
 
-3. To use functionality as described in 2. but to still have a progress monitor, a trick
-can be used to slice the opearyi in smaller display-thread requiring part that are run
-from the forked thread but called using syncExec
+3. To use functionality as described in 2., but to still have a progress monitor, a trick
+can be used to slice the operation in smaller parts that are then run from the forked
+thread but called using syncExec
+Example is OrganizeImportsAction on a project
 
 4. Operations usually are run as an atomic workspace operation using IWorkspace.run so
 that all resource deltas are folded and only broadcasted at the end of an operation.
-An (undocumented) restriction of the current implementation is that folding happens is
+An (undocumented) restriction of the current implementation is that folding is
 bound to the thread where the operation was called. So if an operation uses the method
-descrbed in 3., folding happens only for deltas issued in the forked thread. All
-deltas resulting from functionality that is run with syncExec in the display thread are
-not folded but broadcasted immediatly.
+described in 3., folding happens only for deltas issued in the forked thread. All
+deltas resulting from functionality that is run with syncExec are not folded but
+broadcasted immediately.
 
 5. JavaCore also allows folding of it Java element deltas, but to do this, JavaCore.run
 has to be used instead of IWorkspace.run.
 
-6. In the past we were hit by several deadlocks. Most of them occured because there
+6. In the past we were hit by several deadlocks. Most of them occurred because there
 was no defined lock ordering. We should have a design document that defines how locks
 must be used.
 
