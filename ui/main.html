@@ -7,35 +7,143 @@
 
 <body bgcolor="#FFFFFF" text="#000000">
 <table border=0 cellspacing=5 cellpadding=2 width="100%" >
-  <tr>
-    <td align=left width="72%"> <font class=indextop> jdt ui</font> <br>
+  <tr> 
+    <td align=left width="72%"> <font class=indextop> jdt ui </font> <br>
       <font class=indexsub> java development tooling ui </font></td>
     <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg" height=86 width=120></td>
   </tr>
 </table>
 <table border=0 cellspacing=5 cellpadding=2 width="100%" >
-  <tr>
-    <td align=LEFT valign=TOP bgcolor="#0080C0"><b><font color="#FFFFFF" face="Arial,Helvetica">Development
+  <tr> 
+    <td align=LEFT valign=TOP bgcolor="#0080C0"><b><font color="#FFFFFF" face="Arial,Helvetica">Development 
       Resources </font></b></td>
   </tr>
-  <tr>
-    <td>
-      <p>If you are already a JDT UI developer, check out the <a href="dev.html">Development
+  <tr> 
+    <td> 
+      <p>If you are already a JDT UI developer, check out the <a href="dev.html">Development 
         Resources</a>.</p>
       </td>
   </tr>
 </table>
+<table border=0 cellspacing=5 cellpadding=2 width="100%" height="62" >
+  <tr> 
+    <td align=LEFT valign=TOP bgcolor="#0080C0" height="21"><b><font color="#FFFFFF" face="Arial,Helvetica">JDT UI</font></b></td>
+  </tr>
+  <tr> 
+    <td height="21"> 
+      <p>The JDT UI implements the user interface for the Java IDE. It provides
+      several workbench contributions for viewing and manipulating Java code:</p>
+      <ul>
+        <li>Packages View - shows the Java element tree as defined by a
+          project's build class path</li>
+        <li>Type Hierarchy View - shows the sub- and supertype hierarchies</li>
+        <li>Java Outline View - shows the structure of a Java compilation unit
+          or class file</li>
+        <li>Wizards for creating Java elements - Java project, package, class,
+          interface</li>
+        <li>Java Editor - syntax coloring, content specific code assist, code
+          resolve, method level edit, import assistance</li>
+      </ul>
+      <p>In addition to these workbench elements the following functions are
+      provided:</p>
+      <ul>
+        <li>Refactoring support - <i> Extract Method</i>, <i> Safe Rename </i>and
+          <i>Moving</i> with reference updates, <i>Self Encapsulate Field</i> etc.</li>
+        <li>Java searching - find declarations of and/or references to packages,
+          types, methods, and fields, scoped to the workspace, a working set, or
+          the current selection.</li>
+        <li>Java aware structured compare - determine and present changes to individual Java
+          methods. It supports to replace individual Java elements with a version
+          of an element from the local history.</li>
+      </ul>
+      </td>
+  </tr>
+</table>
 <table border=0 cellspacing=5 cellpadding=2 width="100%" >
-  <tr>
-    <td align=LEFT valign=TOP colspan="2" bgcolor="#0080C0"><b><font color="#FFFFFF" face="Arial,Helvetica">Get
+  <tr> 
+    <td align=LEFT valign=TOP colspan="2" bgcolor="#0080C0"><b><font face="Arial,Helvetica" color="#FFFFFF">What's 
+      Happening? </font></b></td>
+  </tr>
+  <tr> 
+    <td> 
+      <p>Over the next 6 months the major focus points are:</p>
+      <ul>
+        <li>Address usability issues</li>
+        <li>Java Editor enhancements
+        </li>
+        <li>Refactoring
+          <ul>
+            <li>additional refactorings</li>
+            <li>expose API to the refactoring infrastructure</li>
+          </ul>
+        </li>
+        <li>String externalization support</li>
+        <li>JUnit integration</li>
+        <li>Investigate in additional Java specific project browsing</li>
+        <li>Performance</li>
+      </ul>
+      <p>In the more immediate term, efforts for the next milestone (end of November) 
+        are focused on:</p>
+      <ul>
+        <li>Refactoring
+          <ul>
+            <li>implement a new code change infrastructure</li>
+            <li>push-up method and fields&nbsp;</li>
+          </ul>
+        </li>
+        <li>Code generation
+          <ul>
+            <li>surround text selection with try/catch</li>
+          </ul>
+        </li>
+        <li>Search
+          <ul>
+            <li>working set scoped searching</li>
+          </ul>
+        </li>
+        <li>Packages view
+          <ul>
+            <li>working set filtering support</li>
+          </ul>
+        </li>
+        <li>Type hierarchy
+          <ul>
+            <li>show type hierarchy scoped to packages and projects</li>
+          </ul>
+        </li>
+        <li>Java Editor
+          <ul>
+            <li>macros/template support</li>
+            <li>matching bracket highlighting&nbsp;</li>
+            <li>revisit working copy management</li>
+          </ul>
+        </li>
+        </ul>
+      <p>For more detailed information, check out the <a href="dev.html">Development 
+        Resources</a>.</p>
+</td>
+  </tr>
+</table>
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+  <tr> 
+    <td align=LEFT valign=TOP colspan="2" bgcolor="#0080C0"><b><font color="#FFFFFF" face="Arial,Helvetica">Get 
       Involved!</font></b></td>
   </tr>
-  <tr>
-    <td>
-      <p>If you are interested in participating in the development of the JDT UI
-        component, check out the developer's mailing list: <a href="http://dev.eclipse.org/mailman/listinfo/jdt-ui-dev">jdt-ui-dev@eclipse.org</a>.
-        Chat with people there about your problems and interests, and find out
-        what you can do to help. </p>
+  <tr> 
+    <td> 
+      <p>If you are interested in participating in the development of the JDT UI component, 
+        check out the developer's mailing list: <a href="http://dev.eclipse.org/mailman/listinfo/jdt-ui-dev">jdt-ui-dev@eclipse.org</a>. 
+        Chat with people there about your problems and interests, and find out 
+        what you can do to help.</p>
+      <p>If you have a background in the development of user interfaces, are
+      interested in making the development and exploration of Java code fun,
+      then don't hesitate to contact the JDT UI team. There is upcoming work in
+      many areas like the Java editor or refactoring support. For example, once
+      the refactoring APIs are in place we need help for implementing many more
+      refactorings. However be warned, the refactoring work is done in a strict
+      test-first style, so get used to write tests before code!</p>
+      <p>For more detailed information, check out the <a href="dev.html">Development 
+        Resources</a>.</p>
       </td>
   </tr>
 </table>
