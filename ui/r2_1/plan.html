@@ -99,8 +99,8 @@
         <li>Java Editor 
           <ul>
             <li><img src="progress.gif" height=5 width=14> adapt to changes in 
-              Platform Text (M3/M4)</li>
-            <li><img src="progress.gif" height=5 width=14> folding of (M3/M4) 
+              Platform Text (M5)</li>
+            <li><font class=indexsub>[>2.1]</font> folding of
               <ul>
                 <li>Javadoc comments</li>
                 <li>methods</li>
@@ -130,7 +130,7 @@
                 <li><img src="ok.gif" height=10 width=10> Ctrl-click in addition 
                   to F3</li>
                 <li><img src="ok.gif" height=10 width=10> automatic insertion 
-                  of closing '}' (M3/M4)</li>
+                  of closing '}'</li>
                 <li><img src="ok.gif" height=10 width=10> <b></b>go to last edit 
                   position</li>
                 <li>(commenting/uncommenting multi-line comments)</li>
@@ -143,10 +143,10 @@
             <li>(Java editor and non-resources)</li>
             <li><img src="ok.gif" height=10 width=10> outline of compilation unit 
               in a content assist like lightweight window available inside the 
-              editor (M3)</li>
+              editor</li>
             <li>overview ruler</li>
             <ul>
-              <li><img src="ok.gif" height=10 width=10> hover support (M4)</li>
+              <li><img src="ok.gif" height=10 width=10> hover support</li>
               <li><img src="ok.gif" height=10 width=10> investigate the presentation 
                 of more marker types such as tasks, bookmarks, search results</li>
             </ul>
@@ -292,7 +292,7 @@
   </tr>
   <tr> 
     <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0" width="100%"><b><font face="Arial,Helvetica"><font color="#FFFFFF">2.1 
-      Development Effort - Milestone 4 (December 13th, 2002)</font></font></b></td>
+      Development Effort - Milestone 5</font></font></b></td>
   </tr>
   <tr> 
     <td WIDTH="100%"> 
@@ -330,14 +330,6 @@
             </ul>
             <li>default preference settings: make a pass over the default preference 
               settings </li>
-            <li>make actions that are reasonable for source available in class 
-              files 
-              <ul>
-                <li>Show Outline </li>
-                <li>Select element</li>
-                <li>go to next/previous</li>
-              </ul>
-            </li>
             <li>new artwork</li>
             <li>support to suppress imports in outliner</li>
             <li>sort of the members of a compilation unit (JCore provides the API)</li>
@@ -436,27 +428,44 @@
       </ul>
       <h4> JDT Text</h4>
       <ul>
+      	<li>adapt to changes of Platform Text</li>
         <li>Java Editor 
           <ul>
-            <li>General issues 
+            <li>general issues 
               <ul>
-                <li>linked editing should not always "jump" to first occurrence</li>
-                <li>linked editing should be undoable in one step and not per 
-                  typed character</li>
-                <li>enable to run actions like organize imports in &quot;forked&quot; 
-                  mode, so that it can be cancelled </li>
-                <li>validate edit work</li>
+           		<li>linked editing should be undoable in one step and not per typed character</li>
+                <li>investigate to run actions like organize imports in &quot;forked&quot; mode, so that it can be cancelled </li>
               </ul>
             </li>
-            <li>adapt to changes in Platform Text</li>
-            <li>progress on folding support</li>
-            <li>automatic insertion of closing '}'</li>
-            <li><img src="ok.gif" height=10 width=10> outline of compilation unit 
-              in a content assist like lightweight window available inside the 
-              editor</li>
-            <li>hover support in overview ruler</li>
-            <li>go to last edit position</li>
+            <li>improve smart editing support
+	            <ul>
+	            	<li>support for '()' and '{}'</li>
+	            	<li>JavaDoc wrapping strategy (option to disable this feature)</li>
+	            </ul>
+	        </li>
+            <li>enable editor source actions on class files
+	        	<ul>
+	        		<li>light weight outline</li>
+	        		<li>element based navigation</li>
+	        		<li>select element</li>
+	        	</ul>
+        	</li>
+            <li>investigate coloring of TODO comments</li>
+            <li>improve mapping between temporary and persistent problems to avoid error squigglies in correct code</li>
+            <li>investigate presentation of vertical ruler on workspace external files in Java editors</li>
+            <li>investigate issues related to light weight outline
+	            <ul>
+	            	<li>placement of popup</li>
+	            	<li>deletion of "Open Structure" from Navigation menu</li>
+	            </ul>
+	        </li>
           </ul>
+        </li>
+        <li>rework editor preference page
+	        <ul>
+	        	<li>update problem indication page</li>
+	        	<li>rework hover page for better understandability and accessibility issues</li>
+	        </ul>
         </li>
       </ul>
       <h4>Vacation</h4>
