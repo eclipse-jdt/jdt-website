@@ -30,8 +30,10 @@
       <ul>
         <li>Architectural issues 
           <ul>
-            <li><img src="progress.gif" height=5 width=14> address not present exception issue</li>
-            <li><img src="progress.gif" height=5 width=14> consistent use of validateEdit in Actions</li>
+            <li><img src="progress.gif" height=5 width=14> address not present 
+              exception issue</li>
+            <li><img src="progress.gif" height=5 width=14> consistent use of validateEdit 
+              in Actions</li>
             <li><img src="ok.gif" height=10 width=10> migrate to use JavaElementDelta 
               batching support</li>
             <li>push some JDT independent editor function into Platform Text component</li>
@@ -65,9 +67,9 @@
         </li>
         <li>Class path 
           <ul>
-            <li><img src="progress.gif" height=5 width=14> migrate to use the JRE class path container by default with support 
-              for migrating existing project, i.e., contribute MarkerResolution 
-              to change build path)</li>
+            <li><img src="progress.gif" height=5 width=14> migrate to use the 
+              JRE class path container by default with support for migrating existing 
+              project, i.e., contribute MarkerResolution to change build path)</li>
             <li>support adding class path entries in the packages view with the 
               context menu: 
               <ul>
@@ -93,9 +95,9 @@
             </li>
             <li>improved syntax highlighting/error feedback 
               <ul>
-                <li><img src="progress.gif" height=5 width=14> supporting different 
+                <li><img src="ok.gif" height=10 width=10> supporting different 
                   colors for different marker types in squiggly line painter (depends 
-                  on Platform Text painter support) (M3)</li>
+                  on Platform Text painter support)</li>
                 <li>(potentially AST based to show fields/members/type names)</li>
               </ul>
             </li>
@@ -110,25 +112,24 @@
                 <li><img src="ok.gif" height=10 width=10> smart splitting of strings</li>
                 <li><img src="ok.gif" height=10 width=10> additional interactive 
                   behavior in vertical ruler (e.g., selecting lines when dragging)</li>
-                <li>smart paste (M3)</li>
-                <li>Ctrl-click in addition to F3 (M3)</li>
+                <li><img src="ok.gif" height=10 width=10> smart paste</li>
+                <li><img src="ok.gif" height=10 width=10> Ctrl-click in addition to F3</li>
                 <li>automatic insertion of closing '}' (M3/M4)</li>
                 <li>(commenting/uncommenting multi-line comments)</li>
                 <li>(smart joining/deleting (e.g., inverse operation for splitting 
                   strings, inserting closing brackets etc.))</li>
               </ul>
-            <li><img src="progress.gif" height=5 width=14> user defined and controlled 
+            <li><img src="ok.gif" height=10 width=10> user defined and controlled 
               hover behavior (e.g, hover shows JavaDoc or declaration of element 
-              depending on pressed modifier) (M3)</li>
+              depending on pressed modifier)</li>
             <li>(Java editor and non-resources)</li>
-            <li>outline of compilation unit in a content assist like lightweight 
+            <li><img src="progress.gif" height=5 width=14> outline of compilation unit in a content assist like lightweight 
               window available inside the editor (M3)</li>
             <li>overview ruler</li>
             <ul>
               <li>hover support (M4)</li>
-              <li><img src="progress.gif" height=5 width=14> investigate the presentation 
-                of more marker types such as tasks, bookmarks, search results 
-                (M3)</li>
+              <li><img src="ok.gif" height=10 width=10> investigate the presentation 
+                of more marker types such as tasks, bookmarks, search results</li>
             </ul>
             <li>(project preference for line terminator of newly created files)</li>
             <li>code assist 
@@ -149,13 +150,15 @@
           <ul>
             <li>general 
               <ul>
-                <li><img src="progress.gif" height=5 width=14> enable Edit>Undo for single file refactorings (e.g one single Ctrl+Z key press)</li>
+                <li><img src="progress.gif" height=5 width=14> enable Edit>Undo 
+                  for single file refactorings (e.g one single Ctrl+Z key press)</li>
                 <li>(investigate support &quot;refactoring participants&quot; 
                   for rename/move refactorings so that non-Java resources can 
                   be updated as well)</li>
-				<li><img src="progress.gif" height=5 width=14> provide API to execute refactorings headless (at least for rename and move)</li>
-                <li><img src="progress.gif" height=5 width=14> enable clients to contribute additional refactorings to the 
-                  refactoring menu</li>
+                <li><img src="progress.gif" height=5 width=14> provide API to 
+                  execute refactorings headless (at least for rename and move)</li>
+                <li><img src="progress.gif" height=5 width=14> enable clients 
+                  to contribute additional refactorings to the refactoring menu</li>
               </ul>
             </li>
             <li>improve existing refactorings 
@@ -169,7 +172,8 @@
                 </li>
                 <li>pull-up 
                   <ul>
-                    <li><img src="progress.gif" height=5 width=14> help with referenced methods</li>
+                    <li><img src="progress.gif" height=5 width=14> help with referenced 
+                      methods</li>
                     <li>support to declare a base method abstract</li>
                   </ul>
                 </li>
@@ -232,8 +236,10 @@
         </li>
         <li>Compare 
           <ul>
-            <li><img src="progress.gif" height=5 width=14> indicate status for number of incoming/outgoing changes</li>
-            <li><img src="progress.gif" height=5 width=14> indicate resolution of a change</li>
+            <li><img src="progress.gif" height=5 width=14> indicate status for 
+              number of incoming/outgoing changes</li>
+            <li><img src="progress.gif" height=5 width=14> indicate resolution 
+              of a change</li>
             <li>auto merge: accept all incoming</li>
             <li>help context IDs</li>
           </ul>
@@ -382,28 +388,27 @@
       </ul>
       <h4> JDT Text</h4>
       <ul>
-        <li>Bug fixing - Reduce number of open problem reports that are not classified 
-          as enhancements</li>
-        <li>Improve navigation/editing</li>
-        <ul>
-          <li>Ctrl-click in addition to F3</li>
-          <li>smart paste</li>
-        </ul>
-        <li>User defined and controlled hover behavior (e.g, hover shows Javadoc 
-          or declaration of element depending on pressed modifier). Hover types 
-          to be added.</li>
-        <li>Presentation of extra markers in editor</li>
-        <ul>
-          <li>Color of squiggly lines</li>
-          <li>Appearance in overview ruler</li>
-        </ul>
-        <li>outline of compilation unit in a content assist like lightweight window 
-          available inside the editor</li>
-        <li>Continuous work items (may not surface in the milestone build)</li>
-        <ul>
-          <li>folding of methods, import statements, Javadoc comments</li>
-          <li>automatic insertion of closing '}'</li>
-        </ul>
+        <li>Java Editor 
+          <ul>
+            <li>General issues 
+              <ul>
+                <li>linked editing should not always "jump" to first occurrence</li>
+                <li>linked editing should be undoable in one step and not per 
+                  typed character</li>
+                <li>enable to run actions like organize imports in &quot;forked&quot; 
+                  mode, so that it can be cancelled </li>
+                <li>validate edit work</li>
+              </ul>
+            </li>
+            <li>adapt to changes in Platform Text</li>
+            <li>progress on folding support</li>
+            <li>automatic insertion of closing '}'</li>
+            <li>outline of compilation unit in a content assist like lightweight 
+              window available inside the editor</li>
+            <li>hover support in overview ruler</li>
+            <li>go to last edit position</li>
+          </ul>
+        </li>
       </ul>
       <h4>Vacation</h4>
   </tr>
