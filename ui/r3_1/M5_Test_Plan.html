@@ -3,11 +3,20 @@
 <head>
   <meta http-equiv="content-type"
  content="text/html; charset=ISO-8859-1">
+ 
   <title>M5 Test Plan</title>
+  
+<style type="text/css">
+<!--
+h4 { margin-bottom:3pt;}
+ul { margin-top:3pt;}
+-->
+</style>
+  
 </head>
 
 <body>
-<h2> 3.1 M5 Test Grid (preliminary as of 2005-02-15 13:00) </h2>
+<h2> 3.1 M5 Test Grid (preliminary as of 2005-02-15 20:00) </h2>
 
 Test day: Wednesday, February 16, 2005<br>
 Components: JDT/Text, JDT/UI, Platform/Search, and Platform/Text<br>
@@ -46,10 +55,16 @@ Verify P1 and P2 bugs fixed during M5.<br>
 
 <h4>Misc</h4>
 <ul>
-  <li>check icons for new java elements:</li>
-  <ul>
-    <li>check correct modifiers (final, static, ...) for annotations, enums, and their children</li>
-  </ul>
+  <li>check icons for new java elements:
+    <ul>
+      <li>check correct modifiers (final, static, ...) for annotations, enums, and their children</li>
+    </ul>
+  </li>
+  <li>new Help view
+	<ul>
+	  <li>verify correct content of all our views and editors</li>
+	</ul>
+  </li>
 </ul>
 
 <h4>Source Actions</h4>
@@ -58,6 +73,7 @@ Verify P1 and P2 bugs fixed during M5.<br>
 		<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">Status</a>
   </li>
   <li>test Override/Implement Methods with varargs and generics</li>
+  <li>test Organize Imports with annotations<li>
 </ul>
 
 <h4>Rename Refactorings</h4>
@@ -112,22 +128,142 @@ Verify P1 and P2 bugs fixed during M5.<br>
 
 <h4>Quick Fixes</h4>
 <ul>
-  <li>TODO</li>
+  <li>quick fixes in 5.0 code: generic types, annotations, enums</li>
+  <li>new advanced quick assist, see bug 82220</li>
 </ul>
 
-<h4>Preference Pages</h4>
+<h4>Project Specific Settings</h4>
 <ul>
-  <li>TODO</li>
+  <li>code templates, formatter</li>
 </ul>
+
+<h4>Search</h4>
+<ul>
+  <li>search for type parameters</li>
+  <li>search for parametrized types</li>
+  <li>search for enum types and constants</li>
+</ul>
+
+<h4>New Java Project Wizard</h4>
+<ul>
+  <li>test new source folder wizard page</li>
+</ul>
+
+
+
+<h3>Text</h3>
+
+
+<h4>Encoding</h4>
+<ul>
+  <li>verify that Edit > Encoding is available in all editors</li>
+  <li>verify that encoding change dialog now rejects invalid encodings</li>
+</ul>
+
+
+<h4>Word Completion</h4>
+<ul>
+  <li>Test word completion (Edit > Word Complete) in both Text and Java editors</li>
+</ul>
+
 
 <h4>Content Assist</h4>
 <ul>
-  <li>check enums and generic types</li>
+  <li>check enhanced for-loop template</li>
+  <li>check completion of enum types and constants</li>
+  <li>Check arguments insertion when completing a generic type<br>
+  </li>
+  <ul>
+    <li>enable Java&gt;Editor&gt;Code Assist, Advanced&gt;'Fill argument names'</li>
+  </ul>
+  <li>Check parameter guessing when completeing a method of a generic type with a wildcard type bound</li>
+  <ul>
+    <li>enable Java&gt;Editor&gt;Code Assist, Advanced&gt;'Guess filled argument names'</li>
+    <li>example: invoke code assist at the caret (|) location:<br>
+<pre>
+		 void method(List&lt;? extends Number&gt; upper, List&lt;? super Number&gt; lower) {
+		 		 upper.|
+		 		 lower.|
+		 }
+</pre>
+    </li>
+  </ul>
+
 </ul>
+<ul>
+  <li>Check parameter guessing and autoboxing</li>
+  <ul>
+    <li>enable Java&gt;Editor&gt;Code Assist, Advanced&gt;'Guess filled argument names'</li>
+    <li>example: complete the call to get(int) <br>
+<pre>
+		 void method(Integer i1, int i2, List list) {
+		 		 list.get|
+		 }
+</pre>
+    </li>
+  </ul>
+
+</ul>
+<ul>
+  <li>Check content assist for type variables within @param javadoc tags</li>
+</ul>
+
 
 <h4>Syntax coloring</h4>
 <ul>
-  <li>check syntax coloring for new language features</li>
+  <li>test the following colorings (see the preference page coloring preview to find out what they mean)<br>
+  </li>
+  <ul>
+    <li>method names</li>
+    <li>annotations being declared</li>
+    <li>annotations to a java element<br>
+    </li>
+    <li>annotation element names<br>
+    </li>
+    <li>type variables</li>
+    <li>autoboxed expressions<br>
+    </li>
+  </ul>
+</ul>
+
+<h4>Folding</h4>
+<ul>
+  <li>Test that annotated java elements are properly folded (the caption line should display the element name)</li>
+  <li>Test header comment folding</li>
+  <li>enable/disable folding in different combinations
+	<ul>
+		<li>use more than one workbench window (and open the same file in both windows)</li>
+		<li>minimize one workbench window, toggle folding, then maximize workbench window</li>
+	</ul>		
+  </li>
+</ul>
+
+<h4>Typing</h4>
+<ul>
+  <li>Test auto-insertion of &lt;angle brackets&gt; in 5.0 code</li>
+</ul>
+
+<h4>Mark Occurrences</h4>
+<ul>
+  <li>Test occurrences marking of</li>
+  <ul>
+    <li>static imports</li>
+    <li>generic types</li>
+    <li>generic methods<br>
+    </li>
+  </ul>
+</ul>
+
+<h4>File Actions</h4>
+<ul>
+	<li>close editors (text and Java) of file which is open in two workbench windows (both dirty, only one dirty, none dirty)</li>
+	<li>test Save As
+		<ul>
+			<li>new file</li>
+			<li>over same file</li>
+			<li>over another existing file</li>
+		</ul>
+	</li>
 </ul>
 
 
