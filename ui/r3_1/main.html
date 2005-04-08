@@ -55,11 +55,11 @@ Measure and improve the performance of key operations
 
 			<td><b>Overall JDT/UI Themes</b> [committed]
 			<ul>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Make all source, quick fix, quick assist and
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Make all source, quick fix, quick assist and
 				refactoring actions J2SE 5 aware [J2SE 5.0 support]</li>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Provide refactorings, source actions and
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Provide refactorings, source actions and
 				quick fixes for new J2SE 5 features. This includes features like
 				rename and move of annotations or the creation of enum and
 				annotation units. [J2SE 5.0 support]</li>
@@ -85,7 +85,8 @@ Measure and improve the performance of key operations
 				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Write performance tests for the critical
 				functions and identify speed / space targets [Built to Last]</li>
-				<li>Look into ways to improve performance where the functions don't
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Look into ways to improve performance where the functions don't
 				meet the targets [Built to Last]</li>
 				<li> <img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Investigate in improved filtering/grouping
@@ -94,7 +95,8 @@ Measure and improve the performance of key operations
 				<ul>
 					<li>Use of working sets as top level elements in the package explorer</li></ul>
 				</li>
-				<li>Convert source and refactoring code to use one code manipulation
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Convert source and refactoring code to use one code manipulation
 				infrastructure that honors formatting, comment and code style
 				settings [Built to Last] [proposed]</li>
 			</ul>
@@ -110,8 +112,8 @@ Measure and improve the performance of key operations
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Convert all AST clients to use the new JLS3 API [J2SE
 				5.0 support] [committed]</li>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Make all source, quick fix, quick assist and
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0">  Make all source, quick fix, quick assist and
 				refactoring actions J2SE 5 aware [J2SE 5.0 support] [committed]
 				<ul>
 					<li>analyze the impact of the new J2SE 5 language features on
@@ -120,7 +122,8 @@ Measure and improve the performance of key operations
 					<li>adapt where necessary the code to J2SE 5</li>
 				</ul>
 				</li>
-				<li>Add a history to Open Type, Open Hierarchy, Organize Import,
+				<li><img src="../images/progress.gif" nosave="" height="5"
+					width="14" border="0"> Add a history to Open Type, Open Hierarchy, Organize Import,
 				Quick Fix, Quick Assist... In the case of an element ambiguity (for
 				example java.awt.List versus java.util.List versus
 				org.eclipse.swt.widgets.List when opening a type) these operations
@@ -150,16 +153,17 @@ Measure and improve the performance of key operations
 				control over when comments have to be preserved and when they can be
 				deleted. For example when inlining a method, a comment in front of
 				the original method call should be preserved.[Built to Last]</li>
-				<li>Apply coding conventions (like formatting, organize import, nls,
-				...) on save, compile or commit. This requires support from
-				Platform/Team, Platform/Text and JDT/Core. [Large-scale]</li>
 				<li><img src="../images/ok.gif" nosave=""
 					height="10" width="10" border="0"> Improve Java project creation for existing
 				folder structures [Simple to Use] [committed]</li>
-				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Code generation operations for hash, equals and toString</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Code
+				generation operations for hash, equals and toString</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Infer
 				code style settings (formatter, prefixes, ...) from existing source
 				code [Simple to Use]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Apply coding conventions (like formatting, organize import, nls,
+				...) on save, compile or commit. This requires support from
+				Platform/Team, Platform/Text and JDT/Core. [Large-scale]</li>
 			</ul>
 			</td>
 		</tr>
@@ -172,14 +176,14 @@ Measure and improve the performance of key operations
 				<li><img src="../images/progress.gif" nosave="" height="5"
 					width="14" border="0"> Provide a Quick Assist to convert old for
 				loops into new for each style. [J2SE 5.0 support] [committed]</li>
-				<li>Additional quick fixes and quick assists (like disable compiler
-				warning, insert suppress warning annotation, ...) [committed]</li>
-				<li>Investigate how to improve the scalability of quick fix. We have
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Additional quick fixes and quick assists  [committed]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate how to improve the scalability of quick fix. We have
 				situations where the list of possible quick fixes is getting really
 				long [Simple to Use]</li>
-				<li>Provide quick fixes for auto correct on typing (see JDT/Text
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Provide quick fixes for auto correct on typing (see JDT/Text
 				item) [Simple to Use]</li>
-				<li>Investigate in applying all quick fixes of a certain type all
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate in applying all quick fixes of a certain type all
 				together (fixing all exception problems) (needs support from
 				Platform/UI)</li>
 			</ul>
@@ -191,8 +195,8 @@ Measure and improve the performance of key operations
 
 			<td><b>Refactoring</b>
 			<ul>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Provide a refactoring that converts usages
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Provide a refactoring that converts usages
 				of raw collection classes into the corresponding generic collection
 				class. The refactoring should infer the least specific element type
 				of the collection which allows removal of all (most) casts. [J2SE
@@ -210,10 +214,10 @@ Measure and improve the performance of key operations
 				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
 					border="0"> Make Ripple Method finder J2SE 5.0 aware [J2SE 5.0 support]
 				[committed]</li>
-				<li>Additional refactorings: Extract Superclass [proposed], Inline
-				Supertype [proposed]</li>
-				<li><img src="../images/progress.gif" nosave="" height="5"
-					width="14" border="0"> Convert Extract interface, Use Supertype and Generalize Type to
+				<li><font class="indexsub" color="#8080ff"></font><img
+					src="../images/ok.gif" nosave="" height="10" width="10" border="0"> Remove dependency between LTK/UI and JDT/Core [Built to Last]</li>
+				<li><img src="../images/ok.gif" nosave=""
+					height="10" width="10" border="0"> Convert Extract interface, Use Supertype and Generalize Type to
 				new type constraint infrastructure [committed]</li>
 				<li><img src="../images/ok.gif" nosave=""
 					height="10" width="10" border="0"> Convert Copy/Paste into processor/participant architecture [Built to Last]</li>
@@ -240,11 +244,11 @@ Measure and improve the performance of key operations
 					<li>User interface polishing (pull-up, push down)</li>
 					<li>Javadoc handling of moved (pull-up, push down) and created
 					methods</li>
-					<li>Support creation of delegate methods to provide API
+					<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Support creation of delegate methods to provide API
 					compatibility (change method signature, rename, move, ...)</li>
-					<li>Update derived names on rename (e.g when renaming a type update
+					<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Update derived names on rename (e.g when renaming a type update
 					field names and locals if parts of the name match the type name)</li>
-					<li>Extract Method: improve duplicate finding (replace with
+					<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Extract Method: improve duplicate finding (replace with
 					existing method)</li>
 				</ul>
 				</li>
@@ -252,7 +256,8 @@ Measure and improve the performance of key operations
 				into a enum type. [J2SE 5.0 support]</li>
 				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Investigate in a refactoring to introduce a type parameter into
 				a non generic class [J2SE 5.0 support]</li>
-				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Remove dependency between LTK/UI and JDT/Core [Built to Last]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Additional refactorings: Extract Superclass [proposed], Inline
+				Supertype [proposed]</li>
 			</ul>
 			</td>
 		</tr>
@@ -281,7 +286,8 @@ Measure and improve the performance of key operations
 
 			<td><b>Type Hierarchy</b>
 			<ul>
-				<li>Make lock mode generics aware [J2SE 5.0 support] [committed]</li>
+				<li><img src="../images/ok.gif" nosave="" height="10" width="10"
+					border="0"> Make lock mode generics aware [J2SE 5.0 support] [committed]</li>
 			</ul>
 			</td>
 		</tr>
@@ -528,19 +534,19 @@ Measure and improve the performance of key operations
 		<tr>
 			<a name="Milestone_Planning"> </a>
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
-				face="Arial,Helvetica"><font color="#ffffff"> M6 Milestone Plan
-			(Feb. 21 - Apr. 1) - Under Constrcution</font></font></b></td>
+				face="Arial,Helvetica"><font color="#ffffff"> M7 Milestone Plan
+			(Apr. 4 - Mai 13)</font></font></b></td>
 			<a></a>
 		</tr>
 		<tr>
 			<td valign="top" width="23"><img
 				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
 				height="16" width="16"></td>
-			<td width="848"><b>Overall goals for M5</b>
+			<td width="848"><b>Overall goals for M6</b>
 
 			<ul>
-				<li>Finish J2SE 5.0 effort</li>
-				<li>Finish API</li>
+				<li>Performance</li>
+				<li>Bug fixing &amp; Polishing</li>
 			</ul>
 			</td>
 		</tr>
@@ -550,12 +556,28 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>General Items</b>
 			<ul>
-				<li>3.0.2 test fix pass</li>
 				<li>Bug fixing &amp; clean-up</li>
-				<li>EclipseCon 2005</li>
 				<li>Inbox tracking (7 days)</li>
-				<li>CPL to EPL conversion</li>
 				<li>Component.xml file</li>
+				<li>Investigate in making JDT/UI .java agnostic [89977]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Performance</b>
+			<ul>
+				<li>Convert plugin.xml file to manifest file</li><li>Convert to new message bundle format
+				</li>
+				<li>Understand and improve startup performance of package explorer (especially cold case)</li>
+				<li>Understand and improve performance of Type Hierarchy view</li>
+				<li>Measure performance of Quick Fix</li>
+				<li>Measure performance of memory consumption for refactorings touching lots of files (rename, infer, extract inteface, ...) and improve where necessary</li>
+				<li>Measure performance of ripple method finder and improve where necessary</li>
+				<li>Investigate broader use of virtual tables (search, open type, ...)</li>
+				<li>Investigate removing all types cache (last client is currently the open type dialog).</li>
 			</ul>
 			</td>
 		</tr>
@@ -564,16 +586,11 @@ Measure and improve the performance of key operations
 				src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
 				height="16" width="16"></td>
 			<td width="848"><b>Refactoring</b>
-			<ul>
-				<li>Finish effort to make refactorings J2SE 5.0 aware. A detailed status can be found <a
-					href="j2se50/Status.html">here</a>. (All)</li><li>Infer Element Type refactoring<ul>
-					<li>improve user interface</li>
+			<ul><li>Infer Element Type refactoring<ul>
 					<li>handle cases where code already contains generic collection classes (use case is a third party library that ships an updated version using generic collections)</li>
 				</ul>
 				</li>
 				<li>Convert refactoring Undo/Redo to unified Undo implementation</li>
-				<li>Make use of the new IResource#revertModificationStamp API</li>
-				<li>Improve performance and memory consumption where necessary for refactorings touching lots of resources (like rename, move, ...)</li>
 			</ul>
 			</td>
 		</tr>
@@ -583,20 +600,12 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Code Manipulation</b>
 			<ul>
-				<li>Continue effort to make quick fix &amp; quick assists J2SE 5.0 aware
-				<ul>
-					<li>varargs suppurt</li>
-				</ul>
-				</li>
-				<li>More quick fixes for J2SE 5.0</li>
+				
+				<li>Improve AST rewrite support for moving a set of nodes to new location</li>
 				<li>New type wizard
 				<ul>
-					<li>support generics in code assist for super  class</li>
+					<li>support generics in code assist for super class</li>
 					<li>investigate in supporting generics for super interfaces</li>
-				</ul>
-				</li>
-				<li>Work on code manipulation infrastructure<ul>
-					<li>investigate providing import rewriter on JDT/Core level (depends on progress with search and all type cache)</li>
 				</ul>
 				</li>
 			</ul>
@@ -608,22 +617,9 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Package Explorer</b>
 			<ul>
-				<li>Improve startup performance of the package explorer
-				</li>
 				<li>Support inclusion filters when in hierarchical layout mode (see
-				bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
-				[committed]</li>
+				bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)</li>
 			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				nosave="" border="0" height="16" width="16"></td>
-			<td><b>Type Hierarchy</b>
-			<ul>
-				<li>Make lock mode generics aware [J2SE 5.0 support] [committed]</li>
-			</ul>
-
 			</td>
 		</tr>
 		<tr>
@@ -632,15 +628,26 @@ Measure and improve the performance of key operations
 				height="16" width="16"></td>
 			<td width="848"><b>Preferences</b>
 			<ul>
-				<li>Import/Export of preferences</li>
+				<li>Define categories for Import/Export of preferences</li>
 				<li>Page polishing
 				<ul>
-					<li>link from pref page to per project page</li>
-					<li>investigate in finer grained code styles per project</li>
-					<li>improve type restriction user interface</li>
+					<li>multiple key words for pages (requires bug fix in Platform/UI)</li>
+					<li>make use of working copy manage (might require additional support from Platform/UI)</li>
 				</ul>
 				</li>
 			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				nosave="" border="0" height="16" width="16"></td>
+			<td><b>Polish</b><ul>
+				<li>History for Open Type and Organize import</li>
+				<li>Allow creation of type during pull-up refactoring</li>
+				<li>Quick fix: convert to enhanced for loop for iterators</li>
+				<li>Improve expand selection</li>
+			</ul>
+
 			</td>
 		</tr>
 		<tr>
@@ -657,7 +664,7 @@ Measure and improve the performance of key operations
 			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
 				nosave="" border="0" height="16" width="16"></td>
 			<td><b>Conferences/Vacations</b><ul>
-				<li>EclipseCon</li>
+				<li>2 days</li>
 			</ul></td>
 		</tr>
 	</tbody>
