@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+  <title>Fix Pass</title>
+</head>
+<body>
+<h1>Test Pass One: JDT-UI, JDT Text, Platform Compare, Platform Text,
+and Platform   Search</h1>
+<h3>Testers: Martin, Dani, Markus, Christof, David, Benjamin, Tobias,
+Tom, Dirk<br>
+</h3>
+<h3>Goal</h3>
+<ul>
+  <li>Test new M7 functionality<br>
+  </li>
+  <li>Test Java 5.0 functionality. Whenever you create some test code
+please use 5.0 language features whenever possible. For example add a
+type parameter to every new class, ...</li>
+  <li><font color="#000000">test corner cases</font></li>
+  <li>test setups which we typically don't use during development (for
+example no Plug-in developement)<font color="#000000"></font></li>
+  <li><font color="#000000">handling of error situations</font>
+    <ul>
+      <li><font color="#000000">watch log</font></li>
+      <li><font color="#000000">error messages</font></li>
+    </ul>
+  </li>
+</ul>
+<h3>General Items (everybody)</h3>
+<ul>
+  <li>Whenever you have to fill in data in dialogs try to foul the
+dialog by providing     incomplete or bogus input</li>
+  <li>Watch for view updating (package explorer, browsing perspective,
+outliner) when source content gets changed</li>
+</ul>
+<h3>Use of different fonts (everybody)</h3>
+<ul>
+  <li>change font for text editor and dialogs to different font</li>
+  <li>check that dialogs are rendered correctly
+    <ul>
+      <li>specified dialog font is used</li>
+      <li>no buttons and labels clipped</li>
+    </ul>
+  </li>
+</ul>
+<h3>Test Multiple Monitor setup (Martin)</h3>
+<ul>
+  <li>detached views</li>
+  <li>dialogs pop up on correct monitor</li>
+</ul>
+<h3>Workspace Setup</h3>
+<p>Setup workspace in a way unusual compared to your normal setup.
+Testing should   take place in one of the following workspace setups.
+When setting up the workspace   test also the functionality to setup
+this workspace style:</p>
+<ul>
+  <li>use external projects (Benjamin, Tobias)</li>
+  <li>use linked resources     (David)
+    <ul>
+      <li><font color="#000000">linked output folders</font></li>
+      <li><font color="#000000">linked source folders</font></li>
+      <li><font color="#000000">linked and nested source folders</font></li>
+      <li>test rendering in views<font color="#000000"></font></li>
+      <li><font color="#000000">linked class folders</font></li>
+    </ul>
+  </li>
+  <li>use multiple output folder (Christof)</li>
+  <li>use combination of exclusion &amp; inclustion filters (Martin)</li>
+  <li>use user defined library containers (JUnit as a user defined
+library) 	(Dirk)
+    <ul>
+		<li>quick fixes for unbound user libraries</li>
+		<li>quick fixes for build path problems</li>
+	
+    </ul>
+	</li>
+	<li>full source workspace (Markus)</li>
+</ul>
+<h3>Java Editor in Single Method mode (Martin, Benjamin, Tobias, Markus)</h3>
+<ul>
+  <li>half of the team should test with editor in single edit mode</li>
+  <li>corner case
+    <ul>
+      <li>segmented mode, formatting, un/redo</li>
+    </ul>
+  </li>
+</ul>
+<h3>Multiple Windows (Tobias, Markus, David, Dirk)</h3>
+<ul>
+  <li>half of the team tests with multiple windows.</li>
+  <li>switch between windows for different actions</li>
+  <li>watch for wrong window poping to front</li>
+  <li>watch for wrong dialog parenting</li>
+</ul>
+<h3>Multiple Editor Areas (Tom, Markus, Benjamin)</h3>
+<ul>
+  <li> test with multiple editor areas, i.e. multiple editor tab folders</li>
+  <li> watch for focus problems</li>
+  <li> watch for positioning problems when opening dialogs and info pops</li>
+</ul>
+<h3>Java Perspective / Browsing Perspective / Working Set mode</h3>
+<ul>
+  <li>third of the team tests in browsing perspective (Dirk, Tom, David)<br>
+  </li>
+  <li>third of the team tests in Java prespective using project mode in
+package explorer (Martin, Tobias, Benjamin)<br>
+  </li>
+  <li>throd of the tem tests in Java perspective using the working set
+mode in the package explorer (Dani, Christof, Markus<br>
+  </li>
+</ul>
+<h3>Automatic workspace refresh (Benjamin, Markus, Christof, Dirk)</h3>
+<ul>
+  <li>half of the team tests with automatic workspace refresh enabled
+(Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
+</ul>
+<h3>M7 items</h3>
+<h4>Bug verification (all)<br>
+</h4>
+<ul>
+  <li>Verify all P1 &amp; P2 bugs fixed during M7 (total 27) (<a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">JDT/UI
+&amp; JDT/Text</a>, <a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>).</li>
+</ul>
+<h4>Undo/Redo (Tester: Markus, Tom; FAQ: Dani, Dirk)<br>
+</h4>
+<ul>
+  <li>Test thar Refactor-&gt;Undo/Redo is gone<br>
+  </li>
+  <li>Execute various refactorings from different views and check that
+Edit-&gt;Undo allows undoing the refactoring (note that not all
+refactoring are undoable. So best test rename, extract method, ..)</li>
+  <li>Test undo/redo of typing inside the editor (without mixing it
+with refactoring undo)<br>
+  </li>
+  <li>Execute refactorings and change the state of affected resource
+and check that the undo is no longer valid. State changes are: content
+changes, bringing it out of sync with the workspace and changing
+read-only state. Changing the state should not automatically flush the
+undo stack anymore. Check that restoring the original state will allow
+undoing the refactoring (if the file got modified and save in the Java
+editor simply undo the text change. This will now restore the state).<br>
+  </li>
+  <li>Execute refactoring from within the Java editor and check that
+the undos appear on the editor's undo stack. Test undo/redo of the
+refactorings<br>
+  </li>
+  <li>Test mixing refactoring and typing in the editor and test
+undo/redoing these.<br>
+  </li>
+  <li>Check that undoing a refactoring from withing the Java editor
+should show a confirmation box when other resources than the file
+currently being edited are affected by the undo.</li>
+</ul>
+<h4>New Open Type dialog (Tester: David, Martin; FAQ: Dirk)<br>
+</h4>
+<ul>
+  <li>Test new open type dialog and histroy (know problem [<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93668">93668</a>])</li>
+  <ul>
+    <li>removing elements from the history using delete key or context
+menu</li>
+    <li>dialog doesn't show stale types in history</li>
+  </ul>
+</ul>
+<h4>Refactoring Capture Binding (Dani, Benjamin; FAQ: Markus)<br>
+</h4>
+<ul>
+  <li>Test refactoring and capture bindings (know problem [<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
+  <ul>
+    <li>test all refactorings that deal with expressions (extract
+local, constants, extract method) and create new type signature. The
+expression to be extract should be of a generic type using wildcards.
+For example extract foo() to a local variable where foo is declared as
+follows: List&lt;?&gt; foo();</li>
+  </ul>
+</ul>
+<h4>Build Path (Dani, Benjamin; FAQ: Martin)<br>
+</h4>
+<ul>
+  <li>Test new access rule user interface. Access rules are defined via
+the build path. Don't test it for plug-in projects since PDE takes care
+of access rule here</li>
+  <li>Test user interface for adding native libraries to the build path
+(@@@ Martin, how can I do this @@@)</li>
+</ul>
+<h4>Preferences (Tester: Markus, Tom; FAQ: Martin)</h4>
+<ul>
+  <li>All preferences have meaningful keywords. Try to navigate to a
+preference page using a keyword that should match and validate that the
+page is shown</li>
+  <li>Check editor preferences. They got converted back to tab style.
+Verify that nothing is clipped, tabs are visible, layout is correct</li>
+</ul>
+<h4>Platform-Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
+</h4>
+<ul>
+  <li>Verify syntax coloring and highlighting interaction (verify there
+is no cheese due to optimizations)<br>
+  </li>
+</ul>
+<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani</h4>
+<ul>
+  <li>Code assist</li>
+  <ul>
+    <li>auto insertion behavior</li>
+    <li>parameter guessing correctness</li>
+    <li>type parameter guesses (e.g. in List&lt;String&gt; l= new
+ArryaList&lt;??&gt; should guess something meaningfull for ??)</li>
+    <li>auto insert behaviour</li>
+  </ul>
+  <li>Autoboxing coloring: should color the same places as the compiler
+warns about (enable corresponding compiler warning)</li>
+  <li>Move lines - check performance</li>
+  <li>verify correct overlaying of errors upon reconciliation (&lt;==
+Dani, Tom can you provide more input here)<br>
+  </li>
+</ul>
+<h4>Search (Tester: Dani, Benjamin; FAQ: Martin) <br>
+</h4>
+<ul>
+  <li>Test text search</li>
+  <li>Focus searching in lagre file with regex patterns which spwan
+multiple line - larger code blocks</li>
+  <li>Have an eye on performance<br>
+  </li>
+</ul>
+<h3>Java 5.0</h3>
+Note, when testing Java 5.0 feature don't forget to test parameterized
+types that are subclasses of generic types as well as methods that use
+type parameters and varargs. For example MyList extends
+ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The
+examples below are a starting point of cases to check. The list IS NOT
+complete. Try to come up with your own corner cases as well. A good
+overview what to test is the J2SE 5.0 status <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
+<h4>Refactoring (Tester pro refactoring; FAQ: Dirk, Markus, Tobias)<br>
+</h4>
+<ul>
+  <li>Rename<br>
+  </li>
+  <ul>
+    <li>annotations, annotation members (especially the special case
+value), enum, enum member, type variables, vararg parameters</li>
+    <li>with varagrs, type arguments, generic &amp; parameterized types
+in the signature (field, method, local)</li>
+  </ul>
+  <li>Move CU/Type</li>
+  <ul>
+    <li>annotatoions, enum, generic &amp; parameterized types<br>
+    </li>
+  </ul>
+  <li>Move (method &amp; static members)</li>
+  <ul>
+    <li>enums and annotations as members in types</li>
+  </ul>
+  <ul>
+    <li>signature with type arguments, varargs, parameterized types</li>
+    <li>methods in generic &amp; parameterized types</li>
+    <li>methods that refer to a static import or type arguments from
+class<br>
+    </li>
+  </ul>
+  <li>Change method signature</li>
+  <ul>
+    <li>signature with type arguments, varargs, parameterized types</li>
+    <li>methods in annotations, enums, generic &amp; parameterized types</li>
+  </ul>
+  <li>Convert Anonymous to nested</li>
+  <ul>
+    <li>annotatoions, enum, generic &amp; parameterized types</li>
+  </ul>
+  <li>Move member type to new file</li>
+  <ul>
+    <li>annotatoions, enum, generic &amp; parameterized types</li>
+    <li>code that refers to static imports</li>
+    <li>code that refers to type arguments<br>
+    </li>
+  </ul>
+  <li>Pull Up &amp; PushDown</li>
+  <ul>
+    <li>methods in generic &amp; parameterized types</li>
+    <li>methods that refer to a static import</li>
+    <li>methods with type arguments, varargs, parameterized types</li>
+    <li>between generic, normal and parameterized types</li>
+    <li>enums and annotations as members in types</li>
+  </ul>
+  <li>Extract Interface / Use Supertype where possible</li>
+  <ul>
+    <li>enum and annotations<br>
+    </li>
+  </ul>
+  <ul>
+    <li>generic and parameterized types</li>
+    <li>method with varargs, type arguments, parameterized types<br>
+    </li>
+  </ul>
+  <li>Generalize Type</li>
+  <ul>
+    <li>enums and annotations</li>
+    <li>generic and parameterized types</li>
+  </ul>
+  <li>Extract/Inline Method</li>
+  <ul>
+    <li>Code in generic &amp; parameterized types and enums<br>
+    </li>
+    <li>Code that refer to type arguments (from class and method)</li>
+    <li>vararg usages</li>
+    <li>code with references to static imports</li>
+    <li>code with autoboxing</li>
+  </ul>
+  <li>Extract/Inline local</li>
+  <ul>
+    <li>expression which resolve to parameterized types, annotations,
+enums&nbsp; and type arguments (or the concrete type for parameterized
+types)</li>
+  </ul>
+  <li>Extract/Inline constant</li>
+  <ul>
+    <li>in enums, annotations, generic and parameterized types</li>
+  </ul>
+  <li>Introduce parameter</li>
+  <ul>
+    <li>expression which resolve to parameterized types, annotations,
+enums&nbsp; and type arguments (or the concrete type for parameterized
+types)<br>
+    </li>
+    <li>signature to be changed contains varags, type arguments,
+parameterized types</li>
+  </ul>
+  <li>Introduce Factory</li>
+  <ul>
+    <li>for generic and parameterized types</li>
+    <li>destination type is generic or paramerized</li>
+  </ul>
+  <li>Convert local variable to field</li>
+  <ul>
+    <li>declaring type is parameterized types, annotations, enums&nbsp;
+and type arguments (or the concrete type for parameterized types)</li>
+  </ul>
+  <li>Self encapsulate field</li>
+  <ul>
+    <li>field type is parameterized types, annotations, enums&nbsp; and
+type argument</li>
+    <li>in enums, parameterized types and generic types. <br>
+    </li>
+  </ul>
+</ul>
+<h4>Source Actions (Tester pro source action; FAQ: Tobias)<br>
+</h4>
+<div style="margin-left: 40px;">Don't forget to check the Javadoc for
+the generated methods<br>
+</div>
+<ul>
+  <li>Organize import / add import</li>
+  <ul>
+    <li>organize import. Define static import groups in the preference</li>
+    <li>add import on Math.max should add a static import on max add
+should remove Math in code.</li>
+  </ul>
+  <li>Override/Implement methods</li>
+  <ul>
+    <li>methods with type arguments, varargs, parameterized types</li>
+    <li>from generic and parameterized types</li>
+    <li>from annotations</li>
+  </ul>
+  <li>Generate Getter/Setter</li>
+  <ul>
+    <li>field type is  parameterized types, annotations, enums&nbsp;
+and type argument</li>
+    <li>in enums, parameterized types and generic types</li>
+  </ul>
+  <li>Generate Delegate Methods</li>
+  <ul>
+    <li>field type is enum, annotation</li>
+    <li>field type is type argument or paramterized type</li>
+  </ul>
+  <li>Generate Constructor Using fields</li>
+  <ul>
+    <li>field type is enum, annotation</li>
+    <li>field type is type argument or paramterized type</li>
+  </ul>
+  <li>Add Constructor from Superclass</li>
+  <ul>
+    <li>super class is generic or parameterized type</li>
+    <li>constrcutor with type arguments, varargs, parameterized types</li>
+  </ul>
+  <li>Sort members</li>
+  <ul>
+    <li>members with type arguments, varargs, ...</li>
+    <li>types with enums, annotations, generic and parameterized types
+as members<br>
+    </li>
+    <li>sort enum, annotations, generic and parameterized types<br>
+    </li>
+  </ul>
+</ul>
+<h4>Search (Tester ??; FAQ: Markus, Martin, Dirk)</h4>
+<ul>
+  <li>test searching for enums, annotations, generic types and methods,
+parameterized types and methods and type variables</li>
+  <li>test new filters for incompatible and inexact matches</li>
+</ul>
+<h4>Quick Fix &amp; Quick assist (Tester ??; FAQ: Martin)<br>
+</h4>
+<ul>
+  <ul>
+  </ul>
+  <li>Test convert to enhanced for loop (currently only available for
+arrays)<br>
+  </li>
+  <li>Javadoc tags for type parameters (handled special. creates
+&lt;T&gt;)</li>
+  <li> quick fix helps you changing the compliance settings when you try
+to       enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
+required       which has to be added in the 'Installed JRE's'
+preference page</li>
+</ul>
+<h4>Java Editor (Tester: ??; FAQ: Tom, Dani)<br>
+</h4>
+<ul>
+  <li>coloring of autoboxing, enums, and annotations</li>
+  <li>code assist</li>
+  <li>argument guessing for parameterized types</li>
+</ul>
+<br>
+<h3>Sanity check new functionality added in 3.1</h3>
+<h4>Preferences (Tester: ??; FAQ: Martin)<br>
+</h4>
+<ul>
+  <li>Test that you can navigate from project specific settings to the
+global settings and vice versa</li>
+  <li>Test project specific settings for formatter, compiler, code
+style settings, javadoc locations<br>
+  </li>
+</ul>
+<h4>Search (Tester: ??; FAQ: Dirk)<br>
+</h4>
+<ul>
+  <li>Test different rendering of filtered / non filtered search result
+matches<br>
+  </li>
+</ul>
+<h4>Quick fixes (Tester: ??; FAQ: Martin) <br>
+</h4>
+<ul>
+  <li>Serial version Id<br>
+  </li>
+</ul>
+<h4>NLS (Tester: ??; FAQ: Dani)<br>
+</h4>
+<ul>
+  <li>Test Externalize Strings wizards with new Eclipse style message
+bundles</li>
+  <li>New poperties editor. Linking in Java editor to poperties entry
+and vice versa<br>
+  </li>
+</ul>
+<h4>New Source Folder wizard page (Tester: ??; FAQ: Martin)<br>
+</h4>
+<ul>
+  <li>setup project on existing source using the new source folder
+wizard page.</li>
+  <li>Source to setup should have:</li>
+  <ul>
+    <li>multiple source folders</li>
+    <li>need to exclude some portion of the code<br>
+    </li>
+  </ul>
+</ul>
+<h3>General items to check<br>
+</h3>
+<h4>Accessability Testing (Tester: ??)<br>
+</h4>
+<ul>
+  <li>verify mnemonics in wizards/dialogs/menus</li>
+  <li>initial focus in dialogs</li>
+  <li>combination of color, form, and text. </li>
+  <li>status line information</li>
+</ul>
+<h4>Operations and Locked Workspace (Tester: ??)</h4>
+<ul>
+  <li>To lock the workspace use the org.eclipse.ui.examples.job plug-in
+from the     Eclipse repository</li>
+  <li>Test Edit, Source and Refactoring actions when the workspace is
+locked</li>
+  <li>Test modifying project properties (build path, compiler settings,
+...) when     workspace is locked</li>
+  <li>You should always get the blocking dialog</li>
+  <li>Cancel the user action. Make sure that no
+OperationCancelException or other     exceptions appear in the log</li>
+</ul>
+<h4>Validate-Edit (Tester: ??)</h4>
+<ul>
+  <li>Check-out code from the repository in CVS Watch/Edit mode (stores
+file in     read-only mode)</li>
+  <li>Test Editing, Source and Refactoring actions on files that are
+read-only</li>
+  <li>Expected result: actions should complete without errors</li>
+</ul>
+<h4>Compilation Units not on Build Path (Tester: ??)&nbsp;</h4>
+<ul>
+  <li>Test Edit, Source and Refactoring actions for compilation units
+not on the     build path.</li>
+  <li>Test for:
+    <ul>
+      <li>editors opened on repository files</li>
+      <li>editors opened on Java file excluded from the build path</li>
+      <li>editors opened on Java files stored in Simple projects </li>
+    </ul>
+  </li>
+  <li>Actions should either operate without an error, not be present or
+present a dialog that the CU is not on the build path</li>
+</ul>
+<h4><font color="#000000">Workspace compatibility (Tester: ??)</font></h4>
+<ul>
+	<li>upgrade a 2.1 workspace to 3.0</li>
+</ul>
+</body>
+</html>
