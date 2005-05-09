@@ -250,9 +250,9 @@ to test is the J2SE 5.0 status <a
   </li>
   <ul>
     <li>annotations, annotation members (especially the special case
-value), enum, enum member, type variables, vararg parameters</li>
-    <li>with varagrs, type arguments, generic &amp; parameterized types
-in the signature (field, method, local)</li>
+value), enum, enum member, type parameters, vararg parameters</li>
+    <li>with varagrs, type parameters, generic &amp; parameterized
+types in the signature (field, method, local)</li>
   </ul>
   <li>Move CU/Type</li>
   <ul>
@@ -264,15 +264,15 @@ in the signature (field, method, local)</li>
     <li>enums and annotations as members in types</li>
   </ul>
   <ul>
-    <li>signature with type arguments, varargs, parameterized types</li>
+    <li>signature with type parameters, varargs, parameterized types</li>
     <li>methods in generic &amp; parameterized types</li>
-    <li>methods that refer to a static import or type arguments from
+    <li>methods that refer to a static import or type parameters from
 class<br>
     </li>
   </ul>
   <li>Change method signature</li>
   <ul>
-    <li>signature with type arguments, varargs, parameterized types</li>
+    <li>signature with type parameters, varargs, parameterized types</li>
     <li>methods in annotations, enums, generic &amp; parameterized types</li>
   </ul>
   <li>Convert Anonymous to nested</li>
@@ -283,14 +283,13 @@ class<br>
   <ul>
     <li>annotatoions, enum, generic &amp; parameterized types</li>
     <li>code that refers to static imports</li>
-    <li>code that refers to type arguments<br>
-    </li>
+    <li>code that refers to type parameters</li>
   </ul>
   <li>Pull Up &amp; PushDown</li>
   <ul>
     <li>methods in generic &amp; parameterized types</li>
     <li>methods that refer to a static import</li>
-    <li>methods with type arguments, varargs, parameterized types</li>
+    <li>methods with type parameters, varargs, parameterized types</li>
     <li>between generic, normal and parameterized types</li>
     <li>enums and annotations as members in types</li>
   </ul>
@@ -301,7 +300,7 @@ class<br>
   </ul>
   <ul>
     <li>generic and parameterized types</li>
-    <li>method with varargs, type arguments, parameterized types<br>
+    <li>method with varargs, type parameters, parameterized types<br>
     </li>
   </ul>
   <li>Generalize Type</li>
@@ -313,7 +312,7 @@ class<br>
   <ul>
     <li>Code in generic &amp; parameterized types and enums<br>
     </li>
-    <li>Code that refer to type arguments (from class and method)</li>
+    <li>Code that refer to type parameters (from class and method)</li>
     <li>vararg usages</li>
     <li>code with references to static imports</li>
     <li>code with autoboxing</li>
@@ -321,7 +320,7 @@ class<br>
   <li>Extract/Inline local</li>
   <ul>
     <li>expression which resolve to parameterized types, annotations,
-enums&nbsp; and type arguments (or the concrete type for parameterized
+enums&nbsp; and type parameters (or the concrete type for parameterized
 types)</li>
   </ul>
   <li>Extract/Inline constant</li>
@@ -331,27 +330,34 @@ types)</li>
   <li>Introduce parameter</li>
   <ul>
     <li>expression which resolve to parameterized types, annotations,
-enums&nbsp; and type arguments (or the concrete type for parameterized
+enums&nbsp; and type parameters (or the concrete type for parameterized
 types)<br>
     </li>
-    <li>signature to be changed contains varags, type arguments,
+    <li>signature to be changed contains varags, type parameters,
 parameterized types</li>
   </ul>
   <li>Introduce Factory</li>
   <ul>
     <li>for generic and parameterized types</li>
-    <li>destination type is generic or paramerized</li>
+    <li>destination type is generic or parameterrized</li>
   </ul>
   <li>Convert local variable to field</li>
   <ul>
     <li>declaring type is parameterized types, annotations, enums&nbsp;
-and type arguments (or the concrete type for parameterized types)</li>
+and type parameters (or the concrete type for parameterized types)</li>
   </ul>
   <li>Self encapsulate field</li>
   <ul>
     <li>field type is parameterized types, annotations, enums&nbsp; and
-type argument</li>
-    <li>in enums, parameterized types and generic types. <br>
+type parameter</li>
+    <li>in enums, parameterized types and generic types.</li>
+  </ul>
+  <li>Infer type arguments <br>
+  </li>
+  <ul>
+    <li>test for collection classes</li>
+    <li>test for own generic classes</li>
+    <li>test for classes with n type parameters<br>
     </li>
   </ul>
 </ul>
@@ -369,34 +375,34 @@ should remove Math in code.</li>
   </ul>
   <li>Override/Implement methods</li>
   <ul>
-    <li>methods with type arguments, varargs, parameterized types</li>
+    <li>methods with type parameters, varargs, parameterized types</li>
     <li>from generic and parameterized types</li>
     <li>from annotations</li>
   </ul>
   <li>Generate Getter/Setter</li>
   <ul>
     <li>field type is  parameterized types, annotations, enums&nbsp;
-and type argument</li>
+and type parameters</li>
     <li>in enums, parameterized types and generic types</li>
   </ul>
   <li>Generate Delegate Methods</li>
   <ul>
     <li>field type is enum, annotation</li>
-    <li>field type is type argument or paramterized type</li>
+    <li>field type is type parameter or paramterized type</li>
   </ul>
   <li>Generate Constructor Using fields</li>
   <ul>
     <li>field type is enum, annotation</li>
-    <li>field type is type argument or paramterized type</li>
+    <li>field type is type parameter or paramterized type</li>
   </ul>
   <li>Add Constructor from Superclass</li>
   <ul>
     <li>super class is generic or parameterized type</li>
-    <li>constrcutor with type arguments, varargs, parameterized types</li>
+    <li>constrcutor with type parameters, varargs, parameterized types</li>
   </ul>
   <li>Sort members</li>
   <ul>
-    <li>members with type arguments, varargs, ...</li>
+    <li>members with type parameters, varargs, ...</li>
     <li>types with enums, annotations, generic and parameterized types
 as members<br>
     </li>
