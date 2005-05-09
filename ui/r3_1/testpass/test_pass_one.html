@@ -156,7 +156,9 @@ undo/redoing these.<br>
   </li>
   <li>Check that undoing a refactoring from withing the Java editor
 should show a confirmation box when other resources than the file
-currently being edited are affected by the undo.</li>
+currently being edited are affected by the undo (for example rename a
+method that is referenced in a second CU and try yo undo it from the
+editor that contains the declaration).</li>
 </ul>
 <h4>New Open Type dialog (Tester: David, Martin; FAQ: Dirk)<br>
 </h4>
@@ -236,10 +238,10 @@ multiple line - larger code blocks</li>
 Note, when testing Java 5.0 feature don't forget to test parameterized
 types that are subclasses of generic types as well as methods that use
 type parameters and varargs. For example MyList extends
-ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The
-examples below are a starting point of cases to check. The list IS NOT
-complete. Try to come up with your own corner cases as well. A good
-overview what to test is the J2SE 5.0 status <a
+ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The examples
+below are a starting point of cases to check. The list IS NOT complete.
+Try to come up with your own corner cases as well. A good overview what
+to test is the J2SE 5.0 status <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
 <h4>Refactoring (Tester pro refactoring; FAQ: Dirk, Markus, Tobias)<br>
 </h4>
@@ -419,9 +421,8 @@ arrays)<br>
   <li>Javadoc tags for type parameters (handled special. creates
 &lt;T&gt;)</li>
   <li> quick fix helps you changing the compliance settings when you try
-to       enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
-required       which has to be added in the 'Installed JRE's'
-preference page</li>
+to enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
+required which has to be added in the 'Installed JRE's' preference page</li>
 </ul>
 <h4>Java Editor (Tester: ??; FAQ: Tom, Dani)<br>
 </h4>
