@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Test Pass One: JDT-UI, JDT Text, Platform Compare, Platform Text,
-and Platform   Search</h1>
+and Platform Search</h1>
 <h3>Testers: Martin, Dani, Markus, Christof, David, Benjamin, Tobias,
 Tom, Dirk<br>
 </h3>
@@ -34,7 +34,7 @@ example no Plug-in developement)<font color="#000000"></font></li>
 <h3>General Items (everybody)</h3>
 <ul>
   <li>Whenever you have to fill in data in dialogs try to foul the
-dialog by providing     incomplete or bogus input</li>
+dialog by providing incomplete or bogus input</li>
   <li>Watch for view updating (package explorer, browsing perspective,
 outliner) when source content gets changed</li>
 </ul>
@@ -55,12 +55,12 @@ outliner) when source content gets changed</li>
 </ul>
 <h3>Workspace Setup</h3>
 <p>Setup workspace in a way unusual compared to your normal setup.
-Testing should   take place in one of the following workspace setups.
-When setting up the workspace   test also the functionality to setup
+Testing should take place in one of the following workspace setups.
+When setting up the workspace test also the functionality to setup
 this workspace style:</p>
 <ul>
   <li>use external projects (Benjamin, Tobias)</li>
-  <li>use linked resources     (David)
+  <li>use linked resources (David)
     <ul>
       <li><font color="#000000">linked output folders</font></li>
       <li><font color="#000000">linked source folders</font></li>
@@ -72,14 +72,13 @@ this workspace style:</p>
   <li>use multiple output folder (Christof)</li>
   <li>use combination of exclusion &amp; inclustion filters (Martin)</li>
   <li>use user defined library containers (JUnit as a user defined
-library) 	(Dirk)
+library) (Dirk)
     <ul>
-		<li>quick fixes for unbound user libraries</li>
-		<li>quick fixes for build path problems</li>
-	
+      <li>quick fixes for unbound user libraries</li>
+      <li>quick fixes for build path problems</li>
     </ul>
-	</li>
-	<li>full source workspace (Markus)</li>
+  </li>
+  <li>full source workspace (Markus)</li>
 </ul>
 <h3>Java Editor in Single Method mode (Martin, Benjamin, Tobias, Markus)</h3>
 <ul>
@@ -110,14 +109,14 @@ library) 	(Dirk)
   <li>third of the team tests in Java prespective using project mode in
 package explorer (Martin, Tobias, Benjamin)<br>
   </li>
-  <li>throd of the tem tests in Java perspective using the working set
-mode in the package explorer (Dani, Christof, Markus<br>
+  <li>thrid of the tem tests in Java perspective using the working set
+mode in the package explorer (Dani, Christof, Markus)<br>
   </li>
 </ul>
 <h3>Automatic workspace refresh (Benjamin, Markus, Christof, Dirk)</h3>
 <ul>
   <li>half of the team tests with automatic workspace refresh enabled
-(Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
+(Preferences-&gt;Workbench-&gt;Refresh workspace automatically)</li>
 </ul>
 <h3>M7 items</h3>
 <h4>Bug verification (all)<br>
@@ -131,7 +130,7 @@ mode in the package explorer (Dani, Christof, Markus<br>
 <h4>Undo/Redo (Tester: Markus, Tom; FAQ: Dani, Dirk)<br>
 </h4>
 <ul>
-  <li>Test thar Refactor-&gt;Undo/Redo is gone<br>
+  <li>Test that Refactor-&gt;Undo/Redo is gone<br>
   </li>
   <li>Execute various refactorings from different views and check that
 Edit-&gt;Undo allows undoing the refactoring (note that not all
@@ -191,15 +190,38 @@ follows: List&lt;?&gt; foo();</li>
 the build path. Don't test it for plug-in projects since PDE takes care
 of access rule here</li>
   <li>Test user interface for adding native libraries to the build path
-(@@@ Martin, how can I do this @@@)</li>
+(bug 94162 prevents the correct invocation)<br>
+  </li>
 </ul>
 <h4>Preferences (Tester: Markus, Tom; FAQ: Martin)</h4>
 <ul>
-  <li>All preferences have meaningful keywords. Try to navigate to a
+  <li>All preferences and property pages have meaningful keywords. Try
+to navigate to a
 preference page using a keyword that should match and validate that the
 page is shown</li>
   <li>Check editor preferences. They got converted back to tab style.
 Verify that nothing is clipped, tabs are visible, layout is correct</li>
+</ul>
+<h4><>Compiler (Tester: Markus, Tom; FAQ: Martin)</></h4>
+<h4> </h4>
+<ul>
+  <li>Ne settings for @SuppressWarnings annotation</li>
+</ul>
+<h4><>Quick Fix/Assist<span style="font-weight: bold;"> </span>(Tester:
+Dani, Benjamin; FAQ: Martin)</></h4>
+<ul>
+  <li>Add missing @Deperected and @Override annotation</li>
+  <li>Quick fixes and wild card types: New variable with a wildcard
+type, casts to wildcard types</li>
+  <li>Quick fix/assist direct shortcuts<br>
+  </li>
+</ul>
+<h4>Add Imports (Tester: Dani, Benjamin; FAQ: Martin)<br>
+</h4>
+<ul>
+  <li>Add import that introduces a star import removes unused fully
+qualified import<br>
+  </li>
 </ul>
 <h4>Platform-Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
 </h4>
@@ -208,7 +230,7 @@ Verify that nothing is clipped, tabs are visible, layout is correct</li>
 is no cheese due to optimizations)<br>
   </li>
 </ul>
-<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani</h4>
+<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani)</h4>
 <ul>
   <li>Code assist</li>
   <ul>
@@ -235,7 +257,8 @@ multiple line - larger code blocks</li>
 Note, when testing Java 5.0 feature don't forget to test parameterized
 types that are subclasses of generic types as well as methods that use
 type parameters and varargs. For example MyList extends
-ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The examples
+ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The
+examples
 below are a starting point of cases to check. The list IS NOT complete.
 Try to come up with your own corner cases as well. A good overview what
 to test is the J2SE 5.0 status <a
@@ -378,7 +401,7 @@ should remove Math in code.</li>
   </ul>
   <li>Generate Getter/Setter</li>
   <ul>
-    <li>field type is  parameterized types, annotations, enums&nbsp;
+    <li>field type is parameterized types, annotations, enums&nbsp;
 and type parameters</li>
     <li>in enums, parameterized types and generic types</li>
   </ul>
@@ -423,7 +446,8 @@ arrays)<br>
   </li>
   <li>Javadoc tags for type parameters (handled special. creates
 &lt;T&gt;)</li>
-  <li> quick fix helps you changing the compliance settings when you try
+  <li> quick fix helps you changing the compliance settings when you
+try
 to enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
 required which has to be added in the 'Installed JRE's' preference page</li>
 </ul>
@@ -485,7 +509,8 @@ wizard page.</li>
 </h4>
 <ul>
   <li>verify mnemonics in wizards/dialogs/menus<br>
-  		<i>Note: mnemonics on Platform Text and JDT Text preference pages are not yet done.</i></li>
+    <i>Note: mnemonics on Platform Text and JDT Text preference pages
+are not yet done.</i></li>
   <li>initial focus in dialogs</li>
   <li>combination of color, form, and text. </li>
   <li>status line information</li>
@@ -493,19 +518,19 @@ wizard page.</li>
 <h4>Operations and Locked Workspace (Tester: ??)</h4>
 <ul>
   <li>To lock the workspace use the org.eclipse.ui.examples.job plug-in
-from the     Eclipse repository</li>
+from the Eclipse repository</li>
   <li>Test Edit, Source and Refactoring actions when the workspace is
 locked</li>
   <li>Test modifying project properties (build path, compiler settings,
-...) when     workspace is locked</li>
+...) when workspace is locked</li>
   <li>You should always get the blocking dialog</li>
   <li>Cancel the user action. Make sure that no
-OperationCancelException or other     exceptions appear in the log</li>
+OperationCancelException or other exceptions appear in the log</li>
 </ul>
 <h4>Validate-Edit (Tester: ??)</h4>
 <ul>
   <li>Check-out code from the repository in CVS Watch/Edit mode (stores
-file in     read-only mode)</li>
+file in read-only mode)</li>
   <li>Test Editing, Source and Refactoring actions on files that are
 read-only</li>
   <li>Expected result: actions should complete without errors</li>
@@ -513,7 +538,7 @@ read-only</li>
 <h4>Compilation Units not on Build Path (Tester: ??)&nbsp;</h4>
 <ul>
   <li>Test Edit, Source and Refactoring actions for compilation units
-not on the     build path.</li>
+not on the build path.</li>
   <li>Test for:
     <ul>
       <li>editors opened on repository files</li>
@@ -526,7 +551,7 @@ present a dialog that the CU is not on the build path</li>
 </ul>
 <h4><font color="#000000">Workspace compatibility (Tester: ??)</font></h4>
 <ul>
-	<li>upgrade a 2.1 workspace to 3.0</li>
+  <li>upgrade a 2.1 workspace to 3.0</li>
 </ul>
 </body>
 </html>
