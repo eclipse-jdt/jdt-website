@@ -1,10 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
+<html>
+<head>
   <meta http-equiv="Content-Language" content="en-us">
-  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-  <meta name="ProgId" content="FrontPage.Editor.Document"><title>Test Pass One</title></head>
-
+  <meta name="ProgId" content="FrontPage.Editor.Document">
+  <title>Test Pass One</title>
+</head>
 <body>
 <h1>Test Pass One: JDT UI, JDT Text, Platform Compare, Platform Text,
 and Platform Search</h1>
@@ -12,7 +15,6 @@ and Platform Search</h1>
 Tom, Dirk<br>
 </h3>
 <h2>Goal</h2>
-
 <ul>
   <li>test new 3.1 M7 functionality<br>
   </li>
@@ -38,7 +40,6 @@ example no Plug-in development)</li>
   </li>
 </ul>
 <h3>General Items (everybody)</h3>
-
 <ul>
   <li>Whenever you have to fill in data in dialogs try to fool the
 dialog by providing incomplete or bogus input</li>
@@ -50,7 +51,7 @@ outliner) when source content gets changed</li>
   <li>change font for text editor and dialogs to different font</li>
   <li>check that dialogs are rendered correctly
     <ul>
-      <li>specified dialog font is used</li>
+      <li>specified dialog font is usedtestes</li>
       <li>no buttons and labels clipped</li>
     </ul>
   </li>
@@ -126,20 +127,23 @@ mode in the package explorer (Dani, Christof, Markus<br>
 (Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
 </ul>
 <h2>3.1 M7 items</h2>
-
 <h4>Bug verification (all)<br>
 </h4>
 <ul>
-  <li>Verify all P1 &amp; P2 bugs fixed during M7 (total 27) (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">JDT/UI
-&amp; JDT/Text</a>, <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>).</li>
+  <li>Verify all P1 &amp; P2 bugs fixed during M7 (total 27) (<a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">JDT/UI
+&amp; JDT/Text</a>, <a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>).</li>
 </ul>
-<h4>Undo/Redo (Tester: Markus, Tom; FAQ: Dani, Dirk)<br>
+<h4>Undo/Redo (Markus, Tom; FAQ: Dani, Dirk)<br>
 </h4>
 <ul>
-  <li>Test that <span style="font-weight: bold;">Refactor &gt; Undo/Redo</span> is gone<br>
+  <li>Test that <span style="font-weight: bold;">Refactor &gt;
+Undo/Redo</span> is gone<br>
   </li>
-  <li>Execute various refactorings from different views and check that
-    <span style="font-weight: bold;">Edit &gt; Undo</span> allows undoing the refactoring (note that not all
+  <li>Execute various refactorings from different views and check that <span
+ style="font-weight: bold;">Edit &gt; Undo</span> allows undoing the
+refactoring (note that not all
 refactoring are undoable. So best test rename, extract method, ..)</li>
   <li>Test undo/redo of typing inside the editor (without mixing it
 with refactoring undo)<br>
@@ -164,14 +168,15 @@ should show a confirmation box when other resources than the file
 currently being edited are affected by the undo (for example rename a
 method that is referenced in a second CU and try yo undo it from the
 editor that contains the declaration).</li>
-  <li>Check that undoing the last change remove the dirty indication in the editor tab<br>
+  <li>Check that undoing the last change remove the dirty indication in
+the editor tab<br>
   </li>
-
 </ul>
-<h4>New Open Type dialog (Tester: David, Martin; FAQ: Dirk)<br>
+<h4>New Open Type dialog (David, Martin; FAQ: Dirk)<br>
 </h4>
 <ul>
-  <li>Test new open type dialog and history (know problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93668">93668</a>])</li>
+  <li>Test new open type dialog and history (know problem [<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93668">93668</a>])</li>
   <ul>
     <li>removing elements from the history using delete key or context
 menu</li>
@@ -181,7 +186,8 @@ menu</li>
 <h4>Refactoring Capture Binding (Dani, Benjamin; FAQ: Markus)<br>
 </h4>
 <ul>
-  <li>Test refactoring and capture bindings (know problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
+  <li>Test refactoring and capture bindings (know problem [<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
   <ul>
     <li>test all refactorings that deal with expressions (extract
 local, constants, extract method) and create new type signature. The
@@ -197,29 +203,49 @@ follows: List&lt;?&gt; foo();</li>
 the build path. Don't test it for plug-in projects since PDE takes care
 of access rule here</li>
   <li>Test user interface for adding native libraries to the build path
-(@@@ Martin, how can I do this @@@)</li>
+(build path page, attribute of JARs and class folders)<br>
+  </li>
 </ul>
-<h4>Preferences (Tester: Markus, Tom; FAQ: Martin)</h4>
+<h4>Preferences (Markus, Tom; FAQ: Martin)</h4>
 <ul>
-  <li>All preferences have meaningful keywords. Try to navigate to a
+  <li>All preferences and property pages have meaningful keywords. Try
+to navigate to a
 preference page using a keyword that should match and validate that the
 page is shown</li>
   <li>Check editor preferences. They got converted back to tab style.
 Verify that nothing is clipped, tabs are visible, layout is correct</li>
-  <li>Check that the links have meaningful hovers and jump to the correct page<br>
-  </li>
-
 </ul>
-<h4>Platform Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
+<h4>&lt;&gt;Compiler (Markus, Tom; FAQ: Martin)</h4>
+<h4> </h4>
+<ul>
+  <li>Ne settings for @SuppressWarnings annotation</li>
+</ul>
+<h4>&lt;&gt;Quick Fix/Assist<span style="font-weight: bold;"> </span>(Dani,
+Benjamin; FAQ: Martin)</h4>
+<ul>
+  <li>Add missing @Deperected and @Override annotation</li>
+  <li>Quick fixes and wild card types: New variable with a wildcard
+type, casts to wildcard types</li>
+  <li>Quick fix/assist direct shortcuts<br>
+  </li>
+</ul>
+<h4>Add Imports (Dani, Benjamin; FAQ: Martin)<br>
+</h4>
+<ul>
+  <li>Add import that introduces a star import removes unused fully
+qualified import<br>
+  </li>
+</ul>
+<h4>Platform-Text (David, Martin; FAQ: Tom, Dani)<br>
 </h4>
 <ul>
   <li>Verify syntax coloring and highlighting interaction (verify there
 is no cheese due to optimizations)</li>
-  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a text editor and verify that they behave property<br>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
+on a text editor and verify that they behave property<br>
   </li>
-
 </ul>
-<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani)</h4>
+<h4>Java Editor (David, Martin; FAQ: Tom, Dani)</h4>
 <ul>
   <li>Code assist</li>
   <ul>
@@ -229,19 +255,22 @@ is no cheese due to optimizations)</li>
 ArrayList&lt;??&gt; should guess something meaningfully for ??)</li>
     <li>auto insert behavior</li>
   </ul>
-  <li>auto-boxing coloring: verify that it colors the same places as the compiler
+  <li>auto-boxing coloring: verify that it colors the same places as
+the compiler
 warns about (enable corresponding compiler warning)</li>
   <li>Move lines - check performance</li>
-  <li>verify that new folding artwork looks good - try with different fonts</li>
+  <li>verify that new folding artwork looks good - try with different
+fonts</li>
   <ul>
     <li>icons</li>
     <li>line in vertical rule</li>
   </ul>
-  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Compilation Unit editor and verify that both behave property</li>
-  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Class File editor and verify that both behave property</li>
-
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
+on a Compilation Unit editor and verify that both behave property</li>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
+on a Class File editor and verify that both behave property</li>
 </ul>
-<h4>Search (Tester: Dani, Benjamin; FAQ: Martin)<br>
+<h4>Search (Dani, Benjamin; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test text search</li>
@@ -251,7 +280,6 @@ multiple line - larger code blocks</li>
   </li>
 </ul>
 <h2>Java 5.0</h2>
-
 Note, when testing Java 5.0 feature don't forget to test parameterized
 types that are subclasses of generic types as well as methods that use
 type parameters and varargs. For example MyList extends
@@ -259,7 +287,8 @@ ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The
 examples
 below are a starting point of cases to check. The list IS NOT complete.
 Try to come up with your own corner cases as well. A good overview what
-to test is the J2SE 5.0 status <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
+to test is the J2SE 5.0 status <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
 <h4>Refactoring (Tester pro refactoring; FAQ: Dirk, Markus, Tobias)<br>
 </h4>
 <ul>
@@ -457,7 +486,6 @@ required which has to be added in the 'Installed JRE's' preference page</li>
 </ul>
 <br>
 <h2>Sanity check new functionality added in 3.1</h2>
-
 <h4>Preferences (Tester: ??; FAQ: Martin)<br>
 </h4>
 <ul>
@@ -502,9 +530,7 @@ wizard page.</li>
   </ul>
 </ul>
 <h2>General items<br>
-
 </h2>
-
 <h4>Accessibility Testing (Tester: ??)<br>
 </h4>
 <ul>
@@ -553,4 +579,5 @@ present a dialog that the CU is not on the build path</li>
 <ul>
   <li>upgrade a 2.1 workspace to 3.0</li>
 </ul>
-</body></html>
+</body>
+</html>
