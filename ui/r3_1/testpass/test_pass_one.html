@@ -1,29 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
+<html><head>
   <meta http-equiv="Content-Language" content="en-us">
-  <meta http-equiv="Content-Type"
- content="text/html; charset=windows-1252">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
-  <meta name="ProgId" content="FrontPage.Editor.Document">
-  <title>Fix Pass</title>
-</head>
+  <meta name="ProgId" content="FrontPage.Editor.Document"><title>Test Pass One</title></head>
+
 <body>
-<h1>Test Pass One: JDT-UI, JDT Text, Platform Compare, Platform Text,
+<h1>Test Pass One: JDT UI, JDT Text, Platform Compare, Platform Text,
 and Platform Search</h1>
 <h3>Testers: Martin, Dani, Markus, Christof, David, Benjamin, Tobias,
 Tom, Dirk<br>
 </h3>
-<h3>Goal</h3>
+<h2>Goal</h2>
+
 <ul>
-  <li>Test new M7 functionality<br>
+  <li>test new 3.1 M7 functionality<br>
   </li>
-  <li>Test Java 5.0 functionality. Whenever you create some test code
+  <li>test Java 5.0 functionality. Whenever you create some test code
 please use 5.0 language features whenever possible. For example add a
 type parameter to every new class, ...</li>
   <li><font color="#000000">test corner cases</font></li>
   <li>test setups which we typically don't use during development (for
-example no Plug-in developement)<font color="#000000"></font></li>
+example no Plug-in development)</li>
   <li><font color="#000000">handling of error situations</font>
     <ul>
       <li><font color="#000000">watch log</font></li>
@@ -31,9 +29,18 @@ example no Plug-in developement)<font color="#000000"></font></li>
     </ul>
   </li>
 </ul>
-<h3>General Items (everybody)</h3>
+<h2>Setup / Introduction<br>
+</h2>
+<h3>Platforms</h3>
 <ul>
-  <li>Whenever you have to fill in data in dialogs try to foul the
+  <li>Tom tests under Linux-GTK (FedoraCore)</li>
+  <li>all others test under Windows XP<br>
+  </li>
+</ul>
+<h3>General Items (everybody)</h3>
+
+<ul>
+  <li>Whenever you have to fill in data in dialogs try to fool the
 dialog by providing incomplete or bogus input</li>
   <li>Watch for view updating (package explorer, browsing perspective,
 outliner) when source content gets changed</li>
@@ -93,7 +100,7 @@ library) (Dirk)
 <ul>
   <li>half of the team tests with multiple windows.</li>
   <li>switch between windows for different actions</li>
-  <li>watch for wrong window poping to front</li>
+  <li>watch for wrong window popping to front</li>
   <li>watch for wrong dialog parenting</li>
 </ul>
 <h3>Multiple Editor Areas (Tom, Markus, Benjamin)</h3>
@@ -106,10 +113,10 @@ library) (Dirk)
 <ul>
   <li>third of the team tests in browsing perspective (Dirk, Tom, David)<br>
   </li>
-  <li>third of the team tests in Java prespective using project mode in
+  <li>third of the team tests in Java perspective using project mode in
 package explorer (Martin, Tobias, Benjamin)<br>
   </li>
-  <li>throd of the tem tests in Java perspective using the working set
+  <li>third of the team tests in Java perspective using the working set
 mode in the package explorer (Dani, Christof, Markus<br>
   </li>
 </ul>
@@ -118,19 +125,18 @@ mode in the package explorer (Dani, Christof, Markus<br>
   <li>half of the team tests with automatic workspace refresh enabled
 (Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
 </ul>
-<h3>M7 items</h3>
+<h2>3.1 M7 items</h2>
+
 <h4>Bug verification (all)<br>
 </h4>
 <ul>
-  <li>Verify all P1 &amp; P2 bugs fixed during M7 (total 27) (<a
- href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">JDT/UI
-&amp; JDT/Text</a>, <a
- href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>).</li>
+  <li>Verify all P1 &amp; P2 bugs fixed during M7 (total 27) (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Text&amp;component=UI&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">JDT/UI
+&amp; JDT/Text</a>, <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+M7&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;priority=P1&amp;priority=P2&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>).</li>
 </ul>
 <h4>Undo/Redo (Tester: Markus, Tom; FAQ: Dani, Dirk)<br>
 </h4>
 <ul>
-  <li>Test thar Refactor-&gt;Undo/Redo is gone<br>
+  <li>Test that Refactor-&gt;Undo/Redo is gone<br>
   </li>
   <li>Execute various refactorings from different views and check that
 Edit-&gt;Undo allows undoing the refactoring (note that not all
@@ -162,8 +168,7 @@ editor that contains the declaration).</li>
 <h4>New Open Type dialog (Tester: David, Martin; FAQ: Dirk)<br>
 </h4>
 <ul>
-  <li>Test new open type dialog and histroy (know problem [<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93668">93668</a>])</li>
+  <li>Test new open type dialog and history (know problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93668">93668</a>])</li>
   <ul>
     <li>removing elements from the history using delete key or context
 menu</li>
@@ -173,8 +178,7 @@ menu</li>
 <h4>Refactoring Capture Binding (Dani, Benjamin; FAQ: Markus)<br>
 </h4>
 <ul>
-  <li>Test refactoring and capture bindings (know problem [<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
+  <li>Test refactoring and capture bindings (know problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
   <ul>
     <li>test all refactorings that deal with expressions (extract
 local, constants, extract method) and create new type signature. The
@@ -200,37 +204,43 @@ page is shown</li>
   <li>Check editor preferences. They got converted back to tab style.
 Verify that nothing is clipped, tabs are visible, layout is correct</li>
 </ul>
-<h4>Platform-Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
+<h4>Platform Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
 </h4>
 <ul>
   <li>Verify syntax coloring and highlighting interaction (verify there
-is no cheese due to optimizations)<br>
+is no cheese due to optimizations)</li>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a text editor and verify that they behave property<br>
   </li>
+
 </ul>
-<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani</h4>
+<h4>Java Editor (Tester: David, Martin; FAQ: Tom, Dani)</h4>
 <ul>
   <li>Code assist</li>
   <ul>
     <li>auto insertion behavior</li>
     <li>parameter guessing correctness</li>
     <li>type parameter guesses (e.g. in List&lt;String&gt; l= new
-ArryaList&lt;??&gt; should guess something meaningfull for ??)</li>
-    <li>auto insert behaviour</li>
+ArrayList&lt;??&gt; should guess something meaningfully for ??)</li>
+    <li>auto insert behavior</li>
   </ul>
   <li>Autoboxing coloring: should color the same places as the compiler
 warns about (enable corresponding compiler warning)</li>
   <li>Move lines - check performance</li>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Compilation Unit editor and verify that both behave property</li>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Class File editor and verify that both behave property</li>
+
 </ul>
-<h4>Search (Tester: Dani, Benjamin; FAQ: Martin) <br>
+<h4>Search (Tester: Dani, Benjamin; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test text search</li>
-  <li>Focus searching in lagre file with regex patterns which spwan
+  <li>Focus searching in large file with regex patterns which spawn
 multiple line - larger code blocks</li>
   <li>Have an eye on performance<br>
   </li>
 </ul>
-<h3>Java 5.0</h3>
+<h2>Java 5.0</h2>
+
 Note, when testing Java 5.0 feature don't forget to test parameterized
 types that are subclasses of generic types as well as methods that use
 type parameters and varargs. For example MyList extends
@@ -238,8 +248,7 @@ ArrayList&lt;String&gt; or &lt;X. void foo(X x, String...). The
 examples
 below are a starting point of cases to check. The list IS NOT complete.
 Try to come up with your own corner cases as well. A good overview what
-to test is the J2SE 5.0 status <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
+to test is the J2SE 5.0 status <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
 <h4>Refactoring (Tester pro refactoring; FAQ: Dirk, Markus, Tobias)<br>
 </h4>
 <ul>
@@ -248,12 +257,12 @@ to test is the J2SE 5.0 status <a
   <ul>
     <li>annotations, annotation members (especially the special case
 value), enum, enum member, type parameters, vararg parameters</li>
-    <li>with varagrs, type parameters, generic &amp; parameterized
+    <li>with varargs, type parameters, generic &amp; parameterized
 types in the signature (field, method, local)</li>
   </ul>
   <li>Move CU/Type</li>
   <ul>
-    <li>annotatoions, enum, generic &amp; parameterized types<br>
+    <li>annotations, enum, generic &amp; parameterized types<br>
     </li>
   </ul>
   <li>Move (method &amp; static members)</li>
@@ -274,11 +283,11 @@ class<br>
   </ul>
   <li>Convert Anonymous to nested</li>
   <ul>
-    <li>annotatoions, enum, generic &amp; parameterized types</li>
+    <li>annotations, enum, generic &amp; parameterized types</li>
   </ul>
   <li>Move member type to new file</li>
   <ul>
-    <li>annotatoions, enum, generic &amp; parameterized types</li>
+    <li>annotations, enum, generic &amp; parameterized types</li>
     <li>code that refers to static imports</li>
     <li>code that refers to type parameters</li>
   </ul>
@@ -330,13 +339,13 @@ types)</li>
 enums&nbsp; and type parameters (or the concrete type for parameterized
 types)<br>
     </li>
-    <li>signature to be changed contains varags, type parameters,
+    <li>signature to be changed contains varargs, type parameters,
 parameterized types</li>
   </ul>
   <li>Introduce Factory</li>
   <ul>
     <li>for generic and parameterized types</li>
-    <li>destination type is generic or parameterrized</li>
+    <li>destination type is generic or parameterized</li>
   </ul>
   <li>Convert local variable to field</li>
   <ul>
@@ -390,12 +399,12 @@ and type parameters</li>
   <li>Generate Constructor Using fields</li>
   <ul>
     <li>field type is enum, annotation</li>
-    <li>field type is type parameter or paramterized type</li>
+    <li>field type is type parameter or parametrized type</li>
   </ul>
   <li>Add Constructor from Superclass</li>
   <ul>
     <li>super class is generic or parameterized type</li>
-    <li>constrcutor with type parameters, varargs, parameterized types</li>
+    <li>constructor with type parameters, varargs, parameterized types</li>
   </ul>
   <li>Sort members</li>
   <ul>
@@ -436,14 +445,15 @@ required which has to be added in the 'Installed JRE's' preference page</li>
   <li>argument guessing for parameterized types</li>
 </ul>
 <br>
-<h3>Sanity check new functionality added in 3.1</h3>
+<h2>Sanity check new functionality added in 3.1</h2>
+
 <h4>Preferences (Tester: ??; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test that you can navigate from project specific settings to the
 global settings and vice versa</li>
   <li>Test project specific settings for formatter, compiler, code
-style settings, javadoc locations<br>
+style settings, Javadoc locations<br>
   </li>
 </ul>
 <h4>Search (Tester: ??; FAQ: Dirk)<br>
@@ -464,7 +474,7 @@ matches<br>
 <ul>
   <li>Test Externalize Strings wizards with new Eclipse style message
 bundles</li>
-  <li>New poperties editor. Linking in Java editor to poperties entry
+  <li>New properties editor. Linking in Java editor to properties entry
 and vice versa<br>
   </li>
 </ul>
@@ -480,9 +490,11 @@ wizard page.</li>
     </li>
   </ul>
 </ul>
-<h3>General items to check<br>
-</h3>
-<h4>Accessability Testing (Tester: ??)<br>
+<h2>General items<br>
+
+</h2>
+
+<h4>Accessibility Testing (Tester: ??)<br>
 </h4>
 <ul>
   <li>verify mnemonics in wizards/dialogs/menus<br>
@@ -530,5 +542,4 @@ present a dialog that the CU is not on the build path</li>
 <ul>
   <li>upgrade a 2.1 workspace to 3.0</li>
 </ul>
-</body>
-</html>
+</body></html>
