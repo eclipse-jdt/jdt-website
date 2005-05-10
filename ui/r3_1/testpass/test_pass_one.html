@@ -92,7 +92,7 @@ library) (Dirk)
   <li>half of the team should test with editor in single edit mode</li>
   <li>corner case
     <ul>
-      <li>segmented mode, formatting, un/redo</li>
+      <li>segmented mode, formatting, undo/redo</li>
     </ul>
   </li>
 </ul>
@@ -136,10 +136,10 @@ mode in the package explorer (Dani, Christof, Markus<br>
 <h4>Undo/Redo (Tester: Markus, Tom; FAQ: Dani, Dirk)<br>
 </h4>
 <ul>
-  <li>Test that Refactor-&gt;Undo/Redo is gone<br>
+  <li>Test that <span style="font-weight: bold;">Refactor &gt; Undo/Redo</span> is gone<br>
   </li>
   <li>Execute various refactorings from different views and check that
-Edit-&gt;Undo allows undoing the refactoring (note that not all
+    <span style="font-weight: bold;">Edit &gt; Undo</span> allows undoing the refactoring (note that not all
 refactoring are undoable. So best test rename, extract method, ..)</li>
   <li>Test undo/redo of typing inside the editor (without mixing it
 with refactoring undo)<br>
@@ -164,6 +164,9 @@ should show a confirmation box when other resources than the file
 currently being edited are affected by the undo (for example rename a
 method that is referenced in a second CU and try yo undo it from the
 editor that contains the declaration).</li>
+  <li>Check that undoing the last change remove the dirty indication in the editor tab<br>
+  </li>
+
 </ul>
 <h4>New Open Type dialog (Tester: David, Martin; FAQ: Dirk)<br>
 </h4>
@@ -203,6 +206,9 @@ preference page using a keyword that should match and validate that the
 page is shown</li>
   <li>Check editor preferences. They got converted back to tab style.
 Verify that nothing is clipped, tabs are visible, layout is correct</li>
+  <li>Check that the links have meaningful hovers and jump to the correct page<br>
+  </li>
+
 </ul>
 <h4>Platform Text (Tester: David, Martin; FAQ: Tom, Dani)<br>
 </h4>
@@ -223,9 +229,14 @@ is no cheese due to optimizations)</li>
 ArrayList&lt;??&gt; should guess something meaningfully for ??)</li>
     <li>auto insert behavior</li>
   </ul>
-  <li>Autoboxing coloring: should color the same places as the compiler
+  <li>auto-boxing coloring: verify that it colors the same places as the compiler
 warns about (enable corresponding compiler warning)</li>
   <li>Move lines - check performance</li>
+  <li>verify that new folding artwork looks good - try with different fonts</li>
+  <ul>
+    <li>icons</li>
+    <li>line in vertical rule</li>
+  </ul>
   <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Compilation Unit editor and verify that both behave property</li>
   <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span> on a Class File editor and verify that both behave property</li>
 
@@ -394,7 +405,7 @@ and type parameters</li>
   <li>Generate Delegate Methods</li>
   <ul>
     <li>field type is enum, annotation</li>
-    <li>field type is type parameter or paramterized type</li>
+    <li>field type is type parameter or parametrized type</li>
   </ul>
   <li>Generate Constructor Using fields</li>
   <ul>
