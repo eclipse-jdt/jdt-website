@@ -525,18 +525,34 @@ correctly (check bugzilla first: there are already some bug reports)</li>
 <h4>Preferences (Tobias; FAQ: Martin)<br>
 </h4>
 <ul>
-  <li>Test that you can navigate from project specific settings to the
+  <li>test that you can navigate from project specific settings to the
 global settings and vice versa</li>
-  <li>Test project specific settings for formatter, compiler, code
-style settings, Javadoc locations<br>
-  </li>
+  <li>test project specific settings for formatter, compiler, code
+style settings, Javadoc locations</li>
+  <li>test the new hyperlinks on Text Editor and Java preference pages: verify that</li>
+  <ul>
+<li>link is correctly shown</li>
+    <li>hover is correct<br>
+    </li>
+<li>clicking navigates to correct preference page<br>
+</li>
+  </ul>
+
 </ul>
 <h4>Search (Dani, Christof; FAQ: Dirk)<br>
 </h4>
 <ul>
   <li>Test different rendering of filtered / non filtered search result
-matches<br>
-  </li>
+matches</li>
+  <li>occurrence search</li>
+  <ul>
+    <li>Implementing Methods<br>
+    </li>
+  </ul>
+  <ul>
+    <li>Throwing Exception</li>
+  </ul>
+
 </ul>
 <h4>Quick fixes (Benjamin, Dani FAQ: Martin) <br>
 </h4>
@@ -544,7 +560,7 @@ matches<br>
   <li>Serial version Id<br>
   </li>
 </ul>
-<h4>Text Editor (Tobias, Martin)<br>
+<h4>Text Editor (Tobias, Martin; FAQ: Dani, Tom)<br>
 </h4>
 <ul>
   <li>URL hyperlinking: verify that</li>
@@ -556,10 +572,13 @@ matches<br>
   <li>open Properties dialog from active editor</li>
   <li>test 'Convert Line Delimiter To' commands on active editor and on a folder or project</li>
   <li>test 'Remove Trailing Whitespace' command on active editor and on a folder or project</li>
-  <li><span style="font-style: italic;">[ more to come - please refresh the link to the the additional items from time to time until this item is gone]</span><br>
+  <li>test 'Word Completion' (Ctrl + /)</li>
+  <li>verify that the new undo history size preference correctly works<br>
   </li>
+
+  
 </ul>
-<h4>Java Editor (Martin, Dirk)<br>
+<h4>Java Editor (Martin, Dirk; FAQ: Dani, Tom)<br>
 </h4>
 <ul>
   <li>semantic coloring for deprecated members</li>
@@ -567,8 +586,24 @@ matches<br>
   <li>new occurrence markings</li>
   <ul>
     <li>inherited methods</li>
+    <li>implements occurrences</li>
+
   </ul>
-  <li style="font-style: italic;"><span style="font-style: italic;">[ more to come - please refresh the link to the the additional items from time to time until this item is gone ]</span></li>
+  <li>folding</li>
+  <ul>
+    <li>header folding: test different variants of headers<br>
+    </li>
+  </ul>
+  <ul>
+    <li>better caption when Javadoc or code is folded</li>
+  </ul>
+  <li>test that the browser widget is used for Javadoc information presentation (F2)</li>
+  <ul>
+    <li>verify that performance is acceptable<br>
+    </li>
+  </ul>
+
+  
 </ul>
 <h4>NLS Tooling (Dirk, David; FAQ: Dani)<br>
 </h4>
