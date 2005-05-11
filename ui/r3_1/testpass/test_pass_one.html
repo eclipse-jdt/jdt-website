@@ -4,7 +4,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
   <meta name="ProgId" content="FrontPage.Editor.Document"><title>Test Pass One</title></head>
-
 <body>
 <h1>Test Pass One: JDT UI, JDT Text, Platform Compare, Platform Text,
 and Platform Search</h1>
@@ -119,14 +118,16 @@ library) (Dirk)
   <li>third of the team tests in Java perspective using project mode in
 package explorer (Martin, Tobias, Benjamin)<br>
   </li>
+  
   <li>third of the team tests in Java perspective using the working set
-mode in the package explorer (Dani, Christof, Markus<br>
+mode in the package explorer (Dani, Christof, Markus)<br>
   </li>
+
 </ul>
 <h3>Automatic workspace refresh (Benjamin, Markus, Christof, Dirk)</h3>
 <ul>
   <li>half of the team tests with automatic workspace refresh enabled
-(Preferences-&gt;Workbench-&gt;Refresh workspace automatically</li>
+(<span style="font-weight: bold;">Preferences &gt; Workbench &gt; Refresh</span> workspace automatically</li>
 </ul>
 <h2>3.1 M7 items</h2>
 <h4>Bug verification (all)<br>
@@ -184,7 +185,7 @@ menu</li>
 <h4>Refactoring Capture Binding (Dani, Benjamin; FAQ: Markus)<br>
 </h4>
 <ul>
-  <li>Test refactoring and capture bindings (know problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
+  <li>Test refactoring and capture bindings (known problem [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=93541">93541</a>]):</li>
   <ul>
     <li>test all refactorings that deal with expressions (extract
 local, constants, extract method) and create new type signature. The
@@ -277,7 +278,7 @@ multiple line - larger code blocks</li>
   <li>Have an eye on performance<br>
   </li>
 </ul>
-<h2>Java 5.0</h2>
+<h2><a name="J2SE50"></a>J2SE 5.0</h2>
 Note, when testing Java 5.0 feature don't forget to test parameterized
 types that are subclasses of generic types as well as methods that use
 type parameters and varargs. For example MyList extends
@@ -474,15 +475,52 @@ try
 to enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
 required which has to be added in the 'Installed JRE's' preference page</li>
 </ul>
-<h4>Java Editor (Tester: ??; FAQ: Tom, Dani)<br>
+<h4>Java Editor (Tester: ??; FAQ: Tom)<br>
 </h4>
 <ul>
-  <li>coloring of autoboxing, enums, and annotations</li>
+  <li>new syntax colorings</li>
+  <ul>
+    <li>auto(un)boxed expressions<br>
+    </li>
+    <li>annotations</li>
+    <li>annotation element references</li>
+    <li>parameter variables<br>
+    </li>
+  </ul>
+
   <li>code assist</li>
-  <li>argument guessing for parameterized types</li>
+  <ul>
+    <li>enums</li>
+    <li>static imports<br>
+    </li>
+    <li>generics
+			</li>
+  </ul>
+  <ul>
+    <li>type parameter proposals</li>
+  </ul>
+  <ul>
+    <li>enum constant proposals</li>
+    <li>annotations<br>
+    </li>
+  </ul>
+  <ul>
+    <li>argument guessing for parameterized types</li>
+  </ul>
+  <li>verify that the Java Outline displays new J2SE 5.0 constructs correctly</li>
+  <li>verify that occurrence marking handles new J2SE 5.0 elements
+correclty (check bugzilla first: there are already some bug reports)</li>
+  <li>verify that folding works correctly for J2SE 5.0 elements</li>
+  <li>test new 'foreach' template</li>
+  <li>hovers for new J2SE 5.0 constructs (e.g. hovering over parametrized types)</li>
+  <li>format CUs with J2SE 5.0 constructs and verify that they get correctly formatted according to the current formatter settings<br>
+  </li>
+
+  
 </ul>
-<br>
-<h2>Sanity check new functionality added in 3.1</h2>
+
+<h2>New 3.1 Functionality (in addition to <a href="../../../../../../new%20and%20noteworthy/whats-new-template.html">J2SE 5.0</a>)<br>
+</h2>
 <h4>Preferences (Tester: ??; FAQ: Martin)<br>
 </h4>
 <ul>
@@ -574,6 +612,9 @@ present a dialog that the CU is not on the build path</li>
 </ul>
 <h4><font color="#000000">Workspace compatibility (Tester: ??)</font></h4>
 <ul>
-  <li>upgrade a 2.1 workspace to 3.0</li>
+  <li>upgrade a 3.0 workspace to 3.1</li>
+  <li>upgrade a 2.1 workspace to 3.1<br>
+  </li>
+
 </ul>
 </body></html>
