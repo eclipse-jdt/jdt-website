@@ -52,7 +52,7 @@ outliner) when source content gets changed</li>
   <li>change font for text editor and dialogs to different font</li>
   <li>check that dialogs are rendered correctly
     <ul>
-      <li>specified dialog font is usedtestes</li>
+      <li>specified dialog font is used</li>
       <li>no buttons and labels clipped</li>
     </ul>
   </li>
@@ -221,7 +221,7 @@ Verify that nothing is clipped, tabs are visible, layout is correct</li>
 <h4>Quick Fix/Assist<span style="font-weight: bold;"> </span>(Dani,
 Benjamin; FAQ: Martin)</h4>
 <ul>
-  <li>Add missing @Deperected and @Override annotation</li>
+  <li>Add missing @Deprecated and @Override annotation</li>
   <li>Quick fixes and wild card types: New variable with a wildcard
 type, change method signature, new method....<br>
   </li>
@@ -287,7 +287,7 @@ examples
 below are a starting point of cases to check. The list IS NOT complete.
 Try to come up with your own corner cases as well. A good overview what
 to test is the J2SE 5.0 status <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
-<h4>Refactoring (Tester pro refactoring; FAQ: Dirk, Markus, Tobias)<br>
+<h4>Refactoring (David, Benjamin, Dani: coordinate the effort; FAQ: Dirk, Markus, Tobias)<br>
 </h4>
 <ul>
   <li>Rename<br>
@@ -405,7 +405,7 @@ type parameter</li>
     </li>
   </ul>
 </ul>
-<h4>Source Actions (Tester pro source action; FAQ: Tobias)<br>
+<h4>Source Actions (Christof, Markus, Benjamin; FAQ: Tobias)<br>
 </h4>
 <div style="margin-left: 40px;">Don't forget to check the Javadoc for
 the generated methods<br>
@@ -454,13 +454,13 @@ as members<br>
     </li>
   </ul>
 </ul>
-<h4>Search (Tester ??; FAQ: Markus, Martin, Dirk)</h4>
+<h4>Search (Dani, Benjamin; FAQ: Markus, Martin, Dirk)</h4>
 <ul>
   <li>test searching for enums, annotations, generic types and methods,
 parameterized types and methods and type variables</li>
   <li>test new filters for incompatible and inexact matches</li>
 </ul>
-<h4>Quick Fix &amp; Quick assist (Tester ??; FAQ: Martin)<br>
+<h4>Quick Fix &amp; Quick assist (Tom, Markus; FAQ: Martin)<br>
 </h4>
 <ul>
   <ul>
@@ -475,12 +475,13 @@ try
 to enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
 required which has to be added in the 'Installed JRE's' preference page</li>
 </ul>
-<h4>Java Editor (Tester: ??; FAQ: Tom)<br>
+<h4>Java Editor (Tobias, Martin; FAQ: Tom)<br>
 </h4>
 <ul>
   <li>new syntax colorings</li>
   <ul>
-    <li>auto(un)boxed expressions<br>
+    <li>auto(un)boxed expressions</li>
+    <li>new keywords (enum, @interface)<br>
     </li>
     <li>annotations</li>
     <li>annotation element references</li>
@@ -509,7 +510,7 @@ required which has to be added in the 'Installed JRE's' preference page</li>
   </ul>
   <li>verify that the Java Outline displays new J2SE 5.0 constructs correctly</li>
   <li>verify that occurrence marking handles new J2SE 5.0 elements
-correclty (check bugzilla first: there are already some bug reports)</li>
+correctly (check bugzilla first: there are already some bug reports)</li>
   <li>verify that folding works correctly for J2SE 5.0 elements</li>
   <li>test new 'foreach' template</li>
   <li>hovers for new J2SE 5.0 constructs (e.g. hovering over parametrized types)</li>
@@ -521,7 +522,7 @@ correclty (check bugzilla first: there are already some bug reports)</li>
 
 <h2>New 3.1 Functionality (in addition to <a href="../../../../../../new%20and%20noteworthy/whats-new-template.html">J2SE 5.0</a>)<br>
 </h2>
-<h4>Preferences (Tester: ??; FAQ: Martin)<br>
+<h4>Preferences (Tobias; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test that you can navigate from project specific settings to the
@@ -530,29 +531,69 @@ global settings and vice versa</li>
 style settings, Javadoc locations<br>
   </li>
 </ul>
-<h4>Search (Tester: ??; FAQ: Dirk)<br>
+<h4>Search (Dani, Christof; FAQ: Dirk)<br>
 </h4>
 <ul>
   <li>Test different rendering of filtered / non filtered search result
 matches<br>
   </li>
 </ul>
-<h4>Quick fixes (Tester: ??; FAQ: Martin) <br>
+<h4>Quick fixes (Benjamin, Dani FAQ: Martin) <br>
 </h4>
 <ul>
   <li>Serial version Id<br>
   </li>
 </ul>
-<h4>NLS (Tester: ??; FAQ: Dani)<br>
+<h4>Text Editor (Tobias, Martin)<br>
 </h4>
 <ul>
-  <li>Test Externalize Strings wizards with new Eclipse style message
-bundles</li>
-  <li>New properties editor. Linking in Java editor to properties entry
-and vice versa<br>
+  <li>URL hyperlinking: verify that</li>
+  <ul>
+    <li>link is correctly indicated</li>
+    <li>clicking shows the URL in a browser</li>
+  </ul>
+  <li>test new encoding support</li>
+  <li>open Properties dialog from active editor</li>
+  <li>test 'Convert Line Delimiter To' commands on active editor and on a folder or project</li>
+  <li>test 'Remove Trailing Whitespace' command on active editor and on a folder or project</li>
+  <li><span style="font-style: italic;">[ more to come - please refresh the link to the the additional items from time to time until this item is gone]</span><br>
   </li>
 </ul>
-<h4>New Source Folder wizard page (Tester: ??; FAQ: Martin)<br>
+<h4>Java Editor (Martin, Dirk)<br>
+</h4>
+<ul>
+  <li>semantic coloring for deprecated members</li>
+  <li>verify the new underline and strikethrough syntax coloring styles</li>
+  <li>new occurrence markings</li>
+  <ul>
+    <li>inherited methods</li>
+  </ul>
+  <li style="font-style: italic;"><span style="font-style: italic;">[ more to come - please refresh the link to the the additional items from time to time until this item is gone ]</span></li>
+</ul>
+<h4>NLS Tooling (Dirk, David; FAQ: Dani)<br>
+</h4>
+
+<ul>
+  <li>test Externalize Strings wizard with new Eclipse-style message
+bundles</li>
+  <li>test Externalize Strings wizard with old-style message
+bundles</li>
+
+  <li>linking in CU and Class File editor to properties entry
+and vice versa (only works for old-style NLSing)</li>
+  <li>hovering over NLS key in CU and Class File editor show externalized string (only works for old-style NLSing)</li>
+  <li>Java Properties File editor</li>
+  <ul>
+    <li>syntax coloring - verify that colors can be changed via preferences</li>
+    <li>spell checking<br>
+    </li>
+  </ul>
+</ul>
+<ul>
+
+</ul>
+
+<h4>New Source Folder wizard page (David; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>setup project on existing source using the new source folder
@@ -566,7 +607,7 @@ wizard page.</li>
 </ul>
 <h2>General items<br>
 </h2>
-<h4>Accessibility Testing (Tester: ??)<br>
+<h4>Accessibility Testing (Tom)<br>
 </h4>
 <ul>
   <li>verify mnemonics in wizards/dialogs/menus<br>
@@ -576,7 +617,7 @@ are not yet done.</i></li>
   <li>combination of color, form, and text. </li>
   <li>status line information</li>
 </ul>
-<h4>Operations and Locked Workspace (Tester: ??)</h4>
+<h4>Operations and Locked Workspace (Dirk, Christof)</h4>
 <ul>
   <li>To lock the workspace use the org.eclipse.ui.examples.job plug-in
 from the Eclipse repository</li>
@@ -588,7 +629,7 @@ locked</li>
   <li>Cancel the user action. Make sure that no
 OperationCancelException or other exceptions appear in the log</li>
 </ul>
-<h4>Validate-Edit (Tester: ??)</h4>
+<h4>Validate-Edit (Tobias; FAQ: Dani)</h4>
 <ul>
   <li>Check-out code from the repository in CVS Watch/Edit mode (stores
 file in read-only mode)</li>
@@ -596,7 +637,7 @@ file in read-only mode)</li>
 read-only</li>
   <li>Expected result: actions should complete without errors</li>
 </ul>
-<h4>Compilation Units not on Build Path (Tester: ??)&nbsp;</h4>
+<h4>Compilation Units not on Build Path (Dirk, Christof; FAQ: Dani, Dirk)&nbsp;</h4>
 <ul>
   <li>Test Edit, Source and Refactoring actions for compilation units
 not on the build path.</li>
@@ -610,7 +651,10 @@ not on the build path.</li>
   <li>Actions should either operate without an error, not be present or
 present a dialog that the CU is not on the build path</li>
 </ul>
-<h4><font color="#000000">Workspace compatibility (Tester: ??)</font></h4>
+<h4><font color="#000000">Workspace compatibility (Markus)</font></h4>Verify
+that an existing workspace can be started on the new version and is
+fully functional. Check the .log for serious problems.<br>
+
 <ul>
   <li>upgrade a 3.0 workspace to 3.1</li>
   <li>upgrade a 2.1 workspace to 3.1<br>
