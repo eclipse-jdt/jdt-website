@@ -9,7 +9,7 @@
   <title>Test Pass One</title>
 </head>
 <body>
-<h1>Test Pass One: JDT UI, JDT Text, Platform Compare, Platform Text,
+<h1>Test Pass Two: JDT UI, JDT Text, Platform Compare, Platform Text,
 and Platform Search</h1>
 <h3>Testers: Martin, Dani, Markus, David, Benjamin, Tobias, Tom, Dirk<br>
 </h3>
@@ -32,10 +32,11 @@ example no Plug-in development)</li>
 </ul>
 <h2>Setup / Introduction</h2>
 <h3><span style="font-weight: bold;">Build</span></h3>
-&nbsp;&nbsp;&nbsp; Eclipse-SDK-I200505??-????
+&nbsp;&nbsp;&nbsp; S-3.1RC1-200505271300 (I20050527-1300)<br>
 <h3>Platforms</h3>
 <ul>
-  <li>Linux-GTK FedoraCore (Tom)<br>
+  <li>Linux-GTK FedoraCore (Tom)</li>
+  <li>Mac OS (Tobias, Tuesday)<br>
   </li>
   <li>Windows XP (all others test)<br>
   </li>
@@ -139,12 +140,12 @@ workspace automatically</li>
  href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Text&amp;target_milestone=3.1+RC1&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Text</a>,<a
  href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Platform&amp;component=Search&amp;target_milestone=3.1+RC1&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">Platform/Search</a>).</li>
 </ul>
-<h4>New class wizard ( FAQ Markus):</h4>
+<h4>New class wizard (Dirk; FAQ Markus):</h4>
 <ul>
   <li>test code assist in interface list<br>
   </li>
 </ul>
-<h4>New Open Type dialog (; FAQ: Dirk)<br>
+<h4>New Open Type dialog (Markus; FAQ: Dirk)<br>
 </h4>
 <ul>
   <li>Test new view menu in open type dialog</li>
@@ -156,14 +157,20 @@ filtered)<br>
   <ul>
   </ul>
 </ul>
-<h4>Quick Fix/Assist<span style="font-weight: bold;"> </span>(Dani,
-Benjamin; FAQ: Martin)</h4>
+<h4>Quick Fix/Assist<span style="font-weight: bold;"> </span>(Ben,
+Tobias; FAQ: Martin, Tobias)</h4>
 <ul>
   <li>Test new quick fixes to switch the compliance level or JRE to 5.0
-when using 5.0 language constructs</li>
+when using 5.0 language constructs (note that a 1.5 JRE is required
+which has to be added in the 'Installed JRE's' preference page)</li>
   <li>Test new quick fixes for @SuppressWarnings annotation</li>
+  <li>Javadoc tags for type parameters (handled special. creates
+&lt;T&gt;)</li>
+  <li>Test convert to enhanced for loop for iterators<br>
+  </li>
 </ul>
-<h4>New default line separate preference ( FAQ: Dani &amp; Tobias)</h4>
+<h4>New default line separate preference (Markus, Tom; FAQ: Dani &amp;
+Tobias)</h4>
 <ul>
   <li>Check that all newly generated files respect the new line
 delimiter setting avaible on project and workspace. Tests include all
@@ -172,7 +179,30 @@ move member type to new file and NLS refactorings</li>
   <li>Check that refactorings and source actions don't mess up line
 delimiters (e.g respect existing line delimiters). &gt;&gt; Dani you
 have a plug-in to check line delimiters. May be we should advertise it
-and everybody should run it over its workspace from time to time.<br>
+and everybody should run it over its workspace from time to time.</li>
+</ul>
+<h4>Editor bound to Content type (Martin, Dani: FAQ: Dani)<br>
+</h4>
+<ul>
+  <li>for internal and external *.java files Java editor comes up</li>
+  <li>Associate file extension with Java editor</li>
+  <li>Binding other editors to *.java (for example Ant). Both must show
+up in Open With...</li>
+</ul>
+<h4>Content assist with access restricitions (Martin, Dani: FAQ: Dani)<br>
+</h4>
+<ul>
+  <li>Test access restrictions for content assist (see Java
+Editor-&gt;Code assist preferences). Note that you have to define some
+access restrictions for the test project<br>
+  </li>
+  <li>Check that "access restricted" types don't show up in context
+assist</li>
+</ul>
+<h4>Editor opening (Martin, Dirk: FAQ: Dani)</h4>
+<ul>
+  <li>Try combinations of folding (on/off) and segemented mode (on/off)</li>
+  <li>Try single and double click open mode<br>
   </li>
 </ul>
 <ul>
@@ -186,11 +216,11 @@ below are a starting point of cases to check. The list IS NOT complete.
 Try to come up with your own corner cases as well. A good overview what
 to test is the J2SE 5.0 status <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-ui-home/r3_1/j2se50/Status.html">document.</a><br>
-<h4>Refactoring (David, Benjamin, Dani: coordinate the effort; FAQ:
+<h4>Refactoring (David, Benjamin, Tom: coordinate the effort; FAQ:
 Dirk, Markus, Tobias)<br>
 </h4>
 <ul>
-  <li>Rename<br>
+  <li>Rename <span style="font-weight: bold;">(Ben)</span><br>
   </li>
   <ul>
     <li>annotations, annotation members (especially the special case
@@ -201,12 +231,13 @@ types in the signature (field, method, local)</li>
 other method. Focus on methods with varargs and type parameters<br>
     </li>
   </ul>
-  <li>Move CU/Type</li>
+  <li>Move CU/Type <span style="font-weight: bold;">(Ben)</span></li>
   <ul>
     <li>annotations, enum, generic &amp; parameterized types<br>
     </li>
   </ul>
-  <li>Move (method &amp; static members)</li>
+  <li>Move (method &amp; static members) <span
+ style="font-weight: bold;">(Ben)</span></li>
   <ul>
     <li>enums and annotations as members in types</li>
   </ul>
@@ -217,22 +248,23 @@ other method. Focus on methods with varargs and type parameters<br>
 class<br>
     </li>
   </ul>
-  <li>Change method signature</li>
+  <li>Change method signature <span style="font-weight: bold;">(Ben)</span></li>
   <ul>
     <li>signature with type parameters, varargs, parameterized types</li>
     <li>methods in annotations, enums, generic &amp; parameterized types</li>
   </ul>
-  <li>Convert Anonymous to nested</li>
+  <li>Convert Anonymous to nested <span style="font-weight: bold;">(Ben)</span></li>
   <ul>
     <li>annotations, enum, generic &amp; parameterized types</li>
   </ul>
-  <li>Move member type to new file</li>
+  <li>Move member type to new file <span style="font-weight: bold;">(Ben)</span></li>
   <ul>
     <li>annotations, enum, generic &amp; parameterized types</li>
     <li>code that refers to static imports</li>
     <li>code that refers to type parameters</li>
   </ul>
-  <li>Pull Up &amp; PushDown</li>
+  <li>Pull Up &amp; PushDown<span style="font-weight: bold;"> (Tom)</span><br>
+  </li>
   <ul>
     <li>methods in generic &amp; parameterized types</li>
     <li>methods that refer to a static import</li>
@@ -240,7 +272,8 @@ class<br>
     <li>between generic, normal and parameterized types</li>
     <li>enums and annotations as members in types</li>
   </ul>
-  <li>Extract Interface / Use Supertype where possible</li>
+  <li>Extract Interface / Use Supertype where possible<span
+ style="font-weight: bold;"> (Tom)</span></li>
   <ul>
     <li>enum and annotations<br>
     </li>
@@ -250,12 +283,12 @@ class<br>
     <li>method with varargs, type parameters, parameterized types<br>
     </li>
   </ul>
-  <li>Generalize Type</li>
+  <li>Generalize Type<span style="font-weight: bold;"> (Tom)</span></li>
   <ul>
     <li>enums and annotations</li>
     <li>generic and parameterized types</li>
   </ul>
-  <li>Extract/Inline Method</li>
+  <li>Extract/Inline Method<span style="font-weight: bold;"> (Tom)</span></li>
   <ul>
     <li>Code in generic &amp; parameterized types and enums<br>
     </li>
@@ -264,17 +297,21 @@ class<br>
     <li>code with references to static imports</li>
     <li>code with autoboxing</li>
   </ul>
-  <li>Extract/Inline local</li>
+  <li>Extract/Inline local<span style="font-weight: bold;"> (Tom)</span></li>
   <ul>
     <li>expression which resolve to parameterized types, annotations,
 enums&nbsp; and type parameters (or the concrete type for parameterized
 types)</li>
   </ul>
-  <li>Extract/Inline constant</li>
+  <li>Extract/Inline constant <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
+  </li>
   <ul>
     <li>in enums, annotations, generic and parameterized types</li>
   </ul>
-  <li>Introduce parameter</li>
+  <li>Introduce parameter <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
+  </li>
   <ul>
     <li>expression which resolve to parameterized types, annotations,
 enums&nbsp; and type parameters (or the concrete type for parameterized
@@ -283,23 +320,30 @@ types)<br>
     <li>signature to be changed contains varargs, type parameters,
 parameterized types</li>
   </ul>
-  <li>Introduce Factory</li>
+  <li>Introduce Factory <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
+  </li>
   <ul>
     <li>for generic and parameterized types</li>
     <li>destination type is generic or parameterized</li>
   </ul>
-  <li>Convert local variable to field</li>
+  <li>Convert local variable to field <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
+  </li>
   <ul>
     <li>declaring type is parameterized types, annotations, enums&nbsp;
 and type parameters (or the concrete type for parameterized types)</li>
   </ul>
-  <li>Self encapsulate field</li>
+  <li>Self encapsulate field <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
+  </li>
   <ul>
     <li>field type is parameterized types, annotations, enums&nbsp; and
 type parameter</li>
     <li>in enums, parameterized types and generic types.</li>
   </ul>
-  <li>Infer type arguments <br>
+  <li>Infer type arguments <span style="font-weight: bold;">(David)</span><br
+ style="font-weight: bold;">
   </li>
   <ul>
     <li>test for collection classes</li>
@@ -308,7 +352,7 @@ type parameter</li>
     </li>
   </ul>
 </ul>
-<h4>Source Actions (Christof, Markus, Benjamin; FAQ: Tobias)<br>
+<h4>Source Actions (Dirk, Martin; FAQ: Tobias)<br>
 </h4>
 <div style="margin-left: 40px;">Don't forget to check the Javadoc for
 the generated methods<br>
@@ -357,27 +401,13 @@ as members<br>
     </li>
   </ul>
 </ul>
-<h4>Search (Dani, Benjamin; FAQ: Markus, Martin, Dirk)</h4>
+<h4>Search (Tobias, Markus; FAQ: Markus, Martin, Dirk)</h4>
 <ul>
   <li>test searching for enums, annotations, generic types and methods,
 parameterized types and methods and type variables</li>
   <li>test new filters for incompatible and inexact matches</li>
 </ul>
-<h4>Quick Fix &amp; Quick assist (Tom, Markus; FAQ: Martin)<br>
-</h4>
-<ul>
-  <ul>
-  </ul>
-  <li>Test convert to enhanced for loop (currently only available for
-arrays)<br>
-  </li>
-  <li>Javadoc tags for type parameters (handled special. creates
-&lt;T&gt;)</li>
-  <li> quick fix helps you changing the compliance settings when you try
-to enter 5.0 constructs in a 1.4 project. Note that a 1.5 JRE is
-required which has to be added in the 'Installed JRE's' preference page</li>
-</ul>
-<h4>Java Editor (Tobias, Martin; FAQ: Tom)<br>
+<h4>Java Editor (Dani, Tobias; FAQ: Tom)<br>
 </h4>
 <ul>
   <li>new syntax colorings</li>
@@ -424,7 +454,7 @@ correctly formatted according to the current formatter settings<br>
  href="../../../../../../new%20and%20noteworthy/whats-new-template.html">J2SE
 5.0</a>)<br>
 </h2>
-<h4>Build Path (Dani, Benjamin; FAQ: Martin)<br>
+<h4>Build Path (Dirk, David; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test new access rule user interface. Access rules are defined via
@@ -433,7 +463,7 @@ of access rule here</li>
   <li>Test user interface for adding native libraries to the build path
 (build path page, attribute of JARs and class folders)</li>
 </ul>
-<h4>Undo/Redo (Markus, Tom; FAQ: Dani, Dirk)<br>
+<h4>Undo/Redo (Martin, Dani; FAQ: Dani, Dirk)<br>
 </h4>
 <ul>
   <li>Test that <span style="font-weight: bold;">Refactor &gt;
@@ -469,7 +499,7 @@ editor that contains the declaration).</li>
   <li>Check that undoing the last change remove the dirty indication in
 the editor tab</li>
 </ul>
-<h4>Search (Dani, Benjamin; FAQ: Martin)<br>
+<h4>Search (Dirk, David; FAQ: Martin)<br>
 </h4>
 <ul>
   <li>Test text search</li>
@@ -477,24 +507,15 @@ the editor tab</li>
 multiple line - larger code blocks</li>
   <li>Have an eye on performance</li>
 </ul>
-<h4>Preferences (Tobias; FAQ: Martin)<br>
+<h4>Preferences (Tom, Dani; FAQ: Martin)<br>
 </h4>
 <ul>
-  <li>test that you can navigate from project specific settings to the
-global settings and vice versa</li>
-  <li>test project specific settings for formatter, compiler, code
-style settings, Javadoc locations</li>
-  <li>test the new hyperlinks on Text Editor and Java preference pages:
-verify that</li>
-  <ul>
-    <li>link is correctly shown</li>
-    <li>hover is correct<br>
-    </li>
-    <li>clicking navigates to correct preference page<br>
-    </li>
-  </ul>
+  <li>Test that all JDT and Text preferences have meaningful keywords.<br>
+  </li>
 </ul>
-<h4>Text Editor (Tobias, Martin; FAQ: Dani, Tom)<br>
+<ul>
+</ul>
+<h4>Text Editor (Ben, Markus; FAQ: Dani, Tom)<br>
 </h4>
 <ul>
   <li>URL hyperlinking: verify that</li>
@@ -502,21 +523,20 @@ verify that</li>
     <li>link is correctly indicated</li>
     <li>clicking shows the URL in a browser</li>
   </ul>
-  <li>test new encoding support</li>
   <li>open Properties dialog from active editor</li>
   <li>test 'Convert Line Delimiter To' commands on active editor and on
 a folder or project</li>
   <li>test 'Remove Trailing Whitespace' command on active editor and on
 a folder or project</li>
   <li>test 'Word Completion' (Ctrl + /)</li>
-  <li>verify that the new undo history size preference correctly works<br>
-  </li>
+  <li>verify that the new undo history size preference correctly works</li>
+  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
+on a text editor and verify that they behave property</li>
 </ul>
-<h4>Java Editor (Martin, Dirk; FAQ: Dani, Tom)<br>
+<h4>Java Editor (Tobias, David; FAQ: Dani, Tom)<br>
 </h4>
 <ul>
   <li>semantic coloring for deprecated members</li>
-  <li>verify the new underline and strikethrough syntax coloring styles</li>
   <li>new occurrence markings</li>
   <ul>
     <li>inherited methods</li>
@@ -533,53 +553,8 @@ a folder or project</li>
   <li>test that the browser widget is used for Javadoc information
 presentation (F2)</li>
   <ul>
-    <li>verify that performance is acceptable<br>
-    </li>
+    <li>verify that performance is acceptable</li>
   </ul>
-</ul>
-<h4>NLS Tooling (Dirk, David; FAQ: Dani)<br>
-</h4>
-<ul>
-  <li>test Externalize Strings wizard with new Eclipse-style message
-bundles</li>
-  <li>test Externalize Strings wizard with old-style message bundles</li>
-  <li>linking in CU and Class File editor to properties entry and vice
-versa (only works for old-style NLSing)</li>
-  <li>hovering over NLS key in CU and Class File editor show
-externalized string (only works for old-style NLSing)</li>
-  <li>Java Properties File editor</li>
-  <ul>
-    <li>syntax coloring - verify that colors can be changed via
-preferences</li>
-    <li>spell checking<br>
-    </li>
-  </ul>
-</ul>
-<ul>
-</ul>
-<h4>New Source Folder wizard page (David; FAQ: Martin)<br>
-</h4>
-<ul>
-  <li>setup project on existing source using the new source folder
-wizard page.</li>
-  <li>Source to setup should have:</li>
-  <ul>
-    <li>multiple source folders</li>
-    <li>need to exclude some portion of the code<br>
-    </li>
-  </ul>
-</ul>
-<h4>Platform-Text (David, Martin; FAQ: Tom, Dani)<br>
-</h4>
-<ul>
-  <li>Verify syntax coloring and highlighting interaction (verify there
-is no cheese due to optimizations)</li>
-  <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
-on a text editor and verify that they behave property<br>
-  </li>
-</ul>
-<h4>Java Editor (David, Martin; FAQ: Tom, Dani)</h4>
-<ul>
   <li>Code assist</li>
   <ul>
     <li>auto insertion behavior</li>
@@ -602,33 +577,39 @@ on a Compilation Unit editor and verify that both behave property</li>
   <li>Use <span style="font-weight: bold;">Window &gt; New Editor</span>
 on a Class File editor and verify that both behave property</li>
 </ul>
-<h2>General items<br>
-</h2>
-<h4>Accessibility Testing (Tom)<br>
+<h4>New Source Folder wizard page (Dirk, Ben; FAQ: Martin)<br>
 </h4>
 <ul>
-  <li>verify mnemonics in wizards/dialogs/menus<br>
-    <i>Note: mnemonics on Platform Text and JDT Text preference pages
-are not yet done.</i></li>
-  <li>initial focus in dialogs</li>
-  <li>combination of color, form, and text. </li>
-  <li>status line information</li>
+  <li>setup project on existing source using the new source folder
+wizard page.</li>
+  <li>Source to setup should have:</li>
+  <ul>
+    <li>multiple source folders</li>
+    <li>need to exclude some portion of the code<br>
+    </li>
+  </ul>
 </ul>
-<h4>Validate-Edit (Tobias; FAQ: Dani)</h4>
+<h4></h4>
+<ul>
+</ul>
+<h2>General items<br>
+</h2>
+<h4>Validate-Edit (Markus, Martin; FAQ: Dani)</h4>
 <ul>
   <li>Check-out code from the repository in CVS Watch/Edit mode (stores
 file in read-only mode)</li>
   <li>Test Editing, Source and Refactoring actions on files that are
-read-only</li>
+read-only. Don't forget source actions like organize import or format on
+packages and source folders.<br>
+  </li>
   <li>Expected result: actions should complete without errors</li>
 </ul>
-<h4><font color="#000000">Workspace compatibility (Markus)</font></h4>
+<h4><font color="#000000">Workspace compatibility (Tobias, Tom)</font></h4>
 Verify that an existing workspace can be started on the new version and
-is fully functional. Check the .log for serious problems.<br>
+is fully functional. Check the .log for serious problems. Check
+different settings of preferences.<br>
 <ul>
   <li>upgrade a 3.0 workspace to 3.1</li>
-  <li>upgrade a 2.1 workspace to 3.1<br>
-  </li>
 </ul>
 </body>
 </html>
