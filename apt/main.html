@@ -26,7 +26,11 @@
 <tr>
 <td COLSPAN="2">The JDT-APT project provides plugins that add Java 5.0 annotation processing support to Eclipse.
 These plugins provide an implementation of the APT APIs provided with the 5.0 JDK in Eclipse.
-By doing this, existing annotation processors written for Sun's APT tool can run unmodified inside Eclipse.
+By doing this, existing annotation processors written for Sun's commandline APT implementation can run unmodified inside Eclipse.
+
+<p>
+JDT-APT runs on top of Eclipse 3.1. It is not currently part of Eclipse itself, 
+but rather is a separate plugin along with a modified version of the JDT plugin.
 
 <p>
 You can view the presentation given at JavaOne during a session on APT that describes some of the goals
@@ -42,8 +46,13 @@ Additional frequently asked questions and their answers can be found in our <a h
 <td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What is APT?</font></font></b></td>
 </tr>
 <tr>
-<td COLSPAN="2"><font color="#000000">APT is Sun's Annotation Processing Tool.
-It shipped with JDK 1.5. You can find documentation for it at
+<td COLSPAN="2"><font color="#000000">APT stands for Annotation Processing Tool. 
+Sun shipped an API for APT in JDK 1.5, which can be viewed at
+<a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html">http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html</a>.
+
+<p>
+Sun also included a commandline implementation of APT in JDK 1.5. 
+You can find documentation for it at
 <a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/index.html" target="_blank">http://java.sun.com/j2se/1.5.0/docs/guide/apt/index.html</a>.
 
 <p>
@@ -65,6 +74,10 @@ generics
 <p>
 APT provides a means for generating files and compiling new java classes based on annotations
 found in your source code.
+
+<p>
+JDT-APT is not based on Sun's implementation, but rather is a separate implementation of
+the APT APIs that runs entirely within Eclipse.
 
 </font></td>
 </tr>
