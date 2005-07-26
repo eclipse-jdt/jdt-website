@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>JDT UI 3.0.x</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
+	type="text/css">
+</head>
+<body style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0)">
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" width="72%"><font class="indextop"> jdt ui R3.2.x</font>
+			<br>
+			<font class="indexsub"> java development tooling ui </font></td>
+			<td style="vertical-align: top"><br>
+			</td>
+			<td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg"
+				height="86" width="120"></td>
+		</tr>
+	</tbody>
+</table>
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			<a NAME="Overall_Planning">Overall 3.2 Plan</a></font></font></b></td>
+		</tr>
+		<tr>
+			<td colspan="2">The 3.2 plan below is a proto plan and input from the
+			community is very welcome</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Top Items</b>
+			<ul>
+				<li>Add support for Java SE 6 features</li>
+				<LI>Relax closed world assumption in refactoring</LI>
+				<li>Continue to measure and improve the performance of key
+				operations</li>
+				<LI>Make JDT/UI *.java agnostic [89977]</LI>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Overall JDT/UI Themes</b> [committed]
+			<ul>
+				<li>Add support for Java SE 6 features [Java SE 6]</li>
+				<LI>Make JDT/UI *.java agnostic. [Design for extensibility]</LI>
+				<li>Continue to improve filtering/grouping functionality to support
+				workspace with lots of projects. [Scaling-Up]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Component Independent</b>
+			<ul>
+
+				<li>Add a history to Organize Import, Code assist, Quick Fix, Quick
+				Assist... In the case of an element ambiguity (for example
+				java.awt.List versus java.util.List versus
+				org.eclipse.swt.widgets.List when organizing imports) these
+				operations should built a histroy of the selected elements and use
+				that history to sort the elements accordingly. [Simple to Use]</li>
+				<LI>Java aware text input fields (camel case navigation, closing
+				bracket) [Simple to Use]</LI>
+				<li>Identify code that is better hosted in JDT/Core [Built to Last]</li>
+				<li>Cleanup usages of deprecated code [Built to Last]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Code manipulation</b>
+			<ul>
+				<li>Sort member should honor new @category javadoc tag</li>
+				<LI>Code generation operations for hash, equals and toString</LI>
+				<li>Apply coding conventions (like formatting, organize import, nls,
+				...) on save, compile or commit. This requires support from
+				Platform/Team, Platform/Text and JDT/Core. [Large-scale]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Quick Fix &amp; Quick Assists</b>
+			<ul>
+				<li>Additional quick fixes and quick assists [committed]</li>
+				<li><font class="indexsub" color="#8080ff"></font>Investigate how to
+				improve the scalability of quick fix. We have situations where the
+				list of possible quick fixes is getting really long [Simple to Use]</li>
+				<li><font class="indexsub" color="#8080ff"></font>Investigate in
+				applying all quick fixes of a certain type all together (fixing all
+				exception problems) (needs support from Platform/UI)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Refactoring</b>
+			<ul>
+				<li>Relax closed world assumption in refactoring [Scaling Up]
+				[committed]</li>
+				<LI>Support grouping/filtering of changes in preview page (for
+				example allow showing all textual changes only) [Simple to Use]
+				[committed]</LI>
+				<LI>Support pluggable structor creators for the upper pane of the
+				preview page (remove dependency between JDT/UI to internal LTK/UI
+				code). [Built to Last]</LI>
+				<LI>Performance
+				<UL>
+					<LI>Convert Generalize Type to new type constraint infrastructure
+					[Built to Last]</LI>
+					<LI>Refactorings should reuse the shared AST provided by the Java
+					editor where appropriate</LI>
+				</UL>
+				</LI>
+				<li>Improve existing refactorings:
+				<ul>
+					<li>Hierarchical package rename and delete</li>
+					<LI><FONT class="indexsub" color="#8080ff"></FONT>Update derived
+					names on rename (e.g when renaming a type update field names and
+					locals if parts of the name match the type name)</LI>
+					<li>Rename of variable declarations when renaming a type (support
+					from Core helpful)</li>
+					<LI>Change signature propagation</LI>
+					<li>More use of code assist in dialog fields (extract constant,
+					extract method, ...) [committed]</li>
+					<li>Extract Method: improve duplicate finding (replace with
+					existing method)</li>
+				</ul>
+				</li>
+				<LI>API compatibility
+				<UL>
+					<LI>Support creation of delegate methods to provide API
+					compatibility (change method signature, rename, move, ...)</LI>
+				</UL>
+				</LI>
+				<LI>New refactorings
+				<UL>
+					<LI><FONT class="indexsub" color="#8080ff"></FONT>Investigate in a
+					refactoring to introduce a type parameter into a non generic class
+					[proposed]</LI>
+					<LI><FONT class="indexsub" color="#8080ff"></FONT>Extract
+					Superclass, Inline Supertype, Find and Remove Dead Code, Make
+					method static (and inverse)</LI>
+				</UL>
+				</LI>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" rowspan="2"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16"></td>
+
+			<td><b>Package Explorer</b>
+			<ul>
+				<li>Support inclusion filters when in hierarchical layout mode (see
+				bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
+				[committed]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Support
+				better grouping mechanisms for referenced libraries (jars)
+				[Large-scale]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font>
+				Investigate to use sync exec instead of async exec to update the
+				package explorer when receiving a Java model delta</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Type Hierarchy</b>
+			<ul>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Make lock mode generics aware [J2SE 5.0 support] [committed]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Preferences</b>
+			<ul>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Support better sharing of preferences in a team (compiler settings,
+				formatter settings, organize imports, ...) [Large-Scale] [committed]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Search</b>
+			<ul>
+				<li><font class="indexsub" color="#8080ff"></font>Support searching
+				for code snippets instead of single references or declarations. For
+				example allow searching for all method calls to IRunnableContext#run
+				where the first argument is boolean 'false'. [Large-Scale]</li>
+				<li><font class="indexsub" color="#8080ff"></font>Investigate in
+				generic rewriting of compilation units based on the result of
+				snippet based searching. For example rewrite all method calls to
+				IRunnableContext#run(false, ?, ?) to IRunnbleContext#run(true, ?,
+				?). [Large-Scale]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Browsing</b>
+			<ul>
+				<li>Support inclusion filters in packages view when in hierarchical
+				layout mode (see bug <a
+					href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
+				[committed]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font>
+				Investigate in higher level browsing support. For large systems,
+				browsing dependencies on method call level is too fine granular.
+				Dependencies are better visualized on type, package, source folder
+				or project level. [Large-scale]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Navigation</b>
+			<ul>
+				<li>Improve Expand Selection (additional sync points: line, ...)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Platform/Compare</b>
+			<ul>
+				<li>Improve performance and memory consumption of text compare
+				[Large-scale development] [committed]</li>
+				<li><img src="../images/progress.gif" height="5" width="14"
+					border="0"> Write performance tests for the critical functions and
+				identify speed / space targets [Built to Last] [committed]</li>
+				<li><img src="../images/progress.gif" height="5" width="14"
+					border="0"> Convert Patch code to use TextBuffers and address
+				ValidateEdit, encoding, and locking issues [Built to Last]
+				[committed]</li>
+				<li>Harmonize Compare infrastructure with Team use cases [Built to
+				Last]</li>
+				<li>Simplify Patch UI [Simple to use]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font>
+				Investigate in reusing editors in the implementation of the compare
+				editor [Simple to use]</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.1]</font> Split
+				compare plugin into separate core and ui plugins [Built to Last]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b>Java/Compare</b>
+			<ul>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Make all structure compare functionality J2SE 5 aware [J2SE 5.0
+				support] [committed]</li>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Convert all source manipulation code to use shared code manipulation
+				infrastructure [Built to Last] [committed]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+
+			<td><b> Mac OS X </b>
+			<ul>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Eliminate java_swt and adapt launching and application exporter
+				plugins [Simple to use] [committed]</li>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Indentify and address Mac OS X specific Java 1.5 issues [J2SE 5.0
+				support]</li>
+				<li><img src="../images/ok.gif" height="10" width="10" border="0">
+				Indentify and address Mac OS X 10.4 (Tiger) issues related to jdt.ui
+				[Built to Last]</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Articles</b>
+			<ul>
+				<li>How to use the AST rewrite to manipulate source code</li>
+				<li>How to contribute a quick assist/quick fix</li>
+				<li>How to write your own refactoring</li>
+			</ul>
+
+
+
+
+
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: top"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16"></td>
+			<td style="vertical-align: top"><b>Dependencies</b>
+			<ul>
+				<li>SWT
+				<ul>
+					<li>virtual table support</li>
+				</ul>
+				</li>
+				<li>Platform/Core:
+				<ul>
+					<li>Snap shotting</li>
+					<li>Allow merge for Copy/Move (see <a
+						href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=31883">bug
+					31883</a>, <a
+						href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=29838">bug
+					29838</a>)</li>
+				</ul>
+				</li>
+				<li>Platform/UI:
+				<ul>
+					<li>Cancellation of label and content provider calls (e.g.
+					cancelling getChildren)</li>
+					<li>Action contribution mechanism</li>
+					<li>Ordering of menu contributions (duplication of search menu
+					structure)</li>
+					<li>Free event loop and unwanted execution of async exec</li>
+					<li>Universal Navigator</li>
+					<li>Extensible actions and pluggable actions (define rename action
+					for different file extensions and allow participation in rename)</li>
+					<li>Better filtering and grouping in large workspace (JDT/UI should
+					be aligned with Platform/UI behavior)</li>
+				</ul>
+				</li>
+				<li>Platform/Team
+				<ul>
+					<li>Commit hook to apply code styles</li>
+					<li>Logical model integration</li>
+				</ul>
+				</li>
+				<li>Platform/Text
+				<ul>
+					<li>Save hook to apply code styles</li>
+				</ul>
+				</li>
+				<li>JDT/Core
+				<ul>
+					<li>J2SE 6.0 progress</li>
+					<li>Compile hook to apply code styles</li>
+					<li>ISourceManipulation and linked resources (see bug <a
+						href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=31456">31456</a>)</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="4" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></b></td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="../images/progress.gif" height="5"
+				width="14" border="0"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="../images/glass.gif" height="10"
+				width="10" border="0"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="../images/ok.gif" height="10" width="10"
+				border="0"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="top"><font class="indexsub" color="#8080ff">[&gt;3.1]</font></td>
+			<td width="50%">item is deferred.</td>
+			<td valign="top"><font class="indexsub"><img border="0"
+				src="../images/new.gif"></font></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
+				face="Arial,Helvetica"><font color="#ffffff"> <a
+				name="Milestone_Planning">M1 Milestone Plan(Jul. 1 - Aug. 12)</a></font></font></b></td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>General Items</b>
+			<ul>
+				<li>3.1.1 Bug fixing</li>
+				<LI>3.2 Planning</LI>
+				<li>Inbox tracking (7 days)</li></ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16"></td>
+			<td width="848"><b>Refactoring</b>
+			<ul>
+				<li>Investigate in Relaxing closed world assumption</li>
+				<LI>Investigate in composable refactorings</LI>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
+				border="0" height="16" width="16"></td>
+			<td><b>Conferences/Vacations</b>
+			<ul>
+				<li>34 days</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<table border="0" cellspacing="5" cellpadding="2" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"
+				width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
+			Getting the sources</font></font></b></td>
+		</tr>
+		<tr>
+			<td>
+			<ul>
+				<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+				</li>
+				<li>Check out <a
+					href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui"><code>HEAD</code></a>
+				branch of the project <code>org.eclipse.jdt.ui</code>.</li>
+				<li>Make sure to import the prerequisite plug-ins (usually from the
+				latest SDK R3.1.x <a
+					href="http://www.eclipse.org/downloads/index.php" target="newbuild">build</a>).
+				Prerequisite plug-ins are already referenced on the project build
+				path ( <code>.classpath</code> file).</li>
+				<li>The sources of this project require JDK 1.4.</li>
+
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
