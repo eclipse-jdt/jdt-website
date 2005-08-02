@@ -91,7 +91,13 @@ checked in. Check back for more info.
 <p>
 <b><li>Can I get quick-fixes inside annotation values?</b>
 <p>
-Not yet. We're working on how to provide this.
+Yes, via an extension point in the apt plugin.
+We've documented this procedure in our plugin's help section,
+which you can view once it is installed.<p>
+
+Essentially APT-generated problems get a reserved ID,
+and APT will delegate quick-fixes to those problems to your
+plugin via the previously mentioned extension point.
 
 </ol>
 
