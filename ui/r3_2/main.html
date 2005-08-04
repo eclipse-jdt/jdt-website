@@ -37,22 +37,14 @@
 
 			<td><b>Top Items</b>
 			<ul>
-				<li>Add support for Java SE 6 features</li>
-				<li>Relax closed world assumption in refactoring</li>
+				<li>Add support for Java SE 6 features [Java SE 6] [committed]</li>
+				<li>Relax closed world assumption in refactoring [Scaling-Up]
+				[committed]</li>
+				<li>Add support for library projects (like binary projects in PDE)
+				[Scaling-Up] [committed]</li>
 				<li>Continue to measure and improve the performance of key
 				operations</li>
 				<li>Make JDT/UI *.java agnostic [89977]</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif"
-				border="0" height="16" width="16" alt=""></td>
-
-			<td><b>Overall JDT/UI Themes</b> [committed]
-			<ul>
-				<li>Add support for Java SE 6 features [Java SE 6]</li>
-				<li>Make JDT/UI *.java agnostic. [Design for extensibility]</li>
 				<li>Continue to improve filtering/grouping functionality to support
 				workspace with lots of projects. [Scaling-Up]</li>
 			</ul>
@@ -64,7 +56,8 @@
 
 			<td><b>Component Independent</b>
 			<ul>
-
+				<li>Add support for library projects (like binary projects in PDE)
+				[Scaling-Up] [committed]</li>
 				<li>Add a history to Organize Import, Code assist, Quick Fix, Quick
 				Assist... In the case of an element ambiguity (for example
 				java.awt.List versus java.util.List versus
@@ -280,13 +273,12 @@
 				height="16" width="16" alt=""></td>
 			<td style="vertical-align: top"><b>Dependencies</b>
 			<ul>
-				<li>SWT
-				<ul>
-					<li>virtual table support</li>
-				</ul>
-				</li>
 				<li>Platform/Core:
 				<ul>
+					<li><b>[Support for Logical model integration]</b>: this support
+					might impact the refactoring processor/participant architecture and
+					how the mapping between IResources and language elements is
+					decribed.</li>
 					<li>Snap shotting</li>
 					<li>Allow merge for Copy/Move (see <a
 						href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=31883">bug
@@ -297,23 +289,31 @@
 				</li>
 				<li>Platform/UI:
 				<ul>
-					<li>Cancellation of label and content provider calls (e.g.
-					cancelling getChildren)</li>
-					<li>Action contribution mechanism</li>
-					<li>Ordering of menu contributions (duplication of search menu
-					structure)</li>
-					<li>Free event loop and unwanted execution of async exec</li>
-					<li>Universal Navigator</li>
-					<li>Extensible actions and pluggable actions (define rename action
-					for different file extensions and allow participation in rename)</li>
-					<li>Better filtering and grouping in large workspace (JDT/UI should
-					be aligned with Platform/UI behavior)</li>
+					<li><b>[Provide more customizable UI]</b>: Depending on the
+					requirements this might impact the way how JDT/UI currently builds
+					the global menu and tool bar as well as the context menus</li>
+					<li><b>[Provide more support for large scale workspaces]</b>:
+					JDT/UI has currently working set support in the package explorer.
+					If Platform absorbs this concept the JDT/UI and Platform/UI
+					implementation should be alligned.</li>
+					<li><b>[Improve task assistance in text fields]</b>:
+					JDT/UI has currently its own implementation for content assist in
+					text input fields. This implemenation should be given up in favour
+					of the Platform/UI implementation.</li>
+					<li>Outstanding discussion topics:
+					<ul>
+						<li>Universal Navigator</li>
+						<li>Cancellation of label and content provider calls (e.g.
+						cancelling getChildren)</li>
+						<li>Extensible actions and pluggable actions (define rename action
+						for different file extensions and allow participation in rename)</li>
+					</ul>
+					</li>
 				</ul>
 				</li>
-				<li>Platform/Team
+				<li>Platform/Team:
 				<ul>
 					<li>Commit hook to apply code styles</li>
-					<li>Logical model integration</li>
 				</ul>
 				</li>
 				<li>Platform/Text
