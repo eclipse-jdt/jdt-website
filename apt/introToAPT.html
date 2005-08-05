@@ -1,0 +1,177 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Introduction to Annotation Processing in Eclipse</title>
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+&nbsp;
+
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+  <tr>
+    <td align=left width="72%"> <font class=indextop> Introduction to the Annotation Processing Feature </font> <br>
+      <font class=indexsub> annotation processing in eclipse </font></td>
+    <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg" height=86 width=120></td>
+  </tr>
+</table>
+
+
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Disclaimer</font></font></b></td>
+</tr>
+<tr>
+<td COLSPAN="2">
+This is an ALPHA release. All APIs contained herein are provisional, and subject to change with subsequent alpha updates.
+
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Installing APT</font></font></b></td>
+</tr>
+
+<tr>
+<td COLSPAN="2">The APT feature can be used in Eclipse in one of two ways: you can check out the source from CVS
+and build it yourself, or you can use the update site to install it into an existing Eclipse instance. Prerequisites for either
+method are:
+<ul>
+<li>Eclipse 3.1</li>
+<li>JDK 1.5</li>
+</ul>
+
+<p>
+This page only contains instructions for using the update site. For build instructions, go <a href="howtobuildme.txt">here</a>.
+
+<p>
+Here are instructions for applying the update:
+<ul>
+<li>Start Eclipse, and open the Install/Update dialog (Help/SoftwareUpdates >/Find and Install...).</li>
+<li>Search for new updates.</li>
+<li>Add a new remote site: <code>http://www.eclipse.org/jdt/apt/JdtAptUpdateSite</code></li>
+<li>Install the JdtAptFeature.</li>
+<li><b>NOTE:</b> After you complete the install, but <b>before</b> you restart the workspace, you must
+copy tools.jar from <i>[your 1.5 JDK root]</i>/lib to <i>[your eclipse root]</i>/plugins/org.eclipse.jdt.apt.core_<i>[the installed release]</i>.
+This step will be eliminated as soon as Sun completes licensing arrangements to allow us to redistribute the com.sun.mirror
+interfaces contained in tools.jar. </li>
+</ul>
+
+You can verify the installation this way:
+<ul>
+<li>Create a Java project which contains the file <a href="APTDemo.jar">APTDemo.jar</a> in its filesystem.</li>
+<li>Then open the project properties dialog, and go to the Java Compiler/AnnotationProcessing/Factory Path panel.</li>
+<li>Click on Add Jars... and add the APTDemo.jar.</li>
+<li>Create a new Class, and annotation the class in the source file with @DemoAnnotation(what = "spam").</li>
+</ul>
+
+The "spam" value should be squiggled, with the message "I don't like spam".
+
+<ul>
+<li>Annotate the same class with @TypeGeneratingAnnotation</li>
+<li>Build the project.</li>
+</ul>
+
+A new source directory should appear in the project, named __generated_src, that will contain a generated
+Java source file called GeneratedFileTest.java.
+
+
+
+</td>
+</tr>
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Feature Enable/Disable</font></font></b></td>
+</tr>
+<tr>
+<td COLSPAN="2"><font color="#000000">
+If you have a problem with the compiler and want to try eliminating APT, you can disable the feature through the Product Configuration dialog
+(Menu item Help/Software Updates >/Manage Configuration).
+<p>
+<img src="ProductConfigDialog.jpg">
+
+<p>
+Select the JdtAptFeature from your Eclipse installation and click <b>Disable</b>.
+Your Eclipse will now use the unchanged, original version of the compiler. To re-enable the feature you need to click on the Show Disabled
+Features on the toolbar of this dialog.
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Problems and Bugs</font></font></b></td>
+</tr>
+<tr>
+<td COLSPAN="2"><font color="#000000">
+Symptom: message in Error Log view: "Could not load annotation processor xxxx" with NoClassDefFoundError for com.sun.mirror type.
+<ul>
+<li>You forgot to copy tools.jar as described in installation instructions above. Copy to correct directory and restart Eclipse.</li>
+</ul>
+
+Symptom: error message in processor source code: "The import com.sun.mirror cannot be resolved."
+<ul>
+<li>You forgot to copy tools.jar as described in installation instructions above. Copy to correct directory and restart Eclipse.</li>
+</ul>
+
+
+<p>
+Please post questions to the JDT newsgroup (eclipse.tools.jdt). Post bugs related to this feature in Bugzilla, under Product JDT, Component APT.
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Installing and Configuring
+Annotation Processors</font></font></b></td>
+</tr>
+<tr>
+<td COLSPAN="2"><font color="#000000">
+An annotation processor can run in Eclipse from a .jar file contained in a project, a .jar file external to the workspace, or a plugin.
+Jars are added to a workspace or project though the Properties Dialog, Factory Path pane:
+<p>
+
+<img src="PropertiesDialog.jpg">
+
+<p>
+For an example of how to set up a plugin project to develop a processor, download <a href="APTDemo.jar">APTDemo.jar</a> and explode it into a workspace and import it as an existing
+project. Eclipse locates plugins along a factory path, which can be configured at the workspace or project level. Workspace configuration
+is picked up as the default for projects that have annotation processing enabled (see the Properties dialog shown above). If the factory
+path is configured for an individual project, that project will no longer see changes to the workspace configuration; you will have to
+update it manually.
+
+<p>
+A plugin that contains a factory must extend the annotationProcessorFactory extension point. Here is the example from the plugin
+in APTDemo.jar. Each Factory class contained in the plugin must be named in the class=attribute.
+<pre>
+   &lt;extension
+         point="org.eclipse.jdt.apt.core.annotationProcessorFactory">
+      &lt;factories enableDefault="true">
+	      &lt;factory
+	         class="demo.TypeGeneratingAnnotationProcessorFactory">
+	      &lt;/factory>
+	      &lt;factory
+	         class="demo.DemoAnnotationProcessorFactory">
+	      &lt;/factory>
+      &lt;/factories>
+   &lt;/extension>
+</pre>
+More details about this will follow when we deliver an SDK version of the feature.
+
+
+<tr>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Debugging Annotation Processors in
+Eclipse</font></font></b></td>
+</tr>
+<tr>
+<td COLSPAN="2"><font color="#000000">
+To debug an annotation processor it must be run from a plugin. You develop your code in the plugin, and then debug it by
+annotating source code in a spawned instance of
+Eclipse. The debugging instance needs the annotation declaration, the factory, and the processor. The spawned instance
+only needs access to the delaration.
+
+
+</font></td>
+</tr>
+
+
+</td>
+</tr>
+</table>
+
+<br>&nbsp;
+</body>
+</html>
