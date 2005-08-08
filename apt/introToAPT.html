@@ -51,8 +51,12 @@ Here are instructions for applying the update:
 <li>Search for new updates.</li>
 <li>Add a new remote site: <code>http://www.eclipse.org/jdt/apt/JdtAptUpdateSite</code></li>
 <li>Install the JdtAptFeature.</li>
-<li><b>NOTE:</b> After you complete the install, but <b>before</b> you restart the workspace, you must
-copy tools.jar from <i>[your 1.5 JDK root]</i>/lib to <i>[your eclipse root]</i>/plugins/org.eclipse.jdt.apt.core_<i>[the installed release]</i>.
+<li><b>*** IMPORTANT ***:</b> After you complete the install, but <b>before</b> you restart the workspace, you must
+copy <b>tools.jar</b> from:<p>
+<code><i>[your 1.5 JDK root]</i>/lib/tools.jar</code><p>
+to<p>
+<code><i>[your eclipse root]</i>/plugins/org.eclipse.jdt.apt.core_<i>[the installed release]</i>/tools.jar</code><p>
+
 This step will be eliminated as soon as Sun completes licensing arrangements to allow us to redistribute the com.sun.mirror
 interfaces contained in tools.jar. </li>
 </ul>
