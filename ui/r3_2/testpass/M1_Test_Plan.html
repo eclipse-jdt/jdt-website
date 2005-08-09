@@ -24,8 +24,9 @@ Widmer, Dirk Baeumer
 <br>
 
 <h4>3.1.1 Bug verification (all)</h4>
-Verify all bugs that got fixed in the <b>3.1.1</b> maintenance stream. Use
-M-Build M20050804-1200 for testing
+Verify all bugs that got fixed in the
+<b>3.1.1</b>
+maintenance stream. Use M-Build M20050804-1200 for testing
 <br>
 <ul>
 	<li><a
@@ -70,6 +71,23 @@ M-Build M20050804-1200 for testing
 	</li>
 </ul>
 
+<h4>Paste type text to container - Tester Dirk Baeumer FAQ: Markus Keller</h4>
+<ul>
+	<li>Copy the text of a type declaration (and package declaration /
+	import statements) to clipboard (e.g. from bugzilla)</li>
+	<li>Select a java project, source folder, package fragment, or CU, and
+	paste</li>
+	<li>Verify that a new CU is created with the correct name and package
+	declaration statement</li>
+</ul>
+
+<h4>Override indicator - Tester Daniel Megert FAQ: Markus Keller</h4>
+Create non-trivial cases of overriding methods and check that the
+override indicator annotation in the editor is correct (e.g. methods
+whose signatures are different because the subtype is raw, type
+variables got renamed/added/removed or have different bound, etc.)
+
+
 <h4>Platform/Search - Tester: Tobias Widmer FAQ: Martin Aeschlimann</h4>
 <ul>
 	<li>Editor reuse and search annotations in the editor: make sure that
@@ -98,5 +116,6 @@ New equivalence algorithm is used to compute the range differences
 	<li>Verify that it works as expected (changes, deletions, additions)</li>
 	<li>Test with large files and compare 3.1 to 3.2M1 performance</li>
 </ul>
+
 </body>
 </html>
