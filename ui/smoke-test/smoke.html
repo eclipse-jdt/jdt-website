@@ -6,7 +6,7 @@
 
 <h1>
 <font face="Arial,Helvetica">Smoke Test - Java Tooling</font></h1>
-Last updated November 3<sup>rd</sup> 2004
+Last updated 2005-09-07
 <h4>
 Setup</h4><ul><li>start eclipse.exe with -consolelog -data X, where X is a new workspace i.e. points to not
 yet existent directory</li>
@@ -36,9 +36,7 @@ click through the wizard and use the default settings</li>
 verify:</li>
 
 <ul>
-      <li>there's a dialog which asks to replace the Resource perspective with the Java perspective</li>
-
-
+<li>the only open perspective is the Java perspective</li>
 <li>
 there is only the JUnit project and the JRE System Library - <i>no source folder and no
 bin folder</i></li>
@@ -208,7 +206,7 @@ use Java Content Assist on some type argument</li>
 
 <li>
 use Javadoc Content Assist inside a java doc comment to insert <i>@see
-TestResult</i></li>
+TestResult#addFailure(Test, AssertionFailedError)</i></li>
 
 <li>
 select the <span style="font-style: italic;">run</span> method in the body of <span style="font-style: italic;">run(TestResult result):<br>
@@ -444,7 +442,7 @@ verify that the package declaration is updated</li>
 </ul>
 
 <li>
-rename TestCase.java to ToastCase.java - click <b>Finish</b> on the dialog.</li>
+rename TestCase.java to ToastCase.java - click <b>OK</b> on the dialog.</li>
 
 <ul>
 <li>verify that the upcoming dialog only has <span style="font-weight: bold;">Update references to the renamed element</span> checked<br>
@@ -531,7 +529,7 @@ select <span style="font-style: italic;">File Search</span> page</li>
 type in <span style="font-style: italic;">TestCase</span> as search expression</li>
 
 <li>
-click <span style="font-weight: bold;">Browse...</span> for extensions, check <span style="font-style: italic;">*.java</span>, click <span style="font-weight: bold;">OK</span></li>
+click <span style="font-weight: bold;">Choose...</span> for extensions, check <span style="font-style: italic;">*.java</span>, click <span style="font-weight: bold;">OK</span></li>
 
 <li>
 click <span style="font-weight: bold;">Search</span><br>
