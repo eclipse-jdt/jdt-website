@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>JDT UI 3.0.x</title>
+<title>JDT UI 3.2</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
 	type="text/css">
@@ -44,6 +44,7 @@
 				[Scaling-Up] [committed]</li>
 				<li>Continue to measure and improve the performance of key
 				operations</li>
+				<li>Participate in Platform's Logical model integration effort</li>
 				<li>Make JDT/UI *.java agnostic [89977]</li>
 				<li>Continue to improve filtering/grouping functionality to support
 				workspace with lots of projects. [Scaling-Up]</li>
@@ -124,11 +125,12 @@
 				<li><img src="../images/progress.gif" height="5" width="14"
 					border="0" alt=""> Relax closed world assumption in refactoring
 				[Scaling Up] [committed]</li>
-				<li><IMG src="../images/progress.gif" height="5" width="14"
-					border="0" alt=""> Support grouping/filtering of changes in preview page (for
+				<li><img src="../images/ok.gif" height="10"
+					width="10" border="0" alt=""> Support grouping/filtering of changes in preview page (for
 				example allow showing all textual changes only) [Simple to Use]
 				[committed]</li>
-				<li>Support pluggable structure creators for the upper pane of the
+				<li><img src="../images/ok.gif" height="10" width="10" border="0"
+					alt=""> Support pluggable structure creators for the upper pane of the
 				preview page (remove dependency between JDT/UI to internal LTK/UI
 				code). [Built to Last]</li>
 				<li>Performance
@@ -141,13 +143,15 @@
 				</li>
 				<li>Improve existing refactorings:
 				<ul>
-					<li><IMG src="../images/progress.gif" height="5" width="14"
-						border="0" alt=""> Hierarchical package rename, delete and copy/paste</li>
-					<li>Update derived names on rename (e.g when renaming a type update
+					<li><img src="../images/ok.gif" height="10"
+						width="10" border="0" alt=""> Hierarchical package rename</li>
+					<li>Hierarchical delete and copy/paste</li>
+					<li><img src="../images/progress.gif" height="5" width="14"
+						border="0" alt=""> Update derived names on rename (e.g when renaming a type update
 					field names and locals if parts of the name match the type name)</li>
 					<li>Change signature propagation</li>
 					<li>More use of code assist in dialog fields (extract constant,
-					extract method, ...) [committed]</li>
+					extract method, ...)</li>
 					<li>Extract Method: improve duplicate finding (replace with
 					existing method)</li>
 				</ul>
@@ -226,6 +230,7 @@
 					border="0" alt=""> Support for running and implementing JUnit4 test
 				cases.</li>
 				<li>Support for sub packages while executing all tests in a package.</li>
+				<li>Support for JUnit result model. This will allow executing more than one JUnit test and to switch between JUnit results</li>
 			</ul>
 			</td>
 		</tr>
@@ -375,7 +380,7 @@
 		<tr>
 			<td align="left" valign="top" colspan="2" bgcolor="#0080c0"><b><font
 				face="Arial,Helvetica"><font color="#ffffff"> <a
-				name="Milestone_Planning">M2 Milestone Plan(Aug.  15 - Sept. 23)</a></font></font></b></td>
+				name="Milestone_Planning">M3 Milestone Plan(Sept.  26 - Nov. 4)</a></font></font></b></td>
 		</tr>
 		<tr>
 			<td valign="top" width="23"><img
@@ -383,9 +388,10 @@
 				height="16" width="16" alt=""></td>
 			<td width="848"><b>General Items</b>
 			<ul>
-				<li>Finish 3.1.1 Bug fixing</li>
-				<li>Inbox tracking (7 days)</li>
-				<LI>JDT-Summit</LI>
+				<li>Bug fixing</li>
+				<li>Inbox tracking</li>
+				<li>3.1.1 end game</li>
+				<li>Switch JDT/UI to Java 5.0 (all)</li>
 			</ul>
 			</td>
 		</tr>
@@ -395,25 +401,100 @@
 				height="16" width="16" alt=""></td>
 			<td width="848"><b>Refactoring</b>
 			<ul>
-				<li>Support grouping/filtering of changes in preview page (for
-				example allow showing all textual changes only) [Simple to Use]
-				[committed]</li>
+				<li>Support updating derived names for rename refactorings (Markus, Philip)</li>
 				<li>Relax closed world assumption in refactoring
-				<UL>
-					<LI>Extend LTK to support composite changes based on text edits</LI>
-					<LI>Provide a composable refactoring infrastructure for JDT/UI</LI>
-					<LI>Provide infrastructure to record refactorings (start with Rename &amp; Move refactoring)</LI>
-					<LI>Provide use cases how refactoring are reapplied on a second workspace</LI>
-					<LI>Implement a prototype to reapply refactorings on a second workspace</LI>
+				(Tobias)<UL>
+					<LI>Specify what kind of support from JDT/Core is needed to allow partially reapplying refactoring. This includes:
+					<ul>
+						<li>writing use cases</li>
+						<li>agree with Core on an implementation so that JDT/UI can make use of such an implementation already in M3.</li>
+					</ul>
+					</LI>
+					<li>Implement reapplying a refactoring during a catch-up from the repository. Goals are:
+					<ul>
+						<li>to understand all technical problems</li>
+						<li>have a UI to show the workflow of a refactoring catch-up.</li>
+						<li>know which hooks we need from a repository provider to be able to implement a refactoring catch-up for that repository.</li>
+						<li>Investigate in auto merge of refactoring history files (see IStreamMerger API).</li>
+					</ul>
+					</li>
 				</UL>
 				</li>
-				<LI>Improve existing refactorings:
-				<UL>
-					<LI>Hierarchical package rename, delete and copy/paste</LI>
-					<LI>Investigate in update derived names on rename: what prerequisites do we have from JDT/Core here.</LI>
-				</UL>
-				</LI>
-				<LI>Investigate in more light-weight user interface for certain refactorings. For example rename could be executed in place inside the Java editor.</LI>
+				<LI>Investigate in more light-weight user interface for certain refactorings. For example rename could be executed in place inside the Java editor (Markus).</LI>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>Quick
+			Fix</b><ul>
+				<li>Support applying the same quick fix to multiple problems. Technically this requires:
+				<ul>
+					<li>to change the quick fix infrastructure to collect multiple quick fixes  (Benno/Martin)</li>
+					<li>to be able to preview the changes when applied to large scopes (like project or workspace). Best is to leverage the refactoring infrastructure here. (Benno/Martin)</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>Build path &amp; New Wizard</b><ul>
+				<li>Provide action to link additional source on the source folder build path tab (Benno/Martin)</li>
+				<li>Support choosing a JDK on the new project wizard instead of a compiler compliance level (Benno/Martin)</li>
+				<li>Add &quot;New Source Folder&quot; action to Build Path sub menu  (Benno/Martin)</li>
+				<li>Add &quot;New Source Folder&quot; action to the second page of the New Project wizard  (Benno/Martin)</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>Code Manipulation</b><ul>
+				<li>Improve sort members action: group of fields, disable rearrange of enums, fields and static initializers to preserve semantic (Benno/Martin).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>API aware tools</b><ul>
+				<li>Investigate in using annotation to specific API inside Eclipse and to use compiler participants to check these API rules (Dirk).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>Logical Model Integration</b><ul>
+				<li>Common Navigator: compile requirement list for the common navigator to be able to fully port the package explorer to the common navigator. Help Platform/UI to validate the Common Navigator framework taking the package explorer as a use case (Markus/Dirk).</li>
+				<li>Provide a document describing the requirements JDT has for a new problems view (Dirk).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>More support for Large Scale workspaces</b><ul>
+				<li>Leverage new working set support provided in Platform/UI (Dirk).</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="23"><img
+				src="http://dev.eclipse.org/images/Adarrow.gif" border="0"
+				height="16" width="16" alt=""></td>
+			<td width="848"><b>Miscellaneous</b><ul>
+				<li>Generate performance numbers for AST creation (especially reconcile) (Dirk).</li>
+				<li>Provide a description of the CamelCase pattern matching algorithm used in open type so that CamelCase matching can be pushed down to Core (Dirk).</li>
 			</ul>
 			</td>
 		</tr>
@@ -422,8 +503,7 @@
 				border="0" height="16" width="16" alt=""></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>8 days</li>
-				<LI>15 days military service</LI>
+				<li>30 days</li>
 			</ul>
 			</td>
 		</tr>
