@@ -401,26 +401,36 @@
 				height="16" width="16" alt=""></td>
 			<td width="848"><b>Refactoring</b>
 			<ul>
-				<li>Support updating derived names for rename refactorings (Markus, Philip)</li>
 				<li>Relax closed world assumption in refactoring
-				(Tobias)<UL>
-					<LI>Specify what kind of support from JDT/Core is needed to allow partially reapplying refactoring. This includes:
+				(Tobias)
+				<ul>
+					<li>Specify what kind of support from JDT/Core is needed to allow
+					partially reapplying refactoring. This includes:
 					<ul>
 						<li>writing use cases</li>
-						<li>agree with Core on an implementation so that JDT/UI can make use of such an implementation already in M3.</li>
+						<li>agree with Core on an implementation so that JDT/UI can make
+						use of such an implementation already in M3.</li>
 					</ul>
-					</LI>
-					<li>Implement reapplying a refactoring during a catch-up from the repository. Goals are:
+					</li>
+					<li>Implement reapplying a refactoring during a catch-up from the
+					repository. Goals are:
 					<ul>
 						<li>to understand all technical problems</li>
 						<li>have a UI to show the workflow of a refactoring catch-up.</li>
-						<li>know which hooks we need from a repository provider to be able to implement a refactoring catch-up for that repository.</li>
-						<li>Investigate in auto merge of refactoring history files (see IStreamMerger API).</li>
+						<li>know which hooks we need from a repository provider to be able
+						to implement a refactoring catch-up for that repository.</li>
+						<li>Investigate in auto merge of refactoring history files (see
+						IStreamMerger API).</li>
 					</ul>
 					</li>
-				</UL>
+				</ul>
 				</li>
-				<LI>Investigate in more light-weight user interface for certain refactorings. For example rename could be executed in place inside the Java editor (Markus).</LI>
+				<LI>Support updating derived names for rename refactorings (Philip/Markus)</LI>
+				<li>Make Delete refactoring sub packages aware. Additionally support
+				automatic deletion of empty super packages (Markus).</li>
+				<li>Investigate in more light-weight user interface for certain
+				refactorings. For example rename could be executed in place inside
+				the Java editor (Markus).</li>
 			</ul>
 			</td>
 		</tr>
@@ -503,7 +513,7 @@
 				border="0" height="16" width="16" alt=""></td>
 			<td><b>Conferences/Vacations</b>
 			<ul>
-				<li>30 days</li>
+				<li>40 days</li>
 			</ul>
 			</td>
 		</tr>
