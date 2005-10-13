@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+   <description url="http://www.eclipse.org/jdt/core/update-site/">
+      Java Development Tooling Previews
+   </description>
+   <feature url="features/org.eclipse.jdt.cheetah06_0.0.6.jar" id="org.eclipse.jdt.cheetah06" version="0.0.6">
+      <category name="JDT Previews"/>
+   </feature>
+   <category-def name="JDT Previews" label="JDT Previews">
+      <description>
+         Early access to future features
+      </description>
+   </category-def>
+</site>

@@ -1,0 +1,634 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META name="GENERATOR" content="IBM WebSphere Studio Homepage Builder V6.0.0 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+   <title>JDT Core Component</title>
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+&nbsp;
+
+<table border=0 cellspacing=5 cellpadding=2 width="100%" >
+  <tr> 
+    <td align=left width="72%"> <FONT class="indextop"> jdt core R3.0.x <br>
+      <font class=indexsub> java development tooling core </font></FONT></td>
+    <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg" height=86 width=120></td>
+  </tr>
+</table>
+
+Back to <a href="../dev.html">Development Resources</a>.<A name="source"></A>
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica">
+<font color="#FFFFFF">What's Happening?&nbsp;</font></font></b></td>
+</tr>
+
+<!--
+<img src="../ok.gif" height=10 width=10> 
+<font class=indexsub>[3.0]</font>
+<img src="../progress.gif" height=5 width=14>
+<img SRC="../new.gif" NOSAVE BORDER=0>
+-->
+
+<!--
+<tr>
+<td COLSPAN="2">
+<b>Disclaimer: We are still in planning mode. The 3.0 plan below is a proto plan and input from the community is very welcome at this stage.</b>
+</td></tr>
+-->
+<a name="maintenance"></a>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDH="98%"><b>Rollup 3.0.2 - completed</b>
+
+<ul>
+<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target=new>download</a> area.
+</li>
+<!--
+<li> preview available in <a href="#updates">update</a> area.
+</li>
+-->
+<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.3135.2.49&content-type=text/html">build notes</a>
+</li>
+<li> bug fixing :
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.0.2">all planned fixes</a>)
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.0.2" >unresolved</a>)
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.0.2" >resolved</a>)
+</li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDH="98%"><b>Rollup 3.0.1 - completed</b>
+
+<ul>
+<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target=new>download</a> area.
+</li>
+<!--
+<li> preview available in <a href="#updates">update</a> area.
+</li>
+-->
+<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.3135.2.40&content-type=text/html">build notes</a>
+</li>
+<li> bug fixing :
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.0.1">all planned fixes</a>)
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.0.1" >unresolved</a>)
+  (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.0.1" >resolved</a>)
+</li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Release 3.0.0 - completed</b>
+<a name="release-plan"></a>
+<ul>
+<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target=new>download</a> area.
+</li>
+<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.3135&content-type=text/html">build notes</a>
+</li>
+<li>for R3.0, the major focus points were:
+<ul>
+<li><b>J2SE 1.5 support</b> was *not* officially scheduled for Eclipse 3.0 release, since J2SE 1.5 was not finalized before 3.0 release date, and we did not want to jeopardize the 
+3.0 release by integrating beta quality tooling. In parallel to the 3.0 effort, we were still implementing an experimental version of JDT Core
+with 1.5 support (mostly focusing on adding generics support to Eclipse Java compiler). You may find details and previews of our ongoing effort (codename "Cheetah") in our <a href="#updates">update</a> area.
+</li>	
+<li><b>Incremental Java Compiler</b>
+	<ul>
+		<li>improve parser syntax error messages</li>
+	</ul>
+</li>
+
+<li><b>Java Model</b> 
+	<ul>
+		<li>upgrade API to support 1.5 features
+		</li>
+		<li>improve support for Java-like source files (e.g JSP, SQLJ)
+		</li>
+		<li>investigate new elements for denoting local constructs (local variables, local types)
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=8613">8613</a>)
+		</li>
+		<li>consider support for source inclusion patterns (as opposed to 2.1 exclusion patterns)
+		</li>
+		<li>delta queues should be improved for thread safety (using per-thread-object)
+		</li>
+		<li>synchronization of JavaModel cache: should be finer grain and avoid 3rd party code inside Java model lock
+		</li>
+		<li>javadoc full-support: (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36887">36887</a>)
+		</li>
+		<li>close the gap between original and (shared) working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36888">36888</a>)
+		</li>
+		<li>cleanup working copies: IWorkingCopy is now merged into ICompilationUnit and should go away
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36987">36987</a>)
+		</li>
+	</ul>
+</li>
+
+<li><b>Code Formatter</b> 
+	<ul>
+		<li>provide new implementation, using AST+style options
+		</li>
+	</ul>
+</li>
+
+<li><b>Search</b> 
+	<ul>
+		<li>upgrade to support 1.5 features
+		</li>
+		<li>support references from non-Java files  (new API for indexer and match locator extensions
+		</li>
+		<li>rewrite the indexing infrastructure, and extract it into a generic plug-in
+		</li>
+		<li>ensure shutdown is lightweight (obsolete index cleanup should not initialize classpaths).
+		</li>
+		<li>extend search APIs to provide more information about search matches (avoiding populating Java model to find out information which was available internally during search resolution)
+		</li>
+  </ul>
+</li>
+
+<li><b>DOM AST</b> 
+	<ul>
+		<li>upgrade to support 1.5 features
+		</li>
+  		<li>provide a way to serialize out edited ASTs
+  		</li>
+  		<li>provide reasonable support for comments
+  		</li>
+  		<li>keep AST created in reconcile for active editor and make it accessable for the UI
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36889">36889</a>)
+  		</li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Feature List&nbsp;</font></font></b>
+<a name="features"></a>
+</td></tr>
+
+<tr><td COLSPAN="2">Work items completed in the 3.0 stream, also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build notes</a>.
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>Incremental Java Compiler</b>
+<ul>
+<li> added optional problems to diagnose variable hiding other ones
+</li>
+<li> added optional problem to report possible accidental boolean assignment (as condition expression)
+</li>
+<li> new syntax error diagnosis heuristic
+</li>
+<li>added optional problem to signal superfluous semicolons</li>
+<li>added optional problem to report indirect accesses to static members</li>
+<li>added optional problem to report unnecessary cast / instanceof operations</li>
+<li>added optional problem to report undocumented empty blocks</li>
+<li> default compliance setting is 1.4 (source 1.3, target 1.2)
+</li>
+<li>added optional problem to report unqualified field access</li>
+<li>added optional problem to report unused declared thrown exception</li>
+<li>added optional problem to signal when finally block does not complete normally</li>
+<li>added support for Javadoc comments
+      <ul>
+      <li>optional problems to signal inconsistent or missing Javadoc comments</li>
+      <li>optional problems to control the visibility of inconsistent and missing Javadoc comments</li>
+      <li>optional problems to check overriding methods when looking for missing Javadoc comments and tags</li>
+      <li>inline tags ({@link}, {@linkplain} and {@inheritDoc})</li>
+      <li>global flag to enable Javadoc support, independantly from problem detection</li>
+      </ul>
+</li>
+<li>added option to avoid reporting a warning when overriding a deprecated method</li>
+<li>added option for task detection to behave in case insensitive mode </li>
+<li>added 2 more default task tags: FIXME and XXX</li>
+<li>added option for bytecode generation to inline JSR instructions (JSR202) </li>
+<li>added command line option to batch compiler for controlling the max number of problems per unit </li>
+<li>added optional diagnosis for empty control-flow statement </li>
+<li>added optional diagnosis for statement unnecessarily nested in else-clause </li>
+</ul>
+</td></tr>
+
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>Java Model</b>
+<ul>
+<li> added API to manually read classpath/output location from disk (<code>.classpath</code> file).
+</li>
+<li> closed gap in between compilation units and working copies
+     <ul>
+     <li> units have built-in support for an editable working copy. This primary working copy is transparently available to clients.</li>
+     <li>  working copies everywhere. All APIs can be supplied with owned working copies which will take precedence implicitly over underlying units.</li>
+     </ul>
+</li>
+<li> added optional problems to diagnose incompatible required binaries (target JDK)
+</li>
+<li> delta queues have been improved for thread safety (using per-thread-object)
+</li>
+<li>classpath rules now allow excluded directory to serve as an output location</li>
+<li>added API to get the scheduling rule for a Java element</li>
+<li>leveraged resource encoding support on a per file basis </li>
+<li>leveraged project dynamic references support (avoid side-effects in .project file) </li>
+<li>added IJavaElementDelta.F_CLASSPATH_CHANGED that indicates that the project's raw classpath has changed </li>
+<li>added support to control the scheduling rule during a Java batch operation (JavaCore.run(...)) </li>
+<li>added new API to create a DOM AST while reconciling</li>
+<li>added IJavaElementDelta.F_PRIMARY_RESOURCE that indicates that the resource of a primary working copy has changed</li>
+<li>added API to register/deregister an IResourceChangeListener that is notified before JavaCore processes the resource delta</li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>DOM AST</b>
+<UL>
+<li>added API to retrieve the binary name from a type binding</li>
+<li>added API to parse a compilation unit and specify the set of options to use</li>
+<li>added API to parse an expression or statements or class body declarations</li>
+<li>added APIs that take an <code>IProgressMonitor</code> so that the AST creation can be canceled</li>
+<li>added APIs for rewriting DOM AST back into source: either by modifying an instance of an AST, or by describing changes to perform (e.g. change previews)
+<li>added heuristic API for computing node extended source range (and better associate related comments)</li>
+</UL>
+</td></tr>
+
+<!--
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Code Assist</b>
+<ul>
+  </ul>
+</ul>
+</td></tr>
+-->
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>Code Select</b>
+<UL>
+        <LI>added support for selecting local/anonymous types
+        <LI>added support for selecting local variables
+      </UL>
+      </td></tr>
+
+<tr>
+<TD align="RIGHT" valign="TOP" width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></TD>
+<TD width="98%"><b>Search</b>
+<UL>
+        <li>added support for searching for local/anonymous types </li>
+        <li>added support for searching for local variables </li>
+        <li>added support to find references in Javadoc comments </li>
+        <li>implemented new index infrastructure </li>
+        <li>added support to distinguish read/write access in field matches</li>
+        <li>added support for search scopes to filter considered classpath entries (sources, libraries, system libraries, required projects). </li>
+      </UL>
+      </TD>
+    </tr>
+
+<tr>
+<TD align="RIGHT" valign="TOP" width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></TD>
+<TD width="98%"><b>Code Formatter</b>
+<UL>
+        <LI>entirely rewritten so as to support fine grain options and better performance
+      </UL>
+      </TD>
+    </tr>
+<!--
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Evaluation</b>
+<ul>
+</ul>
+</td></tr>
+-->
+
+
+<!--
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Type Hierarchies</b>
+<ul>
+</ul>
+</td></tr>
+-->
+
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Release Process&nbsp;</font></font></b></td>
+</tr>
+<tr><td COLSPAN="2">
+<a name="release"></a>
+	<ul>
+		<li>Release Candidate 1 : <a href="test-rc1.html">test plan</a> <!--, <a href="fix-rc1.html">fix plan</a>--></li>
+<!--
+		<li>Release Candidate 2 : <a href="test-rc2.html">test plan</a>, <a href="fix-rc2.html">fix plan</a></li>
+		-->
+	</ul>
+</td>
+</tr>
+
+
+<tr><td COLSPAN="2">
+	<ul>
+	</ul>
+</td>
+</tr>
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Resolution&nbsp;</font></font></b></td>
+</tr>
+<tr><td COLSPAN="2">
+<a name="bugs"></a>
+<ul>
+<li>Overall R3.0, 2004/06/28 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0.2&target_milestone=3.0.1&target_milestone=3.0&target_milestone=3.0+M1&target_milestone=3.0+M2&target_milestone=3.0+M3&target_milestone=3.0+M4&target_milestone=3.0+M5&target_milestone=3.0+M6&target_milestone=3.0+M7&target_milestone=3.0+M8&target_milestone=3.0+M9&target_milestone=3.0+RC1&target_milestone=3.0+RC2&target_milestone=3.0+RC3&target_milestone=3.0+RC4&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.0.2&target_milestone=3.0.1&target_milestone=3.0&target_milestone=3.0+M1&target_milestone=3.0+M2&target_milestone=3.0+M3&target_milestone=3.0+M4&target_milestone=3.0+M5&target_milestone=3.0+M6&target_milestone=3.0+M7&target_milestone=3.0+M8&target_milestone=3.0+M9&target_milestone=3.0+RC1&target_milestone=3.0+RC2&target_milestone=3.0+RC3&target_milestone=3.0+RC4">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.0.2&target_milestone=3.0.1&target_milestone=3.0&target_milestone=3.0+M1&target_milestone=3.0+M2&target_milestone=3.0+M3&target_milestone=3.0+M4&target_milestone=3.0+M5&target_milestone=3.0+M6&target_milestone=3.0+M7&target_milestone=3.0+M8&target_milestone=3.0+M9&target_milestone=3.0+RC1&target_milestone=3.0+RC2&target_milestone=3.0+RC3&target_milestone=3.0+RC4">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.0.2&target_milestone=3.0.1&target_milestone=3.0&target_milestone=3.0+M1&target_milestone=3.0+M2&target_milestone=3.0+M3&target_milestone=3.0+M4&target_milestone=3.0+M5&target_milestone=3.0+M6&target_milestone=3.0+M7&target_milestone=3.0+M8&target_milestone=3.0+M9&target_milestone=3.0+RC1&target_milestone=3.0+RC2&target_milestone=3.0+RC3&target_milestone=3.0+RC4">resolved</A>)</li>
+<li> Rollup 3.0.2, 2005/02/02 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Rollup 3.0.1, 2004/09/01 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0.1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Release Candidate-4 (aka R3.1), 2004/06/24 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+RC4&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Release Candidate-3, 2004/06/17 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+RC3&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Release Candidate-2, 2004/06/10 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+RC2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Release Candidate-1, 2004/05/28 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+RC1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >all</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >unresolved</a>)
+(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+RC1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >resolved</a>)
+</li>
+<li> Milestone-9 (aka Release Candidate-0), 2004/05/21 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M9&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M9&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M9&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M9&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-8, 2004/03/26 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M8&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M8&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M8&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M8&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-7, 2004/02/13 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M7&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M7&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M7&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M7&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-6, 2003/12/19 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M6&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M6&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M6&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M6&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)<I>API breakage frozen</I>
+</li>
+<li> Milestone-5, 2003/11/21 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M5&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M5&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M5&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M5&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)<I>initial API breakage freeze</I>
+</li>
+<li> Milestone-4, 2003/10/10 : 
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M4&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M4&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-3, 2003/08/29 :
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M3&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-2, 2003/07/18 :
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M2&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+<li> Milestone-1, 2003/06/06 :
+(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=3.0+M1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=" >fixed</a>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">all</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">unresolved</A>)
+(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=3.0+M1&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">resolved</A>)
+</li>
+</ul>
+</td>
+</tr>
+
+<!--
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Design notes&nbsp;</font></font></b></td>
+</tr>
+
+<tr><td COLSPAN="2">
+	<a name="notes"></a>
+	<ul>
+	</ul>
+</td>
+</tr>
+-->
+
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0">
+<a name="updates"></a>
+<b><font face="Arial,Helvetica"><font color="#FFFFFF">Updates&nbsp;</font></font></b></td>
+</tr>
+    <TR></TR>
+    <tr><td COLSPAN="2">These patches are not yet part of 
+any official release or rollup; but provide an early access to the next delivery for quality assessment. If you find any regression using these patches,
+please inform the JDT/Core team by entering a <a href="http://dev.eclipse.org/bugs/">bug report</a>.
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>Early preview of J2SE 1.5 - codename "Cheetah"</b> 
+<table>
+<tr>
+	<td VALIGN="top"><a href="../update-site"><img src="../Cheetah-02.gif" border="0"></a></td>
+	<td VALIGN="top">Cheetah06 posted on 2004/06/29 (click on picture to jump to update site)</td>
+</tr>
+
+<tr>
+	<td VALIGN="top"><i>applies to</i></td>
+	<td VALIGN="top">Eclipse R3.0</td>
+</tr>
+
+<tr>
+	<td VALIGN="top"><i>installing</i></td>
+	<td VALIGN="top">To install Cheetah inside Eclipse:
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- open the update manager (Help>>Software Updates>>Find and Install)
+<!--
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- search for updates of the currently installed features
+-->
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- create a site (select 'Search for new features to install', then 'Add Update Site') 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- fill in 'http://www.eclipse.org/jdt/core/update-site' as the URL. 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- check new site in update sites list.
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;- check the Cheetah feature update and install it.
+	<br>
+	<br>Once installed, you can go to compiler preference page to enable 1.5 compliance, and install a 1.5 JRE (see prefs>>Java>>Installed JREs).
+	Avoid using a 1.5 JRE to run Eclipse, as Eclipse is implemented for running on top of 1.4 level JREs (and 1.5 is still unstable).
+	<br>
+<!--
+	Several people have reported installation issues. These are bugs in Eclipse update support itself, which are being addressed in parallel. 
+	As a workaround, simply exit and restart Eclipse again once more (until you see 1.5 tab in compiler preference page); this seems to address 
+	the issues during initial restart after update. 
+-->
+	Also it is recommended you install Cheetah on clean builds (as opposed to on a previous Cheetah install)
+	since this seems to cause issues to platform update.
+	</td>
+</tr>
+
+<tr>	
+	<td VALIGN="top"><i>JRE 1.5</i></td>
+	<td VALIGN="top">JRE 1.5.0-beta-b31 is known to be broken (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=63591">63591</a>), and issues invalid verify error during classloading. JRE 1.5.0-beta-b32c libraries contain
+	corrupted generic signatures for member types. Beta2 level JREs are preferrable if you can obtain them.
+	</td>
+</tr>
+
+<tr>
+	<td VALIGN="top"><i>description</i> </td>
+	<td VALIGN="top">Early preview of our future support for J2SE 1.5,<b>which is *not* part of Eclipse 3.0 release</b>.
+		It is rather a snapshot of work in progress done in parallel branch <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=JDK_1_5">JDK_1_5</a>,
+		which will be stabilized for a future Eclipse release. 
+		Cheetah is still a kitten, and does not yet cover the full distance to <a href="http://jcp.org/en/jsr/detail?id=176">J2SE 1.5</a>, but you can help it to advance, by testing it and reporting 
+		any issue you discovered using a <a href="http://dev.eclipse.org/bugs/">bug report</a> where title is prefixed with "[1.5]". 
+		Supported features are listed below (also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.2580.2.124&content-type=text/html">build notes</a>).
+		<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="../progress.gif" height="5" width="14"> <b>generic types</b> (<a href="http://jcp.org/en/jsr/detail?id=014">jsr-014</a>)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- generic sources, parameterized type, raw types, wildcards
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- generic binaries, lazy resolution
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- source innerclasses with generics
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- incremental compiler update
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- syntax error diagnostics (including source &lt; 1.5)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- syntax recovery (type parameters)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- enclosing/member types of parameterized types
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- some DOM AST 1.5 conversion
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- class literal &amp; Object.getClass()
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- generic method &amp; constructor, parameter/return type inference, explicitly parameterized
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- bridge methods
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- cast, instanceof
+		<i><font color="#8080ff"> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not supported yet
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- covariance
+		</i></font>
+		<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; <img src="../ok.gif" height=10 width=10> <b>enhanced for loops</b> (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- array collections, Iterable collections
+		<br>
+		<font color="#8080ff"> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>autoboxing</b> (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>enumerations</b>  (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>static imports</b> (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>metadata facility</b> (<a href="http://jcp.org/en/jsr/detail?id=175">jsr-175</a>)
+		<i>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not supported yet
+		</i></font> 
+		<br>
+	<br>Note: we are mostly focusing on the compiler side, which is the core piece to evolve before leveraging the rest of the
+		tools and provide a full-fledge tooling support. This being said, we are gradually adding support to the DOM AST, the JavaModel,
+		search, codeassist and codeselect.
+		You may also use the compiler as a <a href="../howto/batch%20compile/batchCompile.html">batch</a> command line tool or through
+		the Ant compiler adapter.
+	<br>We perform frequent merges with our HEAD branch, so it is close to our official delivery for Eclipse R3.0 augmented with our 1.5 ongoing effort.
+	In order to keep track of the base version in HEAD, we tag the cheetah preview after the matching HEAD version name;
+	e.g. <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_500">v_500</a>.
+<!--
+    <br>This patch can be applied by expanding the zip archive into the <code>&lt;install&gt;/eclipse/plugins/</code> directory
+-->
+<!--
+    <br> NOTE: Plug-in revision ID is "3.0.0". 
+         In case this plug-in revision does not match the one currently installed,
+    	 the JDT feature may require to be edited accordingly (in <code>&lt;install&gt;/eclipse/features/org.eclipse.jdt_3.0.x/feature.xml</code>,
+    	 change the version to <code>"3.0.0"</code> for plugin which id is <code>"org.eclipse.jdt.core"</code>).
+-->    	 
+	</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!--
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16"></td>
+<td WIDTH="98%"><b>3.0 integration preview </b>
+<table>
+<tr>
+	<td VALIGN="top"><a href="../patches/org.eclipse.jdt.core_3.0.0.zip"><img src="../jar_l_obj.gif" NOSAVE border="0" height="20" width="20"></a></td>
+	<td VALIGN="top">posted on 2004/05/17, 5,078 KB (click on picture)</td>
+</tr>
+<tr>
+	<td VALIGN="top"><i>applies to</i></td>
+	<td VALIGN="top">build R3.0(M8) and better</td>
+</tr>
+<tr>
+	<td VALIGN="top"><i>description</i> </td>
+	<td VALIGN="top">Early preview of the next integration build.
+&lt;!--
+	    <br>Addresses the following issues:
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;- <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=45459">45459</a> JDT compiler more restrictive than javac 
+--&gt;
+	<br>Also see corresponding <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.3032&content-type=text/html">build notes</a>.
+&lt;!--
+	<br>Corresponding sources aren't released in HEAD, waiting for M4 to be officially declared.
+	<br>Corresponding sources were taken from HEAD and are not yet versioned.
+--&gt;
+    <br>Corresponding sources are versioned using tag <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_428b">v_428b</a>
+    <br>This patch can be applied by expanding the zip archive into the <code>&lt;install&gt;/eclipse/plugins/</code> directory
+&lt;!--
+    <br> NOTE: Plug-in revision ID is "3.0.0". 
+         In case this plug-in revision does not match the one currently installed,
+    	 the JDT feature may require to be edited accordingly (in <code>&lt;install&gt;/eclipse/features/org.eclipse.jdt_3.0.x/feature.xml</code>,
+    	 change the version to <code>"3.0.0"</code> for plugin which id is <code>"org.eclipse.jdt.core"</code>).
+--&gt;
+	</td>
+</tr>
+</table>
+</td>
+</tr>
+-->
+
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Getting the sources&nbsp;</font></font></b></td>
+</tr>
+    <tr><td COLSPAN="2">
+      <UL>
+<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+</li>
+<li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R3_0_maintenance"><code>R3_0_maintenance</code></a> branch of the project <code>org.eclipse.jdt.core</code>.
+</li>
+<li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.0 most recent <a href="http://www.eclipse.org/downloads/index.php" target=new>integration build</a>). Prerequisite plug-ins are already referenced on the project build path (<code>.classpath</code> file).
+</li>
+<li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4.
+</UL>
+      </tr>
+    <TR></TR>
+  </table>
+
+</body>
+</html>

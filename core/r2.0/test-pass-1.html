@@ -1,0 +1,155 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>JDT/Core - Test pass 1</title>
+<link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+&nbsp;
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+<tr>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">JDT
+Core / Post Freeze 1 : Testing Plan&nbsp;</font></font></b></td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"></td>
+<td WIDTH="98%">Post freeze 2 test plan is available <a href="test-pass-2.html">here</a>.
+</td>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Reconcile with Errors (Philippe, David)</b>
+<ul>
+<li>performance on large units (e.g. JavaProject, suspecting some <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=16772">slowness</a>)</li>
+<li>unexpected errors (concurrency issues?)</li>
+<li>paste in some code highly broken (specs from design note with some sparse signatures etc...)</li>
+<li>try code with generics and '#' in signatures</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Classpath containers (Philippe, Jérôme)</b>
+<ul>
+<li>check switching JRE (with performance)</li>
+<li>check deltas when switching JREs using containers</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Compiler &amp; Incremental Builder (Philippe, Kent)</b>
+<ul>
+<li>JCK 1.3a compliance, JCK 1.4 compliance </li>
+<li>addition of empty source folder</li>
+<li>addition of package prefix</li>
+<li>write new test scenarii</li>
+<li> building when workspace is broken 
+   <ul>
+   <li>cycle detection </li>
+   <li> missing or ill-formatted .classpath file (consequence of PDE bug) </li>
+   <li> updgrading existing self-hosting workspaces </li>
+   </ul></li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Resource copy filtering (Kent)</b>
+<ul>
+<li>check preference page is working ok (was broken in recent past)</li>
+<li>check exclusion for files and folders</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Java preferences and variables (David)</b>
+<ul>
+<li>check they are correctly persisted (even if Jdt/UI isn't activated)</li>
+<li>check lazy initialization of JRE_LIB / classpath container</li>
+<li>check logic of compliance settings 1.3 / 1.4</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Classpath (David)</b>
+<ul>
+<li>check that forbidden scenarii are detected ok (classpath validation)</li>
+<li>check cycle detection</li>
+<li>check classpath problem marker update</li>
+<li>check handling of corruption of .classpath file</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>DOM AST (Olivier)</b>
+<ul>
+<li>use refactoring and source operations to test the DOM</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Ant Java Adapter (Olivier)</b>
+<ul>
+<li>try corner cases (ext dirs, encoding, ...)</li>
+<li>check Ant 1.5 compatibility</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Encoding (Olivier)</b>
+<ul>
+<li>check that custom encoding is honoured (batch &amp; JavaCore setting)</li>
+<li>check Ant 1.5 compatibility</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Debug attributes (Olivier)</b>
+<ul>
+<li>check offending source attribute combination (like default return)</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Search (Jérôme)</b>
+<ul>
+<li>random queries with lots of matches</li>
+<li>queries with non-declaring type names in them (e.g. X.foo() referenced as Y.foo())</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Type Hierarchies (Jérôme)</b>
+<ul>
+<li>missing types</li>
+<li>performance (what if getFlags() and isClass() were free)</li>
+<li>check when using working copies (+ corner cases: empty ones, ...)</li>
+</ul>
+</tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>Java deltas (Jérôme)</b>
+<ul>
+<li>check non-java resource modifications</li>
+<li>shared internal JARs</li>
+<li>external JAR refresh (once surfaced in UI)</li>
+</ul>
+</tr>
+
+</table>
+</body>
+</html>

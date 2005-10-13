@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="IBM WebSphere Studio Homepage Builder V6.0.2 for Windows">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>JDT/Core - 3.1 Release Candidate 2 Testing</title>
+  <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
+ type="text/css">
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+&nbsp;
+<table border="0" cellpadding="2" cellspacing="5" width="100%">
+  <tbody>
+    <tr>
+      <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
+ face="Arial,Helvetica"><font color="#ffffff">JDT Core / Release Candidate 3 : Testing Plan&nbsp;</font></font></b></td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><br>
+      </td>
+      <td width="98%">Release Candidate 0 test plan is available <a href="test-rc0.html">here</a>.
+      <br>Release Candidate 1 test plan is available <a href="test-rc1.html">here</a>.
+      <br>Release Candidate 3 test plan is available <a href="test-rc3.html">here</a>.
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>Verify all 3.1RC2 fixes (Olivier, Maxime, Frederic, David)</b>
+      <ul>
+        <li> already <a
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Core&amp;target_milestone=3.1+RC2&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=anywords&amp;keywords=&amp;bug_status=VERIFIED&amp;emailassigned_to1=1&amp;emailtype1=substring&amp;email1=&amp;emailreporter2=1&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;changedin=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;namedcmd=1.0.x&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">verified</a>
+        </li>
+        <li> remaining <a
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=JDT&amp;component=Core&amp;target_milestone=3.1+RC2&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=anywords&amp;keywords=&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;emailassigned_to1=1&amp;emailtype1=substring&amp;email1=&amp;emailreporter2=1&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;changedin=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;namedcmd=1.0.x&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">unverified</a>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>Miscellaneous (Jerome, Kent, Maxime)</b>
+      <ul>
+        <li>check persisted classpath variables/containers are still rebound properly while opening workspace from previous version/milestones or exporting/importing preferences</li>
+        <li>check access restrictions with file extension work properly</li>
+        <li>hierarchy refresh while saving editor</li>
+        <li>exerce formatter with static local/nested classes</li>
+        <li>usage of external jar (tools.jar for example) with 1.5 code<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>DOM AST (Olivier, David)</b>
+      <ul>
+        <li>challenge it on 1.5 source/binary code (Sun JDK sources for example)</li>
+        <li>use AST view to control produced tree</li>
+        <li>verify @SuppressWarnings is effective in DOM diagnostics</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>Search (Frederic)</b>
+      <ul>
+        <li>check refactoring on generic methods in generic/non-generic classes</li>
+        <li>check declarations/references to invalid method (ie. with compiler error)</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>CodeAssist/CodeSelect (David)</b>
+      <ul>
+        <li>exerce on local/nested/anonymous types</li>
+        <li>exerce on generic methods/constructors calls</li>
+        <li>exerce on type parameters declarations (with/without wildcards/bounds) and parameterized types arguments<br>
+        </li>
+        <li>exerce on static import</li>
+        <li>exerce on parameterized types</li>
+        <li>control resolved key surfaced by hover selection on 1.5 source/binary code (Sun JDK sources for example)</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%"><b>Compiler (Olivier, Philippe, Maxime)</b>
+      <ul>
+        <li>verify new defaults for fields/local var hiding + unused local/private (specially with anonymous)<br>
+        </li>
+        <li>verify ambigous warning for generic methods in generic/non-generic types<br>
+        </li>
+        <li>verify bound check in corner cases<br>
+        </li>
+        <li>verify enum switch in corner cases</li>
+        <li>verify nested types with 1.5 code (annotation/interface/static/ etc...)</li>
+        <li>verify generic types cast</li>
+        <li>check raw warnings</li>
+        <li>check status of disabled regression tests</li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
