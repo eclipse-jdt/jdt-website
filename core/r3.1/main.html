@@ -802,148 +802,59 @@ please inform the JDT/Core team by entering a <a
         <tbody>
           <tr>
             <td valign="top"><a
- href="../patches/org.eclipse.jdt.core_3.1.0.zip"><img
+ href="../patches/org.eclipse.jdt.core_3.1.1.zip"><img
  src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2005/07/11, 6,089 KB (click on
-picture)</td>
+            <td valign="top">posted on 2005/10/14, 6,104 KB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
-            <td valign="top">build R3.1.0</td>
+            <td valign="top">build R3.1.1</td>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of the next integration
-build. <br>
+            <td valign="top">Early preview of 3.1.2 build. <br>
 This patch can be applied by expanding the zip archive into the <code>&lt;install&gt;/eclipse/plugins/</code>
-directory.
+directory. Be sure to move the src zip files to the proper source project.
 <!--
     	<br>Then start Eclipse with the -clean command line option to take the new plugin version into account.
 -->
             <br>
-Plug-in revision ID is "3.1.0". Corresponding sources are versioned
+Plug-in revision ID is "3.1.1". Corresponding sources are versioned
 using tag <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_570b_R31x">v_570b_R31x</a>
+ href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_579a_R31x">v_579a_R31x</a>
             <br>
 Addresses the following issues: <font size="-1">
             <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=91426">91426</a>
-[Markers] Java task tags in Task View don't have configured priority
+<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111350">111350</a>
+[1.5][compiler] method override and generics
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=108782">108782</a>
+[1.5][compiler] inconsistent @Override error
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=108780">108780</a>
+[1.5][compiler] Subsignature checking does not respect erasure conversion
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=105808">105808</a>
+[1.5][dom] MethodBinding#overrides(..) should not consider return types
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=112500">112500</a>
+[1.5][compiler] bug between inference and wilcard
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=112268">112268</a>
+[1.5][compiler] Type mismatch introduced in 3.1.1
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111898">111898</a>
+[compiler] Wrong code generation
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107045">107045</a>
+[1.5][compiler] Compiler misses name clash with bounded class type parameter
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109118">109118</a>
+[1.5][compiler] Unhandled Exception Compiler error involving generics in java 1.5
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111703">111703</a>
+Static initialization block in anonymous inner class causes compiler to fail
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111208">111208</a>
+[1.5][compiler] Compiler gets confused by multiple generic-extends'
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111299">111299</a>
+JavaModelCache may overflow the memory.
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=111014">111014</a>
+Internal Compiler Error
             <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100772">100772</a>
-[1.5][search] Search for declarations in hierarchy reports to many
-matches
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100695">100695</a>
-[1.5][search] Renaming a field of generic array type has no effect
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103023">103023</a>
-[1.5][compiler] StackOverflow inferring type arguments
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102778">102778</a>
-Scrapbook page doesn't work with enhanced for statement
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101283">101283</a>
-[1.5][javadoc] Javadoc validation raises missing implementation in
-compiler
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100868">100868</a>
-Code assist does not recommend methods in anonymous enum subclass
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101456">101456</a>
-Proposals and Open Declaration fail with NPE
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101387">101387</a>
-[1.5][compiler] Incorrect Cycle detected in type hierarchy error
-            <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97326">97326</a>
-[dom] ITypeBinding#isFromSource() is always false for type variables,
-wildcards, and capture types
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100153">100153</a>
-[1.5][compiler] Bound check failure on recursive formal bound
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100808">100808</a>
-[assist] Wrong replace range for package proposals if there is no line
-termination
-            <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=98532">98532</a>
-[1.5][compiler] Spurious 'type parameter T is hiding the type T'
-warning for static nested classes
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100797">100797</a>
-editor general failure
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100043">100043</a>
-[1.5][compiler] false compiler error on ?: ternary operator with boxing
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102181">102181</a>
-[1.5][compiler] Generic varargs are built with incorrect array type
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102305">102305</a>
-Error in JDT Core during reconcile
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102213">102213</a>
-[1.5][compiler] enum constants cannot be referenced inside enum
-constants initializer
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101955">101955</a>
-NullPointerException after invoking extract method
-            <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97220">97220</a>
-Should not issue nls warning for annotation
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101885">101885</a>
-[mode] sort operation doesn't set the RELATIVE_ORDER for enum constants
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101247">101247</a>
-[formatter] Fails to format some labelled statements
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101713">101713</a>
-[1.5][compiler] Access to static fields within enum constructors
-inconsistent with javac
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101779">101779</a>
-[1.5][compiler] VerifyError using -- operator on unboxed generic
-Integer type
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101208">101208</a>
-[compiler] instanceof check cannot be unnecessary on null values
-            <br>
-            <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=100619">100619</a>
-[1.5][compiler] Incorrect duplicate bound diagnosis
-            <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=94759">94759</a>
-[1.5][compiler] @Override doesn't report an error inside interface when
-specified for clone() method
-            <br>
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=98538">98538</a>
-[1.5][compiler] Inference broken for subtypes of subtypes of F-bounded
-types </font> <br>
+            </font>
 Also see corresponding <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.25&amp;content-type=text/html">build
+ href="http://dev.eclipse.org/viewcvs/index.cgi/*checkout*/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.121&only_with_tag=v_579a_R31x">build
 notes</a>.
 <!--
 	<br>Corresponding sources aren't released in HEAD, waiting for M4 to be officially declared.
