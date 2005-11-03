@@ -21,7 +21,7 @@ Eclipse APT Project - Developer Setup Instructions
         Fill in the following values:
     
         Host:             dev.eclipse.org
-        Repository path:  /home/eclipse
+        Repository path:  /cvsroot/eclipse
         User:             anonymous
         Password:         <leave blank>
         Connection type:   pserver         
