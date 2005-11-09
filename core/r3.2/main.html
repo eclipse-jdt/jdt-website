@@ -99,8 +99,7 @@ and could be revised while addressing these work items.<br>
         <li><b>Java SE 6 </b>(<a
  href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
         <ul>
-          <li><img src="../progress.gif" height="5" width="14">
-Annotation
+          <li><img src="../progress.gif" height="5" width="14">Annotation
 processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)</li>
           <ul>
             <li>Work got initiated in org.eclipse.jdt.apt.core (and ui)
@@ -117,8 +116,7 @@ merged into "HEAD" when it matures enough.</li>
             <li>Mostly affecting Java Model rendering (see Java Model
 item below)</li>
           </ul>
-          <li><img src="../progress.gif" height="5" width="14">
-Classfile
+          <li><img src="../progress.gif" height="5" width="14">Classfile
 (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)</li>
           <ul>
             <li>Except for StackMapTable attribute support (<a
@@ -140,6 +138,9 @@ Switching codebase to Java 5.0</b></li>
         <ul>
           <li>If Eclipse 3.2 development switches, then will convert
 JDT/Core implementation (batch compiler remains 1.3 based)</li>
+          <li>Not enough reliable 1.5 runtimes available at the moment
+on each platform, will be reevaluated at end of 3.2 M4.<br>
+          </li>
         </ul>
       </ul>
       <ul>
@@ -167,7 +168,9 @@ unnecessary $NON-NLS tags (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)<br>
             </li>
           </ul>
-          <li>Enable pluggable participation in compilation (e.g. APT)</li>
+          <li>Enable pluggable participation in compilation (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
+(e.g. APT)</li>
           <li><img src="../ok.gif" height="10" width="10"> Allow valid
 classfile generation in presence of optional
 compiler errors (configured by some preference) (<a
@@ -179,7 +182,8 @@ the Java builder (for a UI to warn user) (<a
           <li>Improve access restriction support: <br>
           </li>
           <ul>
-            <li><img src="../progress.gif" height="5" width="14">restrictions
+            <li><img src="../progress.gif" height="5" width="14">
+restrictions
 should be inherited (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>)</li>
             <li>check more scenarii based on annotations/doclet (<span
@@ -303,8 +307,7 @@ versions (for unknown attributes) (<a
           <li><img alt="In progress" src="../progress.gif"
  style="width: 14px; height: 5px;"> Remove "java" file extension
 assumption on compilation units (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)<br>
-          </li>
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>) </li>
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
 Investigate allowing classpath containers to
 refer to further container/variable entries (<a
@@ -575,8 +578,7 @@ constructor completions in
 allocations: "new A&lt;ctrl-space&gt;" (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">83392</a>) -
 david</li>
-        <li><img src="../progress.gif" height="5" width="14">
-Completion
+        <li><img src="../progress.gif" height="5" width="14">Completion
 in annotation member pair value: provide hook
 for completing inside string literal (e.g.
 APT completion) (<a
@@ -591,7 +593,8 @@ the Java builder (for a UI to warn user) (<a
         <li>Compiler computes StackMapTable classfile attribute (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>)
 - olivier</li>
-        <li>JavaModel provide API to access
+        <li><img src="../progress.gif" height="5" width="14"> JavaModel
+provide API to access
 javadoc from attached HTML (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110173">110173</a>)
 - olivier</li>
@@ -615,13 +618,15 @@ annotation (<a
 - maxime, philippe</li>
         <li><img src="../progress.gif" height="5" width="14"> Remove
 "java" file extension assumption on compilation units (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>)
 - jerome<br>
         </li>
         <li>More robust DOM AST: finalize based on requirements from
 JDT/UI (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)
 - david</li>
-        <li>Provide completion on break/continue label (<a
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Provide completion on
+break/continue label (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>)
 - david<br>
         </li>
@@ -657,7 +662,8 @@ maxime<br>
 CompilationParticipant in reconcile operation -
 jerome</li>
         <li>Provide pluggable CompletionParticipant API for codeassist
-operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>)
+operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
 - david</li>
         <li><img src="../progress.gif" height="5" width="14"> Address
 long standing issue with secondary types (not found by model
