@@ -99,7 +99,8 @@ and could be revised while addressing these work items.<br>
         <li><b>Java SE 6 </b>(<a
  href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
         <ul>
-          <li><img src="../progress.gif" height="5" width="14">Annotation
+          <li><img src="../progress.gif" height="5" width="14">
+Annotation
 processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)</li>
           <ul>
             <li>Work got initiated in org.eclipse.jdt.apt.core (and ui)
@@ -116,7 +117,8 @@ merged into "HEAD" when it matures enough.</li>
             <li>Mostly affecting Java Model rendering (see Java Model
 item below)</li>
           </ul>
-          <li><img src="../progress.gif" height="5" width="14">Classfile
+          <li><img src="../progress.gif" height="5" width="14">
+Classfile
 (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)</li>
           <ul>
             <li>Except for StackMapTable attribute support (<a
@@ -203,9 +205,12 @@ build state) (<a
         <ul>
           <li>More robust DOM AST: statement level recovery (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)</li>
-          <li>Cleanup bindings: generic vs. parameterized (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83064">83064</a>),
-unique method binding</li>
+          <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Cleanup bindings: generic vs.
+parameterized (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80472">80472</a>)</li>
+          <li>Make generic method invocation bindings unique<br>
+          </li>
           <li>Surface more compiler functionalities on DOM bindings:
 precomputed override indicator (AccOverriding/AccImplementing) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>)</li>
@@ -588,7 +593,8 @@ actions - kent</li>
 the Java builder (for a UI to warn user) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
 - kent</li>
-        <li>Compiler computes StackMapTable classfile attribute (<a
+        <li><img src="../progress.gif" height="5" width="14"> Compiler
+computes StackMapTable classfile attribute (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>)
 - olivier</li>
         <li><img alt="OK mark" src="../ok.gif"
@@ -604,12 +610,11 @@ changes from APT branch - kent, jerome, david, olivier<br>
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=61013">61013</a>) -
 jerome<br>
         </li>
-        <li><img src="../progress.gif" height="5" width="14"> Cleanup
-(compiler&amp;DOM) bindings: generic vs.
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Cleanup bindings: generic vs.
 parameterized (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83064">83064</a>),
-unique
-method binding - philippe</li>
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80472">80472</a>)
+- philippe</li>
         <li><img src="../progress.gif" height="5" width="14"> Null
 reference analysis, coupled with use of <span
  style="font-style: italic;">@NonNull</span>
@@ -659,7 +664,8 @@ maxime<br>
           <li>check more scenarii based on annotations (<span
  style="font-style: italic;">@CannotImplement</span>, ...) - olivier</li>
         </ul>
-        <li><img src="../progress.gif" height="5" width="14"> Leverage
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Leverage
 CompilationParticipant in reconcile operation -
 jerome</li>
         <li>Provide pluggable CompletionParticipant API for codeassist
