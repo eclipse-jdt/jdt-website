@@ -11,7 +11,7 @@
 Java Element Deltas</h2>
 Last revised 12:00 Thursday September 6, 2001
 <p>Original work item: "IJavaElementDelta should carry information about
-marker changes (ProblemMarkers)."
+marker changes (ProblemMarkers)."</p>
 <h3>
 Markers and Java Elements</h3>
 The workspace allows markers to be associated with resources. The Java
@@ -27,20 +27,20 @@ nearest enclosing Java element. In most cases, this element will be a fine-grain
 Java element corresponding to a declaration of a Java method, field, type,
 or import. In the worst case, it maps to the compilation unit element itself.
 Thus it is always possible in principle to associate markers with Java
-elements.
+elements.</p>
 <p>The Java UI visually annotates Java elements that have problems (with
-a red X).
+a red X).</p>
 <p>The cost of mapping from a marker position to a fine-grained Java element
 requires opening (and parsing) the compilation unit. Once opened, additional
 markers within the same compilation unit can be mapped with negligible
-additional cost.
+additional cost.</p>
 <h3>
 Java Element Deltas</h3>
 Unlike workspace resource deltas, Java element deltas do not currently
 include information about marker changes.
 <p>The Java UI needs to maintain the visual annotations on Java elements
-that have problems.
-<p>There are three kinds of Java element deltas issued:
+that have problems.</p>
+<p>There are three kinds of Java element deltas issued:</p>
 <ol>
 <li>
 By the Java model when <tt>IWorkingCopy.commit</tt> is called to save a
@@ -54,11 +54,11 @@ editing.</li>
 By the Java model in response to notification of a workspace resource delta
 affecting a compilation unit resource.</li>
 </ol>
-The first two kinds of Java element delta are always issued against fine-grained
+<p>The first two kinds of Java element delta are always issued against fine-grained
 Java elements. The previous fine-grained structure of the compilation unit
 is compared to the current fine-grained structure. These deltas are recognizable
 as kind <tt>CHANGED</tt> at the compilation unit level with <tt>F_CHILDREN</tt>
-flag set and <tt>F_CONTENT</tt> flag <i>not</i> set.
+flag set and <tt>F_CONTENT</tt> flag <i>not</i> set.</p>
 <p>The last kind of Java element delta is never fine-grained; it goes no
 finer than the compilation unit element itself. This is because the fine-grained
 structure of the previous state of the compilation unit is not available
@@ -67,27 +67,27 @@ structure of the previous state of the compilation unit is not available
 it since it does not a copy of the previous state of the compilation unit).
 These deltas are recognizable as kind <tt>CHANGED</tt> at the compilation
 unit level with <tt>F_CHILDREN</tt> flag <i>not </i>set and with <tt>F_CONTENT</tt>
-flag set.
+flag set.</p>
 <h3>
 Markers and Java Element Deltas</h3>
-Java problems markers on Java compilation units originate when the Java
+<p>Java problems markers on Java compilation units originate when the Java
 builder is called. These markers are associated with Java compilation unit
 files, and come to the attention of the Java model via a problem delta
 associated with the resource delta that follows the build. The Java builder
 only deletes or adds Java problem markers; it never changes existing ones.
 The Java builder does not decorate Java problem markers with information
-other than the source character position.
-<p><tt>(IWorkingCopy.reconcile</tt> also returns a set of tranisent markers.)
+other than the source character position.</p>
+<p><tt>(IWorkingCopy.reconcile</tt> also returns a set of tranisent markers.) </p>
 <p>When the user opens a compilation unit, the Java editor creates and
 locates visual markers corresponding to the Java problem markers. These
-visual markers are sticky, and move around as the text is edited.
+visual markers are sticky, and move around as the text is edited.</p>
 <p>When the user navigates into an already open compilatation unit from
 a problem marker in the Tasks view, the Java editor automatically adjusts
-the positions to account for recent edits.
+the positions to account for recent edits.</p>
 <p>When the Java editor saves a compilation unit, it permanently adjusts
 the source positions of Java problem markers associated with the corresponding
 compilation unit. This is done because the next build may be a ways off
-and these markers show up in the Tasks view (the Java editor might be closed).
+and these markers show up in the Tasks view (the Java editor might be closed).</p>
 <p>Java element deltas also carry information about non-Java resources;
 this is surfaced by <tt>IJavaElementDelta.getResourceDeltas</tt>. This
 works as follows: when a non-Java resource is affected, the corresponding
@@ -101,12 +101,12 @@ will be associated with Java element delta for the <tt>IPackageFragmentRoot</tt>
 (this includes the case where the project itself is a package fragment
 root. Thus the <tt>IJavaElementDelta.getResourceDeltas</tt> mechanism is
 only of use for discovering non-resource deltas; it is not useful for discovering
-marker changes to resources corresponding to Java elements.
+marker changes to resources corresponding to Java elements.</p>
 <p>Thus the only way a client can find out about most marker deltas is
 to register its own resource change listener with the workspace. Since
 the client would still need to register a Java model change listener, having
 to do raises the question of relative ordering of these two notifications
-(there is no guarantee which will comes first).
+(there is no guarantee which will comes first).</p>
 <h3>
 Proposal: Expose corresponding resource deltas on Java element delta</h3>
 The proposed change is to improve the Java element delta to expose the
@@ -135,11 +135,11 @@ is the same resource as</tt>
 <br><tt>&nbsp;* @return the corresponding workspace resource delta, or
 &lt;code>null&lt;/code> if not applicable or none</tt>
 <br><tt>&nbsp;*/</tt>
-<br><tt>public IResourceDelta getCorrespondingResourceDelta();</tt>
+<br><tt>public IResourceDelta getCorrespondingResourceDelta();</tt></p>
 <p>Resource deltas will be available when the Java element delta results
 from the Java model receiving a resource change notification. When this
 happens, the resource delta for the corresponding will be made available
-from the Java element delta for the Java element:
+from the Java element delta for the Java element:</p>
 <ul>
 <li>
 Java project: expose resource delta for the corresponding project resource.</li>
@@ -170,8 +170,8 @@ and <tt>IResourceDelta.getMarkerDeltas</tt>. These marker changes will
 only be present on Java element deltas stemming from workspace resource
 deltas. They are no marker deltas associated with fine-grained Java element
 deltas arising from working copy reconciliation or saving (no markers have
-changes).
-<p>Other things we considered:
+changes).</p>
+<p>Other things we considered:</p>
 <ul>
 <li>
 For the case where a coarse-grained Java element deltas is issued, add

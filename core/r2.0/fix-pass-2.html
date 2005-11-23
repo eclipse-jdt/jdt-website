@@ -20,7 +20,7 @@ Core / Post Freeze 2 : Fix Plan&nbsp;</font></font></b></td>
 <ul>
 <li> improve incremental compiler with respect to anonymous type changes, these should not trigger recompilation of dependents.</li>
 <li> address Java delta defficiency with respect to project subfolder removal while project description is changed too. This causes the 
-Java model to notify a project deletion by mistake (also see <a href="bug http://bugs.eclipse.org/bugs/show_bug.cgi?id=18953">18953</a>).
+Java model to notify a project deletion by mistake (also see <a href="bug http://bugs.eclipse.org/bugs/show_bug.cgi?id=18953">18953</a>).</li>
 <li> fix type hierarchy NPE bug when computed on regions</li>
 <li> address scrapbook page problem when trying to report problems on imports</li>
 <li> address issue where replacing binary project doesn't trigger build</li>
@@ -28,6 +28,7 @@ Java model to notify a project deletion by mistake (also see <a href="bug http:/
 <li> fix NPE in search when no imports are defined and JRE is missing </li>
 <li> classpath variables should be exportable along with JDT/Core preferences </li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -37,15 +38,13 @@ Java model to notify a project deletion by mistake (also see <a href="bug http:/
 <ul>
 <li> <a href="http://dev.eclipse.org/bugs/buglist.cgi?email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=2.0+F3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time">All committed bugs</a> : overview of all relevant bugs, in case your bug isn't in the list, please
 use the <a href="http://dev.eclipse.org/mailman/listinfo/jdt-core-dev">jdt-core-dev</a> mailing list to explain why it should be escaladated.
-<p>
 </li>
 <li><a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=2.0+F3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >Unresolved bugs</a> : our intent is to solve these before freeze 3
-<p>
 </li>
 <li><a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=JDT&component=CORE&target_milestone=2.0+F3&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&namedcmd=Assigned&newqueryname=&order=Reuse+same+sort+as+last+time" >Resolved bugs</a> : bugs already fixed or closed during this fix pass
-<p>
 </li>
 </ul>
+</td>
 </tr>
 
 </table>

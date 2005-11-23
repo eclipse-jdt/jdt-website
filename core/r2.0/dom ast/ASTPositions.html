@@ -9,7 +9,7 @@ Hi,
 <p>Here are my thoughts regarding positions and AST. The major goal was
 to come up with a consistent view, even though this causes some more work
 for refactoring and for the implementation of the new AST. But I think
-it might be worth if we can come up with a consistent story for positions.
+it might be worth if we can come up with a consistent story for positions.</p>
 <h3>
 Some general statements</h3>
 
@@ -48,18 +48,18 @@ statement (2) leads to the conclusion that statements that have child statements
 will include the semicolon if the child statement has one. For the example</li>
 
 <p><br>for (int i= 0; i &lt; 10; i++)
-<br>&nbsp;&nbsp;&nbsp; foo();
+<br>&nbsp;&nbsp;&nbsp; foo();</p>
 <p>sourceEnd of the for statement will include the semicolon of the expression
-statement.</ul>
+statement.</p></ul>
 
 <h3>
 Open issues</h3>
 
 <h4>
 Multiple local declarations</h4>
-Currently multiple local declarations appear in the AST as n separate local
+<p>Currently multiple local declarations appear in the AST as n separate local
 declarations without any relationship to each others. This raises various
-questions:
+questions:</p>
 <ul>
 <li>
 what are the positions of those local declarations</li>
@@ -68,24 +68,24 @@ what are the positions of those local declarations</li>
 how is a visitor of that AST able to figure out that he deals with multiple
 local declaration.</li>
 </ul>
-Since the new AST isn't a 1:1 mapping of the compiler's AST anyway (we
+<p>Since the new AST isn't a 1:1 mapping of the compiler's AST anyway (we
 have the ExpressionStatement node) I opt to introduce new nodes as defined
 in the grammar. Since the semicolon doesn't belong to the variable declaration,
 it should be managed by the parent node that ties together multiple declarations.
-Here is an example:
-<p>int x= 10, x[]= null, i;
+Here is an example:</p>
+<p>int x= 10, x[]= null, i;</p>
 <p>LocalVariableDeclaration node manages:
 <br>&nbsp;&nbsp;&nbsp; the type (e.g. int)
 <br>&nbsp;&nbsp;&nbsp; the positions of the commas (if needed)
 <br>&nbsp;&nbsp;&nbsp; the actual variable declarators
 <br>&nbsp;&nbsp;&nbsp; sourceStart= start of the type
-<br>&nbsp;&nbsp;&nbsp; sourceEnd= ;
+<br>&nbsp;&nbsp;&nbsp; sourceEnd= ;</p>
 <p>VariableDeclarator node manages:
 <br>&nbsp;&nbsp;&nbsp; the variable name and its positions
 <br>&nbsp;&nbsp;&nbsp; the initialization
 <br>&nbsp;&nbsp;&nbsp; sourceStart= start of variable name
 <br>&nbsp;&nbsp;&nbsp; sourceEnd= end of initialization. Doesn't include
-the comma.
+the comma.</p>
 <p>If we want to do some optimization we could also have a node SingleLocalVariableDeclaration
 for declaration like int x; or int y= 10; The node would have the following
 fields:
@@ -93,26 +93,26 @@ fields:
 <br>&nbsp;&nbsp;&nbsp; the variable name and its positions
 <br>&nbsp;&nbsp;&nbsp; the initialization
 <br>&nbsp;&nbsp;&nbsp; sourceStart= start of type
-<br>&nbsp;&nbsp;&nbsp; sourceEnd= ;
+<br>&nbsp;&nbsp;&nbsp; sourceEnd= ;</p>
 <h4>
 Updates in for statements</h4>
-Analogous to the local variable declaration, the comma to separate the
+<p>Analogous to the local variable declaration, the comma to separate the
 update expressions can not be part of the expression (expressions don't
 contain a semicolon so they can't contain a comma either). To know the
 positions of the commas the for statement should manage them in a separate
-array.
+array.</p>
 <p><i>The general rule is, that whenever language elements are separate
 using a comma (for example an interface list in the implements statement,
 arguments of a method declaration, ...) the node containing the separated
 nodes should manage the positions of the comma, if they are of any interest.
 In a first implementation we could leave these positions out and use the
-scanner to find them if they are of interest.</i>
+scanner to find them if they are of interest.</i></p>
 <h4>
 Treatment of semicolon</h4>
-From our experiences with refactoring it is helpful in some cases to know
+<p>From our experiences with refactoring it is helpful in some cases to know
 where the position of the semicolon is. For example if the user extract
 a for statement and he doesn't select the action's semicolon we allow the
-extraction. So what can we do in these cases:
+extraction. So what can we do in these cases:</p>
 <ul>
 <li>
 simple don't allow the case. To support better selection we can offer some

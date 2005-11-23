@@ -173,7 +173,7 @@ EMPTY></tt>
 CDATA #REQUIRED</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class&nbsp;&nbsp;
 CDATA #REQUIRED</tt>
-<br><tt>&nbsp;&nbsp; ></tt>
+<br><tt>&nbsp;&nbsp; ></tt></p>
 <ul>
 <li><b>id</b> - the container unique name for which this resolver will be activated.</li>
 <li><b>class</b> - the class that implements this container initializer.
@@ -190,14 +190,14 @@ to resolve a classpath container in the context of a particular project.
 The initialize method should only be called once to resolve the class path
 entry (in case of failure, the container will not be considered as having been
 resolved).
-
+</p>
 <p>It is possible to register an initializer per container ID. The full container path 
 being passed along to the initializer. Its first segment is
 the container ID for which an initializer should be registered. The remaining segments
 can be used to provide additional hints for the container expansion.
 In case multiple resolvers are registered on the same container ID, the first
 registered one will be used).
-
+</p>
 <p>JavaCore provides a method to perform explicit modifications of a container:
 <pre>
 JavaCore#setClasspathContainer(
@@ -210,13 +210,13 @@ In particular, this method is to be used in  the context of a classpath initiali
 the actual initialization. Note that it allows to modify the value of a container for a set of projects
 at once. In reaction to invoking this method, the JavaModel will be refreshed and corresponding Java element
 changes will be notified.
-
+</p>
 <p> A classpath container implements <code>org.eclipse.jdt.core.IClasspathContainer</code> and can be queried
 through a JavaCore API: <code>JavaCore#getClasspathContainer(IPath containerPath, IJavaProject project) </code>.
 
 There is no assumption that the returned container must answer the exact same containerPath
 when requested <code>IClasspathContainer#getPath</code>. 
-Indeed, the containerPath is just an indication for resolving it to an actual container object.
+Indeed, the containerPath is just an indication for resolving it to an actual container object.</p>
 <p>
 Classpath container values are persisted locally to the workspace, but 
 are not preserved from a session to another. It is thus highly recommended to register a 
@@ -275,13 +275,13 @@ public interface IClasspathContainer {
     IPath getPath();
 }
 </pre>
-
+</p>
 <p><font color="#FF0000"><b>Issue</b>: The Mac OS X JDK install is
 an interesting case. There the rt.jar is split into two binary JARs (classes.jar,
 ui.jar), but there is still a single src.jar. This cases needs to be handled by </font><font color="#FF0000">the
 source lookup. For example, when src.jar is attached to classes.jar then when
 looking up java.awt.Frame out of ui.jar, the source attachment of classes.jar
-needs to searched as well.</font>
+needs to searched as well.</font></p>
 
 <h2>
 Example</h2>
@@ -295,14 +295,14 @@ The class path of a project will look as follows:
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &lt;classpathentry kind="output" path="bin"/>
 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&lt;/classpath&gt;
+&lt;/classpath&gt;</p>
 <p>In the case where the user didn't override the
 VM install at the project level. Then the Java launching contributed container
 resolver (registered for container prefixes: "JDK") would resolve "JDK/1.3" using the default
-VM install, using "1.3" as an hint, and may expand it into the following:
+VM install, using "1.3" as an hint, and may expand it into the following:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &lt;classpathentry kind="lib" path=&quot;d:/jdk/1.3.1/jre/lib/rt.jar&quot;
 rootpath=&quot;d:/jdk1.3.1/lib/src.jar&quot; sourcepath=&quot;/src&quot;/&gt;
-
+</p>
 </body>
 </html>
