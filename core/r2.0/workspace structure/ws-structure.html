@@ -12,8 +12,8 @@ Workspace Structure</h2>
 Last revised 11:15 Saturday September 8, 2001
 <p>Original work item: "Make the build path less sensitive with regard
 to whether a project is a source or a binary project. This is also related
-to patching (i.e., adding a source folder to a binary project)."
-<p>Related issue: support for extension directories containing many jars.
+to patching (i.e., adding a source folder to a binary project)."</p>
+<p>Related issue: support for extension directories containing many jars.</p>
 <p>There was much discussion. The underlying issue is how to structure
 workspaces for significant Java development efforts. The Eclipse Project
 is an example of such an effort, so the question is not merely of passing
@@ -21,17 +21,17 @@ interest. Since much of what is being developed in the Eclipse Project
 are plug-ins, the question also touches on PDE's domain. However, some
 aspects of the problem affect all significant Java development efforts
 and not just ones for developing plug-ins. So we begin to investigating
-those.
+those.</p>
 <h3>
 Problem: Close Collaboration between Adjacent Teams</h3>
-The following is an attempt to capture a familiar problem in a general
+<p>The following is an attempt to capture a familiar problem in a general
 way that does not presume exactly how developers' workspaces are to be
 structured. Consider the case of two components, with PUI dependent on
 Core (imagine that Core is the core component, and UI is the corresponding
 UI component built atop it). Now imagine that Core and UI are under active
 development by two teams, with ownership split along component lines. For
 maximum convenience to both teams, the teams would like to be able to do
-the following:
+the following:</p>
 <ul>
 <li>
 Each team would like to be able to work in a workspace that contains the
@@ -170,25 +170,25 @@ classpath variable would thereby gain access to all the libraries:
 <br>&nbsp;&nbsp;&nbsp; output /P2/bin</blockquote>
 Changing the workspace binding of the classpath variable affects all projects
 that reference the variable. This makes it easy to change the set of libraries
-without having to change the projects individually.
+without having to change the projects individually.</p>
 <p>Since classpath variable bindings are local to the workspace, there
 is no obvious automatic way by which these classpath variables would get
 their bindings. The bindings would have to be configured for each workspace;
 loading bindings from a file, or initializing them via a script, are feasible
-options..
+options..</p>
 <p>The classpath variables currently bind to paths, and classpath entries
 can contains paths that begin in a variable. Changing variables to bind
 to a list of paths would be a major change, and would likely require reworking
 much of existing API. We generally agreed that we would not pursue this
-approach since it seems somewhat unlikely to solve much of the problem.
+approach since it seems somewhat unlikely to solve much of the problem.</p>
 <h3>
 Proposal: Explicitly Export Libraries from Required Projects</h3>
-The proposal is to extend the required projects mechanism to allow a required
+<p>The proposal is to extend the required projects mechanism to allow a required
 project to contribute more than just its binary output folder. Rather,
 a project would be able to indicate that any of its libraries are to be
 <b>exported</b>.
 Exported libraries also become available to other projects in the workspace
-that list this project as a required project.
+that list this project as a required project.</p>
 <p>In the above example, the customer could instead have an arrangement
 like:
 <blockquote>project P1
@@ -202,9 +202,9 @@ like:
 library lib1.jar; ...; <b>export</b> library lib20.jar
 <br>&nbsp;&nbsp;&nbsp; output /PLib/bin</blockquote>
 What this means is that when P1 (similarly, P2) is built, the libraries
-on its build classpath consists of /PLib/bin, lib1.jar, ..., lib20.jar.
+on its build classpath consists of /PLib/bin, lib1.jar, ..., lib20.jar.</p>
 <p>The modified semantics of a project P with a required project R are
-as follows:
+as follows:</p>
 <ul>
 <li>
 There is an export flag associated with each library explicitly included
@@ -276,25 +276,25 @@ Relative to a given project, a library is internal iff the path to the
 jar or folder lies inside the project's resource tree. Other libraries
 are considered external to the project.
 <p>Should projects be allowed to export arbitrary libraries, or should
-exported libraries always be internal to the project?
+exported libraries always be internal to the project?</p>
 <p>Restricting exports to internal libraries ensures that a project that
 is to be used by other projects is somewhat self contained. If you load
 such a project from a repository, you are guaranteed all the libraries
-it exports will be contained therein.
+it exports will be contained therein.</p>
 <p>On the other hand, unrestricted exports are more flexible, and allow
 a project to export a collection of libraries that are not necessarily
 contained within the project's resource tree. (However, it is unclear whether
-this additional flexibility would be useful.)
+this additional flexibility would be useful.)</p>
 <p>We opted to allow unrestricted imports, but decided to simplify the
 error processing by only reporting problems against the project with the
 missing library (or required project) explicitly on its classpath. Any
 missing entries would simply be omitted from the effective classpath calculation.for
-dependent projects.
+dependent projects.</p>
 <h4>
 Classpath Variables</h4>
-A project's build classpath may include references to classpath variables
+<p>A project's build classpath may include references to classpath variables
 that get bound to libraries (or other projects). How do exports and variables
-interact?
+interact?</p>
 <p>The export flag could be associated either with the variable reference
 or with the variable binding. If the export flag is associated with the
 variable reference, it would indicate exporting whatever library the classpath
@@ -304,18 +304,18 @@ variable happened to be bound to on a given occasion would be exported
 conditionally on the flag in the binding. The proposal is to go with the
 former (export flag with variable reference) since its semantics are somewhat
 simpler and allow the export flag to be shared with other team members
-(the bindings of classpath variables are not shareable).
+(the bindings of classpath variables are not shareable).</p>
 <h4>
 Exporting Auxillary Libraries</h4>
-Note that explicit exports also address another problem that arises when
+<p>Note that explicit exports also address another problem that arises when
 a project needs to export a pre-built library in addition to the results
 of compiling its source files (the Eclipse debugger's jdi.jar is a fine
 instance of this). In Eclipse 1.0, only the class files in the project's
 binary output folder are exported to dependent projects. This proposal
-allows a project to export any number of additional libraries as required.
+allows a project to export any number of additional libraries as required.</p>
 <h4>
 Exporting Projects</h4>
-By exporting other projects, a project can consolidate and concentrate
+<p>By exporting other projects, a project can consolidate and concentrate
 the outputs from several other projects:..
 <blockquote>project P1
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P/source; export library
@@ -332,39 +332,39 @@ Effective build classpath of P1andP2 includes everything exported from
 both P1 and P2:
 <blockquote>build classpath = library /P1andP2/source; library /P1/bin;
 library /P1/lib1.jar; library /P2/bin; library /P2/lib2.jar
-<br>output /P1andP2/bin</blockquote>
+<br>output /P1andP2/bin</blockquote></p>
 
 <h3>
 Proposal: Admit Library Projects which Contain No Source Code</h3>
-One objection to this whole approach is that the Java project is being
+<p>One objection to this whole approach is that the Java project is being
 hijacked. In the original design, a Java project is a buildable container
 of Java source code. The addition of exported libraries starts to turn
 the project into something more general. If we are comfortable with this
-general trend, there are ways that the design can embrace it more whole-heartedly.
+general trend, there are ways that the design can embrace it more whole-heartedly.</p>
 <p>The above proposal to expand the semantics of required project creates
 a new role for a Java project as a container of libraries. This notion
 of <b>library project</b> is rounded out by allowing Java projects without
 source or output folders. The build classpath of a library project orders
 the list of exported libraries and projects (and provides the additional
-context required for browsing the project itself).
+context required for browsing the project itself).</p>
 <p>In our example, the library project could be expressed more directly
 without having to postulate source and output folders which are completely
-unmotivated in this case:
+unmotivated in this case:</p>
 <p>project PLib
 <br>&nbsp;&nbsp;&nbsp; build classpath = <b>export</b> library lib1.jar;
-...; <b>export</b> library lib20.jar
+...; <b>export</b> library lib20.jar</p>
 <p>A library project is recognizable simply by the absence of source folders
 on the build classpath. (We considered adding a new flag to the project
 to explicitly mark library projects, but decided this was not necessary
-and would be confusing.)
+and would be confusing.)</p>
 <p>Note that library projects are not "buildable" in any meaningful sense
 since they lack source code to compile (and without source code there is
 no pressing need for a binary output folder). However, there still needs
 to be a mechanism for detecting and reporting errors in the build classpath
 for library projects. Except for such checks, the Java incremental project
-builder should ignore library projects.
+builder should ignore library projects.</p>
 <p>The following kinds of entries on the build classpath of a library project
-would serve these purposes:
+would serve these purposes:</p>
 <ul>
 <li>
 Source folders - a library project has no source folders, by definition.</li>
@@ -391,19 +391,19 @@ of the resource tree at the time of the last build. However, if the builder
 was removed for library projects, there would need to be mechanism to add
 it if the classpath was changed to include a source project. We decided
 that we should simply avoid the additional hassles and leave the Java builder
-installed for all Java projects.
+installed for all Java projects.</p>
 <h3>
 Background</h3>
-From Philippe Mulet 08/31/2001 12:13 PM
+<p>From Philippe Mulet 08/31/2001 12:13 PM</p>
 <p>I also think this has to be a basic mechanism at the JavaCore level,
 which the PDE can then surface to plugin writers.
 <br>I would like to see this one addressed asap, so that it is possible
-to share projects transparently at least amongst us.
-<p>=======
-<p>From Erich Gamma on 08/31/2001 12:43 PM
+to share projects transparently at least amongst us.</p>
+<p>=======</p>
+<p>From Erich Gamma on 08/31/2001 12:43 PM</p>
 <p>Here is some more input on our favorite topic "make the build class
 path less sensitive
-<br>with regard to whether a project is a source or binary project".
+<br>with regard to whether a project is a source or binary project".</p>
 <p>Our conclusion in SNZ was that this boils down to a PDE project layout
 issue (binary
 <br>projects etc). However, the EC discussion from below illustrates a
@@ -413,14 +413,14 @@ of PDE.
 <br>The scenario is similar to the WSAD scenario with extension dirs. If
 we support to
 <br>contribute contained JARs from a project then this problem would be
-addressed.
+addressed.</p>
 <p>We should therefore reconsider the solution independent of the PDE issue.
 <br>If I do that then I come to the conclusion that the proposed mechanism
 is valuable
-<br>and I suggest to go ahead with specifying it in detail.
-<p>Thoughts?
+<br>and I suggest to go ahead with specifying it in detail.</p>
+<p>Thoughts?</p>
 <p>=======
-<br>From Jon Skeet &lt;skeet@pobox.com> on Eclipse Corner 20.8.2001
+<br>From Jon Skeet &lt;skeet@pobox.com> on Eclipse Corner 20.8.2001</p>
 <p>Referencing a project's libraries in another project:
 <br>The project I'm working on uses a fairly large number of libraries
 <br>(about 20 jar files, IIRC). I had hoped I'd be able to create one
@@ -436,7 +436,7 @@ B
 <br>only seems to put project A's individual source/class files on the
 <br>classpath for project B. I've tried adding as an external jar and
 <br>importing the jar file into the project, and had no joy with either
-:(
+:(</p>
 <h3>
 Document History</h3>
 [...]

@@ -12,42 +12,42 @@ Uninitialized Classpath Variables</h2>
 Last revised 11:30 Monday November 19, 2001
 <p>Original work item: "Building with uninitialized class path variables.
 You can add a project from the repository that gets built without having
-the JavaUI that initializes the JRE_ variables is activated."
+the JavaUI that initializes the JRE_ variables is activated."</p>
 <p>The general problem is that a classpath variable can show up in a project's
 classpath quite early (for example, when a project is loaded from a repository),
 and well before the activation of a plug-in that might willingly initialize
 the workspace's binding for that variable. Without a binding for all the
 variables mentioned on its build classpath, the project cannot be successfully
 built. However, there is currently no mechanism by which these variables
-can get initialized.
+can get initialized.</p>
 <p>For variables that the developer (or his team mates) introduces explicitly,
 this is not a particular problem. The developer's corrective action is
-to explicitly establish a binding for the variable, and then rebuild.
+to explicitly establish a binding for the variable, and then rebuild.</p>
 <p>However, there is a problem for variables that are introduced and ordinalrily
 initialized by some tool. For these, the developer may not be in a position
 to explicitly establish a binding for the variable, and might not even
-know which plug-in needs to be activated.
+know which plug-in needs to be activated.</p>
 <p>This problem is a symptom of a more widespread problem. For example,
-PDE suffers this problem with the "ECLIPSE_HOME" variable.
+PDE suffers this problem with the "ECLIPSE_HOME" variable.</p>
 <h3>
 Proposal</h3>
-We introduce a JDT Core extension point <tt><a href="classpathVariableInitializer.html">org.eclipse.jdt.core.classpathVariableInitializer</a></tt>
+<p>We introduce a JDT Core extension point <tt><a href="classpathVariableInitializer.html">org.eclipse.jdt.core.classpathVariableInitializer</a></tt>
 through which plug-ins can supply initializer code for named classpath
-variables.
-<p>Examples of how this would be used:
+variables.</p>
+<p>Examples of how this would be used:</p>
 <p><tt>&lt;extension</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; point = "org.eclipse.jdt.core.classpathVariableInitializer"></tt>
 <br><tt>&nbsp;&nbsp;&nbsp; &lt;classpathVariableInitializer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable="ECLIPSE_HOME"</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class="org.eclipse.pde.internal.core.EclipseHomeInitializer"/></tt>
-<br><tt>&lt;/extension></tt>
+<br><tt>&lt;/extension></tt></p>
 <p><tt>&lt;extension</tt>
 <br><tt>&nbsp;&nbsp;&nbsp; point = "org.eclipse.jdt.core.classpathVariableInitializer"></tt>
 <br><tt>&nbsp;&nbsp;&nbsp; &lt;classpathVariableInitializer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable="JRE_LIB"</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class="org.eclipse.jdt.internal.ui.CPVInitializer"/></tt>
-<br><tt>&lt;/extension></tt>
-<p>The mechanism would work as follows:
+<br><tt>&lt;/extension></tt></p>
+<p>The mechanism would work as follows:</p>
 <ul>
 <li>
 It applies automatically each time a classpath containing an unbound classpath

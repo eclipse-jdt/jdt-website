@@ -14,29 +14,29 @@ Last revised&nbsp; 17:00 Wednesday September 26, 2001
 projects to be under development at the same time. For the purposes of
 this discussion, assume teams, projects, and components align. All teams
 are working in the same repository, sharing a set of projects via a single
-stream; each project contains the source code for a single component.
+stream; each project contains the source code for a single component.</p>
 <p>Our example scenario has 4 projects: P1, P2, P3, and P4, with components
 C1 through C4, respectively. C1 is the only component that does not depend
 on any others; C2 depends on C1; C3 depends on C1 and C2; C4 depends on
-C2 (N.B., but not on C1 or C3).
+C2 (N.B., but not on C1 or C3).</p>s
 <p>We assume that there is a single CVS repository that contains all 4
 projects in source code form. In addition, we assume that centralized builds
 are done periodically and posted to a web server where they can be downloaded
 as a unit. These downloads take the form of a zipped directory which includes
 a binary jar for each component, along with corresponding source jars to
-aid debugging.
+aid debugging.</p>
 <p>We assume that each developer can download builds from the web server
 and install them on their local machine. To do their work, they set up
 Eclipse workspaces on their local machine and load one or more projects
 from the CVS repository. They also upgrade their workspace from time to
-time as new builds become available.
+time as new builds become available.</p>
 <p>These assumptions are a plausible abstraction of what goes on in open
 source projects. (It is an open question as to how closely the Eclipse
-project with follow this work model.)
+project with follow this work model.)</p>
 <h3>
 Developing, Using, and Patching Components</h3>
-The following things are the norm for someone actively <b>developing</b>
-a component:
+<p>The following things are the norm for someone actively <b>developing</b>
+a component:</p>
 <ul>
 <li>
 source code is available for entire component</li>
@@ -88,7 +88,7 @@ just <i>use</i>. How can the developers structure their workspaces so that
 they retain sufficient flexibly to switch between using and patching (or
 developing) these other components?
 <p>The various scenarios presented below are all plausible workspace setups,
-each with certain advantages and disadvantages:
+each with certain advantages and disadvantages:</p>
 <ul>
 <li>
 <a href="#Component plus libraries">Component plus libraries</a></li>
@@ -227,7 +227,7 @@ jar)</li>
 <li>
 Note: uses required projects (works in R1.0).</li>
 </ul>
-project P1 (shared)
+<p>project P1 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P1/C1
 <br>&nbsp;&nbsp;&nbsp; output folder /P1/bin
 <br>&amp;
@@ -242,7 +242,7 @@ P2
 <br>&amp;
 <br>project P4 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; project P2
-<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
+<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin</p>
 <h3>
 <a NAME="Classpath variables to switch between libraries and sources"></a>Classpath
 variables to switch between libraries and sources</h3>
@@ -312,7 +312,8 @@ Con: unable to browse code for prerequiste components in proper content
 <li>
 Note: uses classpath variables whose value is either a project or a library
 (in R1.0, JDT core supports these but JDT UI does not expose).</li>
-</ul>
+</ul> 
+<p>
 project P1 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P1/C1
 <br>&nbsp;&nbsp;&nbsp; output folder /P1/bin
@@ -327,7 +328,7 @@ project P1 (shared)
 <br>|
 <br>project P4 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; P2_LIB
-<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
+<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin</p>
 <h3>
 <a NAME="Unshared Proxy library projects"></a>Unshared Proxy library projects</h3>
 
@@ -411,11 +412,11 @@ project P1; project P2
 <br>project P4 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
 <br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c4.jar+BUILD/c3src.zip;
-project P2
+project P2</p>
 <p>None of these projects are shared; however, they have the same names
 as the source projects in repository. This means that any of the library
 projects can be replaced by loading the corresponding source project from
-the repository. (None of the other projects in the workspace need to change.)
+the repository. (None of the other projects in the workspace need to change.)</p>
 <p>project P1 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P1/C1
 <br>&nbsp;&nbsp;&nbsp; output folder /P1/bin
@@ -431,11 +432,11 @@ P2
 <br>|
 <br>project P4 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; project P2
-<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
+<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin</p>
 <p>Regarding automation, the centralized build could create a simple XML
 document describing the collection of proxy library projects for the workspace.
 Given this document, a special purpose plug-in could be written that would
-create (or modify existing) unshared proxy library projects in the workspace.
+create (or modify existing) unshared proxy library projects in the workspace.</p>
 <p><tt>&lt;projects></tt>
 <br><tt>&nbsp;&nbsp;&nbsp; &lt;project name="P1"></tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;natures</tt>
@@ -489,17 +490,17 @@ export="true"/></tt>
 &lt;classpathentry kind="project" path="/P2"/></tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/libraries></tt>
 <br><tt>&nbsp;&nbsp;&nbsp; &lt;/project></tt>
-<br><tt>&lt;/projects></tt>
+<br><tt>&lt;/projects></tt></p>
 <h3>
 <a NAME="Shared proxy library projects"></a>Shared proxy library projects</h3>
-In the previous approach to using proxy library projects, these projects
+<p>In the previous approach to using proxy library projects, these projects
 were not under VCM. In this variant of it, the proxy library projects are
 obtained from a repository as well. We will assume that the proxy library
 projects are stored in a different repository from the source projects.
 By assuming they're in a separate binary repository, it is easy to use
 the same project names for both source and binary forms (doing so in the
 same repository would required introducing non-standard binary-only and
-source-only branches in the project version histories).
+source-only branches in the project version histories).</p>
 <ul>
 <li>
 Team member's workspace contains a project for each component.</li>
@@ -581,9 +582,9 @@ project P1; project P2
 <br>project P4 (shared via binary repository)
 <br>&nbsp;&nbsp;&nbsp; library project
 <br>&nbsp;&nbsp;&nbsp; build classpath = export /P4/c4.jar+BUILD/c4src.zip;
-project P2
+project P2</p>
 <p>The proxy library projects have the same names as the source projects,
-but are stored in a separate repository.
+but are stored in a separate repository.</p>
 <p>project P1 (shared via source repository)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P1/C1
 <br>&nbsp;&nbsp;&nbsp; output folder /P1/bin
@@ -599,17 +600,17 @@ P2
 <br>|
 <br>project P4 (shared via source repository)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; project P2
-<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
+<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin</p>
 <h3>
 <a NAME="Stub projects"></a>Stub projects</h3>
-This is a variation on unshared proxy library projects that makes different
+<p>This is a variation on unshared proxy library projects that makes different
 tradeoffs. We call these <i>stub projects</i>. In particular, the ability
 to browse a prereqisite component is traded for the ability to have only
 a minimal set of extra library projects in the workspace. The only difference
 is that stub projects do not require other projects (whereas proxy library
 projects did require other projects). This allow a workspace to get by
 with a less than complete set of stub projects. Creating a stub project
-never forces you to create other stub projects.
+never forces you to create other stub projects.</p>
 <ul>
 <li>
 Main project is in source and is shared via the repository.</li>
@@ -698,22 +699,22 @@ P2
 <br>|
 <br>project P4 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; project P2
-<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
-<p>The corresponding stub projects (note the absence of required projects):
+<br>&nbsp;&nbsp;&nbsp; output folder /P4/bin</p>
+<p>The corresponding stub projects (note the absence of required projects):</p>
 <p>project P1 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c1.jar+BUILD/c1src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c1.jar+BUILD/c1src.zip</p>
 <p>project P2 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c2.jar+BUILD/c2src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c2.jar+BUILD/c2src.zip</p>
 <p>project P3 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c3.jar+BUILD/c3src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c3.jar+BUILD/c3src.zip</p>
 <p>project P4 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c4.jar+BUILD/c3src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c4.jar+BUILD/c3src.zip</p>
 <p>For example, a developer working on P3 would need stub projects for
-P1 and P2.
+P1 and P2.</p>
 <p>project P3 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P3/C3; project P1; project
 P2
@@ -725,9 +726,9 @@ P2
 <br>&amp;
 <br>project P1 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c1.jar+BUILD/c1src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c1.jar+BUILD/c1src.zip</p>
 <p>If they then decided to develop P1 as well, they would replace P1 by
-the souce project. Their workspace would now look like:
+the souce project. Their workspace would now look like:</p>
 <p>project P3 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P3/C3; project P1; project
 P2
@@ -739,24 +740,24 @@ P2
 <br>&amp;
 <br>project P1 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P1/C1
-<br>&nbsp;&nbsp;&nbsp; output folder /P1/bin
+<br>&nbsp;&nbsp;&nbsp; output folder /P1/bin</p>
 <p>The fatal flaw is clear in the case of a workspace containing P4 and
-a stub for P2.
+a stub for P2.</p>
 <p>project P4 (shared)
 <br>&nbsp;&nbsp;&nbsp; build classpath = source /P4/C4; project P2
 <br>&nbsp;&nbsp;&nbsp; output folder /P4/bin
 <br>&amp;
 <br>project P2 (not shared)
 <br>&nbsp;&nbsp;&nbsp; library project
-<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c2.jar+BUILD/c2src.zip
+<br>&nbsp;&nbsp;&nbsp; build classpath = export BUILD/c2.jar+BUILD/c2src.zip</p>
 <p>If, for example, a class in C4 subclasses a class in C2 which subclasses
 a class in C1, then the compiler will need to get its hands on the class
 in C1. Unfortunately, neither the source code nor binary for C1 is anywhere
-to be found.
+to be found.</p>
 <h3>
 <a NAME="Other Scenarios"></a>Assorted Other Scenarios</h3>
-A couple of other scenarios can be constructed using a combination of the
-techniques employed above:
+<p>A couple of other scenarios can be constructed using a combination of the
+techniques employed above:</p>
 <ul>
 <li>
 Unshared proxy library projects with different project names.</li>
@@ -833,10 +834,10 @@ There is a limit to how large it will scale, since the cost of recompiling
 everything from source increases method the number and size of components.
 It is not recommended in situations where many of the components are not
 under active development; it will be more efficient to use pre-compiled
-binary libraries for the static components.
+binary libraries for the static components.</p>
 <p>Approaches involving classpath variables do not have much to recommend
 them. They share most of the disadvantages (and none of the advantages)
-of using proxy library projects.
+of using proxy library projects.</p>
 <p>The "Proxy Library Projects" workspace setup allows each developer to
 work on their assigned component while providing ready access to all other
 components. The arrangement is flexible in allowing easy switching from
@@ -849,7 +850,7 @@ in the first place. This task would have to be automated by some means;
 it would too tedious and error prone to have each developer create a workspace
 from scratch. For shared proxy library projects, the tedium is in creating
 new versions of the projects in their repository. This task could be automated
-as part of the centralized build process.
+as part of the centralized build process.</p>
 <p>The "Stub Projects" workspace setup allows each developer to work on
 their assigned component while providing placeholders for other components
 that it depends on. The arrangement is flexible in allowing easy switching
@@ -859,16 +860,16 @@ not have enough information to compile. The other drawbacks are their limited
 useful of the stub projects (can't browse the component; can't patch the
 component), and the ongoing need to create additional proxy projects to
 fill in for the missing prerequisites as real source projects get added
-to the workspace.
+to the workspace.</p>
 <h3>
 Document History</h3>
-15:45 Wednesday September 5, 2001 - first version sent for comments
+<p>15:45 Wednesday September 5, 2001 - first version sent for comments
 <br>13:30 Thursday September 6, 2001 - revised for first round of comments
 <br>19:40 Wednesday September 12, 2001 - automation for unshared proxy
 library projects
 <br>10:15 Wednesday September 26, 2001 - added stub projects
 <br>17:00 Wednesday September 26, 2001 - documented fatal flaw with stub
 projects
-<br>&nbsp;
+</p>
 </body>
 </html>

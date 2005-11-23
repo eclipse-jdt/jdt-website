@@ -13,14 +13,14 @@ Classpath Variable Initializer</h1></center>
 <b><i>Identifier: </i></b>org.eclipse.jdt.core.classpathVariableInitializer
 <p><b><i>Description: </i></b>This extension point allows a plug-in to
 register code for programmatically initializing a particular named classpath
-variable.
-<p><b><i>Configuration Markup:</i></b>
+variable.</p>
+<p><b><i>Configuration Markup:</i></b></p>
 <p><tt>&nbsp;&nbsp; &lt;!ELEMENT classpathVariableInitializer></tt>
 <br><tt>&nbsp;&nbsp; &lt;!ATTLIST classpathVariableInitializer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable&nbsp;&nbsp; CDATA #REQUIRED</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 CDATA #REQUIRED</tt>
-<br><tt>&nbsp;&nbsp; ></tt>
+<br><tt>&nbsp;&nbsp; ></tt></p>
 <ul>
 <li>
 <b>variable</b> - the name of the classpath variable</li>
@@ -32,16 +32,15 @@ with a public 0-argument constructor and an implementation of the <tt>initialize
 method.</li>
 </ul>
 <b><i>Examples:</i></b>
-<br>The following is an example of an IClasspathVariableInitializer for
-a classpath variable named "FOO":
+<p>The following is an example of an IClasspathVariableInitializer for
+a classpath variable named "FOO":</p>
 <p><tt>&lt;extension</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; point="org.eclipse.jdt.core.classpathVariableInitializer"></tt>
 <br><tt>&nbsp;&nbsp; &lt;classpathVariableInitializer</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable="FOO"</tt>
 <br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class="com.example.CPVInitializer"/></tt>
-<br><tt>&lt;/extension></tt>
+<br><tt>&lt;/extension></tt></p>
 <p><b><i>Supplied Implementation:</i></b>
-<br>None.
-<br>&nbsp;
+<br>None.</p>
 </body>
 </html>
