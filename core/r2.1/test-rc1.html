@@ -29,8 +29,9 @@ Core / Release Candidate 1 : Testing Plan&nbsp;</font></font></b></td>
 </li>
 <li> remaining <a href="http://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=allwordssubstr&short_desc=&product=JDT&component=Core&target_milestone=2.1+RC1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=anywords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailreporter2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&namedcmd=1.0.x&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">unverified</a>
 </li>
-<li> ensure we did not break source compatibility with 2.0 Eclipse plugin sources (at least at API level).
+<li> ensure we did not break source compatibility with 2.0 Eclipse plugin sources (at least at API level).</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -41,6 +42,7 @@ Core / Release Candidate 1 : Testing Plan&nbsp;</font></font></b></td>
 <li>take a 2.1 shared project (using classpath enhancements such as exclusion patterns, nested source folders,
 multiple output folders) and check it out in a 2.0 client. Do we properly ignore extra information ?</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -54,6 +56,7 @@ search for references to method Collection#add(). </li>
 <li> check speed of new source mapping, especially in conjunction with search inside binary files with attached sources (suspecting regression),
 maybe it should precompute all possible roots at once instead of lazily. </li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -64,6 +67,7 @@ maybe it should precompute all possible roots at once instead of lazily. </li>
 updating properly, could be UI refresh or reconciling. Enabling trace can indicate if reconciliation diagnosis was right.</li>
 <li>paste in some code highly broken (specs from design note with some sparse signatures etc...)</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -76,6 +80,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <li> usage of multiple output folders </li>
 <li> usage of nested source folders </li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -84,6 +89,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <ul>
 <li>check export/reimport of Java preferences</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -95,6 +101,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <li>check classpath problem marker update</li>
 <li>check handling of corruption of .classpath file</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -104,6 +111,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <li>challenge it trying various refactoring actions on corner cases and source with errors</li>
 <li>check inferred quickfixes for compilation problems</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -112,6 +120,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <ul>
 <li>check default settings in various mode (1.3, 1.4)</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -124,6 +133,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <li>check indexer crash recovery </li>
 <li>check index format change recovery </li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -133,6 +143,7 @@ updating properly, could be UI refresh or reconciling. Enabling trace can indica
 <li>missing types</li>
 <li>performance</li>
 </ul>
+</td>
 </tr>
 
 <tr>
@@ -156,6 +167,7 @@ delta issued
 </ul>
 </li>
 </ul>
+</td>
 </tr>
 
 </table>
