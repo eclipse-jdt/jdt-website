@@ -38,7 +38,23 @@ Happening?&nbsp; </font></font></b></td>
 
 
 
+
+
+
+
+
+
+
+
 <img src="../ok.gif" height=10 width=10> 
+
+
+
+
+
+
+
+
 
 
 
@@ -54,6 +70,14 @@ Happening?&nbsp; </font></font></b></td>
 
 
 
+
+
+
+
+
+
+
+
 <img src="../progress.gif" height=5 width=14>
 
 
@@ -62,7 +86,23 @@ Happening?&nbsp; </font></font></b></td>
 
 
 
+
+
+
+
+
+
+
+
 <img SRC="../new.gif" NOSAVE BORDER=0>
+
+
+
+
+
+
+
+
 
 
 
@@ -80,9 +120,15 @@ plan</a>, to be delivered according to the <a
 schedule</a>.
 <!--<b> Disclaimer: We
 
+
+
 are still in planning mode. The 3.2 plan below is a proto plan and
 
+
+
 input from the community is very welcome at this stage. </b> 
+
+
 
 -->
       </td>
@@ -168,14 +214,16 @@ unnecessary $NON-NLS tags (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)<br>
             </li>
           </ul>
-          <li>Enable pluggable participation in compilation (<a
+          <li><img src="../progress.gif" height="5" width="14"> Enable
+pluggable participation in compilation (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
 (e.g. APT)</li>
           <li><img src="../ok.gif" height="10" width="10"> Allow valid
 classfile generation in presence of optional
 compiler errors (configured by some preference) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107282">107282</a>)</li>
-          <li>Provide API to compute the list of files to be cleaned by
+          <li><img src="../progress.gif" height="5" width="14"> Provide
+API to compute the list of files to be cleaned by
 the Java builder (for a UI to warn user) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
           </li>
@@ -201,7 +249,8 @@ build state) (<a
       <ul>
         <li><b>DOM AST</b></li>
         <ul>
-          <li>More robust DOM AST: statement level recovery (<a
+          <li><img src="../progress.gif" height="5" width="14"> More
+robust DOM AST: statement level recovery (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)</li>
           <li><img alt="OK mark" src="../ok.gif"
  style="width: 10px; height: 10px;"> Cleanup bindings: generic vs.
@@ -229,7 +278,9 @@ across AST contexts (<a
 (performance item for open
 type dialog) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110060">110060</a>)</li>
-          <li>Offer enclosing local variable when matching its
+          <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Offer enclosing local variable
+when matching its
 type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)</li>
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
 Allow regex in Java search (requires JDK 1.4)
@@ -240,7 +291,7 @@ Provide API for spell checking any symbol
 (i.e. is this symbol an identifier anywhere) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=37528">37528</a>) </li>
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-More powerful search (template based, e.g.
+More powerful search (code pattern based, e.g.
 search where synchronized on 'JavaModelManager') (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
         </ul>
@@ -308,6 +359,11 @@ the VM max heap size (-Xmx) (<a
 compatible with upcoming
 versions (for unknown attributes) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101425">101425</a>)</li>
+          <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Address
+long standing issue with secondary types (not found by model
+name environment during reconcile) (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
 Investigate allowing classpath containers to
 refer to further container/variable entries (<a
@@ -351,7 +407,8 @@ allocations: "new A&lt;ctrl-space&gt;" (<a
  style="width: 10px; height: 10px;"> Support for Camel prefix: e.g.
 "NPE&lt;ctrl-space&gt;&nbsp; --&gt; NullPointerException" (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102572">102572</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14"> Provide
+          <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Provide
 completion on break/continue label (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>)</li>
           <li>Completion in annotation member pair value</li>
@@ -447,103 +504,6 @@ javadoc from source (<a
  style="width: 10px; height: 10px;"> Provide API extension for
 IProblem, allowing to categorize and associate marker type - philippe<br>
         </li>
-<!--
-
-
-
-
-
-
-
-	<li> more performance work <i>- all</i> </li>
-
-
-
-
-
-
-
-        <li> specify component.xml <i>- olivier</i> </li>
-
-
-
-
-
-
-
-        <li> convert message bundles <i>- olivier</i> </li>
-
-
-
-
-
-
-
-        <li> convert to manifest.mf <i>- olivier</i> </li>
-
-
-
-
-
-
-
-        <li> convert to jar'ed plugin format <i>- olivier</i> </li>
-
-
-
-
-
-
-
-        <li> improve batch compiler performance <i>- olivier, philippe </i></li>
-
-
-
-
-
-
-
-        <li> support @SuppressWarning annotation <i>- philippe</i></li>        
-
-
-
-
-
-
-
-        <li> investigate provide full workspace type index (replacing all types cache) <i>- kent, frederic</i></li>
-
-
-
-
-
-
-
-        <li> investigate performance on startup 
-
-
-
-
-
-
-
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=84877">84877</a>)
-
-
-
-
-
-
-
-        </li>
-
-
-
-
-
-
-
--->
         <li> Bug fixing
 (<a
  href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M3&amp;resolution=FIXED">fixed</a>)
@@ -568,7 +528,8 @@ in progress</a></li>
       <td width="98%">For <b>3.2-Milestone 4 (2005/12/16)</b>, we will
 focus on the following items:<br>
       <ul>
-        <li>Initiate discussion for locking projects (JDT or platform
+        <li><img src="../progress.gif" height="5" width="14"> Initiate
+discussion for locking projects (JDT or platform
 feature?) - philippe, jerome</li>
         <li><img src="../progress.gif" height="5" width="14"> Allow
 formatting directly from DOM AST by moving
@@ -590,7 +551,8 @@ APT completion) (<a
         <li><img src="../progress.gif" height="5" width="14"> Provide
 pluggable CompilationParticipant API for builder
 actions - kent</li>
-        <li>Provide API to compute the list of files to be cleaned by
+        <li><img src="../progress.gif" height="5" width="14"> Provide
+API to compute the list of files to be cleaned by
 the Java builder (for a UI to warn user) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
 - kent</li>
@@ -625,12 +587,112 @@ annotation (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>,
           <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>)
 - maxime, philippe</li>
-        <li><img src="../progress.gif" height="5" width="14"> Remove
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Remove
 "java" file extension assumption on compilation units (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>)
 - jerome<br>
         </li>
-        <li>More robust DOM AST: finalize based on requirements from
+        <li><img src="../progress.gif" height="5" width="14"> More
+robust DOM AST: finalize based on requirements from
+JDT/UI (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)
+- david</li>
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Provide completion on
+break/continue label (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>)
+- david<br>
+        </li>
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Search offers enclosing local
+variable when matching its
+type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)
+- frederic<br>
+        </li>
+        <li>Leverage codeassist LRU support - david</li>
+        <li>Completion in annotation member pair value : handle some
+standard annotations: target element types,
+suppress warning tokens (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>)
+- david</li>
+        <li>Improve access restriction support: <br>
+        </li>
+        <ul>
+          <li>restrictions should
+be inherited (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>) -
+maxime<br>
+          </li>
+        </ul>
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Leverage
+CompilationParticipant in reconcile operation -
+jerome</li>
+        <li>Provide pluggable CompletionParticipant API for codeassist
+operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
+- david</li>
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Address
+long standing issue with secondary types (not found by model
+name environment during reconcile) (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>) -
+frederic</li>
+        <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;"> Address double job scheduling for
+initializing JDT Core
+&amp; UI (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114941">114941</a>)
+- jerome<br>
+        </li>
+        <li> Bug fixing
+(<a
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M4&amp;resolution=FIXED">fixed</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">all</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">resolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">verified</a>)</li>
+        <li> Build notes of current <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
+in progress</a></li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top" width="2%"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16"></td>
+      <td width="98%">For <b>3.2-Milestone 5 (2006/02/17)</b>, we will
+focus on the following items:<br>
+      <ul>
+        <li><img src="../progress.gif" height="5" width="14"> Initiate
+discussion for locking projects (JDT or platform
+feature?) - philippe, jerome</li>
+        <li>Make generic method invocation bindings unique - philippe</li>
+        <li>Surface more compiler functionalities on DOM bindings:
+precomputed override indicator (AccOverriding/AccImplementing) (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>) -
+olivier<br>
+        </li>
+        <li><img src="../progress.gif" height="5" width="14"> Compiler
+computes StackMapTable classfile attribute (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>)
+- olivier</li>
+        <li><img src="../progress.gif" height="5" width="14"> Adopt
+changes from APT branch - kent, jerome, david, olivier<br>
+        </li>
+        <li><img src="../progress.gif" height="5" width="14"> Null
+reference analysis, coupled with use of <span
+ style="font-style: italic;">@NonNull</span>
+annotation (<a
+ href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>,
+          <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>)
+- maxime, philippe</li>
+        <li><img src="../progress.gif" height="5" width="14"> More
+robust DOM AST: finalize based on requirements from
 JDT/UI (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)
 - david</li>
         <li><img alt="OK mark" src="../ok.gif"
@@ -642,10 +704,6 @@ break/continue label (<a
         <li>LRU buffer cache for working copies (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>)
 - jerome</li>
-        <li>Search offers enclosing local variable when matching its
-type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)
-- frederic<br>
-        </li>
         <li>Leverage codeassist LRU support - david</li>
         <li>Completion in annotation member pair value : handle some
 standard annotations: target element types,
@@ -667,371 +725,28 @@ maxime<br>
           <li>check more scenarii based on annotations (<span
  style="font-style: italic;">@CannotImplement</span>, ...) - olivier</li>
         </ul>
-        <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Leverage
-CompilationParticipant in reconcile operation -
-jerome</li>
         <li>Provide pluggable CompletionParticipant API for codeassist
 operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
 - david</li>
-        <li><img src="../progress.gif" height="5" width="14"> Address
-long standing issue with secondary types (not found by model
-name environment during reconcile) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>) -
-frederic</li>
-        <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Address double job scheduling for
-initializing JDT Core
-&amp; UI (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114941">114941</a>)
-- jerome<br>
-        </li>
-<!--
-
-
-
-
-
-
-
-<li> more performance work <i>- all</i> </li>
-
-
-
-
-
-
-
-<li> specify component.xml <i>- olivier</i> </li>
-
-
-
-
-
-
-
-<li> convert message bundles <i>- olivier</i> </li>
-
-
-
-
-
-
-
-<li> convert to manifest.mf <i>- olivier</i> </li>
-
-
-
-
-
-
-
-<li> convert to jar'ed plugin format <i>- olivier</i> </li>
-
-
-
-
-
-
-
-<li> improve batch compiler performance <i>- olivier, philippe </i></li>
-
-
-
-
-
-
-
-<li> support @SuppressWarning annotation <i>- philippe</i></li>
-
-
-
-
-
-
-
-<li> investigate provide full workspace type index (replacing all types cache) <i>- kent, frederic</i></li>
-
-
-
-
-
-
-
-<li> investigate performance on startup
-
-
-
-
-
-
-
-(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=84877">84877</a>)
-
-
-
-
-
-
-
-</li>
-
-
-
-
-
-
-
--->
         <li> Bug fixing
 (<a
- href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M4&amp;resolution=FIXED">fixed</a>)
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M5&amp;resolution=FIXED">fixed</a>)
 (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">all</a>)
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">all</a>)
 (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">unresolved</a>)
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">unresolved</a>)
 (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">resolved</a>)
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">resolved</a>)
 (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">verified</a>)</li>
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">verified</a>)</li>
         <li> Build notes of current <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
 in progress</a></li>
       </ul>
       </td>
     </tr>
-<!--
-
-
-
-
-
-
-
-<li> testing topics:
-
-
-
-
-
-
-
-  <ul>
-
-
-
-
-
-
-
-	<li> working copies outside classpath: simple project, in Java project but outside source folder, inside source folder but invalid pkg or unit name.
-
-
-
-
-
-
-
-	Should be able to edit these files, and save them.
-
-
-
-
-
-
-
-	</li>
-
-
-
-
-
-
-
-	<li> new support for transparent working copies: check subsequent hierarchy refresh (on save)
-
-
-
-
-
-
-
-	</li>
-
-
-
-
-
-
-
-	<li> local type support in Java model: outline refresh, type hierarchies (super & sub), open on select.
-
-
-
-
-
-
-
-	</li>
-
-
-
-
-
-
-
-	<li> javadoc support: check that annotation references are triggering proper incremental recompilations and unused import diagnosis.
-
-
-
-
-
-
-
-	</li>
-
-
-
-
-
-
-
-	<li> background autobuild support: ensure model is up to date when classpaths are refreshed from files
-
-
-
-
-
-
-
-	</li>
-
-
-
-
-
-
-
-  </ul>
-
-
-
-
-
-
-
-</li>  
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Release Process&nbsp;</font></font></b></td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr><td COLSPAN="2">
-
-
-
-
-
-
-
-<a name="release"></a>
-
-
-
-
-
-
-
-	<ul>
-
-
-
-
-
-
-
-		<li>Release Candidate 0 : <a href="test-rc0.html">test plan</a>	</li> 
-
-
-
-
-
-
-
-		<li>Release Candidate 1 : <a href="test-rc1.html">test plan</a>	</li> 
-
-
-
-
-
-
-
-		<li>Release Candidate 2 : <a href="test-rc2.html">test plan</a>	</li> 
-
-
-
-
-
-
-
-		<li>Release Candidate 3 : <a href="test-rc3.html">test plan</a>	</li> 
-
-
-
-
-
-
-
-	</ul>
-
-
-
-
-
-
-
-</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
---><tr>
+    <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
  face="Arial,Helvetica"><font color="#ffffff">Bug Resolution&nbsp;</font></font></b></td>
     </tr>
@@ -1055,7 +770,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 <li> Release Candidate-4, 2006/06/30 :
+
+
+
+
+
+
+
+
 
 
 
@@ -1071,7 +802,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.2+RC4&namedcmd=Assigned">all</A>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1087,6 +834,14 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.2+RC4">resolved</A>)
 
 
@@ -1095,7 +850,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </li>
+
+
+
+
+
+
+
+
 
 
 
@@ -1111,7 +882,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+RC3&resolution=FIXED" >fixed</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1127,7 +914,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+RC3">unresolved</A>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1143,7 +946,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </li>
+
+
+
+
+
+
+
+
 
 
 
@@ -1159,7 +978,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+RC2&resolution=FIXED" >fixed</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1175,7 +1010,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+RC2">unresolved</A>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1191,7 +1042,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </li>
+
+
+
+
+
+
+
+
 
 
 
@@ -1207,7 +1074,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+RC1&resolution=FIXED" >fixed</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1223,7 +1106,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+RC1">unresolved</A>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1239,7 +1138,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </li>
+
+
+
+
+
+
+
+
 
 
 
@@ -1255,7 +1170,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+M7&resolution=FIXED" >fixed</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1271,7 +1202,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 (<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+M7">unresolved</A>)
+
+
+
+
+
+
+
+
 
 
 
@@ -1287,47 +1234,7 @@ in progress</a></li>
 
 
 
-</li>
 
-
-
-
-
-
-
-<li> Milestone-6, 2006/03/31 :
-
-
-
-
-
-
-
-(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+M6&resolution=FIXED" >fixed</a>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.2+M6&namedcmd=Assigned">all</A>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+M6">unresolved</A>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.2+M6">resolved</A>)
 
 
 
@@ -1343,47 +1250,6 @@ in progress</a></li>
 
 
 
-<li> Milestone-5, 2006/02/17 :
-
-
-
-
-
-
-
-(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&component=Core&target_milestone=3.2+M5&resolution=FIXED" >fixed</a>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&component=CORE&target_milestone=3.2+M5&namedcmd=Assigned">all</A>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE&target_milestone=3.2+M5">unresolved</A>)
-
-
-
-
-
-
-
-(<A href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&product=JDT&component=CORE&target_milestone=3.2+M5">resolved</A>)
-
-
-
-
-
-
-
-</li>
 
 
 
@@ -1392,6 +1258,26 @@ in progress</a></li>
 
 
 -->
+        <li> Milestone-6, 2006/03/31 :
+(<a
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M6&amp;resolution=FIXED">fixed</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6&amp;namedcmd=Assigned">all</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">resolved</a>)
+        </li>
+        <li> Milestone-5, 2006/02/17 :
+(<a
+ href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M5&amp;resolution=FIXED">fixed</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5&amp;namedcmd=Assigned">all</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">resolved</a>)
+        </li>
         <li> Milestone-4, 2005/12/16 :
 (<a
  href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M4&amp;resolution=FIXED">fixed</a>)
@@ -1443,7 +1329,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 <tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -1459,7 +1361,31 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1483,7 +1409,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 	<a name="notes"></a>
+
+
+
+
+
+
+
+
 
 
 
@@ -1499,7 +1441,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 	</ul>
+
+
+
+
+
+
+
+
 
 
 
@@ -1515,7 +1473,23 @@ in progress</a></li>
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -1545,7 +1519,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 <tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -1561,7 +1551,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 <td WIDTH="98%"><b>Early preview of J2SE 5.0 - codename "Cheetah"</b> 
+
+
+
+
+
+
+
+
 
 
 
@@ -1577,7 +1583,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 <tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -1593,7 +1615,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top">Cheetah06 posted on 2004/06/29 (click on picture to jump to update site)</td>
+
+
+
+
+
+
+
+
 
 
 
@@ -1617,7 +1655,31 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -1633,6 +1695,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top">Eclipse R3.0</td>
 
 
@@ -1641,7 +1711,31 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1665,7 +1759,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top"><i>installing</i></td>
+
+
+
+
+
+
+
+
 
 
 
@@ -1681,7 +1791,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;- open the update manager (Help>>Software Updates>>Find and Install)
+
+
+
+
+
+
+
+
 
 
 
@@ -1697,7 +1823,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;- fill in 'http://www.eclipse.org/jdt/core/update-site' as the URL. 
+
+
+
+
+
+
+
+
 
 
 
@@ -1713,6 +1855,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<br>&nbsp;&nbsp;&nbsp;&nbsp;- check the Cheetah feature update and install it.
 
 
@@ -1721,7 +1871,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -1737,7 +1903,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	Avoid using a 1.5 JRE to run Eclipse, as Eclipse is implemented for running on top of 1.4 level JREs (and 1.5 is still unstable).
+
+
+
+
+
+
+
+
 
 
 
@@ -1753,7 +1935,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 &lt;!--
+
+
+
+
+
+
+
+
 
 
 
@@ -1769,7 +1967,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	As a workaround, simply exit and restart Eclipse again once more (until you see 1.5 tab in compiler preference page); this seems to address 
+
+
+
+
+
+
+
+
 
 
 
@@ -1785,7 +1999,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 --&gt;
+
+
+
+
+
+
+
+
 
 
 
@@ -1801,7 +2031,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	since this seems to cause issues to platform update.
+
+
+
+
+
+
+
+
 
 
 
@@ -1817,7 +2063,31 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1841,7 +2111,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top"><i>JRE 1.5</i></td>
+
+
+
+
+
+
+
+
 
 
 
@@ -1857,7 +2143,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	corrupted generic signatures for member types. Beta2 level JREs are preferrable if you can obtain them.
+
+
+
+
+
+
+
+
 
 
 
@@ -1873,7 +2175,31 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1897,7 +2223,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top"><i>description</i> </td>
+
+
+
+
+
+
+
+
 
 
 
@@ -1913,7 +2255,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		It is rather a snapshot of work in progress done in parallel branch <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=JDK_1_5">JDK_1_5</a>,
+
+
+
+
+
+
+
+
 
 
 
@@ -1929,7 +2287,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		Cheetah is still a kitten, and does not yet cover the full distance to <a href="http://jcp.org/en/jsr/detail?id=176">J2SE 5.0</a>, but you can help it to advance, by testing it and reporting 
+
+
+
+
+
+
+
+
 
 
 
@@ -1945,6 +2319,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		Supported features are listed below (also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.2580.2.124&content-type=text/html">build notes</a>).
 
 
@@ -1953,7 +2335,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -1969,6 +2367,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 96.20% compliant (408 failures to go).
 
 
@@ -1977,7 +2383,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -1993,7 +2415,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- generic sources, parameterized type, raw types, wildcards
+
+
+
+
+
+
+
+
 
 
 
@@ -2009,7 +2447,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- source innerclasses with generics
+
+
+
+
+
+
+
+
 
 
 
@@ -2025,7 +2479,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- syntax error diagnostics (including source &lt; 1.5)
+
+
+
+
+
+
+
+
 
 
 
@@ -2041,7 +2511,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- enclosing/member types of parameterized types
+
+
+
+
+
+
+
+
 
 
 
@@ -2057,7 +2543,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- class literal &amp; Object.getClass()
+
+
+
+
+
+
+
+
 
 
 
@@ -2073,7 +2575,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- bridge methods
+
+
+
+
+
+
+
+
 
 
 
@@ -2089,6 +2607,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<i><font color="#8080ff"> 
 
 
@@ -2097,7 +2623,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not supported yet
+
+
+
+
+
+
+
+
 
 
 
@@ -2113,6 +2655,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		</i></font>
 
 
@@ -2121,7 +2671,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -2137,6 +2703,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- array collections, Iterable collections
 
 
@@ -2145,7 +2719,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>
+
+
+
+
+
+
+
+
 
 
 
@@ -2161,7 +2751,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>autoboxing</b> (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -2177,7 +2783,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>static imports</b> (<a href="http://jcp.org/en/jsr/detail?id=201">jsr-201</a>)
+
+
+
+
+
+
+
+
 
 
 
@@ -2193,7 +2815,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		<i>
+
+
+
+
+
+
+
+
 
 
 
@@ -2209,7 +2847,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		</i></font> 
+
+
+
+
+
+
+
+
 
 
 
@@ -2225,7 +2879,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	<br>Note: we are mostly focusing on the compiler side, which is the core piece to evolve before leveraging the rest of the
+
+
+
+
+
+
+
+
 
 
 
@@ -2241,7 +2911,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		search, codeassist and codeselect.
+
+
+
+
+
+
+
+
 
 
 
@@ -2257,7 +2943,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 		the Ant compiler adapter.
+
+
+
+
+
+
+
+
 
 
 
@@ -2273,7 +2975,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 	In order to keep track of the base version in HEAD, we tag the cheetah preview after the matching HEAD version name;
+
+
+
+
+
+
+
+
 
 
 
@@ -2289,7 +3007,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 &lt;!--
+
+
+
+
+
+
+
+
 
 
 
@@ -2305,7 +3039,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
     <br> NOTE: Plug-in revision ID is "3.0.0". 
+
+
+
+
+
+
+
+
 
 
 
@@ -2321,7 +3071,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
     	 the JDT feature may require to be edited accordingly (in <code>&lt;install&gt;/eclipse/features/org.eclipse.jdt_3.0.x/feature.xml</code>,
+
+
+
+
+
+
+
+
 
 
 
@@ -2337,7 +3103,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 --&gt;
+
+
+
+
+
+
+
+
 
 
 
@@ -2353,7 +3135,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -2369,6 +3167,14 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </td>
 
 
@@ -2377,7 +3183,23 @@ please inform the JDT/Core team by entering a <a
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -2408,7 +3230,23 @@ picture)</td>
 
 
 
+
+
+
+
+
+
+
+
 <tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -2424,6 +3262,14 @@ picture)</td>
 
 
 
+
+
+
+
+
+
+
+
 	<td VALIGN="top">posted on 2005/03/29, 5,915 KB (click on picture)</td>
 
 
@@ -2432,7 +3278,23 @@ picture)</td>
 
 
 
+
+
+
+
+
+
+
+
 </tr>
+
+
+
+
+
+
+
+
 
 
 
@@ -2467,7 +3329,23 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
 	<br>Corresponding sources aren't released in HEAD, waiting for M4 to be officially declared.
+
+
+
+
+
+
+
+
 
 
 
@@ -2483,7 +3361,23 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
     <br>Corresponding sources are versioned using tag <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_541a">v_541a</a>
+
+
+
+
+
+
+
+
 
 
 
@@ -2499,7 +3393,23 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
     <br>Then start Eclipse with the -clean command line option to take the new plugin version into account.
+
+
+
+
+
+
+
+
 
 
 
@@ -2515,7 +3425,23 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
     <br> NOTE: Plug-in revision ID is "3.1.0". 
+
+
+
+
+
+
+
+
 
 
 
@@ -2531,6 +3457,14 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
     	 the JDT feature may require to be edited accordingly (in <code><install>/eclipse/features/org.eclipse.jdt_3.1.x/feature.xml</code>,
 
 
@@ -2539,7 +3473,23 @@ notes</a>.
 
 
 
+
+
+
+
+
+
+
+
     	 change the version to <code>"3.1.0"</code> for plugin which id is <code>"org.eclipse.jdt.core"</code>).
+
+
+
+
+
+
+
+
 
 
 
