@@ -3,9 +3,9 @@
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <title>3.2 M4 Test Plan</title>
   <style type="text/css">
-    h4 { margin-bottom: .5em }
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
     ul { margin-top: .5em }
-    li ul { margin-bottom: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
   </style>
 </head>
 
@@ -105,16 +105,96 @@ Currently available for all Rename refactorings, Move Method and Change Method S
     <li>play with the new timeout preference (Java &gt; Editor &gt; Content Assist &gt; Work in Progress &gt; Timeout...)</li>
   </ul>
 <h4>test Delete Line and Cut Line with empty, full single line and multiple line selection (aaa, bbb) (FAQ: Dani)</h4>
-<h4>test using camel case for code completion (aaa, bbb) (FAQ: Dani)</h4>
-  <ul>
-    <li>see also: Java &gt; Editor &gt; Content Assist &gt; "Match camel case proposals"</li>
-  </ul>
 
-<h4>Test camelCase navigation in dialog fields (aaa, bbb) (FAQ: Dani)</h4>
+<h4>Test camelCase navigation in dialog fields (Tom, Martin) (FAQ: Markus)</h4>
   <ul>
     <li>check "New ..." wizards, refactoring dialogs, Open Type, Quick Views, ...</li>
+    <li>check Ctrl+(Shift)+Left/Right, Ctrl+Delete, Ctrl+Backspace</li>
   </ul>
   
+<h4>Content Assist: most recently used ranking of type proposals (aaa, bbb) (FAQ: Tom)</h4>
+  <ul>
+    <li>Ensure that a selected type proposal is remembered in situations with an expected type:
+      <ul>
+        <li>Assignments: <code>List list= new ArrayLi|</code></li>
+        <li>Method calls: <code>list.addAll(new |)</code></li>
+        <li>Return statements: <pre>
+              public CharSequence createName() {
+                  return new Str|
+              }
+          </pre>
+        </li>
+      </ul>
+
+    </li>
+    <li>Ensure that remembered types show up even if there is no prefix:
+      <ul>
+        <li><code>List list= new |</code></li>
+      </ul>
+    </li>
+  </ul>
+
+<h4>Content Assist: test CamelCaseCompletion (aaa, bbb) (FAQ: Tom, Dani)</h4>
+  <ul>
+    <li>see also: Java &gt; Editor &gt; Content Assist &gt; "Match camel case proposals"</li>
+    <li>test interaction with different content assist modes:
+   	  <ul>
+        <li>prefix insertion</li>
+        <li>overwrite vs. insert</li>
+        <li>automatically insert single proposals</li>
+      </ul>
+    </li>
+    <li>test different completions:
+   	  <ul>
+        <li>fields</li>
+        <li>methods</li>
+        <li>types</li>
+        <li>override / implement method</li>
+      </ul>
+    </li>
+  </ul>
+
+<h4>Javadoc attachments, argument names from Javadoc attachments (aaa, bbb) (FAQ: Martin)</h4>
+  <ul>
+    <li>A JAR with no source attachment but javadoc</li>
+  </ul>
+  
+  
+<h4>Enable different file extension for compilation units (aaa, bbb) (FAQ: Martin)</h4>
+  <ul>
+    <li>refactorings should preserve file suffix</li>
+    <li>all functionality should work, code resolve, search...</li>
+  </ul>
+
+<h4>Quick Fixes for annotations (aaa, bbb) (FAQ: Martin)</h4>
+  <ul>
+    <li>missing attribute, unknow attribute, wrong type in attribute, unknown references in attributes</li>
+  </ul>
+
+<h4>Search (aaa, bbb) (FAQ: Martin)</h4>
+  <ul>
+    <li>remembered dialog size and position (changed to use platform code):<br>
+    Multi monitor, screen resolution changes etc.</li>
+    <li>Text search testing: Java rename with textual matches, NLS search<br>
+    Check that everything works as expected. Try different file extensions and scopes</li>
+    <li>Text search with derived resource/derived folders:<br>
+    All elements in a derived folder are considered to be derived</li>
+  </ul>
+
+<h4>Rename Type with "update similar elements" (aaa, bbb) (FAQ: Philip, Markus)</h4>
+  <ul>
+    <li>Test all three matching strategies</li>
+    <li>Test changing the chosen renamings for similar elements (page 2)</li>
+    <li>Test going back and forth in the wizard (also with errors, e.g. when renaming to an already existing element)</li>
+  </ul>
+
+<h4>Delete Package (Tobias, Tom) (FAQ: Philip, Markus)</h4>
+  <ul>
+    <li>Verify that empty superpackages are automatically removed (also on multi-selection, etc.)</li>
+    <li>Test "Delete subpackages" option in delete dialog</li>
+    <li>If time permits: check that participants get reasonable notifications</li>
+  </ul>
+
 
 <br>
 </body>
