@@ -65,17 +65,24 @@ support workspace with lots of projects. [Scaling-Up]</li>
       <ul>
         <li>Add support for library projects (like binary projects in
 PDE) [Scaling-Up] [committed]</li>
-        <li>Add a history to Organize Import, Code assist, Quick Fix,
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Add a history to Organize Import, Code assist,
+Quick Fix,
 Quick Assist... In the case of an element ambiguity (for example
 java.awt.List versus java.util.List versus org.eclipse.swt.widgets.List
 when organizing imports) these operations should built a histroy of the
 selected elements and use that history to sort the elements
 accordingly. [Simple to Use]</li>
-        <li>Java aware text input fields (camel case navigation,
+        <li><img src="../images/ok.gif" alt="" border="0" height="10"
+ width="10"> Java aware text input fields (camel case navigation,
 closing bracket) [Simple to Use]</li>
-        <li>Identify code that is better hosted in JDT/Core [Built to
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Identify code that is better hosted in JDT/Core
+[Built to
 Last]</li>
-        <li>Cleanup usages of deprecated code [Built to Last]</li>
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Cleanup usages of deprecated code [Built to
+Last]</li>
       </ul>
       </td>
     </tr>
@@ -102,8 +109,12 @@ Platform/Team, Platform/Text and JDT/Core. [Large-scale]</li>
  height="16" width="16"></td>
       <td><b>Quick Fix &amp; Quick Assists</b>
       <ul>
-        <li>Additional quick fixes and quick assists [committed]</li>
-        <li>Investigate how to improve the scalability of quick fix. We
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Additional quick fixes and quick assists
+[committed]</li>
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Investigate how to improve the scalability of
+quick fix. We
 have situations where the list of possible quick fixes is getting
 really long [Simple to Use]</li>
         <li><img src="../images/ok.gif" alt="" border="0" height="10"
@@ -177,7 +188,9 @@ the Java editor where appropriate</li>
           <ul>
             <li><img src="../images/ok.gif" alt="" border="0"
  height="10" width="10"> Hierarchical package rename</li>
-            <li>Hierarchical delete and copy/paste</li>
+            <li><img src="../images/ok.gif" alt="" border="0"
+ height="10" width="10"> Hierarchical delete</li>
+            <li>Hierarchical copy/paste</li>
             <li><img src="../images/progress.gif" alt="" border="0"
  height="5" width="14"> Update derived names on rename (e.g when
 renaming a type update field names and locals if parts of the name
@@ -199,9 +212,9 @@ move, ...)</li>
         </li>
         <li>New refactorings
           <ul>
-            <li><font class="indexsub" color="#8080ff"></font>Investigate
+            <li>Investigate
 in a refactoring to introduce a type parameter into a non generic class</li>
-            <li><font class="indexsub" color="#8080ff"></font>Extract
+            <li>Extract
 Superclass, Inline Supertype, Find and Remove Dead Code, Make method
 static (and inverse)</li>
           </ul>
@@ -215,12 +228,16 @@ static (and inverse)</li>
  height="16" width="16"></td>
       <td><b>Package Explorer</b>
       <ul>
-        <li>Support inclusion filters when in hierarchical layout mode
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Support inclusion filters when in hierarchical
+layout mode
 (see bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
 [committed]</li>
         <li>Support better grouping mechanisms for referenced libraries
 (jars) [Large-scale]</li>
-        <li>Investigate to use sync exec instead of async exec to
+        <li><img src="../images/progress.gif" alt="" border="0"
+ height="5" width="14"> Investigate to use sync exec instead of async
+exec to
 update the package explorer when receiving a Java model delta</li>
       </ul>
       </td>
@@ -400,7 +417,7 @@ rename)</li>
       <td width="50%">item is time permitted.</td>
     </tr>
     <tr>
-      <td valign="top"><font class="indexsub" color="#8080ff">[&gt;3.1]</font></td>
+      <td valign="top"><font class="indexsub" color="#8080ff">[&gt;3.2]</font></td>
       <td width="50%">item is deferred.</td>
       <td valign="top"><font class="indexsub"><img
  src="../images/new.gif" alt="" border="0"></font></td>
@@ -413,7 +430,7 @@ rename)</li>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
  face="Arial,Helvetica"><font color="#ffffff"> <a
- name="Milestone_Planning">M4 Milestone Plan(Nov. 7 - Dec. 16)</a></font></font></b></td>
+ name="Milestone_Planning">M5 Milestone Plan(Dec. 19 - Feb. 17)</a></font></font></b></td>
     </tr>
     <tr>
       <td valign="top" width="23"><img
@@ -423,6 +440,8 @@ rename)</li>
       <ul>
         <li>Bug fixing</li>
         <li>Inbox tracking</li>
+        <li>Performance week<br>
+        </li>
       </ul>
       </td>
     </tr>
@@ -434,22 +453,17 @@ rename)</li>
       <ul>
         <li>Relax closed world assumption in refactoring (Tobias)
           <ul>
-            <li>Agree with Core on an implementation for refactoring
-Jar files (see bug <a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=113944">113944</a>)</li>
-            <li>Look at new team provider API and investigate how we
-can leverage the API for split refactoring</li>
-            <li>Solve issues with workspace global refactoring history</li>
+            <li>Open up the refactoring scripts so they can be stored
+and executed from files<br>
+            </li>
+            <li>Alternatives to using the JAR importer: replace with
+and update in build path dialog (Replace With, Update)<br>
+            </li>
           </ul>
         </li>
-        <li>Finish updating similar field, method and local names when
-renaming types (Philip/Markus)</li>
-        <li>Make Delete refactoring sub packages aware. Additionally
-support automatic deletion of empty super packages (Philip)</li>
-        <li>Investigate in API compatibility support for refactorings
-(like generating a delegate with the old signature and deprecate it)
-(Philip)</li>
-        <li>Provider internal filter extension point for APT (Markus)</li>
+        <li>'Create indirection' refactoring (Philip/Markus)</li>
+        <li>Investigate in 'redirect' (change references) refactoring
+(Philip/Markus)</li>
       </ul>
       </td>
     </tr>
@@ -464,49 +478,39 @@ apply quick fixes (see bug <a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114754">114754</a>
 &amp; <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114570">114570</a>)
 (Martin/Benno)</li>
-        <li>Write performance tests for clean-ups and imrpve
-performance (Benno)</li>
-        <li>Provide more code clean-ups (Benno)</li>
-        <li>Look in applying quick assist during code clean-up (for
-example convert to rnhance for loop) (Benno)</li>
-        <li>Make Surround with runnable more generic (for exampel
-ISafeRunnable, IRunnableWithProgress, ...) (Benno)</li>
+        <li>Refine existing and add new clean-ups (Benno)</li>
+        <li>More quick fixes: e.g. quick fixes for raw access (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=92893">92893</a>)
+(Benno)</li>
       </ul>
       </td>
     </tr>
     <tr>
-      <td valign="top" width="23"><img
+      <td valign="top"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
  height="16" width="16"></td>
-      <td width="848"><b>Library projects </b>
-      <p>Depending on the solution in JDT/Core UI has to provide some
-user interface to leverage the new support (Martin).</p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" width="23"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
- height="16" width="16"></td>
-      <td width="848"><b>API Cleanliness</b>
-      <p>Check what we can do for the following API requests.</p>
+      <td><b>Component Independent</b> <br>
       <ul>
-        <li>[93162] Require ability to extend the Type selection
-mechanism (Dirk)</li>
-        <li>[107884] Allow OpenViewAction actions to handle selections
-which can be adapted to IJavaElement (Dirk)</li>
-        <li>[110643] NewClassCreationWizard needs to be API (Martin)</li>
+        <li>Add a history to Organize Import, Code assist, Quick Fix,
+Quick Assist... In the case of an element ambiguity (for example
+java.awt.List versus java.util.List versus org.eclipse.swt.widgets.List
+when organizing imports) these operations should built a histroy of the
+selected elements and use that history to sort the elements
+accordingly (Benno)<br>
+        </li>
+        <li>Cleanup usages of deprecated code (Martin)</li>
       </ul>
       </td>
     </tr>
     <tr>
-      <td valign="top" width="23"><img
+      <td style="vertical-align: top;"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
- height="16" width="16"></td>
-      <td width="848"><b>ICU4J</b>
-      <p>If we decide to integrate ICU4J into the platform, other
-components have to leverage it. We should look into provide a "Code
-Cleanup" which switches the import statements to the corresponding
-ICU4J classes (Benno/Martin).</p>
+ height="16" width="16"> </td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">API</span><br>
+      <ul>
+        <li> Identify code that is better hosted in JDT/Core (Martin)<br>
+        </li>
+      </ul>
       </td>
     </tr>
     <tr>
@@ -519,6 +523,19 @@ ICU4J classes (Benno/Martin).</p>
 more than one JUnit test and to switch between JUnit results (Markus)</li>
         <li>Support for running and implementing JUnit4 test cases
 (Markus)</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td><b>Package Explorer</b>
+      <ul>
+        <li>Support inclusion filters when in hierarchical layout mode
+(see bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
+(Benno)<br>
+        </li>
       </ul>
       </td>
     </tr>
@@ -536,6 +553,24 @@ feedback for the code (Dirk/Markus)</li>
 framework taking the package explorer as a use case (Markus)</li>
           </ul>
         </li>
+        <li>
+Resource operation validation in refactorings (Dirk)
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"> </td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">Build
+Path</span><br>
+      <ul>
+        <li>Use new JDT Core API to warn for files cleaned by the
+builder
+(Benno)<br>
+        </li>
+        <li>SWT container (Benno)</li>
       </ul>
       </td>
     </tr>
@@ -545,7 +580,7 @@ framework taking the package explorer as a use case (Markus)</li>
  height="16" width="16"></td>
       <td><b>Conferences/Vacations</b>
       <ul>
-        <li>5 days</li>
+        <li>11 days</li>
       </ul>
       </td>
     </tr>
@@ -555,8 +590,8 @@ framework taking the package explorer as a use case (Markus)</li>
   <tbody>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"
- width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">
-Getting the sources</font></font></b></td>
+ width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff">Getting
+the sources</font></font></b></td>
     </tr>
     <tr>
       <td>
