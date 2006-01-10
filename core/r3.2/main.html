@@ -145,7 +145,8 @@ and could be revised while addressing these work items.<br>
         <li><b>Java SE 6 </b>(<a
  href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
         <ul>
-          <li><img src="../progress.gif" height="5" width="14">Annotation
+          <li><img src="../progress.gif" height="5" width="14">
+Annotation
 processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)</li>
           <ul>
             <li>Work got initiated in org.eclipse.jdt.apt.core (and ui)
@@ -155,14 +156,15 @@ participating in compilation and completion (needed for APT processor)
 in a fashion which is not APT specific. This branch is intended to be
 merged into "HEAD" when it matures enough.</li>
           </ul>
-          <li><img src="../progress.gif" height="5" width="14"> Javadoc
+          <li><img src="../ok.gif" height="10" width="10"> Javadoc
 (<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br>
           </li>
           <ul>
             <li>Mostly affecting Java Model rendering (see Java Model
 item below)</li>
           </ul>
-          <li><img src="../progress.gif" height="5" width="14">Classfile
+          <li><img src="../progress.gif" height="5" width="14">
+Classfile
 (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)</li>
           <ul>
             <li>Except for StackMapTable attribute support (<a
@@ -207,7 +209,8 @@ reference analysis, coupled with use of <span
             <li><img src="../ok.gif" height="10" width="10"> Signal
 references to raw types (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89529">89529</a>)</li>
-            <li>Signal assignment to method parameters (<a
+            <li><img src="../ok.gif" height="10" width="10"> Signal
+assignment to method parameters (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=53773">53773</a>)</li>
             <li><img src="../ok.gif" height="10" width="10"> Signal
 unnecessary $NON-NLS tags (<a
@@ -230,7 +233,8 @@ the Java builder (for a UI to warn user) (<a
           <li>Improve access restriction support: <br>
           </li>
           <ul>
-            <li><img src="../progress.gif" height="5" width="14">restrictions
+            <li><img src="../ok.gif" height="10" width="10">
+restrictions
 should be inherited (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>)</li>
             <li>check more scenarii based on annotations/doclet (<span
@@ -323,7 +327,8 @@ workspace (open external file) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=61013">61013</a>)</li>
           <li> Provide support for reacting to option changes (delta?
 build?) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=46780">46780</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14">&nbsp;
+          <li><img alt="OK mark" src="../ok.gif"
+ style="width: 10px; height: 10px;">&nbsp;
 Address long standing issue with secondary types (not found by model
 name environment during reconcile) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
@@ -555,9 +560,6 @@ provide API to access
 javadoc from attached HTML (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110173">110173</a>)
 - olivier</li>
-        <li><img src="../progress.gif" height="5" width="14"> Adopt
-changes from APT branch - kent, jerome, david, olivier<br>
-        </li>
         <li><img alt="OK mark" src="../ok.gif"
  style="width: 10px; height: 10px;"> Support working copies for
 external files (<a
@@ -591,10 +593,6 @@ type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)
  style="width: 10px; height: 10px;"> Leverage
 CompilationParticipant in reconcile operation -
 jerome</li>
-        <li>Provide pluggable CompletionParticipant API for codeassist
-operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
-- david</li>
         <li><img alt="OK mark" src="../ok.gif"
  style="width: 10px; height: 10px;"> Address
 long standing issue with secondary types (not found by model
