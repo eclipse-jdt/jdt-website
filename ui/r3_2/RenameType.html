@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css"
+ type="text/css">
+  <title>Update Similarly Named Elements Feature</title>
+</head>
+<body>
+<table border="0" cellpadding="2" cellspacing="5" width="100%">
+  <tbody>
+    <tr>
+      <td align="left" width="72%"><font class="indextop"> jdt ui R3.2.x</font>
+      <br>
+      <font class="indexsub"> java development tooling ui </font></td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td width="28%"><img src="http://dev.eclipse.org/images/Idea.jpg"
+ alt="" height="86" width="120"></td>
+    </tr>
+  </tbody>
+</table>
+<table border="0" cellpadding="2" cellspacing="5" width="100%">
+  <tbody>
+    <tr>
+      <td colspan="2" align="left" bgcolor="#0080c0" valign="top"
+ width="100%"><b><font face="Arial,Helvetica"><font color="#ffffff"> <a
+ name="Overall_Planning">New Rename Type Feature: Update Similarly
+Named Elements<br>
+      </a></font></font></b></td>
+    </tr>
+    <tr>
+      <td colspan="2"><br>
+This document is intended for providers of participants for the rename
+type, method, and field refactorings. The document describes the new
+rename type feature "Update Similarly Named Elements" and the changes
+required in rename type, method, and field refactoring participants
+induced by this new feature.<br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td valign="top">
+      <h4>Table of Contents:</h4>
+      <a href="#introduction">I.
+Introduction</a><br>
+      <a href="#signaling">II.
+Signalling the new changes</a><br>
+      <a href="#actions">III. Required actions</a><br>
+      <a href="#guide">IV. How to write similarly named
+declarations-aware
+participants
+(migration guide)</a><br>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td><b><a name="introduction"></a>Introduction</b><br>
+      <br>
+Starting in Eclipse 3.2 M4, the rename type refactoring is able to
+rename &#8220;similar declarations": methods, fields, and local
+variables with names similar to the name of the renamed type. For
+example, consider the following code:<br>
+      <pre>public class Foo {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;private Foo foo;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;private Foo() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;static Foo createFoo() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Foo();</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;public Foo getFoo() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return foo;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;public void setFoo(Foo foo) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp; &nbsp;this.foo= foo;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>}</pre>
+Renaming the type Foo to Bar currently only updates the type&#8217;s name and
+all references to it, for example the return type of createFoo() or the
+parameter type of setFoo(Foo foo). The new update similar declarations
+feature will allow the user to change all method, field, and variable
+names corresponding to or containing the type name. For example, when
+renaming Foo to Bar, the code may be changed in the following way
+(depending on the users choices):<br>
+      <pre>public class Bar {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;private Bar bar;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;private Bar() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;static Bar createBar() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Bar();</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;public Bar getBar() {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return bar;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}<br></pre>
+      <pre>&nbsp;&nbsp; &nbsp;public void setBar(Bar bar) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.bar= bar;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>}</pre>
+In contrast to the normal type rename refactoring whose changes were
+limited to the type itself and its references, the new rename type
+refactoring creates much more changes which also affect arbitrary
+fields, methods, and local variables inside and outside of the renamed
+type. This raises the question of how to signal those changes to
+interested parties by loading corresponding participants. <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td><b><a name="signaling"></a>Signalling the new changes</b><br>
+      <br>
+The best solution would be to simply reuse existing participants. That
+would mean loading <br>
+      <ul>
+        <li>rename type participant for the type rename,</li>
+        <li>rename method participants for the method renames,</li>
+        <li>rename field participants for the field renames, and</li>
+        <li>rename local variable participants for the local variable
+renames.<br>
+        </li>
+      </ul>
+Unfortunately, this approach is not feasible as the changes created by
+the new rename type refactoring are no longer simple renames &#8211; neither
+the type rename nor the method, field and local variable renames:<br>
+      <br>
+      <b>Type rename</b>: Considering the example above, the normal
+rename
+type refactoring would only have changed the type name and the
+references to the type; for example, the type of the field foo and the
+return type of method getBar(). Rename type participants could
+therefore assume that all fields and methods inside the type would keep
+their defining attributes:<br>
+      <ul>
+        <li>same name for methods, fields, and local variables,&nbsp;
+and</li>
+        <li>same parameter types for methods<br>
+        </li>
+      </ul>
+In the new refactoring, this is now no longer the case: Each field,
+method, or local variable inside the renamed type is potentially
+affected by the refactoring. Consider the following method from the
+example above:<br>
+      <pre>public void setFoo(Foo foo) { }</pre>
+Renaming the type Foo to Bar effectively changes this method to<br>
+      <pre>public void setBar(Bar bar) { }</pre>
+The changes to this method are:<br>
+      <ol>
+        <li>the name changed</li>
+        <li>the parameter type changed</li>
+        <li>the parameter name changed<br>
+        </li>
+      </ol>
+These changes are best described as a complete <b>signature change</b>
+of the method, and not a simple rename. Similar problems exist when
+changing fields and local variables. Because these changes are not
+currently signaled to the participants, they will break existing
+participants with assumptions about these members. Those participants
+cannot be reused as-is.<br>
+      <br>
+As a side note, signature changes to methods are already a problem when
+renaming methods like the method setFoo(Foo foo): Even in the current
+implementation, a signature change is performed on this method as the
+parameter type Foo is changed to Bar which is not signaled to the
+rename type participant; we also do not load a special participant for
+it.<br>
+      <br>
+      <b>Method, field and local variable renames</b>: Considering a
+rename
+of the method setFoo(Foo foo) from the example above, the normal rename
+method refactoring would only have changed the name of the method (and
+possibly of overridden methods and references). Rename method
+participants could therefore assume that only the name of the method
+changed and everything else stayed the same.<br>
+      <br>
+In the new refactoring, this is now no longer the case. Consider the
+method signature change of setFoo(Foo foo) from the example above. The
+changes to this method are:<br>
+      <ol>
+        <li>the name changed</li>
+        <li>the parameter type changed</li>
+        <li>the parameter name changed</li>
+        <li>the container of the method changed: it is now no longer
+declared
+in the class Foo, but in the class Bar.<br>
+        </li>
+      </ol>
+Again, these changes are best described as a complete signature change
+of the method and an additional change to the container of the method;
+it is no longer a simple rename. Because these changes are not
+currently signaled to the participants, they will break existing
+participants. Therefore, existing rename method, field, and local
+variable participants cannot be reused as-is, and it is questionable
+whether those participants should know about possible container changes.<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td><b><a name="actions"></a>Required Actions</b> <br>
+      <br>
+As outlined in section II, some existing participants will not work
+with the new refactoring. Because of the breaking nature of this
+change, we will provide <br>
+      <ul>
+        <li>a <b>product configuration flag</b> to completely disable
+the
+&#8220;update similar names&#8221; feature</li>
+        <li>a <b>participant descriptor flag</b> to temporarily
+disable
+participants if the &#8220;update similar names&#8221; feature is turned on</li>
+        <li>a <b>migration guide and helper methods</b> for
+implementing
+support for the new feature.<br>
+        </li>
+      </ul>
+      <b>Setting the product configuration flag</b>: If set, the new
+feature
+will not be presented to the user at all and participant loading and
+handling stays exactly the way it was before. Note that the feature is
+enabled by default. To disable the feature, please add the following
+code to the product extension definition:<br>
+      <pre>&lt;property </pre>
+      <pre>   name="org.eclipse.jdt.ui.refactoring.handlesSimilarDeclarations" </pre>
+      <pre>   value="false"</pre>
+      <pre>/&gt;</pre>
+      <b>Setting the participant descriptor flag</b>: If set, the
+participant
+will be disabled in each concrete rename type refactoring if the new
+option is enabled. To disable a participant in that case, please add
+the following code to the participant extension definition:<br>
+      <pre>&lt;param name="handlesSimilarDeclarations" value="false"/&gt;</pre>
+      <b>Updating the participants (Migrating)</b>: To be able to
+respond to
+the additional changes of the new type rename refactoring, participants
+will need to know about these changes. Our solution for this problem is
+new API for the rename type participants, enabling them to handle
+similarly named declarations. Participant writers will need to adapt or
+replace their existing rename type participants to<br>
+      <ul>
+        <li>be aware of changing fields, methods, or local variables
+inside
+the renamed type (signature change and container change)</li>
+        <li>be aware of changing fields, methods, or local variables
+outside
+the renamed type (signature change, possibly container change if local
+types are used)<br>
+        </li>
+      </ul>
+Rename method, field, and local variable participants will not be
+loaded for similarly named declarations; these elements must be handled
+inside the rename type participant. </td>
+    </tr>
+    <tr>
+      <td valign="top"><img
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
+ height="16" width="16"></td>
+      <td><b><a name="guide"></a>Migration Guide</b><br>
+      <br>
+Not all existing rename type participants will need code changes, and
+the amount of changes will depend significantly on the existing
+implementation. Particularly, rename type participants which only deal
+with the type itself and not its members or other members (for example,
+for updating a launch configuration) need not be changed at all. <br>
+      <br>
+For all participants which deal with the members of the type or which
+need to add support for method, field, or local variable renames, the
+code handling those elements must be changed. The biggest problem when
+writing the new participant is mapping the renamed old methods, fields,
+and local variables to the new, changed elements since a lot of things
+can change (the complete signature and the direct or indirect container
+of the elements). <br>
+      <br>
+To solve this problem, we provide API for relocating any java element
+or resource in the workspace to reflect all performed changes.
+Participants can use the relocated handle during change execution to
+access the new elements. <br>
+      <br>
+Let&#8217;s look at a simple example. Consider the following old rename type
+and rename method/field/local variable participants which keep a list
+of all signatures keys of types, methods, fields, and local variables
+of all Java projects in an external database. <br>
+      <br>
+The rename participants are implemented something like this (this is
+the rename type participant, which we will adapt &#8211; the code of the
+method/field/local variable participants looks similar, but need not be
+changed):<br>
+      <pre>public class DBTypeRenameParticipant extends RenameParticipant {</pre>
+      <pre><br>   private IType fOldType;</pre>
+      <pre>   private String fNewName;</pre>
+      <pre>   private IType fNewType;</pre>
+      <pre><br>   protected boolean initialize(Object element) {</pre>
+      <pre>   &nbsp;&nbsp; &nbsp;fOldType= (IType)element;</pre>
+      <pre>   &nbsp;&nbsp; &nbsp;fNewName= getArguments().getNewName();</pre>
+      <pre><br>   &nbsp;&nbsp; &nbsp;// (assuming top level types)</pre>
+      <pre>       fNewType= fOldType.getPackageFragment().getCompilationUnit (fNewName + ".java").getType(fNewName);</pre>
+      <pre>   &nbsp;&nbsp; &nbsp;return true;</pre>
+      <pre>   } </pre>
+      <pre><br>   public Change createChange(IProgressMonitor pm) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;   return new DBChange(fOldType, fNewType) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  public Change perform(&#8230;) {</pre>
+      <pre> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(fOldType.getKey(), fNewType.getKey());</pre>
+      <pre> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all fields of old Type)</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldField.getKey(), fNewType.getField(</pre>
+      <pre>			oldField.getElementName().getKey());</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</pre>
+      <pre><br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// methods, local variables&#8230;</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>}</pre>
+The code makes the assumption that all fields in the new type have the
+same name as in the old type. We need to:<br>
+      <ul>
+        <li>change this assumption</li>
+        <li>add code for handling field, method and local variable
+changes in
+other types<br>
+        </li>
+      </ul>
+Let&#8217;s first look at how we can find out about similarly named
+declarations. As a subclass of RenameParticipant, we have access to the
+RenameArguments, which we already use in initialize(Object element):<br>
+      <pre>fNewName= getArguments().getNewName();</pre>
+The RenameArguments class has been subclassed for the Rename Type
+Refactoring to contain additional information about similarly named
+declarations. We can cast the class to RenameTypeArguments and check if
+similarly named declarations are renamed:<br>
+      <pre>RenameTypeArguments args= (RenameTypeArguments) getArguments();</pre>
+      <pre>if (args.getUpdateSimilarDeclarations()) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;// do something</pre>
+      <pre>}</pre>
+Now we&#8217;d like to know which elements are renamed. Again, we ask the
+RenameTypeArguments for this information:<br>
+      <pre>IJavaElement[] similarDeclarations= args.getSimilarDeclarations();<br></pre>
+All of the elements in this array are either of type IMethod, IField,
+or ILocalVariable. These are the handles of the &#8220;old&#8221; elements before
+all changes.<br>
+      <br>
+Now we know which elements have changed, but we still don&#8217;t know how
+they will look after the refactoring. What we&#8217;d like to do is change
+our existing code which resolves the new elements to handling complete
+signature changes, i.e. we&#8217;d like to change the lines<br>
+      <pre>fNewType= fType.getPackageFragment().getCompilationUnit (fNewName + ".java").getType(fNewName);</pre>
+and<br>
+      <pre>fNewType.getField(oldField.getElementName().getKey());</pre>
+To do this, we ask our refactoring processor for the new elements. The
+processor is guaranteed to implement the interface IJavaElementMapper &#8211;
+a mapper to map old pre-refactoring handles to post-refactoring
+handles. We adapt the processor to the interface:<br>
+      <pre>IJavaElementMapper processor = (IJavaElementMapper) getProcessor().adapt(IJavaElementMapper.class);</pre>
+Now, we can call the following method on the mapper:<br>
+      <pre>IJavaElement getRefactoredJavaElement(IJavaElement element);</pre>
+We can use this method to ask the refactoring to relocate any java
+element in the workspace to reflect all performed changes.&nbsp; For
+example, when asking the refactoring for an updated handle of the
+method:<br>
+      <pre>&#8220;setSomeClass(SomeClass someClass) in InnerType in SomeClass&#8221;, </pre>
+It will return the handle:<br>
+      <pre>&#8220;setAnotherClass(AnotherClass anotherClass) in InnerType in AnotherClass&#8221; </pre>
+(Provided the class SomeClass was renamed to AnotherClass).<br>
+      <br>
+During change creation, the new handle will still point to a
+non-existing element. However, during participant change execution, the
+element will exist and can be used to retrieve resources etc.<br>
+      <br>
+      <b>Side Note:</b> The Rename Type Refactoring may also affect
+resources: If a top-level type was renamed, its enclosing file will be
+renamed as well. To be able to re-map such resource elements as well,
+we can adapt the RenameTypeProcessor to the IResourceMapper interface:<br>
+      <pre>IResourceMapper processor = (IResourceMapper) getProcessor().adapt(IResourceMapper.class);</pre>
+Now, we can call the following method on the mapper:<br>
+      <pre>IResource getRefactoredResource(IResource element);</pre>
+Again, this method can be used to map any IResource in the workspace to
+a new element reflecting all changes.<br>
+      <br>
+With these helper methods, we change our code to the following to
+respond to signature changes in members of the type itself and also to
+changes to fields, methods, and local variables outside of the type:<br>
+      <pre>public class DBTypeRenameParticipant extends RenameParticipant {</pre>
+      <pre><br>   private IType fType;</pre>
+      <pre>   private IJavaElementMapper fMapper;</pre>
+      <pre>   private IJavaElement[] fSimilarDeclarations;</pre>
+      <pre><br>   protected boolean initialize(Object element) {</pre>
+      <pre>   &nbsp; &nbsp;fType= (IType)element;</pre>
+      <pre>  &nbsp;&nbsp; &nbsp;RenameTypeArguments args= (RenameTypeArguments) getArguments();</pre>
+      <pre>      if (args.getUpdateSimilarDeclarations()) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fSimilarDeclarations= args. getSimilarDeclarations();</pre>
+      <pre>      }</pre>
+      <pre>      fMapper= (IJavaElementMapper) getProcessor().adapt(IJavaElementMapper.class);</pre>
+      <pre>  &nbsp;&nbsp; &nbsp;return true;</pre>
+      <pre>}</pre>
+      <pre><br>public Change createChange(IProgressMonitor pm) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;return new DBChange(fType, fNewType) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;public Change perform(&#8230;) {</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDatabase().update(fType.getKey(), fMapper.getRefactoredElement(fType).getKey());</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all members of old Type)</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldMember.getKey(),fMapper.getRefactoredElement(oldMember).getKey();</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all similar declarations not in old type) {&nbsp;&nbsp; &nbsp;<br>		getDB().update(oldElement.getKey(), fMapper.getRefactoredElement(oldElement).getKey());</pre>
+      <pre>	    }</pre>
+      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};</pre>
+      <pre>&nbsp;&nbsp; &nbsp;}</pre>
+      <pre>}</pre>
+Observe the following changes:<br>
+      <ul>
+        <li>We acquired an instance of the processor which we will use
+to
+resolve refactored elements</li>
+        <li>We acquired a list of similarly named declarations</li>
+        <li>We used the java element mapper to acquire the type after
+the
+change</li>
+        <li>We used the java element mapper to acquire the type&#8217;s
+members
+after the change. Note that the resolving method works for all members
+of the type, not only the similarly named ones. In fact, the method
+works for any IJavaElement in the whole workspace (of course, most will
+remain unaffected).</li>
+        <li>We used the similarly named declarations list and the java
+element mapper to change all similarly named declarations outside the
+type.</li>
+        <li>We didn&#8217;t use a resource element mapper in this example;
+however
+it works similar to the java element mapper.<br>
+        </li>
+      </ul>
+Our code is now fully adapted to the similarly named declaration
+updating feature.<br>
+      <br>
+To sum up, you need to be aware of the following issues when adapting
+your old rename type participant code:<br>
+      <ol>
+        <li>You may no longer make assumptions about how a java element
+or
+resource looks like during change execution, whether it resides inside
+the renamed type or outside. Instead, always use the
+getRefactoredJavaElement() or getRefactoredResource() methods to
+acquire a new instance of the java element or resource.</li>
+        <li>You need to take care of methods, fields, and local
+variables
+renamed outside the type. You may acquire them by using the
+getSimilarDeclarations() method.<br>
+        </li>
+      </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+</body>
+</html>
