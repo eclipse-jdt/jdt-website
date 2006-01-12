@@ -47,7 +47,9 @@
           build artifacts during incremental build</li>
         <li>Contribution of problem 
           markers for annotation-based problems</li>
-      </ul>		<hr size="1" />
+      </ul>
+      <br />
+      <hr size="1" />
 		<a name="#JDT_CORE"></a>
 		<h3>JDT Core</h3>
 		<p>JDT Core defines the non-UI 
@@ -87,6 +89,7 @@
         <li>Dynamic class reloading 
           where supported by Java virtual machine</li>
       </ul>
+      <br />
 		<hr size="1" />
 		<a name="#JDT_UI"></a>
 		<h3>JDT UI</h3>
