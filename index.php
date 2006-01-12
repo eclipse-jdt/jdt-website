@@ -1,17 +1,4 @@
 <?php  																														require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
-
-	#*****************************************************************************
-	#
-	# sample_3col.php
-	#
-	# Author: 		Denis Roy
-	# Date:			2005-11-07
-	#
-	# Description: Type your page comments here - these are not sent to the browser
-	#
-	#
-	#****************************************************************************
-	
 	#
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Eclipse Java Development Tools (JDT) Subproject";
@@ -40,7 +27,7 @@
         Workbench as well as a number of views, editors, wizards, builders, and 
         code merging and refactoring tools. The JDT project allows Eclipse to 
         be a development environment for itself.<br>
-        <b><a href="overview.html">More details...</a></b>
+        <b><a href="overview.php">More details...</a></b>
 			</p>
 		</div>
 		<div class="homeitem3col">
