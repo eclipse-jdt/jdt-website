@@ -68,42 +68,42 @@ Starting in Eclipse 3.2 M4, the rename type refactoring is able to
 rename &#8220;similar declarations": methods, fields, and local
 variables with names similar to the name of the renamed type. For
 example, consider the following code:<br>
-      <pre>public class Foo {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;private Foo foo;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;private Foo() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;static Foo createFoo() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Foo();</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;public Foo getFoo() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return foo;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;public void setFoo(Foo foo) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp; &nbsp;this.foo= foo;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>}</pre>
-Renaming the type Foo to Bar currently only updates the type&#8217;s name and
+<pre>public class Foo {
+&nbsp;&nbsp; &nbsp;private Foo foo;
+&nbsp;&nbsp; &nbsp;private Foo() {
+&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;static Foo createFoo() {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Foo();
+&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;public Foo getFoo() {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return foo;
+&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;public void setFoo(Foo foo) {
+&nbsp;&nbsp; &nbsp; &nbsp;this.foo= foo;
+&nbsp;&nbsp; &nbsp;}
+}</pre>
+Renaming the type Foo to Bar used to update only the type&#8217;s name and
 all references to it, for example the return type of createFoo() or the
 parameter type of setFoo(Foo foo). The new update similar declarations
-feature will allow the user to change all method, field, and variable
+feature allows the user to change all method, field, and variable
 names corresponding to or containing the type name. For example, when
 renaming Foo to Bar, the code may be changed in the following way
 (depending on the users choices):<br>
-      <pre>public class Bar {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;private Bar bar;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;private Bar() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;static Bar createBar() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Bar();</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;public Bar getBar() {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return bar;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}<br></pre>
-      <pre>&nbsp;&nbsp; &nbsp;public void setBar(Bar bar) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.bar= bar;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>}</pre>
-In contrast to the normal type rename refactoring whose changes were
+<pre>public class Bar {
+&nbsp;&nbsp; &nbsp;private Bar bar;
+&nbsp;&nbsp; &nbsp;private Bar() {
+&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;static Bar createBar() {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return new Bar();
+&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;public Bar getBar() {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return bar;
+&nbsp;&nbsp; &nbsp;}<br>
+&nbsp;&nbsp; &nbsp;public void setBar(Bar bar) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;this.bar= bar;
+&nbsp;&nbsp; &nbsp;}
+}</pre>
+In contrast to the old type rename refactoring whose changes were
 limited to the type itself and its references, the new rename type
 refactoring creates much more changes which also affect arbitrary
 fields, methods, and local variables inside and outside of the renamed
@@ -117,17 +117,17 @@ interested parties by loading corresponding participants. <br>
  height="16" width="16"></td>
       <td><b><a name="signaling"></a>Signalling the new changes</b><br>
       <br>
-The best solution would be to simply reuse existing participants. That
-would mean loading <br>
+The best solution would have been to simply reuse existing
+participants, i.e. loading<br>
       <ul>
-        <li>rename type participant for the type rename,</li>
+        <li>a rename type participant for the type rename,</li>
         <li>rename method participants for the method renames,</li>
         <li>rename field participants for the field renames, and</li>
         <li>rename local variable participants for the local variable
 renames.<br>
         </li>
       </ul>
-Unfortunately, this approach is not feasible as the changes created by
+Unfortunately, this approach was not feasible as the changes created by
 the new rename type refactoring are no longer simple renames &#8211; neither
 the type rename nor the method, field and local variable renames:<br>
       <br>
@@ -160,22 +160,24 @@ The changes to this method are:<br>
       </ol>
 These changes are best described as a complete <b>signature change</b>
 of the method, and not a simple rename. Similar problems exist when
-changing fields and local variables. Because these changes are not
-currently signaled to the participants, they will break existing
+changing fields and local variables. Because these changes were not
+signaled to the participants, they break existing
 participants with assumptions about these members. Those participants
 cannot be reused as-is.<br>
       <br>
-As a side note, signature changes to methods are already a problem when
-renaming methods like the method setFoo(Foo foo): Even in the current
-implementation, a signature change is performed on this method as the
-parameter type Foo is changed to Bar which is not signaled to the
-rename type participant; we also do not load a special participant for
+As a side note, signature changes to methods have already been a
+problem when
+renaming methods like the method setFoo(Foo foo): Even in the former
+implementation, a signature change was performed on this method as the
+parameter type Foo was changed to Bar which was not signaled to the
+rename type participant; we also did not load a special participant for
 it.<br>
       <br>
       <b>Method, field and local variable renames</b>: Considering a
 rename
-of the method setFoo(Foo foo) from the example above, the normal rename
-method refactoring would only have changed the name of the method (and
+of the method setFoo(Foo foo) from the example above, the normal <b>rename
+method</b> <b>refactoring </b>would only have changed the name of the
+method (and
 possibly of overridden methods and references). Rename method
 participants could therefore assume that only the name of the method
 changed and everything else stayed the same.<br>
@@ -194,8 +196,8 @@ in the class Foo, but in the class Bar.<br>
       </ol>
 Again, these changes are best described as a complete signature change
 of the method and an additional change to the container of the method;
-it is no longer a simple rename. Because these changes are not
-currently signaled to the participants, they will break existing
+it is no longer a simple rename. Because these changes were not
+signaled to the participants, they break existing
 participants. Therefore, existing rename method, field, and local
 variable participants cannot be reused as-is, and it is questionable
 whether those participants should know about possible container changes.<br>
@@ -209,7 +211,7 @@ whether those participants should know about possible container changes.<br>
       <br>
 As outlined in section II, some existing participants will not work
 with the new refactoring. Because of the breaking nature of this
-change, we will provide <br>
+change, we provide <br>
       <ul>
         <li>a <b>product configuration flag</b> to completely disable
 the
@@ -228,10 +230,10 @@ will not be presented to the user at all and participant loading and
 handling stays exactly the way it was before. Note that the feature is
 enabled by default. To disable the feature, please add the following
 code to the product extension definition:<br>
-      <pre>&lt;property </pre>
-      <pre>   name="org.eclipse.jdt.ui.refactoring.handlesSimilarDeclarations" </pre>
-      <pre>   value="false"</pre>
-      <pre>/&gt;</pre>
+<pre>&lt;property 
+   name="org.eclipse.jdt.ui.refactoring.handlesSimilarDeclarations" 
+   value="false"
+/&gt;</pre>
       <b>Setting the participant descriptor flag</b>: If set, the
 participant
 will be disabled in each concrete rename type refactoring if the new
@@ -286,36 +288,36 @@ access the new elements. <br>
       <br>
 Let&#8217;s look at a simple example. Consider the following old rename type
 and rename method/field/local variable participants which keep a list
-of all signatures keys of types, methods, fields, and local variables
+of all keys of types, methods, fields, and local variables
 of all Java projects in an external database. <br>
       <br>
 The rename participants are implemented something like this (this is
 the rename type participant, which we will adapt &#8211; the code of the
 method/field/local variable participants looks similar, but need not be
 changed):<br>
-      <pre>public class DBTypeRenameParticipant extends RenameParticipant {</pre>
-      <pre><br>   private IType fOldType;</pre>
-      <pre>   private String fNewName;</pre>
-      <pre>   private IType fNewType;</pre>
-      <pre><br>   protected boolean initialize(Object element) {</pre>
-      <pre>   &nbsp;&nbsp; &nbsp;fOldType= (IType)element;</pre>
-      <pre>   &nbsp;&nbsp; &nbsp;fNewName= getArguments().getNewName();</pre>
-      <pre><br>   &nbsp;&nbsp; &nbsp;// (assuming top level types)</pre>
-      <pre>       fNewType= fOldType.getPackageFragment().getCompilationUnit (fNewName + ".java").getType(fNewName);</pre>
-      <pre>   &nbsp;&nbsp; &nbsp;return true;</pre>
-      <pre>   } </pre>
-      <pre><br>   public Change createChange(IProgressMonitor pm) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;   return new DBChange(fOldType, fNewType) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  public Change perform(&#8230;) {</pre>
-      <pre> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(fOldType.getKey(), fNewType.getKey());</pre>
-      <pre> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all fields of old Type)</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldField.getKey(), fNewType.getField(</pre>
-      <pre>			oldField.getElementName().getKey());</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</pre>
-      <pre><br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// methods, local variables&#8230;</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>}</pre>
+<pre>public class DBTypeRenameParticipant extends RenameParticipant {
+   private IType fOldType;
+   private String fNewName;
+   private IType fNewType;
+   protected boolean initialize(Object element) {
+   &nbsp;&nbsp; &nbsp;fOldType= (IType)element;
+   &nbsp;&nbsp; &nbsp;fNewName= getArguments().getNewName();
+   &nbsp;&nbsp; &nbsp;// (assuming top level types)
+       fNewType= fOldType.getPackageFragment().getCompilationUnit (fNewName + ".java").getType(fNewName);
+   &nbsp;&nbsp; &nbsp;return true;
+   } 
+   public Change createChange(IProgressMonitor pm) {
+&nbsp;&nbsp; &nbsp;   return new DBChange(fOldType, fNewType) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  public Change perform(&#8230;) {
+ &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(fOldType.getKey(), fNewType.getKey());
+ &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all fields of old Type)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldField.getKey(), fNewType.getField(
+			oldField.getElementName().getKey());
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;// methods, local variables&#8230;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};
+&nbsp;&nbsp; &nbsp;}
+}</pre>
 The code makes the assumption that all fields in the new type have the
 same name as in the old type. We need to:<br>
       <ul>
@@ -333,10 +335,10 @@ The RenameArguments class has been subclassed for the Rename Type
 Refactoring to contain additional information about similarly named
 declarations. We can cast the class to RenameTypeArguments and check if
 similarly named declarations are renamed:<br>
-      <pre>RenameTypeArguments args= (RenameTypeArguments) getArguments();</pre>
-      <pre>if (args.getUpdateSimilarDeclarations()) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;// do something</pre>
-      <pre>}</pre>
+<pre>RenameTypeArguments args= (RenameTypeArguments) getArguments();
+if (args.getUpdateSimilarDeclarations()) {
+&nbsp;&nbsp; &nbsp;// do something
+}</pre>
 Now we&#8217;d like to know which elements are renamed. Again, we ask the
 RenameTypeArguments for this information:<br>
       <pre>IJavaElement[] similarDeclarations= args.getSimilarDeclarations();<br></pre>
@@ -384,34 +386,34 @@ a new element reflecting all changes.<br>
 With these helper methods, we change our code to the following to
 respond to signature changes in members of the type itself and also to
 changes to fields, methods, and local variables outside of the type:<br>
-      <pre>public class DBTypeRenameParticipant extends RenameParticipant {</pre>
-      <pre><br>   private IType fType;</pre>
-      <pre>   private IJavaElementMapper fMapper;</pre>
-      <pre>   private IJavaElement[] fSimilarDeclarations;</pre>
-      <pre><br>   protected boolean initialize(Object element) {</pre>
-      <pre>   &nbsp; &nbsp;fType= (IType)element;</pre>
-      <pre>  &nbsp;&nbsp; &nbsp;RenameTypeArguments args= (RenameTypeArguments) getArguments();</pre>
-      <pre>      if (args.getUpdateSimilarDeclarations()) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fSimilarDeclarations= args. getSimilarDeclarations();</pre>
-      <pre>      }</pre>
-      <pre>      fMapper= (IJavaElementMapper) getProcessor().adapt(IJavaElementMapper.class);</pre>
-      <pre>  &nbsp;&nbsp; &nbsp;return true;</pre>
-      <pre>}</pre>
-      <pre><br>public Change createChange(IProgressMonitor pm) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;return new DBChange(fType, fNewType) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;public Change perform(&#8230;) {</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDatabase().update(fType.getKey(), fMapper.getRefactoredElement(fType).getKey());</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all members of old Type)</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldMember.getKey(),fMapper.getRefactoredElement(oldMember).getKey();</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all similar declarations not in old type) {&nbsp;&nbsp; &nbsp;<br>		getDB().update(oldElement.getKey(), fMapper.getRefactoredElement(oldElement).getKey());</pre>
-      <pre>	    }</pre>
-      <pre>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};</pre>
-      <pre>&nbsp;&nbsp; &nbsp;}</pre>
-      <pre>}</pre>
+<pre>public class DBTypeRenameParticipant extends RenameParticipant {
+   private IType fType;
+   private IJavaElementMapper fMapper;
+   private IJavaElement[] fSimilarDeclarations;
+   protected boolean initialize(Object element) {
+   &nbsp; &nbsp;fType= (IType)element;
+  &nbsp;&nbsp; &nbsp;RenameTypeArguments args= (RenameTypeArguments) getArguments();
+      if (args.getUpdateSimilarDeclarations()) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; fSimilarDeclarations= args. getSimilarDeclarations();
+      }
+      fMapper= (IJavaElementMapper) getProcessor().adapt(IJavaElementMapper.class);
+  &nbsp;&nbsp; &nbsp;return true;
+}
+public Change createChange(IProgressMonitor pm) {
+&nbsp;&nbsp; &nbsp;return new DBChange(fType, fNewType) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;public Change perform(&#8230;) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDatabase().update(fType.getKey(), fMapper.getRefactoredElement(fType).getKey());
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all members of old Type)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;getDB().update(oldMember.getKey(),fMapper.getRefactoredElement(oldMember).getKey();
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;for (all similar declarations not in old type) {&nbsp;&nbsp; &nbsp;<br>		getDB().update(oldElement.getKey(), fMapper.getRefactoredElement(oldElement).getKey());
+	    }
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;};
+&nbsp;&nbsp; &nbsp;}
+}</pre>
 Observe the following changes:<br>
       <ul>
-        <li>We acquired an instance of the processor which we will use
+        <li>We acquired an instance of the processor which we used
 to
 resolve refactored elements</li>
         <li>We acquired a list of similarly named declarations</li>
