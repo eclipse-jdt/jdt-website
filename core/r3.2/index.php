@@ -56,34 +56,30 @@ and could be revised while addressing these work items.</p>
  href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
         <ul>
           <li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation
-processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)</li>
-          <p>Work got initiated in org.eclipse.jdt.apt.core (and ui)
+processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)<br/>
+          Work got initiated in org.eclipse.jdt.apt.core (and ui)
 project, requiring changes in JDT/Core which got released in "APT"
 branch. The content of this branch exposes new pluggable API for
 participating in compilation and completion (needed for APT processor)
 in a fashion which is not APT specific. This branch is intended to be
-merged into "HEAD" when it matures enough.</p>
+merged into "HEAD" when it matures enough.</li>
           <li><img src="../ok.gif" height="10" width="10"> Javadoc
-(<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br>
+(<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br/>
+          Mostly affecting Java Model rendering (see Java Model
+item below)
           </li>
-          <ul>
-            <li>Mostly affecting Java Model rendering (see Java Model
-item below)</li>
-          </ul>
-          <li><img src="../progress.gif" height="5" width="14">Classfile
-(<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)</li>
-          <ul>
-            <li>Except for StackMapTable attribute support (<a
+          <li><img src="../progress.gif" height="5" width="14">&nbsp;Classfile
+(<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)<br/>
+           Except for StackMapTable attribute support (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>),
-all other items already got released into Eclipse 3.1.0.</li>
-          </ul>
+all other items already got released into Eclipse 3.1.0.
+</li>
           <li>Compiler API (<a
- href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)</li>
-          <ul>
-            <li>Require 1.6 JRE libraries. Implementation of compiler
+ href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
+          Require 1.6 JRE libraries. Implementation of compiler
 API (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=81471">81471</a>)
-will thus likely be made available as a separate download.</li>
-          </ul>
+will thus likely be made available as a separate download.
+</li>
         </ul>
       </ul>
       <ul>
