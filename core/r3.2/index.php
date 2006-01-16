@@ -50,301 +50,160 @@ schedule</a>.</p>
 are listed below. Note that <i>time estimates</i> are only provided as
 an indication of the amount of work implied; these are our best guess
 and could be revised while addressing these work items.</p>
-      <ul>
-        <li><b>Java SE 6 </b>(<a
- href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
-        <ul>
-          <li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation
-processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)<br/>
-          Work got initiated in org.eclipse.jdt.apt.core (and ui)
-project, requiring changes in JDT/Core which got released in "APT"
-branch. The content of this branch exposes new pluggable API for
-participating in compilation and completion (needed for APT processor)
-in a fashion which is not APT specific. This branch is intended to be
-merged into "HEAD" when it matures enough.</li>
-          <li><img src="../ok.gif" height="10" width="10"> Javadoc
-(<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br/>
-          Mostly affecting Java Model rendering (see Java Model
-item below)
-          </li>
-          <li><img src="../progress.gif" height="5" width="14">&nbsp;Classfile
-(<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)<br/>
-           Except for StackMapTable attribute support (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>),
+<ul>
+	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
+	<ul>
+		<li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)<br/>
+         Work got initiated in org.eclipse.jdt.apt.core (and ui) project, requiring changes in JDT/Core which got released in "APT"
+branch. The content of this branch exposes new pluggable API for participating in compilation and completion (needed for APT processor)
+in a fashion which is not APT specific. This branch is intended to be merged into "HEAD" when it matures enough.</li>
+		<li><img src="../ok.gif" height="10" width="10"> Javadoc (<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br/>
+          Mostly affecting Java Model rendering (see Java Model item below)
+		</li>
+		<li><img src="../progress.gif" height="5" width="14">&nbsp;Classfile (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)<br/>
+			Except for StackMapTable attribute support (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>),
 all other items already got released into Eclipse 3.1.0.
-</li>
-          <li>Compiler API (<a
- href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
-          Require 1.6 JRE libraries. Implementation of compiler
+		</li>
+		<li>Compiler API (<a href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
+			Require 1.6 JRE libraries. Implementation of compiler
 API (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=81471">81471</a>)
 will thus likely be made available as a separate download.
-</li>
-        </ul>
-      </ul>
-      <ul>
-        <li><span style="color: rgb(51, 153, 153);"> [optional]</span><b>
-Switching codebase to Java 5.0</b></li>
-        <ul>
-          <li>If Eclipse 3.2 development switches, then will convert
-JDT/Core implementation (batch compiler remains 1.3 based)</li>
-          <li>Not enough reliable 1.5 runtimes available at the moment
-on each platform, will be reevaluated at end of 3.2 M4.<br>
-          </li>
-        </ul>
-      </ul>
-      <ul>
-        <li><b>Incremental Java Compiler</b></li>
-        <ul>
-          <li>Improved static analysis</li>
-        </ul>
-        <ul>
-          <ul>
-            <li><img src="../progress.gif" height="5" width="14"> Null
-reference analysis, coupled with use of <span
- style="font-style: italic;">@NonNull</span> annotation (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>,
-              <a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>) </li>
-          </ul>
-          <ul>
-            <li><img src="../ok.gif" height="10" width="10"> Signal
-references to raw types (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89529">89529</a>)</li>
-            <li><img src="../ok.gif" height="10" width="10"> Signal
-assignment to method parameters (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=53773">53773</a>)</li>
-            <li><img src="../ok.gif" height="10" width="10"> Signal
-unnecessary $NON-NLS tags (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)<br>
-            </li>
-          </ul>
-          <li><img src="../progress.gif" height="5" width="14"> Enable
-pluggable participation in compilation (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
-(e.g. APT)</li>
-          <li><img src="../ok.gif" height="10" width="10"> Allow valid
-classfile generation in presence of optional
-compiler errors (configured by some preference) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107282">107282</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14"> Provide
-API to compute the list of files to be cleaned by
-the Java builder (for a UI to warn user) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
-          </li>
-          <li>Improve access restriction support: <br>
-          </li>
-          <ul>
-            <li><img src="../ok.gif" height="10" width="10">restrictions
-should be inherited (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>)</li>
-            <li>check more scenarii based on annotations/doclet (<span
- style="font-style: italic;">@CannotImplement</span>, ...)<br>
-            </li>
-            <li>hints on libraries</li>
-            <li>export rules</li>
-          </ul>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Provide API to retrieve class files generated
-for a given compilation unit or reference information (based on last
-build state) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6584">6584</a>)</li>
-        </ul>
-      </ul>
-      <ul>
-        <li><b>DOM AST</b></li>
-        <ul>
-          <li><img src="../progress.gif" height="5" width="14"> More
-robust DOM AST: statement level recovery (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Cleanup bindings: generic vs.
-parameterized (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80472">80472</a>)</li>
-          <li>Make generic method invocation bindings unique<br>
-          </li>
-          <li>Surface more compiler functionalities on DOM bindings:
-precomputed override indicator (AccOverriding/AccImplementing) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>)</li>
-          <li>Allow creating composite types on demand (array,
-parameterized, wildcard, capture, ...) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">40096</a>)</li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Investigate having binding comparisons work
-across AST contexts (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80715">80715</a>)</li>
-        </ul>
-      </ul>
-      <ul>
-        <li><b>Search</b></li>
-        <ul>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Enable Camel pattern matching
-(performance item for open
-type dialog) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110060">110060</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Offer enclosing local variable
-when matching its
-type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)</li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Allow regex in Java search (requires JDK 1.4)
-(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>)
-            <i>(1 week)</i> </li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Provide API for spell checking any symbol
-(i.e. is this symbol an identifier anywhere) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=37528">37528</a>) </li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-More powerful search (code pattern based, e.g.
-search where synchronized on 'JavaModelManager') (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
-        </ul>
-      </ul>
-      <ul>
-      </ul>
-      <ul>
-        <li><b>Java Model</b></li>
-        <ul>
-          <li>LRU cache for working copy buffers (scalability of
-refactoring) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>)</li>
-          <ul>
-          </ul>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Surface
-javadoc <span style="font-style: italic;">@category</span>
-(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=23669">23669</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Working copy for classfiles
-(enablement for
-split
-refactoring) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110160">110160</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Provide minimal support for
-working copy outside the
-workspace (open external file) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=61013">61013</a>)</li>
-          <li> Provide support for reacting to option changes (delta?
-build?) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=46780">46780</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;">&nbsp;
-Address long standing issue with secondary types (not found by model
-name environment during reconcile) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Broadcast DOM AST requested during
+		</li>
+	</ul>
+	</li>
+	<li><span style="color: rgb(51, 153, 153);"> [optional]</span><b> Switching codebase to Java 5.0</b>
+		<ul>
+			<li>If Eclipse 3.2 development switches, then will convert JDT/Core implementation (batch compiler remains 1.3 based)</li>
+			<li>Not enough reliable 1.5 runtimes available at the moment on each platform, will be reevaluated at end of 3.2 M4.</li>
+		</ul>
+	</li>
+	<li><b>Incremental Java Compiler</b>
+		<ul>
+			<li>Improved static analysis
+	          	<ul>
+					<li><img src="../progress.gif" height="5" width="14"> Null reference analysis, coupled with use of <span style="font-style: italic;">@NonNull</span> annotation (<a
+	 					href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>)
+	 				</li>
+		            <li><img src="../ok.gif" height="10" width="10"> Signal references to raw types (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89529">89529</a>)</li>
+	            	<li><img src="../ok.gif" height="10" width="10"> Signal assignment to method parameters (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=53773">53773</a>)</li>
+	            	<li><img src="../ok.gif" height="10" width="10"> Signal unnecessary $NON-NLS tags (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)</li>
+	          	</ul>
+          	</li>
+			<li><img src="../progress.gif" height="5" width="14"> Enable pluggable participation in compilation (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
+				(e.g. APT)</li>
+			<li><img src="../ok.gif" height="10" width="10"> Allow valid classfile generation in presence of optional compiler errors (configured by some preference) (<a
+ 				href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107282">107282</a>)</li>
+			<li><img src="../progress.gif" height="5" width="14"> Provide API to compute the list of files to be cleaned by
+the Java builder (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
+			</li>
+			<li>Improve access restriction support:
+				<ul>
+					<li><img src="../ok.gif" height="10" width="10">restrictions should be inherited (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>)</li>
+            		<li>check more scenarii based on annotations/doclet (<span style="font-style: italic;">@CannotImplement</span>, ...)</li>
+            		<li>hints on libraries</li>
+            		<li>export rules</li>
+            	</ul>
+			</li>
+		</ul>
+	</li>
+	<li><span style="color: rgb(51, 153, 153);"> [optional]</span>Provide API to retrieve class files generated for a given compilation unit or reference information (based on last
+build state) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6584">6584</a>)</li>
+	<li><b>DOM AST</b>
+		<ul>
+			<li><img src="../progress.gif" height="5" width="14"> More robust DOM AST: statement level recovery (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Cleanup bindings: generic vs. parameterized (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80472">80472</a>)</li>
+			<li>Make generic method invocation bindings unique</li>
+			<li>Surface more compiler functionalities on DOM bindings: precomputed override indicator (AccOverriding/AccImplementing) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>)</li>
+			<li>Allow creating composite types on demand (array, parameterized, wildcard, capture, ...) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">40096</a>)</li>
+			<li><span style="color: rgb(51, 153, 153);"> [optional]</span>Investigate having binding comparisons work across AST contexts (<a
+ 				href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80715">80715</a>)</li>
+		</ul>
+	</li>
+	<li><b>Search</b>
+		<ul>
+          <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Enable Camel pattern matching
+(performance item for open type dialog) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110060">110060</a>)</li>
+          <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Offer enclosing local variable
+when matching its type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)</li>
+          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>Allow regex in Java search (requires JDK 1.4)
+(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>) <i>(1 week)</i></li>
+          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>Provide API for spell checking any symbol
+(i.e. is this symbol an identifier anywhere) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=37528">37528</a>) </li>
+          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>More powerful search (code pattern based, e.g.
+search where synchronized on 'JavaModelManager') (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
+		</ul>
+	</li>
+	<li><b>Java Model</b></li>
+		<ul>
+			<li>LRU cache for working copy buffers (scalability of refactoring) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Surface javadoc <span style="font-style: italic;">@category</span>
+				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=23669">23669</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Working copy for classfiles
+(enablement for split refactoring) (<a  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110160">110160</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide minimal support for
+working copy outside the workspace (open external file) (<a  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=61013">61013</a>)</li>
+			<li> Provide support for reacting to option changes (delta? build?) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=46780">46780</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">&nbsp;Address long standing issue with secondary types (not found by model
+name environment during reconcile) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Broadcast DOM AST requested during
 reconcile (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110168">110168</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Provide API to encode/decode a
-classpath entry
-into
-String/XML form (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110171">110171</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Provide API to access javadoc from
-either
-source (<img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"><a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110172">110172</a>)
-or attached HTML (<img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"><a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110173">110173</a>)</li>
-          <li>Leverage markers into model, provide access, delta and
-getMaxSeverity(minSeverity, markerType, depth) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110177">110177</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Size of the internal Java model
-cache is now function of
-the VM max heap size (-Xmx) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106202">106202</a>)<br>
-          </li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> .classpath reading is now forward
-compatible with upcoming
-versions (for unknown attributes) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101425">101425</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Address
-long standing issue with secondary types (not found by model
-name environment during reconcile) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Investigate allowing classpath containers to
-refer to further container/variable entries (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>)</li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Consider removing the need for exclusion
-patterns when nesting source folders (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110179">110179</a>)
-            <i>(1 week)</i></li>
-          <li><img alt="In progress" src="../progress.gif"
- style="width: 14px; height: 5px;">&nbsp;<span
- style="color: rgb(51, 153, 153);"> [optional]</span>
-Investigate relaxing the rule that Java
-source file extension is "java" (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>)</li>
-          <li><span style="color: rgb(51, 153, 153);"> [optional]</span>
-Provide more Ant functionalities, e.g. way to
-retrieve project classpath, etc... (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=5950">5950</a>) <span
- style="font-style: italic;">(3 weeks)</span></li>
-        </ul>
-      </ul>
-      <ul>
-        <li><b>Code Assist</b></li>
-        <ul>
-          <li><img src="../progress.gif" height="5" width="14"> Enrich
-completion context: e.g. DOM AST near completion
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide API to encode/decode a
+classpath entry into String/XML form (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110171">110171</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide API to access javadoc from
+				either source (<img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110172">110172</a>)
+or attached HTML (<img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110173">110173</a>)</li>
+			<li>Leverage markers into model, provide access, delta and getMaxSeverity(minSeverity, markerType, depth) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110177">110177</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Size of the internal Java model cache is now function of
+the VM max heap size (-Xmx) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106202">106202</a>)
+			</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> .classpath reading is now forward compatible with upcoming
+versions (for unknown attributes) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101425">101425</a>)</li>
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Address long standing issue with secondary types (not found by model
+name environment during reconcile) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
+			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Investigate allowing classpath containers to
+refer to further container/variable entries (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>)</li>
+			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Consider removing the need for exclusion
+patterns when nesting source folders (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110179">110179</a>) <i>(1 week)</i></li>
+			<li><img alt="In progress" src="../progress.gif" style="width: 14px; height: 5px;">&nbsp;<span style="color: rgb(51, 153, 153);"> [optional]</span>
+Investigate relaxing the rule that Java source file extension is "java" (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>)</li>
+			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Provide more Ant functionalities, e.g. way to
+retrieve project classpath, etc... (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=5950">5950</a>) <span style="font-style: italic;">(3 weeks)</span></li>
+		</ul>
+	</li>
+	<li><b>Code Assist</b>
+		<ul>
+			<li><img src="../progress.gif" height="5" width="14"> Enrich completion context: e.g. DOM AST near completion
 location (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">110181</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14"> Enable
-pluggable participation in completion (e.g. APT) (<a
+			<li><img src="../progress.gif" height="5" width="14"> Enable pluggable participation in completion (e.g. APT) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14"> Provide
-completion in javadoc (no longer done in UI layer) (<a
+			<li><img src="../progress.gif" height="5" width="14"> Provide completion in javadoc (no longer done in UI layer) (<a
  href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=%5Bjavadoc+assist%5D&amp;product=JDT&amp;component=Core&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">related
 bugs</a>)</li>
-          <li><img src="../progress.gif" height="5" width="14"> Enable
-constructor completions in
-allocations: "new A&lt;ctrl-space&gt;" (<a
+			<li><img src="../progress.gif" height="5" width="14"> Enable constructor completions in allocations: "new A&lt;ctrl-space&gt;" (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">83392</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Support for Camel prefix: e.g.
-"NPE&lt;ctrl-space&gt;&nbsp; --&gt; NullPointerException" (<a
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Support for Camel prefix: e.g. "NPE&lt;ctrl-space&gt;&nbsp; --&gt; NullPointerException" (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102572">102572</a>)</li>
-          <li><img alt="OK mark" src="../ok.gif"
- style="width: 10px; height: 10px;"> Provide
-completion on break/continue label (<a
+ 			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide completion on break/continue label (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>)</li>
-          <li>Completion in annotation member pair value</li>
-          <ul>
-            <li><img alt="In progress" src="../progress.gif"
- style="width: 14px; height: 5px;"> provide hook for completing inside
-string
-literal (e.g.
-APT completion) (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110188">110188</a>)</li>
-            <li>handle some standard annotations: target element types,
-suppress warning tokens (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>)</li>
-          </ul>
-        </ul>
-      </ul>
-      <ul>
-        <li><b>Code Formatter</b></li>
-        <ul>
-          <li><img src="../progress.gif" height="5" width="14"> Allow
-formatting directly from DOM AST by moving infrastructure from compiler
-AST to DOM AST (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)</li>
-          <li> Improve alignment support for message cascades or nested
-message sends (<a
- href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=59891">59891</a>) </li>
-          <li> Improve tolerance for syntax errors in formatted source
-(require work on more robust DOM AST) (<a
+			<li>Completion in annotation member pair value
+				<ul>
+					<li><img alt="In progress" src="../progress.gif" style="width: 14px; height: 5px;"> provide hook for completing inside
+string literal (e.g. APT completion) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110188">110188</a>)</li>
+					<li>handle some standard annotations: target element types, suppress warning tokens (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>)</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><b>Code Formatter</b>
+		<ul>
+			<li><img src="../progress.gif" height="5" width="14"> Allow formatting directly from DOM AST by moving infrastructure from compiler
+AST to DOM AST (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)</li>
+			<li> Improve alignment support for message cascades or nested message sends (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=59891">59891</a>) </li>
+			<li> Improve tolerance for syntax errors in formatted source (require work on more robust DOM AST) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110196">110196</a>)</li>
-        </ul>
-      </ul>
+		</ul>
+	</li>
+</ul>
 <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;For <b>3.2-Milestone 3 (2005/11/04)</b>, we will
 focus on the following items:</p>
