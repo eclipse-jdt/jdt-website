@@ -15,7 +15,7 @@
 	#
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Jdt core R3.2.x";
-	$pageKeywords	= "Phoenix, sample";
+	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, 3.2";
 	$pageAuthor		= "";
 	
 	# Add page-specific Nav bars here
@@ -41,8 +41,7 @@ describes the JDT/Core implementation of the <a
  href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_2.html">official
 plan</a>, to be delivered according to the <a
  href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
-schedule</a>.
-			</p>
+schedule</a>.</p>
      <a name="#release-plan"></a>
      <p><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
