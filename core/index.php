@@ -77,11 +77,11 @@ be run headless.</p>
 <ul>
   <li>Most active development goes into this stream.
   </li>
-  <li> The 3.2 plan is posted <a href="r3.2/main.html#release-plan">here</a>.
+  <li> The 3.2 plan is posted <a href="r3.2/index.php#release-plan">here</a>.
   </li>
-  <li> The 3.2 next-milestone plan is posted <a href="r3.2/main.html#milestone-plan">here</a>.
+  <li> The 3.2 next-milestone plan is posted <a href="r3.2/index.php#milestone-plan">here</a>.
   </li>
-  <li> Patch available in <a href="r3.2/main.html#updates">update</a> area (for testing purpose).
+  <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
 </td></tr>
