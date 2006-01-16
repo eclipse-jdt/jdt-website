@@ -43,30 +43,26 @@ plan</a>, to be delivered according to the <a
  href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
 schedule</a>.
 			</p>
-<table>
-    <tr>
      <a name="#release-plan"></a>
-      <td align="right" valign="top" width="2%"><img
+     <p><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%"> For <b>release 3.2</b> the major focus points
+ height="16" width="16">&nbsp;
+      For <b>release 3.2</b> the major focus points
 are listed below. Note that <i>time estimates</i> are only provided as
 an indication of the amount of work implied; these are our best guess
-and could be revised while addressing these work items.<br>
+and could be revised while addressing these work items.</p>
       <ul>
         <li><b>Java SE 6 </b>(<a
  href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)</li>
         <ul>
-          <li><img src="../progress.gif" height="5" width="14">Annotation
+          <li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation
 processing tools (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)</li>
-          <ul>
-            <li>Work got initiated in org.eclipse.jdt.apt.core (and ui)
+          <p>Work got initiated in org.eclipse.jdt.apt.core (and ui)
 project, requiring changes in JDT/Core which got released in "APT"
 branch. The content of this branch exposes new pluggable API for
 participating in compilation and completion (needed for APT processor)
 in a fashion which is not APT specific. This branch is intended to be
-merged into "HEAD" when it matures enough.</li>
-          </ul>
+merged into "HEAD" when it matures enough.</p>
           <li><img src="../ok.gif" height="10" width="10"> Javadoc
 (<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br>
           </li>
@@ -354,15 +350,9 @@ message sends (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110196">110196</a>)</li>
         </ul>
       </ul>
-      </td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%"><a name="milestone-plan"></a>For <b>3.2-Milestone
-3 (2005/11/04)</b>, we will
-focus on the following items:<br>
+<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16">&nbsp;For <b>3.2-Milestone 3 (2005/11/04)</b>, we will
+focus on the following items:</p>
       <ul>
         <li><img alt="OK mark" src="../ok.gif"
  style="width: 10px; height: 10px;"> JavaModel provide String based API
@@ -433,14 +423,10 @@ IProblem, allowing to categorize and associate marker type - philippe<br>
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
 in progress</a></li>
       </ul>
-      </td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
+<p><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%">For <b>3.2-Milestone 4 (2005/12/16)</b>, we will
-focus on the following items:<br>
+ height="16" width="16">&nbsp;For <b>3.2-Milestone 4 (2005/12/16)</b>, we will
+focus on the following items:</p>
       <ul>
         <li><img src="../progress.gif" height="5" width="14"> Allow
 formatting directly from DOM AST by moving
@@ -528,16 +514,11 @@ initializing JDT Core
         <li> Build notes of current <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
 in progress</a></li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <a name="#milestone-plan"></a>
-      <td align="right" valign="top" width="2%"><img
+</ul>
+<p><a name="#milestone-plan"></a><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%">For <b>3.2-Milestone 5 (2006/02/17)</b>, we will
-focus on the following items:<br>
+ height="16" width="16">&nbsp;For <b>3.2-Milestone 5 (2006/02/17)</b>, we will
+focus on the following items:</p>
       <ul>
         <li><img src="../progress.gif" height="5" width="14"> Initiate
 discussion for locking projects (JDT or platform
@@ -618,10 +599,7 @@ files on EFS (<a
         <li> Build notes of current <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
 in progress</a></li>
-      </ul>
-      </td>
-    </tr>
-</table>			
+      </ul>		
 		</div>
 		<div class="homeitem3col">
 			<a name="#BUG_RESOLUTION"></a>
@@ -707,12 +685,9 @@ quality assessment. If you find any regression using these patches,
 please inform the JDT/Core team by entering a <a
  href="http://dev.eclipse.org/bugs/">bug report</a>
 			</p>
-			<table>
-    <tr>
-      <td align="right" valign="top" width="2%"><img
+			<p><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16"></td>
-      <td width="98%"><b>3.2 integration preview </b>
+ height="16" width="16">&nbsp;<b>3.2 integration preview </b>
       <table>
           <tr>
             <td valign="top"><a
@@ -739,8 +714,6 @@ superfluous $NON-NLS comments <br>
 Also see corresponding <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4477&amp;content-type=text/html">build
 notes</a>.			
-			</table>
-			</tr>
 			</table>
 		</div>
 		<div class="homeitem3col">

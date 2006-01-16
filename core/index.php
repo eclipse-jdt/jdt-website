@@ -69,7 +69,7 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="#HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Development</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Development</b></p>
 <ul>
   <li>Most active development goes into this stream.
   </li>
@@ -80,10 +80,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<table>
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.1 Maintenance</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.1 Maintenance</b></p>
 <ul>
   <li> Release 3.1 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
@@ -92,11 +89,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.1/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.0 Maintenance</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.0 Maintenance</b><p>
 <ul>
   <li> Release 3.0 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
@@ -105,11 +98,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.0/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R2.1 Maintenance</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.1 Maintenance</b></p>
 <ul>
   <li> Release 2.1 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
@@ -118,11 +107,7 @@ be run headless.</p>
   <li> Patch available in <a href="r2.1/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R2.0 Maintenance</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.0 Maintenance</b></p>
 <ul>
   <li> Rollup 2.0.3 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
@@ -131,11 +116,7 @@ be run headless.</p>
   <li> Patch available in <a href="r2.0/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-</td>
-</tr>
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R1.0 Maintenance</b>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R1.0 Maintenance</b></p>
 <ul>
   <li> Rollup 1.0.2 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
@@ -144,12 +125,7 @@ be run headless.</p>
   <li> Patch available in <a href="r1.0/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-
-<p>For more detailed information, check out the <a href="dev.php">Development
-Resources</a>.</p>
-</td></tr>			
-			</table>
-			</p>
+<p>For more detailed information, check out the <a href="dev.php">Development Resources</a>.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="#INVOLVED"></a>
