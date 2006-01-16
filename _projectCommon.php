@@ -11,8 +11,13 @@
 	# these are optional
 	$Nav->addNavSeparator("Components", 	"main.php");
 	$Nav->addCustomNav("APT", 	"http://www.eclipse.org/jdt/apt/index.html", "_self", 1);
-	$Nav->addCustomNav("Core", 	"http://www.eclipse.org/jdt/core/index.html", "_self", 1);
+	$Nav->addCustomNav("Core", 	"http://www.eclipse.org/jdt/core/index.php", "_self", 1);
 	$Nav->addCustomNav("Debug", "http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html", "_self", 1);
 	$Nav->addCustomNav("UI", 	"http://www.eclipse.org/jdt/ui/index.html", "_self", 1);
 
 ?>
+<style type="text/css">
+<!--
+  a  { font-weight: bold }
+-->
+</style> 

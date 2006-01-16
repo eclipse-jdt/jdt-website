@@ -27,7 +27,7 @@
         Workbench as well as a number of views, editors, wizards, builders, and 
         code merging and refactoring tools. The JDT project allows Eclipse to 
         be a development environment for itself.<br>
-        <b><a href="overview.php">More details...</a></b>
+        <a href="overview.php">More details...</a>
 			</p>
 		</div>
 		<div class="homeitem3col">
@@ -42,19 +42,19 @@
           <td width="82%"><b>Description</b></td>
         </tr>
         <tr> 
-          <td valign="top" width="20%"><b><a href="http://www.eclipse.org/jdt/apt/index.html" target="_top">APT</a></b></td>
+          <td valign="top" width="20%"><a href="http://www.eclipse.org/jdt/apt/index.html" target="_top">APT</a></td>
 		  <td width="82%">Java 5.0 annotation processing infrastructure</td>
         </tr>
         <tr> 
-          <td width="20%" valign="top"><b><a href="http://www.eclipse.org/jdt/core/index.html" target="_top">Core</a></b></td>
+          <td width="20%" valign="top"><a href="core/index.php" target="_top">Core</a></td>
           <td width="82%">Java IDE headless infrastructure</td>
         </tr>
         <tr> 
-          <td width="20%" valign="top"><b><a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html" target="_top">Debug</a></b></td>
+          <td width="20%" valign="top"><a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html" target="_top">Debug</a></td>
           <td width="82%">Debug support for Java</td>
         </tr>
         <tr> 
-          <td width="20%" valign="top"><b><a href="http://www.eclipse.org/jdt/ui/index.html" target="_top">UI</a></b></td>
+          <td width="20%" valign="top"><a href="http://www.eclipse.org/jdt/ui/index.html" target="_top">UI</a></td>
           <td width="82%">Java IDE User Interface</td>
         </tr>
       </table>
