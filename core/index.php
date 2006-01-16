@@ -69,11 +69,7 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="#HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p>
-			<table>
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.2 Development</b>
+			<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Development</b>
 <ul>
   <li>Most active development goes into this stream.
   </li>
@@ -84,8 +80,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-</td></tr>
-
+<table>
 <tr>
 <td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
 <td WIDTH="98%"><b>R3.1 Maintenance</b>

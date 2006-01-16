@@ -45,6 +45,7 @@ schedule</a>.
 			</p>
 <table>
     <tr>
+     <a name="#release-plan"></a>
       <td align="right" valign="top" width="2%"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16"></td>
@@ -531,6 +532,7 @@ in progress</a></li>
       </td>
     </tr>
     <tr>
+      <a name="#milestone-plan"></a>
       <td align="right" valign="top" width="2%"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16"></td>
@@ -624,9 +626,6 @@ in progress</a></li>
 		<div class="homeitem3col">
 			<a name="#BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
-			<table>
-   <tr>
-      <td colspan="2"><a name="bugs"></a>
       <ul>
         <li>Overall R3.2, 200?/??/?? : (<a
  href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2&amp;target_milestone=3.2+M1&amp;target_milestone=3.2+M2&amp;target_milestone=3.2+M3&amp;target_milestone=3.2+M4&amp;target_milestone=3.2+M5&amp;target_milestone=3.2+M6&amp;target_milestone=3.2+M7&amp;target_milestone=3.2+RC1&amp;target_milestone=3.2+RC2&amp;target_milestone=3.2+RC3&amp;target_milestone=3.2+RC4&amp;resolution=FIXED">fixed</a>)
@@ -698,9 +697,6 @@ in progress</a></li>
  href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M1&amp;target_milestone=3.1.1">resolved</a>)
         </li>
       </ul>
-      </td>
-    </tr>
-    			</table>
 		</div>
 		<div class="homeitem3col">
 			<a name="#UPDATES"></a>
