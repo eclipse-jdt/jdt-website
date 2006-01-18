@@ -16,7 +16,7 @@
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "Jdt core R3.2.x";
 	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, 3.2";
-	$pageAuthor		= "";
+	$pageAuthor		= "JDT/Core team";
 	
 	# Add page-specific Nav bars here
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
@@ -28,10 +28,11 @@
 	#
 		
 	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
+ob_start();
+?>
 
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		<p>Back to <a href="../dev.php">Development Resources</a>.</p>
 		<div class="homeitem3col">
 			<a name="#HAPPENING"></a>
@@ -603,8 +604,9 @@ compiler compliance level should thus be set to 1.4. </li>
 		</div>
 	</div>
 
-EOHTML;
-
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);

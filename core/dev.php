@@ -28,10 +28,11 @@
 	#
 		
 	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
+ob_start();
+?>		
 
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		<p>Back to <a href="index.php">JDT/Core main page</a>.</p>
 		<div class="homeitem3col">
 			<a name="#CURRENT"></a>
@@ -89,9 +90,9 @@
     <td width="98%"> <b>Additional tools</b><p>
       Here are tools provided as a courtesy of JDT Core Team:</p> 
       <ul>
-        <li><a href="tools/jdtcoretools/index.html">JDT/Core utilities</a></li>
-        <li><a href="tools/diff/index.html">Diff</a></li>
-        <li><a href="tools/internal/index.html">Internal</a></li>
+        <li><a href="tools/jdtcoretools/index.php">JDT/Core utilities</a></li>
+        <li><a href="tools/diff/index.php">Diff</a></li>
+        <li><a href="tools/internal/index.php">Internal</a></li>
       </ul>
     </td>
   </tr>
@@ -170,9 +171,9 @@
 			</ul>
 		</div>
 	</div>
-
-EOHTML;
-
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);

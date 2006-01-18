@@ -28,10 +28,11 @@
 	#
 		
 	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
+ob_start();
+?>	
 
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		Back to <a href="../dev.php">JDT Core Component Development Resources page</a>.
 		<p>This is an Eclipse update-site.
 		<br>
@@ -39,9 +40,9 @@
 		Help&nbsp;<b>></b>&nbsp;Software&nbsp;Updates&nbsp;<b>></b>&nbsp;Find&nbsp;and&nbsp;Install&nbsp;<b>></b>&nbsp;Search&nbsp;for&nbsp;new&nbsp;features&nbsp;to&nbsp;install&nbsp;<b>></b>&nbsp;...
 		</p>
 	</div>
-
-EOHTML;
-
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);

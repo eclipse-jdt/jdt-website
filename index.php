@@ -12,13 +12,12 @@
 	# $Nav->addCustomNav("Google", "http://www.google.com/", "_blank", 3);
 
 	# End: page-specific settings
-	#
-		
-	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
+	# Paste your HTML content between the markers!	
+ob_start();
+?>		
 
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		<div class="homeitem3col">
 			<h3>About the JDT Subproject</h3>
 			<p>The JDT project provides the tool plug-ins that implement a Java IDE 
@@ -60,8 +59,9 @@
       </table>
 		</div>
 	</div>
-EOHTML;
-
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);

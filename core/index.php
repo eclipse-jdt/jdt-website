@@ -14,10 +14,10 @@
 	#
 		
 	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
-
+ob_start();
+?>
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		<div class="homeitem3col">
 			<a name="#DEV"></a>
 			<h3>Development Resources</h3>
@@ -158,8 +158,9 @@ Resources</a>.</p>
 		</div>
 	</div>
 
-EOHTML;
-
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);

@@ -28,10 +28,10 @@
 	#
 		
 	# Paste your HTML content between the EOHTML markers!	
-	$html = <<<EOHTML
-
+ob_start();
+?>
 	<div id="midcolumn">
-		<h1>$pageTitle</h1>
+		<h1><?= $pageTitle ?></h1>
 		<p>The JDT project contributes 
         a set of plug-ins that add the capabilities of a full-featured Java IDE 
         to the Eclipse platform. The JDT plugins provide APIs so that they can 
@@ -146,8 +146,10 @@
 			</ul>
 		</div>
 	</div>
-EOHTML;
 
+<?php
+	$html = ob_get_contents();
+	ob_end_clean();
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
