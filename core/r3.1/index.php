@@ -35,7 +35,7 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 		<p>Back to <a href="../dev.php">Development Resources</a>.</p>
 		<div class="homeitem3col">
-			<a name="#HAPPENING"></a>
+			<a name="HAPPENING"></a>
 			<h3>What's Happening?</h3>
 			 <a name="release-plan"></a>
 			 <p>This section describes the JDT/Core implementation of the <a
@@ -209,7 +209,7 @@ week)</i></li>
       </ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#FEATURES"></a>
+			<a name="FEATURES"></a>
 			<h3>Feature List</h3>
 			<p>Work items completed in the 3.1 stream, also see <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build
@@ -333,7 +333,7 @@ information. </li>
       </ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#RELEASE"></a>
+			<a name="RELEASE"></a>
 			<h3>Release Process</h3>
 			<ul>
 		        <li>Release Candidate 0 : <a href="test-rc0.php">test plan</a>
@@ -347,7 +347,7 @@ information. </li>
 		    </ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#BUGS"></a>
+			<a name="BUGS"></a>
 			<h3>Bug Resolution</h3>
 			<ul>
         <li> Rollup 3.1.2, 2006/01/?? : (<a
@@ -490,7 +490,7 @@ information. </li>
       </ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#UPDATES"></a>
+			<a name="UPDATES"></a>
 			<h3>Updates</h3>
 			<p>These patches are not yet part of any official
 release or rollup; but provide an early access to the next delivery for
@@ -641,7 +641,7 @@ notes</a>.
       </table>
 		</div>
 		<div class="homeitem3col">
-			<a name="#SOURCE"></a>
+			<a name="SOURCE"></a>
 			<h3>Getting the sources</h3>
 			<ul>
         <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>

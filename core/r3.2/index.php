@@ -35,7 +35,7 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 		<p>Back to <a href="../dev.php">Development Resources</a>.</p>
 		<div class="homeitem3col">
-			<a name="#HAPPENING"></a>
+			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
 			<p>This section
 describes the JDT/Core implementation of the <a
@@ -43,7 +43,7 @@ describes the JDT/Core implementation of the <a
 plan</a>, to be delivered according to the <a
  href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
 schedule</a>.</p>
-     <a name="#release-plan"></a>
+     <a name="release-plan"></a>
      <p><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;
@@ -370,7 +370,7 @@ initializing JDT Core
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work
 in progress</a></li>
 </ul>
-<p><a name="#milestone-plan"></a><img
+<p><a name="milestone-plan"></a><img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;For <b>3.2-Milestone 5 (2006/02/17)</b>, we will
 focus on the following items:</p>
@@ -457,7 +457,7 @@ in progress</a></li>
       </ul>		
 		</div>
 		<div class="homeitem3col">
-			<a name="#BUG_RESOLUTION"></a>
+			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
         <li>Overall R3.2, 200?/??/?? : (<a
@@ -532,7 +532,7 @@ in progress</a></li>
       </ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#UPDATES"></a>
+			<a name="UPDATES"></a>
 			<h3>Updates</h3>
 			<p>These patches are not yet part of any official
 release or rollup; but provide an early access to the next delivery for
@@ -572,7 +572,7 @@ notes</a>.
 			</table>
 		</div>
 		<div class="homeitem3col">
-			<a name="#SOURCES"></a>
+			<a name="SOURCES"></a>
 			<h3>Getting the sources</h3>
       <ul>
         <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
