@@ -84,9 +84,9 @@ be run headless.</p>
 <ul>
   <li> Release 3.1 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
   </li>
-  <li> Latest information on further maintenance is available <a href="r3.1/main.html#maintenance">here</a>.
+  <li> Latest information on further maintenance is available <a href="r3.1/index.php#maintenance">here</a>.
   </li>
-  <li> Patch available in <a href="r3.1/main.html#updates">update</a> area (for testing purpose).
+  <li> Patch available in <a href="r3.1/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.0 Maintenance</b><p>
