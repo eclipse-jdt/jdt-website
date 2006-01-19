@@ -35,7 +35,7 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 		<p>Back to <a href="../../dev.php">JDT Core Component Development Resources page</a>.</p>
 		<div class="homeitem3col">
-			<a name="#PURPOSE"></a>
+			<a name="PURPOSE"></a>
 			<h3>Purpose</h3>
 			<ul>
 				<li>Add to build notes:
@@ -53,7 +53,7 @@ ob_start();
 			</ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#NEW"></a>
+			<a name="NEW"></a>
 			<h3>What's new</h3>
 			<ul>
 			<li>It handles nls tags within commented code</li>
@@ -86,7 +86,7 @@ ob_start();
 			</ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="#INSTALL"></a>
+			<a name="INSTALL"></a>
 			<h3>Install</h3>
 				<p>
 					Use this update site.<br/>
