@@ -61,7 +61,7 @@ in a fashion which is not APT specific. This branch is intended to be merged int
 		<li><img src="../ok.gif" height="10" width="10"> Javadoc (<a href="http://jcp.org/en/jsr/detail?id=260">jsr-260</a>)<br/>
           Mostly affecting Java Model rendering (see Java Model item below)
 		</li>
-		<li><img src="../progress.gif" height="5" width="14">&nbsp;Classfile (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)<br/>
+		<li><img src="../ok.gif" height="10" width="10">&nbsp;Classfile (<a href="http://jcp.org/en/jsr/detail?id=202">jsr-202</a>)<br/>
 			Except for StackMapTable attribute support (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>),
 all other items already got released into Eclipse 3.1.0.
 		</li>
@@ -384,7 +384,7 @@ precomputed override indicator (AccOverriding/AccImplementing) (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>) -
 olivier<br>
         </li>
-        <li><img src="../progress.gif" height="5" width="14"> Compiler
+        <li><img src="../ok.gif" height="10" width="10"> Compiler
 computes StackMapTable classfile attribute (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>)
 - olivier</li>
@@ -423,7 +423,7 @@ getMaxSeverity(minSeverity, markerType, depth) (<a
         <li>Improve access restriction support: <br>
         </li>
         <ul>
-          <li>restrictions should
+          <li><img src="../ok.gif" height="10" width="10"> restrictions should
 be inherited (<a
  href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>) -
 maxime<br>

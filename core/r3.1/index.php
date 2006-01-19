@@ -37,11 +37,10 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What's Happening?</h3>
-			 <a name="release-plan"></a>
+			<a name="maintenance"></a>
 			 <p>This section describes the JDT/Core implementation of the <a
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_1_x.html">official
 				plan</a>.</p>
-				<a name="maintenance"></a>
 			<img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>Rollup 3.1.2 - in progress, scheduled for end
