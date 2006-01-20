@@ -2,7 +2,11 @@
 Eclipse APT Project - Developer Setup Instructions
 ==================================================
 
-1.  Install Eclipse SDK 3.1.
+IMPORTANT! This is for the 3.1.1 maintenance branch! The 3.2 branch is 
+in mid-merge at present. We will provide instructions soon on setting
+up a development environment for that branch.
+
+1.  Install Eclipse SDK 3.1.1.
 
 2.  Launch eclipse, creating a new Workspace.  Say "C:\AptWorkspace". 
 
