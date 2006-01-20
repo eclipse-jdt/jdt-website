@@ -87,15 +87,15 @@ will thus likely be made available as a separate download.
 	 				</li>
 		            <li><img src="../ok.gif" height="10" width="10"> Signal references to raw types (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89529">89529</a>)</li>
 	            	<li><img src="../ok.gif" height="10" width="10"> Signal assignment to method parameters (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=53773">53773</a>)</li>
-	            	<li><img src="../ok.gif" height="10" width="10"> Signal unnecessary $NON-NLS tags (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)</li>
-	          	</ul>
+	            	<li><img src="../ok.gif" height="10" width="10"> Detect unnecessary $NON-NLS tags (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48976">48976</a>)</li>
+	            	<li><img src="../ok.gif" height="10" width="10"> Signal unused break/continue labels (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=63840">63840</a>)</li>
+	            </ul>
           	</li>
 			<li><img src="../progress.gif" height="5" width="14"> Enable pluggable participation in compilation (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
 				(e.g. APT)</li>
 			<li><img src="../ok.gif" height="10" width="10"> Allow valid classfile generation in presence of optional compiler errors (configured by some preference) (<a
  				href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107282">107282</a>)</li>
-			<li><img src="../progress.gif" height="5" width="14"> Provide API to compute the list of files to be cleaned by
-the Java builder (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
+			<li><img src="../progress.gif" height="5" width="14"> Provide API to compute the list of files to be cleaned by the Java builder (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>)
 			</li>
 			<li>Improve access restriction support:
 				<ul>
@@ -159,8 +159,6 @@ the VM max heap size (-Xmx) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?
 			</li>
 			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> .classpath reading is now forward compatible with upcoming
 versions (for unknown attributes) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=101425">101425</a>)</li>
-			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Address long standing issue with secondary types (not found by model
-name environment during reconcile) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>)</li>
 			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Investigate allowing classpath containers to
 refer to further container/variable entries (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>)</li>
 			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Consider removing the need for exclusion
