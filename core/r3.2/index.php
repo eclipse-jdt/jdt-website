@@ -433,7 +433,7 @@ maxime<br>
 operation (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>)
 - david</li>
-        <li>Leverage toLocalFile support from Platform for zip/jar
+        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Leverage toLocalFile support from Platform for zip/jar
 files on EFS (<a
  href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=123437">123437</a>)
 - jerome<br>
