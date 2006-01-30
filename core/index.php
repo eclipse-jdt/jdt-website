@@ -32,7 +32,7 @@ IDE. It includes:</p>
 <ul>
 <li>
 An incremental Java compiler. Implemented as an Eclipse
-builder, it is based on a JCK1.3a compliant compiler evolved from VAJ compilers.
+builder, it is based on technology evolved from VisualAge for Java compiler.
 In particular, it allows to run and debug code which still contains unresolved
 errors.</li>
 
