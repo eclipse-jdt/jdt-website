@@ -2,10 +2,10 @@
 
 	#*****************************************************************************
 	#
-	# sample_3col.php
+	# index.php
 	#
-	# Author: 		Denis Roy
-	# Date:			2005-11-07
+	# Author: 		JDT Core team
+	# Date:			2006-01-31
 	#
 	# Description: Type your page comments here - these are not sent to the browser
 	#
@@ -14,7 +14,7 @@
 	
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "jdt core R3.1.x";
+	$pageTitle 		= "JDT Core R3.1.x";
 	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, 3.1";
 	$pageAuthor		= "JDT/Core team";
 	
