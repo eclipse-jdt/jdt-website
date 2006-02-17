@@ -39,8 +39,8 @@ the community is very welcome</td>
       <td><b>Top Items</b>
       <ul>
         <li>Add support for Java SE 6 features [Java SE 6] [committed]</li>
-        <li><img alt="in progress" src="../images/progress.gif"
- style="width: 14px; height: 5px;"> Relax closed world assumption in
+        <li><img src="../images/ok.gif" alt="" border="0" height="10"
+ width="10"> Relax closed world assumption in
 refactoring [Scaling-Up] [committed]</li>
         <li><font class="indexsub" color="#8080ff">[&gt;3.2] </font>Add
 support for library projects (like binary projects in
@@ -49,8 +49,8 @@ PDE) [Scaling-Up] [committed]</li>
  style="width: 14px; height: 5px;"> Continue to measure and improve the
 performance of key
 operations</li>
-        <li><img alt="in progress" src="../images/progress.gif"
- style="width: 14px; height: 5px;"> Participate in Platform's Logical
+        <li><img src="../images/ok.gif" alt="" border="0" height="10"
+ width="10"> Participate in Platform's Logical
 model integration effort</li>
         <li><img src="../images/ok.gif" alt="" border="0" height="10"
  width="10"> Make JDT/UI *.java agnostic [89977]</li>
@@ -69,8 +69,8 @@ support workspace with lots of projects. [Scaling-Up]</li>
         <li><font class="indexsub" color="#8080ff">[&gt;3.2] </font>Add
 support for library projects (like binary projects in
 PDE) [Scaling-Up] [committed]</li>
-        <li><img src="../images/progress.gif" alt="" border="0"
- height="5" width="14"> Add a history to Organize Import, Code assist,
+        <li><img src="../images/ok.gif" alt="" border="0" height="10"
+ width="10"> Add a history to Organize Import, Code assist,
 Quick Fix,
 Quick Assist... In the case of an element ambiguity (for example
 java.awt.List versus java.util.List versus org.eclipse.swt.widgets.List
@@ -451,7 +451,7 @@ rename)</li>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
  face="Arial,Helvetica"><font color="#ffffff"> <a
- name="Milestone_Planning">M5 Milestone Plan(Dec. 19 - Feb. 17)</a></font></font></b></td>
+ name="Milestone_Planning">M6 Milestone Plan(Feb. 20 - Mar. 31)</a></font></font></b></td>
     </tr>
     <tr>
       <td valign="top" width="23"><img
@@ -461,7 +461,8 @@ rename)</li>
       <ul>
         <li>Bug fixing</li>
         <li>Inbox tracking</li>
-        <li>Performance week<br>
+        <li>Performance'</li>
+        <li>EclipseCon preparation<br>
         </li>
       </ul>
       </td>
@@ -472,27 +473,11 @@ rename)</li>
  height="16" width="16"></td>
       <td width="848"><b>Refactoring</b>
       <ul>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Relax closed world
-assumption in refactoring (Tobias)
-          <ul>
-            <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Open up the refactoring
-scripts so they can be stored
-and executed from files<br>
-            </li>
-            <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Alternatives to using the
-JAR importer: replace with
-and update in build path dialog (Replace With, Update)<br>
-            </li>
-          </ul>
+        <li>'Redirect' (change references) refactoring
+(Markus)</li>
+        <li>Fix deprecation scripts and quick fix (Tobias)</li>
+        <li>Extract Supertype refactoing (Tobias)<br>
         </li>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0">' Introduce indirection'
-refactoring (Philip/Markus)</li>
-        <li>Investigate in 'redirect' (change references) refactoring
-(Philip/Markus)</li>
       </ul>
       </td>
     </tr>
@@ -503,21 +488,8 @@ refactoring (Philip/Markus)</li>
       <td width="848"><b>Quick Fix</b>
       <ul>
         <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Work with Platform/UI to
-define necessary API
-to multi
-apply quick fixes (see bug <a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114754">114754</a>
-&amp; <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114570">114570</a>)
-(Martin/Benno)</li>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Refine existing and add new
-clean-ups (Benno)</li>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> More quick fixes: e.g. quick
-fixes for raw access (<a
- href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=92893">92893</a>)
-(Benno)</li>
+ src="../images/ok.gif" alt="" border="0"> More quick fixes (Benno,
+Martin)</li>
       </ul>
       </td>
     </tr>
@@ -525,48 +497,8 @@ fixes for raw access (<a
       <td valign="top"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
  height="16" width="16"></td>
-      <td><b>Component Independent</b> <br>
+      <td><b>JUnit</b> <br>
       <ul>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0">&nbsp; Add a history to
-Organize Import, Code
-assist, Quick Fix,
-Quick Assist... In the case of an element ambiguity (for example
-java.awt.List versus java.util.List versus org.eclipse.swt.widgets.List
-when organizing imports) these operations should built a histroy of the
-selected elements and use that history to sort the elements
-accordingly (Benno)<br>
-        </li>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Cleanup usages of deprecated
-code (Martin)</li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><span style="font-weight: bold;">API</span><br>
-      <ul>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Identify code that is better
-hosted in JDT/Core (Martin)<br>
-        </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
- height="16" width="16"></td>
-      <td><b>JUnit</b>
-      <ul>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Support for JUnit result
-model. This will allow
-executing
-more than one JUnit test and to switch between JUnit results (Markus)</li>
         <li><img src="../images/progress.gif" alt="" border="0"
  height="5" width="14"> Support for running and implementing JUnit4
 test cases
@@ -575,22 +507,30 @@ test cases
       </td>
     </tr>
     <tr>
-      <td valign="top"><img
+      <td style="vertical-align: top;"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
  height="16" width="16"></td>
-      <td><b>Package Explorer</b>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">NLS<br>
+      </span>
       <ul>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0"> Support inclusion filters
-when in hierarchical layout mode
-(see bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=65240">65240</a>)
-(Benno)<br>
+        <li>bring NLS tooling up-to-date (Benno)<br>
         </li>
       </ul>
       </td>
     </tr>
     <tr>
-      <td valign="top" width="23"><img
+      <td valign="top"><img style="width: 16px; height: 16px;"
+ src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"></td>
+      <td><b>Java Views</b>
+      <ul>
+        <li>Sort member should honor new @category javadoc tag (Benno)</li>
+        <li>Decorators for compilation units and class files (Benno)<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><img
  src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
  height="16" width="16"></td>
       <td width="848"><b>Logical Model Integration</b>
@@ -604,27 +544,6 @@ feedback for the code (Dirk/Markus)</li>
 framework taking the package explorer as a use case (Markus)</li>
           </ul>
         </li>
-        <li><img style="width: 10px; height: 10px;"
- src="../images/ok.gif" alt="" border="0">Resource operation validation
-in refactorings (Dirk) </li>
-      </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><img
- src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0"
- height="16" width="16"> </td>
-      <td style="vertical-align: top;"><span style="font-weight: bold;">Build
-Path</span><br>
-      <ul>
-        <li><img src="../images/progress.gif" alt="" border="0"
- height="5" width="14"> Use new JDT Core API to warn for files cleaned
-by the
-builder
-(Benno)<br>
-        </li>
-        <li><font class="indexsub" color="#8080ff">[&gt;3.2] </font>SWT
-container (Benno)</li>
       </ul>
       </td>
     </tr>
@@ -634,7 +553,7 @@ container (Benno)</li>
  height="16" width="16"></td>
       <td><b>Conferences/Vacations</b>
       <ul>
-        <li>11 days</li>
+        <li>15 days</li>
       </ul>
       </td>
     </tr>
