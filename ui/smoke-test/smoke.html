@@ -6,7 +6,10 @@
 
 <h1>
 <font face="Arial,Helvetica">Smoke Test - Java Tooling</font></h1>
-Last updated 2005-09-07
+$Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $ - $Revision: 1.10 $ - $Date: 2006/02/21 11:45:13 $
+
+<h3>Part 1</h3>
+
 <h4>
 Setup</h4><ul><li>start eclipse.exe with -consolelog -data X, where X is a new workspace i.e. points to not
 yet existent directory</li>
@@ -61,7 +64,7 @@ Import Junit 3.8.1 source into your JUnit project:</p>
     <li style="font-weight: bold;"><span style="font-weight: normal;">in the Package Explorer view select the <span style="font-style: italic;">JUnit</span> project</span></li>
     <li style="font-weight: bold;"><span style="font-weight: normal;">from the context menu click <span style="font-weight: bold;">Import...</span><br>
       </span></li>
-    <li style="font-weight: bold;"><span style="font-weight: normal;">select <span style="font-style: italic;">Archive file</span></span><br>
+    <li style="font-weight: bold;"><span style="font-weight: normal;">select <span style="font-style: italic;">General &gt; Archive file</span></span><br>
     </li>
     <li>click <span style="font-weight: bold;">Next &gt;</span></li>
     <li>click <span style="font-weight: bold;">Browse...</span> to select the zip file<span style="font-weight: bold;"><br>
@@ -362,7 +365,7 @@ the marker</li>
 </ul>
 <li>an error tick should show up in the editor tab of TestCase.java<br>
 </li></ul><li>
-in the Tasks view use <span style="font-weight: bold;">Go To</span> action (or double-click) to navigate
+in the Problems view use <span style="font-weight: bold;">Go To</span> action (or double-click) to navigate
 to the Java editor</li>
 
 <li>
@@ -442,7 +445,7 @@ verify that the package declaration is updated</li>
 </ul>
 
 <li>
-rename TestCase.java to ToastCase.java - click <b>OK</b> on the dialog.</li>
+rename TestCase.java to ToastCase.java - click <b>Finish</b> on the dialog.</li>
 
 <ul>
 <li>verify that the upcoming dialog only has <span style="font-weight: bold;">Update references to the renamed element</span> checked<br>
@@ -512,6 +515,10 @@ is hit</li>
 
 </ul>
 
+<hr>
+
+<h3>Part 2</h3>
+
 <h4>
 Search</h4>
 Switch back to the Java perspective.
@@ -542,11 +549,8 @@ verify that:</li>
 <li>
 Search view becomes visible</li>
 
-<li><span style="font-weight: bold;">Cancel</span> button is enabled during search while all other dialog buttons are disabled<br>
-</li>
-
-<li>
-progress is reported in the dialog</li>
+<li><span style="font-weight: bold;">Cancel</span> button is enabled during search</li>
+<li>view title is italic during search</li>
 </ul>
 
 <li>in the Search view click the <span style="font-weight: bold;">Show Next Match</span> button (arrow down) to reveal the first match</li>
@@ -666,10 +670,10 @@ Rename Type</li>
     <li>open <span style="font-style: italic;">junit.framework.Test</span> in the Java editor
     </li><li>go to the Outline view, right-click and select <span style="font-weight: bold;">Refactor &gt; Rename...</span></li>
     <li>a wizard shows up, type <span style="font-style: italic;">A</span> as a new name for the interface</li>
-    <li>click <span style="font-weight: bold;">Preview &gt;</span> - verify that a progress monitor is shown</li>
+    <li>click <span style="font-weight: bold;">Next &gt;</span> - verify that a progress monitor is shown</li>
     <li>a page with proposed changes shows up</li>
     <li>verify that all checkboxes are checked and not-grayed</li>
-    <li>verify that the <span style="font-weight: bold;">Preview &gt;</span> button is the only disabled button
+    <li>verify that the <span style="font-weight: bold;">Next &gt;</span> button is the only disabled button
 on the page</li>
     <li>click <span style="font-weight: bold;">OK</span> - verify progress notification</li>
     <li>verify that there are no compiler errors</li>
@@ -677,8 +681,8 @@ on the page</li>
 
 Undo<br>
   <ol>
-    <li>verify that <span style="font-weight: bold;">Refactor &gt; Redo</span> is disabled in the workbench menu</li>
-    <li>select <span style="font-weight: bold;">Refactor &gt; Undo</span> from the workbench menu</li>
+    <li>verify that <span style="font-weight: bold;">Edit &gt; Redo</span> is disabled in the workbench menu</li>
+    <li>select <span style="font-weight: bold;">Edit &gt; Undo</span> from the workbench menu</li>
     <li>verify that there are no compiler errors</li>
   </ol>
 
@@ -733,7 +737,7 @@ the resulting compare editor should list two changed resources:</li>
 
 <ul>
 <li>
-an <i>removal</i> of <span style="font-style: italic;">Sorter.java</span> from runner2<br>
+an <i>addition</i> of <span style="font-style: italic;">Sorter.java</span> to runner<br>
 </li>
 
 <li>
@@ -754,10 +758,10 @@ of your changes</li>
 
 <ul>
 <li>
-removed method <span style="font-style: italic;">foo()</span></li>
+added method <span style="font-style: italic;">foo()</span></li>
 
 <li>
-added method <span style="font-style: italic;">getResource(String)</span>, and</li>
+removed method <span style="font-style: italic;">getResource(String)</span>, and</li>
 
 <li>
 changed method <span style="font-style: italic;">isExcluded(String)</span></li>
@@ -835,7 +839,7 @@ select the <span style="font-style: italic;">JUnit</span> project in the Package
 <li>from the context menu select <b>Export...</b></li>
 
 <li>
-select <span style="font-style: italic;">JAR file</span></li>
+select <span style="font-style: italic;">Java &gt; JAR file</span></li>
 
 <li>
 click <b>Next &gt;<br>
