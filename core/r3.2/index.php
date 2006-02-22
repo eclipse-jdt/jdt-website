@@ -308,6 +308,7 @@ ob_start();
             (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>) - kent</li>
         <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
         <li>Leverage codeassist LRU support - david</li>
+        <li><img src="../ok.gif" height="10" width="10"> Improve JavaModel caching policy to better accomodate large JARs - jerome</li>
         <li>Improve access restriction support:</li>
           <ul>
             <li><img src="../ok.gif" height="10" width="10"> restrictions should be inherited 
@@ -330,6 +331,9 @@ ob_start();
 <p><a name="milestone-plan"></a><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.2-Milestone 6 (2006/03/31)</b>, we will focus on the following items:</p>
       <ul>
+		<li>Group all fatal errors together in same category (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128217">128217</a>) - philippe </li>
+		<li>Performance work </li>
+		<li>Improve null reference analysis to recognize more patterns - maxime </li>
         <li>Make generic method invocation bindings unique - philippe</li>
         <li>LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
         <li>Leverage codeassist LRU support - david</li>
