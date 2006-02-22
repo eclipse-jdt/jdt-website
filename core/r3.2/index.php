@@ -288,34 +288,31 @@ ob_start();
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">resolved</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">verified</a>)</li>
 </ul>
-<p><a name="milestone-plan"></a><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.2-Milestone 5 (2006/02/17)</b>, we will focus on the following items:</p>
       <ul>
-        <li><img src="../progress.gif" height="5" width="14"> Initiate discussion for locking projects (JDT or platform feature?) 
+        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> Initiate discussion for locking projects (JDT or platform feature?) 
             - philippe, jerome</li>
-        <li>Make generic method invocation bindings unique - philippe</li>
-        <li>Surface more compiler functionalities on DOM bindings: precomputed override indicator (AccOverriding/AccImplementing) 
+        <li><span style="color: rgb(51, 153, 153);"> [optional]</span>Surface more compiler functionalities on DOM bindings: precomputed override indicator (AccOverriding/AccImplementing) 
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>) - olivier</li>
         <li><img src="../ok.gif" height="10" width="10"> Compiler computes StackMapTable classfile attribute 
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>) - olivier</li>
-        <li><img src="../progress.gif" height="5" width="14"> Adopt changes from APT branch - kent, jerome, david, olivier</li>
-        <li><img src="../progress.gif" height="5" width="14"> Null reference analysis, coupled with use of 
-            <span style="font-style: italic;">@NonNull</span> annotation 
+        <li><img src="../ok.gif" height="10" width="10"> Adopt changes from APT branch - kent, jerome, david, olivier</li>
+        <li><img src="../ok.gif" height="10" width="10"> Null reference analysis, coupled with use of 
+            <span style="font-style: italic;">@NonNull</span> annotation (<span style="color: rgb(51, 153, 153);"> [deferred]</span>)
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>,
             <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>) - maxime, philippe</li>
-        <li><img src="../progress.gif" height="5" width="14"> More robust DOM AST: finalize based on requirements from JDT/UI 
+        <li><img src="../ok.gif" height="10" width="10"> More robust DOM AST: finalize based on requirements from JDT/UI 
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>) - david</li>
-        <li><img src="../progress.gif" height="5" width="14"> Provide API to compute the list of files to be cleaned by the Java builder 
+        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> Provide API to compute the list of files to be cleaned by the Java builder 
             (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>) - kent</li>
-        <li>LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
+        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
         <li>Leverage codeassist LRU support - david</li>
-        <li>Completion in annotation member pair value : handle some standard annotations: target element types, suppress warning tokens 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>) - david</li>
         <li>Improve access restriction support:</li>
           <ul>
             <li><img src="../ok.gif" height="10" width="10"> restrictions should be inherited 
                 (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>) - maxime</li>
-            <li>check more scenarii based on annotations (<span style="font-style: italic;">@CannotImplement</span>, ...) - olivier</li>
+            <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> check more scenarii based on annotations (<span style="font-style: italic;">@CannotImplement</span>, ...) - olivier</li>
           </ul>
         <li>Provide pluggable CompletionParticipant API for codeassist operation 
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,
@@ -328,6 +325,22 @@ ob_start();
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">unresolved</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">resolved</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">verified</a>)</li>
+        <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
+      </ul>		
+<p><a name="milestone-plan"></a><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+   For <b>3.2-Milestone 6 (2006/03/31)</b>, we will focus on the following items:</p>
+      <ul>
+        <li>Make generic method invocation bindings unique - philippe</li>
+        <li>LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
+        <li>Leverage codeassist LRU support - david</li>
+        <li>Completion in annotation member pair value : handle some standard annotations: target element types, suppress warning tokens 
+            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>) - david</li>
+        <li>Bug fixing
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M6&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">resolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">verified</a>)</li>
         <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
       </ul>		
 		</div>
