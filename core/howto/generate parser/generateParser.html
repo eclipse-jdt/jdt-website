@@ -194,6 +194,10 @@ the new parser.
  </ol>
  </li>
  </ol>
+ <p><b>Warning:</b> <blockquote>If the number of terminals is over 128, then the parser term_check field needs to be converted
+ to a <code>char[]</code>. Also the generation of the parser resources files needs to be changed to support
+ an array of <code>char[]</code>.
+ </blockquote></p>
  <P>
  <b>NOTE:</b>  <blockquote>Changing the parser is a risky operation if you miss one of the steps above. The resulting parser can be completely
  unpredictable. It can go from crashing to reporting invalid errors. Be sure that you followed all the steps and that all the
