@@ -29,31 +29,17 @@ This is a BETA release. All APIs contained herein are provisional, and subject t
 
 
 <tr>
-<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Installing APT</font></font></b></td>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">Testing your APT installation</font></font></b></td>
 </tr>
 
 <tr>
-<td COLSPAN="2">The APT feature can be used in Eclipse in one of two ways: you can check out the source from CVS
-and build it yourself, or you can use the update site to install it into an existing Eclipse instance. Prerequisites for either
-method are:
-<ul>
-<li>JDK 1.5
-<li>Eclipse 3.1.1 running on an installed JRE version 1.5</li>
-</ul>
+<td COLSPAN="2">
+The APT feature is included by default in Eclipse 3.2, as of M5. 
 
+If you wish to use Eclipse 3.1, see the <a href="installOn3.1.html">3.1 installation instructions</a>.
 <p>
-This page only contains instructions for using the update site. For build instructions, go <a href="howtobuildme.txt">here</a>.
 
-<p>
-Here are instructions for applying the update:
-<ul>
-<li>Start Eclipse, and open the Install/Update dialog (Help/SoftwareUpdates >/Find and Install...).</li>
-<li>Search for new updates.</li>
-<li>Add a new remote site: <code>http://www.eclipse.org/jdt/apt/JdtAptUpdateSite</code></li>
-<li>Install the JdtAptFeature.</li>
-</ul>
-
-You can verify the installation this way:
+You can verify the installation on either version this way:
 <ul>
 <li>Create a Java project which contains the file <a href="APTDemo.jar">APTDemo.jar</a> in its filesystem.</li>
 <li>Then open the project properties dialog, and go to the Java Compiler/AnnotationProcessing/Factory Path panel.</li>
@@ -157,7 +143,7 @@ Eclipse</font></font></b></td>
 To debug an annotation processor it must be run from a plugin. You develop your code in the plugin, and then debug it by
 annotating source code in a spawned instance of
 Eclipse. The debugging instance needs the annotation declaration, the factory, and the processor. The spawned instance
-only needs access to the delaration.
+only needs access to the declaration.
 
 
 </font></td>
