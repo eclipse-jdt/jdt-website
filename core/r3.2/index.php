@@ -331,11 +331,10 @@ ob_start();
 <p><a name="milestone-plan"></a><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.2-Milestone 6 (2006/03/31)</b>, we will focus on the following items:</p>
       <ul>
-		<li>Group all fatal errors together in same category (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128217">128217</a>) - philippe </li>
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Group all fatal errors together in same category (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128217">128217</a>) - philippe </li>
 		<li>Performance work </li>
 		<li>Improve null reference analysis to recognize more patterns - maxime </li>
         <li>Make generic method invocation bindings unique - philippe</li>
-        <li>LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
         <li>Leverage codeassist LRU support - david</li>
         <li>Completion in annotation member pair value : handle some standard annotations: target element types, suppress warning tokens 
             (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>) - david</li>
