@@ -91,13 +91,10 @@ checked in. Check back for more info.
 <p>
 <b><li>Can I get quick-fixes inside annotation values?</b>
 <p>
-Yes, via an extension point in the apt plugin.
-We've documented this procedure in our plugin's help section,
-which you can view once it is installed.<p>
-
-Essentially APT-generated problems get a reserved ID,
-and APT will delegate quick-fixes to those problems to your
-plugin via the previously mentioned extension point.
+Yes. When you create your error markers via the Messager API, downcast
+to EclipseMessager, and use the printFixable...() APIs. These
+error markers can then be processed with a QuickFixProcessor via 
+the JDT APIs in Eclipse 3.2.<p>
 
 </ol>
 
