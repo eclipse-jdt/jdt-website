@@ -43,8 +43,7 @@ ob_start();
 				plan</a>.</p>
 			<img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>Rollup 3.1.2 - in progress, scheduled for end
-of 2006/01</b>
+ height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/18</b>
       <ul>
         <li> preview available in <a href="#updates">update</a> area. </li>
         <li> bug fixing :
