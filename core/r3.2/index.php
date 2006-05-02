@@ -348,6 +348,14 @@ ob_start();
       </ul>		
 		</div>
 		<div class="homeitem3col">
+			<a name="RELEASE_PROCESS"></a>
+			<h3>Release Process</h3>
+			<ul>
+		        <li>Release Candidate 3 : <a href="test-rc3.php">test plan</a>
+		        </li>
+		    </ul>
+		</div>
+		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
