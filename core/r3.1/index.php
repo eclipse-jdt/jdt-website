@@ -495,6 +495,18 @@ release or rollup; but provide an early access to the next delivery for
 quality assessment. If you find any regression using these patches,
 please inform the JDT/Core team by entering a <a
  href="http://dev.eclipse.org/bugs/">bug report</a>.</p>
+			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
+      <table>
+          <tr>
+            <td valign="top"><a href="../patches/ecj_3.1.2.jar">
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+            <td valign="top">posted on 2006/05/09, 1,280 KB (click on picture)</td>
+           <tr>
+            <td valign="top"><i>extracted from</i></td>
+            <td valign="top">release 3.1.2</td>
+          </tr>
+          </tr>
+	  </table>
 <img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>3.1.3 preview</b>
