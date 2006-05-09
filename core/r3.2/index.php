@@ -410,16 +410,28 @@ ob_start();
                quality assessment. If you find any regression using these patches, please inform the JDT/Core team by entering a 
                <a href="http://dev.eclipse.org/bugs/">bug report</a>
 			</p>
+			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
+      <table>
+          <tr>
+            <td valign="top"><a href="../patches/ecj_3.2RC3.jar">
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+            <td valign="top">posted on 2006/05/09, 1,280 KB (click on picture)</td>
+           <tr>
+            <td valign="top"><i>extracted from</i></td>
+            <td valign="top">build 3.2RC3</td>
+          </tr>
+          </tr>
+	  </table>
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.2 integration preview </b>
       <table>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.0.200604051115.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/04/05, 3,78 MB (click on picture)</td>
+            <td valign="top">posted on 2006/04/05, 3.78 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
-            <td valign="top">build R3.2M6 RELEASE</td>
+            <td valign="top">build 3.2M6</td>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>

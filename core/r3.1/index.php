@@ -500,7 +500,7 @@ please inform the JDT/Core team by entering a <a
           <tr>
             <td valign="top"><a href="../patches/ecj_3.1.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/05/09, 1,280 KB (click on picture)</td>
+            <td valign="top">posted on 2006/05/09, 1,185 KB (click on picture)</td>
            <tr>
             <td valign="top"><i>extracted from</i></td>
             <td valign="top">release 3.1.2</td>
