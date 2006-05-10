@@ -414,8 +414,11 @@ ob_start();
       <table>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2RC3.jar">
-                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/05/09, 1,280 KB (click on picture)</td>
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+            <td valign="top">posted on 2006/05/09, 1,24 MB (click on picture)</td>
+            <td valign="top"><a href="../patches/ecj_3.2RC3src.zip">
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
+            <td valign="top">posted on 2006/05/09, 1,0 MB (click on picture)</td>          
            <tr>
             <td valign="top"><i>extracted from</i></td>
             <td valign="top">build 3.2RC3</td>
