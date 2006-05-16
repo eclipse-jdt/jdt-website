@@ -26,10 +26,9 @@
 - checking NLS
  - no not-externalized strings (we have a tool)
  - no duplicated keys in .properties files (we have a tool)
- - no unused keys in .properties files (we have a tool)
+ - no unused keys in .properties files (we have a tool - NOTE: this might be dangerous to do)
  - no missing keys in .properties files (we have a tool)
- - no single quotes in .properties files 
-    (we use CHKPII now, but it's not publicly available)
+ - no single quotes in .properties files (this is checked by CHKPII, but it's not publicly available)
 
 - properties files
 	- spelling
@@ -81,7 +80,6 @@
 	
 - Overall (ISV doc, User doc, other files) - to just at the end
 	- run tool (e.g. HTML Power Tools) which ensures ALT attribute is set
-	- run tool (e.g. HTML Power Tools) which computes images size and correctly sets width and height attributes
 	- run tool (e.g. HTML Power Tools) which checks spelling
 	- run tool (I use Xenu's Link Sleuth) which checks that no links are broken (must be run against Linux or special web server to find capitalization bugs)
 		- the easiest way to test the Help Contents is to point the link checker to the help system's index page (e.g. http://127.0.0.1:1470/help/index.jsp)
