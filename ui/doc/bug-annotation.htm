@@ -23,124 +23,327 @@
 </p>
 <table width="800" border="1">
   <tr bgcolor="#CCCCCC"> 
-    <td width="170"> 
+    <td> 
       <div align="center">Keyword</div>
+    </td>
+    <td> 
+      <div align="center">Owner</div>
     </td>
     <td width="514"> 
       <div align="center">Description</div>
     </td>
+    
   </tr>
   <tr> 
     <td width="170">[api]</td>
+    <td>I</td>
     <td width="514">API bugs (wrong or missing API)</td>
   </tr>
   <tr> 
-    <td width="170">[browsing]</td>
+    <td>[actions]</td>
+    <td>I</td>
+    <td width="514">Bugs related to global menu, contxt menu and toolbar actions</td>
+  </tr>  
+  <tr> 
+    <td>[browsing]</td>
+    <td>I</td>
     <td width="514">Bugs related to the Java Browsing perspective</td>
   </tr>
   <tr> 
-    <td width="170">[build path]</td>
-    <td width="514">Bugs related to the Java Build Path (Properties-&gt;Java Build 
-      Path)</td>
-  </tr>
-  <tr> 
-    <td width="170">[ccp]</td>
+    <td>[ccp]</td>
+    <td>I</td>
     <td width="514">Copy, Cut, Paste bugs</td>
   </tr>
   <tr> 
-    <td width="170">[code manipulation]</td>
-    <td width="514">Bugs related to code manipulation / generation functionality 
-      like new wizards, source menu actions, ...</td>
-  </tr>
-  <tr> 
-    <td width="170">[compare]</td>
-    <td width="514">Bugs related to Java compare functionality. Not used to tag 
-      general compare bugs</td>
-  </tr>
-  <tr> 
-    <td width="170">[dialogs]</td>
-    <td width="514">Bugs related to general Java dialogs like open type dialog, 
-      browse packages dialog, ...</td>
-  </tr>
-  <tr> 
-    <td width="170">[dnd]</td>
+    <td>[dnd]</td>
+    <td>I</td>    
     <td width="514">Drag and Drop bugs. This keyword is mostly used together with 
       other keywords like [refactoring] [type hierarchy], ...</td>
   </tr>
   <tr> 
-    <td width="170">[export/import]</td>
-    <td width="514">Bugs related to JDT's export/import functionality</td>
-  </tr>
-  <tr> 
-    <td width="170">[filters]</td>
-    <td width="514">Bugs related to JDT's filter support</td>
-  </tr>
-  <tr> 
-    <td width="170">[general issue]</td>
-    <td width="514">Bugs which manifest themselves in JDT but can't be solve by 
-      JDT only. The are related to problems in the platform or JDT/Core</td>
-  </tr>
-  <tr> 
-    <td width="170">[icons]</td>
-    <td width="514">Strange looking or missing icons</td>
-  </tr>
-  <tr> 
-    <td width="170">[jar creation]</td>
-    <td width="514">Bugs related to the Jar export functionality</td>
-  </tr>
-  <tr> 
-    <td width="170">[javadoc]</td>
-    <td width="514">Javadoc bugs either in the Javadoc export wizard or in Javadoc 
-      code assist</td>
-  </tr>
-  <tr> 
-    <td width="170">[JUnit]</td>
-    <td width="514">Bugs related to the org.eclipse.jdt.junit plug-in</td>
-  </tr>
-  <tr> 
-    <td width="170">[misc]</td>
-    <td width="514">&nbsp;</td>
-  </tr>
-  <tr> 
-    <td width="170">[navigate]</td>
-    <td width="514">Bugs related to navigate actions like Show In, Open Declaration, ...</td>
-  </tr>
-  <tr> 
-    <td width="170">[package explorer]</td>
+    <td>[package explorer]</td>
+    <td>I</td>  
     <td width="514">Bugs related to JDT's package explorer</td>
   </tr>
   <tr> 
-    <td width="170">[quick assist]</td>
-    <td width="514">Bugs related to the Quick Assist functionality</td>
+    <td>[open type]</td>
+    <td>I</td>
+    <td width="514">Bugs to the open type dialog</td>
+  </tr>
+  
+  <tr> 
+    <td>[encapsulate field]</td>
+    <td>I</td>
+    <td width="514">Bugs to the open type dialog</td>
+  </tr>    
+  <tr> 
+    <td>[refactoring]</td>
+    <td>I</td>
+    <td width="514">General refactoring bugs including Undo/Redo management in refactoring.</td>
   </tr>
   <tr> 
-    <td width="170">[quick fix]</td>
+    <td>[expand selection]</td>
+    <td>I</td>
+    <td width="514">Bugs related to 'Expand selection'</td>
+  </tr>
+  <tr> 
+    <td>[extract method]</td>
+    <td>I</td>
+    <td width="514">Bugs related to the extract method refactoring</td>
+  </tr>
+  <tr> 
+    <td>[mark occurrence]</td>
+    <td>I</td>
+    <td width="514">Bugs related to mark occurrence</td>
+  </tr>  
+  <tr> 
+    <td>[introduce factory]</td>
+    <td>I</td>
+    <td width="514">Bugs related to the extract method refactoring</td>
+  </tr>   
+  <tr> 
+    <td>[generalize type]</td>
+    <td>I</td>
+    <td width="514">Bugs related to the extract method refactoring</td>
+  </tr>
+  <tr> 
+    <td>[surround with try/catch] </td>
+    <td>I</td>
+    <td width="514">Bugs related to the surround with try/catch refactoring</td>
+  </tr>    
+  <tr> 
+    <td>[build path]</td>
+    <td>BB</td>
+    <td width="514">Bugs related to the Java Build Path page and build path actions</td>
+  </tr>
+  <tr> 
+    <td>[clean up]</td>
+    <td>BB</td>
+    <td width="514">Bugs related to the clean up wizard</td>
+  </tr>
+  <tr> 
+    <td>[nls tooling]</td>
+    <td>BB</td>
+    <td width="514">Bugs related to nls tooling</td>
+  </tr>
+  <tr> 
+    <td>[preferences]</td>
+    <td>BB</td>
+    <td width="514">Bugs related to preference pages</td>
+  </tr>    
+  
+  <tr> 
+    <td>[compare]</td>
+    <td>AW</td>
+    <td width="514">Bugs related to Java compare functionality. Not used to tag 
+      general compare bugs</td>
+  </tr>
+
+
+  <tr> 
+    <td>[javadoc export]</td>
+    <td>MA</td>    
+    <td width="514">Bugs related to teh Javadoc export wizard</td>
+  </tr>
+  <tr> 
+    <td>[quick fix]</td>
+    <td>MA</td>
     <td width="514">Bugs related to the Quick Fix functionality</td>
   </tr>
   <tr> 
-    <td width="170">[refactoring]</td>
-    <td width="514">Refactoring bugs including Undo/Redo management in refactoring.</td>
+    <td>[quick assist]</td>
+    <td>MA</td>
+    <td width="514">Bugs related to the Quick Assist functionality</td>
   </tr>
   <tr> 
-    <td width="170">[type hierarchy]</td>
+    <td>[ast rewrite]</td>
+    <td>MA</td>
+    <td width="514">AST rewrite bugs</td>
+  </tr>  
+  <tr> 
+    <td>[type hierarchy]</td>
+    <td>MA</td>    
     <td width="514">Bugs related to the Type Hierarchy view</td>
   </tr>
   <tr> 
-    <td width="170">[search]</td>
-    <td width="514">Java search bugs. Not used to tag general search bugs.</td>
+    <td>[search]</td>
+    <td>MA</td>    
+    <td width="514">Java search bugs. Not used to tag general search bugs</td>
   </tr>
   <tr> 
-    <td width="170">[render]</td>
+    <td>[type wizards]</td>
+    <td>MA</td>    
+    <td width="514">Bugs releated to the new type wizards</td>
+  </tr>
+  <tr> 
+    <td>[organize imports]</td>
+    <td>MA</td>    
+    <td width="514">Bugs related to organize imports</td>
+  </tr>
+  <tr> 
+    <td>[code templates]</td>
+    <td>MA</td>    
+    <td width="514">Bugs related to code templates</td>
+  </tr>
+  <tr> 
+    <td>[code style]</td>
+    <td>MA</td>    
+    <td width="514">Bugs related to code style settings including new code style options</td>
+  </tr>
+  <tr> 
+    <td>[render]</td>
+    <td>MA</td>    
     <td width="514">Bugs related to rendering of Java elements</td>
+  </tr>  
+
+  <tr> 
+    <td>[JUnit]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the org.eclipse.jdt.junit plug-in</td>
   </tr>
   <tr> 
-    <td width="170">[wording]</td>
-    <td width="514">Spelling and inappropriate wording</td>
+    <td>[call hierarchy]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the call hierarchy view</td>
+  </tr>    
+  <tr> 
+    <td>[inline]</td>
+    <td>MK</td>
+    <td width="514">Inline refactoring bugs including Undo/Redo management in refactoring.</td>
   </tr>
   <tr> 
-    <td width="170">[working sets]</td>
-    <td width="514">Bugs related to working sets</td>
+    <td>[infer type arguments]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the infer type arguments refactoring</td>
+  </tr>  
+  <tr> 
+    <td>[extract constant]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the extract constant refactoring</td>
   </tr>
+  <tr> 
+    <td>[change method signature]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the change method signature refactoring</td>
+  </tr>
+  <tr> 
+    <td>[introduce indirection]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the introduce indirection refactoring</td>
+  </tr>
+  <tr> 
+    <td>[introduce parameter]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the introduce parameter refactoring</td>
+  </tr>
+  <tr> 
+    <td>[rename]</td>
+    <td>MK</td>
+    <td width="514">Bugs related to the rename refactoring</td>
+  </tr>     
+  <tr> 
+    <td>[jar exporter]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the Javadoc export wizard</td>
+  </tr>  
+  <tr> 
+    <td>[convert anonymous]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the convert anonymous refactoring</td>
+  </tr>  
+  <tr> 
+    <td>[convert local]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the convert local to top-level refactoring</td>
+  </tr> 
+  <tr> 
+    <td>[extract field]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the extract field refactoring</td>
+  </tr> 
+   <tr> 
+    <td>[extract interface]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the extract interface refactoring</td>
+  </tr>  
+   <tr> 
+    <td>[extract superclass]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the extract superclass refactoring</td>
+  </tr>
+   <tr> 
+    <td>[use supertype]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the use supertype refactoring</td>
+  </tr>    
+   <tr> 
+    <td>[generate constructor]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the generate constructor wizard</td>
+  </tr>   
+   <tr> 
+    <td>[generate delegate]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the generate delegate wizard</td>
+  </tr>   
+   <tr> 
+    <td>[getter setter]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the getter setter wizard</td>
+  </tr>
+   <tr> 
+    <td>[override method]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the override methods wizard</td>
+  </tr>  
+   <tr> 
+    <td>[hashcode/equals]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the hashcode/equals wizard</td>
+  </tr>
+   <tr> 
+    <td>[migrate jar]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the migrate jar wizard</td>
+  </tr>     
+   <tr> 
+    <td>[move member type]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the move member type refactoring</td>
+  </tr>
+   <tr> 
+    <td>[move method]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the move method refactoring</td>
+  </tr>     
+   <tr> 
+    <td>[move static members]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the move static members refactoring</td>
+  </tr>
+   <tr> 
+    <td>[pull up]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the pull up refactoring</td>
+  </tr>
+   <tr> 
+    <td>[push down]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to the push down refactoring</td>
+  </tr>
+ 
+   <tr> 
+    <td>[ltk]</td>
+    <td>TW</td>    
+    <td width="514">Bugs related to org.eclipse.ltk.refactoring</td>
+  </tr>     
+
+  <tr> 
+    <td>[expressions]</td>
+    <td>DB</td>
+    <td width="514">Bugs related to org.eclipse.expressions</td>
+  </tr>
+
 </table>
 <p>&nbsp;</p>
 </body>
