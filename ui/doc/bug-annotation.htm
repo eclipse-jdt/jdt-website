@@ -3,6 +3,19 @@
    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
    <title>JDT UI Bug Annotation Conventions</title>
 <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
+
+<script language="javascript">
+<!--
+function viewBugsWithSummary(desc) {
+	window.location = "https://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=substring&short_desc=" + encodeURI(desc) + "&product=JDT&bug_status=ASSIGNED&bug_status=REOPENED&cmdtype=doit";
+}
+
+function viewBugsByUser(email) {
+	window.location = "https://bugs.eclipse.org/bugs/buglist.cgi?short_desc_type=substring&short_desc=&product=JDT&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&keywords_type=allwords&keywords=&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailassigned_to1=1&emailtype1=substring&email1=" + email + "&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&changedin=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=";
+}
+//-->
+<!-- 'directories=0,height=480,location=0,resizable=1,scrollbars=1,toolbar=0,width=515' -->
+</script>
 </head>
 <body text="#000000" bgcolor="#FFFFFF">
 
@@ -35,105 +48,105 @@
     
   </tr>
   <tr> 
-    <td width="170">[api]</td>
+    <td width="170"><a href="javascript:viewBugsWithSummary('[api]')">[api]</a></td>
     <td>I</td>
     <td width="514">API bugs (wrong or missing API)</td>
   </tr>
   <tr> 
-    <td>[actions]</td>
+    <td><a href="javascript:viewBugsWithSummary('[actions]')">[actions]</a></td>
     <td>I</td>
     <td width="514">Bugs related to global menu, contxt menu and toolbar actions</td>
   </tr>  
   <tr> 
-    <td>[browsing]</td>
+    <td><a href="javascript:viewBugsWithSummary('[browsing]')">[browsing]</a></td>
     <td>I</td>
     <td width="514">Bugs related to the Java Browsing perspective</td>
   </tr>
   <tr> 
-    <td>[ccp]</td>
+    <td><a href="javascript:viewBugsWithSummary('[ccp]')">[ccp]</a></td>
     <td>I</td>
     <td width="514">Copy, Cut, Paste bugs</td>
   </tr>
   <tr> 
-    <td>[dnd]</td>
+    <td><a href="javascript:viewBugsWithSummary('[dnd]')">[dnd]</a></td>
     <td>I</td>    
     <td width="514">Drag and Drop bugs. This keyword is mostly used together with 
-      other keywords like [refactoring] [type hierarchy], ...</td>
+      other keywords like [refactoring], [type hierarchy], ...</td>
   </tr>
   <tr> 
-    <td>[package explorer]</td>
+    <td><a href="javascript:viewBugsWithSummary('[package explorer]')">[package explorer]</a></td>
     <td>I</td>  
     <td width="514">Bugs related to JDT's package explorer</td>
   </tr>
   <tr> 
-    <td>[open type]</td>
+    <td><a href="javascript:viewBugsWithSummary('[open type]')">[open type]</a></td>
     <td>I</td>
     <td width="514">Bugs to the open type dialog</td>
   </tr>
   
   <tr> 
-    <td>[encapsulate field]</td>
+    <td><a href="javascript:viewBugsWithSummary('[encapsulate field]')">[encapsulate field]</a></td>
     <td>I</td>
-    <td width="514">Bugs to the open type dialog</td>
+    <td width="514">Bugs to the encapsulate field refactoring</td>
   </tr>    
   <tr> 
-    <td>[refactoring]</td>
+    <td><a href="javascript:viewBugsWithSummary('[refactoring]')">[refactoring]</a></td>
     <td>I</td>
     <td width="514">General refactoring bugs including Undo/Redo management in refactoring.</td>
   </tr>
   <tr> 
-    <td>[expand selection]</td>
+    <td><a href="javascript:viewBugsWithSummary('[expand selection]')">[expand selection]</a></td>
     <td>I</td>
     <td width="514">Bugs related to 'Expand selection'</td>
   </tr>
   <tr> 
-    <td>[extract method]</td>
+    <td><a href="javascript:viewBugsWithSummary('[extract method]')">[extract method]</a></td>
     <td>I</td>
     <td width="514">Bugs related to the extract method refactoring</td>
   </tr>
   <tr> 
-    <td>[mark occurrence]</td>
+    <td><a href="javascript:viewBugsWithSummary('[mark occurrence]')">[mark occurrence]</a></td>
     <td>I</td>
     <td width="514">Bugs related to mark occurrence</td>
   </tr>  
   <tr> 
-    <td>[introduce factory]</td>
+    <td><a href="javascript:viewBugsWithSummary('[introduce factory]')">[introduce factory]</a></td>
     <td>I</td>
-    <td width="514">Bugs related to the extract method refactoring</td>
+    <td width="514">Bugs related to the introduce factory refactoring</td>
   </tr>   
   <tr> 
-    <td>[generalize type]</td>
+    <td><a href="javascript:viewBugsWithSummary('[generalize type]')">[generalize type]</a></td>
     <td>I</td>
-    <td width="514">Bugs related to the extract method refactoring</td>
+    <td width="514">Bugs related to the generalize type refactoring</td>
   </tr>
   <tr> 
-    <td>[surround with try/catch] </td>
+    <td><a href="javascript:viewBugsWithSummary('[surround with try/catch]')">[surround with try/catch]</a></td>
     <td>I</td>
     <td width="514">Bugs related to the surround with try/catch refactoring</td>
   </tr>    
   <tr> 
-    <td>[build path]</td>
+    <td><a href="javascript:viewBugsWithSummary('[build path]')">[build path]</a></td>
     <td>BB</td>
-    <td width="514">Bugs related to the Java Build Path page and build path actions</td>
+    <td width="514">Bugs related to the Java build path page and build path actions</td>
   </tr>
   <tr> 
-    <td>[clean up]</td>
+    <td><a href="javascript:viewBugsWithSummary('[clean up]')">[clean up]</a></td>
     <td>BB</td>
     <td width="514">Bugs related to the clean up wizard</td>
   </tr>
   <tr> 
-    <td>[nls tooling]</td>
+    <td><a href="javascript:viewBugsWithSummary('[nls tooling]')">[nls tooling]</a></td>
     <td>BB</td>
     <td width="514">Bugs related to nls tooling</td>
   </tr>
   <tr> 
-    <td>[preferences]</td>
+    <td><a href="javascript:viewBugsWithSummary('[preferences]')">[preferences]</a></td>
     <td>BB</td>
     <td width="514">Bugs related to preference pages</td>
   </tr>    
   
   <tr> 
-    <td>[compare]</td>
+    <td><a href="javascript:viewBugsWithSummary('[compare]')">[compare]</a></td>
     <td>AW</td>
     <td width="514">Bugs related to Java compare functionality. Not used to tag 
       general compare bugs</td>
@@ -141,206 +154,211 @@
 
 
   <tr> 
-    <td>[javadoc export]</td>
+    <td><a href="javascript:viewBugsWithSummary('[javadoc export]')">[javadoc export]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to teh Javadoc export wizard</td>
   </tr>
   <tr> 
-    <td>[quick fix]</td>
+    <td><a href="javascript:viewBugsWithSummary('[quick fix]')">[quick fix]</a></td>
     <td>MA</td>
     <td width="514">Bugs related to the Quick Fix functionality</td>
   </tr>
   <tr> 
-    <td>[quick assist]</td>
+    <td><a href="javascript:viewBugsWithSummary('[quick assist]')">[quick assist]</a></td>
     <td>MA</td>
     <td width="514">Bugs related to the Quick Assist functionality</td>
   </tr>
   <tr> 
-    <td>[ast rewrite]</td>
+    <td><a href="javascript:viewBugsWithSummary('[ast rewrite]')">[ast rewrite]</a></td>
     <td>MA</td>
     <td width="514">AST rewrite bugs</td>
   </tr>  
   <tr> 
-    <td>[type hierarchy]</td>
+    <td><a href="javascript:viewBugsWithSummary('[type hierarchy]')">[type hierarchy]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to the Type Hierarchy view</td>
   </tr>
   <tr> 
-    <td>[search]</td>
+    <td><a href="javascript:viewBugsWithSummary('[search]')">[search]</a></td>
     <td>MA</td>    
     <td width="514">Java search bugs. Not used to tag general search bugs</td>
   </tr>
   <tr> 
-    <td>[type wizards]</td>
+    <td><a href="javascript:viewBugsWithSummary('[type wizards]')">[type wizards]</a></td>
     <td>MA</td>    
     <td width="514">Bugs releated to the new type wizards</td>
   </tr>
   <tr> 
-    <td>[organize imports]</td>
+    <td><a href="javascript:viewBugsWithSummary('[organize imports]')">[organize imports]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to organize imports</td>
   </tr>
   <tr> 
-    <td>[code templates]</td>
+    <td><a href="javascript:viewBugsWithSummary('[imports on paste]')">[imports on paste]</a></td>
+    <td>MA</td>    
+    <td width="514">Bugs related to imports on paste functionality</td>
+  </tr>
+  <tr> 
+    <td><a href="javascript:viewBugsWithSummary('[code templates]')">[code templates]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to code templates</td>
   </tr>
   <tr> 
-    <td>[code style]</td>
+    <td><a href="javascript:viewBugsWithSummary('[code style]')">[code style]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to code style settings including new code style options</td>
   </tr>
   <tr> 
-    <td>[render]</td>
+    <td><a href="javascript:viewBugsWithSummary('[render]')">[render]</a></td>
     <td>MA</td>    
     <td width="514">Bugs related to rendering of Java elements</td>
   </tr>  
 
   <tr> 
-    <td>[JUnit]</td>
+    <td><a href="javascript:viewBugsWithSummary('[JUnit]')">[JUnit]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the org.eclipse.jdt.junit plug-in</td>
   </tr>
   <tr> 
-    <td>[call hierarchy]</td>
+    <td><a href="javascript:viewBugsWithSummary('[call hierarchy]')">[call hierarchy]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the call hierarchy view</td>
   </tr>    
   <tr> 
-    <td>[inline]</td>
+    <td><a href="javascript:viewBugsWithSummary('[inline]')">[inline]</a></td>
     <td>MK</td>
     <td width="514">Inline refactoring bugs including Undo/Redo management in refactoring.</td>
   </tr>
   <tr> 
-    <td>[infer type arguments]</td>
+    <td><a href="javascript:viewBugsWithSummary('[infer type arguments]')">[infer type arguments]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the infer type arguments refactoring</td>
   </tr>  
   <tr> 
-    <td>[extract constant]</td>
+    <td><a href="javascript:viewBugsWithSummary('[extract constant]')">[extract constant]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the extract constant refactoring</td>
   </tr>
   <tr> 
-    <td>[extract local]</td>
+    <td><a href="javascript:viewBugsWithSummary('[extract local]')">[extract local]</a></td>
     <td>MK</td>    
     <td width="514">Bugs related to the extract local variable refactoring</td>
   </tr>   
   <tr> 
-    <td>[change method signature]</td>
+    <td><a href="javascript:viewBugsWithSummary('[change method signature]')">[change method signature]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the change method signature refactoring</td>
   </tr>
   <tr> 
-    <td>[introduce indirection]</td>
+    <td><a href="javascript:viewBugsWithSummary('[introduce indirection]')">[introduce indirection]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the introduce indirection refactoring</td>
   </tr>
   <tr> 
-    <td>[introduce parameter]</td>
+    <td><a href="javascript:viewBugsWithSummary('[introduce parameter]')">[introduce parameter]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the introduce parameter refactoring</td>
   </tr>
   <tr> 
-    <td>[rename]</td>
+    <td><a href="javascript:viewBugsWithSummary('[rename]')">[rename]</a></td>
     <td>MK</td>
     <td width="514">Bugs related to the rename refactoring</td>
   </tr>     
   <tr> 
-    <td>[jar exporter]</td>
+    <td><a href="javascript:viewBugsWithSummary('[jar exporter]')">[jar exporter]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the Javadoc export wizard</td>
   </tr>  
   <tr> 
-    <td>[convert anonymous]</td>
+    <td><a href="javascript:viewBugsWithSummary('[convert anonymous]')">[convert anonymous]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the convert anonymous refactoring</td>
   </tr>  
   <tr> 
-    <td>[convert local]</td>
+    <td><a href="javascript:viewBugsWithSummary('[convert local]')">[convert local]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the convert local to field refactoring</td>
   </tr> 
 
    <tr> 
-    <td>[extract interface]</td>
+    <td><a href="javascript:viewBugsWithSummary('[extract interface]')">[extract interface]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the extract interface refactoring</td>
   </tr>  
    <tr> 
-    <td>[extract superclass]</td>
+    <td><a href="javascript:viewBugsWithSummary('[extract superclass]')">[extract superclass]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the extract superclass refactoring</td>
   </tr>
    <tr> 
-    <td>[use supertype]</td>
+    <td><a href="javascript:viewBugsWithSummary('[use supertype]')">[use supertype]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the use supertype refactoring</td>
   </tr>    
    <tr> 
-    <td>[generate constructor]</td>
+    <td><a href="javascript:viewBugsWithSummary('[generate constructor]')">[generate constructor]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the generate constructor wizard</td>
   </tr>   
    <tr> 
-    <td>[generate delegate]</td>
+    <td><a href="javascript:viewBugsWithSummary('[generate delegate]')">[generate delegate]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the generate delegate wizard</td>
   </tr>   
    <tr> 
-    <td>[getter setter]</td>
+    <td><a href="javascript:viewBugsWithSummary('[getter setter]')">[getter setter]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the getter setter wizard</td>
   </tr>
    <tr> 
-    <td>[override method]</td>
+    <td><a href="javascript:viewBugsWithSummary('[override method]')">[override method]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the override methods wizard</td>
   </tr>  
    <tr> 
-    <td>[hashcode/equals]</td>
+    <td><a href="javascript:viewBugsWithSummary('[hashcode/equals]')">[hashcode/equals]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the hashcode/equals wizard</td>
   </tr>
    <tr> 
-    <td>[migrate jar]</td>
+    <td><a href="javascript:viewBugsWithSummary('[migrate jar]')">[migrate jar]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the migrate jar wizard</td>
   </tr>     
    <tr> 
-    <td>[move member type]</td>
+    <td><a href="javascript:viewBugsWithSummary('[move member type]')">[move member type]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the convert member to top level refactoring</td>
   </tr>
    <tr> 
-    <td>[move method]</td>
+    <td><a href="javascript:viewBugsWithSummary('[move method]')">[move method]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the move method refactoring</td>
   </tr>     
    <tr> 
-    <td>[move static members]</td>
+    <td><a href="javascript:viewBugsWithSummary('[move static members]')">[move static members]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the move static members refactoring</td>
   </tr>
    <tr> 
-    <td>[pull up]</td>
+    <td><a href="javascript:viewBugsWithSummary('[pull up]')">[pull up]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the pull up refactoring</td>
   </tr>
    <tr> 
-    <td>[push down]</td>
+    <td><a href="javascript:viewBugsWithSummary('[push down]')">[push down]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to the push down refactoring</td>
   </tr>
  
    <tr> 
-    <td>[ltk]</td>
+    <td><a href="javascript:viewBugsWithSummary('[ltk]')">[ltk]</a></td>
     <td>TW</td>    
     <td width="514">Bugs related to org.eclipse.ltk.refactoring</td>
   </tr>     
 
   <tr> 
-    <td>[expressions]</td>
+    <td><a href="javascript:viewBugsWithSummary('[expressions]')">[expressions]</a></td>
     <td>DB</td>
     <td width="514">Bugs related to org.eclipse.expressions</td>
   </tr>
