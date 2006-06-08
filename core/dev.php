@@ -113,6 +113,28 @@ ob_start();
 			<table>
 <tr>
 <td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>R3.2.x</b>
+<ul>
+<li>Detailed <a href="r3.2/index.php">description</a></li>
+<li>Get the official <a href="r3.2/index.php#SOURCES">sources for JDT/Core</a></li>
+<li><a href="r3.2/index.php#BUGS_RESOLUTION">Bug resolution</a></li>
+<li>Available <a href="r3.2/index.php#UPDATES">updates</a></li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>R3.1.x</b>
+<ul>
+<li>Detailed <a href="r3.1/index.php">description</a></li>
+<li>Get the official <a href="r3.1/index.php#SOURCES">sources for JDT/Core</a></li>
+<li><a href="r3.1/index.php#BUGS_RESOLUTION">Bug resolution</a></li>
+<li>Available <a href="r3.1/index.php#UPDATES">updates</a></li>
+</ul>
+</td></tr>
+
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
 <td WIDTH="98%"><b>R3.0.x</b>
 <ul>
 <li>Detailed <a href="r3.0/main.html">description</a></li>

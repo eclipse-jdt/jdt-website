@@ -5,7 +5,7 @@
 	# index.php
 	#
 	# Author: 		JDT Core team
-	# Date:			2006-01-30
+	# Date:			2006-06-08
 	#
 	# Description: Type your page comments here - these are not sent to the browser
 	#
@@ -14,8 +14,8 @@
 	
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "JDT Core R3.2.x";
-	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, 3.2";
+	$pageTitle 		= "JDT Core R3.3.x";
+	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, 3.3";
 	$pageAuthor		= "JDT/Core team";
 	
 	# Add page-specific Nav bars here
@@ -38,12 +38,15 @@ ob_start();
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
 			<p>This section describes the JDT/Core implementation of the 
-			   <a href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_2.html">official plan</a>, 
+			   <a href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_3.html">official plan</a>, 
 			   to be delivered according to the <a href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
-               schedule</a>.</p>
+               schedule</a>.<br>
+            </p>
      <a name="release-plan"></a>
+				<b> Disclaimer: We are entering in 3.3 planning mode... This section will be filled shortly...</b> 
+<!--
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-        For <b>release 3.2</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
+        For <b>release 3.3</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
         an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>
     <ul>
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
@@ -347,102 +350,65 @@ ob_start();
         <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
       </ul>		
 		</div>
+-->
 		<div class="homeitem3col">
 			<a name="RELEASE_PROCESS"></a>
 			<h3>Release Process</h3>
+<!--
 			<ul>
 		        <li>Release Candidate 2 : <a href="test-rc2.php">test plan</a>
 		        </li>
 		    </ul>
+-->
 		</div>
 		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
-        <li>Overall R3.2, 2006/06/?? : 
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2&amp;target_milestone=3.2+M1&amp;target_milestone=3.2+M2&amp;target_milestone=3.2+M3&amp;target_milestone=3.2+M4&amp;target_milestone=3.2+M5&amp;target_milestone=3.2+M6&amp;target_milestone=3.2+M7&amp;target_milestone=3.2+RC1&amp;target_milestone=3.2+RC2&amp;target_milestone=3.2+RC3&amp;target_milestone=3.2+RC4&amp;target_milestone=3.2+RC5&amp;target_milestone=3.2+RC6&amp;target_milestone=3.2+RC7&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2&amp;target_milestone=3.2+M1&amp;target_milestone=3.2+M2&amp;target_milestone=3.2+M3&amp;target_milestone=3.2+M4&amp;target_milestone=3.2+M5&amp;target_milestone=3.2+M6&amp;target_milestone=3.2+M7&amp;target_milestone=3.2+RC1&amp;target_milestone=3.2+RC2&amp;target_milestone=3.2+RC3&amp;target_milestone=3.2+RC4&amp;target_milestone=3.2+RC5&amp;target_milestone=3.2+RC6&amp;target_milestone=3.2+RC7">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2&amp;target_milestone=3.2+M1&amp;target_milestone=3.2+M2&amp;target_milestone=3.2+M3&amp;target_milestone=3.2+M4&amp;target_milestone=3.2+M5&amp;target_milestone=3.2+M6&amp;target_milestone=3.2+M7&amp;target_milestone=3.2+RC1&amp;target_milestone=3.2+RC2&amp;target_milestone=3.2+RC3&amp;target_milestone=3.2+RC4&amp;target_milestone=3.2+RC5&amp;target_milestone=3.2+RC6&amp;target_milestone=3.2+RC7">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2&amp;target_milestone=3.2+M1&amp;target_milestone=3.2+M2&amp;target_milestone=3.2+M3&amp;target_milestone=3.2+M4&amp;target_milestone=3.2+M5&amp;target_milestone=3.2+M6&amp;target_milestone=3.2+M7&amp;target_milestone=3.2+RC1&amp;target_milestone=3.2+RC2&amp;target_milestone=3.2+RC3&amp;target_milestone=3.2+RC4&amp;target_milestone=3.2+RC5&amp;target_milestone=3.2+RC6&amp;target_milestone=3.2+RC7">resolved</a>)
+        <li>Overall R3.3, 2007/??/?? : 
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3&amp;target_milestone=3.3+M1&amp;target_milestone=3.3+M2&amp;target_milestone=3.3+M3&amp;target_milestone=3.3+M4&amp;target_milestone=3.3+M5&amp;target_milestone=3.3+M6&amp;target_milestone=3.3+M7&amp;target_milestone=3.3+RC1&amp;target_milestone=3.3+RC2&amp;target_milestone=3.3+RC3&amp;target_milestone=3.3+RC4&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3&amp;target_milestone=3.3+M1&amp;target_milestone=3.3+M2&amp;target_milestone=3.3+M3&amp;target_milestone=3.3+M4&amp;target_milestone=3.3+M5&amp;target_milestone=3.3+M6&amp;target_milestone=3.3+M7&amp;target_milestone=3.3+RC1&amp;target_milestone=3.3+RC2&amp;target_milestone=3.3+RC3&amp;target_milestone=3.3+RC4">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3&amp;target_milestone=3.3+M1&amp;target_milestone=3.3+M2&amp;target_milestone=3.3+M3&amp;target_milestone=3.3+M4&amp;target_milestone=3.3+M5&amp;target_milestone=3.3+M6&amp;target_milestone=3.3+M7&amp;target_milestone=3.3+RC1&amp;target_milestone=3.3+RC2&amp;target_milestone=3.3+RC3&amp;target_milestone=3.3+RC4">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3&amp;target_milestone=3.3+M1&amp;target_milestone=3.3+M2&amp;target_milestone=3.3+M3&amp;target_milestone=3.3+M4&amp;target_milestone=3.3+M5&amp;target_milestone=3.3+M6&amp;target_milestone=3.3+M7&amp;target_milestone=3.3+RC1&amp;target_milestone=3.3+RC2&amp;target_milestone=3.3+RC3&amp;target_milestone=3.3+RC4">resolved</a>)
         </li>
-        <li>Release Candidate-7, 2006/06/02 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC7&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC7&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC7">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC7">resolved</a>)
-        </li>
-        <li>Release Candidate-6, 2006/05/26 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC6&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC6&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC6">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC6">resolved</a>)
-        </li>
-        <li>Release Candidate-5, 2006/05/19 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC5&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC5&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC5">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC5">resolved</a>)
-        </li>
-        <li>Release Candidate-4, 2006/05/12:
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC4&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC4&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC4">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC4">resolved</a>)
-        </li>
-        <li>Release Candidate-3, 2006/05/05 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC3&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC3&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC3">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC3">resolved</a>)
-        </li>
-        <li>Release Candidate-2, 2006/04/28 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC2&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC2&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC2">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC2">resolved</a>)
-        </li>
-        <li>Release Candidate-1, 2006/04/13 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+RC1&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC1&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC1">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+RC1">resolved</a>)
-        </li>
+<!--
         <li>Milestone-6, 2006/03/31 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M6&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M6&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M6&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M6">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M6">resolved</a>)
         </li>
         <li>Milestone-5, 2006/02/17 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M5&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M5&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M5&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M5">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M5">resolved</a>)
         </li>
         <li>Milestone-4, 2005/12/16 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M4&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M4&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M4&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M4">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M4">resolved</a>)
         </li>
         <li>Milestone-3, 2005/11/04 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M3&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M3&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M3&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M3">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M3">resolved</a>)
         </li>
         <li>Milestone-2, 2005/09/23 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M2&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M2&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M2">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M2">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M2&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M2&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M2">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M2">resolved</a>)
         </li>
         <li>Milestone-1, 2005/08/12 :
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M1&amp;target_milestone=3.1.1&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M1&amp;target_milestone=3.1.1&amp;namedcmd=Assigned">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M1&amp;target_milestone=3.1.1">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M1&amp;target_milestone=3.1.1">resolved</a>)
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3+M1&amp;target_milestone=3.1.1&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3+M1&amp;target_milestone=3.1.1&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M1&amp;target_milestone=3.1.1">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3+M1&amp;target_milestone=3.1.1">resolved</a>)
         </li>
+-->
       </ul>
 		</div>
 		<div class="homeitem3col">
@@ -452,34 +418,35 @@ ob_start();
                quality assessment. If you find any regression using these patches, please inform the JDT/Core team by entering a 
                <a href="http://dev.eclipse.org/bugs/">bug report</a>
 			</p>
+<!--
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2RC3.jar">
+            <td valign="top"><a href="../patches/ecj_3.3RC3.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
             <td valign="top">posted on 2006/05/09, 1,24 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2RC3src.zip">
+            <td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
             <td valign="top">posted on 2006/05/09, 1,0 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
-            <td valign="top">build 3.2RC3</td>
+            <td valign="top">build 3.3RC3</td>
           </tr>
           </tr>
 	  </table>
-			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.2 integration preview </b>
+			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.0.200604051115.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.0.200604051115.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
             <td valign="top">posted on 2006/04/05, 3.78 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
-            <td valign="top">build 3.2M6</td>
+            <td valign="top">build 3.3M6</td>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
@@ -531,6 +498,7 @@ ob_start();
                              Also see corresponding 
                              <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5147&amp;content-type=text/html">build notes</a>.			
 			</table>
+-->
 		</div>
 		<div class="homeitem3col">
 			<a name="SOURCES"></a>
@@ -538,9 +506,9 @@ ob_start();
       <ul>
         <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
         </li>
-        <li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R3_2_maintenance"><code>R3_2_maintenance</code></a>
-        	branch of the project <code>org.eclipse.jdt.core</code>. </li>
-        <li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.2 most recent 
+        <li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/"><code>HEAD</code></a> branch of the 
+            project <code>org.eclipse.jdt.core</code>. </li>
+        <li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.3 most recent 
             <a href="http://www.eclipse.org/downloads/index.php" target="new">integration build</a>). Prerequisite plug-ins are already 
             referenced on the project build path (<code>.classpath</code> file). </li>
         <li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
