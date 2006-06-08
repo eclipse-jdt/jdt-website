@@ -58,6 +58,24 @@ planned fixes</a>)
       </ul>
       <img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
+      <ul>
+        <li> available on the <a
+ href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
+area. </li>
+        <li> final <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.155&amp;content-type=text/html">build
+notes</a> </li>
+        <li> bug fixing : (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
+planned fixes</a>) (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
+        </li>
+      </ul>
+      <img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>Rollup 3.1.1 - completed on 2005/10/03</b>
       <ul>
         <li> available on the <a

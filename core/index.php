@@ -73,9 +73,18 @@ be run headless.</p>
 <ul>
   <li>Most active development goes into this stream.
   </li>
-  <li> The 3.2 plan is posted <a href="r3.2/index.php#release-plan">here</a>.
+  <li> The 3.3 plan is posted <a href="r3.3/index.php#release-plan">here</a>.
   </li>
-  <li> The 3.2 next-milestone plan is posted <a href="r3.2/index.php#milestone-plan">here</a>.
+  <li> The 3.3 next-milestone plan is posted <a href="r3.3/index.php#milestone-plan">here</a>.
+  </li>
+  <li> Patch available in <a href="r3.3/index.php#UPDATES">update</a> area (for testing purpose).
+  </li>
+</ul>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Maintenance</b></p>
+<ul>
+  <li> Release 3.2 will be available soon on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  </li>
+  <li> Latest information on further maintenance is available <a href="r3.2/index.php#maintenance">here</a>.
   </li>
   <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
   </li>

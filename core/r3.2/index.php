@@ -37,15 +37,69 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p>This section describes the JDT/Core implementation of the 
-			   <a href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_2.html">official plan</a>, 
-			   to be delivered according to the <a href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
-               schedule</a>.</p>
-     <a name="release-plan"></a>
-     <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-        For <b>release 3.2</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
-        an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>
-    <ul>
+			<a name="maintenance"></a>
+			 <p>This section describes the JDT/Core implementation of the <a
+ 				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_2_x.html">official
+				plan</a>.</p>
+
+<!-- Next rollups... To Be Updated when they will come up...
+
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/18</b>
+      <ul>
+        <li> preview available in <a href="#updates">update</a> area. </li>
+        <li> bug fixing :
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
+planned fixes</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
+        </li>
+      </ul>
+      <img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
+      <ul>
+        <li> available on the <a
+ href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
+area. </li>
+        <li> final <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.155&amp;content-type=text/html">build
+notes</a> </li>
+        <li> bug fixing : (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
+planned fixes</a>) (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
+        </li>
+      </ul>
+      <img
+ src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+ height="16" width="16">&nbsp;<b>Rollup 3.1.1 - completed on 2005/10/03</b>
+      <ul>
+        <li> available on the <a
+ href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
+area. </li>
+        <li> final <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.111&amp;content-type=text/html">build
+notes</a> </li>
+        <li> bug fixing : (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">all
+planned fixes</a>) (<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">unresolved</a>)
+(<a
+ href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">resolved</a>)
+        </li>
+      </ul>
+-->
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Release 3.2.0 - completed on 2006/06/??</b>
+		<ul>
+			<li> available soon on the <a href="http://www.eclipse.org/downloads/index.php" target="new">download</a> area. </li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.1&amp;content-type=text/html">build
+notes</a> </li>
+
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	<ul>
 		<li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation processing tools 
@@ -222,138 +276,13 @@ ob_start();
 		</ul>
 	</li>
 </ul>
-<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.2-Milestone 3 (2005/11/04)</b>, we focused on the following items:</p>
-      <ul>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> JavaModel provide String based API to surface 
-            @category information from source javadoc: String[] element.getCategories() etc... 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=23669">23669</a>) - jerome</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Self-host using source 1.5 (pioneering effort) - all</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Broadcast DOM AST requested during reconcile 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110168">110168</a>) - jerome</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Model support for binary working copies 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110160">110160</a>) - jerome</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Camel pattern matching (CharOperation, leveraged in search
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110060">110060</a>) and codeassist 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102572">102572</a>)) - frederic, david, philippe</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Support completion in javadoc (no longer done in UI layer) 
-            (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=%5Bjavadoc+assist%5D&amp;product=JDT&amp;component=Core&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">related bugs</a>) - frederic</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Provide API to encode/decode a classpath entry into 
-            String/XML form (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110171">110171</a>) - jerome</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Allow valid classfile generation in presence of optional
-            compiler errors (configured by some preference) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107282">107282</a>)
-            - philippe</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> JavaModel provide API to access javadoc from source 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110172">110172</a>) - olivier</li>
-        <li><img alt="OK" src="../ok.gif" style="width: 10px; height: 10px;"> Provide API extension for IProblem, allowing to categorize 
-            and associate marker type - philippe</li>
-        <li>Bug fixing 
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M3&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">resolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M3">verified</a>)</li>
-      </ul>
-<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.2-Milestone 4 (2005/12/16)</b>, we focused on the following items:</p>
-      <ul>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Completion in annotation member pair value: provide 
-            hook for completing inside string literal (e.g. APT completion) 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110188">110188</a>) - david</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide pluggable CompilationParticipant API for 
-            builder actions - kent</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> JavaModel provide API to access javadoc from attached 
-            HTML (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110173">110173</a>) - olivier</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Support working copies for external files 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=61013">61013</a>) - jerome</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Cleanup bindings: generic vs. parameterized 
-            (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80472">80472</a>) - philippe</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Remove "java" file extension assumption on 
-            compilation units (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=71460">71460</a>) - jerome</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide completion on break/continue label 
-            (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>) - david</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Search offers enclosing local variable when matching 
-            its type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>) - frederic</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Leverage CompilationParticipant in reconcile 
-            operation - jerome</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Address long standing issue with secondary types 
-            (not found by model name environment during reconcile) 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36032">36032</a>) - frederic</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Address double job scheduling for initializing 
-            JDT Core &amp; UI (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=114941">114941</a>) - jerome</li>
-        <li>Bug fixing 
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M4&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">resolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M4">verified</a>)</li>
-</ul>
-<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.2-Milestone 5 (2006/02/17)</b>, we will focus on the following items:</p>
-      <ul>
-        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> Initiate discussion for locking projects (JDT or platform feature?) 
-            - philippe, jerome</li>
-        <li><span style="color: rgb(51, 153, 153);"> [optional]</span>Surface more compiler functionalities on DOM bindings: precomputed override indicator (AccOverriding/AccImplementing) 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90660">90660</a>) - olivier</li>
-        <li><img src="../ok.gif" height="10" width="10"> Compiler computes StackMapTable classfile attribute 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109980">109980</a>) - olivier</li>
-        <li><img src="../ok.gif" height="10" width="10"> Adopt changes from APT branch - kent, jerome, david, olivier</li>
-        <li><img src="../ok.gif" height="10" width="10"> Null reference analysis, coupled with use of 
-            <span style="font-style: italic;">@NonNull</span> annotation (<span style="color: rgb(51, 153, 153);"> [deferred]</span>)
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110030">110030</a>,
-            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96063">96063</a>) - maxime, philippe</li>
-        <li><img src="../ok.gif" height="10" width="10"> More robust DOM AST: finalize based on requirements from JDT/UI 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>) - david</li>
-        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> Provide API to compute the list of files to be cleaned by the Java builder 
-            (for a UI to warn user) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110048">110048</a>) - kent</li>
-        <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> LRU buffer cache for working copies (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>) - jerome</li>
-        <li>Leverage codeassist LRU support - david</li>
-        <li><img src="../ok.gif" height="10" width="10"> Improve JavaModel caching policy to better accomodate large JARs - jerome</li>
-        <li>Improve access restriction support:</li>
-          <ul>
-            <li><img src="../ok.gif" height="10" width="10"> restrictions should be inherited 
-                (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=76266">76266</a>) - maxime</li>
-            <li><span style="color: rgb(51, 153, 153);"> [deferred]</span> check more scenarii based on annotations (<span style="font-style: italic;">@CannotImplement</span>, ...) - olivier</li>
-          </ul>
-        <li>Provide pluggable CompletionParticipant API for codeassist operation 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>,
-            <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36939">36939</a>) - david</li>
-        <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Leverage toLocalFile support from Platform for 
-            zip/jar files on EFS (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=123437">123437</a>) - jerome</li>
-        <li>Bug fixing
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M5&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">resolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M5">verified</a>)</li>
-        <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
-      </ul>		
-<p><a name="milestone-plan"></a><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.2-Milestone 6 (2006/03/31)</b>, we will focus on the following items:</p>
-      <ul>
-		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Group all fatal errors together in same category (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128217">128217</a>) - philippe </li>
-		<li>Performance work </li>
-		<li>Improve null reference analysis to recognize more patterns - maxime </li>
-        <li>Make generic method invocation bindings unique - philippe</li>
-        <li>Leverage codeassist LRU support - david</li>
-        <li>Completion in annotation member pair value : handle some standard annotations: target element types, suppress warning tokens 
-            (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>) - david</li>
-        <li>Bug fixing
-            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2+M6&amp;resolution=FIXED">fixed</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">all</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">unresolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">resolved</a>)
-            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">verified</a>)</li>
-        <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
-      </ul>		
 		</div>
 		<div class="homeitem3col">
-			<a name="RELEASE_PROCESS"></a>
-			<h3>Release Process</h3>
-			<ul>
-		        <li>Release Candidate 2 : <a href="test-rc2.php">test plan</a>
-		        </li>
-		    </ul>
+			<a name="FEATURES"></a>
+			<h3>Feature List</h3>
+			<p>Work items completed in the 3.1 stream, also see <a
+ href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build
+notes</a>.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
