@@ -41,25 +41,38 @@ ob_start();
 			 <p>This section describes the JDT/Core implementation of the <a
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_1_x.html">official
 				plan</a>.</p>
-<!--
 			<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
-			 height="16" width="16">&nbsp;<b>Rollup 3.1.3 - NOT PLANNED</b>
+			 height="16" width="16">&nbsp;<b>Rollup 3.1.3 - NOT PLANNED YET...</b>
       <ul>
-        <li> preview available in <a href="#updates">update</a> area. </li>
+        <li> preview available in <a href="#UPDATES">Updates</a> area.</li>
         <li> bug fixing :
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
-planned fixes</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
+        	<ul>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97693">97693</a>
+        			[1.5][compiler] Unchecked generic cast gives false compiler error.</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=122987">122987</a>
+        			[1.5][compiler] Boxing conversion should be performed in conditional expression</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126091">126091</a>
+        			[1.5][compiler] Java compiler generates extra field for enums with abstract methods</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126191">126191</a>
+        			Code formatter doesn't format properly empty enums</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126177">126177</a>
+        			[1.5][compiler] Visibility issue with intersection type</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126087">126087</a>
+        			[1.5][compiler] Java compiler generates incorrect byte code for empty enums</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=124853">124853</a>
+        			[compiler] Compiler generates wrong code (try-catch-finally)</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=125570">125570</a>
+        			[1.5][compiler] Named inner inner classes have illegal names</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=124943">124943</a>
+        			[1.4][compiler] 1.4 Compiler Compliance not working for compareTo</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=122995">122995</a>
+        			[1.5][compiler] Access rules don't apply to generic types</li>
+        		<li><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=123721">123721</a>
+        			two types of 'remove' for TODO task tags</li>
+        	</ul>
         </li>
       </ul>
--->
-      <img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
+      <img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
       <ul>
         <li> available on the <a
  href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>

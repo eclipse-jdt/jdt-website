@@ -249,7 +249,7 @@ ob_start();
 		</ul>
 	</li>
 </ul>
-<--
+<!--
 <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.2-Milestone 3 (2005/11/04)</b>, we focused on the following items:</p>
       <ul>
