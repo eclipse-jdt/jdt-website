@@ -271,13 +271,134 @@ notes</a> </li>
 	</li>
 </ul>
 		</div>
-		<div class="homeitem3col">
-			<a name="FEATURES"></a>
-			<h3>Feature List</h3>
-			<p>Work items completed in the 3.2 stream, also see <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build
-notes</a>.</p>
-		</div>
+
+	<div class="homeitem3col">
+	<a name="FEATURES"></a>
+	<h3>Feature List</h3>
+	<p>Work items completed in the 3.1 stream, also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build notes</a>.</p>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Incremental Java Compiler</b>
+		<ul>
+			<li>added complete API for Compilation participant</li>
+			<li>leveraged suppress warning options for silencing some diagnostics</li>
+			<li>leveraged compiler inlining finally blocks</li>
+			<li>added option to specify whether optional errors should be fatal or not</li>
+			<li>leveraged diagnosis for assignment with no effect</li>
+			<li>added API to allow to specify extra attributes in problem markers.</li>
+			<li>added option to perform full build when managed class files are modified</li>
+			<li>added option to signal fall-through switch cases.</li>
+			<li>added option for null reference analysis of local variables.</li>
+			<li>added partial support for statement recovery in Parser</li>
+			<li>added batch compiler <code>discouraged</code> and <code>forbidden</code> options</li>
+			<li>added support to compute the stack map frames</li>
+			<li>added optional problem to signal method parameter assignments</li>
+			<li>modified some javadoc options default value to reduce number of initial warnings</li>
+			<li>added optional problem to signal unused label</li>
+			<li>added optional problems for raw type references</li>
+			<li>added API to extend problem definitions with notion of problem category and marker type</li>
+			<li>leveraged optional problem for unnecessary cast</li>
+		</ul>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Java Model</b>
+		<ul>
+			<li>leveraged @Deprecated annotation visibility in model</li>
+			<li>leveraged accomodation of very big JAR files (i.e. containing lots of packages)</li>
+			<li>removed unnecessary API for overriding method</li>
+			<li>added support for depending projects with specific builder</li>
+			<li>added API to know whether a variable is a parameter or not</li>
+			<li>added API to transform a binding key into a resolved signature</li>
+			<li>added marker category attribute onto Java problem markers</li>
+			<li>added API for editing compilation units outside the workspace</li>
+			<li>added full EFS support</li>
+			<li>added support for optional classpath entries</li>
+			<li>added API to enable statements recovery for reconcile operation</li>
+			<li>added API to indicate that a rule should be ignored if a better rule is found</li>
+			<li>added API to find secondary types while searching for type on a project</li>
+			<li>added API to change the output location as well as the classpath without touching resources.</li>
+			<li>added JavaCore constant to retrieve the Java source content type from the content type manager</li>
+			<li>added API to set the classpath without touching the .classpath file.</li>
+			<li>added API to return the relative position of the member in the source.</li>
+			<li>added API to create a new working copy without an underlying resource.</li>
+			<li>modified JavaCore initialization not to use a specific job</li>
+			<li>added API for Java-like extensions</li>
+			<li>added API to get column and line number in a compilation unit</li>
+			<li>added API that returns the invented names arg0...argn for a binary method.</li>
+			<li>added API that finds the line separator for the given Java element.</li>
+			<li>added API to get first leading and last trailing node comment in a compilation unit</li>
+			<li>added support for participating in reconcile</li>
+			<li>added API to retrieve the source range of a javadoc comment attached to the corresponding member</li>
+			<li>added element delta flag when one or more categories of an element are added/changed/removed</li>
+			<li>added API that allows to the creation of an class file reader object using an input stream</li>
+			<li>added API that allows to register an resource listener for a given event type that runs before JDT Core</li>
+			<li>added APIs to get the values of the @category tag in the Javadoc of a type, field or method</li>
+			<li>added API for element delta during reconcile</li>
+			<li>added API to encode and decode a classpath entry</li>
+			<li>added API to create working copy on a given class file</li>
+		</ul>
+
+      <img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+      <b>DOM AST</b>
+		<ul>
+			<li> DOM type bindings for generics got adjusted</li>
+			<li>added support of DOM/AST without initializing JDT/Core</li>
+			<li>leveraged way to flag nodes as RECOVERED</li>
+			<li>added API to get actual value of a property as managed by the rewriter</li>
+			<li>added API for DOM ASTNode recovered information</li>
+			<li>added API to enable statements recovery for ASTParser</li>
+			<li>added API for the Import Rewrite</li>
+			<li>added new APIs for checking modifiers</li>
+			<li>modified API for attached javadoc</li>
+			<li>added new API in order to retrieve the binding corresponding to the component type of the array binding</li>
+		</ul>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Code Assist</b>
+		<ul>
+			<li>added Camel Case support in completion</li>
+			<li>added API for completion context</li>
+			<li>added support for completing on label in break/continue statement</li>
+			<li>added option to filter deprecated types and members</li>
+			<li>leveraged variable name completion</li>
+			<li>added API to get all the valid warning tokens used into <code>@SuppressWarnings</code> annotations</li>
+		</ul>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Code Select</b>
+		<ul>
+			<li>added support for completion inside javadoc comments</li>
+		</ul>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Search</b>
+		<ul>
+			<li>added support for CamelCase search patterns</li>
+			<li>added API to report local element and other elements while searching for type references</li>
+			<li>added API to remove index file</li>
+			<li>leveraged search for implementors to consider also subclasses</li>
+		</ul>
+
+	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+	<b>Code Formatter</b>
+		<ul>
+			<li>updated Java conventions built-in code formatter profile to reflect the tab size at 8</li>
+			<li>added option to indent body declarations compare to its enclosing annotation declaration header</li>
+			<li>added option to insert a new line in an empty annotation declaration</li>
+			<li>added support to format code in a headless environment</li>
+			<li>added API to return the indentation string corresponding to the given indentation level.</li>
+			<li>added support for indentations</li>
+		</ul>
+	</div>
+	
+	<div class="homeitem3col">
+	<a name="RELEASE"></a>
+	<h3>Release Process</h3>
+		<ul>
+			<li>Release Candidate 2 : <a href="test-rc2.php">test plan</a></li>
+		</ul>
+	</div>
+
 		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
