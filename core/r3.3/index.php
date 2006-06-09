@@ -42,8 +42,8 @@ ob_start();
 			   to be delivered according to the <a href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
                schedule</a>.<br>
             </p>
-     <a name="release-plan"></a>
-				<b> Disclaimer: We are entering in 3.3 planning mode... This section will be filled shortly...</b> 
+			<a name="release-plan"></a>
+			<b> Disclaimer: We are entering in 3.3 planning mode... This section will be filled shortly...</b> 
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
         For <b>release 3.3</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
         an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>

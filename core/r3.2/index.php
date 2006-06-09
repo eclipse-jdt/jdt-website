@@ -41,6 +41,7 @@ ob_start();
 			 <p>This section describes the JDT/Core implementation of the <a
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_2_x.html">official
 				plan</a>.</p>
+			<b> Disclaimer: This section is still under construction and will be finalized for official 3.2.0 delivery...</b> 
 
 <!-- Next rollups... To Be Updated when they will come up...
 
