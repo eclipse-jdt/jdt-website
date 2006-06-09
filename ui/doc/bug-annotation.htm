@@ -73,12 +73,12 @@ function viewBugsByUser(email) {
   </tr>
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[ccp]')">[ccp]</a></td>
-    <td width="514">Copy, Cut, Paste bugs</td>
+    <td width="514">Copy, Cut, Paste bugs where no refactoring is involved</td>
   </tr>
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[dnd]')">[dnd]</a></td>
     <td width="514">Drag and Drop bugs. This keyword is mostly used together with 
-      other keywords like [refactoring], [type hierarchy], ...</td>
+      other keywords like [reorg], [refactoring], [type hierarchy], ...</td>
   </tr>
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[package explorer]')">[package explorer]</a></td>
@@ -255,20 +255,23 @@ function viewBugsByUser(email) {
   <tr>
     <td colspan="2" class="owner"><a href="javascript:viewBugsByUser('tobias_widmer')">Tobias</a>:</td>
   </tr>
-  
-  <tr> 
+
+  <tr>
+    <td><a href="javascript:viewBugsWithSummary('[reorg]')">[reorg]</a></td>
+    <td width="514">Bugs related to the copy, move and delete refactorings</td>
+  </tr>
+  <tr>
     <td><a href="javascript:viewBugsWithSummary('[jar exporter]')">[jar exporter]</a></td>
-    <td width="514">Bugs related to the Javadoc export wizard</td>
+    <td width="514">Bugs related to the jar export wizard</td>
   </tr>  
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[convert anonymous]')">[convert anonymous]</a></td>
-    <td width="514">Bugs related to the convert anonymous refactoring</td>
+    <td width="514">Bugs related to the convert anonymous to nested class refactoring</td>
   </tr>  
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[convert local]')">[convert local]</a></td>
     <td width="514">Bugs related to the convert local to field refactoring</td>
   </tr> 
-
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[extract interface]')">[extract interface]</a></td>
     <td width="514">Bugs related to the extract interface refactoring</td>
@@ -283,7 +286,7 @@ function viewBugsByUser(email) {
   </tr>    
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[generate constructor]')">[generate constructor]</a></td>
-    <td width="514">Bugs related to the generate constructor wizard</td>
+    <td width="514">Bugs related to the generate constructor wizards</td>
   </tr>   
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[generate delegate]')">[generate delegate]</a></td>
@@ -291,15 +294,15 @@ function viewBugsByUser(email) {
   </tr>   
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[getter setter]')">[getter setter]</a></td>
-    <td width="514">Bugs related to the getter setter wizard</td>
+    <td width="514">Bugs related to the generate getter/setter wizard</td>
   </tr>
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[override method]')">[override method]</a></td>
-    <td width="514">Bugs related to the override methods wizard</td>
+    <td width="514">Bugs related to the override/implement methods wizard</td>
   </tr>  
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[hashcode/equals]')">[hashcode/equals]</a></td>
-    <td width="514">Bugs related to the hashcode/equals wizard</td>
+    <td width="514">Bugs related to the generate hashcode/equals wizard</td>
   </tr>
    <tr> 
     <td><a href="javascript:viewBugsWithSummary('[migrate jar]')">[migrate jar]</a></td>
@@ -337,7 +340,7 @@ function viewBugsByUser(email) {
   
   <tr> 
     <td><a href="javascript:viewBugsWithSummary('[expressions]')">[expressions]</a></td>
-    <td width="514">Bugs related to org.eclipse.expressions</td>
+    <td width="514">Bugs related to org.eclipse.core.expressions</td>
   </tr>
 
 </table>
