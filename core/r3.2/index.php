@@ -75,25 +75,18 @@ planned fixes</a>) (<a
  href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
         </li>
       </ul>
-      <img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>Rollup 3.1.1 - completed on 2005/10/03</b>
-      <ul>
-        <li> available on the <a
- href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
-area. </li>
-        <li> final <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.111&amp;content-type=text/html">build
-notes</a> </li>
-        <li> bug fixing : (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">all
-planned fixes</a>) (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">unresolved</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.1">resolved</a>)
-        </li>
-      </ul>
 -->
+      	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+      		height="16" width="16">&nbsp;<b>Rollup 3.2.1 - NOT PLANNED YET!</b>
+		<ul>
+			<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="_new">download</a> area.</li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5259.35&amp;content-type=text/html">build notes</a> </li>
+			<li> bug fixing :
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">all planned fixes</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">resolved</a>)
+			</li>
+		</ul>
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Release 3.2.0 - completed on 2006/06/??</b>
 		<ul>
 			<li> available soon on the <a href="http://www.eclipse.org/downloads/index.php" target="new">download</a> area. </li>
