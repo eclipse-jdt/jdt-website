@@ -69,7 +69,7 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Development</b></p>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.3 Development</b></p>
 <ul>
   <li>Most active development goes into this stream.
   </li>

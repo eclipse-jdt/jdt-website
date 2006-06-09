@@ -280,7 +280,7 @@ notes</a> </li>
 		<div class="homeitem3col">
 			<a name="FEATURES"></a>
 			<h3>Feature List</h3>
-			<p>Work items completed in the 3.1 stream, also see <a
+			<p>Work items completed in the 3.2 stream, also see <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build
 notes</a>.</p>
 		</div>

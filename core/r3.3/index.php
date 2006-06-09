@@ -44,13 +44,14 @@ ob_start();
             </p>
      <a name="release-plan"></a>
 				<b> Disclaimer: We are entering in 3.3 planning mode... This section will be filled shortly...</b> 
-<!--
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
         For <b>release 3.3</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
         an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>
     <ul>
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	<ul>
+		<li>...</li>
+<!--
 		<li><img src="../progress.gif" height="5" width="14">&nbsp;Annotation processing tools 
 		    (<a href="http://jcp.org/en/jsr/detail?id=269">jsr-269</a>)<br/>
             Work got initiated in org.eclipse.jdt.apt.core (and ui) project, requiring changes in JDT/Core which got released in "APT"
@@ -69,16 +70,21 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=81471">81471</a>) will thus likely be made available as a separate 
 			download.
 		</li>
+-->
 	</ul>
 	</li>
 	<li><span style="color: rgb(51, 153, 153);"> [optional]</span><b> Switching codebase to Java 5.0</b>
 		<ul>
-			<li>If Eclipse 3.2 development switches, then will convert JDT/Core implementation (batch compiler remains 1.3 based)</li>
+			<li>If Eclipse 3.3 development switches, then will convert JDT/Core implementation (batch compiler remains 1.3 based)</li>
+			<!--
 			<li>Not enough reliable 1.5 runtimes available at the moment on each platform, will be reevaluated at end of 3.2 M4.</li>
+			-->
 		</ul>
 	</li>
 	<li><b>Incremental Java Compiler</b>
 		<ul>
+		<li>...</li>
+<!--
 			<li>Improved static analysis
 	          	<ul>
 					<li><img src="../progress.gif" height="5" width="14"> Null reference analysis, coupled with use of 
@@ -113,13 +119,18 @@ ob_start();
             		<li>export rules</li>
             	</ul>
 			</li>
+-->
 		</ul>
 	</li>
+<!--
 	<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Provide API to retrieve class files generated for a given compilation 
 	    unit or reference information (based on last build state) 
 	    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6584">6584</a>)</li>
+-->
 	<li><b>DOM AST</b>
 		<ul>
+		<li>...</li>
+<!--
 			<li><img src="../progress.gif" height="5" width="14"> More robust DOM AST: statement level recovery 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=42253">42253</a>)</li>
 			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Cleanup bindings: generic vs. parameterized 
@@ -131,14 +142,18 @@ ob_start();
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">40096</a>)</li>
 			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Investigate having binding comparisons work across AST contexts 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80715">80715</a>)</li>
+-->
 		</ul>
 	</li>
 	<li><b>Search</b>
 		<ul>
+		<li>...</li>
+<!--
           <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Enable Camel pattern matching (performance item for 
               open type dialog) (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110060">110060</a>)</li>
           <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Offer enclosing local variable when matching its 
               type (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110336">110336</a>)</li>
+-->
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span> Allow regex in Java search (requires JDK 1.4)
               (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>) <i>(1 week)</i></li>
           <li><span style="color: rgb(51, 153, 153);"> [optional]</span> Provide API for spell checking any symbol (i.e. is this symbol 
@@ -149,6 +164,8 @@ ob_start();
 	</li>
 	<li><b>Java Model</b></li>
 		<ul>
+		<li>...</li>
+<!--
 			<li>LRU cache for working copy buffers (scalability of refactoring) 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110158">110158</a>)</li>
 			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Surface javadoc 
@@ -186,10 +203,13 @@ ob_start();
 			<li><span style="color: rgb(51, 153, 153);"> [optional]</span> Provide more Ant functionalities, e.g. way to retrieve project 
 			    classpath, etc... (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=5950">5950</a>) 
 			    <span style="font-style: italic;">(3 weeks)</span></li>
+-->
 		</ul>
 	</li>
 	<li><b>Code Assist</b>
 		<ul>
+		<li>...</li>
+<!--
 			<li><img src="../progress.gif" height="5" width="14"> Enrich completion context: e.g. DOM AST near completion location 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">110181</a>)</li>
 			<li><img src="../progress.gif" height="5" width="14"> Enable pluggable participation in completion (e.g. APT) 
@@ -199,7 +219,7 @@ ob_start();
 			<li><img src="../progress.gif" height="5" width="14"> Enable constructor completions in allocations: "new A&lt;ctrl-space&gt;" 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">83392</a>)</li>
 			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Support for Camel prefix: e.g. 
-			    "NPE&lt;ctrl-space&gt;&nbsp; --&gt; NullPointerException" 
+			    "NPE&lt;ctrl-space&gt;&nbsp; =&gt; NullPointerException" 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102572">102572</a>)</li>
  			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide completion on break/continue label 
  			    (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=22072">22072</a>)</li>
@@ -212,19 +232,24 @@ ob_start();
 					    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110190">110190</a>)</li>
 				</ul>
 			</li>
+-->
 		</ul>
 	</li>
 	<li><b>Code Formatter</b>
 		<ul>
+		<li>...</li>
+<!--
 			<li><img src="../progress.gif" height="5" width="14"> Allow formatting directly from DOM AST by moving infrastructure from 
 			    compiler AST to DOM AST (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)</li>
 			<li>Improve alignment support for message cascades or nested message sends 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=59891">59891</a>) </li>
 			<li>Improve tolerance for syntax errors in formatted source (require work on more robust DOM AST) 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110196">110196</a>)</li>
+-->
 		</ul>
 	</li>
 </ul>
+<--
 <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.2-Milestone 3 (2005/11/04)</b>, we focused on the following items:</p>
       <ul>
@@ -349,8 +374,8 @@ ob_start();
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2+M6">verified</a>)</li>
         <li> Build notes of current <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html">work in progress</a></li>
       </ul>		
-		</div>
 -->
+		</div>
 		<div class="homeitem3col">
 			<a name="RELEASE_PROCESS"></a>
 			<h3>Release Process</h3>

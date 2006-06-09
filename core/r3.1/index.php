@@ -41,9 +41,9 @@ ob_start();
 			 <p>This section describes the JDT/Core implementation of the <a
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_1_x.html">official
 				plan</a>.</p>
-			<img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/18</b>
+<!--
+			<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
+			 height="16" width="16">&nbsp;<b>Rollup 3.1.3 - NOT PLANNED</b>
       <ul>
         <li> preview available in <a href="#updates">update</a> area. </li>
         <li> bug fixing :
@@ -56,6 +56,7 @@ planned fixes</a>)
  href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
         </li>
       </ul>
+-->
       <img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
