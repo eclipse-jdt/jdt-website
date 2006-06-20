@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta content="Dani, Tom" name="author">
+  <meta content="Dani" name="author">
   <title>JDT Summit July 2006</title>
   <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
 </head>
@@ -11,7 +11,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 12:00 CEST June 19, 2006 by Dani</p>
+<p>Last revised 09:10 CEST June 20, 2006 by Dani</p>
 
 <p>
 This document lists the discussion topics for the JDT Summit in no particular order.
@@ -19,18 +19,17 @@ This document lists the discussion topics for the JDT Summit in no particular or
 
 
 <h4>Java SE 6</h4>
-<p>What will be the new Java 6 features and what support do we have to
-add for 3.3.</p>
 <ul>
+<li>What will be the new Java 6 features and what support do we have to add for 3.3.</li>
+<li>Debug features to expose: Heap walking, force early return, monitor access/release</li>
 </ul>
 
 
 <h4>Java SE 7</h4>
-<p>What will be the new Java 7 features and what support do we have to
-add for 3.3.</p>
+What will be the new Java 7 features and what support do we have to
+add for 3.3.
 <ul>
 </ul>
-
 
 
 <h4>Code Assist</h4>
@@ -54,10 +53,30 @@ add for 3.3.</p>
 </ul>
 
 
+<h4>Bindings for non-visible members</h4>
+Compiling snippets that have a private field reference from a superclass, do not have resolved bindings. For example, the snippet "fName.length()" when compiled in the context of VectorTest, which references fName from TestCase, does not have a resolved method binding for "length()". I don't think that fName has a resolved type binding either. Philippe thought this information was availale, but might not be in the AST/DOM.
+
+
+<h4>Evaluations without Java project, or with modified build path</h4>
+It is possible to debug an application with a runtime classpath that does not match a project's build path, or to debug an application that has no associated projects in the workspace. Would it be possible to perform evaluations by having the debugger perform name lookups, to support evaluations that reflect the run(debug)-time?
+
+
+<h4>Scrapbook evaluation enhancements</h4>
+Support for import statements (could be done by debugger), breakpoints, source display (stepping, etc),
+
+
+<br><h4>Scrapbook editing enhancements</h4>
+Separate code from evaluation results for coloring/styling, support to auto insert closing bracket/quote, quick fix (assign to local etc),  red squiggles, CTRL-T on selected type (hover type hierarchy), toggle (un)block comments, shift left/right, format, organize imports, rename selected variable in file.
+	- these things should work anywhere an evaluation can be performed - scrapbook, display view, variable details pane, expression detail pane, conditions, detail formatters, logical structures...
+
+
+<h4>Debugger usability issues</h4>
+Open discussion/suggestions for usability improvements in the Java debugger
+
+
 <h4>Bug Wishes</h4>
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
 an answer whether this can be done and if not, why. Of course if a bug is accepted it might lead to further discussions.
-
 <ul>
 	<li>From Text to JDT Core</li>
 	<ul>
