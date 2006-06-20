@@ -72,6 +72,20 @@ Separate code from evaluation results for coloring/styling, support to auto inse
 
 <h4>Debugger usability issues</h4>
 Open discussion/suggestions for usability improvements in the Java debugger
+<ul>
+	<li>Changes in Variables view often not shown i.e. not highlighted - here's a simple scenario:
+		<ol>
+			<li>import JUnit 3.8.1</li>
+			<li>open type <code>junit.samples.VectorTest</code> in the editor and set a breakpoint in the method <code>setUp()</code></li>
+			<li>now start to debug <code>VectorTest</code></li>
+			<li>once the breakpoint is hit press F6 and observe: the change is highlighted in the Variables view</li>
+			<li>press F6 and observe: the next change is highlighted in the Variables view</li>
+			<li>press F6 and observe: nothing highlighted in the Variables view</li>
+			<li>in the Variables view expand <code>fFull</code> and observe: nothing highlighted</li>
+		</ol>
+		As a user I would expect that the node is auto-expanding and the changes highlighted.
+	</li>
+</ul>
 
 
 <h4>Bug Wishes</h4>
