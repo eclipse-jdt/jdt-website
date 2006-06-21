@@ -11,7 +11,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 09:10 CEST June 20, 2006 by Dani</p>
+<p>Last revised 16:00 CEST June 21, 2006 by Martin</p>
 
 <p>
 This document lists the discussion topics for the JDT Summit in no particular order.
@@ -28,8 +28,6 @@ This document lists the discussion topics for the JDT Summit in no particular or
 <h4>Java SE 7</h4>
 What will be the new Java 7 features and what support do we have to
 add for 3.3.
-<ul>
-</ul>
 
 
 <h4>Code Assist</h4>
@@ -43,14 +41,157 @@ add for 3.3.
 	System.out.print(foo);
 	</pre>
     </li>
+    <li>provide code assist context: AST or other way
+    	<ul>
+    	 <li>need to know what fields, methods, variables are currently defined (use case: getter/setter proposals)</li>
+    	 <li>need the current statements (use case: annotation codeassist, method argumnet code assist)</li>
+    	</ul>
+    </li>
+    
 </ul>
 
 
-<h4>Code Style / Analysis</h4>
+<h4>Compiler</h4>
 <ul>
-	<li>how to specify the ignore list (Java Annotations, Javadoc tag, ...)?</li>
-	<li>report when overriding methods do not call super</li>
+	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)</li>
+	<li>more advanced warnings: 
+	    <ul>
+    	 <li>NotNull, Nullable</li>
+    	 <li>overriding methods that do not call super</li>
+    	 <li>API rules: Do not instantiate, implement</li>    	 
+    	</ul>
+	</li>
+	<li>tune the existing checks to avoid false positives: Not null, thrown exception, unused parameter</li> 
+	
 </ul>
+
+<h4>AST</h4>
+<ul>
+	<li>Need a more flexible way to create multiple ASTs
+	    <ul>
+    	 <li>General problem: We don't know all CU when starting the AST queue</li>
+    	 <li>Performance problem: How many ASTs can we build before we run OOM. Would be nice if core has a machanism to manage the referenced bindings</li>
+     	</ul>
+    </li>	
+
+	<li>AST sharing problem still not solved. The solution we implemented in 3.2 was that Java element listeners observe the delta to get the AST.
+	    <ul>
+    	 <li>Problem: The caller of 'reconcile' defines if an AST is generated and what kind (AST level, bindings, recovery) is is. 50% of callers don't care for an AST, and so the delta also doesn't contain one.</li>
+    	 <li>Suggestion: The working copy owner (Java editor in the primary case) should decide if and what kind of ASTs are provided in the Java element delta after a reconcile./li>
+    	</ul>
+    </li>
+	<li>Compilation participation still not solved
+	    <ul>
+    	 <li>Need AST on build if a code audits or APT wants to do anything reasonable</li>
+    	 <li>For performance reasons we need a way of sharing these ASTs</li>
+     	 <li>For performance reasons we need to force a certain AST kind (level, bindings, recovery). Clients can use it or leave it. Creating multiple AST kinds is not possible</li>
+    	</ul>
+    </li>	
+	
+	
+	<li>find and create bindings in existing binding environments
+	    <ul>
+    	 <li>binding with higher dimension</li>
+    	 <li>binding from name</li>
+    	 <li>find/create binding in binding environment of AST</li>    	 
+    	</ul>
+	</li>	
+</ul>
+
+<h4>Buildpath</h4>
+<ul>
+	<li>exclusion filters also for binary files 
+	    <ul>
+    	 <li>OSGI type hiding</li>
+     	</ul>
+    </li>	
+
+	<li>API rules: What types are API
+	    <ul>
+    	 <li>Make refactorings API aware: warn when API is modified</li>
+     	</ul>
+    </li>
+    
+    <li>Improve classpath variables
+	    <ul>
+    	 <li>Can be marked as deprecated</li>
+     	 <li>Can be marked as non modifiable</li>
+     	</ul>
+    </li>
+    <li>Improve classpath containers
+	    <ul>
+    	 <li>Let containers define what is configurable/not configurable: Path, which attributes</li>
+     	 <li>Allow containers to contain containers, variables and class folders</li>
+     	</ul>
+    </li>
+    <li>Solve the JRE - compliance gap
+	    <ul>
+    	 <li>Specify compliance in classpath?</li>
+    	 <li>Move JRE container to jdt.core?</li>    	 
+     	</ul>
+    </li>	        
+    
+</ul>
+
+<h4>API</h4>
+<ul>
+	<li>common supertype for ICompilationUnit and IClassFile
+	    <ul>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">bug 125504</a></li>
+     	</ul>
+    </li>
+ 	<li>Applying edits to a ICompilationUnit
+	    <ul>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">bug 117694</a></li>
+     	</ul>
+    </li>   
+ 	<li>Java model access to annotations
+	    <ul>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">bug 79112</a></li>
+     	</ul>
+    </li>   
+</ul>
+
+<h4>Code Audit Integration</h4>
+<ul>
+	<li> The goal is to standardize how and when code audits (our own and contributed) are invoked and presented in the UI as well as to provide core infrastructure. Some code audits can be computed 'as you type', others require deep analysis that can't be done while building but has to be kicked on by the user or other events. We have to discuss where and how code audit result are presented (e.g. in the problems view or in a new code audit view) and if we want to provide infrastructure for the code audit preference pages.
+Core infrastructure would allow code audits to share resources as the AST. 
+    </li>
+    
+</ul>
+
+<h4>Semantic Search</h4>
+<ul>
+	<li>An advanced search to allow users to formulate complex searches on the AST like
+	    <ul>
+              <li>All invocations of NLS.format(...) that pass a string literal as first argument</li> 	
+              <li>All invocations of NLS.format(...) that pass a constant that is not in a given properties file</li> 	
+              <li>All invocations of NLS.format(...) that are possibly 'null'</li> 	
+              <li>All catch blocks for CoreExpression that have an empty body</li>
+              <li>All implementors of setVisible that do not call super</li>
+  		</ul>
+    </li>
+    <li>We believe that a snippet based approach will not give is this power: We're looking at programmatic approches at the moment: JQuery, JScript, functional langauges</li>
+    <li>Related areas: Custom code audits, generic refactorings</li>
+</ul>
+
+<h4>Improve the look and feel of JDT UI</h4>
+<ul>
+  <li>Use the new SWT capabilities in our views: different colors / styles in trees and tables</li>
+  <li>Lightweight dialogs for refactoring (bug 92322)</li>
+</ul>
+
+<h4>Launch config templates</h4>
+Users want to define certain default valued (e.g. compiler arguments) for a launch config type
+
+<h4>Leverage Execution Environment over JRE</h4>
+<ul>
+  <li>Don't select a JRE in the build path wizards but a execution environment</li>
+  <li>Compine compliance with EE</li>
+  <li>Group JRE's by EE</li>
+</ul>
+
+
 
 
 <h4>Bindings for non-visible members</h4>
@@ -88,27 +229,27 @@ Open discussion/suggestions for usability improvements in the Java debugger
 </ul>
 
 
+
+
+
 <h4>Bug Wishes</h4>
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
 an answer whether this can be done and if not, why. Of course if a bug is accepted it might lead to further discussions.
 <ul>
-	<li>From Text to JDT Core</li>
+	<li>From Text to JDT Core
 	<ul>
 		<li>improve "Unnecessary declaration of thrown checked exceptions" (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a>)</li>
 		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)</li>
 		<li>code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)</li>
 		<li>[formatting] each format shifts code inside &lt;pre&gt; one space to the right (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">bug 99738</a>)</li>
 		<li>Java model gives different results (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">bug 129584</a>)</li>
-	</ul>
-	<li>From Text to JDT Debug</li>
+	</ul></li>
+	<li>From Text to JDT Debug
 	<ul>
 		<li>[variables] Variables view should offer Auto-Expand (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=131931">bug 131931</a>)</li>
-	</ul>
+	</ul></li>
 </ul>
 
 
-<h4>Miscellaneous UI</h4>
-<ul>
-</ul>
 
 </body>
