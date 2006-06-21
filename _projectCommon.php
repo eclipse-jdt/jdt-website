@@ -9,9 +9,11 @@
 	# Define your project-wide Nav bars here.
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
 	# these are optional
-	$Nav->addNavSeparator("Components", 	"main.php");
+	$Nav->addCustomNav("Mailing Lists",     "http://www.eclipse.org/mail/", "_self", 1);
+	$Nav->addNavSeparator("Platform",       "http://www.eclipse.org/platform/");
+	$Nav->addNavSeparator("JDT Components", "http://www.eclipse.org/jdt/index.php");
 	$Nav->addCustomNav("APT", 	"http://www.eclipse.org/jdt/apt/index.html", "_self", 1);
 	$Nav->addCustomNav("Core", 	"http://www.eclipse.org/jdt/core/index.php", "_self", 1);
 	$Nav->addCustomNav("Debug", "http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html", "_self", 1);
-	$Nav->addCustomNav("UI", 	"http://www.eclipse.org/jdt/ui/index.html", "_self", 1);
+	$Nav->addCustomNav("UI", 	"http://www.eclipse.org/jdt/ui/index.php", "_self", 1);
 ?>
