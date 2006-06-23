@@ -81,7 +81,7 @@ ob_start();
 		</p>
 		<p>
 			The JDT Text component uses the
-			<a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-text-home/development/bug-annotation.htm">keywords defined by Platform Text</a>.
+			<a href="http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm">keywords defined by Platform Text</a>.
 		</p>
 		
 		<table width="800" border="1">
