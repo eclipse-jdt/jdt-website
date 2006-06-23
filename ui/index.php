@@ -85,7 +85,7 @@ ob_start();
 				<li>The JDT/UI 3.2 next-milestone plan is posted <a
 					href="r3_2/main.html#Milestone_Planning">here</a>.</li>
 				<li>A combined Platform/Text and JDT/Text 3.2 plan is posted <a
-					href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/platform-text-home/3.2/plan.html#Overall_Planning">here</a>.</li>
+					href="http://www.eclipse.org/eclipse/platform-text/3.2/plan.html#Overall_Planning">here</a>.</li>
 			</ul>
 			<p><b>R3.1 Maintenance</b></p>
 			<ul>
