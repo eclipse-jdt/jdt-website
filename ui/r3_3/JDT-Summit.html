@@ -11,7 +11,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 9:46 CEST June 26, 2006 by Dani</p>
+<p>Last revised 13:10 CEST June 26, 2006 by Martin</p>
 
 <p>
 This document lists the discussion topics for the JDT Summit in no particular order.
@@ -77,7 +77,7 @@ We should discuss and decide whether we want to do something in that area for 3.
 	<li>Need a more flexible way to create multiple ASTs
 	    <ul>
     	 <li>General problem: We don't know all CU when starting the AST queue</li>
-    	 <li>Performance problem: How many ASTs can we build before we run OOM. Would be nice if core has a machanism to manage the referenced bindings</li>
+    	 <li>Performance problem: How many ASTs can we build before we run OOM. Would be nice if core has a mechanism to manage the referenced bindings</li>
      	</ul>
     </li>	
 
@@ -107,13 +107,13 @@ We should discuss and decide whether we want to do something in that area for 3.
 
 <h4>Buildpath</h4>
 <ul>
-	<li>exclusion filters also for binary files 
+	<li>exclusion/includion filters also for libraries
 	    <ul>
-    	 <li>OSGI type hiding</li>
+    	 <li>OSGI class loader allows hiding of types</li>
      	</ul>
     </li>	
 
-	<li>API rules: What types are API
+	<li>API rules: What types/methods are API
 	    <ul>
     	 <li>Make refactorings API aware: warn when API is modified</li>
      	</ul>
@@ -157,6 +157,12 @@ We should discuss and decide whether we want to do something in that area for 3.
     	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">bug 79112</a></li>
      	</ul>
     </li>   
+     <li>Provide help with TypeNameRequestor result
+	    <ul>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a></li>
+     	</ul>
+    </li>  
+     
 </ul>
 
 <h4>Code Audit Integration</h4>
@@ -186,7 +192,7 @@ Core infrastructure would allow code audits to share resources as the AST.
 We should discuss where it makes sense to adopt new features provided by the Platform and where to further beautify the JDT UI.
 <ul>
   <li>Use the new SWT capabilities in our views: different colors / styles in trees and tables</li>
-  <li>Lightweight dialogs for refactoring (bug 92322)</li>
+  <li>Lightweight dialogs for refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=92322">bug 92322</a>)</li>
 </ul>
 
 <h4>Launch config templates</h4>
