@@ -11,7 +11,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 13:10 CEST June 26, 2006 by Martin</p>
+<p>Last revised 13:22 CEST June 26, 2006 by Martin</p>
 
 <p>
 This document lists the discussion topics for the JDT Summit in no particular order.
@@ -22,6 +22,7 @@ This document lists the discussion topics for the JDT Summit in no particular or
 <ul>
 <li>What will be the new Java 6 features and what support do we have to add for 3.3.</li>
 <li>Debug features to expose: Heap walking, force early return, monitor access/release</li>
+<li>Script integration in Java 6 (JSR 223): Should we start looking into tooling support for JavaScript?</li>
 </ul>
 
 
@@ -32,10 +33,10 @@ add for 3.3.
 
 <h4>Code Assist</h4>
 <ul>
-	<li>automatically add imports (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)</li>
+	<li>improve code assist when import missing (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)</li>
 	<li>code assist inserting code templates, e.g. (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=97912">bug 97912</a>)</li>
 	<li>provide better support to add a cast (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54980">bug 54980</a>)</li>
-	<li>code assist for declarations:
+	<li>code assist for declarations that are already used later in the code:
 	<pre>
 	int f&lt;code assist&gt;
 	System.out.print(foo);
@@ -107,7 +108,7 @@ We should discuss and decide whether we want to do something in that area for 3.
 
 <h4>Buildpath</h4>
 <ul>
-	<li>exclusion/includion filters also for libraries
+	<li>exclusion/inclusion filters also for libraries
 	    <ul>
     	 <li>OSGI class loader allows hiding of types</li>
      	</ul>
@@ -165,13 +166,14 @@ We should discuss and decide whether we want to do something in that area for 3.
      
 </ul>
 
-<h4>Code Audit Integration</h4>
+<h4>Search</h4>
 <ul>
-	<li> The goal is to standardize how and when code audits (our own and contributed) are invoked and presented in the UI as well as to provide core infrastructure. Some code audits can be computed 'as you type', others require deep analysis that can't be done while building but has to be kicked on by the user or other events. We have to discuss where and how code audit result are presented (e.g. in the problems view or in a new code audit view) and if we want to provide infrastructure for the code audit preference pages.
-Core infrastructure would allow code audits to share resources as the AST. 
+	<li>Optimizing type indicator decorator: Find all types for a given resource
     </li>
-    
+    <li>Static methods / fields index to offer organize imports with static imports</li>
+    <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)</li>
 </ul>
+
 
 <h4>Semantic Search</h4>
 <ul>
@@ -184,8 +186,16 @@ Core infrastructure would allow code audits to share resources as the AST.
               <li>All implementors of setVisible that do not call super</li>
   		</ul>
     </li>
-    <li>We believe that a snippet based approach will not give is this power: We're looking at programmatic approches at the moment: JQuery, JScript, functional langauges</li>
+    <li>We believe that a snippet based approach will not give is this power: We're looking at programmatic approches at the moment: JQuery, JScript, functional languages</li>
     <li>Related areas: Custom code audits, generic refactorings</li>
+</ul>
+
+<h4>Code Audit Integration</h4>
+<ul>
+	<li> The goal is to standardize how and when code audits (our own and contributed) are invoked and presented in the UI as well as to provide core infrastructure. Some code audits can be computed 'as you type', others require deep analysis that can't be done while building but has to be kicked on by the user or other events. We have to discuss where and how code audit result are presented (e.g. in the problems view or in a new code audit view) and if we want to provide infrastructure for the code audit preference pages.
+Core infrastructure would allow code audits to share resources as the AST. 
+    </li>
+    
 </ul>
 
 <h4>Improve the look and feel of JDT UI</h4>
@@ -201,7 +211,7 @@ Users want to define certain default valued (e.g. compiler arguments) for a laun
 <h4>Leverage Execution Environment over JRE</h4>
 <ul>
   <li>Don't select a JRE in the build path wizards but a execution environment</li>
-  <li>Compine compliance with EE</li>
+  <li>Combine compliance with EE</li>
   <li>Group JRE's by EE</li>
 </ul>
 
