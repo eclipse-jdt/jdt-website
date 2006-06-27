@@ -270,6 +270,13 @@ When adopting Eclipse, some pre-existing project layouts are hard to model in Ec
 <h4>Improve compiler fault-tolerance</h4>
 Missing types can greatly deteriorate compiler output by producing too many secondary errors, surface suboptimal DOM bindings, or even abort entire compilation process when missing types are referenced from required classfiles. We should investigate ways to improve this situation, remembering that the APT Mirror API requires that bindings are still presented even in the presence of missing types.
 
+<h4>Batch Compiler</h4>
+Consider batch compiler improvements triggerred by its raised visibility; I think we should make a conscious effort to ease the dual use of the IDE
+and the batch compiler, keeping in mind the fact that we also need to be 'javac compatible' for the batch compiler; there are also improvements
+undergoing in the way we call it; and I'd like also to consider porting to the batch environment part of the work done for us by the resource layers
+in Eclipse (or else replace it by something powerful - aka consider canonizing filenames, etc., cleanup design points around files accessed through
+multiple paths, consider a portable file naming scheme, etc.)
+I think APT folks will find an interest in this in that they will likely be involved into batch building uses at one point in time. And UI should be helpful in rounding up batch/IDE equivalences.
 
 <h4>Bug Wishes</h4>
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
