@@ -279,11 +279,13 @@ multiple paths, consider a portable file naming scheme, etc.)
 I think APT folks will find an interest in this in that they will likely be involved into batch building uses at one point in time. And UI should be helpful in rounding up batch/IDE equivalences.
 
 <h4>Provide a more useful class file viewer</h4>
+
 <ul>
 	<li>It would be nice to have an extension point that could set the viewer used to see .class file. We could imagine this extension point to be used by a disassembler like JAD that provides source code instead of class file structure.</li>
 	<li>The class file disassembler has some "advanced" modes that cannot be triggered by the actual class file viewer. Right now I don't find the contents showed as useful since it doesn't provide more information than the outliner. We could have a class file viewer that could benefit from the SYSTEM and DETAILED mode of the disassembler with code folding for some attributes (Code Attribute, RuntimeAnnotations....). This could be quite interesting.</li>
 	<li>We could imagine a new view like the outliner that would show the .class file contents for a compilation unit retrieving the corresponding .class file. This would be very handy when debugging a problem in the compiler.</li>
 </ul>
+See also <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=59495">bug 59495</a>.
 
 <h4>Bug Wishes</h4>
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
