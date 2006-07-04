@@ -6,7 +6,7 @@
 
 <h1>
 <font face="Arial,Helvetica">Smoke Test - Java Tooling</font></h1>
-$Revision: 1.13 $ - $Date: 2006/05/15 14:08:25 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
+$Revision: 1.14 $ - $Date: 2006/07/04 17:18:56 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
 
 <h3>Part 1</h3>
 
@@ -41,15 +41,14 @@ verify:</li>
 <ul>
 <li>the only open perspective is the Java perspective</li>
 <li>
-there is only the JUnit project and the JRE System Library - <i>no source folder and no
-bin folder</i></li>
+the JUnit project contains a source folder 'src' and the JRE System Library</li>
 
 <li>
 the Java Build Path by opening the properties page of the JUnit project:</li>
 
 <ul>
 <li>
-the Java build path order should be JUnit project followed by the JRE System Library<br>
+the Java build path order should be the source folder followed by the JRE System Library<br>
 </li></ul></ul></ul><li>
     <p>
       this smoke test uses
@@ -61,7 +60,7 @@ Import Junit 3.8.1 source into your JUnit project:</p>
   </ul>
 
   <ul>
-    <li style="font-weight: bold;"><span style="font-weight: normal;">in the Package Explorer view select the <span style="font-style: italic;">JUnit</span> project</span></li>
+    <li style="font-weight: bold;"><span style="font-weight: normal;">in the Package Explorer view select <span style="font-style: italic;">JUnit/src</span></span></li>
     <li style="font-weight: bold;"><span style="font-weight: normal;">from the context menu click <span style="font-weight: bold;">Import...</span><br>
       </span></li>
     <li style="font-weight: bold;"><span style="font-weight: normal;">select <span style="font-style: italic;">General &gt; Archive file</span></span><br>
@@ -79,7 +78,7 @@ Package Browsing</h4>
 
 <ul>
 <li>go to the Package Explorer view</li><li>
-drill down into the <span style="font-style: italic;">JUnit</span> project</li>
+drill down into <span style="font-style: italic;">JUnit/src</span></li>
 
 <ul>
 <li>
@@ -128,7 +127,7 @@ open one of them, the resource should show up in the viewer which is registered
 in the OS for that resource type</li>
 </ul>
 
-<li>click <span style="font-weight: bold;">Layout &gt; Hierarchical</span> in the view menu of the Package Explorer view's</li>
+<li>choose <span style="font-weight: bold;">Package Presentation &gt; Hierarchical</span> in the view menu of the Package Explorer</li>
   <ul>
     <li>verify that there is a node <span style="font-style: italic;">junit</span> with 8 other nodes</li>
     <li>verify that there is a node <span style="font-style: italic;">tests</span> contains with the following children:</li>
@@ -141,7 +140,7 @@ in the OS for that resource type</li>
       </li>
     </ul>
   </ul>
-  <li>click <span style="font-weight: bold;">Layout &gt; Flat</span> in the view menu of the Package Explorer view's</li>
+  <li>choose <span style="font-weight: bold;">Package Presentation &gt; Flat</span> in the view menu of the Package Explorer</li>
   <li>
 drill down into the <span style="font-style: italic;">rt.jar</span></li>
 
@@ -331,8 +330,8 @@ Clean...</span>) and choose <span style="font-weight: bold;">Clean all projects<
 
 <ul>
 <li>
-verify in the Navigator view that there are classes with each Java source
-file (in the same folders)</li>
+verify in the Navigator view that there are classes in the <i>bin</i> folder
+</li>
 
 <li>
 no errors should show up in the Problems view
@@ -696,7 +695,7 @@ Java Resource Compare</h4>
 <ul>
 <li>disable auto-build<br>
 </li><li>
-in Navigator view drill down to <span style="font-style: italic;">JUnit/junit/runner</span> folder</li>
+in Navigator view drill down to <span style="font-style: italic;">JUnit/src/junit/runner</span> folder</li>
 
 
 <li>
@@ -948,4 +947,6 @@ verify that the JAR file has been generated and contains JUnit</li>
   <ul>
     <li>verify that the editor shows up and reveals the failure location</li>
   </ul>
-</ul></body></html>
+</ul>
+<hr>
+</body></html>
