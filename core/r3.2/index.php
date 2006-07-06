@@ -528,7 +528,7 @@ notes</a> </li>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of the next integration build. <br>
+            <td valign="top">Early preview of 3.2.1 build. <br>
                              Addresses the following issues: <br>
 							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117302">117302</a>
 							Clean build of large project gives unresolved type errors
