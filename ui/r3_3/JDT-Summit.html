@@ -15,6 +15,7 @@ Location: Saint-Nazaire, France</p>
 
 <p>
 Participants:
+</p>
 <ul>
 	<li>Daniel Megert</li>
 	<li>Darin Wright (partially via phone)
@@ -28,7 +29,6 @@ Participants:
 	<li>Olivier Thomann</li>
 	<li>Philippe Mulet</li>
 </ul>
-</p>
 
 <p>
 This document lists the discussion topics for the JDT Summit in no particular order.
@@ -102,7 +102,7 @@ We should discuss and decide whether we want to do something in that area for 3.
 	<li>AST sharing problem still not solved. The solution we implemented in 3.2 was that Java element listeners observe the delta to get the AST.
 	    <ul>
     	 <li>Problem: The caller of 'reconcile' defines if an AST is generated and what kind (AST level, bindings, recovery) is is. 50% of callers don't care for an AST, and so the delta also doesn't contain one.</li>
-    	 <li>Suggestion: The working copy owner (Java editor in the primary case) should decide if and what kind of ASTs are provided in the Java element delta after a reconcile./li>
+    	 <li>Suggestion: The working copy owner (Java editor in the primary case) should decide if and what kind of ASTs are provided in the Java element delta after a reconcile.</li>
     	</ul>
     </li>
 	<li>Compilation participation still not solved
@@ -145,7 +145,7 @@ We should discuss and decide whether we want to do something in that area for 3.
     
     <li>Improve classpath variables
 	    <ul>
-    	 <li>Can be marked as deprecated</li>
+    	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>)</li>
      	 <li>Can be marked as non modifiable</li>
      	</ul>
     </li>
