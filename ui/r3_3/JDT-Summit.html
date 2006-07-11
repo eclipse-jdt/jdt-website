@@ -1,26 +1,29 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
+<html><head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta content="Dani" name="author">
-  <title>JDT Summit July 2006</title>
-  <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
-</head>
-
-<h1>JDT Summit 2006</h1>
+  <meta content="Dani" name="author"><title>JDT Summit July 2006</title>
+  
+  <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css"></head>
+<body><h1>JDT Summit 2006</h1>
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
 <p>Last revised 17:52 CEST July 5, 2006 by Dani</p>
-
 <p>
-Participants:
+<a href="#participants">Participants</a><br>
+<a href="#topics">Topics</a><br>
+<a href="#notes">Summit Notes</a><br>
 </p>
+
+
+<h3>
+<a name="participants"></a>Participants
+</h3>
 <ul>
 	<li>Daniel Megert</li>
-	<li>Darin Wright (partially via phone)
+	<li>Darin Wright (partially via phone)</li>
 	<li>David Audel</li>
-	<li>Eric Jodet</li>
+	<li>Eric Jodet (might not be here)</li>
 	<li>Frederic Fusier</li>
 	<li>Jerome Lanneluc</li>
 	<li>Markus Keller</li>
@@ -30,12 +33,17 @@ Participants:
 	<li>Philippe Mulet</li>
 </ul>
 
-<p>
-This document lists the discussion topics for the JDT Summit in no particular order.
+
+<h3><a name="topics"></a>Discussion Topics</h3>
+<p>This document lists the discussion topics for the JDT Summit in no particular order.<br>
+<span style="color: rgb(0, 102, 0);">Green means notes that Dani added during the summit.</span><br>
+
 </p>
 
 
-<h4>Java SE 6</h4>
+
+<h4>Java SE 6<span style="color: rgb(0, 102, 0);"> - P1 (Wednesday morning)</span></h4>
+
 <ul>
 <li>What will be the new Java 6 features and what support do we have to add for 3.3.</li>
 <li>Debug features to expose: Heap walking, force early return, monitor access/release</li>
@@ -43,21 +51,30 @@ This document lists the discussion topics for the JDT Summit in no particular or
 </ul>
 
 
-<h4>Java SE 7</h4>
+<h4>Java SE 7<span style="color: rgb(0, 102, 0);"> - P1 (Wednesday morning)</span><br>
+</h4>
 What will be the new Java 7 features and what support do we have to
 add for 3.3.
 
 
-<h4>Code Assist</h4>
+<h4>Code Assist<span style="color: rgb(0, 102, 0);"> - P1 (Tuesday morning)</span><br>
+</h4>
 <ul>
-	<li>improve code assist when import missing (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)</li>
-	<li>code assist inserting code templates, e.g. (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=97912">bug 97912</a>)</li>
-	<li>provide better support to add a cast (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54980">bug 54980</a>)</li>
-	<li>code assist for declarations that are already used later in the code:
-	<pre>
-	int f&lt;code assist&gt;
-	System.out.print(foo);
-	</pre>
+	<li>improve code assist when import missing (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)<br>
+    <span style="color: rgb(0, 102, 0);">Might be doable for local variables and eventually casts but most likely not for fields.<br>
+&#8658;
+JDT Core will investigate and try to provide a solution.</span><br>
+</li>
+	<li style="text-decoration: line-through;">code assist inserting code templates, e.g. (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=97912">bug 97912</a>)</li>
+	<li>provide better support to add a cast (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54980">bug 54980</a>)<br>
+    <span style="color: rgb(0, 102, 0);">Should not go into code assist but into quick assist. Triggers could be: "(x" and "(x.".</span><br>
+    <span style="color: rgb(0, 102, 0);">&#8658;
+Up to JDT UI whether to tackle this item for 3.3.</span><br>
+</li>
+	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
+	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span style="color: rgb(0, 102, 0);">&#8658; JDT Core will investigate and try to provide the unresolved local variables. BUG</span><span style="color: rgb(0, 102, 0);">?</span><span style="color: rgb(0, 102, 0);">?</span><span style="color: rgb(0, 102, 0);">?<br>
+    </span><span style="color: rgb(0, 102, 0);">Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
+
     </li>
     <li>provide code assist context: AST or other way
     	<ul>
@@ -69,14 +86,20 @@ add for 3.3.
 </ul>
 
 
-<h4>JavaBean Support</h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> JavaBean Support<span style="color: rgb(0, 102, 0);"> - P1 (Monday morning)</span><br>
+</h4>
 There are several feature requests asking for better support for JavaBean Property handlig, e.g. enhanced
 code assist, templates, Outline grouping and a JavaBean wizard.
 <br>
-We should discuss and decide whether we want to do something in that area for 3.3.
+We should discuss and decide whether we want to do something in that area for 3.3.<br>
+<br>
+<span style="color: rgb(0, 102, 0);">
+			&#8658; </span><span style="color: rgb(0, 102, 0);">based on the experience </span><span style="color: rgb(0, 102, 0);">JDT Text &amp; UI will</span><span style="color: rgb(0, 102, 0);"> get from the competitive analyses</span><span style="color: rgb(0, 102, 0);">, JDT Text &amp; UI will investigate minimal support limited to 3 days. No action for JDT Core at this point.</span><br>
 
 
-<h4>Compiler</h4>
+
+<h4>Compiler<br>
+</h4>
 <ul>
 	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)</li>
 	<li>more advanced warnings: 
@@ -90,27 +113,51 @@ We should discuss and decide whether we want to do something in that area for 3.
 	
 </ul>
 
-<h4>AST</h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> AST<span style="color: rgb(0, 102, 0);"> - P1 (Monday morning)</span><br>
+</h4>
 <ul>
 	<li>Need a more flexible way to create multiple ASTs
 	    <ul>
     	 <li>General problem: We don't know all CU when starting the AST queue</li>
-    	 <li>Performance problem: How many ASTs can we build before we run OOM. Would be nice if core has a mechanism to manage the referenced bindings</li>
+    	 <li>Performance
+problem: How many ASTs can we build before we run OOM. Would be nice if
+core has a mechanism to manage the referenced bindings</li>
      	</ul>
     </li>	
 
-	<li>AST sharing problem still not solved. The solution we implemented in 3.2 was that Java element listeners observe the delta to get the AST.
-	    <ul>
-    	 <li>Problem: The caller of 'reconcile' defines if an AST is generated and what kind (AST level, bindings, recovery) is is. 50% of callers don't care for an AST, and so the delta also doesn't contain one.</li>
-    	 <li>Suggestion: The working copy owner (Java editor in the primary case) should decide if and what kind of ASTs are provided in the Java element delta after a reconcile.</li>
-    	</ul>
-    </li>
+	
+  <li>AST
+sharing problem still not solved. The solution we implemented in 3.2
+was that Java element listeners observe the delta to get the AST.</li>
+  <ul>
+    <li>&nbsp;Problem: The caller of 'reconcile' defines if an
+AST is generated and what kind (AST level, bindings, recovery) is is.
+50% of callers don't care for an AST, and so the delta also doesn't
+contain one.</li>
+    <li>Suggestion: The working copy owner (Java
+editor in the primary case) should decide if and what kind of ASTs are
+provided in the Java element delta after a reconcile.<span style="color: rgb(0, 102, 0);"></span></li>
+  </ul>
+</ul>
+<div style="margin-left: 40px;"><span style="color: rgb(0, 102, 0);">&#8658;
+JDT Core will change the code so that the primary working copy owner
+can specify the default AST level (or none) and reconcile(...) without
+parameters will provide the AST with the default level and also send
+out the delta with that AST. Open questions: what happens when a client specifies the AST level?</span></div>
+
+    
+<ul>
+
 	<li>Compilation participation still not solved
 	    <ul>
     	 <li>Need AST on build if a code audits or APT wants to do anything reasonable</li>
     	 <li>For performance reasons we need a way of sharing these ASTs</li>
-     	 <li>For performance reasons we need to force a certain AST kind (level, bindings, recovery). Clients can use it or leave it. Creating multiple AST kinds is not possible</li>
-    	</ul>
+     	 <li>For
+performance reasons we need to force a certain AST kind (level,
+bindings, recovery). Clients can use it or leave it. Creating multiple
+AST kinds is not possible</li>
+    	</ul><span style="color: rgb(0, 102, 0);">&#8658;
+JDT Core will might look into this if Jazz related</span>
     </li>	
 	
 	<li>find and create bindings in existing binding environments
@@ -123,24 +170,35 @@ We should discuss and decide whether we want to do something in that area for 3.
 	<li>offer bindings also when some information is missing
 	    <ul>
     	 <li>variable bindings when variable type is unresolved (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149567">bug 149567</a>)</li>
-     	</ul>
+     	</ul><span style="color: rgb(0, 102, 0);">&#8658; JDT Core will try to provide problem nodes instead of 'null'. Same problems would be reported with equal problem nodes.</span>
 	</li>	
 	
 	 
 </ul>
 
-<h4>Buildpath</h4>
+
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Buildpath<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon / with Darin)</span><br>
+</h4>
 <ul>
 	<li>exclusion/inclusion filters also for libraries
 	    <ul>
     	 <li>OSGI class loader allows hiding of types</li>
-     	</ul>
+     	</ul><span style="color: rgb(0, 102, 0);">&#8658; JDT Core might look into this (low prio)</span>
     </li>	
 
-	<li>API rules: What types/methods are API
-	    <ul>
-    	 <li>Make refactorings API aware: warn when API is modified</li>
-     	</ul>
+	
+  <li>API rules: What types/methods are API
+  <ul>
+    <li>&nbsp;Make refactorings API aware: warn when API is modified</li>
+  </ul>
+  
+    <span style="color: rgb(0, 102, 0);"> Could be annotated in
+source (Javadoc or Annotations) or on the build path. Could generate an
+API description out of it (e.g. component.xml). Could have action to
+set the access restrictions out of an API. Must consider that MANIFEST.MF and component.xml don't surface the same information.
+<br>&#8658; No decision so far.
+</span>
+
     </li>
     
     <li>Improve classpath variables
@@ -148,17 +206,21 @@ We should discuss and decide whether we want to do something in that area for 3.
     	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>)</li>
      	 <li>Can be marked as non modifiable</li>
      	</ul>
+    <span style="color: rgb(0, 102, 0);">&#8658; JDT Core will provide this.</span>
     </li>
     <li>Improve classpath containers
 	    <ul>
     	 <li>Let containers define what is configurable/not configurable: Path, which attributes</li>
      	 <li>Allow containers to contain containers, variables and class folders</li>
      	</ul>
+    <span style="color: rgb(0, 102, 0);">&#8658; Darin will start to look into this.</span>
     </li>
     <li>Solve the JRE - compliance gap
 	    <ul>
     	 <li>Specify compliance in classpath?</li>
-    	 <li>Move JRE container to jdt.core?</li>    	 
+    	 <li>Move JRE container to jdt.core?
+    	 <span style="color: rgb(0, 102, 0);">&#8658; Won't happen.</span>
+    	 </li>    	 
      	</ul>
     </li>	        
     
@@ -199,7 +261,10 @@ We should discuss and decide whether we want to do something in that area for 3.
 
 
 <h4>Semantic Search / Search Templates</h4>
-Power search would require to support more evolved search patterns. Can we sketch usecases and ways to provide some degree of support which could be evolved further to add more coverage ? Also what would a UI for it look like (script-based ?)
+Power search would require to support more evolved search patterns. Can
+we sketch usecases and ways to provide some degree of support which
+could be evolved further to add more coverage ? Also what would a UI
+for it look like (script-based ?)
 <ul>
 	<li>An advanced search to allow users to formulate complex searches on the AST like
 	    <ul>
@@ -210,15 +275,25 @@ Power search would require to support more evolved search patterns. Can we sketc
               <li>All implementors of setVisible that do not call super</li>
   		</ul>
     </li>
-    <li>We believe that a snippet based approach will not give is this power: We're looking at programmatic approches at the moment: JQuery, JScript, functional languages</li>
+    <li>We
+believe that a snippet based approach will not give is this power:
+We're looking at programmatic approches at the moment: JQuery, JScript,
+functional languages</li>
     <li>Related areas: Custom code audits, generic refactorings</li>
 </ul>
 
 <h4>Code Audit Integration</h4>
 <ul>
-	<li> The goal is to standardize how and when code audits (our own and contributed) are invoked and presented in the UI as well as to provide core infrastructure. Some code audits can be computed 'as you type', others require deep analysis that can't be done while building but has to be kicked on by the user or other events. We have to discuss where and how code audit result are presented (e.g. in the problems view or in a new code audit view) and if we want to provide infrastructure for the code audit preference pages.
-Core infrastructure would allow code audits to share resources as the AST. 
-    </li>
+	<li> The goal is to standardize how and when code audits (our
+own and contributed) are invoked and presented in the UI as well as to
+provide core infrastructure. Some code audits can be computed 'as you
+type', others require deep analysis that can't be done while building
+but has to be kicked on by the user or other events. We have to discuss
+where and how code audit result are presented (e.g. in the problems
+view or in a new code audit view) and if we want to provide
+infrastructure for the code audit preference pages.
+Core infrastructure would allow code audits to share resources as the
+AST. </li>
 	<li>the basic code audit infrastructure needs to be at the LTK layer with JDT specific support built-on top of it.</li>
     
 </ul>
@@ -233,33 +308,52 @@ We should discuss where it makes sense to adopt new features provided by the Pla
 <h4>Launch config templates</h4>
 Users want to define certain default valued (e.g. compiler arguments) for a launch config type
 
-<h4>Leverage Execution Environment over JRE</h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Leverage Execution Environment over JRE<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon / with Darin)</span><br>
+</h4>
 <ul>
   <li>Don't select a JRE in the build path wizards but a execution environment</li>
-  <li>Combine compliance with EE</li>
+  <li>Combine compliance with EE</li></ul><span style="color: rgb(0, 102, 0);">
+			&#8658; </span><span style="color: rgb(0, 102, 0);">Darin will talk with Wassim and Jeff</span><span style="color: rgb(0, 102, 0);">.</span><br>
+
+
+
+
+<br>
+<ul>
+
   <li>Group JRE's by EE</li>
 </ul>
 
 
 
 
+
 <h4>Bindings for non-visible members</h4>
-Compiling snippets that have a private field reference from a superclass, do not have resolved bindings. For example, the snippet "fName.length()" when compiled in the context of VectorTest, which references fName from TestCase, does not have a resolved method binding for "length()". I don't think that fName has a resolved type binding either. Philippe thought this information was availale, but might not be in the AST/DOM.
-
-
-<h4>Evaluations without Java project, or with modified build path</h4>
-It is possible to debug an application with a runtime classpath that does not match a project's build path, or to debug an application that has no associated projects in the workspace. Would it be possible to perform evaluations by having the debugger perform name lookups, to support evaluations that reflect the run(debug)-time?
-
-
+Compiling snippets that have a private field reference from a
+superclass, do not have resolved bindings. For example, the snippet
+"fName.length()" when compiled in the context of VectorTest, which
+references fName from TestCase, does not have a resolved method binding
+for "length()". I don't think that fName has a resolved type binding
+either. Philippe thought this information was availale, but might not
+be in the AST/DOM.
+<h4>Evaluations without Java project, or with modified build path</h4>It
+is possible to debug an application with a runtime classpath that does
+not match a project's build path, or to debug an application that has
+no associated projects in the workspace. Would it be possible to
+perform evaluations by having the debugger perform name lookups, to
+support evaluations that reflect the run(debug)-time?
 <h4>Scrapbook evaluation enhancements</h4>
 Support for import statements (could be done by debugger), breakpoints, source display (stepping, etc),
 
 
-<br><h4>Scrapbook editing enhancements</h4>
-Separate code from evaluation results for coloring/styling, support to auto insert closing bracket/quote, quick fix (assign to local etc),  red squiggles, CTRL-T on selected type (hover type hierarchy), toggle (un)block comments, shift left/right, format, organize imports, rename selected variable in file.
-	- these things should work anywhere an evaluation can be performed - scrapbook, display view, variable details pane, expression detail pane, conditions, detail formatters, logical structures...
-
-
+<br><h4>Scrapbook editing enhancements</h4>Separate code from
+evaluation results for coloring/styling, support to auto insert closing
+bracket/quote, quick fix (assign to local etc), red squiggles, CTRL-T
+on selected type (hover type hierarchy), toggle (un)block comments,
+shift left/right, format, organize imports, rename selected variable in
+file. - these things should work anywhere an evaluation can be
+performed - scrapbook, display view, variable details pane, expression
+detail pane, conditions, detail formatters, logical structures...
 <h4>Debugger usability issues</h4>
 Open discussion/suggestions for usability improvements in the Java debugger
 <ul>
@@ -278,39 +372,94 @@ Open discussion/suggestions for usability improvements in the Java debugger
 </ul>
 
 
-<h4>Populating the JavaModel</h4>
-Recent additions, like Java type indicator in label decoration, are changing the assumptions on populating the Java model. Given the cache got tuned for certain usage, we should make sure it is aligned with current story, and planned evolutions. Clearly eager is considered bad. We should discuss alternative queries, and or complementary API addition (a la type hierarchy getCachedFlags() --> ICompilationUnit#getCachedFlags(IType/null to denote first type). 
+<h4>Populating the JavaModel<span style="color: rgb(0, 102, 0);"> - P1 (Tuesday)</span><br>
+</h4>Recent additions, like Java type
+indicator in label decoration, are changing the assumptions on
+populating the Java model. Given the cache got tuned for certain usage,
+we should make sure it is aligned with current story, and planned
+evolutions. Clearly eager is considered bad. We should discuss
+alternative queries, and or complementary API addition (a la type
+hierarchy getCachedFlags() --&gt;
+ICompilationUnit#getCachedFlags(IType/null to denote first type). 
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Formatting DOM AST<span style="color: rgb(0, 102, 0);"> - P1 (Monday)</span></h4>
 
-<h4>Formatting DOM AST</h4>
-Current formatter implementation is based on compiler internal AST. We should discuss the benefits for providing a DOM AST solution instead. What is the performance overhead, what are the consequences/benefits for DOM AST users ?
+Current formatter implementation is based on compiler internal AST. We
+should discuss the benefits for providing a DOM AST solution instead.
+What is the performance overhead, what are the consequences/benefits
+for DOM AST users ?<br>
+<span style="color: rgb(0, 102, 0);">&#8658; JDT Core will not convert the
+formatter to DOM AST since it does not give immediate benefits unless
+formatter bugs get fix that benefit from it, is neither needed by JDT
+Text nor JDT UI and has performance impacts. JDT Core will try to fix
+the bugs in the formatter with another approach</span><span style="color: rgb(0, 102, 0);">. This decission might change in the future should new requests arise.</span>
+<h4>Planned refactorings</h4>To anticipate API requests, it would be
+good to explain the planned additions to refactorings. What typical new
+operations are going to be provided, what expensive ones are becoming
+critically used...
+<h4>More flexible project layout<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon)</span><br>
+</h4>When adopting Eclipse, some
+pre-existing project layouts are hard to model in Eclipse. It feels
+this process could be eased by allowing more configurability of the
+Java project, such as allowing custom buildpath or settings on a per
+source folder basis; multiple source attachments per library; inclusion
+of external resources in workspace (as opposed to linking resources
+which is not seen by external tools); relax classpath container
+limitations, which currently do not allow nested containers, source
+folders etc...<br>
+<br>
+<span style="color: rgb(0, 102, 0);">Philippe discussed this within the PMC and they would only accept this under a different name: "more flexible classpath layout"</span><span style="color: rgb(0, 102, 0);">.<br>
+Discussed about 2 hours without any conclusion so far. Dani's idea is
+to leave everything as is but add a super java project that could
+contain IJavaProjects.<br>
+</span><span style="color: rgb(0, 102, 0);">&#8658; no clear path yet</span><br>
 
-<h4>Planned refactorings</h4>
-To anticipate API requests, it would be good to explain the planned additions to refactorings. What typical new operations are going to be provided, what expensive ones are becoming critically used...
-
-<h4>More flexible project layout</h4>
-When adopting Eclipse, some pre-existing project layouts are hard to model in Eclipse. It feels this process could be eased by allowing more configurability of the Java project, such as allowing custom buildpath or settings on a per source folder basis; multiple source attachments per library; inclusion of external resources in workspace (as opposed to linking resources which is not seen by external tools); relax classpath container limitations, which currently do not allow nested containers, source folders etc...
-
-<h4>Improve compiler fault-tolerance</h4>
-Missing types can greatly deteriorate compiler output by producing too many secondary errors, surface suboptimal DOM bindings, or even abort entire compilation process when missing types are referenced from required classfiles. We should investigate ways to improve this situation, remembering that the APT Mirror API requires that bindings are still presented even in the presence of missing types.
-
-<h4>Batch Compiler</h4>
-Consider batch compiler improvements triggerred by its raised visibility; I think we should make a conscious effort to ease the dual use of the IDE
-and the batch compiler, keeping in mind the fact that we also need to be 'javac compatible' for the batch compiler; there are also improvements
-undergoing in the way we call it; and I'd like also to consider porting to the batch environment part of the work done for us by the resource layers
-in Eclipse (or else replace it by something powerful - aka consider canonizing filenames, etc., cleanup design points around files accessed through
+<h4>&nbsp;Improve compiler fault-tolerance</h4>Missing types can greatly
+deteriorate compiler output by producing too many secondary errors,
+surface suboptimal DOM bindings, or even abort entire compilation
+process when missing types are referenced from required classfiles. We
+should investigate ways to improve this situation, remembering that the
+APT Mirror API requires that bindings are still presented even in the
+presence of missing types.
+<h4>Batch Compiler</h4>Consider batch compiler improvements triggerred
+by its raised visibility; I think we should make a conscious effort to
+ease the dual use of the IDE
+and the batch compiler, keeping in mind the fact that we also need to
+be 'javac compatible' for the batch compiler; there are also
+improvements
+undergoing in the way we call it; and I'd like also to consider porting
+to the batch environment part of the work done for us by the resource
+layers
+in Eclipse (or else replace it by something powerful - aka consider
+canonizing filenames, etc., cleanup design points around files accessed
+through
 multiple paths, consider a portable file naming scheme, etc.)
-I think APT folks will find an interest in this in that they will likely be involved into batch building uses at one point in time. And UI should be helpful in rounding up batch/IDE equivalences.
-
+I think APT folks will find an interest in this in that they will
+likely be involved into batch building uses at one point in time. And
+UI should be helpful in rounding up batch/IDE equivalences.
 <h4>Provide a more useful class file viewer</h4>
 
 <ul>
-	<li>It would be nice to have an extension point that could set the viewer used to see .class file. We could imagine this extension point to be used by a disassembler like JAD that provides source code instead of class file structure.</li>
-	<li>The class file disassembler has some "advanced" modes that cannot be triggered by the actual class file viewer. Right now I don't find the contents showed as useful since it doesn't provide more information than the outliner. We could have a class file viewer that could benefit from the SYSTEM and DETAILED mode of the disassembler with code folding for some attributes (Code Attribute, RuntimeAnnotations....). This could be quite interesting.</li>
-	<li>We could imagine a new view like the outliner that would show the .class file contents for a compilation unit retrieving the corresponding .class file. This would be very handy when debugging a problem in the compiler.</li>
+	<li>It would be nice to have an extension point that could set
+the viewer used to see .class file. We could imagine this extension
+point to be used by a disassembler like JAD that provides source code
+instead of class file structure.</li>
+	<li>The class file disassembler
+has some "advanced" modes that cannot be triggered by the actual class
+file viewer. Right now I don't find the contents showed as useful since
+it doesn't provide more information than the outliner. We could have a
+class file viewer that could benefit from the SYSTEM and DETAILED mode
+of the disassembler with code folding for some attributes (Code
+Attribute, RuntimeAnnotations....). This could be quite interesting.</li>
+	<li>We
+could imagine a new view like the outliner that would show the .class
+file contents for a compilation unit retrieving the corresponding
+.class file. This would be very handy when debugging a problem in the
+compiler.</li>
 </ul>
 See also <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=59495">bug 59495</a>.
 
-<h4>Bug Wishes</h4>
+<h4>Bug Wishes - <br>
+</h4>
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
 an answer whether this can be done and if not, why. Of course if a bug is accepted it might lead to further discussions.
 <ul>
@@ -330,4 +479,24 @@ an answer whether this can be done and if not, why. Of course if a bug is accept
 
 <h4>post-mortem discussion</h4>
 
-</body>
+<h3><a name="notes"></a>Notes</h3><span style="color: rgb(0, 102, 0);">Dani's notes made during the summit are above in green.</span><br>
+<br>
+<ul>
+  <li>initial talks about 3.3 plan, team structure</li>
+  <li>downloads</li>
+  <li>first we scheduled most of the items</li>
+  <ul>
+    <li>diverging into discussing Java Beans feature</li>
+  </ul>
+  <li>started discussion with AST</li>
+  <li>Darin is part of the discussion on Monday afternoon 17h30 - 19h00</li>
+  <li>discussed possibility to switch to 5.0: most likely not possible (will probably not happen)<br>
+  </li>
+
+</ul>
+<br>
+
+
+
+
+</body></html>
