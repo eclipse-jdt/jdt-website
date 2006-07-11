@@ -520,7 +520,7 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/07/06, 6.96 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/07/11, 6.96 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -530,7 +530,11 @@ notes</a> </li>
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.1 build. <br>
                              Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117302">117302</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149028">149028</a>
+							Limiting number of characters to read with the file size is invalid.
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149893">149893</a>
+							[1.5] Compilation error: The method is ambiguous for the type
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117302">117302</a>
 							Clean build of large project gives unresolved type errors
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147875">147875</a>
 							[1.5][compiler] NPE when initializing annotations of a binary field
