@@ -8,7 +8,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 13:25 CEST July 12, 2006 by Dani</p>
+<p>Last revised 17:52 CEST July 12, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -124,10 +124,11 @@ We should discuss and decide whether we want to do something in that area for 3.
 
 	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)<br>
     <span style="color: rgb(0, 102, 0);">General agreement that this is
-useful. Should be block comments and should have a cleanup to turn
-NON-NLS end-of-line comments into the new format.</span><br>
+useful. First idea to flag it inside the code with @suppressWarnings
+block comments was rejected because it would pollute the code, be hard
+for JDT Core and be a JDT solution only.</span><br>
     <span style="color: rgb(0, 102, 0);">&#8658;
-JDT Core will investigate whether they can support something like @suppressWarnings or ignoreWarn directive inside comments.</span><br>
+JDT UI will investigate into support for a shared "annotation" support for models.</span><br>
 
 	</li><li>more advanced warnings: 
 	    <ul>
@@ -280,11 +281,18 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
      
 </ul>
 
-<h4>Search</h4>
+<h4>Search<span style="color: rgb(0, 102, 0);"> (Wednesday afternoon)</span></h4>
+
 <ul>
-	<li>Optimizing type indicator decorator: Find all types for a given resource
+	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
+    <span style="color: rgb(0, 102, 0);">&#8658; Martin will use new API that </span><span style="color: rgb(0, 102, 0);">JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span style="color: rgb(0, 102, 0);">. </span>
     </li>
-    <li>Static methods / fields index to offer organize imports with static imports</li>
+    <li>Static methods / fields index to offer organize imports with static imports<br>
+    <span style="color: rgb(0, 102, 0);">Should not be a separate index but in the current one but in a separate category<br>
+    </span><span style="color: rgb(0, 102, 0);">&#8658; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
+    </span><span style="color: rgb(0, 102, 0);">&#8658; JDT Core will try to support the following scenario when doing code assist:<br>
+    </span><span style="color: rgb(0, 102, 0);">&#8658; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
+</li>
     <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)</li>
 </ul>
 
@@ -384,12 +392,13 @@ perform evaluations by having the debugger perform name lookups, to
 support evaluations that reflect the run(debug)-time?<br>
 <span style="color: rgb(0, 102, 0);">Debug can get the AST from the reconcile.</span><br>
 
-<h4>Scrapbook evaluation enhancements (<span style="color: rgb(0, 102, 0);">Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Scrapbook evaluation enhancements (<span style="color: rgb(0, 102, 0);">Tuesday afternoon, with Darin)</span></h4>
 
 Support for import statements (could be done by debugger), breakpoints, source display (stepping, etc),
 
 
 <br>
+<span style="color: rgb(0, 102, 0);">&#8658; </span>Darin said, Debug can use separate panes for imports , check the presence of Debug attributes so that they map on the right line<br>
 <h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Scrapbook editing enhancements<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon, with Darin)</span></h4>
 Separate code from
 evaluation results for coloring/styling, support to auto insert closing
@@ -424,7 +433,7 @@ how deep the auto-expansion will be. Max. would mean "expand all".</span><br>
 </ul>
 
 
-<h4>Populating the JavaModel<span style="color: rgb(0, 102, 0);"> (Tuesday)</span><br>
+<h4>Populating the JavaModel<span style="color: rgb(0, 102, 0);"></span><br>
 </h4>Recent additions, like Java type
 indicator in label decoration, are changing the assumptions on
 populating the Java model. Given the cache got tuned for certain usage,
@@ -529,7 +538,7 @@ Text will ask legal (Adrian Cho) whether it is OK to show disassembled
 contents and if yes, show the detailed result from the disassembler</span><span style="color: rgb(0, 102, 0);">.</span><br>
 
 
-<h4>Bug Wishes<span style="color: rgb(0, 102, 0);"> (Tuesday morning)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Bug Wishes<span style="color: rgb(0, 102, 0);"> (Tuesday morning)</span></h4>
 <h4>
 </h4>
 
@@ -538,22 +547,25 @@ an answer whether this can be done and if not, why. Of course if a bug is accept
 <ul>
 	<li>From Text to JDT Core
 	<ul>
-		<li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> <span style="color: rgb(0, 102, 0);">improve "Unnecessary declaration of thrown checked exceptions" (</span><a style="color: rgb(0, 102, 0);" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a><span style="color: rgb(0, 102, 0);">)</span><br style="color: rgb(0, 102, 0);">
+		<li><span style="color: rgb(0, 102, 0);">improve "Unnecessary declaration of thrown checked exceptions" (</span><a style="color: rgb(0, 102, 0);" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a><span style="color: rgb(0, 102, 0);">)</span><br style="color: rgb(0, 102, 0);">
         <span style="color: rgb(0, 102, 0);">see "Compiler" topic
 above: instead of providing support for special cases we should find a
 way to suppress warnings. In addition pingged the bug whether it could
 be solved for 3.3.</span><br>
 </li>
-		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)</li>
-		<li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)<br>
+		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)<br>
+        <span style="color: rgb(0, 102, 0);">Talked with David: still no better support from the model that would allow to do this in a performant way.</span><br style="color: rgb(0, 102, 0);">
+        <span style="color: rgb(0, 102, 0);">&#8658; No action</span><br>
+</li>
+		<li>code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)<br>
         	<span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);">JDT Core will fix this</span><br>
 		</li>
 		<li>[formatting] each format shifts code inside &lt;pre&gt; one space to the right (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">bug 99738</a>)</li>
-        <li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Java model gives different results (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">bug 129584</a>)<br>
+        <li>Java model gives different results (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">bug 129584</a>)<br>
         <span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);">JDT Core will investigate</span></li>
       </ul>
   
-    </li><li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> From Text to JDT Debug
+    </li><li>From Text to JDT Debug
 	
       <ul>
 
