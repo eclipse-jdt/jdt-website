@@ -8,7 +8,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 17:52 CEST July 12, 2006 by Dani</p>
+<p>Last revised 18:36 CEST July 12, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -49,7 +49,7 @@ Location: Saint-Nazaire, France</p>
 <li>Debug features to expose:</li>
   <ul>
     <li>Heap walking<br>
-      <span style="color: rgb(0, 102, 0);">Fear of McQ that it could conflict with TPTP.<br>
+      <span style="color: rgb(0, 102, 0);">Fear of McQ that it could conflict with other Eclipse projects.<br>
       </span><span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);">Philippe to check with PMC</span><br>
     </li>
   </ul>
@@ -186,7 +186,7 @@ performance reasons we need to force a certain AST kind (level,
 bindings, recovery). Clients can use it or leave it. Creating multiple
 AST kinds is not possible</li>
     	</ul><span style="color: rgb(0, 102, 0);">&#8658;
-JDT Core will might look into this if Jazz related</span>
+JDT Core will might look into this if requested</span>
     </li>	
 	
 	<li>find and create bindings in existing binding environments
@@ -281,7 +281,7 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
      
 </ul>
 
-<h4>Search<span style="color: rgb(0, 102, 0);"> (Wednesday afternoon)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Search<span style="color: rgb(0, 102, 0);"> (Wednesday afternoon)</span></h4>
 
 <ul>
 	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
@@ -293,11 +293,14 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     </span><span style="color: rgb(0, 102, 0);">&#8658; JDT Core will try to support the following scenario when doing code assist:<br>
     </span><span style="color: rgb(0, 102, 0);">&#8658; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
 </li>
-    <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)</li>
+    <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)<br>
+    <span style="color: rgb(0, 102, 0);">&#8658; no actions for now - see below for details.</span><br>
+</li>
 </ul>
 
 
-<h4>Semantic Search / Search Templates</h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Semantic Search / Search Templates <span style="color: rgb(0, 102, 0);">(Wednesday afternoon)</span></h4>
+
 Power search would require to support more evolved search patterns. Can
 we sketch usecases and ways to provide some degree of support which
 could be evolved further to add more coverage ? Also what would a UI
@@ -317,9 +320,10 @@ believe that a snippet based approach will not give is this power:
 We're looking at programmatic approches at the moment: JQuery, JScript,
 functional languages</li>
     <li>Related areas: Custom code audits, generic refactorings</li>
-</ul>
+</ul><span style="color: rgb(0, 102, 0);">&#8658; JDT UI should finish and present the prototype so that we can provide feedback and decide how to continue.</span>
 
-<h4>Code Audit Integration</h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Code Audit Integration <span style="color: rgb(0, 102, 0);">(Wednesday afternoon)</span></h4>
+
 <ul>
 	<li> The goal is to standardize how and when code audits (our
 own and contributed) are invoked and presented in the UI as well as to
@@ -333,7 +337,7 @@ Core infrastructure would allow code audits to share resources as the
 AST. </li>
 	<li>the basic code audit infrastructure needs to be at the LTK layer with JDT specific support built-on top of it.</li>
     
-</ul>
+</ul><span style="color: rgb(0, 102, 0);">&#8658; needs to be clarified first</span>
 
 <h4>Improve the look and feel of JDT UI <span style="color: rgb(0, 102, 0);">(Tuesday afternoon)</span><br>
 </h4>
