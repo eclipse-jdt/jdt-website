@@ -8,7 +8,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 15:45 CEST July 11, 2006 by Dani</p>
+<p>Last revised 13:25 CEST July 12, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -42,7 +42,7 @@ Location: Saint-Nazaire, France</p>
 
 
 
-<h4>Java SE 6<span style="color: rgb(0, 102, 0);"> - P1 (Wednesday morning / started Tuesday afternoon)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Java SE 6<span style="color: rgb(0, 102, 0);"> (Wednesday morning / started Tuesday afternoon)</span></h4>
 
 <ul>
 <li>What will be the new Java 6 features and what support do we have to add for 3.3.</li>
@@ -58,17 +58,21 @@ Location: Saint-Nazaire, France</p>
     </li>
   </ul>
 
-<li>Script integration in Java 6 (JSR 223): Should we start looking into tooling support for JavaScript?</li>
+<li>Script integration in Java 6 (JSR 223): Should we start looking into tooling support for JavaScript?<br>
+    <span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);">currently not part of the JDT scope. No action for 3.3.</span><br>
+</li>
 </ul>
 
 
-<h4>Java SE 7<span style="color: rgb(0, 102, 0);"> - P1 (Wednesday morning)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Java SE 7<span style="color: rgb(0, 102, 0);"> (Wednesday morning)</span><br>
 </h4>
 What will be the new Java 7 features and what support do we have to
-add for 3.3.
+add for 3.3.<br>
+<span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);"></span><span style="color: rgb(0, 102, 0);">This will contain many big changes/additions (e.g. XML inside Java code) which is out of scope for 3.3.</span><br>
 
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Code Assist<span style="color: rgb(0, 102, 0);"> - P1 (Tuesday morning)</span><br>
+
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Code Assist<span style="color: rgb(0, 102, 0);"> (Tuesday morning)</span><br>
 </h4>
 <ul>
 	<li>improve code assist when import missing (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)<br>
@@ -102,7 +106,7 @@ proposals.</span><span style="color: rgb(0, 102, 0);"></span><br>
 </ul>
 
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> JavaBean Support<span style="color: rgb(0, 102, 0);"> - P1 (Monday morning)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> JavaBean Support<span style="color: rgb(0, 102, 0);"> (Monday morning)</span><br>
 </h4>
 There are several feature requests asking for better support for JavaBean Property handlig, e.g. enhanced
 code assist, templates, Outline grouping and a JavaBean wizard.
@@ -117,8 +121,15 @@ We should discuss and decide whether we want to do something in that area for 3.
 <h4>Compiler<br>
 </h4>
 <ul>
-	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)</li>
-	<li>more advanced warnings: 
+
+	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)<br>
+    <span style="color: rgb(0, 102, 0);">General agreement that this is
+useful. Should be block comments and should have a cleanup to turn
+NON-NLS end-of-line comments into the new format.</span><br>
+    <span style="color: rgb(0, 102, 0);">&#8658;
+JDT Core will investigate whether they can support something like @suppressWarnings or ignoreWarn directive inside comments.</span><br>
+
+	</li><li>more advanced warnings: 
 	    <ul>
     	 <li>NotNull, Nullable</li>
     	 <li>overriding methods that do not call super</li>
@@ -129,7 +140,8 @@ We should discuss and decide whether we want to do something in that area for 3.
 	
 </ul>
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> AST<span style="color: rgb(0, 102, 0);"> - P1 (Monday morning)</span><br>
+
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> AST<span style="color: rgb(0, 102, 0);"> (Monday morning)</span><br>
 </h4>
 <ul>
 	<li>Need a more flexible way to create multiple ASTs
@@ -193,7 +205,7 @@ JDT Core will might look into this if Jazz related</span>
 </ul>
 
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Buildpath<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon, Darin)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Buildpath<span style="color: rgb(0, 102, 0);"> (Monday afternoon, Darin)</span><br>
 </h4>
 <ul>
 	<li>exclusion/inclusion filters also for libraries
@@ -315,7 +327,8 @@ AST. </li>
     
 </ul>
 
-<h4>Improve the look and feel of JDT UI</h4>
+<h4>Improve the look and feel of JDT UI <span style="color: rgb(0, 102, 0);">(Tuesday afternoon)</span><br>
+</h4>
 We should discuss where it makes sense to adopt new features provided by the Platform and where to further beautify the JDT UI.
 <ul>
   <li>Use the new SWT capabilities in our views: different colors / styles in trees and tables</li>
@@ -330,16 +343,18 @@ vertical lines (use new plugable ruler support)</span><br style="color: rgb(0, 1
 <span style="color: rgb(0, 102, 0);">Olivier:</span><br style="color: rgb(0, 102, 0);">
 <span style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp; - smart paste into "SELECTED" should remove the text in the string</span><br style="color: rgb(0, 102, 0);">
 <span style="color: rgb(0, 102, 0);">David</span><br style="color: rgb(0, 102, 0);">
-<span style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp; - allow to wrap a selection into string(s) so it can be used as a test case string.</span><br>
+<span style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp; - allow to turn
+a code selection into string(s) so it can be used as a test case string
+and the other way around</span><br>
 
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Launch config templates<span style="color: rgb(0, 102, 0);"> - (Tuesday afternoon)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Launch config templates<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon)</span><br>
 </h4>
 Users want to define certain default valued (e.g. compiler arguments) for a launch config type.<br>
 <br>
 
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Leverage Execution Environment over JRE<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon, with Darin)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Leverage Execution Environment over JRE<span style="color: rgb(0, 102, 0);"> (Monday afternoon, with Darin)</span><br>
 </h4>
 <ul>
   <li>Don't select a JRE in the build path wizards but a execution environment</li>
@@ -347,7 +362,7 @@ Users want to define certain default valued (e.g. compiler arguments) for a laun
   <li>Group JRE's by EE</li>
 </ul><span style="color: rgb(0, 102, 0);">
 			&#8658; </span><span style="color: rgb(0, 102, 0);">Darin will talk with Wassim and Jeff</span><span style="color: rgb(0, 102, 0);">.</span><br>
-<h4>Bindings for non-visible members<span style="color: rgb(0, 102, 0);"> - (Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Bindings for non-visible members<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon, with Darin)</span></h4>
 
 Compiling snippets that have a private field reference from a
 superclass, do not have resolved bindings. For example, the snippet
@@ -356,9 +371,11 @@ references fName from TestCase, does not have a resolved method binding
 for "length()". I don't think that fName has a resolved type binding
 either. Philippe thought this information was availale, but might not
 be in the AST/DOM.<br>
+<span style="color: rgb(0, 102, 0);">
+			&#8658; Darin to enter a bug for Olivier (should already be there)</span><br>
 <br>
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Evaluations without Java project, or with modified build path<span style="color: rgb(0, 102, 0);"> - (Tuesday afternoon, with Darin)</span><br>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Evaluations without Java project, or with modified build path<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon, with Darin)</span><br>
 </h4>It
 is possible to debug an application with a runtime classpath that does
 not match a project's build path, or to debug an application that has
@@ -367,13 +384,13 @@ perform evaluations by having the debugger perform name lookups, to
 support evaluations that reflect the run(debug)-time?<br>
 <span style="color: rgb(0, 102, 0);">Debug can get the AST from the reconcile.</span><br>
 
-<h4>Scrapbook evaluation enhancements <span style="color: rgb(0, 102, 0);">- (Tuesday afternoon, with Darin)</span></h4>
+<h4>Scrapbook evaluation enhancements (<span style="color: rgb(0, 102, 0);">Tuesday afternoon, with Darin)</span></h4>
 
 Support for import statements (could be done by debugger), breakpoints, source display (stepping, etc),
 
 
 <br>
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Scrapbook editing enhancements<span style="color: rgb(0, 102, 0);"> - (Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Scrapbook editing enhancements<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon, with Darin)</span></h4>
 Separate code from
 evaluation results for coloring/styling, support to auto insert closing
 bracket/quote, quick fix (assign to local etc), red squiggles, CTRL-T
@@ -384,7 +401,7 @@ performed - scrapbook, display view, variable details pane, expression
 detail pane, conditions, detail formatters, logical structures...<br>
 <span style="color: rgb(0, 102, 0);">&#8658; Dani and Darin will check whether we can get rid of the scrapbook editor entirely (eval hook in the Java editor?)</span><br>
 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Debugger usability issues<span style="color: rgb(0, 102, 0);"> - (Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Debugger usability issues<span style="color: rgb(0, 102, 0);"> (Tuesday afternoon, with Darin)</span></h4>
 
 Open discussion/suggestions for usability improvements in the Java debugger
 <ul>
@@ -407,7 +424,7 @@ how deep the auto-expansion will be. Max. would mean "expand all".</span><br>
 </ul>
 
 
-<h4>Populating the JavaModel<span style="color: rgb(0, 102, 0);"> - P1 (Tuesday)</span><br>
+<h4>Populating the JavaModel<span style="color: rgb(0, 102, 0);"> (Tuesday)</span><br>
 </h4>Recent additions, like Java type
 indicator in label decoration, are changing the assumptions on
 populating the Java model. Given the cache got tuned for certain usage,
@@ -416,7 +433,7 @@ evolutions. Clearly eager is considered bad. We should discuss
 alternative queries, and or complementary API addition (a la type
 hierarchy getCachedFlags() --&gt;
 ICompilationUnit#getCachedFlags(IType/null to denote first type). 
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Formatting DOM AST<span style="color: rgb(0, 102, 0);"> - P1 (Monday)</span></h4>
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Formatting DOM AST<span style="color: rgb(0, 102, 0);"> (Monday)</span></h4>
 
 Current formatter implementation is based on compiler internal AST. We
 should discuss the benefits for providing a DOM AST solution instead.
@@ -427,11 +444,16 @@ formatter to DOM AST since it does not give immediate benefits unless
 formatter bugs get fix that benefit from it, is neither needed by JDT
 Text nor JDT UI and has performance impacts. JDT Core will try to fix
 the bugs in the formatter with another approach</span><span style="color: rgb(0, 102, 0);">. This decission might change in the future should new requests arise.</span>
-<h4>Planned refactorings</h4>To anticipate API requests, it would be
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Planned refactorings<span style="color: rgb(0, 102, 0);"> (Wednesday morning)</span><br>
+</h4>To anticipate API requests, it would be
 good to explain the planned additions to refactorings. What typical new
 operations are going to be provided, what expensive ones are becoming
-critically used...
-<h4>More flexible project layout<span style="color: rgb(0, 102, 0);"> - P1 (Monday afternoon)</span><br>
+critically used...<br>
+<span style="color: rgb(0, 102, 0);">According to Martin there is no
+new JDT Core support needed at the moment, except for the support to
+use less memory (see "Populating the JavaModel" item).</span><br>
+
+<h4>More flexible project layout<span style="color: rgb(0, 102, 0);"> (Monday afternoon)</span><br>
 </h4>When adopting Eclipse, some
 pre-existing project layouts are hard to model in Eclipse. It feels
 this process could be eased by allowing more configurability of the
@@ -448,14 +470,17 @@ to leave everything as is but add a super java project that could
 contain IJavaProjects.<br>
 </span><span style="color: rgb(0, 102, 0);">&#8658; no clear path yet</span><br>
 
-<h4>&nbsp;Improve compiler fault-tolerance</h4>Missing types can greatly
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Improve compiler fault-tolerance<span style="color: rgb(0, 102, 0);"> (Wednesday morning)</span></h4>
+Missing types can greatly
 deteriorate compiler output by producing too many secondary errors,
 surface suboptimal DOM bindings, or even abort entire compilation
 process when missing types are referenced from required classfiles. We
 should investigate ways to improve this situation, remembering that the
 APT Mirror API requires that bindings are still presented even in the
-presence of missing types.
-<h4>Batch Compiler</h4>Consider batch compiler improvements triggerred
+presence of missing types.<br>
+
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Batch Compiler<span style="color: rgb(0, 102, 0);"> (Wednesday morning)</span><br>
+</h4>Consider batch compiler improvements triggerred
 by its raised visibility; I think we should make a conscious effort to
 ease the dual use of the IDE
 and the batch compiler, keeping in mind the fact that we also need to
@@ -470,8 +495,10 @@ through
 multiple paths, consider a portable file naming scheme, etc.)
 I think APT folks will find an interest in this in that they will
 likely be involved into batch building uses at one point in time. And
-UI should be helpful in rounding up batch/IDE equivalences.
-<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Provide a more useful class file viewer<span style="color: rgb(0, 102, 0);"> - (Discussed with Olivier only)</span><br>
+UI should be helpful in rounding up batch/IDE equivalences.<br>
+<br>
+
+<h4><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> Provide a more useful class file viewer<span style="color: rgb(0, 102, 0);"> (Discussed with Olivier only)</span><br>
 </h4>
 
 <ul>
@@ -502,7 +529,7 @@ Text will ask legal (Adrian Cho) whether it is OK to show disassembled
 contents and if yes, show the detailed result from the disassembler</span><span style="color: rgb(0, 102, 0);">.</span><br>
 
 
-<h4>Bug Wishes<span style="color: rgb(0, 102, 0);"> - P1 (Tuesday morning)</span></h4>
+<h4>Bug Wishes<span style="color: rgb(0, 102, 0);"> (Tuesday morning)</span></h4>
 <h4>
 </h4>
 
@@ -511,7 +538,12 @@ an answer whether this can be done and if not, why. Of course if a bug is accept
 <ul>
 	<li>From Text to JDT Core
 	<ul>
-		<li>improve "Unnecessary declaration of thrown checked exceptions" (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a>)</li>
+		<li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> <span style="color: rgb(0, 102, 0);">improve "Unnecessary declaration of thrown checked exceptions" (</span><a style="color: rgb(0, 102, 0);" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a><span style="color: rgb(0, 102, 0);">)</span><br style="color: rgb(0, 102, 0);">
+        <span style="color: rgb(0, 102, 0);">see "Compiler" topic
+above: instead of providing support for special cases we should find a
+way to suppress warnings. In addition pingged the bug whether it could
+be solved for 3.3.</span><br>
+</li>
 		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)</li>
 		<li><img src="../../www%20platform-text/images/ok.gif" nosave="" border="0" height="10" width="10"> code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)<br>
         	<span style="color: rgb(0, 102, 0);">&#8658; </span><span style="color: rgb(0, 102, 0);">JDT Core will fix this</span><br>
