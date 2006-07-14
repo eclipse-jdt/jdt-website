@@ -152,6 +152,11 @@ JDT UI will investigate into support for a shared "annotation" support for model
 problem: How many ASTs can we build before we run OOM. Would be nice if
 core has a mechanism to manage the referenced bindings</li>
      	</ul>
+  <span style="color: rgb(0, 102, 0);">&#8658;
+JDT Core will look at this. Idea is to provide a bining environment object that can be reused when creating an AST.
+JDT Core will hide the recreation of the compiler bindings in case of memory problems or when a AST is requested for a
+already known binding. <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> 
+</span>
     </li>	
 
 	
@@ -195,6 +200,10 @@ JDT Core will might look into this if requested</span>
     	 <li>find type binding by name or key</li>
     	 <li>create or compose type binding in binding environment of AST (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
     	</ul>
+  <span style="color: rgb(0, 102, 0);">&#8658;
+Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (first item for AST) 
+</span>    	
+    	
 	</li>
 	<li>offer bindings also when some information is missing
 	    <ul>
