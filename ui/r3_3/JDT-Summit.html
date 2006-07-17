@@ -561,7 +561,8 @@ Clients can provide their own view on a Java class file via
 "org.eclipse.ui.editors" extension point. There are currently no plans
 to offer plugable views for the Class File editor.<br>
 <span class="Notes"> &rArr; JDT Text will ask legal (Adrian Cho) whether it is OK to show disassembled
-contents and if yes, show the detailed result from the disassembler</span><span class="Notes">.</span><br>
+contents and if yes, show the detailed result from the disassembler</span><span class="Notes"></span><br>
+
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bug Wishes<span class="Notes"> (Tuesday morning)</span></h4>
 
 
@@ -577,13 +578,16 @@ way to suppress warnings. In addition pingged the bug whether it could
 be solved for 3.3.</span><br>
 </li>
 		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)<br>
-        <span class="Notes">Talked with David: still no better support from the model that would allow to do this in a performant way.</span>
-        <span class="Notes">&rArr; No action</span><br>
+        <span class="Notes">
+        Talked with David: still no better support from the model that would allow to do this in a performant way.<br>
+        &rArr; No action for this PR but reopened <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">bug 6930</a> to investigate simple constructor support</span>
 </li>
 		<li>code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)<br>
         	<span class="Notes">&rArr; JDT Core will fix this</span><br>
 		</li>
-		<li>[formatting] each format shifts code inside &lt;pre&gt; one space to the right (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">bug 99738</a>)</li>
+		<li>[formatting] each format shifts code inside &lt;pre&gt; one space to the right (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">bug 99738</a>)<br>
+       	<span class="Notes">&rArr; Olivier plans to fix this for 3.3 together with other bugs in the formatter</span><br>
+		</li>
         <li>Java model gives different results (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">bug 129584</a>)<br>
         <span class="Notes">&rArr; JDT Core will investigate</span></li>
       </ul>
