@@ -386,7 +386,14 @@ Maxime:
 
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Launch config templates<span class="Notes"> (Tuesday afternoon)</span><br>
 </h4>
-Users want to define certain default valued (e.g. compiler arguments) for a launch config type.<br>
+Users want to define certain default values (e.g. compiler arguments) for a launch config type
+	(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=41353">bug 41353</a>).<br>
+    <p class="Notes">&rArr; Discussed full-fledged inheritance for individual launch config properties,
+    but this was found to be too much for the UI (tristate everywhere, client-contributed tabs would be broken)
+    as well as for the model (e.g. what if base template is not shared but child template is, etc.).
+    <br>Debug will implement a simple copy-based solution where new launch configs can be based
+    on an existing launch config.
+    New launch configs will not be connected to template after initial copying of attributes.</p>
 <br>
 
 
@@ -426,7 +433,7 @@ Support for import statements (could be done by debugger), breakpoints, source d
 
 
 <br>
-<span class="Notes">&rArr; </span>Darin said, Debug can use separate panes for imports , check the presence of Debug attributes so that they map on the right line<br>
+<span class="Notes">&rArr; Darin said, Debug can use separate panes for imports, check the presence of Debug attributes so that they map on the right line</span><br>
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Scrapbook editing enhancements<span class="Notes"> (Tuesday afternoon, with Darin)</span></h4>
 Separate code from
 evaluation results for coloring/styling, support to auto insert closing
@@ -480,7 +487,7 @@ for DOM AST users ?<br>
 formatter to DOM AST since it does not give immediate benefits unless
 formatter bugs get fix that benefit from it, is neither needed by JDT
 Text nor JDT UI and has performance impacts. JDT Core will try to fix
-the bugs in the formatter with another approach</span><span class="Notes">. This decission might change in the future should new requests arise.</span>
+the bugs in the formatter with another approach</span><span class="Notes">. This decision might change in the future should new requests arise.</span>
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Planned refactorings<span class="Notes"> (Wednesday morning)</span><br>
 </h4>To anticipate API requests, it would be
 good to explain the planned additions to refactorings. What typical new
@@ -619,8 +626,8 @@ be solved for 3.3.</span><br>
   </li>
   <li>started discussion with AST</li>
   <li>Darin is part of the discussion on Monday afternoon 17h30 - 19h00</li>
-  <li>discussed possibility to switch to 5.0: most likely not possible (will probably not happen)<br>
-  </li>
+  <li>discussed possibility to switch to 5.0: most likely not possible (will probably not happen)</li>
+  <li>Olivier will continue to bring croissants for the whole team ;-)</li>
 
 </ul>
 </span>
