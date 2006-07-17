@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="http://dev.eclipse.org/default_style.css" type="text/css">
   <style type="text/css">
   <!--
-  	.Dani { font: italic; color: rgb(0, 102, 0); }
+  	.Notes { font-style: italic; color: rgb(0, 102, 0); }
   -->
   </style>
 </head>
@@ -14,11 +14,11 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 18:36 CEST July 12, 2006 by Dani</p>
+<p>Last revised 13:35 CEST July 17, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
-<a href="#notes">Summit Notes</a><br>
+<a href="#notes">Various Summit Notes</a><br>
 </p>
 
 
@@ -42,21 +42,21 @@ Location: Saint-Nazaire, France</p>
 
 <h3><a name="topics"></a>Discussion Topics</h3>
 <p>This document lists the discussion topics for the JDT Summit in no particular order.<br>
-<span class="Dani">Italic green means notes that Dani added during the summit.</span><br>
+<span class="Notes">Italic green means notes about the discussion and decisions during the summit.</span><br>
 
 </p>
 
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Java SE 6<span class="Dani"> (Wednesday morning / started Tuesday afternoon)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Java SE 6<span class="Notes"> (Wednesday morning / started Tuesday afternoon)</span></h4>
 
 <ul>
 <li>What will be the new Java 6 features and what support do we have to add for 3.3.</li>
 <li>Debug features to expose:
   <ul>
     <li>Heap walking<br>
-      <span class="Dani">Fear of McQ that it could conflict with other Eclipse projects.<br>
-      </span><span class="Dani">&rArr;Philippe to check with PMC</span><br>
+      <span class="Notes">Fear of McQ that it could conflict with other Eclipse projects.<br>
+      </span><span class="Notes">&rArr; Philippe to check with PMC</span><br>
     </li>
   </ul>
   <ul>
@@ -65,43 +65,43 @@ Location: Saint-Nazaire, France</p>
   </ul>
 </li>
 <li>Script integration in Java 6 (JSR 223): Should we start looking into tooling support for JavaScript?<br>
-    <span class="Dani">&rArr;currently not part of the JDT scope. No action for 3.3.</span><br>
+    <span class="Notes">&rArr; currently not part of the JDT scope. No action for 3.3.</span><br>
 </li>
 </ul>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Java SE 7<span class="Dani"> (Wednesday morning)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Java SE 7<span class="Notes"> (Wednesday morning)</span><br>
 </h4>
 What will be the new Java 7 features and what support do we have to
 add for 3.3.<br>
-<span class="Dani">&rArr; This will contain many big changes/additions (e.g. XML inside Java code) which is out of scope for 3.3.</span><br>
+<span class="Notes">&rArr; This will contain many big changes/additions (e.g. XML inside Java code) which is out of scope for 3.3.</span><br>
 
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Code Assist<span class="Dani"> (Tuesday morning)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Code Assist<span class="Notes"> (Tuesday morning)</span><br>
 </h4>
 <ul>
 	<li>improve code assist when import missing (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)<br>
-    <span class="Dani">Might be doable for local variables and eventually casts but most likely not for fields.<br>
+    <span class="Notes">Might be doable for local variables and eventually casts but most likely not for fields.<br>
 &rArr;
 JDT Core will investigate and try to provide a solution.</span><br>
 </li>
 	<li style="text-decoration: line-through;">code assist inserting code templates, e.g. (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=97912">bug 97912</a>)</li>
 	<li>provide better support to add a cast (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54980">bug 54980</a>)<br>
-    <span class="Dani">Should not go into code assist but into quick assist. Triggers could be: "(x" and "(x.".</span><br>
-    <span class="Dani">&rArr;
+    <span class="Notes">Should not go into code assist but into quick assist. Triggers could be: "(x" and "(x.".</span><br>
+    <span class="Notes">&rArr;
 Up to JDT UI whether to tackle this item for 3.3.</span><br>
 </li>
 	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
-	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Dani">&rArr; JDT Core will investigate and try to provide the unresolved local variables. BUG</span><span class="Dani">?</span><span class="Dani">?</span><span class="Dani">?<br>
-    </span><span class="Dani">Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
+	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables. BUG</span><span class="Notes">?</span><span class="Notes">?</span><span class="Notes">?<br>
+    </span><span class="Notes">Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
 
     </li>
     <li>provide code assist context: AST or other way
     	<ul>
     	 <li>need to know what fields, methods, variables are currently defined (use case: getter/setter proposals)</li>
     	 <li>need the current statements (use case: annotation codeassist, method argumnet code assist)</li>
-    	</ul><span class="Dani">&rArr;
+    	</ul><span class="Notes">&rArr;
 JDT UI and JDT Core will work together and check whether a Java element
 or a diet AST would help to resolve the problem. If not JDT UI could
 try to get and wait for the shared AST in case of method getter/setter
@@ -112,15 +112,15 @@ proposals.</span><br>
 </ul>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> JavaBean Support<span class="Dani"> (Monday morning)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> JavaBean Support<span class="Notes"> (Monday morning)</span><br>
 </h4>
 There are several feature requests asking for better support for JavaBean Property handlig, e.g. enhanced
 code assist, templates, Outline grouping and a JavaBean wizard.
 <br>
 We should discuss and decide whether we want to do something in that area for 3.3.<br>
 <br>
-<span class="Dani">
-			&rArr; </span><span class="Dani">based on the experience </span><span class="Dani">JDT Text &amp; UI will</span><span class="Dani"> get from the competitive analyses</span><span class="Dani">, JDT Text &amp; UI will investigate minimal support limited to 3 days. No action for JDT Core at this point.</span><br>
+<span class="Notes">
+			&rArr; </span><span class="Notes">based on the experience </span><span class="Notes">JDT Text &amp; UI will</span><span class="Notes"> get from the competitive analyses</span><span class="Notes">, JDT Text &amp; UI will investigate minimal support limited to 3 days. No action for JDT Core at this point.</span><br>
 
 
 
@@ -129,11 +129,11 @@ We should discuss and decide whether we want to do something in that area for 3.
 <ul>
 
 	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)<br>
-    <span class="Dani">General agreement that this is
+    <span class="Notes">General agreement that this is
 useful. First idea to flag it inside the code with @suppressWarnings
 block comments was rejected because it would pollute the code, be hard
 for JDT Core and be a JDT solution only.</span><br>
-    <span class="Dani">&rArr;
+    <span class="Notes">&rArr;
 JDT UI will investigate into support for a shared "annotation" support for models.</span><br>
 
 	</li><li>more advanced warnings: 
@@ -148,7 +148,7 @@ JDT UI will investigate into support for a shared "annotation" support for model
 </ul>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> AST<span class="Dani"> (Monday morning)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> AST<span class="Notes"> (Monday morning)</span><br>
 </h4>
 <ul>
 	<li>Need a more flexible way to create multiple ASTs
@@ -158,7 +158,7 @@ JDT UI will investigate into support for a shared "annotation" support for model
 problem: How many ASTs can we build before we run OOM. Would be nice if
 core has a mechanism to manage the referenced bindings</li>
      	</ul>
-  <span class="Dani">&rArr;
+  <span class="Notes">&rArr;
 JDT Core will look at this. Idea is to provide a binding environment object that can be reused when creating an AST.
 JDT Core will hide the recreation of the compiler bindings in case of memory problems or when a AST is requested for a
 already known binding. <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> 
@@ -177,7 +177,7 @@ contain one.</li>
 editor in the primary case) should decide if and what kind of ASTs are
 provided in the Java element delta after a reconcile.</li>
   </ul>
-  <span class="Dani">&rArr;
+  <span class="Notes">&rArr;
 JDT Core will change the code so that the primary working copy owner
 can specify the default AST level (or none) and reconcile(...) without
 parameters will provide the AST with the default level and also send
@@ -196,7 +196,7 @@ out the delta with that AST. Open questions: what happens when a client specifie
 performance reasons we need to force a certain AST kind (level,
 bindings, recovery). Clients can use it or leave it. Creating multiple
 AST kinds is not possible</li>
-    	</ul><span class="Dani">&rArr;
+    	</ul><span class="Notes">&rArr;
 JDT Core will might look into this if requested</span>
     </li>	
 	
@@ -206,7 +206,7 @@ JDT Core will might look into this if requested</span>
     	 <li>find type binding by name or key</li>
     	 <li>create or compose type binding in binding environment of AST (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
     	</ul>
-  <span class="Dani">&rArr;
+  <span class="Notes">&rArr;
 Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (first item for AST) 
 </span>    	
     	
@@ -214,20 +214,20 @@ Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi
 	<li>offer bindings also when some information is missing
 	    <ul>
     	 <li>variable bindings when variable type is unresolved (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149567">bug 149567</a>)</li>
-     	</ul><span class="Dani">&rArr; JDT Core will try to provide problem bindings instead of 'null'. Same problems would be reported with equal problem nodes.</span>
+     	</ul><span class="Notes">&rArr; JDT Core will try to provide problem bindings instead of 'null'. Same problems would be reported with equal problem nodes.</span>
 	</li>	
 	
 	 
 </ul>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Buildpath<span class="Dani"> (Monday afternoon, Darin)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Buildpath<span class="Notes"> (Monday afternoon, Darin)</span><br>
 </h4>
 <ul>
 	<li>exclusion/inclusion filters also for libraries
 	    <ul>
     	 <li>OSGI class loader allows hiding of types</li>
-     	</ul><span class="Dani">&rArr; JDT Core might look into this (low prio)</span>
+     	</ul><span class="Notes">&rArr; JDT Core might look into this (low prio)</span>
     </li>	
 
 	
@@ -236,7 +236,7 @@ Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi
     <li>&nbsp;Make refactorings API aware: warn when API is modified</li>
   </ul>
   
-    <span class="Dani"> Could be annotated in
+    <span class="Notes"> Could be annotated in
 source (Javadoc or Annotations) or on the build path. Could generate an
 API description out of it (e.g. component.xml). Could have action to
 set the access restrictions out of an API. Must consider that MANIFEST.MF and component.xml don't surface the same information.
@@ -250,20 +250,20 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>)</li>
      	 <li>Can be marked as non modifiable</li>
      	</ul>
-    <span class="Dani">&rArr; JDT Core will provide this.</span>
+    <span class="Notes">&rArr; JDT Core will provide this.</span>
     </li>
     <li>Improve classpath containers
 	    <ul>
     	 <li>Let containers define what is configurable/not configurable: Path, which attributes</li>
      	 <li>Allow containers to contain containers, variables and class folders</li>
      	</ul>
-    <span class="Dani">&rArr; Darin will start to look into this.</span>
+    <span class="Notes">&rArr; Darin will start to look into this.</span>
     </li>
     <li>Solve the JRE - compliance gap
 	    <ul>
     	 <li>Specify compliance in classpath?</li>
     	 <li>Move JRE container to jdt.core?
-    	 <span class="Dani">&rArr; Won't happen.</span>
+    	 <span class="Notes">&rArr; Won't happen.</span>
     	 </li>    	 
      	</ul>
     </li>	        
@@ -275,7 +275,7 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 	<li>common supertype for ICompilationUnit and IClassFile
 	    <ul>
     	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">bug 125504</a></li>
-     	</ul><span class="Dani">&rArr;We will ask Jim, if he gives a go then JDT UI will provide the patch for JDT Core</span><br>
+     	</ul><span class="Notes">&rArr; We will ask Jim, if he gives a go then JDT UI will provide the patch for JDT Core</span><br>
 
     </li>
  	<li>Applying edits to a ICompilationUnit
@@ -296,25 +296,25 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
      
 </ul>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Search<span class="Dani"> (Wednesday afternoon)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Search<span class="Notes"> (Wednesday afternoon)</span></h4>
 
 <ul>
 	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
-    <span class="Dani">&rArr; Martin will use new API that </span><span class="Dani">JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span class="Dani">. </span>
+    <span class="Notes">&rArr; Martin will use new API that </span><span class="Notes">JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span class="Notes">. </span>
     </li>
     <li>Static methods / fields index to offer organize imports with static imports<br>
-    <span class="Dani">Should not be a separate index but in the current one but in a separate category<br>
-    </span><span class="Dani">&rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
-    </span><span class="Dani">&rArr; JDT Core will try to support the following scenario when doing code assist:<br>
-    </span><span class="Dani">&rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
+    <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
+    </span><span class="Notes">&rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
+    </span><span class="Notes">&rArr; JDT Core will try to support the following scenario when doing code assist:<br>
+    </span><span class="Notes">&rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
 </li>
     <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)<br>
-    <span class="Dani">&rArr; no actions for now - see below for details.</span><br>
+    <span class="Notes">&rArr; no actions for now - see below for details.</span><br>
 </li>
 </ul>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Semantic Search / Search Templates <span class="Dani">(Wednesday afternoon)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Semantic Search / Search Templates <span class="Notes">(Wednesday afternoon)</span></h4>
 
 Power search would require to support more evolved search patterns. Can
 we sketch usecases and ways to provide some degree of support which
@@ -335,9 +335,9 @@ believe that a snippet based approach will not give is this power:
 We're looking at programmatic approches at the moment: JQuery, JScript,
 functional languages</li>
     <li>Related areas: Custom code audits, generic refactorings</li>
-</ul><span class="Dani">&rArr; JDT UI should finish and present the prototype so that we can provide feedback and decide how to continue.</span>
+</ul><span class="Notes">&rArr; JDT UI should finish and present the prototype so that we can provide feedback and decide how to continue.</span>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Code Audit Integration <span class="Dani">(Wednesday afternoon)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Code Audit Integration <span class="Notes">(Wednesday afternoon)</span></h4>
 
 <ul>
 	<li> The goal is to standardize how and when code audits (our
@@ -352,15 +352,20 @@ Core infrastructure would allow code audits to share resources as the
 AST. </li>
 	<li>the basic code audit infrastructure needs to be at the LTK layer with JDT specific support built-on top of it.</li>
     
-</ul><span class="Dani">&rArr; needs to be clarified first</span>
+</ul><span class="Notes">&rArr; needs to be clarified first</span>
 
-<h4>Improve the look and feel of JDT UI <span class="Dani">(Tuesday afternoon)</span><br>
+<h4>Improve the look and feel of JDT UI <span class="Notes">(Tuesday afternoon)</span><br>
 </h4>
 We should discuss where it makes sense to adopt new features provided by the Platform and where to further beautify the JDT UI.
 <ul>
   <li>Use the new SWT capabilities in our views: different colors / styles in trees and tables</li>
   <li>Lightweight dialogs for refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=92322">bug 92322</a>)</li>
 </ul>
+
+<span class="Notes">
+<p>
+The following are wishes from JDT Core members to JDT Text and JDT UI:
+</p>
 Philippe:
 <ul>
   <li> allow to highlight code pieces that belong together, e.g. with background color or with vertical lines (use new plugable ruler support)</li>
@@ -372,29 +377,31 @@ Jerome:
 </ul>
 Olivier:
 <ul>
-  <li>smart paste into "SELECTED" should remove the text in the string</li>
+  <li>smart paste into "SELECTED" should remove the text in the string (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150249">bug 150249</a>)</li>
 </ul>
-David:
+Maxime:
 <ul>
-  <li>allow to turn a code selection into string(s) so it can be used as a test case string and the other way around</li>
+  <li>allow to turn a code selection into string(s) so it can be used as a test case string and the other way around
+  <br>&rArr; Maxime to write an enhancement request.
+  </li>
 </ul>
+</span>
 
-
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Launch config templates<span class="Dani"> (Tuesday afternoon)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Launch config templates<span class="Notes"> (Tuesday afternoon)</span><br>
 </h4>
 Users want to define certain default valued (e.g. compiler arguments) for a launch config type.<br>
 <br>
 
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Leverage Execution Environment over JRE<span class="Dani"> (Monday afternoon, with Darin)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Leverage Execution Environment over JRE<span class="Notes"> (Monday afternoon, with Darin)</span><br>
 </h4>
 <ul>
   <li>Don't select a JRE in the build path wizards but a execution environment</li>
   <li>Combine compliance with EE</li>
   <li>Group JRE's by EE</li>
-</ul><span class="Dani">
-			&rArr; </span><span class="Dani">Darin will talk with Wassim and Jeff</span><span class="Dani">.</span><br>
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bindings for non-visible members<span class="Dani"> (Tuesday afternoon, with Darin)</span></h4>
+</ul><span class="Notes">
+			&rArr; </span><span class="Notes">Darin will talk with Wassim and Jeff</span><span class="Notes">.</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bindings for non-visible members<span class="Notes"> (Tuesday afternoon, with Darin)</span></h4>
 
 Compiling snippets that have a private field reference from a
 superclass, do not have resolved bindings. For example, the snippet
@@ -403,27 +410,27 @@ references fName from TestCase, does not have a resolved method binding
 for "length()". I don't think that fName has a resolved type binding
 either. Philippe thought this information was availale, but might not
 be in the AST/DOM.<br>
-<span class="Dani">
+<span class="Notes">
 			&rArr; Darin to enter a bug for Olivier (should already be there)</span><br>
 <br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Evaluations without Java project, or with modified build path<span class="Dani"> (Tuesday afternoon, with Darin)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Evaluations without Java project, or with modified build path<span class="Notes"> (Tuesday afternoon, with Darin)</span><br>
 </h4>It
 is possible to debug an application with a runtime classpath that does
 not match a project's build path, or to debug an application that has
 no associated projects in the workspace. Would it be possible to
 perform evaluations by having the debugger perform name lookups, to
 support evaluations that reflect the run(debug)-time?<br>
-<span class="Dani">Debug can get the AST from the reconcile.</span><br>
+<span class="Notes">Debug can get the AST from the reconcile.</span><br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Scrapbook evaluation enhancements (<span class="Dani">Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Scrapbook evaluation enhancements (<span class="Notes">Tuesday afternoon, with Darin)</span></h4>
 
 Support for import statements (could be done by debugger), breakpoints, source display (stepping, etc),
 
 
 <br>
-<span class="Dani">&rArr; </span>Darin said, Debug can use separate panes for imports , check the presence of Debug attributes so that they map on the right line<br>
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Scrapbook editing enhancements<span class="Dani"> (Tuesday afternoon, with Darin)</span></h4>
+<span class="Notes">&rArr; </span>Darin said, Debug can use separate panes for imports , check the presence of Debug attributes so that they map on the right line<br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Scrapbook editing enhancements<span class="Notes"> (Tuesday afternoon, with Darin)</span></h4>
 Separate code from
 evaluation results for coloring/styling, support to auto insert closing
 bracket/quote, quick fix (assign to local etc), red squiggles, CTRL-T
@@ -432,9 +439,9 @@ shift left/right, format, organize imports, rename selected variable in
 file. - these things should work anywhere an evaluation can be
 performed - scrapbook, display view, variable details pane, expression
 detail pane, conditions, detail formatters, logical structures...<br>
-<span class="Dani">&rArr; Dani and Darin will check whether we can get rid of the scrapbook editor entirely (eval hook in the Java editor?)</span><br>
+<span class="Notes">&rArr; Dani and Darin will check whether we can get rid of the scrapbook editor entirely (eval hook in the Java editor?)</span><br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Debugger usability issues<span class="Dani"> (Tuesday afternoon, with Darin)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Debugger usability issues<span class="Notes"> (Tuesday afternoon, with Darin)</span></h4>
 
 Open discussion/suggestions for usability improvements in the Java debugger
 <ul>
@@ -449,7 +456,7 @@ Open discussion/suggestions for usability improvements in the Java debugger
 			<li>in the Variables view expand <code>fFull</code> and observe: nothing highlighted</li>
 		</ol>
 		As a user I would expect that the node is auto-expanding and the changes highlighted.<br>
-    <span class="Dani">&rArr;
+    <span class="Notes">&rArr;
 Debug will add a slider to the Variables view where users can define
 how deep the auto-expansion will be. Max. would mean "expand all".</span><br>
 
@@ -466,27 +473,27 @@ evolutions. Clearly eager is considered bad. We should discuss
 alternative queries, and or complementary API addition (a la type
 hierarchy getCachedFlags() --&gt;
 ICompilationUnit#getCachedFlags(IType/null to denote first type). 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Formatting DOM AST<span class="Dani"> (Monday)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Formatting DOM AST<span class="Notes"> (Monday)</span></h4>
 
 Current formatter implementation is based on compiler internal AST. We
 should discuss the benefits for providing a DOM AST solution instead.
 What is the performance overhead, what are the consequences/benefits
 for DOM AST users ?<br>
-<span class="Dani">&rArr; JDT Core will not convert the
+<span class="Notes">&rArr; JDT Core will not convert the
 formatter to DOM AST since it does not give immediate benefits unless
 formatter bugs get fix that benefit from it, is neither needed by JDT
 Text nor JDT UI and has performance impacts. JDT Core will try to fix
-the bugs in the formatter with another approach</span><span class="Dani">. This decission might change in the future should new requests arise.</span>
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Planned refactorings<span class="Dani"> (Wednesday morning)</span><br>
+the bugs in the formatter with another approach</span><span class="Notes">. This decission might change in the future should new requests arise.</span>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Planned refactorings<span class="Notes"> (Wednesday morning)</span><br>
 </h4>To anticipate API requests, it would be
 good to explain the planned additions to refactorings. What typical new
 operations are going to be provided, what expensive ones are becoming
 critically used...<br>
-<span class="Dani">According to Martin there is no
+<span class="Notes">According to Martin there is no
 new JDT Core support needed at the moment, except for the support to
 use less memory (see "Populating the JavaModel" item).</span><br>
 
-<h4>More flexible project layout<span class="Dani"> (Monday afternoon)</span><br>
+<h4>More flexible project layout<span class="Notes"> (Monday afternoon)</span><br>
 </h4>When adopting Eclipse, some
 pre-existing project layouts are hard to model in Eclipse. It feels
 this process could be eased by allowing more configurability of the
@@ -497,13 +504,13 @@ which is not seen by external tools); relax classpath container
 limitations, which currently do not allow nested containers, source
 folders etc...<br>
 <br>
-<span class="Dani">Philippe discussed this within the PMC and they would only accept this under a different name: "more flexible classpath layout"</span><span class="Dani">.<br>
+<span class="Notes">Philippe discussed this within the PMC and they would only accept this under a different name: "more flexible classpath layout"</span><span class="Notes">.<br>
 Discussed about 2 hours without any conclusion so far. Dani's idea is
 to leave everything as is but add a super java project that could
 contain IJavaProjects.<br>
-</span><span class="Dani">&rArr; no clear path yet</span><br>
+</span><span class="Notes">&rArr; no clear path yet</span><br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Improve compiler fault-tolerance<span class="Dani"> (Wednesday morning)</span></h4>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Improve compiler fault-tolerance<span class="Notes"> (Wednesday morning)</span></h4>
 Missing types can greatly
 deteriorate compiler output by producing too many secondary errors,
 surface suboptimal DOM bindings, or even abort entire compilation
@@ -512,7 +519,7 @@ should investigate ways to improve this situation, remembering that the
 APT Mirror API requires that bindings are still presented even in the
 presence of missing types.<br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Batch Compiler<span class="Dani"> (Wednesday morning)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Batch Compiler<span class="Notes"> (Wednesday morning)</span><br>
 </h4>Consider batch compiler improvements triggerred
 by its raised visibility; I think we should make a conscious effort to
 ease the dual use of the IDE
@@ -531,7 +538,7 @@ likely be involved into batch building uses at one point in time. And
 UI should be helpful in rounding up batch/IDE equivalences.<br>
 <br>
 
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Provide a more useful class file viewer<span class="Dani"> (Discussed with Olivier only)</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Provide a more useful class file viewer<span class="Notes"> (Discussed between Dani and Olivier only)</span><br>
 </h4>
 
 <ul>
@@ -556,9 +563,9 @@ See also <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=59495">bug 59495
 Clients can provide their own view on a Java class file via
 "org.eclipse.ui.editors" extension point. There are currently no plans
 to offer plugable views for the Class File editor.<br>
-<span class="Dani"> &rArr; JDT Text will ask legal (Adrian Cho) whether it is OK to show disassembled
-contents and if yes, show the detailed result from the disassembler</span><span class="Dani">.</span><br>
-<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bug Wishes<span class="Dani"> (Tuesday morning)</span></h4>
+<span class="Notes"> &rArr; JDT Text will ask legal (Adrian Cho) whether it is OK to show disassembled
+contents and if yes, show the detailed result from the disassembler</span><span class="Notes">.</span><br>
+<h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bug Wishes<span class="Notes"> (Tuesday morning)</span></h4>
 
 
 This topic lists bugs that do not need to be discussed in detail but for which the team would like to have and would like to get
@@ -566,22 +573,22 @@ an answer whether this can be done and if not, why. Of course if a bug is accept
 <ul>
 	<li>From Text to JDT Core
 	<ul>
-		<li><span class="Dani">improve "Unnecessary declaration of thrown checked exceptions" (</span><a class="Dani" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a><span class="Dani">)</span><br class="Dani">
-        <span class="Dani">see "Compiler" topic
+		<li><span class="Notes">improve "Unnecessary declaration of thrown checked exceptions" (</span><a class="Dani" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a><span class="Notes">)</span><br class="Dani">
+        <span class="Notes">see "Compiler" topic
 above: instead of providing support for special cases we should find a
 way to suppress warnings. In addition pingged the bug whether it could
 be solved for 3.3.</span><br>
 </li>
 		<li>improve handling of constructor proposals (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">bug 83392</a>)<br>
-        <span class="Dani">Talked with David: still no better support from the model that would allow to do this in a performant way.</span>
-        <span class="Dani">&rArr; No action</span><br>
+        <span class="Notes">Talked with David: still no better support from the model that would allow to do this in a performant way.</span>
+        <span class="Notes">&rArr; No action</span><br>
 </li>
 		<li>code assist should propose types even if there's no initial character(s) (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)<br>
-        	<span class="Dani">&rArr;JDT Core will fix this</span><br>
+        	<span class="Notes">&rArr; JDT Core will fix this</span><br>
 		</li>
 		<li>[formatting] each format shifts code inside &lt;pre&gt; one space to the right (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">bug 99738</a>)</li>
         <li>Java model gives different results (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">bug 129584</a>)<br>
-        <span class="Dani">&rArr;JDT Core will investigate</span></li>
+        <span class="Notes">&rArr; JDT Core will investigate</span></li>
       </ul>
   
     </li><li>From Text to JDT Debug
@@ -590,7 +597,7 @@ be solved for 3.3.</span><br>
 
 		<li>[variables] Variables view should offer Auto-Expand (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=131931">bug 131931</a>)<br>
       
-      <span class="Dani">&rArr;&nbsp; Debug will add an option to the Variables view that allows to specify the expand level (see also above)</span></li>
+      <span class="Notes">&rArr; Debug will add an option to the Variables view that allows to specify the expand level (see also above)</span></li>
       </ul>
     </li>
   </ul>
@@ -598,9 +605,9 @@ be solved for 3.3.</span><br>
 
 
 <h4>post-mortem discussion</h4>
+<span class="Notes">This will be done individually by JDT Core and ZRH and then consolidated.</span>
 
-<h3><a name="notes"></a>Notes</h3><span class="Dani">Dani's notes made during the summit are above in italic green.</span><br>
-<br>
+<span class="Notes"><h3><a name="notes"></a>Various Summit Notes</h3>
 <ul>
   <li>initial talks about 3.3 plan, team structure</li>
   <li>downloads</li>
@@ -615,6 +622,7 @@ be solved for 3.3.</span><br>
   </li>
 
 </ul>
+</span>
 <br>
 
 
