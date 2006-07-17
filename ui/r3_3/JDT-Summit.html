@@ -93,7 +93,7 @@ JDT Core will investigate and try to provide a solution.</span><br>
 Up to JDT UI whether to tackle this item for 3.3.</span><br>
 </li>
 	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
-	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables. BUG</span><span class="Notes">?</span><span class="Notes">?</span><span class="Notes">?<br>
+	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables.
     </span><span class="Notes">Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
 
     </li>
@@ -103,12 +103,15 @@ Up to JDT UI whether to tackle this item for 3.3.</span><br>
     	 <li>need the current statements (use case: annotation codeassist, method argumnet code assist)</li>
     	</ul><span class="Notes">&rArr;
 JDT UI and JDT Core will work together and check whether a Java element
-or a diet AST would help to resolve the problem. If not JDT UI could
-try to get and wait for the shared AST in case of method getter/setter
-proposals.</span><br>
-
-    </li>
-    
+or a diet AST would help to resolve the problem.
+Discussed approaches:<ul><li>Provide IJavaElements with updated source positions (problem: Will have to use a special working copy owner)</li>
+<li>Provide a sparse AST DOM (only declarations, no statements)</li>
+<li>Provide a statement recovered AST DOM with nodes for the current method (to be evaluated if statement recovery can really help here)</li>
+<li>Provide a custom AST DOM (new AST level) with extra recovered nodes</li>
+</ul>
+If not JDT UI could fix the getter/setter bug by waiting for the shared AST. 
+(Original bug is <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">bug 110181</a>) </span><br>
+</li>  
 </ul>
 
 
