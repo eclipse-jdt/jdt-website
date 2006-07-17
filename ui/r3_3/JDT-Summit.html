@@ -56,7 +56,7 @@ Location: Saint-Nazaire, France</p>
   <ul>
     <li>Heap walking<br>
       <span class="Notes">Fear of McQ that it could conflict with other Eclipse projects.<br>
-      </span><span class="Notes">&rArr; Philippe to check with PMC</span><br>
+      &rArr; Philippe to check with PMC</span><br>
     </li>
   </ul>
   <ul>
@@ -94,7 +94,7 @@ Up to JDT UI whether to tackle this item for 3.3.</span><br>
 </li>
 	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
 	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables.
-    </span><span class="Notes">Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
+    Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span><br>
 
     </li>
     <li>provide code assist context: AST or other way
@@ -123,7 +123,7 @@ code assist, templates, Outline grouping and a JavaBean wizard.
 We should discuss and decide whether we want to do something in that area for 3.3.<br>
 <br>
 <span class="Notes">
-			&rArr; </span><span class="Notes">based on the experience </span><span class="Notes">JDT Text &amp; UI will</span><span class="Notes"> get from the competitive analyses</span><span class="Notes">, JDT Text &amp; UI will investigate minimal support limited to 3 days. No action for JDT Core at this point.</span><br>
+			&rArr; based on the experience JDT Text &amp; UI will get from the competitive analyses, JDT Text &amp; UI will investigate minimal support limited to 3 days. No action for JDT Core at this point.</span><br>
 
 
 
@@ -133,7 +133,7 @@ We should discuss and decide whether we want to do something in that area for 3.
 
 	<li>general problem: how to specify the ignore list to work with false positives (Java Annotations, Javadoc tag, comment tags)<br>
     <span class="Notes">General agreement that this is
-useful. First idea to flag it inside the code with @suppressWarnings
+useful. First idea to flag it inside the code with @SuppressWarnings
 block comments was rejected because it would pollute the code, be hard
 for JDT Core and be a JDT solution only.</span><br>
     <span class="Notes">&rArr;
@@ -183,7 +183,10 @@ provided in the Java element delta after a reconcile.</li>
 JDT Core will change the code so that the primary working copy owner
 can specify the default AST level (or none) and reconcile(...) without
 parameters will provide the AST with the default level and also send
-out the delta with that AST. Open questions: what happens when a client specifies the AST level?</span>
+out the delta with that AST. Open questions: what happens when a client specifies the AST level?
+<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=124662">(bug 124662)</a>
+ </span>
+
 </li>
 </ul>
 
@@ -266,6 +269,8 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     	 <span class="Notes">&rArr; Won't happen.</span>
     	 </li>    	 
      	</ul>
+     	<span class="Notes">See item 'Leverage Execution Environment over JRE'</span>
+     	
     </li>	        
     
 </ul>
@@ -300,13 +305,13 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 
 <ul>
 	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
-    <span class="Notes">&rArr; Martin will use new API that </span><span class="Notes">JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span class="Notes">. </span>
+    <span class="Notes">&rArr; Martin will use new API that JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span class="Notes">. </span>
     </li>
     <li>Static methods / fields index to offer organize imports with static imports<br>
     <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
-    </span><span class="Notes">&rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
-    </span><span class="Notes">&rArr; JDT Core will try to support the following scenario when doing code assist:<br>
-    </span><span class="Notes">&rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
+    &rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
+    &rArr; JDT Core will try to support the following scenario when doing code assist:<br>
+    &rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
 </li>
     <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)<br>
     <span class="Notes">&rArr; no actions for now - see below for details.</span><br>
@@ -407,7 +412,7 @@ Users want to define certain default values (e.g. compiler arguments) for a laun
   <li>Combine compliance with EE</li>
   <li>Group JRE's by EE</li>
 </ul><span class="Notes">
-			&rArr; </span><span class="Notes">Darin will talk with Wassim and Jeff</span><span class="Notes">.</span><br>
+			&rArr; Darin will talk with Wassim and Jeff.</span><br>
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bindings for non-visible members<span class="Notes"> (Tuesday afternoon, with Darin)</span></h4>
 
 Compiling snippets that have a private field reference from a
@@ -490,7 +495,7 @@ for DOM AST users ?<br>
 formatter to DOM AST since it does not give immediate benefits unless
 formatter bugs get fix that benefit from it, is neither needed by JDT
 Text nor JDT UI and has performance impacts. JDT Core will try to fix
-the bugs in the formatter with another approach</span><span class="Notes">. This decision might change in the future should new requests arise.</span>
+the bugs in the formatter with another approach. This decision might change in the future should new requests arise.</span>
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Planned refactorings<span class="Notes"> (Wednesday morning)</span><br>
 </h4>To anticipate API requests, it would be
 good to explain the planned additions to refactorings. What typical new
@@ -511,11 +516,11 @@ which is not seen by external tools); relax classpath container
 limitations, which currently do not allow nested containers, source
 folders etc...<br>
 <br>
-<span class="Notes">Philippe discussed this within the PMC and they would only accept this under a different name: "more flexible classpath layout"</span><span class="Notes">.<br>
+<span class="Notes">Philippe discussed this within the PMC and they would only accept this under a different name: "more flexible classpath layout".<br>
 Discussed about 2 hours without any conclusion so far. Dani's idea is
 to leave everything as is but add a super java project that could
 contain IJavaProjects.<br>
-</span><span class="Notes">&rArr; no clear path yet</span><br>
+&rArr; no clear path yet</span><br>
 
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Improve compiler fault-tolerance<span class="Notes"> (Wednesday morning)</span></h4>
 Missing types can greatly
@@ -571,7 +576,7 @@ See also <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=59495">bug 59495
 "org.eclipse.ui.editors" extension point. There are currently no plans
 to offer plugable views for the Class File editor.<br>
 &rArr; JDT Text will ask legal (Adrian Cho) whether it is OK to show disassembled
-contents and if yes, show the detailed result from the disassembler (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=3537">bug 3537</a>)</span><span class="Notes"></span><br>
+contents and if yes, show the detailed result from the disassembler (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=3537">bug 3537</a>)</span><br>
 
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Bug Wishes<span class="Notes"> (Tuesday morning)</span></h4>
 
