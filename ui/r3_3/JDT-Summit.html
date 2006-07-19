@@ -14,7 +14,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 12:11 CEST July 19, 2006 by Dani</p>
+<p>Last revised 13:38 CEST July 19, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -92,9 +92,11 @@ JDT Core will investigate and try to provide a solution.</span><br>
 </li>
 	<li style="text-decoration: line-through;">code assist inserting code templates, e.g. (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=97912">bug 97912</a>)</li>
 	<li>provide better support to add a cast (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54980">bug 54980</a>)<br>
-    <span class="Notes">Should not go into code assist but into quick assist. Triggers could be: "(x" and "(x.".</span><br>
-    <span class="Notes">&rArr;
-Up to JDT UI whether to tackle this item for 3.3.</span><br>
+    <span class="Notes">
+    Should not go into code assist but into quick assist. Triggers could be: "(x" and "(x.".<br>
+    &rArr; Up to JDT UI whether to tackle this item for 3.3.<br>
+    &rArr; JDT Text will experiment with a quick assist/fix content assist proposal computer (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=151061">bug 151061</a>)
+    </span>
 </li>
 	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
 	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables.
@@ -314,9 +316,11 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     <li>Static methods / fields index to offer organize imports with static imports<br>
     <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
     &rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
-    &rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.<br>
-    WAIT: when we discussed this with the other JDT members another idea came up: we could simply provide a whitelist where the
-    user could enter the static members he'd like to use.
+    &rArr; <strike>JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</strike><br>
+    WAIT: when we discussed this with the other JDT Text and UI members another idea came up by Dirk: we could simply provide a whitelist where the
+    user could enter the static types and/or members he'd like to use.<br>
+    After discussion with Philippe he says it's a good idea but the whitelist should be kept in JDT UI or Text land. JDT Core is
+    willing to provide more (content assist) context information if needed.
     </span><br>
 	
 </li>
@@ -380,7 +384,7 @@ The following are wishes from JDT Core members to JDT Text and JDT UI:
 </p>
 Philippe:
 <ul>
-  <li> allow to highlight code pieces that belong together, e.g. with background color or with vertical lines (use new plugable ruler support)</li>
+  <li>allow to highlight code pieces that belong together with with vertical lines (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84878">bug 84878</a>)</li>
 </ul>
 Jerome:
 <ul>
