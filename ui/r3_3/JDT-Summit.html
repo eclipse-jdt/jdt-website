@@ -14,7 +14,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 13:38 CEST July 19, 2006 by Dani</p>
+<p>Last revised 15:00 CEST July 19, 2006 by Martin</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -57,7 +57,7 @@ Location: Saint-Nazaire, France</p>
     <li>Heap walking<br>
       <span class="Notes">
       According to Darin, McQ says we should do what makes sense.<br>
-      &rArr Debug should expose the set of things that
+      &rArr; Debug should expose the set of things that
       all Java programmers will want. For example, we could start with a feature to "show references" to an object
       in the variables view, or an action to "get all instances" of a type. This would be in place of a full blown "heap walking"
       perspective.</span>
@@ -100,7 +100,7 @@ JDT Core will investigate and try to provide a solution.</span><br>
 </li>
 	<li>code assist for declarations that are already used later in the code (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>):
 	<pre>	int f&lt;code assist&gt;<br>	System.out.print(foo);<br></pre><span class="Notes">&rArr; JDT Core will investigate and try to provide the unresolved local variables.
-    Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist<br>
+    Idea: JDT Text could investigate to provide a proposal computer that wraps quick assist</span>
 
     </li>
     <li>provide code assist context: AST or other way
@@ -160,7 +160,7 @@ JDT UI will investigate into support for a shared "annotation" support for model
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> AST<span class="Notes"> (Monday morning)</span><br>
 </h4>
 <ul>
-	<li>Need a more flexible way to create multiple ASTs
+	<li><a name="AST1"/>Need a more flexible way to create multiple ASTs
 	    <ul>
     	 <li>General problem: We don't know all CU when starting the AST queue</li>
     	 <li>Performance
@@ -217,7 +217,7 @@ JDT Core will might look into this if requested</span>
     	 <li>find type binding by name or key</li>
     	 <li>create or compose type binding in binding environment of AST (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
     	</ul>
-  <span class="Notes">&rArr; Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (first item for AST)</span>    	
+  <span class="Notes">&rArr; Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (<a href="#AST1">see AST first item</a>)</span>    	
     	
 	</li>
 	<li>offer bindings also when some information is missing
@@ -293,16 +293,19 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 	    <ul>
     	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">bug 117694</a></li>
      	</ul>
+     	<span class="Notes">&rArr; difficult, needs more discussions</span>
     </li>   
  	<li>Java model access to annotations
 	    <ul>
     	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">bug 79112</a></li>
      	</ul>
+     	<span class="Notes">&rArr; jdt.core will look at this</span>
     </li>   
      <li>Provide help with TypeNameRequestor result
 	    <ul>
     	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a></li>
      	</ul>
+     	<span class="Notes">&rArr; Sounds resonable, jdt.core will look at this</span>
     </li>  
      
 </ul>
@@ -311,7 +314,7 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 
 <ul>
 	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
-    <span class="Notes">&rArr; Martin will use new API that JDT Core will provide, see </span><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a><span class="Notes">. </span>
+    <span class="Notes">&rArr; Martin will use new API that JDT Core will provide, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a>.</span>
     </li>
     <li>Static methods / fields index to offer organize imports with static imports<br>
     <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
@@ -385,6 +388,8 @@ The following are wishes from JDT Core members to JDT Text and JDT UI:
 Philippe:
 <ul>
   <li>allow to highlight code pieces that belong together with with vertical lines (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84878">bug 84878</a>)</li>
+  <li>change history view, so after a refactoring it is possible to revisit the last changes (bug?)</li>
+  
 </ul>
 Jerome:
 <ul>
@@ -495,7 +500,9 @@ we should make sure it is aligned with current story, and planned
 evolutions. Clearly eager is considered bad. We should discuss
 alternative queries, and or complementary API addition (a la type
 hierarchy getCachedFlags() --&gt;
-ICompilationUnit#getCachedFlags(IType/null to denote first type). 
+ICompilationUnit#getCachedFlags(IType/null to denote first type).
+<span class="Notes">The type indicator has now been changed to use the search index (for 3.3 M1). Also in discussion is new API (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a>)</span>
+
 <h4><img src="../images/ok.gif" alt="Done" border="0" height="10" width="10"> Formatting DOM AST<span class="Notes"> (Monday)</span></h4>
 
 Current formatter implementation is based on compiler internal AST. We
@@ -513,8 +520,7 @@ good to explain the planned additions to refactorings. What typical new
 operations are going to be provided, what expensive ones are becoming
 critically used...<br>
 <span class="Notes">According to Martin there is no
-new JDT Core support needed at the moment, except for the support to
-use less memory (see "Populating the JavaModel" item).</span><br>
+new JDT Core support needed at the moment, except for the support to reuse bindings (<a href="#AST1">see AST first item</a>).</span><br>
 
 <h4>More flexible project layout<span class="Notes"> (Monday afternoon)</span><br>
 </h4>When adopting Eclipse, some
