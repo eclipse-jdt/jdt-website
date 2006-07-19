@@ -14,7 +14,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 16:30 CEST July 17, 2006 by Martin</p>
+<p>Last revised 12:11 CEST July 19, 2006 by Dani</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -55,8 +55,12 @@ Location: Saint-Nazaire, France</p>
 <li>Debug features to expose:
   <ul>
     <li>Heap walking<br>
-      <span class="Notes">Fear of McQ that it could conflict with other Eclipse projects.<br>
-      &rArr; Philippe to check with PMC</span><br>
+      <span class="Notes">
+      According to Darin, McQ says we should do what makes sense.<br>
+      &rArr Debug should expose the set of things that
+      all Java programmers will want. For example, we could start with a feature to "show references" to an object
+      in the variables view, or an action to "get all instances" of a type. This would be in place of a full blown "heap walking"
+      perspective.</span>
     </li>
   </ul>
   <ul>
@@ -310,8 +314,11 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     <li>Static methods / fields index to offer organize imports with static imports<br>
     <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
     &rArr; no changes to the indexer: according to Philippe organize import can be done with the current infrastructure.<br>
-    &rArr; JDT Core will try to support the following scenario when doing code assist:<br>
-    &rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.</span><br>
+    &rArr; JDT Text and JDT UI will have to add a new 'add static imports' option which does the static import if appropriate.<br>
+    WAIT: when we discussed this with the other JDT members another idea came up: we could simply provide a whitelist where the
+    user could enter the static members he'd like to use.
+    </span><br>
+	
 </li>
     <li>If search builds AST on search: API to get AST after search? (motivation: semantic search)<br>
     <span class="Notes">&rArr; no actions for now - see below for details.</span><br>
@@ -395,12 +402,13 @@ Maxime:
 </h4>
 Users want to define certain default values (e.g. compiler arguments) for a launch config type
 	(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=41353">bug 41353</a>).<br>
-    <p class="Notes">&rArr; Discussed full-fledged inheritance for individual launch config properties,
+    <span class="Notes">Discussed full-fledged inheritance for individual launch config properties,
     but this was found to be too much for the UI (tristate everywhere, client-contributed tabs would be broken)
     as well as for the model (e.g. what if base template is not shared but child template is, etc.).
-    <br>Debug will implement a simple copy-based solution where new launch configs can be based
-    on an existing launch config.
-    New launch configs will not be connected to template after initial copying of attributes.</p>
+    <br>&rArr; Debug will implement a simple copy-based solution where new launch configs can be based
+    on an existing launch config. New launch configs will not be connected to template after initial copying of attributes.
+    <br>Note:</em> According to the current 3.3 draft plan this will not be a committed item.
+    </span>
 <br>
 
 
