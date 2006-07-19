@@ -208,13 +208,13 @@ performance reasons we need to force a certain AST kind (level,
 bindings, recovery). Clients can use it or leave it. Creating multiple
 AST kinds is not possible</li>
     	</ul><span class="Notes">&rArr;
-JDT Core will might look into this if requested</span>
+JDT Core will might look into this if requested though performance consequences may prove impossible.</span>
     </li>	
 	
 	<li>find and create bindings in existing binding environments
 	    <ul>
     	 <li>type binding with higher dimension (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148224">bug 148224</a>)</li>
-    	 <li>find type binding by name or key</li>
+    	 <li>find type binding by name or key</li> <span class="Notes">&rArr; JDT UI should just enter a bug</span>
     	 <li>create or compose type binding in binding environment of AST (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
     	</ul>
   <span class="Notes">&rArr; Can be tackled together with <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (<a href="#AST1">see AST first item</a>)</span>    	
@@ -257,7 +257,11 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     <li>Improve classpath variables
 	    <ul>
     	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>)</li>
+    	 <span class="Notes">&rArr; Could be that a container initializer is able to resolve some variable, but if doing so it is deprecated then... ?</span>
      	 <li>Can be marked as non modifiable</li>
+     	 	<span class="Notes">&rArr; JDT UI should enter a bug with precise requirement</span>
+     	 <li>Allow classpath variable to map to platform and/or environment variables</li>
+     	 <span class="Notes">&rArr; Could be handled directly in debug JRE initializer ?</span>
      	</ul>
     <span class="Notes">&rArr; JDT Core will provide this.</span>
     </li>
