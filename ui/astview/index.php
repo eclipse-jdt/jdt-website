@@ -47,17 +47,17 @@ ob_start();
 			<p>
 				<ul>
 					<li>
-						for Eclipse 3.2 or greater:
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.2.jar">org.eclipse.jdt.astview_1.1.2.jar</a>
+						for Eclipse 3.2.*:
+						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.3.jar">org.eclipse.jdt.astview_1.1.3.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 					<li>
-						for Eclipse 3.1 or greater:
+						for Eclipse 3.1.*:
 						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.0.10.jar">org.eclipse.jdt.astview_1.0.10.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 					<li>
-						for Eclipse 3.0.x or greater:
+						for Eclipse 3.0.*:
 						<a href="org.eclipse.jdt.astview_1.0.1.zip">org.eclipse.jdt.astview_1.0.1.zip</a>
 						(<i>extract</i> into 'plugins' directory)
 					</li>
@@ -68,8 +68,12 @@ ob_start();
 			<h3>Usage</h3>
 			<p>
 		      <ol>
-		        <li>Open the AST view from the view menu: Window &gt; Show View
-		&gt; Other... Java &gt; AST View </li>
+		        <li>Open the AST view
+				  <ul>
+				    <li class="nodash">from the view menu: Window &gt; Show View &gt; Other..., Java &gt; AST View</li>
+				    <li class="nodash">via shortcut: Alt+Shift+Q, A</li>
+				  </ul>
+                </li>
 		        <li>Open a Java file in the editor</li>
 		        <li>Click on 'Show AST of active editor' (<img
 		 style="width: 16px; height: 16px;" src="setfocus.gif" alt=""> ) to
@@ -87,7 +91,7 @@ ob_start();
 		        <li>Double click again to see the 'extended range' of a node,
 		that means the range including all comments associated with it (comment
 		mapper heuristic).</li>
-		        <li>Open the context menu on a binding to add it to the comparion tray</li>
+		        <li>Open the context menu on a binding to add it to the comparison tray</li>
 		        <li>When the AST's underlying document has been changed use
 		'Refresh' (<img style="width: 16px; height: 16px;" src="refresh.gif"
 		 alt="">)&nbsp; to update the AST.<br>
@@ -117,15 +121,15 @@ ob_start();
 				<li>You can toggle between the AST Level 2 and AST level 3 in
 				the view menu (triangle). AST level 3 is the extended and modified AST
 				that includes the new 5.0 language constructs. Note that the AST level
-				3 is only available in 3.1 builds
+				3 is only available in 3.1 and later builds
 				</li>
 				<li>You can choose to show or hide bindings in the view menu
 				</li>
 				<li>You can choose the method to generate an AST in 'Advance Options' in the view menu
 				</li>
-				<li>You can choose 'Add to Comparion Tray' in the context menu of a binding.
+				<li>You can choose 'Add to Comparison Tray' in the context menu of a binding.
 				This moves the binding to a special area in the view. When you select another binding
-				in the tree, the comparion tray shows various relationships between the selection
+				in the tree, the comparison tray shows various relationships between the selection
 				and the chosen binding
 				</li>
 			</ul>
