@@ -318,7 +318,7 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 
 <ul>
 	<li>Optimizing type indicator decorator: Find all types for a given resource<br>
-    <span class="Notes">&rArr; Martin will use new API that JDT Core will provide, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 159393</a>.</span>
+    <span class="Notes">&rArr; Martin will use new API that JDT Core will provide, see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">bug 150393</a>.</span>
     </li>
     <li>Static methods / fields index to offer organize imports with static imports<br>
     <span class="Notes">Should not be a separate index but in the current one but in a separate category<br>
@@ -327,7 +327,8 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     WAIT: when we discussed this with the other JDT Text and UI members another idea came up by Dirk: we could simply provide a whitelist where the
     user could enter the static types and/or members he'd like to use.<br>
     After discussion with Philippe he says it's a good idea but the whitelist should be kept in JDT UI or Text land. JDT Core is
-    willing to provide more (content assist) context information if needed.
+    willing to provide more (content assist) context information if needed. Martin created <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=152123">bug 152123</a> argueing that
+    jdt.core is best suited to provide this.
     </span><br>
 	
 </li>
