@@ -499,18 +499,18 @@ notes</a> </li>
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2RC3.jar">
+            <td valign="top"><a href="../patches/ecj_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
             <td valign="top">posted on 2006/08/03, 1,25 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2RC3src.zip">
+            <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
             <td valign="top">posted on 2006/08/03, 1,0 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
-            <td valign="top">build 3.2RC3</td>
+            <td valign="top">build 3.2</td>
           </tr>
           </tr>
 	  </table>
