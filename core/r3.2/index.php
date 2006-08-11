@@ -501,12 +501,12 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/08/03, 1,25 MB (click on picture)</td>
+            <td valign="top">posted on 2006/08/11, 1,25 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/08/03, 1,0 MB (click on picture)</td>
+            <td valign="top">posted on 2006/08/11, 1,0 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -520,7 +520,7 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/08/03, 6.95 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/08/11, 6.95 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
