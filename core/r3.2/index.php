@@ -530,7 +530,15 @@ notes</a> </li>
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.1 build. <br>
                              Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149376">149376</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154880">154880</a>
+							DeltaProcessor does not set project references if first build is a project build
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145397">145397</a>
+							[1.6][compiler] Invalid StackMap attribute
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=151153">151153</a>
+							[1.6][compiler] Invalid Stackmap attribute generated for ternary operator
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=95152">95152</a>
+							[search] F3 can't find synthetic constructor
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149376">149376</a>
 							Internal compiler error on &quot;import static&quot;
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150758">150758</a>
 							[1.5][compiler] NullPointerException in internal compiler
