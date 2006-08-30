@@ -648,7 +648,7 @@ notes</a> </li>
 							Enable now passing tests
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.2&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.17&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
