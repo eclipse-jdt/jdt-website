@@ -520,7 +520,7 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/08/11, 6.95 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/08/30, 6.96 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
