@@ -501,12 +501,12 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/08/11, 1,25 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/04, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/08/11, 1,0 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/04, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
