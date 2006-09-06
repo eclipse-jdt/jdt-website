@@ -501,12 +501,12 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/09/04, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/06, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/09/04, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/06, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -520,7 +520,7 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/08/30, 6.96 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/09/06, 6.96 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -528,9 +528,21 @@ notes</a> </li>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of 3.2.1 build. <br>
+            <td valign="top">3.2.1 RC4 build.<br>
                              Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154880">154880</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148859">148859</a>
+							[model][delta] Package Explorer only shows default package after import
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156108">156108</a>
+							[1.5][compiler] Autoboxing doesnt workt in switch-statement
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155887">155887</a>
+							Breakpoint in 'finally' not hit - test suite failing
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154170">154170</a>
+							Printing warnings breaks in-editor quick fixes
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155423">155423</a>
+							[compiler] Unoptimal code generation when an initializer contains a statement that returns
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=152725">152725</a>
+							[1.6][formatter] Code formatter does not format 1.5 code when source level is 1.6
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154880">154880</a>
 							DeltaProcessor does not set project references if first build is a project build
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145397">145397</a>
 							[1.6][compiler] Invalid StackMap attribute
