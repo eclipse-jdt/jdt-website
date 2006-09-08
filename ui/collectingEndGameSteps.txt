@@ -18,6 +18,10 @@
 	- package.html files
 		-copyright/licence
 		
+- plug-in versions (manifest.mf, plugin.xml)
+	- make sure all Bundle-Versions have been updated according to http://wiki.eclipse.org/index.php/Version_Numbering
+	- make sure all lower bounds of Require-Bundle entries are set to the latest available version that has been used
+		
 - copyright/license
 	- every file NOTE: this includes the schema files (.exsd)
 	- list of contributors
