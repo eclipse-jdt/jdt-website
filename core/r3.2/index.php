@@ -239,7 +239,7 @@ notes</a> </li>
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">110181</a>)</li>
 			<li><img src="../progress.gif" height="5" width="14"> Enable pluggable participation in completion (e.g. APT) 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=106000">106000</a>)</li>
-			<li><img src="../progress.gif" height="5" width="14"> Provide completion in javadoc (no longer done in UI layer) 
+			<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Provide completion in javadoc (no longer done in UI layer) 
 			    (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=%5Bjavadoc+assist%5D&amp;product=JDT&amp;component=Core&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;keywords_type=allwords&amp;keywords=&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">related bugs</a>)</li>
 			<li><img src="../progress.gif" height="5" width="14"> Enable constructor completions in allocations: "new A&lt;ctrl-space&gt;" 
 			    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83392">83392</a>)</li>
@@ -275,7 +275,7 @@ notes</a> </li>
 	<div class="homeitem3col">
 	<a name="FEATURES"></a>
 	<h3>Feature List</h3>
-	<p>Work items completed in the 3.1 stream, also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build notes</a>.</p>
+	<p>Work items completed in the 3.2 stream, also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/notes/R32_buildnotes_jdt-core.html">build notes</a>.</p>
 
 	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
 	<b>Incremental Java Compiler</b>

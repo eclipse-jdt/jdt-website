@@ -215,9 +215,7 @@ week)</i></li>
 		<div class="homeitem3col">
 			<a name="FEATURES"></a>
 			<h3>Feature List</h3>
-			<p>Work items completed in the 3.1 stream, also see <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?content-type=text/html">build
-notes</a>.</p>
+			<p>Work items completed in the 3.1 stream, also see <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/notes/R31_buildnotes_jdt-core.html">build notes</a>.</p>
 <img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>Incremental Java Compiler</b>
