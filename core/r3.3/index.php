@@ -121,7 +121,7 @@ ob_start();
 		  		(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
 			<li>Fine grain options for Java Search
 				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
-		  <ul>
+		  </ul>
 		</li>
 	  </ul>
 	</li>
@@ -168,7 +168,7 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)</li>
 		<li>each format shifts code inside <pre> one space to the right
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>)</li>
-		</ul>
+	  </ul>
 	</li>
 </ul>
 <!--
