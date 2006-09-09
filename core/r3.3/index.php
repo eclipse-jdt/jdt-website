@@ -54,7 +54,6 @@ ob_start();
 			Require 1.6 JRE libraries. Implementation of compiler API 
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154111">154111</a>) will thus likely be made available as a separate 
 			download.
-		</li>
 	  </ul>
 	</li>
 	<li><b>Incremental Java Compiler</b>
@@ -143,8 +142,6 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">150393</a>)</li>
 		<li>Java model gives different results
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">129584</a>)</li>
-		<li>Allow classpath variable to map to platform and/or environment variables
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156745">156745</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Code Assist</b>
@@ -165,9 +162,9 @@ ob_start();
 	  <ul>
 		<li><img src="../progress.gif" height="5" width="14">
 			Allow formatting directly from DOM AST by moving infrastructure from  compiler AST to DOM AST
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)</li>
-		<li>each format shifts code inside <pre> one space to the right
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)
+		<li>each format shifts code inside &lt;pre&gt; one space to the right
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>)
 	  </ul>
 	</li>
 </ul>
