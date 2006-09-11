@@ -144,6 +144,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">129584</a>)</li>
 		<li>Allow containers to contain containers, variables and class folders
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142135">142135</a>)</li>
+		<li>API to create ITypeBinding from type name
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156871">156871</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Code Assist</b>
