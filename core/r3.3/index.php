@@ -71,11 +71,11 @@ ob_start();
 		<li>Tune the existing checks to avoid false positives:
 		  <ul>
 		  	<li>Null checks
-				(<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=%5Bcompiler%5D%5Bnull%5D&classification=Eclipse&product=JDT&component=Core&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&field0-0-0=target_milestone&type0-0-0=substring&value0-0-0=3.3">related bugs</a>)</li>
+				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157154">157154</a>)</li>
 		  	<li>Thrown exceptions
-				(<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=thrown%20exception&classification=Eclipse&product=JDT&component=Core&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&field0-0-0=target_milestone&type0-0-0=substring&value0-0-0=3.3">related bugs</a>)</li>
+				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157155">157155</a>)</li>
 		  	<li>Unused parameter
-				(<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=unused%20parameter&classification=Eclipse&product=JDT&component=Core&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&field0-0-0=target_milestone&type0-0-0=substring&value0-0-0=3.3">related bugs</a>)</li>
+				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157162">157162</a>)</li>
 		  </ul>
 		</li>
 	  </ul>
