@@ -41,7 +41,6 @@ ob_start();
 			 <p>This section describes the JDT/Core implementation of the <a
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_2_x.html">official
 				plan</a>.</p>
-			<b> Disclaimer: This section is still under construction and will be finalized for official 3.2.0 delivery...</b><br> 
 
 <!-- Next rollups... To Be Updated when they will come up...
 
@@ -78,7 +77,7 @@ planned fixes</a>) (<a
       </ul>
 -->
       	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
-      	&nbsp;<b>Rollup 3.2.1 - NOT PLANNED YET!</b>
+      	&nbsp;<b>Rollup 3.2.1 - Coming soon!</b>
 		<ul>
 	        <li> preview available in <a href="#UPDATES">update</a> area. </li>
 			<li> bug fixing :
