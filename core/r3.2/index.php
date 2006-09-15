@@ -500,12 +500,12 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/09/06, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/15, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/09/06, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2006/09/15, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -519,7 +519,7 @@ notes</a> </li>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/09/06, 6.96 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/09/15, 6.96 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -527,9 +527,11 @@ notes</a> </li>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">3.2.1 RC4 build.<br>
+            <td valign="top">3.2.1 build.<br>
                              Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148859">148859</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157247">157247</a>
+							[1.6] [compiler] VerifyError with StackMap frames when no local variable attributes are generated
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148859">148859</a>
 							[model][delta] Package Explorer only shows default package after import
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156108">156108</a>
 							[1.5][compiler] Autoboxing doesnt workt in switch-statement
