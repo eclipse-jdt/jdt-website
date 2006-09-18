@@ -49,7 +49,7 @@ ob_start();
           <td width="82%">Java IDE headless infrastructure</td>
         </tr>
         <tr> 
-          <td width="20%" valign="top"><a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html" target="_top">Debug</a></td>
+          <td width="20%" valign="top"><a href="http://www.eclipse.org/eclipse/debug/index.php" target="_top">Debug</a></td>
           <td width="82%">Debug support for Java</td>
         </tr>
         <tr> 
