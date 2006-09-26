@@ -28,9 +28,9 @@
 <tr>
 	<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
 	<td WIDTH="98%"><b>Where to get the grammar</b><br>
-	<blockquote>The latest grammar is always located in the <code>java_1_4.g</code> file. Go to the org.eclipse.jdt.core plugins
+	<blockquote>The latest grammar is always located in the <code>java_1_5.g</code> file. Go to the org.eclipse.jdt.core plugins
 	directory (<font color="#3366FF">eclipse\plugins\org.eclipse.jdt.core</font> where eclipse is the root of your eclipse installation) and open the 
-	<font color="#3366FF">grammar</font> directory. Then search for the <font color="#3366FF">java_1_4.g</font> file inside the
+	<font color="#3366FF">grammar</font> directory. Then search for the <font color="#3366FF">java_1_5.g</font> file inside the
 	folder <font color="#3366FF">grammar</font>. Then copy its contents from: 
 <PRE>--main options
 %options ACTION, AN=JavaAction.java, GP=java, 
@@ -187,7 +187,7 @@ Escaped symbol $error is an invalid C variable.
   <PRE>
  D:\temp>java -classpath jdtcore.jar:. UpdateParserFiles javadcl.java javahdr.java
  </PRE>
-Once this done, you will end up with 21 new files inside d:\temp. They are called parser&lt;n&gt;.rsc, with n equals to 1..20 and readableNames.properties.
+Once this done, you will end up with 25 new files inside d:\temp. They are called parser&lt;n&gt;.rsc, with n equals to 1..24 and readableNames.properties.
 All these files need to be moved to the org\eclipse\jdt\internal\compiler\parser folder. Now you are ready to execute and test
 the new parser.
  </li>
