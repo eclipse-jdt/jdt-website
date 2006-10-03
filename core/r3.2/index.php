@@ -42,56 +42,34 @@ ob_start();
  				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_2_x.html">official
 				plan</a>.</p>
 
-<!-- Next rollups... To Be Updated when they will come up...
-
-		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/18</b>
-      <ul>
-        <li> preview available in <a href="#updates">update</a> area. </li>
-        <li> bug fixing :
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
-planned fixes</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
-        </li>
-      </ul>
-      <img
- src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
-      <ul>
-        <li> available on the <a
- href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
-area. </li>
-        <li> final <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.155&amp;content-type=text/html">build
-notes</a> </li>
-        <li> bug fixing : (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">all
-planned fixes</a>) (<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">unresolved</a>)
-(<a
- href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.1.2">resolved</a>)
-        </li>
-      </ul>
--->
-      	<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
-      	&nbsp;<b>Rollup 3.2.1 - Coming soon!</b>
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+			<b>Rollup 3.2.2 - NOT completed</b>
 		<ul>
-	        <li> preview available in <a href="#UPDATES">update</a> area. </li>
+			<li> preview available in <a href="#UPDATES">update</a> area. </li>
+			<li> bug fixing :
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">all planned fixes</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">resolved</a>)
+			</li>
+		</ul>
+
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+			<b>Rollup 3.2.1 - completed on 2006/09/29</b>
+		<ul>
+			<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="_new">download</a> area.</li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.29&amp;content-type=text/html">build notes</a></li>
 			<li> bug fixing :
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">all planned fixes</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">unresolved</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">resolved</a>)
-			</li>
+        	</li>
 		</ul>
+
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
 		&nbsp;<b>Release 3.2.0 - completed on 2006/06/29</b>
 		<ul>
 			<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="new">download</a> area. </li>
-			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.1&amp;content-type=text/html">build
-notes</a> </li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.1&amp;content-type=text/html">build notes</a> </li>
 
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	<ul>
@@ -393,16 +371,19 @@ notes</a> </li>
 	<div class="homeitem3col">
 	<a name="RELEASE"></a>
 	<h3>Release Process</h3>
-		<ul>
-			<li>Release Candidate 2 : <a href="test-rc2.php">test plan</a></li>
-		</ul>
 	</div>
 
 		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
-        <li>Rollup 3.2.1, 2006/??/?? (coming soon) : 
+        <li>Rollup 3.2.2, 2006/??/?? : 
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2.2&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.2&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">resolved</a>)
+        </li>
+        <li>Rollup 3.2.1, 2006/09/29 : 
             (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2.1&amp;resolution=FIXED">fixed</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.1&amp;namedcmd=Assigned">all</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.1">unresolved</a>)
@@ -504,14 +485,14 @@ notes</a> </li>
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.1.jar">
+            <td valign="top"><a href="../patches/ecj_3.2.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/09/15, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2006/10/03, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.1src.zip">
+            <td valign="top"><a href="../patches/ecj_3.2.2src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/09/15, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2006/10/03, 1,00 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -523,9 +504,9 @@ notes</a> </li>
 	&nbsp;<b>3.2.1 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.1.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/09/15, 6.96 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2006/10/03, 6.95 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -533,141 +514,31 @@ notes</a> </li>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">3.2.1 build.<br>
-                             Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157247">157247</a>
-							[1.6] [compiler] VerifyError with StackMap frames when no local variable attributes are generated
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148859">148859</a>
-							[model][delta] Package Explorer only shows default package after import
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156108">156108</a>
-							[1.5][compiler] Autoboxing doesnt workt in switch-statement
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155887">155887</a>
-							Breakpoint in 'finally' not hit - test suite failing
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154170">154170</a>
-							Printing warnings breaks in-editor quick fixes
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155423">155423</a>
-							[compiler] Unoptimal code generation when an initializer contains a statement that returns
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=152725">152725</a>
-							[1.6][formatter] Code formatter does not format 1.5 code when source level is 1.6
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154880">154880</a>
-							DeltaProcessor does not set project references if first build is a project build
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145397">145397</a>
-							[1.6][compiler] Invalid StackMap attribute
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=151153">151153</a>
-							[1.6][compiler] Invalid Stackmap attribute generated for ternary operator
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=95152">95152</a>
-							[search] F3 can't find synthetic constructor
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149376">149376</a>
-							Internal compiler error on &quot;import static&quot;
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150758">150758</a>
-							[1.5][compiler] NullPointerException in internal compiler
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150074">150074</a>
-							[compiler] init part of for each loop with empty body is not executed
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149028">149028</a>
-							Limiting number of characters to read with the file size is invalid.
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149893">149893</a>
-							[1.5] Compilation error: The method is ambiguous for the type
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117302">117302</a>
-							Clean build of large project gives unresolved type errors
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147875">147875</a>
-							[1.5][compiler] NPE when initializing annotations of a binary field
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148523">148523</a>
-							[batch] Batch compiler output contains extra linebreak before line position
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=148215">148215</a>
-							[search] Exception while searching for declarations of referenced types in binary java elements packaged in a jar
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145007">145007</a>
-							[1.5][javadoc] Generics + Inner Class -&gt; Javadoc &quot;missing @throws&quot; warning
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147690">147690</a>
-							[1.5][compiler] Incompatible serialversionuid when using covariant in Java 1.5
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147747">147747</a>
-							max stack for clinit of enum overestimated
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142059">142059</a>
-							[efs] renaming package fails to update references
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=143013">143013</a>
-							SWTException: Failed to execute runnable (...AbortCompilation)
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147024">147024</a>
-							[compiler] Compiler bug when accessing static final attribute in a non-static way
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=143684">143684</a>
-							Creating of static imports is unavailable..
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147736">147736</a>
-							ClassCastException in TypeHierarchy
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=91709">91709</a>
-							[1.5][model] Quick Fix Error but no Problem Reported
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147381">147381</a>
-							[1.5][compiler] Generics discrepancy between Eclipse compiler and Sun compiler.
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144573">144573</a>
-							compilationParticipant extension point schema incomplete
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145835">145835</a>
-							getJavaClassLibs needs to account for IBM J2SE 1.5
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=147096">147096</a>
-							ecj.jar manifest should not use x-friends, but use x-internal=true instead
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=146015">146015</a>
-							Some JDT/Core tests results are still VM dependent
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=146324">146324</a>
-							Batch builds produce "The type X is already defined" errors
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=146615">146615</a>
-							[hierarchy] TypeHierarchyTests is tests order dependent
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142207">142207</a>
-							[batch][options] Source/target level names 5 and 5.0 missing from batch 
-							compiler help message
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=146215">146215</a>
-							JDT Core tests should not be dependent on HashMap implementation
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145746">145746</a>
-							[1.5][compiler] Enum synthetic methods should be improved
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145732">145732</a>
-							[1.5][compiler] Inconsistent behavior in ECJ code for enum types
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145516">145516</a>
-							Bad performance when compiling a java file with non java content
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142897">142897</a>
-							[1.5][compiler] Compiler cannot resolve type of inner class of a bounded generic type
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144976">144976</a>
-							[hierarchy] NPE in ReferenceBinding
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=145500">145500</a>
-							[hierarchy] Superclass could be more resilient
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144866">144866</a>
-							[assist][javadoc] Wrong completion inside @value tag
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144414">144414</a>
-							JDT Compiler fails while standard javac compiler can proceed
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142772">142772</a>
-							[1.5][compiler] Compilation succeeds with static imports that fail with javac
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144504">144504</a>
-							JDT Core model JUnit tests fail when ordering of methods reversed
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=143259">143259</a>
-							[1.5][compiler] NullPointerException in ReferenceBinding.binarySearch , Eclipse 3.2RC4
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144426">144426</a>
-							[compiler] Compiler incorrectly reports "assignment to variable has no effect" when it is a duplicate
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=144248">144248</a>
-							[batch] Progressive help text
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141512">141512</a>
-							[batch] re-format the help message so as to fit into 80 columns
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141522">141522</a>
-							[compiler][batch] ClassFile#buildAllDirectoriesInto should protect itself 
-							against concurrent directory creation
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141330">141330</a>
-							[1.5][compiler] Suspicious error message for type mismatch
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141252">141252</a>
-							[1.6]][compiler] ClassFormatError: Illegal class name "" in class file
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141810">141810</a>
-							[1.5][compiler] Enum switch tables incorrectly generated by the compiler
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141327">141327</a>
-							StackFrame and VerificationTypeInfo must call super.clone() in their clone() method
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=140476">140476</a>
-							JDOM: IDOMType.setSuperInterfaces(new String [0]) fails to remove existing implements clause
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=132430">132430</a>
-							[1.5][javadoc] Unwanted missing tag warning for overridden method with parameter containing type variable
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130752">130752</a>
-							[comments] first BlockComment parsed as LineComment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=95152">95152</a>
-							[search] F3 can't find synthetic constructor
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=140156">140156</a>
-							[1.5][search] Invalid method handle with parameterized parameters when no source is attached
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=123679">123679</a>
-							[search] missing icon or bad hit in search results
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141550">141550</a>
-							Enable now passing tests
+            <td valign="top">Early preview of 3.2.2 build. <br>
+                             Addresses the following issues (since 3.2.1): <br>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159325">159325</a>
+							Any idea why ClasspathEntry checks for string object reference instead of equals
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150289">150289</a>
+							[hierarchy] NPE in hierarchy builder when region is empty
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159250">159250</a>
+							[1.5][compiler] Should better locate raw type usage for array qualified type references
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159245">159245</a>
+							[1.5][compiler] Missing raw type usage warning for array type ref
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159243">159243</a>
+							[compiler] Should better locate deprecation issue for qualified type ref
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=149751">149751</a>
+							Enum-valued annotation element handles non-enum constant badly
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157333">157333</a>
+							calling delete on enum constant deletes entire Enum
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159021">159021</a>
+							[compiler] Unused locals initialisation is optimized out when it is a single name reference
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156591">156591</a>
+							[1.5][compiler] constant-specific methods in enum cannot be abstract
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155255">155255</a>
+							[1.5][compiler] ternary conditional operator returns wrong type
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.17&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.36&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
