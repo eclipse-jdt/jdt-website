@@ -501,7 +501,7 @@ ob_start();
           </tr>
 	  </table>
 	<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
-	&nbsp;<b>3.2.1 preview </b>
+	&nbsp;<b>3.2.2 preview </b>
       <table>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.2.jar">
