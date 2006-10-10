@@ -6,7 +6,7 @@
 
 <h1>
 <font face="Arial,Helvetica">Smoke Test - Java Tooling</font></h1>
-$Revision: 1.14 $ - $Date: 2006/07/04 17:18:56 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
+$Revision: 1.15 $ - $Date: 2006/10/10 10:53:15 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
 
 <h3>Part 1</h3>
 
@@ -267,14 +267,12 @@ add a syntax error</li>
 
 </ul>
 
-<li>
-switch to the segmented view by clicking the <span style="font-weight: bold;">Show Source of Selected Element
-Only</span> button in the tool bar</li>
-
+<li> test the segmented view mode
 <ul>
-<li>
-select methods in the Outline view and verify that the corresponding source is shown</li>
-</ul>
+	<li>enable the mode via  <span style="font-weight: bold;">Window &gt; Preferences... &gt; Java &gt; Editor &gt; Only show the selected Java element</span> preference</li>
+	<li>select methods in the Outline view and verify that the corresponding source is shown</li>
+	<li>disable the mode via  <span style="font-weight: bold;">Window &gt; Preferences... &gt; Java &gt; Editor &gt; Only show the selected Java element</span> preference</li>
+</ul></li>
 
 <li>
 test local history</li>
