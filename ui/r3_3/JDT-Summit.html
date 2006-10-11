@@ -14,7 +14,7 @@
 <p>Date: July, 10th - 12th<br>
 Location: Saint-Nazaire, France</p>
 
-<p>Last revised 16:50 CEST September 13, 2006 by Dani</p>
+<p>Last revised 11:15 CET October 11, 2006 by Martin</p>
 <p>
 <a href="#participants">Participants</a><br>
 <a href="#topics">Topics</a><br>
@@ -169,7 +169,7 @@ core has a mechanism to manage the referenced bindings</li>
      	</ul>
   <span class="Notes">&rArr; JDT Core will look at this. Idea is to provide a binding environment object that can be reused when creating an AST.
 JDT Core will hide the recreation of the compiler bindings in case of memory problems or when a AST is requested for a
-already known binding. <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> 
+already known binding. <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a> (Targeted for 3.3 M4)
 </span>
     </li>	
 
@@ -190,7 +190,7 @@ JDT Core will change the code so that the primary working copy owner
 can specify the default AST level (or none) and reconcile(...) without
 parameters will provide the AST with the default level and also send
 out the delta with that AST. Open questions: what happens when a client specifies the AST level?
-<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=124662">(bug 124662)</a>
+<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=124662">(bug 124662)</a> (Targeted for 3.3 M4)
  </span>
 
 </li>
@@ -213,7 +213,7 @@ JDT Core will might look into this if requested though performance consequences 
 	
 	<li>find and create bindings in existing binding environments
 	    <ul>
-    	 <li>type binding with higher dimension (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148224">bug 148224</a>)</li>
+    	 <li>type binding with higher dimension (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148224">bug 148224</a>) (Targeted for 3.3 M4)</li>
     	 <li>find type binding by name or key</li> <span class="Notes">&rArr; JDT UI should just enter a bug (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=156871">bug 156871</a>)</span>
     	 <li>create or compose type binding in binding environment of AST (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
     	</ul>
@@ -256,10 +256,10 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     
     <li>Improve classpath variables
 	    <ul>
-    	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>)</li>
+    	 <li>Can be marked as deprecated (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 138599</a>) (Targeted for 3.3 M3)</li>
     	 <span class="Notes">&rArr; Could be that a container initializer is able to resolve some variable, but if doing so it is deprecated then... ?</span>
      	 <li>Can be marked as non modifiable</li>
-     	 	<span class="Notes">&rArr; JDT UI should enter a bug with precise requirement : (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 156226</a>)</span>
+     	 	<span class="Notes">&rArr; JDT UI should enter a bug with precise requirement : (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">bug 156226</a>) (Targeted for 3.3 M3)</span>
      	 <li>Allow classpath variable to map to platform and/or environment variables</li>
      	 <span class="Notes">&rArr; Could be handled directly in debug JRE initializer ?</span>
      	</ul>
@@ -289,13 +289,13 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
 <ul>
 	<li>common supertype for ICompilationUnit and IClassFile
 	    <ul>
-    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">bug 125504</a></li>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">bug 125504</a> (Targeted for 3.3 M3)</li>
      	</ul><span class="Notes">&rArr; We will ask Jim, if he gives a go then JDT UI will provide the patch for JDT Core</span><br>
 
     </li>
  	<li>Applying edits to a ICompilationUnit
 	    <ul>
-    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">bug 117694</a></li>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">bug 117694</a> (Targeted for 3.3 M3)</li>
      	</ul>
      	<span class="Notes">&rArr; difficult, needs more discussions</span>
     </li>   
@@ -307,7 +307,7 @@ set the access restrictions out of an API. Must consider that MANIFEST.MF and co
     </li>   
      <li>Provide help with TypeNameRequestor result
 	    <ul>
-    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a></li>
+    	 <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a> (Released for 3.3 M3)</li>
      	</ul>
      	<span class="Notes">&rArr; Sounds resonable, jdt.core will look at this</span>
     </li>  
