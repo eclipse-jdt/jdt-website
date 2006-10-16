@@ -41,7 +41,8 @@ $end
 </PRE>
 	into a file called <font color="#3366FF">java.g</font>. It is important to add a carriage return at the end of the last line.
 	You can save this file where you want, we will assume from thereon you saved it in <code>d:\temp\</code>.
-	<!-- Also make sure that the file has Unix-style end-of-line characters (i.e., not those of MS-DOS), as the parser generator is quite picky about this. -->
+	If the end-of-line of the environment of the C compiler used to build jikespg is different from the one used when running the executable, you might end up with an exception at runtime.
+	Be sure to used consistent end-of-line characters.
 	</blockquote>
 	</td>
 </tr>
