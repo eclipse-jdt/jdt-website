@@ -510,7 +510,7 @@ ob_start();
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
-            <td valign="top">Release 3.2</td>
+            <td valign="top">Rollup 3.2.1</td>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
