@@ -6,7 +6,7 @@
 
 <h1>
 <font face="Arial,Helvetica">Smoke Test - Java Tooling</font></h1>
-$Revision: 1.16 $ - $Date: 2006/10/26 17:21:29 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
+$Revision: 1.17 $ - $Date: 2006/11/30 10:04:35 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
 
 <h3>Part 1</h3>
 
@@ -687,6 +687,20 @@ Undo<br>
 
 </ul>
 
+<ul>
+  <li>Clean Up
+    <ol>
+      <li>select <span style="font-style: italic;">junit.framework.TestResult</span> in the Package Explorer</li>
+      <li>from the context menu, select <span style="font-weight: bold;">Source &gt; Clean Up...</span></li>
+      <li>select <span style="font-weight: bold;">Use custom profile</span></li>
+      <li>check all clean ups on the <span style="font-style: italic;">Code Style</span> tab</li>
+      <li>check all clean ups on the <span style="font-style: italic;">Code Organizing</span> tab</li>
+      <li>click <span style="font-weight: bold;">Finish</span></li>
+      <li>verify that there are no compiler errors</li>
+    </ol>
+  </li>
+</ul>
+
 <h4>
 Java Resource Compare</h4>
 
@@ -792,10 +806,9 @@ in the Navigator view select file <span style="font-style: italic;">junit/runner
 execute <span style="font-weight: bold;">Replace With &gt; Local History...</span> from the context menu</li>
 
 <ul>
-<li>
-the resulting dialog should show at least one edition of <span style="font-style: italic;">TestCaseClassLoader.java</span></li><li>click <span style="font-weight: bold;">Cancel</span><span style="font-style: italic;"><br>
-      </span></li>
-
+<li>the History view should show up in compare mode</li>
+<li>doubleclick the oldest revision to open a compare editor</li>
+<li>close the compare editor</li>
 </ul>
 </ul>
 
