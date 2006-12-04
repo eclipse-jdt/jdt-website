@@ -67,7 +67,7 @@ the community is very welcome</td>
              <li>Bring the reorg refactorings in shape again: Drag and drop, Cut copy, paste</li>
           </ul>
           <ul>
-             <li><img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0">Update 'Extract local' and 'Extract constant' to use the AST rewrite infrastructure</li>
+             <li><img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Update 'Extract local' and 'Extract constant' to use the AST rewrite infrastructure</li>
           </ul>
         </li>
         <li>New refactorings
@@ -97,6 +97,16 @@ the community is very welcome</td>
       <li>
          Deprecation Quick Fix
       </li>
+      <li>
+         <img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Add local refactorings as quick assist with linked mode:
+         <ul>
+           <li>Extract local</li>
+           <li>Extract constant</li>
+           <li>Inline local</li>
+           <li>Convert local to field</li>
+           <li>Convert anonymous to member type</li>
+         </ul>
+       </li>      
        </ul>
       </td>
     </tr>
@@ -106,7 +116,7 @@ the community is very welcome</td>
       <ul>
       <li>
          Improve Organize Imports to avoid some user prompting
-      </li>
+      </li>  
      <li>
      	Apply
 coding conventions (like formatting, organize import,
@@ -229,7 +239,7 @@ calls to IRunnableContext#run where the first argument is boolean
     -->
   </tbody>
 </table>
-<table border="0" cellpadding="2" cellspacing="5" width="100%">
+<table border="0" cellpadding="2" cellspacing="5" width="100%" summary="Legend">
   <tbody>
     <tr>
       <td colspan="4" align="left" bgcolor="#0080c0" valign="top" width="100%">
@@ -255,11 +265,10 @@ calls to IRunnableContext#run where the first argument is boolean
     </tr>
   </tbody>
 </table>
-<table border="0" cellpadding="2" cellspacing="5" width="100%">
+<table border="0" cellpadding="2" cellspacing="5" width="100%" summary="M1 plan">
   <tbody>
     <tr>
-      <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
- face="Arial,Helvetica"><font color="#ffffff">M1 Milestone Plan (July 10 - August 11)</a></font></font></b></td>
+      <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font color="#ffffff">M1 Milestone Plan (July 10 - August 11)</font></b></td>
     </tr>
     <tr>
       <td valign="top" width="23"><img
@@ -330,7 +339,7 @@ calls to IRunnableContext#run where the first argument is boolean
     </tr>
   </tbody>
 </table>
-<table border="0" cellpadding="2" cellspacing="5" width="100%">
+<table border="0" cellpadding="2" cellspacing="5" width="100%" summary="M2 plan">
   <tbody>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
@@ -375,11 +384,11 @@ calls to IRunnableContext#run where the first argument is boolean
       <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0" height="16" width="16"></td>
       <td width="848"><b>JUnit</b>   
       <ul>
-        <li><img style="width: 10px; height: 10px;" src="../images/ok.gif">
-       				Improve test finder to find JUnit 4 tests in hierarchy</li>
+        <li><img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="OK">
+       				Improve test finder to find JUnit 4 tests in hierarchy
        	</li>
         <li><img src="../images/progress.gif" alt="" border="0">
-				API for JUnitLaunchShortcut (<img style="width: 10px; height: 10px;" src="../images/ok.gif">), JUnitLaunchConfigurationTab (<img style="width: 10px; height: 10px;" src="../images/ok.gif">) and JUnitLaunchLaunchDelegate
+				API for JUnitLaunchShortcut (<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif">), JUnitLaunchConfigurationTab (<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif">) and JUnitLaunchLaunchDelegate
 		</li>
   	  </ul>
       </td>
@@ -396,7 +405,7 @@ calls to IRunnableContext#run where the first argument is boolean
     </tr>
   </tbody>
 </table>
-<table border="0" cellpadding="2" cellspacing="5" width="100%">
+<table border="0" cellpadding="2" cellspacing="5" width="100%" summary="M3 plan">
   <tbody>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
@@ -419,16 +428,16 @@ calls to IRunnableContext#run where the first argument is boolean
       <td width="848"><b>Refactoring</b>
       <ul>
        <li>
-  			<img style="width: 10px; height: 10px;" src="../images/ok.gif">Finish lightweight refactoring rename: Preview
+  			<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif"> Finish lightweight refactoring rename: Preview
   		</li>
          <li>
-        	<img src="../images/progress.gif">Remove the requirement to save resources before executing a refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149462">149462</a>) - Markus
+        	<img alt="In progress" src="../images/progress.gif"> Remove the requirement to save resources before executing a refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149462">149462</a>) - Markus
         </li>
         <li>
-        	<img style="width: 10px; height: 10px;" src="../images/ok.gif">Warn when refactoring derived files (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=147516">147516</a>) - Markus
+        	<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif"> Warn when refactoring derived files (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=147516">147516</a>) - Markus
         </li>
         <li>
-        	<img style="width: 10px; height: 10px;" src="../images/ok.gif">'Extract local', 'Convert Anonymous to Inner' as quick fix - Martin
+        	<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif"> 'Extract local', 'Convert Anonymous to Inner' as quick fix - Martin
         </li>        
   	  </ul>
       </td>
@@ -439,10 +448,10 @@ calls to IRunnableContext#run where the first argument is boolean
       <td width="848"><b>Quick Fix, Quick Assist &amp; Clean Up</b>  
       <ul>
         <li>
-  			<img style="width: 10px; height: 10px;" src="../images/ok.gif">Add organize import to 'Clean up' 
+  			<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif"> Add organize import to 'Clean up' 
   		</li>
   		<li>
-  			<img style="width: 10px; height: 10px;" src="../images/ok.gif">Clean up on save
+  			<img style="width: 10px; height: 10px;" alt="OK" src="../images/ok.gif"> Clean up on save
   		</li>
   		</ul>
       </td>
@@ -475,7 +484,7 @@ calls to IRunnableContext#run where the first argument is boolean
     </tr>
   </tbody>
 </table>
-<table border="0" cellpadding="2" cellspacing="5" width="100%">
+<table border="0" cellpadding="2" cellspacing="5" width="100%" summary="M4 plan">
   <tbody>
     <tr>
       <td colspan="2" align="left" bgcolor="#0080c0" valign="top"><b><font
@@ -498,7 +507,7 @@ calls to IRunnableContext#run where the first argument is boolean
       <td width="848"><b>Refactoring</b>
       <ul>
         <li>
-        	Remove the requirement to save resources before executing a refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149462">149462</a>) - Markus
+        	<img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Remove the requirement to save resources before executing a refactoring (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149462">149462</a>) - Markus
         </li>
          <li>
         	Undo support for delete refactoring  - Markus
@@ -511,11 +520,27 @@ calls to IRunnableContext#run where the first argument is boolean
       <td width="848"><b>Java views</b>
       <ul>
         <li>
-            <li><img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Package explorer: Support better grouping mechanisms for referenced libraries (bug 83389)</li>
+            <img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Package explorer: Support better grouping mechanisms for referenced libraries (bug 83389)
         </li>        
   	  </ul>
       </td>
-    </tr>    
+    </tr>
+   <tr>
+      <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0" height="16" width="16"></td>
+      <td><b>Quick Fix, Quick Assist &amp; Clean Up</b>
+      <ul>  
+      <li>
+         <img style="width: 10px; height: 10px;" src="../images/ok.gif" alt="" border="0"> Add local refactorings as quick assists with linked mode:
+         <ul>
+           <li>Extract local</li>
+           <li>Extract constant</li>
+           <li>Inline local</li>
+           <li>Convert local to field</li>
+           <li>Convert anonymous to member type</li>
+         </ul>
+       </li>
+      </ul>
+    </tr>            
     <tr>
       <td valign="top"><img src="http://dev.eclipse.org/images/Adarrow.gif" alt="" border="0" height="16" width="16"></td>
       <td width="848"><b>JUnit</b>   
