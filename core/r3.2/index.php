@@ -516,7 +516,9 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.2 build. <br>
                              Addresses the following issues (since 3.2.1): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157336">157336</a>
+							build output contains unnecessary empty directories
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>
 							[formatting] each format shifts code inside &lt;pre&gt; one space to the right
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=160550">160550</a>
 							Infinite build when projects have cycle and build path errors
@@ -596,7 +598,7 @@ ob_start();
 							[classpath] Util.getJDKLevel reading a lot of classpath jars because ClasspathEntry checks for string object reference instead of equals
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.74&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.75&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
