@@ -480,7 +480,7 @@ ob_start();
 			<h3>Updates</h3>
 			<p>These patches are not yet part of any official release or rollup; but provide an early access to the next delivery for
                quality assessment. If you find any regression using these patches, please inform the JDT/Core team by entering a 
-               <a href="http://dev.eclipse.org/bugs/">bug report</a>
+               <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT">bug report</a>
 			</p>
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
