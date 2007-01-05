@@ -487,12 +487,12 @@ ob_start();
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2006/10/03, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2007/01/05, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.2src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2006/10/03, 1,00 MB (click on picture)</td>
+            <td valign="top">posted on 2007/01/05, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -506,7 +506,7 @@ ob_start();
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/10/03, 6.95 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2007/01/05, 6.90 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -516,8 +516,64 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.2 build. <br>
                              Addresses the following issues (since 3.2.1): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159325">159325</a>
-							Any idea why ClasspathEntry checks for string object reference instead of equals
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>
+							[formatting] each format shifts code inside &lt;pre&gt; one space to the right
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=160550">160550</a>
+							Infinite build when projects have cycle and build path errors
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=114349">114349</a>
+							[compiler] Problems building cyclical projects
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=166977">166977</a>
+							[vista] Unexpected errors while running JDT/Core tests
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=167750">167750</a>
+							[content assist] From some point in time Eclipse crashes on code completion
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=167217">167217</a>
+							[1.5][compiler] ClassCastException during annotation code generation
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=166641">166641</a>
+							[compiler] uninitialized variable not reported in if (false) block
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=163680">163680</a>
+							[1.5] [compiler] JDT Internal Exception under import circularity
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=165291">165291</a>
+							[1.5] Missing diagnosis for illegal forward field ref in generics
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=160637">160637</a>
+							getKey(...) for BinaryMethod returns a key with '.' in the return type instead of '/'
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154993">154993</a>
+							org.eclipse.jdt.ui.JavaNoTypeCompletionProposalComputer throws a runtime exception when using content assist on 'this.' in annontations
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=161557">161557</a>
+							[assist] JavaTypeCompletionProposalComputer throws a runtime exception when using content assist on generics type argument with instance member arrays
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=162621">162621</a>
+							[model][delta] Validation errors do not clear after replacing jar file
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=163600">163600</a>
+							[compiler] Internal references to static inner classes fail in presence of assert keyword
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=162296">162296</a>
+							[compiler] Anonymous and local classes are tagged as final and/or private in the inner class infos
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=163896">163896</a>
+							Failures in maintenance build M20061108-1320
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159631">159631</a>
+							[dom] NPE while trying to cleanup specific pair of file
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=162400">162400</a>
+							[1.5][compiler] Return type inference does not perform well in array initializer
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=161459">161459</a>
+							9 tests in org.eclipse.jdt.core.tests.compiler.regression fail on IBM Java2 5.0
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=161555">161555</a>
+							org.eclipse.jdt.core.tests.model.ReconcilerTests#testDeleteTwoMethods is failing on IBM 1.5 VM
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154111">154111</a>
+							Compiler API (JSR 199)
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156736">156736</a>
+							[compiler] Add compiler option to warn overriding methods that do not call super
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=160962">160962</a>
+							[nls] Breaking catalog change for batch compiler
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159641">159641</a>
+							patch to refactor Main and add new &quot;GCCMain&quot; driver
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=141931">141931</a>
+							[1.5][compiler] @Override: upcoming changes of the reference implementation
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159973">159973</a>
+							[1.5] [compiler] VerifyError due to compiler generating incorrect synthetic methods
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159654">159654</a>
+							[compiler] unverifiable bytecode created by current cvs head compiler
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155115">155115</a>
+							UnresolvedReferenceBindings surfacing through DOM AST
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=160132">160132</a>
+							[1.5][compiler] Compiler fails with indirect reference error message
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150289">150289</a>
 							[hierarchy] NPE in hierarchy builder when region is empty
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159250">159250</a>
@@ -536,9 +592,11 @@ ob_start();
 							[1.5][compiler] constant-specific methods in enum cannot be abstract
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155255">155255</a>
 							[1.5][compiler] ternary conditional operator returns wrong type
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159325">159325</a>
+							[classpath] Util.getJDKLevel reading a lot of classpath jars because ClasspathEntry checks for string object reference instead of equals
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.36&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.74&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
