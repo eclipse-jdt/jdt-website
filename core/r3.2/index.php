@@ -39,7 +39,7 @@ ob_start();
 			<h3>What&#8217;s Happening?</h3>
 			<a name="maintenance"></a>
 			 <p>This section describes the JDT/Core implementation of the <a
- 				href="http://www.eclipse.org/eclipse/development/eclipse_maintenance_schedule_3_2_x.html">official
+ 				href="http://wiki.eclipse.org/index.php/Callisto_Coordinated_Maintenance">official
 				plan</a>.</p>
 
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
