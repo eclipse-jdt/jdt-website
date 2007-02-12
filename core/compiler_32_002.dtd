@@ -43,6 +43,7 @@
 				  severity   CDATA #REQUIRED
 				  line       CDATA #REQUIRED
 				  id         CDATA #REQUIRED
+				  problemID  CDATA #IMPLIED
 				  optionKey  CDATA #IMPLIED
 				  categoryID CDATA #IMPLIED
 >
@@ -51,9 +52,9 @@
                          sourceStart CDATA #REQUIRED
                          sourceEnd   CDATA #REQUIRED
 >
-<!ATTLIST task charEnd   CDATA #REQUIRED
-			   charStart CDATA #REQUIRED
-			   line      CDATA #REQUIRED
+<!ATTLIST task charEnd    CDATA #REQUIRED
+			   charStart  CDATA #REQUIRED
+			   line       CDATA #REQUIRED
 			   optionKey  CDATA #IMPLIED
 >
 <!ATTLIST classfile path CDATA #REQUIRED>
