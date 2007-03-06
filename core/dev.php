@@ -11,13 +11,13 @@
 	#
 	#
 	#****************************************************************************
-	
+
 	#
-	# Begin: page-specific settings.  Change these. 
+	# Begin: page-specific settings.  Change these.
 	$pageTitle 		= "JDT Core Component Development Resources";
 	$pageKeywords	= "JDT, Java, java, development, tools, java ide, Eclipse, development";
 	$pageAuthor		= "JDT/Core team";
-	
+
 	# Add page-specific Nav bars here
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
 	# $Nav->addNavSeparator("My Page Links", 	"downloads.php");
@@ -26,10 +26,10 @@
 
 	# End: page-specific settings
 	#
-		
-	# Paste your HTML content between the EOHTML markers!	
+
+	# Paste your HTML content between the EOHTML markers!
 ob_start();
-?>		
+?>
 
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
@@ -59,36 +59,36 @@ ob_start();
 </ul>
 </td>
 </tr>
-  <tr> 
+  <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
-    <td width="98%"> <b>How To</b> 
+    <td width="98%"> <b>How To</b>
       <ul>
         <li><a href="http://help.eclipse.org/help31/topic/org.eclipse.jdt.doc.isv/guide/jdt_api_compile.htm">run the batch compiler</a> </li>
         <li><a href="howto/generate%20parser/generateParser.html">generate the parser</a> </li>
       </ul>
     </td>
   </tr>
-  <tr> 
+  <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
     <td width="98%"> <b>Plugins</b><p>The JDT Core component consists of the following plug-ins:</p>
       <ul>
-        <li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core" >org.eclipse.jdt.core</a></li>
+        <li><a href="http://www.eclipse.org/jdt/core/index.php" >org.eclipse.jdt.core</a></li>
       </ul>
     </td>
   </tr>
-  <tr> 
+  <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
-    <td width="98%"> <b>Mailing Lists</b> 
+    <td width="98%"> <b>Mailing Lists</b>
       <ul>
-        <li><a href="http://dev.eclipse.org/mailman/listinfo/jdt-core-dev">jdt-core-dev@eclipse.org</a> 
+        <li><a href="http://dev.eclipse.org/mailman/listinfo/jdt-core-dev">jdt-core-dev@eclipse.org</a>
           (<a href="mailto:jdt-core-dev@eclipse.org">post</a>, <a href="http://dev.eclipse.org/mhonarc/lists/jdt-core-dev/maillist.html">archives</a>)</li>
       </ul>
     </td>
   </tr>
-  <tr> 
+  <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
     <td width="98%"> <b>Additional tools</b><p>
-      Here are tools provided as a courtesy of JDT Core Team:</p> 
+      Here are tools provided as a courtesy of JDT Core Team:</p>
       <ul>
         <li><a href="tools/jdtcoretools/index.php">JDT/Core utilities</a></li>
         <li><a href="tools/diff/index.php">Diff</a></li>
@@ -96,7 +96,7 @@ ob_start();
       </ul>
     </td>
   </tr>
-  <tr> 
+  <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
     <td width="98%"> <b>Compiler DTD file</b><p>
       The compiler DTD for XML compiler log can be found here: </p>
@@ -109,7 +109,7 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="#RELEASES"></a>
 			<h3>Releases</h3>
-<p>JDT/Core exists in multiple flavors, depending on which delivery it is part of.</p> 
+<p>JDT/Core exists in multiple flavors, depending on which delivery it is part of.</p>
 			<table>
 <tr>
 <td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
@@ -178,7 +178,7 @@ ob_start();
 <li>Get the official <a href="r1.0/main.html#source">sources for JDT/Core</a></li>
 <li>Available <a href="r1.0/main.html#updates">updates</a></li>
 </ul>
-</td></tr>			
+</td></tr>
 			</table>
 		</div>
 	</div>
