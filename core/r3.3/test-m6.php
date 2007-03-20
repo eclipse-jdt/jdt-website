@@ -53,13 +53,13 @@ ob_start();
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Code coverage (Olivier)</b>
 <ul>
-<li>run Emma to ensure our test suites have a good coverage</li>
+<li>run code coverage tool to ensure our test suites have a good coverage</li>
 <li>report obvious parts of our code that are not covered</li>
 </ul>
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Static analysis (Jerome)</b>
 <ul>
-<li>run FindBugs on our code</li>
+<li>run static analysis tool on our code</li>
 <li>report potential bugs</li>
 </ul><hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>1.5 snippet support (Eric)</b>
