@@ -62,7 +62,7 @@ ob_start();
 <li>run FindBugs on our code</li>
 <li>report potential bugs</li>
 </ul><hr size="1" />
-<IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>1.5 snippet support (Olivier)</b>
+<IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>1.5 snippet support (Eric)</b>
 <ul>
 <li>snippet support for 1.5 may have been left behind</li>
 <li>ensure that scrapbook page behaves correctly with 1.5 code</li>
@@ -81,6 +81,12 @@ ob_start();
 <li>variant 1: leave the 3.2 workspace with 'Link with Editor' and 1 editor open, restart with 3.3M6</li>
 <li>variant 2: leave the 3.2 workspace in the Resources perspective, restart with 3.3M6, switch to the Java perspective</li>
 <li>...</li>
+</ul>
+<hr size="1" />
+<IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Jar exporter (Olivier)</b>
+<ul>
+<li>ensure the Jar exporter behaves correctly with the new support introduced in M6</li>
+<li>ensure that <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=53284">bug 53284</a> is still fixed</li>
 </ul>
 </div>
 <?php
