@@ -40,7 +40,8 @@ ob_start();
 			<ul>
 				<li>Add to build notes:
 					<blockquote>This tool can be used to add a new entry in the build notes. The user simply needs to provide the bug id
-					and the tool adds the entry containing the bug description to the buildnotes.</blockquote>
+					and the tool adds the entry containing the bug description to the buildnotes. If the buildnotes are &quot;closed&quot;, then
+					they are reopened automatically. A new action is provided to close them.</blockquote>
 				</li>
 				<li>Unnecessary NLS tag remover:
 					<blockquote>This tool can be used remove unnecessary nls tags. It works on a java project, java package fragment root, java package fragment,
@@ -90,8 +91,7 @@ ob_start();
 			<h3>Install</h3>
 				<p>
 					Use this update site.<br/>
-					<blockquote>http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-site/
-					</blockquote>
+					<blockquote>http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-site/</blockquote>
 				</p>			
 		</div>
 	</div>
