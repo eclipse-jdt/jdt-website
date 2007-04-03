@@ -54,6 +54,8 @@
 				        severity  CDATA #REQUIRED
 				        line      CDATA #REQUIRED
 >
+<!ATTLIST extra_problems problems CDATA #REQUIRED
+>
 <!ATTLIST message value CDATA #REQUIRED>
 <!ATTLIST source_context value       CDATA #REQUIRED
                          sourceStart CDATA #REQUIRED
