@@ -47,6 +47,11 @@ ob_start();
 			<p>
 				<ul>
 					<li>
+						for Eclipse 3.3.*:
+						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.4.jar">org.eclipse.jdt.astview_1.1.4.jar</a>
+						(copy to 'plugins' directory)
+					</li>
+					<li>
 						for Eclipse 3.2.*:
 						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.3.jar">org.eclipse.jdt.astview_1.1.3.jar</a>
 						(copy to 'plugins' directory)
