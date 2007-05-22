@@ -347,7 +347,7 @@ ob_start();
 			<a name="RELEASE_PROCESS"></a>
 			<h3>Release Process</h3>
 			<ul>
-				<li>Milestone 6 : <a href="test-m6.php">test plan</a>
+				<li>Release Candiate 2 : <a href="test-rc2.php">test plan</a>
 		        </li>
 		    </ul>
 		</div>
