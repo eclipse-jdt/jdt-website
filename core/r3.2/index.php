@@ -514,7 +514,8 @@ ob_start();
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of 3.2.3 build. Note that no official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
+            <td valign="top">Early preview of 3.2.3 build. <br>
+            				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
                              Addresses the following issues (since 3.2.2): <br>
 							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182930">182930</a>
 							JavaModelCache's size grows when displaying type hierarchy
