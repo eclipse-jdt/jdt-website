@@ -43,9 +43,21 @@ ob_start();
 				plan</a>.</p>
 
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-			<b>Rollup 3.2.2 - NOT completed</b>
+			<b>Rollup 3.2.3 - NOT planned</b>
 		<ul>
 			<li> preview available in <a href="#UPDATES">update</a> area. </li>
+			<li> bug fixing :
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.3">all planned fixes</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.3">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.3">resolved</a>)
+			</li>
+		</ul>
+		
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+			<b>Rollup 3.2.2 - completed on 2007/02/12</b>
+		<ul>
+			<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="_new">download</a> area.</li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.87&amp;content-type=text/html">build notes</a></li>
 			<li> bug fixing :
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">all planned fixes</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">unresolved</a>)
@@ -516,6 +528,7 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.3 build. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
+            				Plug-in revision ID is "3.2.3".<br>
                              Addresses the following issues (since 3.2.2): <br>
 							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182930">182930</a>
 							JavaModelCache's size grows when displaying type hierarchy
