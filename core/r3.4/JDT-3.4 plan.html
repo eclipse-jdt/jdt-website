@@ -1,0 +1,603 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Untitled Document</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<h1>JDT proposed plan items for release 3.4</h1>
+<br>
+<p:colorscheme
+ colors="#000000,#FFFFFF,#CCCCFF,#808080,#7889FB,#DFFF66,#C0C0C0,#D18213"></p:colorscheme>
+<h2>Platform Completeness and Consistency</h2>
+<span style="font-style: italic;">We propose to address areas where our
+use of base platform technology is incomplete, inconsistent or does not
+keep up with the pace of innovation across Operating Systems (e.g. Mac
+OS X, Linux), Libraries (GTK+, OSGi) and Java Runtimes (Java 6, Java 7)</span><br>
+<br>
+<h2>Performance</h2>
+<span style="font-style: italic;">Covers: Startup time, memory
+footprint, scalability, execution</span><br>
+<br>
+<br>
+<h2>Security</h2>
+<span style="font-style: italic;">Ensure that comprehensive support for
+JAAS, signature checking, signed JARs, Java KeyStore and JCA is
+provided.</span><br style="font-style: italic;">
+<br>
+<h2>Globalization</h2>
+<span style="font-style: italic;">Enhance the globalization support in
+Eclipse. For example, work with the BIDI Globalization Competency
+Center to provide BIDI support on Linux. Participate and play an active
+role in the new Eclipse globalization project &#8211; &#8220;Babel&#8221;.</span><br>
+<br>
+<h2>Accessibility</h2>
+<span style="font-style: italic;">Address areas that prevent products
+from being fully accessible, with specific focus on making use of
+platform capabilities on Linux and Mac OS X. We will also generalize
+our implementation to enable extended accessibility libraries (such as
+IAccessible2) to be supported.</span><br>
+<br>
+<h2>Reliability</h2>
+<span style="font-style: italic;">Enhance the reliability of products
+built on Eclipse, by providing API that makes existing product team use
+of SDK internals (or complex workarounds) unnecessary. Provide tooling
+to ease production, management, and consumption of API. Address the
+ongoing maintenance requirements and Architectural Integrity.</span><br>
+<br>
+<h2>Management</h2>
+<span style="font-style: italic;">Ensure that the tools and processes
+are in place, to allow product teams to better control what and how
+components are included in their products. Includes Provisioning,
+Release Engineering, PDE Build, some OSGi work, and product level
+customization.</span><br>
+<hr style="width: 100%; height: 2px;">Philippe's input<br>
+- concurrent compile<br>
+- refactor signaling ramifications in binary dependents (producing
+refactoring scripts for these?)<br>
+- refactor rename: remove limitation that it will refactor only the top
+method in hierarchy (mid-hierarchy split)<br>
+- improve gradual discovery of our power features. maybe use linked
+mode as a central place to allow in-place refactorings to perform<br>
+- macro-component on build path (a la jazz)<br>
+- external class folders<br>
+- containers in containers<br>
+- support for EAR/WAR/RAR archives (via an extension point?), nested
+JARs, linked JARs<br>
+<br>
+<hr style="width: 100%; height: 2px;">JDT/CORE input<br>
+<br>
+- avoid opening entire parent when opening a child in the model<br>
+- rewrite delta processing to remove assumption that delta comes in
+same thread<br>
+- support annotations in the model<br>
+- rewrite comment formatter<br>
+- APIs needed by JDT/UI<br>
+- allow JARs in User Libraries to be defined with relative paths (to
+classpath variables, project folders, etc.)<br>
+- allow classpath marker update by builders running before the Java
+builder (if a builder fixes the classpath, Java builder should be able
+to run)<br>
+- parallelize Java build process<br>
+<hr style="width: 100%; height: 2px;">JDT/UI input<br>
+<br>
+- enrich the platform<br>
+From blogs like http://www.javalobby.org/java/forums/t97125.html it
+seems to me other IDEs are better in offering a good base package. In
+Eclipse, users are forced to install projects like TPTP, WTP, although
+they don't want all that functionality. Unfortunately, our Eclipse
+update mechanism is not very good and other products like TPTP are
+huge. Experience shows that the best quality plug-in are found in the
+platform (probably because they are more in focus).<br>
+On one hand, we should force other Callisto projects to become more
+modular and improve our update story so that adding something like an
+HTML editor or an profile is easy. On the other hand, we should think
+of plug-ins to be added to the platform.<br>
+<br>
+&nbsp;&nbsp; XML editor in platform<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Not the XML editor from WTP, but a lightweight
+implementation already used by ANT and PDE.<br>
+&nbsp; Move GEF to platform<br>
+&nbsp;&nbsp;&nbsp;&nbsp; GEF seems to be used by everybody except by
+us, because we cant. <br>
+&nbsp; Configurable text editor<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Extend the text editor by allowing to register
+keyword lists for file content types, so the user can get simple
+keyword highlighting.<br>
+&nbsp; Java profiler<br>
+&nbsp;&nbsp;&nbsp;&nbsp; The new profile API and the standardized heap
+dump formats (HPROF) offer great possibilities for simple profiling.
+The TPTP profiler is not competitive.<br>
+&nbsp;&nbsp; Code analysis view<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Use the JAZZ code analysis view. We need a
+result view for things like NLS problems (missing keys) and for results
+like the existing PDE API tooling. Adding a good view will help Eclipse
+integrating good quality engines like FindBugs.<br>
+&nbsp;&nbsp; Code Coverage view&nbsp; <br>
+<br>
+- improve consumability<br>
+&nbsp;&nbsp; Aim for a smaller download<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remove the help plug-ins from the
+download, offer them via web server (separate download if wanted)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add a mechanism download source plug-ins
+on demand<br>
+&nbsp;&nbsp; Improve our 'update' UI<br>
+&nbsp;&nbsp; <br>
+- improve configurability:<br>
+Eclipse always trailed behind IntelliJ of being less intuitive. I think
+it has to do with the fact that our UI isn't really polished and
+options are hard to find.<br>
+&nbsp;&nbsp; Toolbar configurability<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allow that toolbars can be configured
+item by item. Offer a context menu on the toolbar to do this (bug
+182714)<br>
+&nbsp;&nbsp; Menu configurability<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allow the global menus and even context
+menus can be configured<br>
+&nbsp;&nbsp; Editor ruler bar&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; Allow to configure annotations on the ruler directly<br>
+&nbsp;&nbsp;&nbsp; Solve the problem of hidden annotations<br>
+<br>
+- UI polish<br>
+&nbsp; move colored labels infrastructure to platform to make it API<br>
+&nbsp;&nbsp;&nbsp; &gt; add colored labels for code assist<br>
+&nbsp;&nbsp;&nbsp; &gt; add colored labels for search <br>
+&nbsp;&nbsp;&nbsp; Moving down will also improve the performance as the
+current JDT implementation can't do certain optimizations<br>
+&nbsp; make a pass over all dialogs and try to enforce consistency:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; improve the problems view/tasks view, in
+particular the filter dialog<br>
+&nbsp;&nbsp;&nbsp;&nbsp; improve working set selection dialog<br>
+&nbsp;&nbsp;&nbsp;&nbsp; improve the color/fonts preference page<br>
+rich hovers to contain links<br>
+&nbsp;&nbsp; this would solve several usability items. For example we
+can add links to the hover to give more information about the problem,
+where to configure it, etc.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<br>
+- better performance tooling<br>
+We spend a lot of time chasing performance degradations from our
+performance test. Sometimes we can't reproduce the problem, or we have
+to guess what the problem could be. It often takes a day to reproduce a
+scenario.<br>
+I wished, the performance test could run more often and also do
+performance sampling, so that we have historic sampling data that we
+can compare.<br>
+It would also be good if single tests could be rerun on demand.<br>
+&nbsp; <br>
+-------------------<br>
+Specific JDT items<br>
+<br>
+- new APIs<br>
+&nbsp;&nbsp; - Javadoc wizard extension<br>
+&nbsp;&nbsp; - Java project page API<br>
+<br>
+- refactoring/clean up performance work<br>
+&nbsp;&nbsp; - discuss with JDT core what could help us improving
+performance:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - binding environment API to deal with
+big numbers of ASTs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - offer search matches with bindings<br>
+<br>
+- improve code formatting so that we can enabled it 'on save'<br>
+&nbsp;&nbsp; - preserve line breaks<br>
+&nbsp;&nbsp; - preserve indentation<br>
+<br>
+- more flexible search<br>
+&nbsp;&nbsp; - search for specific values passed in invocations<br>
+&nbsp;&nbsp; - categorize type reference matches (in return type, in
+field types...)<br>
+&nbsp;&nbsp; <br>
+- continue with the AST search prototype (as a extra download)<br>
+&nbsp;&nbsp; - functional language to describe a complex search<br>
+&nbsp;&nbsp; - add a simple UI <br>
+<br>
+- Improve classpath containers<br>
+&nbsp; -Allow containers to contain containers, variables and class
+folders<br>
+&nbsp;&nbsp; When the PDE container can represent the plug-in
+dependencies in correct hierarchical form (PDE container for JDT/UI
+contains PDE container for JDT/Core, etc..)<br>
+&nbsp;&nbsp;&nbsp; this will solve several problems when working with
+PDE containers: incomplete type hierarchies, potential search matches<br>
+<br>
+- launching<br>
+&nbsp; - add launch configuration templates (bug 41353)<br>
+<br>
+- JAR application wizard<br>
+&nbsp; store an Java application with all its dependencies in a JAR
+(web start)<br>
+<br>
+- text search improvements<br>
+&nbsp; show matching line<br>
+&nbsp; improve replace dialog<br>
+&nbsp; allow to do external searches<br>
+<br>
+<hr style="width: 100%; height: 2px;">Platform&amp;JDT/Text input<br>
+<br>
+Item Priority:
+<ul>
+  <li>1: committed i.e. I want (or must) to do this</li>
+  <li>2: proposed item</li>
+  <li>3: most likely not</li>
+</ul>
+<h3>Enhanced Text Editing Support</h3>
+<ul>
+  <li><a name="rich hovers">rich hovers [experimental]: </a>
+    <ul>
+      <a name="rich hovers"> </a><li><a name="rich hovers">1 links
+support in hovers so that you can navigate to things from there</a></li>
+      <a name="rich hovers"> </a><li><a name="rich hovers">1
+investigate better interaction for making hovers sticky (mouse path)</a></li>
+      <a name="rich hovers"> </a><li><a name="rich hovers">2
+investigate to use hovers as affordance for context sensitive actions
+(quick assist/fix, surround with...)</a></li>
+      <a name="rich hovers"> </a><li><a name="rich hovers">2 allow
+seamless transition from hover &gt; sticky hover &gt; Javadoc view</a></li>
+      <a name="rich hovers"> </a><li><a name="rich hovers">3 to do
+this we might first need to finish/cleanup the roll-over annotation
+work that was kicked off during 3.0 </a></li>
+    </ul>
+    <a name="rich hovers"> </a></li>
+  <a name="rich hovers"> </a><li><a name="rich hovers">Find/Replace: </a>
+    <ul>
+      <a name="rich hovers"> </a><li><a name="rich hovers">1 find a
+solution to use line delimiters, tabs, etc. in regex replace (</a><a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80667">bug 80667</a>)</li>
+      <li>1 handle dangerous regex replaces more gracefully (restart
+line tracker) (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44766">bug 44766</a>)</li>
+      <li>2 escape regex patterns in selection used as find string (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44422">bug 44422</a>)</li>
+      <li>3 improve Find/Replace dialog: merge into editor area, ...
+[experimental]</li>
+    </ul>
+  </li>
+  <li>Hyperlinking:
+    <ul>
+      <li>1 allow to present more than one hyperlink target for a given
+text range</li>
+      <li>2 allow hyperlink to show a hover</li>
+    </ul>
+  </li>
+  <li>Vertical Ruler:
+    <ul>
+      <li>1 allow users to configure the annotation presentation layer
+for each annotation</li>
+      <li>1 investigate alpha blending so that underlying icons can be
+seen [experimental]</li>
+      <li>2 add support to contribute actions and context menus to
+ruler columns</li>
+    </ul>
+  </li>
+  <li>Spell Checking:
+    <ul>
+      <li>1 fix some of the new bugs</li>
+      <li>2 allow to spell-check a set of resources (use Code Analysis
+view?)</li>
+      <li>3 push down spelling engine from JDT to Platform</li>
+    </ul>
+  </li>
+  <li>provide modifier + mouse wheel support, e.g. allow to
+    <ul>
+      <li>3 change font size</li>
+      <li>3 navigate in the history</li>
+    </ul>
+  </li>
+  <li>1 change folding paradigm: no longer eat first key stroke
+[experimental]</li>
+  <li>2 show more context about what's currently being edited (e.g. in
+a header) [experimental]</li>
+  <li>3 provide a history of (last) edit positions</li>
+  <li>3 support styles (bold, italic) in text editor</li>
+  <li>3 quick assist extension point</li>
+  <li>3 provide LTK layer for text editing support (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=125825">bug 125825</a>,
+    <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149817">bug
+149817</a>, ...)</li>
+</ul>
+<h3>Enhanced Java Editing</h3>
+<ul>
+  <li>Content Assist:
+    <ul>
+      <li>1 improve handling of constructor proposals (see also <a
+ href="file:///C:/DOCUME%7E1/pml/LOCALS%7E1/Temp/notesB007AB/3.4%20plan%20input%20brainstorming.html#JDT%20Core">JDT
+Core</a> item below)</li>
+      <li>1 indicate match in proposal list</li>
+      <li>1 enable navigation key bindings in proposal list (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140550">bug 140550</a>)</li>
+    </ul>
+  </li>
+  <li>Syntax Highlighting:
+    <ul>
+      <li>2 provide import/export</li>
+      <li>3 add coloring schemes and allow to switch them via toolbar</li>
+    </ul>
+  </li>
+  <li>Quick Views:
+    <ul>
+      <li>1 allow to open on any Java element from any view (e.g. from
+the Package Explorer or Outline view)</li>
+      <li>2 show additional info (e.g. Javadoc)</li>
+      <li>3 context menu on its items [experimental]</li>
+    </ul>
+  </li>
+  <li>2 permanent local rename mode [experimental]
+    <ul>
+      <li>2 editing always updates like "Local Rename" (automatically
+enter linked mode)</li>
+      <li>3 investigate interplay with "refactoring only" mode</li>
+    </ul>
+  </li>
+  <li>Outline and Members view improvements:
+    <ul>
+      <li>3 show properties as nodes (group getter/setter/field) (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=26618">bug 26618</a>)</li>
+      <li>3 drag-and-drop when unsorted (drop between elements)</li>
+    </ul>
+  </li>
+  <li>improve Javadoc view and sticky Javadoc hover (see also the <a
+ href="file:///C:/DOCUME%7E1/pml/LOCALS%7E1/Temp/notesB007AB/3.4%20plan%20input%20brainstorming.html#rich%20hovers">rich
+hovers</a> item above)
+    <ul>
+      <li>2 allow to pin (in Javadoc view)</li>
+      <li>2 support to follow links (relative URLs, @see, @link,...)</li>
+      <li>3 support navigation and history support</li>
+    </ul>
+  </li>
+  <li>1 add better support for the @inheritDoc tag (hover, syntax
+coloring)</li>
+  <li>1 revisit showing markers <em>and</em> temporary problems
+together in the vertical ruler <br>
+&#8658; we might want to only show the actual temporary problems (if this
+feature is enabled) </li>
+  <li>3 better support for Java properties files (native2ascii
+conversion)</li>
+  <li>2 Declaration and Javadoc view should allow to navigate to other
+members in hierarchy (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=82709">bug 82709</a>)</li>
+  <li>2 goto declaring type: <br>
+F3 + Ctrl+Click go to the declaration - often going to the declared
+type is desired, see also <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=68144">bug 68144</a></li>
+</ul>
+<h3>Performance And Memory Consumption</h3>
+<ul>
+  <li>1 investigate to reduce garbage when typing</li>
+  <li>1 provide API to retrieve annotations in a certain range from an
+annotation model <br>
+&#8658; with this, clients no longer need to iterate over all annotations </li>
+  <li>1 allow to flag a document as being delete (no longer used) or
+even more life-cycle <br>
+&#8658; allows to improve performance when closing an editor </li>
+  <li>1 revisit the text viewer's support for redraw, compound updates,
+and selection preservation
+    <ul>
+      <li>1 check all setRedraw(on/off) users whether they really need
+that expensive operation (e.g. undo!)</li>
+      <li>2 separate selection preservation from redraw and compound
+command</li>
+    </ul>
+  </li>
+  <li>1 constantly watch performance test results and act when red</li>
+  <li>1 continue to provide new tests</li>
+</ul>
+<h3>RCP Text</h3>
+<ul>
+  <li>1 update web page regarding RCP text editor</li>
+</ul>
+<h3>Miscellaneous</h3>
+<ul>
+  <li>1 3.3 maintenance (<a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;classification=Eclipse&amp;product=JDT&amp;product=Platform&amp;component=Text&amp;target_milestone=3.3.1&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">3.3.1</a>,
+    <a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;classification=Eclipse&amp;product=JDT&amp;product=Platform&amp;component=Text&amp;target_milestone=3.3.2&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">3.3.2</a>)</li>
+  <li>1 fix already tagged <a
+ href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;classification=Eclipse&amp;product=JDT&amp;product=Platform&amp;component=Text&amp;target_milestone=3.4&amp;long_desc_type=allwordssubstr&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">3.4
+bugs</a></li>
+  <li>2 look at bugs with patches and review those</li>
+</ul>
+<h3>Other Components</h3>
+Some of the items are rather bugs than pan items.
+<h4>All</h4>
+<ul>
+  <li>finish unfinished polish items (as many items that arise
+during the end game polish pass are often deferred saying: it's too
+risky to do this so late in the game) </li>
+</ul>
+<h4><a name="JDT Core">JDT Core</a></h4>
+<ul>
+  <a name="JDT Core"> </a><li><a name="JDT Core">constructor proposals
+after "new" for compatible types (</a><a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">bug 6930</a>)
+- <em>to be continued from 3.3</em></li>
+  <li>improve content assist for static members when import missing (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">bug 44627</a>)</li>
+  <li>improve content assist after 'instanceof' - <em>Martin to
+provide the bug (nr)</em></li>
+  <li>improve "Unnecessary declaration of thrown checked exceptions" (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">bug 73244</a>)
+- <em>was on 3.3 plan but got deferred</em></li>
+</ul>
+<h4>JDT Debug</h4>
+<ul>
+  <li>[variables] Variables view should offer Auto-Expand (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=131931">bug 131931</a>)
+- <em>was on 3.3 plan but got deferred</em></li>
+</ul>
+<h4>Platform Core</h4>
+<h4>Platform CVS</h4>
+<ul>
+  <li>[History View] Author not shown in remote compares (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=80577">bug 80577</a>)</li>
+  <li>[History View] Support sorting of tag list (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191308">bug 191308</a>)</li>
+  <li>[History View] History sometimes not correctly filled with
+revision (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=188278">bug
+188278</a>)</li>
+</ul>
+<h4>Platform SWT</h4>
+<ul>
+  <li>allow to resize popup under Linux (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=23980">bug 23980</a>)</li>
+  <li>vertical CTabFolders (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=58945">bug 58945</a>)</li>
+</ul>
+<h4>Platform UI</h4>
+<ul>
+  <li>finish command/handler/binding story:
+    <ul>
+      <li>update all clients in the SDK</li>
+      <li>allow mouse button bindings</li>
+      <li>allow scroll wheel bindings</li>
+      <li>allow gesture bindings</li>
+    </ul>
+  </li>
+</ul>
+<h4>Cross Team / Unassigned</h4>
+<br>
+4.0<br>
+- XML Editor (Framework)<br>
+It might be a good idea to have an XML editor being part of the SDK.
+This would need at least one person working 100% on this for one
+release. Of course this needs to be checked how it fits together with
+the XML editor that WTP provides.<br>
+provide an XML editor for the Eclipse SDK<br>
+provide components out of which XML-like editors (e.g. Ant or PDE
+Editor) can be built<br>
+<br>
+- allow to use personal formatting when looking at unchanged CU<br>
+<br>
+<hr style="width: 100%; height: 2px;">Platform&amp;JDT/Debug input<br>
+<br>
+<h2>3.4</h2>
+<h3>Completeness &amp; Consistency</h3>
+<ul>
+  <li>Context launching for non-resources (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=181204">181204</a>).
+This will round out the context launching support to play better when
+an element is selected that does not have an associated <code>IResource</code>
+- for example when a method or type in the editor outline is selected.</li>
+  <li>Sending custom JDWP commands to VMs and parsing results (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=177193">177193</a>)</li>
+  <li>Publishing asynchronous viewer framework in JFace (our framework
+is still internal, and we have more clients becoming dependant on our
+internal/provisional APIs). The framework should be made public
+(preferably at the JFace level), and should take into account existing
+frameworks (data binding and common navigator) - bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=153500">153500</a>,
+bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=161435">161435</a>.</li>
+  <li>Migrate existing actions to new menus extension point</li>
+  <li>Add support for Ctrl-Space type name assist in debug launch
+dialog and preferences (main type names, detail formatter, logical
+structures, etc).</li>
+  <li>Printing from the console (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=9058">9058</a>)</li>
+  <li>Support for JRE definition files (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=181026">181026</a>)</li>
+  <li>Support drag &amp; drop for expression creation (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=184057">184057</a>),
+and re-ordering content in the expression view (<a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=175584">175584</a>)</li>
+  <li>Support custom content in the expressions view based on active
+debug context (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=184233">184233</a>)</li>
+  <li>Enhance registers view to maintain expansion/selection when
+selected frame changes (since registers are usually global, we should
+treat them specially - i.e. variables change with each frame bug
+registers do not) - bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=176627">176627</a>.</li>
+  <li>Expose Java launch shortcuts as API (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=54072">54072</a>)</li>
+  <li>Support for colored labels in the debug views (like package
+explorer support)</li>
+  <li>Auto-expand in the variables view (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=131931">131931</a>)</li>
+</ul>
+<h3>Startup &amp; Footprint</h3>
+<ul>
+  <li>Reduce number of class loads on plug-in startup (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191723">191723</a>)</li>
+</ul>
+<h3>Performance</h3>
+<ul>
+  <li>Improve variable details for arrays in large workspace (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191312">191312</a>)</li>
+  <li>Create new performance tests that measure realistic debug
+scenarios (e.g. step over with UI refresh, toggle breakpoint with UI
+update)</li>
+  <li>Improve console performance for processes that produce large
+quantities of output (may require new APIs to improve streaming with
+processes) - bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=166119">166119</a></li>
+</ul>
+<h3>Security</h3>
+<ul>
+  <li>No known security issues in debug.</li>
+</ul>
+<h3>Globalization</h3>
+<ul>
+  <li>Fix TVT bugs generated from expanded TVT testing doc
+    <ul>
+      <li>bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191762">191762</a></li>
+      <li>bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191387">191387</a></li>
+      <li>bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191388">191388</a></li>
+      <li>bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191389">191389</a></li>
+    </ul>
+  </li>
+  <li>Improve console/JRE default encoding settings (to match that of
+project/workspace) - bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191379">191379</a>,
+bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=191382">191382</a>,
+bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=190520">190520</a>.</li>
+</ul>
+<h3>Accessibility</h3>
+<ul>
+  <li>Add accessible adapters to "Common" tab controls in the launch
+dialog (bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=189328">189328</a>).</li>
+</ul>
+<h3>Reliability</h3>
+<h3>Consumability</h3>
+<h3>Management</h3>
+<h2>4.0</h2>
+<ul>
+  <li>Support dedicated view sets for each debug session - bug <a
+ href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=145635">145635</a></li>
+  <li>Enhance J2SE6 "object references" support to show
+graph/references to roots</li>
+  <li>Custom variable detail pane for SWT images (display image)</li>
+  <li>Launch configuration name space support. Currently the launch
+configuration name space is flat, so you can only have one config with
+any given name. We could support a name space based on the resource
+hierarchy to allow for configs with the same name, associated with
+different resources.</li>
+  <li>Mixed Java/Expression evaluation editing. Centralize Java-like
+editing for expression evaluation in a partitioned document with Java
+partitions and expression evaluation result partitions. Re-use in
+scrapbook, display view, variable details, breakpoint condition editor,
+detail formatter editor, and logical structure editor.</li>
+  <li>Improve runtime class path editing for Java Applications -
+runtime class path editing is currently non-intuitive and difficult.
+Would be nice to show a command line preview so the user can see what
+they will get at runtime.</li>
+  <li>Improve evaluation engine and determine how we can avoid large
+maintenance issues as new language features are added (e.g. generics in
+the past, and whatever comes with Java 7). Currently we have to upgrade
+our interpreter which is large and cumbersome. Would be nice to somehow
+offload this support to the compiler (i.e. re-use compiler).</li>
+  <li>Support for breakpoints in external files (i.e. display
+breakpoint markers in external non-workspace-resource files). Requires
+coordination with platform text to get proper solution/support for
+markers in external files.</li>
+</ul>
+<br>
+<hr style="width: 100%; height: 2px;">JDT/APT input<br>
+<hr style="width: 100%; height: 2px;"><br>
+</body>
+</html>
