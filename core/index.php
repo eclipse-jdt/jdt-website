@@ -69,13 +69,22 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.3 Development</b></p>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.4 Development</b></p>
 <ul>
   <li>Most active development goes into this stream.
   </li>
-  <li> The 3.3 plan is posted <a href="r3.3/index.php#release-plan">here</a>.
+  <li> The 3.4 plan is posted <a href="r3.4/index.php#release-plan">here</a>.
   </li>
-  <li> The 3.3 next-milestone plan is posted <a href="r3.3/index.php#milestone-plan">here</a>.
+  <li> The 3.4 next-milestone plan is posted <a href="r3.4/index.php#milestone-plan">here</a>.
+  </li>
+  <li> Patch available in <a href="r3.4/index.php#UPDATES">update</a> area (for testing purpose).
+  </li>
+</ul>
+<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.3 Maintenance</b></p>
+<ul>
+  <li> Release 3.3 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  </li>
+  <li> Latest information on further maintenance is available <a href="r3.3/index.php#maintenance">here</a>.
   </li>
   <li> Patch available in <a href="r3.3/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
