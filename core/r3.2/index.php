@@ -563,7 +563,7 @@ ob_start();
 			<a name="SOURCES"></a>
 			<h3>Getting the sources</h3>
       <ul>
-		<li>Make sure to target a recent SDK R3.2.x <a href="http://download.eclipse.org/downloads">maintenance build</a>).
+		<li>Make sure to target a recent SDK R3.2.x <a href="http://download.eclipse.org/downloads">maintenance build</a>.
 		</li>
         <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code>
         </li>
