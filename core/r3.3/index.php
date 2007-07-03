@@ -55,7 +55,7 @@ ob_start();
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
 		&nbsp;<b>Release 3.3.0 - completed on 2007/06/29</b></p>
 		<ul>
-			<li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="new">download</a> area. </li>
+			<li> available on the <a href="http://download.eclipse.org/downloads">download</a> area. </li>
 			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933&amp;content-type=text/html">build notes</a> </li>
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	  <ul>
@@ -374,7 +374,7 @@ ob_start();
 		<li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/"><code>HEAD</code></a> branch of the 
 			project <code>org.eclipse.jdt.core</code>. </li>
 		<li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.3 most recent 
-			<a href="http://www.eclipse.org/downloads/index.php" target="new">integration build</a>). Prerequisite plug-ins are already 
+			<a href="http://download.eclipse.org/downloads">integration build</a>). Prerequisite plug-ins are already 
 			referenced on the project build path (<code>.classpath</code> file). </li>
 		<li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
       </ul>

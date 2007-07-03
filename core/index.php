@@ -91,7 +91,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Maintenance</b></p>
 <ul>
-  <li> Release 3.2 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Rollup 3.2.2 available on the <a href="http://download.eclipse.org/downloads">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r3.2/index.php#maintenance">here</a>.
   </li>
@@ -100,7 +100,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.1 Maintenance</b></p>
 <ul>
-  <li> Release 3.1 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Rollup 3.1.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r3.1/index.php#maintenance">here</a>.
   </li>
@@ -109,7 +109,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.0 Maintenance</b><p>
 <ul>
-  <li> Release 3.0 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Rollup 3.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r3.0/main.html#maintenance">here</a>.
   </li>
@@ -118,7 +118,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.1 Maintenance</b></p>
 <ul>
-  <li> Release 2.1 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Rollup 2.1.3 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r2.1/main.html#maintenance">here</a>.
   </li>
@@ -127,7 +127,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.0 Maintenance</b></p>
 <ul>
-  <li> Rollup 2.0.3 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Rollup 2.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r2.0/main.html#maintenance">here</a>.
   </li>
@@ -136,7 +136,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R1.0 Maintenance</b></p>
 <ul>
-  <li> Rollup 1.0.2 available on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload">download</a> area.
+  <li> Release 1.0 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r1.0/main.html#maintenance">here</a>.
   </li>

@@ -49,7 +49,7 @@ ob_start();
       <img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Rollup 3.1.2 - completed on 2006/01/26</b>
       <ul>
         <li> available on the <a
- href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
+ href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a>
 area. </li>
         <li> final <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.155&amp;content-type=text/html">build
@@ -67,7 +67,7 @@ planned fixes</a>) (<a
  height="16" width="16">&nbsp;<b>Rollup 3.1.1 - completed on 2005/10/03</b>
       <ul>
         <li> available on the <a
- href="http://www.eclipse.org/downloads/index.php" target="_new">download</a>
+ href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a>
 area. </li>
         <li> final <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.111&amp;content-type=text/html">build
@@ -84,7 +84,7 @@ planned fixes</a>) (<a
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
  height="16" width="16">&nbsp;<b>Release 3.1.0 - completed on 2005/06/28</b>
       <ul>
-        <li> available on the <a href="http://www.eclipse.org/downloads/index.php" target="new">download</a> area. </li>
+        <li> available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area. </li>
         <li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432&amp;content-type=text/html">build
 notes</a> </li>
         <li><b>Incremental Java Compiler</b>
@@ -590,7 +590,7 @@ picture)</td>
             <td valign="top">Early preview of 3.1.2 build. <br>
             <br>
 (<span style="font-style: italic;">Note that <a
- href="http://download.eclipse.org/downloads/index.php">3.1.2 builds</a>
+ href="http://archive.eclipse.org/eclipse/downloads/index.php">3.1.2 builds</a>
 are now available which make this preview obsolete. However it is&nbsp;
 kept for developpers that are still using 3.1.1).</span><br>
             <br>
@@ -722,7 +722,7 @@ notes</a>.
         <li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R3_1_maintenance"><code>R3_1_maintenance</code></a>
 branch of the project <code>org.eclipse.jdt.core</code>. </li>
         <li>Make sure to import the prerequisite plug-ins (usually from
-a SDK R3.1 most recent <a href="http://www.eclipse.org/downloads/index.php" target="new">integration
+a SDK R3.1 most recent <a href="http://archive.eclipse.org/eclipse/downloads/index.php">integration
 build</a>). Prerequisite plug-ins are already referenced on the project build path (<code>.classpath</code> file). </li>
         <li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
       </ul>

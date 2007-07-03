@@ -315,7 +315,7 @@ ob_start();
 		<li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/"><code>HEAD</code></a> branch of the 
 			project <code>org.eclipse.jdt.core</code>. </li>
 		<li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.3 most recent 
-			<a href="http://www.eclipse.org/downloads/index.php" target="new">integration build</a>). Prerequisite plug-ins are already 
+			<a href="http://download.eclipse.org/downloads">integration build</a>). Prerequisite plug-ins are already 
 			referenced on the project build path (<code>.classpath</code> file). </li>
 		<li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
       </ul>
