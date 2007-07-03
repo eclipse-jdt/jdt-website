@@ -310,14 +310,13 @@ ob_start();
 			<a name="SOURCES"></a>
 			<h3>Getting the sources</h3>
       <ul>
-		<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+		<li>Make sure to target a recent SDK R3.4.x <a href="http://download.eclipse.org/downloads">integration build</a>).
+		</li>
+		<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code>
         </li>
 		<li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/"><code>HEAD</code></a> branch of the 
 			project <code>org.eclipse.jdt.core</code>. </li>
-		<li>Make sure to import the prerequisite plug-ins (usually from a SDK R3.3 most recent 
-			<a href="http://download.eclipse.org/downloads">integration build</a>). Prerequisite plug-ins are already 
-			referenced on the project build path (<code>.classpath</code> file). </li>
-		<li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
+		<li>The sources of this project have been compiled against a 1.4 JRE. A 1.4 JRE should thus be installed.</li>
       </ul>
 		</div>
 	</div>

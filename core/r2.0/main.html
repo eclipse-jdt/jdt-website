@@ -491,14 +491,15 @@ Patches listed here are Jck1.3a and Jck1.4 compliant.
 
 <tr><td COLSPAN="2"> 
 <ul>
-<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+<li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code>
 </li>
 <li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R2_0_1"><code>R2_0_1</code></a> branch of the project <code>org.eclipse.jdt.core</code>.
 This branch reflects the current R2.0 maintenance effort (the branch name is incorrectly suggests it corresponds to 2.0.1 rollup only).
 </li>
 <li>Make sure to import the prerequisite plug-ins (usually from the latest SDK R2.0.x <a href="http://archive.eclipse.org/eclipse/downloads/index.php">build</a>). Prerequisite plug-ins are already referenced on the project build path (<code>.classpath</code> file).
 </li>
-<li>The sources of this project are either 1.3 or 1.4 compatible, however for 1.3 backward compatibility (Eclipse is primarily aimed for 1.3 runtimes), the compiler compliance setting should be set to 1.3.</li>
+<li>The sources of this project are either 1.3 or 1.4 compatible, however for 1.3 backward compatibility (Eclipse is primarily aimed for 1.3 runtimes), 
+      the compiler compliance setting should be set to 1.3 and the default JRE should be a 1.3 JRE.</li>
 <li>In case willing to work on a different code stream, you may want to check out a different version of the project
 	<ul>
 	<li>version <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R2_0"><code>R2_0</code></a> : official code base released into R2.0.

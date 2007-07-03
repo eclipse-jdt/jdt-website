@@ -717,14 +717,13 @@ notes</a>.
 			<a name="SOURCE"></a>
 			<h3>Getting the sources</h3>
 			<ul>
-        <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/home/eclipse,</code>
+		<li>Make sure to target a recent SDK R3.1.x <a href="http://archive.eclipse.org/eclipse/downloads/index.php">maintenance build</a>).
+		</li>
+        <li>Define a CVS connection to server <code>pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code>
         </li>
         <li>Check out the <a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=R3_1_maintenance"><code>R3_1_maintenance</code></a>
 branch of the project <code>org.eclipse.jdt.core</code>. </li>
-        <li>Make sure to import the prerequisite plug-ins (usually from
-a SDK R3.1 most recent <a href="http://archive.eclipse.org/eclipse/downloads/index.php">integration
-build</a>). Prerequisite plug-ins are already referenced on the project build path (<code>.classpath</code> file). </li>
-        <li>The sources of this project are 1.4 compatible. The compiler compliance level should thus be set to 1.4. </li>
+        <li>The sources of this project have been compiled against a 1.4 JRE. The default JRE should thus be a 1.4 JRE.</li>
       </ul>
 		</div>
 	</div>
