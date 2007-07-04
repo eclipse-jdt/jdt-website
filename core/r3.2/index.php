@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.3.z20070503-1623.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.3.z20070704-1754.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2007/05/03, 6.98 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2007/07/04, 6.99 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -530,7 +530,15 @@ ob_start();
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
             				Plug-in revision ID is "3.2.3".<br>
                              Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182930">182930</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154984">154984</a>
+							Jars in library not recognized sometimes.
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=162054">162054</a>
+							[build] Got a failure on MultiProjectTests.testCycle5 on my speedy test box...
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=181270">181270</a>
+							[1.5][compiler] Class literal of array of type parameter should be rejected
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=184957">184957</a>
+							[1.5][compiler] Compiler crash
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182930">182930</a>
 							JavaModelCache's size grows when displaying type hierarchy
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=161175">161175</a>
 							JarPackageFragmentRoot slow to initialize
