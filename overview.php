@@ -91,20 +91,9 @@ ob_start();
       </ul>
       <br />
 		<hr size="1" />
-		<a name="#JDT_UI"></a>
-		<h3>JDT UI</h3>
-		<p>JDT UI implements Java-specific 
-        workbench contributions:</p>
-      <ul>
-        <li>Packages View</li>
-        <li>Type Hierarchy View</li>
-        <li>Java Outline View</li>
-        <li>Wizards for creating 
-          Java elements</li>
-        <li>Java Editor.&nbsp; </li>
-      </ul>
-      <p>The Java editor provides 
-        the following features:</p>
+		<a name="#JDT_Text"></a>
+		<h3>JDT Text</h3>
+		<p>JDT Text provides the Java editor with the following features:</p>
       <ul>
         <li>Keyword and syntax coloring</li>
         <li>Context specific (Java, 
@@ -119,6 +108,17 @@ ob_start();
         <li>Import assistance automatically 
           creates and organizes import declarations</li>
         <li>Code formatting</li>
+      </ul>
+      <br />
+		<hr size="1" />
+		<a name="#JDT_UI"></a>
+		<h3>JDT UI</h3>
+		<p>JDT UI implements Java-specific workbench contributions:</p>
+      <ul>
+        <li>Packages Explorer</li>
+        <li>Type Hierarchy View</li>
+        <li>Java Outline View</li>
+        <li>Wizards for creating Java elements</li>
       </ul>
       <p>The JDT UI provides refactoring 
         support like: <i>Extract Method </i>or <i>Safe Rename</i> for Java elements 
@@ -142,7 +142,8 @@ ob_start();
 				<li><a href="#JDT_APT">JDT APT</a></li>
 				<li><a href="#JDT_CORE">JDT Core</a></li>
 				<li><a href="#JDT_DEBUG">JDT Debug</a></li>
-				<li><a href="#JDT_UI">JDT_UI</a></li>
+				<li><a href="#JDT_Text">JDT Text</a></li>
+				<li><a href="#JDT_UI">JDT UI</a></li>
 			</ul>
 		</div>
 	</div>

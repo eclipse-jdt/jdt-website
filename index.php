@@ -53,6 +53,10 @@ ob_start();
           <td width="82%">Debug support for Java</td>
         </tr>
         <tr> 
+          <td width="20%" valign="top"><a href="http://www.eclipse.org/eclipse/platform-text/index.php" target="_top">Text</a></td>
+          <td width="82%">Java editing support</td>
+        </tr>
+        <tr> 
           <td width="20%" valign="top"><a href="ui/index.php" target="_top">UI</a></td>
           <td width="82%">Java IDE User Interface</td>
         </tr>
