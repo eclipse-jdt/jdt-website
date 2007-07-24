@@ -115,7 +115,7 @@ ob_start();
 		<h3>JDT UI</h3>
 		<p>JDT UI implements Java-specific workbench contributions:</p>
       <ul>
-        <li>Packages Explorer</li>
+        <li>Package Explorer</li>
         <li>Type Hierarchy View</li>
         <li>Java Outline View</li>
         <li>Wizards for creating Java elements</li>
