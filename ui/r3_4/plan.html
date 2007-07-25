@@ -1,0 +1,338 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html XMLNS:Style>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+	<title>Combined JDT Text and JDT UI Component 3.4 Plan</title>
+
+<script type="text/javascript">
+<!--
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == document.getElementsByTagName("body")[0]) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node);
+			
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+			
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var regex= /([Bb]ug\s*)([0-9]+)/;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+				
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+				
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+				
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node);
+			}
+			
+		} else {
+			node= nextNode(node);
+		}
+	}
+}
+
+//-->
+</script>
+
+	<style>
+		body {  
+			background-image: url('../images/proposal.gif');
+			background-repeat: repeat-y
+		}
+	</style>
+	
+	 <style type="text/css">
+  		Style\:committed {
+  			color: blue;
+  			font-style: italic;
+  		}
+	</style>	
+	
+</head>
+
+<body text="#000000" bgcolor="#FFFFFF" onload="linkifyBugs()">
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+
+  <tr> 
+    <td WIDTH="100%"> 
+    <p>Last revised 13:16 CEST July 25, 2007</p>
+
+    
+      <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
+      <p><strong>Note:</strong> This plan depends on the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php">Platform Text Plan</a>.</p>
+      
+      <h2><a NAME="Overall_Planning"></a>Overall Goals</h2>
+      <p>This section lists the goals for Eclipse 3.4 for the JDT Text and the JDT UI component as listed on the 
+        <a href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_4.html">Eclipse Project Draft 3.4 Plan</a>.
+        </p>
+
+
+		<p>
+		<strong><a name="1"></a>[1] Performance</strong>.
+		Monitor overall performance and memory consumption which includes the addition of new performance tests for new features.  
+		</p>
+
+		<p>
+		<strong><a name="2"></a>[2] Reliability</strong>.
+		Provide APIs for clients where needed and make various improvements to Type Hierarchy and Call Hierarchy.
+		</p>
+		
+		<p>
+		<strong><a name="3"></a>[3] Keep Eclipse vibrant and attractive</strong>.
+		Deliver new productivity features like rich hovers and additional semantic highlightings. Make the Quick view more
+		prominent and let them display Javadoc like the content assistant does. 
+		</p>
+
+	<h2><a NAME="Work_Items"></a><br>Work Items</h2>
+	<p>
+		This section lists the possible work items for Eclipse 3.4 for the JDT Text and the JDT UI component
+		with the [corresponding theme].
+		Some of those items have a <Style:committed>higher priority</Style:committed> than others.
+	</p>
+
+	<ul>
+		<li><h4>Adopt New Platform Features [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>Use new JFace cell editors and content assist</li>
+		</ul></li>
+		
+		
+		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><Style:committed>delete should not happen in the UI thread (bug 187351)</Style:committed></li>
+			<li>extract class (bug 185338)</li>
+			<li>new refactoring: extract field (bug 52791)</li>
+			<li>refactoring should report affected binary references (bug 182346)</li>
+			<li>new refactoring: convert instance method to static</li>
+		</ul></li>
+		
+		
+		<li><h4>API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><Style:committed>API to access the shared AST</Style:committed></li>
+			<li><Style:committed>API to add pages to the Javadoc wizard (bug 139818)</Style:committed></li>
+			<li><Style:committed>make functionality of JavaProjectWizardFirstPage API (bug 160985)</Style:committed></li>
+			<li><Style:committed>add extension point for 'add library' quick fix (bug 196141)</Style:committed></li>
+			<li>extension point for the clean up wizard (bug 153755)</li>
+		</ul></li>
+		
+		<li><h4>API to be moved to other components [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><Style:committed>colored labels (bug 188333)</Style:committed></li>
+			<li><Style:committed>make new projects WorkingSetConfigurationBlock API and push down to platform (bug 15941)</Style:committed></li>
+			<li>move API for camel case matching to be used in jdt.core and open items dialog to org.eclipse.text (bug 176017)</li>
+		</ul>
+		
+		<li><h4>Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><Style:committed>leverage rich hovers from Platform Text, e.g.:</Style:committed>
+			<ul>
+				<li>to provide links to preference pages</li>
+				<li>provide hint where quick assist/fix is available</li>
+				<li>provide link to help if any</li>
+				<li>add/enable links to Javadoc hovers</li>
+				<li>allow to open element out of Javadoc hover</li>
+				<li>allow to open Javadoc view out of Javadoc hover</li>
+			</ul>
+			</li>
+			<li>provide a trim to show number of error/warnings</li>   
+			<li>improve drag and drop in Java views: drop between, not onto (where applicable)</li>
+		</ul>
+		
+		<li><h4>Jar Exporter [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>export Java application</li>
+			<li>sign JAR</li>
+		</ul>
+		
+		<li><h4>Java Search [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>search for text in attached source</li>
+		</ul>
+		
+		<li><h4>Call Hierarchy [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>provide more starting points: start on fields, types, constructors (default for anonymous, e.g Runnables), static methods</li>
+		</ul>
+		
+		<li><h4>Type Hierarchy [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>compute hierarchy in background (bug 30881)</li>
+		</ul>
+		
+		<li><h4>Clean Up [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>fix indentation on save (bug 164324)</li>
+		</ul>
+		
+		<li><h4>Quick Fix [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><Style:committed>improve cursor jumping on quick fix invocation</Style:committed></li>
+		</ul>
+
+
+	  <li><h4>Content Assist [<a href="#2">2</a>]</h4>
+	    <ul>
+		  <li><Style:committed>improve handling of constructor proposals</Style:committed></li>
+		  <li><Style:committed>indicate match in proposal list (similar to Ctrl+3)</Style:committed></li>
+		  <li><Style:committed>enable navigation key bindings in proposal list (bug 140550)</Style:committed></li>
+	    </ul>
+	  </li>
+	
+	  <li><h4>Quick views [<a href="#3">3</a>]</h4>
+	 	<ul>
+	  	  <li><Style:committed>allow to open on any Java element from any view (e.g. from the Package Explorer or Outline view)</Style:committed></li>
+	  	  <li>show Javadoc (bug 41334)</li>
+	    </ul>
+	  </li>
+	
+	  <li><h4>Javadoc view and sticky Javadoc hover [<a href="#2">2</a>]</h4>
+	  See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#rich hovers">Rich Hovers</a> item.
+	  <p>
+	    <ul>
+	      <li><Style:committed>support to follow links (relative URLs, @see, @link,...)</Style:committed></li>
+	      <li><Style:committed>support navigation and history support</Style:committed></li>
+	      <li>allow to pin i.e. link with editor button in Javadoc view</li>
+	    </ul></p>
+	  </li>
+	
+	
+	  <li><h4>Miscellaneous</h4>
+	    <ul>
+		  <li><Style:committed>add better support for the @inheritDoc tag (hover, content assist, syntax coloring)</Style:committed></li>
+		  <li><Style:committed>revisit showing markers <em>and</em> temporary problems together in the vertical ruler</Style:committed>
+		      <br>&rArr; we might want to only show the actual temporary problems (if this feature is enabled)
+		  </li>
+		  <li><Style:committed>emphasize write access over read access in mark occurrences with a different color</Style:committed></li>
+		  <li>improve template mechanism and offer a set of SWT templates</li>
+		  <li>different semantic highlighting for read and write access of fields and local variables</li>
+		  <li>Declaration and Javadoc view should allow to navigate to other members in hierarchy (bug 82709)</li>
+		  <li>goto declaring type: often going to the declared type is desired, see also bug 44277 
+		  	<br>this could be achieved by a registering a new hyperlink detector either on a new modifier or the default one (Ctrl). Second approach depends on the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Hyperlinking">Hyperlinking</a> plan item</li>  
+	      <li>editing always updates like "Local Rename" (automatically enter linked mode)</li>
+	    </ul>
+
+	    <li><h4>General Items [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><Style:committed>3.3.x maintenance work</Style:committed></li>
+			<li>look at bugs with patches and review those</li>
+		</ul></li>
+	</ul>
+	
+
+	<h2><br>Cross Team Issues</h2>
+	<p>This section contains cross team issues that have to be clarified. The 
+	concrete outcome affects the plan items listed above.</p>
+	<ul>
+	</ul>
+	TBD
+  </td>
+</tr>
+
+
+
+<tr>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M1 (2007-8-??)</font></font></td>
+</tr>
+
+  <tr> 
+    <td WIDTH="100%"> 
+
+	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+	<ul>
+		<li>3.4 planning</li>
+		<li>3.3.1 bug fixing</li>
+	</ul>
+	
+	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing</li>
+		<li>watch performance tests</li>
+		<li>increase correctness test coverage</li>
+	</ul>
+	
+	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Absences</h4>
+	<ul>
+		<li>1 day vacation</li>
+		<li>4 days compensation</li>
+		<li>1 public holiday</li>
+	</ul>
+	
+	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+      <ul>
+        <li><a href="testing/M1_Test_Plan.html">test plan</a> for the 3.4 M1 test pass.</li>
+      </ul>
+	
+      
+	<h3>Previous Milestones</h3>
+	<p>Previous 3.4 milestones can be reviewed <a href="previous_plans.php">here</a>.</p>
+	</td>
+</tr>
+
+
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Tracking</font></font></td>
+</tr>
+
+<tr>
+<td>
+<ul>
+<li><a href="https://bugs.eclipse.org/bugs/query.cgi?bug_file_loc=&bug_file_loc_type=allwordssubstr&bug_id=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bugidtype=include&chfieldfrom=&chfieldto=Now&chfieldvalue=&classification=Eclipse&component=Text&component=UI&email1=&email2=&emailtype1=substring&emailtype2=substring&field-1-0-0=classification&field-1-1-0=product&field-1-2-0=component&field-1-3-0=bug_status&field0-0-0=noop&keywords=&keywords_type=allwords&long_desc=&long_desc_type=allwordssubstr&product=JDT&query_format=advanced&remaction=&short_desc=&short_desc_type=allwordssubstr&status_whiteboard=&status_whiteboard_type=allwordssubstr&type-1-0-0=anyexact&type-1-1-0=anyexact&type-1-2-0=anyexact&type-1-3-0=anyexact&type0-0-0=noop&value-1-0-0=Eclipse&value-1-1-0=JDT&value-1-2-0=Text%2CUI&value-1-3-0=UNCONFIRMED%2CNEW%2CASSIGNED%2CREOPENED&value0-0-0=&votes=">find a bug report</a></li>
+<li><a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT">report a bug</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="5" width="100%"><tbody><tr><td colspan="4" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="../images/glass.gif" border="0" height="10" width="10"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/ok.gif" border="0" height="10" width="10"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="center"><font class="indexsub" color="#8080ff">[xyz]</font></td>
+			<td width="50%">item is deferred (&gt;) from xyz or continues in xyz.</td>
+			<td valign="center"><font class="indexsub"><img src="../images/new.gif" border="0"></font></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>&nbsp;
+</body>
+</html>
