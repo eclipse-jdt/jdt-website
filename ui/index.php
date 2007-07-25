@@ -77,28 +77,22 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="happening"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p><b>R3.3 Development</b></p>
+			<p><b>R3.4 Development</b></p>
 			<ul>
 				<li>Most active development goes into this stream.</li>
-				<li>The JDT/UI 3.3 plan is posted <a href="r3_3/main.html#Overall_Planning">here</a>.
-				</li>
-				<li>The JDT/UI 3.3 next-milestone plan is posted <a
-					href="r3_3/main.html#Milestone_Planning">here</a>.</li>
-				<li>A combined Platform/Text and JDT/Text 3.3 plan is posted <a
-					href="http://www.eclipse.org/eclipse/platform-text/3.3/plan.html#Overall_Planning">here</a>.</li>
+				<li>The combined JDT Text and JDT UI 3.4 plan is posted <a href="r3_4/plan.php">here</a>.</li>
+				<li>The plan for the next milestone is posted <a href="r3_4/plan.php#Milestone_Planning">here</a>.</li>
 			</ul>
-			<p><b>R3.2 Maintenance</b></p>
+			<p><b>R3.3</b></p>
 			<ul>
-				<li>Release 3.2 available on the <a
+				<li>Release 3.3 is available on the <a
 					href="http://www.eclipse.org/downloads/index.php"
 					target="newdownload&quot;">download</a> area.</li>
-				<li>Latest information on further maintenance is available <a
-					href="r3_2/maintenance.html">here</a>.</li>
 			</ul>
 			<p><b>Pre 3.3 builds</b></p>
 			<ul>
-				<li>1.x, 2.x and 3.2.x builds are available from the archive <a
-					href="http://archive.eclipse.org/eclipse/downloads/">download</a> area.</li>
+				<li>1.x, 2.x and 3.2.x builds are available from the <a
+					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
 			</ul>
 		</div>
 		<div class="homeitem3col">
