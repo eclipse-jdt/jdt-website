@@ -302,68 +302,77 @@ ob_start();
           </tr>
           </tr>
 	  </table>
-			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
+-->	  
+			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.4 integration preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.0.200604051115.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.1.z20070817-1335.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2006/04/05, 3.78 MB (click on picture)</td>
+			<td valign="top">posted on 2007/08/17, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
-			<td valign="top">build 3.3M6</td>
+			<td valign="top">Release 3.3</td>
           </tr>
           <tr>
 			<td valign="top"><i>description</i> </td>
-			<td valign="top">Early preview of the next integration build. <br>
+			<td valign="top">Early preview of 3.3.1 rollup. <br>
 						     Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=131707">131707</a>
-							Cannot add classpath variables when starting with -pluginCustomization option
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134839">134839</a>
-							[compiler] Incorrect compile errors reported in 1.3 compliance level
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128423">128423</a>
-							[1.5][compiler] ClassCastException on illegal code fragment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107901">107901</a>
-							Clarify Javadoc for ASTParser#setUnitName
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=132841">132841</a>
-							[1.5][compiler] Incorrectly compared method parameters when member types
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=132831">132831</a>
-							[1.5][compiler] Compiler generate brige when not needed
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119844">119844</a>
-							javadoc extraction: type comment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=131519">131519</a>
-							JDK with attached source unnavigable.
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=92357">92357</a>
-							ITypeHierarchy#getType() should return an unresolved handle
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97494">97494</a>
-							[1.5][compiler] Inappropriate error level and message for generic type mismatch
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134172">134172</a>
-							Crap Perfomance opening Java file with lots of imports
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134255">134255</a>
-							Unoptimal JavaElementInfo construction
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134645">134645</a>
-							[1.5][compiler] Java Compiler throws internal exception..
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134118">134118</a>
-							[1.5][compiler] 'ambiguous' error on legal static import
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96648">96648</a>
-							Batch compiler - error messages for duplicate output, bootclasspath, sourcepath and extdirs entries could be more explicit
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=86813">86813</a>
-							[compiler] step into switch statement locate wrong line
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83318">83318</a>
-							[1.5] 'Open declaration' fails for type variables in class files
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134345">134345</a>
-							Problems from CompilationParticipants do not get cleaned up unless there are Java errors
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=133918">133918</a>
-							[1.5][compiler] Duplicate return; in CastExpression line 258
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89347">89347</a>
-							[compiler] public constructor of protected inner class invisible in subclass
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134064">134064</a>
-							[1.5][compiler] Duplicate error messages when an annotation value expects a boolean but gets an array
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198362">198362</a>
+							Formatter stops working when source code contains following line
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109636">109636</a>
+							Comment formatter doesn't support &quot;&amp;#42;/&quot;
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198153">198153</a>
+							[formatter] adds extra space before expanded numerical entity
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=197169">197169</a>
+							Formatter expands &amp;#64; in annotation in javadoc, creating invalid tag
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=186114">186114</a>
+							IMethodBinding.overrides(..) should consider static
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192285">192285</a>
+							[formatter] Java source formatter not working if class has annotation on single line multiple fields declaration.
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196354">196354</a>
+							ClassCastException in package binding
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=166093">166093</a>
+							[search] NPE searching for references to private static method in class file
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198483">198483</a>
+							BuilderTests: need expectingUniqueCompiledClasses method
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198047">198047</a>
+							TestingEnvironment.addProject should support 1.6 compliance
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195802">195802</a>
+							Name clash compile error generated if superclass is abstract
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195468">195468</a>
+							[1.5][compiler] Eclipse compiler differs from javac with generics (name clash)
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194034">194034</a>
+							[1.5][Compiler] Inconsistency with javac: subclass does not properly inherit generic method
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191125">191125</a>
+							[1.5] [assist] NPE in CompletionEngine.proposeType()
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195317">195317</a>
+							[compiler] java.lang.ClassFormatError: Invalid pc in LineNumberTable
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195509">195509</a>
+							Need to improve classpath resolution for Apache Harmony in org/eclipse/jdt/core/tests/util/Util.java
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195526">195526</a>
+							org.eclipse.jdt.core.tests.compiler.regression.GenericTypeTest.test0744 depends on non-specified package-private class HashMap.Entry implementation
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191082">191082</a>
+							AnnotationMirror.getPosition() returns wrong value
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=189799">189799</a>
+							[jsr269] Make getDocComment() behave more like javac
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192774">192774</a>
+							Annotation AST nodes should have unique IAnnotationBindings
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=171703">171703</a>
+							Eclipse cannot find source for *.class files
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191908">191908</a>
+							[1.5][compiler] Missing strike through for deprecated declaration fragment
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192497">192497</a>
+							Cannot always find method definition, depending on cursor position
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194185">194185</a>
+							[search] for package declarations finds also subpackages
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194435">194435</a>
+							JDT Core manifest contains invalid prereqed version
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5147&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.25&amp;content-type=text/html">build notes</a>.			
 			</table>
--->
+
 		</div>
 		<div class="homeitem3col">
 			<a name="SOURCES"></a>
