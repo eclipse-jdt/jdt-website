@@ -306,9 +306,9 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.1 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.1.z20070817-1335.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.1.z20070824-1334.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2007/08/17, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2007/08/24, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
@@ -318,7 +318,19 @@ ob_start();
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Early preview of 3.3.1 rollup. <br>
 						     Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198362">198362</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=183117">183117</a>
+							User Library Lost
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198085">198085</a>
+							Invalid annotation cracks the annotation parsing
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200547">200547</a>
+							[1.5][compiler] Invalid ambiguous error when calling an overriden generic method with MULTIPLE bounds
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198120">198120</a>
+							[1.5][compiler] Cannot directly invoke the abstract method huch(I1) for the type I1
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196254">196254</a>
+							Overrides wrong for wildcard parameterized methods
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193265">193265</a>
+							[1.5][compiler] Incorrect ambiguous method error involving abstract classes and enums
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198362">198362</a>
 							Formatter stops working when source code contains following line
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109636">109636</a>
 							Comment formatter doesn't support &quot;&amp;#42;/&quot;
