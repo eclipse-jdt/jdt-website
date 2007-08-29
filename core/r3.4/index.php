@@ -47,7 +47,24 @@ ob_start();
         For <b>release 3.4</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
         an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>
     <ul>
-    <li><b>To be decided</b>
+	<li><b>Incremental Java Compiler</b>
+	  <ul>
+	    <li>Support for "-target cldc1.0"
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120223">120223</a>)</li>
+	  </ul>
+	</li>
+	<li><b>Java Model</b>
+	  <ul>
+		<li>Support annotations as Java elements
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>)</li>
+	  </ul>
+	</li>
+	<li><b>Search</b>
+	  <ul>
+	    <li>More finegrained options for Java search
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
+	  </ul>
+	</li>
 <!--    
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	  <ul>
@@ -125,7 +142,7 @@ ob_start();
 		</li>
 	  </ul>
 	</li>
-	<li><b>Java Model</b></li>
+	<li><b>Java Model</b>
 	  <ul>
 		<li>Support for exclusion/inclusion filters in libraries
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119419">119419</a>)</li>
@@ -175,18 +192,18 @@ ob_start();
 -->	
 </ul>
 <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.4-Milestone 1 (2007/08/10)</b>, we will mainly focus on bug fixing:</p>
+   For <b>3.4-Milestone 2 (2007/09/21)</b>, we will mainly focus on bug fixing:</p>
       <ul>
 <!--      
         <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> [assist] code assist should propose types even if there's no initial character(s)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">102875</a>)</li>
 -->			
         <li>Bug fixing 
-			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M1&amp;resolution=FIXED">fixed</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M1">all</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M1">unresolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M1">resolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M1">verified</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M2&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M2">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M2">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M2">resolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M2">verified</a>)</li>
       </ul>
 		</div>
 <!--		
