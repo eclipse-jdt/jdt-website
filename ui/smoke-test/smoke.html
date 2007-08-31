@@ -15,7 +15,7 @@
 <body>
 <h1><font face="Arial,Helvetica">Smoke Test - JDT/UI, Text, Search</font></h1>
 
-$Revision: 1.18 $ - $Date: 2007/08/30 10:41:47 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
+$Revision: 1.19 $ - $Date: 2007/08/31 14:10:21 $ - $Source: /cvsroot/org.eclipse/www/jdt/migrate-to-git/ui/smoke-test/smoke.html,v $
 
 <a name="part1"></a>
 <h3>Part 1 (of <a href="#part2">2</a>)</h3>
@@ -267,7 +267,12 @@ JDT{Text, UI}</a> bug
 		<li>editor did <i>not</i> take <i>focus</i></li>
 		</ul>
 	</li>
-	<li>in the Search view click the <b>Show Next Match</b> button (arrow down) to go to the next match</li>
+	<li>turn the Search view into a fast view</li>
+	<li>in the Search view click the <b>Show Next Match</b> button (arrow down) to go to the next match
+		<ul>
+			<li>verify that the search view stays active and open</li>
+		</ul>
+	</li>
     </ul>
     <br>
 </li>
@@ -291,7 +296,7 @@ JDT{Text, UI}</a> bug
 		<li>there are 25 search matches</li>
 		</ul>
 	</li>
-    <li>Go <b>back</b> to the previous (text) search in the Search view</li>
+    <li>switch to the <b>previous</b> (text) search results in the Search view</li>
     </ul>
 </li>
 </ul>
@@ -302,22 +307,14 @@ JDT{Text, UI}</a> bug
 <ul>
 <li><b>Extract Method</b>
   <ul>
-    <li>
-In file <i>junit.swingui.AboutDialog.java</i> at the end of constructor
-      <i>AboutDialog(JFrame parent)</i> select the following lines:<br>
-      <code>constraintsLogo1.gridx = 2; constraintsLogo1.gridy = 0;<br>
-constraintsLogo1.gridwidth = 1; constraintsLogo1.gridheight = 1;<br>
-constraintsLogo1.anchor = GridBagConstraints.CENTER;<br>
-getContentPane().add(logo, constraintsLogo1);<br>
-      </code>
-    </li>
+    <li>open <i>junit.swingui.AboutDialog</i> and select lines 63 to 67 (inclusive)</li>
 	<li><b>Refactor &gt; Extract Method...</b> with <b>Preview &gt;</b></li>
   </ul>
 </li>
 
 <li><b>Rename Method</b>
   <ul>
-    <li>open <i>junit.framework.Test</i> in the Java editor</li>
+    <li>open <i>junit.framework.Test</i></li>
     <li>select <i>Case</i> in the declaration of method <i>countTestCases()</i></li>
     <li><b>Alt+Shift+R</b></li>
     <li><b>Delete</b></li>
@@ -361,7 +358,7 @@ getContentPane().add(logo, constraintsLogo1);<br>
 <li><b>copy <i>runner</i></b> into folder <i>junit</i> (name it <i>runner2</i>)</li>
 <li>compare both folders (context menu: <b>Compare With &gt; Each Other</b>)
 	<ul>
-	<li>Information dialog: <i>There are no differences between the selected inputs</i></li>
+	<li>Information dialog: <i>There are no differences between the selected inputs.</i></li>
 	</ul>
 </li>
 <li>in folder <i>runner2</i> <b>delete file <i>Sorter.java</i></b></li>
