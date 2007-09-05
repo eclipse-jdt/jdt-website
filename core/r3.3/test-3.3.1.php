@@ -59,7 +59,7 @@ ob_start();
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Formatter with exotic characters (Maxime, David)</b>
 <ul>
-<li>ensure that the formatter behaves correctly when the source contains exotic characters (e.g. <code>&#064;</code> in a Javadoc comment)</li>
+<li>ensure that the formatter behaves correctly when the source contains exotic characters (e.g. <pre>&#064;</pre> in a Javadoc comment)</li>
 </ul>
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Search in 1.4 project with 1.5 library(Jerome, Maxime)</b>
