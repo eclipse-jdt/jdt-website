@@ -47,7 +47,7 @@ ob_start();
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Method override testing (Kent, Frederic)</b>
 <ul>
-<li>test various scenarios of method overriding (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=194034"> bug 194034>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=195468"> bug 195468>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=195802"> bug 195802> for example)</li>
+<li>test various scenarios of method overriding (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=194034"> bug 194034</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=195468"> bug 195468</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=195802"> bug 195802</a> for examples)</li>
 </ul>
 <hr size="1" />
 <IMG src="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE border="0" height="16" width="16">&nbsp;<b>Europa (Eric, David)</b>
