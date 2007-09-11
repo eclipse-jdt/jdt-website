@@ -5,7 +5,7 @@
 	# index.php
 	#
 	# Author: 		JDT Core team
-	# Date:			2007-07-02
+	# Date:			2007-09-11
 	#
 	# Description: Type your page comments here - these are not sent to the browser
 	#
@@ -44,152 +44,81 @@ ob_start();
             </p>
 			<a name="release-plan"></a>
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-        For <b>release 3.4</b> the major focus points are listed below. Note that <i>time estimates</i> are only provided as
-        an indication of the amount of work implied; these are our best guess and could be revised while addressing these work items.</p>
+        For <b>release 3.4</b> the major focus points are listed below. Note that <b>items in bold</b> are high priority for 3.4, and
+        <i>items in italic</i> will be investigated time permitting.</p>
     <ul>
-	<li><b>Incremental Java Compiler</b>
+	<li>Java Compiler
 	  <ul>
-	    <li>Support for "-target cldc1.0"
+	    <li><b>Support for "-target cldc1.0"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120223">120223</a>)</li>
-	  </ul>
-	</li>
-	<li><b>Java Model</b>
-	  <ul>
-		<li>Support annotations as Java elements
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>)</li>
-	  </ul>
-	</li>
-	<li><b>Search</b>
-	  <ul>
-	    <li>More finegrained options for Java search
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
-	  </ul>
-	</li>
-<!--    
-	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
-	  <ul>
-		<li>Compiler API (<a href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
-			Require 1.6 JRE libraries. Implementation of compiler API 
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154111">154111</a>) will thus likely be made available as a separate 
-			download.
-	  </ul>
-	</li>
-	<li><b>Incremental Java Compiler</b>
-	  <ul>
-		<li>Compiler may ignore some specific warnings
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156710">156710</a>)</li>
-		<li>Improve compiler fault-tolerance
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156731">156731</a>)</li>
-		<li>Improve option "Unnecessary declaration of thrown checked exceptions"
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>)</li>
-		<li>Null reference analysis: add interprocedural analysis
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126551">126551</a>)</li>
-		<li>Add compiler option to warn overriding methods that do not call super
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156736">156736</a>)</li>
-		<li>Tune the existing checks to avoid false positives:
-		  <ul>
-		  	<li>Null checks
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157154">157154</a>)</li>
-		  	<li>Thrown exceptions
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157155">157155</a>)</li>
-		  	<li>Unused parameter
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157162">157162</a>)</li>
-		  </ul>
-		</li>
 	  </ul>
 	</li>
-	<li><b>DOM AST</b>
+	<li>DOM AST
 	  <ul>
-		<li>Need a more flexible way to create multiple ASTs
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a>)</li>
-		<li>Reconcile should support default AST options
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=124662">(bug 124662)</a>)</li>
-		<li>AST for compilation participants
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=156712">(bug 156712)</a>)</li>
-		<li>Find and create bindings in existing binding environments:
-		  <ul>
-			<li><img src="../progress.gif" height="5" width="14"> Type binding with higher dimension
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148224">bug 148224</a>)</li>
-			<li>Find type binding by name or key
-				(<i>bug to be opened</i>)</li>
-			<li>Create or compose type binding in binding environment of AST
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
-		  </ul>
-		</li>
-		<li>Offer bindings also when some information is missing
-		  <ul>
-			<li>variable bindings when variable type is unresolved
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149567">bug 149567</a>)</li>
-		  </ul>
-		</li>
+	    <li><b>Issue with nested wildcards</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>)</li>
+	    <li><b>Surface intersection types</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>)</li>
 	  </ul>
-	</li>
-	<li><b>Search</b>
+	<li>Build Path
 	  <ul>
-		<li>Get IType from TypeNameRequestor result
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a>)</li>
-		<li>Allow regex in Java search (requires JDK 1.4)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>)</li>
-		<li>Improve Camel Case matching
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109695">109695</a>)</li>
-		<li>More powerful search (Semantic Search / Search templates)
-		  <ul>
-		  	<li><img src="../progress.gif" height="5" width="14"> Code pattern based, e.g. search where synchronized on 'JavaModelManager'
-		  		(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
-			<li>Fine grain options for Java Search
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
-		  </ul>
-		</li>
-	  </ul>
-	</li>
-	<li><b>Java Model</b>
-	  <ul>
-		<li>Support for exclusion/inclusion filters in libraries
+		<li><i>Allow classpath containers to contain containers</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>)</li>
+		<li><i>Binary/virtual projects</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>)</li>
+		<li><i>Exclusion/inclusion filters for libraries</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119419">119419</a>)</li>
-		<li>Allow classpath variable to be marked as deprecated
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">138599</a>)</li>
-		<li>Allow classpath variable to be marked as non modifiable
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156226">156226</a>)</li>
-		<li>Have common supertype for ICompilationUnit and IClassFile
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">125504</a>)</li>
-		<li>Applying edits to a ICompilationUnit
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>)</li>
-		<li>Accessing annotation on Java elements
+	  </ul>
+	</li>
+	<li>Code Assist
+	  <ul>
+	    <li><i>Improve content assist after 'instanceof'</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>)</li>
+	    <li><i>Improve content assist for static members when import missing</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>)</li>
+	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>)</li>
+	    <li><i>Enrich completion context</i> (low priority)
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>)</li>
+	  </ul>
+	</li>
+	<li>Code Formatter
+	  <ul>
+	    <li><b>Formatting should all be done at the core level</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>)</li>
+	  </ul>
+	</li>
+	<li>Javadoc
+	  <ul>
+	    <li><img src="../progress.gif" height="5" width="14">
+	        <i>@link to inner types</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195374">195374</a>)</li>
+	  </ul>
+	<li>Java Model
+	  <ul>
+		<li><b>Support annotations as Java elements</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>)</li>
-		<li>API to get type kind of a CU or class file
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">150393</a>)</li>
-		<li>Java model gives different results
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">129584</a>)</li>
-		<li>Allow containers to contain containers, variables and class folders
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142135">142135</a>)</li>
-		<li>API to create ITypeBinding from type name
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156871">156871</a>)</li>
+		<li><b>Improve NamingConventions</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>)</li>
+		<li><b>Java element delta for all classpath changes</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>)</li>
+		<li><b>API to get from binding key to a IJavaElement</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>)</li>
 	  </ul>
 	</li>
-	<li><b>Code Assist</b>
+	<li>Search
 	  <ul>
-		<li>Improve code assist when import missing
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)</li>
-		<li>Code assist for declarations that are already used later in the code
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>)</li>
-		<li><img src="../progress.gif" height="5" width="14"> Provide code assist context: AST or other way
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">bug 110181</a>)</li>
-		<li>Constructor completion
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">bug 6930</a>)</li>
-		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Improve empty completion
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)</li>
+	    <li><b>More finegrained options for Java search</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
+	    <li><i>Optimization of JavaWorkspaceScope</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>)</li>
+	    <li><i>Text search in Java elements</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=199994">199994</a>)</li>
 	  </ul>
 	</li>
-	<li><b>Code Formatter</b>
-	  <ul>
-		<li><img src="../progress.gif" height="5" width="14">
-			Allow formatting directly from DOM AST by moving infrastructure from  compiler AST to DOM AST
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)
-		<li>each format shifts code inside &lt;pre&gt; one space to the right
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>)
-	  </ul>
-	</li>
--->	
 </ul>
 <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
    For <b>3.4-Milestone 2 (2007/09/21)</b>, we will mainly focus on bug fixing:</p>
