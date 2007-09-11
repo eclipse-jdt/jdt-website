@@ -50,73 +50,73 @@ ob_start();
 	<li>Java Compiler
 	  <ul>
 	    <li><b>Support for "-target cldc1.0"</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120223">120223</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120223">120223</a>) [olivier]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>) [maxime]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
 	  <ul>
 	    <li><b>Issue with nested wildcards</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>) [frederic]</li>
 	    <li><b>Surface intersection types</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>) [frederic]</li>
 	  </ul>
 	<li>Build Path
 	  <ul>
 		<li><i>Allow classpath containers to contain containers</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>) [jerome]</li>
 		<li><i>Binary/virtual projects</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>) [jerome]</li>
 		<li><i>Exclusion/inclusion filters for libraries</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119419">119419</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119419">119419</a>) [jerome (model) & kent (compiler)]</li>
 	  </ul>
 	</li>
 	<li>Code Assist
 	  <ul>
 	    <li><i>Improve content assist after 'instanceof'</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>) [david]</li>
 	    <li><i>Improve content assist for static members when import missing</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>) [david]</li>
 	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>) [david]</li>
 	    <li><i>Enrich completion context</i> (low priority)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
 	  </ul>
 	</li>
 	<li>Code Formatter
 	  <ul>
 	    <li><b>Formatting should all be done at the core level</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
 	  </ul>
 	</li>
 	<li>Javadoc
 	  <ul>
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <i>@link to inner types</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195374">195374</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195374">195374</a>) [eric]</li>
 	  </ul>
 	<li>Java Model
 	  <ul>
 		<li><b>Support annotations as Java elements</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
 		<li><b>Improve NamingConventions</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>) [eric]</li>
 		<li><b>Java element delta for all classpath changes</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
 		<li><b>API to get from binding key to a IJavaElement</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
 	  </ul>
 	</li>
 	<li>Search
 	  <ul>
 	    <li><b>More finegrained options for Java search</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
 	    <li><i>Text search in Java elements</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=199994">199994</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=199994">199994</a>) [frederic]</li>
 	  </ul>
 	</li>
 </ul>
