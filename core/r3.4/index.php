@@ -5,7 +5,7 @@
 	# index.php
 	#
 	# Author: 		JDT Core team
-	# Date:			2007-09-11
+	# Date:			2007-09-12
 	#
 	# Description: Type your page comments here - these are not sent to the browser
 	#
@@ -49,7 +49,7 @@ ob_start();
     <ul>
 	<li>Java Compiler
 	  <ul>
-	    <li><b>Support for "-target cldc1.0"</b>
+	    <li><b>Support for "-target cldc1.1"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120223">120223</a>) [olivier]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
