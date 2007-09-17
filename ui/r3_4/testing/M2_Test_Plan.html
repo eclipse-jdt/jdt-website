@@ -49,7 +49,43 @@ Testers: Benno, Dani, Markus, Martin<br>
   <li>preference page</li>
 </ul>
 
-<h4>Item 2</h4>
+<h4>SWT Templates</h4>FAQ: Benno
+Test all SWT templates (see NnN for a list):
+<ul>
+ <li>Verify that there are no compile error when inserting (i.e. all required imports are added)</li>
+ <li>Verify that templates generate correct code (along the spec)</li>
+ <li>Verify that defaults make sense</li>
+ <li>Test usability</li>
+</ul>
+
+<h4>New template variables</h4>FAQ:Benno
+Test new template variables (i.e. by writing templates for it). The new templates are:
+<ul>
+ <li>var (this is an old one but it has been improved: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=200801">Bug 200801</a>)</li>
+ <li>newType</li>
+ <li>link</li>
+ <li>import</li>
+ <li>importStatic (may not make it into M2)</li>
+</ul>
+Verify that:
+<ul>
+ <li>They all evaluate to expected value</li>
+ <li>Help doc is up-to-date and understandable</li>
+ <li>Hover help (in template editor) is up-to-data and understandable</li>
+ <li>Each variable makes sense (can not be 'emulated' by another variable)</li>
+</ul>
+
+<h4>Test new clean up</h4>FAQ: Benno
+<ul>
+ <li>Test 'Correct Indentation' clean up/save action</li>
+ <li>Test 'Add unimplemented methods' clean up/multi quick fix</li>
+</ul>
+Test in combination with other clean ups/save actions.
+
+<h4>Edit working set dialog</h4>FAQ: Benno
+Test the improved 'Edit Java working set' dialog.
+
+<h4>Item X</h4>
 <ul>
 </ul>
 
