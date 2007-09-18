@@ -12,7 +12,7 @@
 <body>
 <h1>3.4 M2 Test Plan</h1>
 Test day: Tuesday, 2007-09-18<br>
-Test Build: I200709??-????<br>
+Test Build: I20070918-0010<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Benno, Dani, Markus, Martin<br>
 
@@ -29,7 +29,7 @@ Testers: Benno, Dani, Markus, Martin<br>
 
 <h2>Goal</h2>
 <ul>
-  <li>test new functionality added since R3.3</li>
+  <li>test new functionality added since 3.4 M1</li>
   <li>verify that severe bugs are correctly fixed</li>
   <li>sanity check performance</li>
 </ul>
@@ -38,46 +38,46 @@ Testers: Benno, Dani, Markus, Martin<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>New compiler option 'Use Javadoc tags to avoid unused thrown exception' FAQ: Martin</h4>
+<h4>New compiler option 'Use Javadoc tags to avoid unused thrown exception' (Markus, Benno - FAQ: Martin)</h4>
 <ul>
   <li>preference page</li>
   <li>quick fix</li>
 </ul>
 
-<h4>New compiler option 'CLDC 1.1' (generated class file compatibility) FAQ: Martin</h4>
+<h4>New compiler option 'CLDC 1.1' (generated class file compatibility) (Dani, Benno - FAQ: Martin)</h4>
 <ul>
   <li>preference page</li>
 </ul>
 
-<h4>New Quick Assists FAQ: Martin</h4>
+<h4>New Quick Assists (Benno, Markus - FAQ: Martin)</h4>
 <ul>
   <li>Create getter setter on field</li>
-  <li>Extract method on expresion</li>
+  <li>Extract method on expression</li>
   <li>Assign to local/field with missing semicolon (bug 200362)</li>
 </ul>
 
-<h4>New Quick Fixes FAQ: Martin</h4>
+<h4>New Quick Fixes (Dani, Benno - FAQ: Martin)</h4>
 <ul>
   <li>Add Javadoc tag for unused parameter</li>
   <li>Add Javadoc tag for unnecessary thrown exception</li>
   <li>Add abstract method in enum constant body (bug 102590)</li>
 </ul>
 
-<h4>New 'classpath fix' extension point FAQ: Martin</h4>
+<h4>New 'classpath fix' extension point (Dani, Markus - FAQ: Martin)</h4>
 <ul>
   <li>Fix unresolved imports with quick fix(> should give you PDE suggestion in PDE project)</li>
   <li>Create JUnit test case without JUnit on classpath</li>
 </ul>
 
-<h4>Colored labels in Occurrences search FAQ: Martin</h4>
+<h4>Colored labels in Occurrences search (Benno, Dani - FAQ: Martin)</h4>
 <ul>
   <li>Test on different platform</li>
   <li>Test color preferences</li>
 </ul>
 
 
-<h4>SWT Templates FAQ: Benno</h4>
-Test all SWT templates (see NnN for a list):
+<h4>SWT Templates (Martin, Markus - FAQ: Benno)</h4>
+Test all SWT templates (see New & Noteworthy for a list):
 <ul>
  <li>Verify that there are no compile error when inserting (i.e. all required imports are added)</li>
  <li>Verify that templates generate correct code (along the spec)</li>
@@ -85,7 +85,7 @@ Test all SWT templates (see NnN for a list):
  <li>Test usability</li>
 </ul>
 
-<h4>New template variables FAQ:Benno</h4>
+<h4>New template variables (Markus, Martin - FAQ: Benno)</h4>
 Test new template variables. The new template variables are:
 <ul>
  <li>var (this is an old one but it has been improved: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=200801">Bug 200801</a>)</li>
@@ -102,19 +102,25 @@ Verify that:
  <li>Each variable makes sense (can not be 'emulated' by another variable)</li>
 </ul>
 
-<h4>Test new clean up FAQ: Benno</h4>
+<h4>Test new clean up (Martin, Dani - FAQ: Benno)</h4>
 <ul>
  <li>Test 'Correct Indentation' clean up/save action</li>
  <li>Test 'Add unimplemented methods' clean up/multi quick fix</li>
 </ul>
 Test in combination with other clean ups/save actions.
 
-<h4>Edit working set dialog FAQ: Benno</h4>
+<h4>Edit working set dialog (Markus, Martin - FAQ: Benno)</h4>
 Test the improved 'Edit Java working set' dialog.
 
-<h4>Item X</h4>
+<h4>Test insertion/sorting of new entries by the Externalize Strings wizard (Martin, Dani - FAQ: Benno)</h4>
+For details see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=197999">bug 197999</a>.
+
+<h4>Content Assist (Benno, Martin - FAQ: Dani)</h4>
 <ul>
+ <li>verify that parameter hints work for abstract constructors</li>
+ <li>verify that filtering correctly works even if a proposal only implements <code>ICompletionProposal</code> (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=202918">bug 202918</a>)</li>
 </ul>
+
 
 <h2>Bug Verification</h2>
 <em>Before starting to verify a bug add a comment indicating
