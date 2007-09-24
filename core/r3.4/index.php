@@ -54,6 +54,9 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>) [maxime]</li>
+	    <li><img src="../progress.gif" height="5" width="14">
+	        <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
