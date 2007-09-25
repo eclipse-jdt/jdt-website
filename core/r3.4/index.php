@@ -107,7 +107,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
 		<li><b>Improve NamingConventions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>) [eric]</li>
-		<li><b>Java element delta for all classpath changes</b>
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+		    <b>Java element delta for all classpath changes</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
 		<li><b>API to get from binding key to a IJavaElement</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
