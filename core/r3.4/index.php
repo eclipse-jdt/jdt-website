@@ -42,7 +42,7 @@ ob_start();
 			   to be delivered according to the <a href="http://www.eclipse.org/eclipse/platform-releng/buildSchedule.html">build
                schedule</a>.<br>
             </p>
-			<a name="release-plan"></a>
+     <a name="release-plan"></a>
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
         For <b>release 3.4</b> the major focus points are listed below. Note that <b>items in bold</b> are high priority for 3.4, and
         <i>items in italic</i> will be investigated time permitting.</p>
@@ -124,9 +124,12 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=199994">199994</a>) [frederic]</li>
 	  </ul>
 	</li>
-</ul>
-<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-   For <b>3.4-Milestone 3 (2007/11/02)</b>, we will mainly focus on:</p>
+	</ul>
+	</p>
+	
+     <a name="milestone-plan"></a>
+     <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+           For <b>3.4-Milestone 3 (2007/11/02)</b>, we will mainly focus on:</p>
       <ul>
 	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
