@@ -138,6 +138,7 @@ ob_start();
 		<li><b>Support annotations as Java elements</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
 		<li><b>Java element delta for all classpath changes</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
 	    <li>Investigate <b>More finegrained options for Java search</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
         <li>Bug fixing 
