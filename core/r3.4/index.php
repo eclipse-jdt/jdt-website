@@ -79,9 +79,11 @@ ob_start();
 	</li>
 	<li>Code Assist
 	  <ul>
-	    <li><i>Improve content assist after 'instanceof'</i>
+	    <li><img src="../progress.gif" height="5" width="14">
+	        <i>Improve content assist after 'instanceof'</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>) [david]</li>
-	    <li><i>Improve content assist for static members when import missing</i>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <i>Improve content assist for static members when import missing</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>) [david]</li>
 	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>) [david]</li>
@@ -103,7 +105,8 @@ ob_start();
 	  </ul>
 	<li>Java Model
 	  <ul>
-		<li><b>Support annotations as Java elements</b>
+		<li><img src="../progress.gif" height="5" width="14">
+		    <b>Support annotations as Java elements</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
 		<li><b>Improve NamingConventions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>) [eric]</li>
@@ -116,7 +119,8 @@ ob_start();
 	</li>
 	<li>Search
 	  <ul>
-	    <li><b>More finegrained options for Java search</b>
+	    <li><img src="../progress.gif" height="5" width="14">
+	        <b>More finegrained options for Java search</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
