@@ -91,7 +91,7 @@ be run headless.</p>
 </ul>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Maintenance</b></p>
 <ul>
-  <li> Rollup 3.2.2 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
+  <li> Rollup 3.2.2 available on the <a href=" http://archive.eclipse.org/eclipse/downloads">download</a> area.
   </li>
   <li> Latest information on further maintenance is available <a href="r3.2/index.php#maintenance">here</a>.
   </li>
