@@ -58,6 +58,10 @@ ob_start();
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
+	    <li><i>Need annotation bindings even when code contains errors</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
+	    <li><i>Add CompilationParticipant.buildComplete() API</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=180107">180107</a>) [kent]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -66,6 +70,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>) [frederic]</li>
 	    <li><b>Surface intersection types</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>) [frederic]</li>
+	    <li><i>Don't surface unresolved types</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=187430">187430</a>) [frederic]</li>
 	  </ul>
 	<li>Build Path
 	  <ul>
