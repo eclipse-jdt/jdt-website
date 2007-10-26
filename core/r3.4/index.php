@@ -60,8 +60,43 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	    <li><i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
-	    <li><i>Add CompilationParticipant.buildComplete() API</i>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Add CompilationParticipant.buildComplete() API</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=180107">180107</a>) [kent]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <b>Improve support for generics</b>
+	        <ul>
+		        <li><b>capture semantics</b>
+					(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159214">159214</a>, 
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203318">203318</a>, 
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202404 ">202404 </a>) [philippe]</li>
+		        <li><b>method override semantics</b>
+					(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202830">202830</a>) [kent]</li>
+		        <li><b>stricten cast rules</b>
+					(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=165352">165352</a>, 
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=90437">90437</a>, 
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89940 ">89940 </a>,
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=158870 ">158870 </a>,
+					 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=120088  ">120088  </a>) [philippe]</li>
+			</ul>
+			</li>	
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Tune warning for missing serialVersionUID</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203241">203241</a>) [olivier]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Enable null-pointer access warning by default</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192875">192875</a>) [maxime]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Improve compiler fault resilience</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196653">196653</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204536">204536</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204534">204534</a>) [philippe, kent]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Augment warning for assignment having no effect</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200724">200724</a>) [maxime]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Improve 1.6 code generation performance</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=185350">185350</a>) [olivier]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -85,7 +120,7 @@ ob_start();
 	</li>
 	<li>Code Assist
 	  <ul>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <i>Improve content assist after 'instanceof'</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>) [david]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
@@ -93,7 +128,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>) [david]</li>
 	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>) [david]</li>
-	    <li><i>Enrich completion context</i> (low priority)
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<i>Enrich completion context</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
 	  </ul>
 	</li>
@@ -105,13 +141,20 @@ ob_start();
 	</li>
 	<li>Javadoc
 	  <ul>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <i>@link to inner types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195374">195374</a>) [eric]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Error reporting tuning</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=125518">125518</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=86769">86769</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=168849">168849</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192449">192449</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73352">73352</a>) [eric]</li>
 	  </ul>
 	<li>Java Model
 	  <ul>
-		<li><img src="../progress.gif" height="5" width="14">
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Support annotations as Java elements</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
 		<li><b>Improve NamingConventions</b>
@@ -121,10 +164,28 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
 		<li><b>API to get from binding key to a IJavaElement</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Improve Java model caching heuristic to better handle large JARs</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=190094">190094</a>) [jerome]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Improve "Initializing Java Tooling" job performance</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=206027">206027</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=181488">181488</a>) [jerome, frederic]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Honor build path when looking up working copies</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=169970">169970</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194399">194399</a>) [jerome]</li>
 	  </ul>
 	</li>
 	<li>Search
 	  <ul>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>CamelCase tuning</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109695">109695</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=201064">201064</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200400">200400</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=124624">124624</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=201426">201426</a>) [frederic]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <b>More finegrained options for Java search</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
