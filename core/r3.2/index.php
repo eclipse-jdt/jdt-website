@@ -499,12 +499,12 @@ ob_start();
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.2.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2007/01/26, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2007/10/26, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
             <td valign="top"><a href="../patches/ecj_3.2.2src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2007/01/26, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2007/10/26, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.3.z20070704-1754.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.3.z20071026-1526.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2007/07/04, 6.99 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2007/10/26, 6.98 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -530,7 +530,9 @@ ob_start();
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
             				Plug-in revision ID is "3.2.3".<br>
                              Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154984">154984</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193210">193210</a>
+							[1.5][compiler] Internal compiler error java.lang.NullPointerException
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154984">154984</a>
 							Jars in library not recognized sometimes.
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=162054">162054</a>
 							[build] Got a failure on MultiProjectTests.testCycle5 on my speedy test box...
