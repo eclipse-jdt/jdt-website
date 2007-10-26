@@ -281,22 +281,21 @@ ob_start();
 			   quality assessment. If you find any regression using these patches, please inform the JDT/Core team by entering a 
 			   <a href="http://dev.eclipse.org/bugs/">bug report</a>
 			</p>
-<!--
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3RC3.jar">
+			<td valign="top"><a href="../patches/ecj_3.3.2.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2006/05/09, 1,24 MB (click on picture)</td>
+			<td valign="top">posted on 2007/10/26, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2006/05/09, 1,0 MB (click on picture)</td>
+			<td valign="top">posted on 2007/10/26, 1,06 MB (click on picture)</td>
            </tr>         
            <tr>
 			<td valign="top"><i>extracted from</i></td>
-			<td valign="top">build 3.3RC3</td>
+			<td valign="top">build 3.3</td>
           </tr>
           </tr>
 	  </table>
@@ -304,80 +303,44 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.1 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.1.z20070824-1334.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071026-1633.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2007/08/24, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2007/10/26, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
-			<td valign="top">Release 3.3</td>
+			<td valign="top">Rollup 3.3.1</td>
           </tr>
           <tr>
 			<td valign="top"><i>description</i> </td>
-			<td valign="top">Early preview of 3.3.1 rollup. <br>
+			<td valign="top">Early preview of 3.3.2 rollup. <br>
 						     Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=183117">183117</a>
-							User Library Lost
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198085">198085</a>
-							Invalid annotation cracks the annotation parsing
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200547">200547</a>
-							[1.5][compiler] Invalid ambiguous error when calling an overriden generic method with MULTIPLE bounds
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198120">198120</a>
-							[1.5][compiler] Cannot directly invoke the abstract method huch(I1) for the type I1
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196254">196254</a>
-							Overrides wrong for wildcard parameterized methods
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193265">193265</a>
-							[1.5][compiler] Incorrect ambiguous method error involving abstract classes and enums
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198362">198362</a>
-							Formatter stops working when source code contains following line
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109636">109636</a>
-							Comment formatter doesn't support &quot;&amp;#42;/&quot;
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198153">198153</a>
-							[formatter] adds extra space before expanded numerical entity
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=197169">197169</a>
-							Formatter expands &amp;#64; in annotation in javadoc, creating invalid tag
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=186114">186114</a>
-							IMethodBinding.overrides(..) should consider static
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192285">192285</a>
-							[formatter] Java source formatter not working if class has annotation on single line multiple fields declaration.
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196354">196354</a>
-							ClassCastException in package binding
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=166093">166093</a>
-							[search] NPE searching for references to private static method in class file
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198483">198483</a>
-							BuilderTests: need expectingUniqueCompiledClasses method
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=198047">198047</a>
-							TestingEnvironment.addProject should support 1.6 compliance
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195802">195802</a>
-							Name clash compile error generated if superclass is abstract
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195468">195468</a>
-							[1.5][compiler] Eclipse compiler differs from javac with generics (name clash)
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194034">194034</a>
-							[1.5][Compiler] Inconsistency with javac: subclass does not properly inherit generic method
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191125">191125</a>
-							[1.5] [assist] NPE in CompletionEngine.proposeType()
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195317">195317</a>
-							[compiler] java.lang.ClassFormatError: Invalid pc in LineNumberTable
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195509">195509</a>
-							Need to improve classpath resolution for Apache Harmony in org/eclipse/jdt/core/tests/util/Util.java
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=195526">195526</a>
-							org.eclipse.jdt.core.tests.compiler.regression.GenericTypeTest.test0744 depends on non-specified package-private class HashMap.Entry implementation
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191082">191082</a>
-							AnnotationMirror.getPosition() returns wrong value
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=189799">189799</a>
-							[jsr269] Make getDocComment() behave more like javac
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192774">192774</a>
-							Annotation AST nodes should have unique IAnnotationBindings
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=171703">171703</a>
-							Eclipse cannot find source for *.class files
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=191908">191908</a>
-							[1.5][compiler] Missing strike through for deprecated declaration fragment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192497">192497</a>
-							Cannot always find method definition, depending on cursor position
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194185">194185</a>
-							[search] for package declarations finds also subpackages
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194435">194435</a>
-							JDT Core manifest contains invalid prereqed version
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207441">207441</a>
+							Wrong delta for files created in folders that are on a java project as classes folder
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193210">193210</a>
+							[1.5][compiler] Internal compiler error java.lang.NullPointerException
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=205860">205860</a>
+							ASTParser.createBindings() returns [null]
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202404">202404</a>
+							[1.5][compiler] Incorrect handling of type variable bounds issued by capture conversion
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159214">159214</a>
+							[1.5] [compiler] Eclipse compiler wildcard bug
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203318">203318</a>
+							[1.5][compiler] Improper capture of wildcard with lesser bound than parameter 
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=169049">169049</a>
+							[1.5][compiler] Bogus bound mismatch errors
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203905">203905</a>
+							[1.5][compiler] shows wrong error with generics
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203061">203061</a>
+							[compiler] Uninitialized member variables used in nonstatic initializers of peer members don't trigger compilation error 
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204624">204624</a>
+							[1.5][compiler] No error on abstract method implementation with missing parameter generics
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203662">203662</a>
+							Perf: Unnecessary compilation when package added to second source root
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204652">204652</a>
+							&quot;Open Type&quot;: ClassCastException in conjunction with a class folder
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200158">200158</a>
+							[compiler] inconsistent handling of unreachable code
 							<br>
 						     Also see corresponding 
 						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.25&amp;content-type=text/html">build notes</a>.			
