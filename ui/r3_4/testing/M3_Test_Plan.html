@@ -49,10 +49,42 @@ Test Format only changed lines.
 <h4>Rename nls key renames in properties file ( - FAQ: Benno)</h4>
 Test the rename of property accessor field does also rename the corresponding key in the corresponding properties file.
 
+<h4>Highlighting numbers in Java code</h4>
+Verify that the various number formats get their own color and that changing the preference works.
+
+<h4>Content assist for static members when import missing</h4>
+Add fields, methods and inner types to not yet imported type.
+<ul>
+	<li>verify that all static members appear and</li>
+	<li>verify that imports are correctly added or the type fully-qualified (test with both settings)</li>
+</ul>
+
+<h4>Content assist for variables after instanceof</h4>
+See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">bug 193909</a> for details and the supported cases.
+
+<h4>Javadoc hover shows constant value</h4>
+Test that the hover shows the constant value where possible and that the hex value is correct.
+
+<h4>Toggle Comment action for the Properties File editor</h4>
+Test adding and removing comments in the Properties File editor.
+<ul>
+	<li>verify that the action is in the context menu</li>
+	<li>verify that the key binding works</li>
+</ul>
+<h4>Test Printing Improvements</h4>
+Test the following printing support improvements:
+<ul>
+	<li>line numbers are now printed if enabled in the editor</li>
+	<li>background color is no longer printed</li>
+	<li>each page shows the file name in the header</li>
+	<li>each page shows the current page number in the footer</li>
+	<li>the print job gets a meaningful name</li>
+</ul>
+
 <h4>Search toolbar drop down ( - FAQ: Martin)</h4>
 <ul>
  <li>Test that no early plug-in loading happens/li>
- <li>Test behaviour</li>
+ <li>Test behavior</li>
 </ul>
 
 <h4>Navigator and project explorer use rename/move and delete participants ( - FAQ: Martin)</h4>
@@ -85,5 +117,6 @@ that you are about to verify it.</em>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.4%20M3&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
   Platform Text and Search bugs blocker/critical/major, 3.4 M3</a></li>
 </ul>
+
 
 </body></html>
