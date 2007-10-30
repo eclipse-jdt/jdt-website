@@ -12,7 +12,7 @@
 <body>
 <h1>3.4 M3 Test Plan</h1>
 Test day: Tuesday, 2007-10-30<br>
-Test Build: I200710??-????<br>
+Test Build: I20071030-0010<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Benno, Dani, Markus, Martin<br>
 
@@ -38,7 +38,7 @@ Testers: Benno, Dani, Markus, Martin<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Format changed lines ( - FAQ: Benno)</h4>
+<h4>Format changed lines (Markus, Dani - FAQ: Benno)</h4>
 Test Format only changed lines. 
 <ul>
  <li>Test in combination with other save actions</li>
@@ -46,32 +46,32 @@ Test Format only changed lines.
  <li>Test performance</li>
 </ul>
 
-<h4>Rename nls key renames in properties file ( - FAQ: Benno)</h4>
+<h4>Rename NLS key renames in properties file (Markus, Dani - FAQ: Benno)</h4>
 Test the rename of property accessor field does also rename the corresponding key in the corresponding properties file.
 
-<h4>Highlighting numbers in Java code</h4>
+<h4>Highlighting numbers in Java code (Martin, Benno - FAQ: Dani)</h4>
 Verify that the various number formats get their own color and that changing the preference works.
 
-<h4>Content assist for static members when import missing</h4>
+<h4>Content assist for static members when import missing (Benno, Martin- FAQ: Dani)</h4>
 Add fields, methods and inner types to not yet imported type.
 <ul>
 	<li>verify that all static members appear and</li>
 	<li>verify that imports are correctly added or the type fully-qualified (test with both settings)</li>
 </ul>
 
-<h4>Content assist for variables after instanceof</h4>
+<h4>Content assist for variables after instanceof (Benno, Martin - FAQ: Dani)</h4>
 See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">bug 193909</a> for details and the supported cases.
 
-<h4>Javadoc hover shows constant value</h4>
+<h4>Javadoc hover shows constant value (Benno, Markus - FAQ: Dani)</h4>
 Test that the hover shows the constant value where possible and that the hex value is correct.
 
-<h4>Toggle Comment action for the Properties File editor</h4>
+<h4>Toggle Comment action for the Properties File editor (Martin, Benno - FAQ: Dani)</h4>
 Test adding and removing comments in the Properties File editor.
 <ul>
 	<li>verify that the action is in the context menu</li>
 	<li>verify that the key binding works</li>
 </ul>
-<h4>Test Printing Improvements</h4>
+<h4>Test Printing Improvements (Martin, Benno - FAQ: Dani)</h4>
 Test the following printing support improvements:
 <ul>
 	<li>line numbers are now printed if enabled in the editor</li>
@@ -81,26 +81,26 @@ Test the following printing support improvements:
 	<li>the print job gets a meaningful name</li>
 </ul>
 
-<h4>Search toolbar drop down ( - FAQ: Martin)</h4>
+<h4>Search toolbar drop down (Dani, Markus - FAQ: Martin)</h4>
 <ul>
- <li>Test that no early plug-in loading happens/li>
+ <li>Test that no early plug-in loading happens</li>
  <li>Test behavior</li>
 </ul>
 
-<h4>Navigator and project explorer use rename/move and delete participants ( - FAQ: Martin)</h4>
+<h4>Navigator and project explorer use rename/move and delete participants (Markus, Dani - FAQ: Martin)</h4>
 <ul>
  <li>Test that it works as expected</li>
  <li>Test with pessimistic team provider</li>
  <li>Test Undo</li> 
 </ul>
 
-<h4>Search line matches ( - FAQ: Martin)</h4>
+<h4>Search line matches (Dani, Markus - FAQ: Martin)</h4>
 <ul>
  <li>Multiple matches on a line</li>
  <li>Look at corner cases and decide if more support is required (multi line matches, long lines)</li>
 </ul>
 
-<h4>Call Hierarchy ( - FAQ: Markus)</h4>
+<h4>Call Hierarchy (Dani, Martin - FAQ: Markus)</h4>
 <ul>
   <li>Test caller hierarchy started on fields, types (are "called" by their constructors),
     and instance initializers (are called by all constructors).
