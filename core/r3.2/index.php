@@ -516,7 +516,7 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.3.z20071102-1543.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.4.z20071102-1859.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
             <td valign="top">posted on 2007/11/02, 6.99 MB (click on picture), sources included</td>
           </tr>
@@ -528,7 +528,7 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.3 build. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.2.3".Corresponding sources are versionned using tag
+            				Plug-in revision ID is "3.2.4".Corresponding sources are versionned using tag
 							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_686a_R32x">v_686a_R32x</a>
 							<br>
                             Addresses the following issues (since 3.2.2): <br>
@@ -570,7 +570,7 @@ ob_start();
 							NullPointerException in BindingKeyResolver.consumeTypeVariable(...)         
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.104&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.105&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
