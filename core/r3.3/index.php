@@ -303,7 +303,7 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.1 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071026-1633.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071102-1627.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
 			<td valign="top">posted on 2007/10/26, 7.17 MB (click on picture)</td>
           </tr>
@@ -314,8 +314,15 @@ ob_start();
           <tr>
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Early preview of 3.3.2 rollup. <br>
-						     Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207441">207441</a>
+            				Plug-in revision ID is "3.3.2".Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_783a_R33x">v_783a_R33x</a>
+							<br>
+						    Addresses the following issues: <br>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207573">207573</a>
+							[1.5][compiler] Internal compiler error: ClassCastException / ArrayBinding
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208263">208263</a>
+							[ast rewrite] performance problems with lots of changes
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207441">207441</a>
 							Wrong delta for files created in folders that are on a java project as classes folder
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193210">193210</a>
 							[1.5][compiler] Internal compiler error java.lang.NullPointerException
@@ -343,7 +350,7 @@ ob_start();
 							[compiler] inconsistent handling of unreachable code
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.25&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.52&amp;content-type=text/html">build notes</a>.			
 			</table>
 
 		</div>
