@@ -523,7 +523,7 @@ please inform the JDT/Core team by entering a <a
       <table>
           <tr>
             <td valign="top"><a
- href="../patches/org.eclipse.jdt.core_3.1.2.zip"><img
+ href="../patches/org.eclipse.jdt.core_3.1.3.zip"><img
  src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
             <td valign="top">posted on 2007/11/02, 6,258 KB (click on
 picture)</td>
