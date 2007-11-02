@@ -203,24 +203,26 @@ ob_start();
 	
      <a name="milestone-plan"></a>
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-           For <b>3.4-Milestone 3 (2007/11/02)</b>, we will mainly focus on:</p>
+           For <b>3.4-Milestone 4 (2007/12/14)</b>, we will mainly focus on:</p>
       <ul>
 	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
-	    <li>Investigate <i>Improve content assist after 'instanceof'</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193909">193909</a>) [david]</li>
-		<li><b>Support annotations as Java elements</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
-		<li><b>Java element delta for all classpath changes</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
-	    <li>Investigate <b>More finegrained options for Java search</b>
+	    <li>Investigate <i>Enrich completion context</i> (low priority)
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
+		<li><b>API to get from binding key to a IJavaElement</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
+		<li>Investigate <i>Allow classpath containers to contain containers</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>) [jerome]</li>
+	    <li><b>More finegrained options for Java search</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
+	    <li>Investigate <b>Formatting should all be done at the core level</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
         <li>Bug fixing 
-			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M3&amp;resolution=FIXED">fixed</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M3">all</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M3">unresolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M3">resolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M3">verified</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M4&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">resolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">verified</a>)</li>
       </ul>
 		</div>
 <!--		
