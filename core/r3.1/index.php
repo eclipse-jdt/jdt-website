@@ -539,7 +539,7 @@ This patch can be applied by expanding the zip archive into the <code>&lt;instal
 directory. Be sure to move the src zip files to the proper source
 project.
             <br>
-Plug-in revision ID is "3.1.2". Corresponding sources are versioned
+Plug-in revision ID is "3.1.3". Corresponding sources are versioned
 using tag <a
  href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_585b_R31x">v_585b_R31x</a>
             <br>
@@ -571,7 +571,7 @@ Code formatter doesn't format properly empty enums
 [1.5][compiler] Access rules don't apply to generic types
 <br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=123721">123721</a>
 two types of 'remove' for TODO task tags
-<br></font>Also see corresponding <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.169&content-type=text/html">
+<br></font>Also see corresponding <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.170&content-type=text/html">
 build notes</a>.
             </td>
           </tr>
