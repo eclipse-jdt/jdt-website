@@ -137,7 +137,8 @@ ob_start();
 	  <ul>
 	    <li><b>Formatting should all be done at the core level</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
-	    <li><b>Allow to format set of regions</b>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	    	<b>Allow to format set of regions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203304">203304</a>) [olivier]</li>
 	  </ul>
 	</li>
