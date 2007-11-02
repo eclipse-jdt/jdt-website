@@ -525,7 +525,7 @@ please inform the JDT/Core team by entering a <a
             <td valign="top"><a
  href="../patches/org.eclipse.jdt.core_3.1.2.zip"><img
  src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2006/03/01, 6,258 KB (click on
+            <td valign="top">posted on 2007/11/02, 6,258 KB (click on
 picture)</td>
           </tr>
           <tr>
@@ -541,11 +541,15 @@ project.
             <br>
 Plug-in revision ID is "3.1.2". Corresponding sources are versioned
 using tag <a
- href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_585a_R31x">v_585a_R31x</a>
+ href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_585b_R31x">v_585b_R31x</a>
             <br>
 Addresses the following issues:<font size="-1">
             <br>
-<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97693">97693</a>
+<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208263">208263</a>
+[ast rewrite] performance problems with lots of changes
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=166977">166977</a>
+[vista] Unexpected errors while running JDT/Core tests
+<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97693">97693</a>
 [1.5][compiler] Unchecked generic cast gives false compiler error.
 <br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=122987">122987</a>
 [1.5][compiler] Boxing conversion should be performed in conditional expression
@@ -567,6 +571,8 @@ Code formatter doesn't format properly empty enums
 [1.5][compiler] Access rules don't apply to generic types
 <br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=123721">123721</a>
 two types of 'remove' for TODO task tags
+<br></font>Also see corresponding <a href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.4432.2.169&content-type=text/html">
+build notes</a>.
             </td>
           </tr>
       </table> 
