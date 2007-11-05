@@ -74,7 +74,7 @@ function traverseLinkifyBugs(node) {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised 15:38 CEST November 2, 2007</p>
+    <p>Last revised 18:30 CEST November 5, 2007</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -139,7 +139,7 @@ function traverseLinkifyBugs(node) {
 		
 		<li><h4>API to be moved to other components [<a href="#2">2</a>]</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"><Style:committed>colored labels (bug 188333)</Style:committed></li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> <Style:committed>colored labels (bug 188333)</Style:committed></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>make new projects WorkingSetConfigurationBlock API and push down to platform (bug 199904)</Style:committed></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>Move/Rename and Delete resource to LTK so the can be used by Plaform/UI (bug 206064)</Style:committed></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> FilteredTypesSelectionDialog mixes 2 versions of SearchPattern (bug 176017)</li>
@@ -148,7 +148,7 @@ function traverseLinkifyBugs(node) {
 		
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><Style:committed>leverage rich hovers from Platform Text, e.g.:</Style:committed>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> <Style:committed>leverage rich hovers from Platform Text, e.g.:</Style:committed>
 			<ul>
 				<li>to provide links to preference pages</li>
 				<li>provide hint where quick assist/fix is available</li>
@@ -175,7 +175,7 @@ function traverseLinkifyBugs(node) {
 		
 		<li><h4>Call Hierarchy [<a href="#2">2</a>]</h4>
 		<ul>
-			<li>provide more starting points: start on fields, types, constructors (default for anonymous, e.g Runnables), static methods</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide more starting points: start on fields, types, constructors (default for anonymous, e.g Runnables), static methods</li>
 		</ul>
 		
 		<li><h4>Type Hierarchy [<a href="#2">2</a>]</h4>
@@ -198,15 +198,16 @@ function traverseLinkifyBugs(node) {
 		<ul>
 			<li>show test running time (bug 102236)</li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> double clicking a failed JUnit test should show the failing JUnit assertion (bug 68738)</li>
+			<li>track rename of Junit 4 bundle to org.junit (bug 153429)</li>
 		</ul>
 
 
 	  <li><h4>Content Assist [<a href="#2">2</a>]</h4>
 	    <ul>
-		  <li><Style:committed>improve handling of constructor proposals</Style:committed></li>
 		  <li><Style:committed>indicate match in proposal list (similar to Ctrl+3)</Style:committed></li>
 		  <li><Style:committed>enable navigation key bindings in proposal list (bug 140550)</Style:committed></li>
-		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> improve content assist after <code>instanceof<code> (193909)</li>
+		  <li>improve handling of constructor proposals (depends on JDT Core bug 6930)</li>
+		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> improve content assist after <code>instanceof</code> ( bug 193909)</li>
 		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> support code assist for static members when import missing (bug 205723)</li>
 	    </ul>
 	  </li>
@@ -264,55 +265,62 @@ function traverseLinkifyBugs(node) {
 
 
 <tr>
-    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M3 (2007-11-2)</font></font></td>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M4 (2007-12-14)</font></font></td>
 </tr>
 
   <tr> 
     <td WIDTH="100%">
-	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M3 Plan</a>.</p>
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M4 Plan</a>.</p>
 
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
-	<ul>
-		<li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> 3.3.2 bug fixing</li>
-	</ul>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> 3.3.2 bug fixing</li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><Style:committed>method refactorings should support participants (bug 89422)</Style:committed></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>track rename of Junit 4 bundle to org.junit (bug 153429)</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li>investigate and fix organize import performance regression</li>
+			<li>setup local performance testing</li>
+			<li>investigate creation of YourKit performance trace dumps</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+	    <ul>
+		  <li><Style:committed>add better support for the @inheritDoc tag</Style:committed>
+		  <ul>
+		  	<li>hover</li>
+		  	<li>content assist</li>
+		  	<li>syntax coloring</li>
+		  </ul>
+		  </li>
+		  <li><Style:committed>revisit showing markers <em>and</em> temporary problems together in the vertical ruler</Style:committed>
+		      <br>&rArr; we might want to only show the actual temporary problems (if this feature is enabled)
+		  </li>
+		  <li><Style:committed>emphasize write access over read access in mark occurrences with a different color</Style:committed></li>
+		</ul>
+
 	
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API</h4>
-	<ul>
-				<li><img src="../images/ok.gif" border="0" height="10" width="10"> Move/Rename and Delete resource to LTK so the can be used by Plaform/UI (bug 206064)</li>
-	</ul>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
 	
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Clean Up [<a href="#3">3</a>]</h4>
-	<ul>
-		<li><img src="../images/ok.gif" border="0" height="10" width="10"> only format edited lines on save (bug 201063)</li>
-	</ul>
-	
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#2">2</a>]</h4>
-	<ul>
-		<li><img src="../images/ok.gif" border="0" height="10" width="10"> improve content assist after <code>instanceof<code> (193909)</li>
-		<li><img src="../images/ok.gif" border="0" height="10" width="10"> support code assist for static members when import missing (bug 205723)</li>
-	</ul>
-	
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit</h4>
-	<ul>
-		<li><img src="../images/ok.gif" border="0" height="10" width="10"> double clicking a failed JUnit test should show the failing JUnit assertion (bug 68738)</li>
-	</ul>
-	
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
-      <ul>
-        <li><a href="testing/M3_Test_Plan.html">test plan</a> for the 3.4 M3 test pass.</li>
-      </ul>
       
-	<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
-	<ul>
-		<li>bugzilla inbox tracking</li>
-		<li>bug fixing</li>
-		<li>watch performance tests</li>
-		<li>increase correctness test coverage</li>
-	</ul>
-	
-      
-	<h3>Previous Milestones</h3>
-	<p>Previous 3.4 milestones can be reviewed <a href="previous_plans.php">here</a>.</p>
+		<h3>Previous Milestones</h3>
+		<p>Previous 3.4 milestones can be reviewed <a href="previous_plans.php">here</a>.</p>
 	</td>
 </tr>
 
