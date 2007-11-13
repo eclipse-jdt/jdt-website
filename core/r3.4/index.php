@@ -60,6 +60,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	    <li><i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
+	    <li><b>Improve syntax recovery around annotations</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130778">130778</a>) [david]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Add CompilationParticipant.buildComplete() API</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=180107">180107</a>) [kent]</li>
@@ -140,6 +142,8 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Allow to format set of regions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203304">203304</a>) [olivier]</li>
+	    <li><b>Tune up region formatting</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208541">208541</a>) [eric]</li>
 	  </ul>
 	</li>
 	<li>Javadoc
@@ -207,6 +211,8 @@ ob_start();
       <ul>
 	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
+	    <li><b>Improve syntax recovery around annotations</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130778">130778</a>) [david]</li>
 	    <li>Investigate <i>Enrich completion context</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
 		<li><b>API to get from binding key to a IJavaElement</b>
@@ -215,6 +221,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>) [jerome]</li>
 	    <li><b>More finegrained options for Java search</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
+	    <li><b>Tune up region formatting</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208541">208541</a>) [eric]</li>
 	    <li>Investigate <b>Formatting should all be done at the core level</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
         <li>Bug fixing 
