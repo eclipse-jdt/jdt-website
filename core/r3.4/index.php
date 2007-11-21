@@ -60,7 +60,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	    <li><i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
-	    <li><b>Improve syntax recovery around annotations</b>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<b>Improve syntax recovery around annotations</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130778">130778</a>) [david]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Add CompilationParticipant.buildComplete() API</b>
@@ -137,12 +138,14 @@ ob_start();
 	</li>
 	<li>Code Formatter
 	  <ul>
-	    <li><b>Formatting should all be done at the core level</b>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<b>Formatting should all be done at the core level</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Allow to format set of regions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203304">203304</a>) [olivier]</li>
-	    <li><b>Tune up region formatting</b>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<b>Tune up region formatting</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208541">208541</a>) [eric]</li>
 	  </ul>
 	</li>
