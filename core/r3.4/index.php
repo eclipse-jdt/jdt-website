@@ -167,6 +167,9 @@ ob_start();
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Support annotations as Java elements</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>) [jerome]</li>
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+		    <b>Support for retreiving the default value of an annotation method</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209958">209958</a>) [jerome]</li>
 		<li><b>Improve NamingConventions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>) [eric]</li>
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
