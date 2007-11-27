@@ -58,7 +58,8 @@ ob_start();
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
-	    <li><i>Need annotation bindings even when code contains errors</i>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
 	    	<b>Improve syntax recovery around annotations</b>
@@ -144,7 +145,7 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Allow to format set of regions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203304">203304</a>) [olivier]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Tune up region formatting</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208541">208541</a>) [eric]</li>
 	  </ul>
@@ -175,7 +176,8 @@ ob_start();
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Java element delta for all classpath changes</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154071">154071</a>) [jerome]</li>
-		<li><b>API to get from binding key to a IJavaElement</b>
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+			<b>API to get from binding key to a IJavaElement</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Improve Java model caching heuristic to better handle large JARs</b>
