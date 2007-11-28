@@ -38,13 +38,29 @@ Testers: Benno, Dani, Markus, Martin<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>TEMPLATE ITEM (Markus, Dani - FAQ: Benno)</h4>
-Test Format only changed lines. 
+<h4>Overview ruler improvements (???, ??? - FAQ: Dani)</h4>
+Test the new overview ruler features: 
 <ul>
- <li>Test in combination with other save actions</li>
- <li>Test that it works as you would expect (UI and behavior)</li>
- <li>Test performance</li>
+ <li>hover shows line number when there's no annotation below</li>
+ <li>clicking when there's no annotation below goes to the correct line</li>
+ <li>check that the line it goes to when clicking is the same as shown in the hover</li>
+ <li>a context menu with one item ('Preferences...') is shown on right-click</li>
+ <li>verify that the 'Preferences...' menu item when no annotation is below opens the 'Annotations' preference page</li>
+ <li>verify that the 'Preferences...' menu item on an annotation opens the 'Annotations' preference page and selects the corresponding annotation type</li>
 </ul>
+
+<h4>Annotations can use any text style (???, ??? - FAQ: Dani)</h4>
+Use the 'Annotations' preference page to test that: 
+<ul>
+ <li>for each annotation type verify that you can choose between all available text styles (should be 7)</li>
+ <li>for each annotation type verify that the defaults are still the same as in 3.4 M3
+ 	<br>Note: there will be three exceptions: 'Errors', 'Warnings' and 'Spelling Errors' will now use 'Native Problem Underline'</li>
+</ul>
+
+<h4>New 'Native Problem Underline' text style (Markus, ??? - FAQ: Dani)</h4>
+Test the new text style which is used for 'Errors', 'Warnings' and 'Spelling Errors'. There
+should be no big difference except on the Mac. Verify that both, 'Squiggly Line' and
+'Native Problem Underline' look good.
 
 
 <h2>Bug Verification</h2>
