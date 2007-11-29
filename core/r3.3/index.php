@@ -286,12 +286,12 @@ ob_start();
           <tr>
 			<td valign="top"><a href="../patches/ecj_3.3.2.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2007/10/26, 1,49 MB (click on picture)</td>
+			<td valign="top">posted on 2007/11/29, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2007/10/26, 1,06 MB (click on picture)</td>
+			<td valign="top">posted on 2007/11/29, 1,06 MB (click on picture)</td>
            </tr>         
            <tr>
 			<td valign="top"><i>extracted from</i></td>
@@ -303,9 +303,9 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.2 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071102-1627.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071129-0922.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2007/10/26, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2007/11/29, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
@@ -318,7 +318,15 @@ ob_start();
 							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_783a_R33x">v_783a_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207573">207573</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=178596">178596</a>
+							[search] Search for method references does not find references to interface method
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209150">209150</a>
+							[dom] Recovered type binding for &quot;java.lang.Object&quot; information are not complete
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=186410">186410</a>
+							[dom] StackOverflowError due to endless superclass bindings hierarchy
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209153">209153</a>
+							[1.5][compiler] VerifyError due to generic cast to a non visible type
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207573">207573</a>
 							[1.5][compiler] Internal compiler error: ClassCastException / ArrayBinding
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208263">208263</a>
 							[ast rewrite] performance problems with lots of changes
