@@ -62,6 +62,20 @@ Test the new text style which is used for 'Errors', 'Warnings' and 'Spelling Err
 should be no big difference except on the Mac. Verify that both, 'Squiggly Line' and
 'Native Problem Underline' look good.
 
+<h4>Content assist: insert common prefix (???, ??? - FAQ: Dani)</h4>
+Test that it works as expected but especially:
+<ul>
+	<li>test that common prefix with exact case is inserted</li>
+	<li>test that common prefix with identical non-exact case is inserted and prefix updated</li>
+	<li>test that no proposal is inserted if there are other choices (e.g. SWT.NON<code assist>) -  this was broken in earlier releases</li>
+</ul>
+
+<h4>Content assist: template proposal availability and relevance (???, ??? - FAQ: Dani)</h4>
+Test that it works as expected but especially:
+<ul>
+	<li>test that template proposals always appear when the prefix matches</li>
+	<li>test that Java keywords appear before templates, e.g. in <code>if (o ins&lt;code assist&gt;)</code></li>
+</ul>
 
 <h2>Bug Verification</h2>
 Every tester has to verify ??? bugs. <em>Before starting to verify a bug add a comment indicating
