@@ -315,7 +315,7 @@ ob_start();
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Early preview of 3.3.2 rollup. <br>
             				Plug-in revision ID is "3.3.2".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_783a_R33x">v_783a_R33x</a>
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_785_R33x">v_785_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
 							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=178596">178596</a>
