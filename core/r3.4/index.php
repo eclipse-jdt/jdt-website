@@ -203,7 +203,7 @@ ob_start();
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=201426">201426</a>) [frederic]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <b>More finegrained options for Java search</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=211748">211748</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
