@@ -286,12 +286,12 @@ ob_start();
           <tr>
 			<td valign="top"><a href="../patches/ecj_3.3.2.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2007/11/29, 1,49 MB (click on picture)</td>
+			<td valign="top">posted on 2007/12/05, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2007/11/29, 1,06 MB (click on picture)</td>
+			<td valign="top">posted on 2007/12/05, 1,06 MB (click on picture)</td>
            </tr>         
            <tr>
 			<td valign="top"><i>extracted from</i></td>
@@ -303,9 +303,9 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.2 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071129-0922.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071205-1549.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2007/11/29, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2007/12/05, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
@@ -314,10 +314,16 @@ ob_start();
           <tr>
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Early preview of 3.3.2 rollup. <br>
-            				Plug-in revision ID is "3.3.2".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_785_R33x">v_785_R33x</a>
+            				Plug-in revision ID is "3.3.2". Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_786_R33x">v_786_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=187430">187430</a>
+							Unresolved types surfacing through DOM AST for annotation default values<br>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=210638">210638</a>
+							[Debug] Can't restore Breakpoints view : concurrent access/hashmap<br>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208013">208013</a>
+							ClassCastException: Initializer cannot be cast to IType when resolving binding<br>
 							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=178596">178596</a>
 							[search] Search for method references does not find references to interface method
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209150">209150</a>
