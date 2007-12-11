@@ -12,16 +12,16 @@
 <body>
 <h1>3.4 M4 Test Plan</h1>
 Test day: Tuesday, 2007-12-11<br>
-Test Build: I200712??-????<br>
+Test Build: start with I20071210-1800 and switch to when available I20071211-0010<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Benno, Dani, Markus, Martin<br>
 
 
 <h2>Platforms</h2>
 <ul>
-  <li>WindowsXP: Dani</li>
+  <li>WindowsXP: Benno</li>
   <li>WindowsVista: Martin<br>
-  </li><li>Linux GTK: Benno<br>
+  </li><li>Linux GTK: Dani<br>
   </li><li>Mac OS X: Markus<br>
   </li>
 </ul>
@@ -38,7 +38,12 @@ Testers: Benno, Dani, Markus, Martin<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Overview ruler improvements (???, ??? - FAQ: Dani)</h4>
+<h4>Test that rich hovers work doesn't break old behavior (all - FAQ: Dani)</h4>
+While testing your items keep an eye on the hovers and also use F2 from
+time to time: this should work as usual. We need to make sure that the new
+rich hover code (which is still off) didn't break existing behavior. 
+
+<h4>Overview ruler improvements (Martin, Markus - FAQ: Dani)</h4>
 Test the new overview ruler features: 
 <ul>
  <li>hover shows line number when there's no annotation below</li>
@@ -49,7 +54,7 @@ Test the new overview ruler features:
  <li>verify that the 'Preferences...' menu item on an annotation opens the 'Annotations' preference page and selects the corresponding annotation type</li>
 </ul>
 
-<h4>Annotations can use any text style (???, ??? - FAQ: Dani)</h4>
+<h4>Annotations can use any text style (Benno, Martin - FAQ: Dani)</h4>
 Use the 'Annotations' preference page to test that: 
 <ul>
  <li>for each annotation type verify that you can choose between all available text styles (should be 7)</li>
@@ -57,12 +62,12 @@ Use the 'Annotations' preference page to test that:
  	<br>Note: there will be three exceptions: 'Errors', 'Warnings' and 'Spelling Errors' will now use 'Native Problem Underline'</li>
 </ul>
 
-<h4>New 'Native Problem Underline' text style (Markus, ??? - FAQ: Dani)</h4>
+<h4>New 'Native Problem Underline' text style (Markus, Martin - FAQ: Dani)</h4>
 Test the new text style which is used for 'Errors', 'Warnings' and 'Spelling Errors'. There
 should be no big difference except on the Mac. Verify that both, 'Squiggly Line' and
 'Native Problem Underline' look good.
 
-<h4>Content assist: insert common prefix (???, ??? - FAQ: Dani)</h4>
+<h4>Content assist: insert common prefix (Markus, Benno - FAQ: Dani)</h4>
 Test that it works as expected but especially:
 <ul>
 	<li>test that common prefix with exact case is inserted</li>
@@ -70,14 +75,14 @@ Test that it works as expected but especially:
 	<li>test that no proposal is inserted if there are other choices (e.g. SWT.NON&lt;code assist&gt;) -  this was broken in earlier releases</li>
 </ul>
 
-<h4>Content assist: template proposal availability and relevance (???, ??? - FAQ: Dani)</h4>
+<h4>Content assist: template proposal availability and relevance (Martin, Benno - FAQ: Dani)</h4>
 Test that it works as expected but especially:
 <ul>
 	<li>test that template proposals always appear when the prefix matches</li>
 	<li>test that Java keywords appear before templates, e.g. in <code>if (o ins&lt;code assist&gt;)</code></li>
 </ul>
 
-<h4>Improved key binding support for content assist and quick fix (???, ??? - FAQ: Dani)</h4>
+<h4>Improved key binding support for content assist and quick fix (Martin, Benno - FAQ: Dani)</h4>
 This affects completion proposal popup navigation while still in the editor.
 <ul>
 	<li>test that Up/Down works</li>
@@ -86,14 +91,14 @@ This affects completion proposal popup navigation while still in the editor.
 	<li>test that Ctrl+P and Ctrl+N work when in Emacs mode</li>
 </ul>
 
-<h4>Javadoc view shows constant value (???, ??? - FAQ: Dani)</h4>
+<h4>Javadoc view shows constant value (Benno, Martin - FAQ: Dani)</h4>
 <ul>
 	<li>test that the description shows the constant value where possible</li>
 	<li>test that the hex value is correct</li>
 	<li>test with fields that aren't open in an editor (e.g. select in Package Explorer)</li>
 </ul>
 
-<h4>Runnable Jar Export wizard (???, ??? - FAQ: Benno)</h4>
+<h4>Runnable Jar Export wizard (Benno, Dani - FAQ: Benno)</h4>
 <ul>
 	<li>test that all java application launch configurations are available</li>
 	<li>test that exported jars are executable</li>
@@ -101,49 +106,50 @@ This affects completion proposal popup navigation while still in the editor.
 	<li>test usability</li>
 </ul>
 
-<h4>Fine grain search UI (???, ??? - FAQ: Martin)</h4>
+<h4>Fine grained search UI (Dani, Markus - FAQ: Martin)</h4>
 <ul>
 	<li>test UI in search dialog</li>
 	<li>test result view</li>
 </ul>
 
-<h4>Extract method participants (???, ??? - FAQ: Martin)</h4>
+<h4>Extract method participants (Markus, Benno - FAQ: Martin)</h4>
 <ul>
 	<li>write a example</li>
 </ul>
 
-<h4>Text search matches (???, ??? - FAQ: Martin)</h4>
+<h4>Text search matches (Dani, Markus - FAQ: Martin)</h4>
 <ul>
 	<li>matches on long lines</li>
 </ul>
 
-<h4>Find occurrence improvements (???, ??? - FAQ: Martin)</h4>
+<h4>Find occurrence improvements (Dani, Markus - FAQ: Martin)</h4>
 <ul>
 	<li>link with editor</li>
 	<li>quick menu is now context sensitive</li>
 </ul>
 
-<h4>Quick fixes (???, ??? - FAQ: Martin)</h4>
+<h4>Quick fixes (Benno, Dani - FAQ: Martin)</h4>
 <ul>
-	<li>Create getter/setter for unused field</li>
-	<li>Remove unused SuppressWarning</li>
+	<li>create getter/setter for unused field</li>
+	<li>remove unused SuppressWarning</li>
 </ul>
 
 
-<h4>org.eclipse.jface.text.source.IAnnotationModelExtension2 (???, ??? - FAQ: Benno)</h4>
+<h4>org.eclipse.jface.text.source.IAnnotationModelExtension2 (Markus, Dani - FAQ: Benno)</h4>
 <ul>
 	<li>test the new API</li>
 	<li>Javadoc correct</li>
-	<li>Implementation correct</li>
-	<li>Useful</li>
+	<li>is the implementation correct</li>
+	<li>is it useful</li>
 </ul>
 
-<h4>Exception variable name template resolver (???, ??? - FAQ: Dani)</h4>
+<h4>Exception variable name template resolver (Martin, Dani - FAQ: Dani)</h4>
 <ul>
 	<li>test that the 'try' and the 'catch' templates use the exception name from the code style preference page</li>
 	<li>test that the 'try' and the 'catch' templates use the exception name from the code style project properties when configured</li>
 	<li>in the 'Edit Template' dialog test that content assist shows the new variable and that F1 help contains it</li>
 </ul>
+
 
 <h2>Bug Verification</h2>
 Every tester has to verify ??? bugs. <em>Before starting to verify a bug add a comment indicating
