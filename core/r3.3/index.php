@@ -42,16 +42,28 @@ ob_start();
             </p>
 			
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-			<b>Rollup 3.3.1 - no date yet</b>
+			<b>Rollup 3.3.2 - no date yet</b>
 		<ul>
 			<li> preview available in <a href="#UPDATES">update</a> area. </li>
+			<li> bug fixing :
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">all planned fixes</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">resolved</a>)
+			</li>
+		</ul>
+			
+		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
+			<b>Rollup 3.3.1 - completed on 2007/09/15</b>
+		<ul>
+			<li> available on the <a href="http://download.eclipse.org/downloads">download</a> area.</li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.38&amp;content-type=text/html">build notes</a></li>
 			<li> bug fixing :
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3.1">all planned fixes</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.1">unresolved</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.1">resolved</a>)
-			</li>
+        	</li>
 		</ul>
-			
+		
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
 		&nbsp;<b>Release 3.3.0 - completed on 2007/06/29</b></p>
 		<ul>
@@ -59,7 +71,7 @@ ob_start();
 			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933&amp;content-type=text/html">build notes</a> </li>
 	<li><b>Java SE 6 </b>(<a href="http://jcp.org/en/jsr/detail?id=270">jsr-270</a>)
 	  <ul>
-		<li>Compiler API (<a href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
+		<li><img src="../ok.gif" height="10" width="10"> Compiler API (<a href="http://jcp.org/en/jsr/detail?id=199">jsr-199</a>)<br/>
 			Require 1.6 JRE libraries. Implementation of compiler API 
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=154111">154111</a>) will thus likely be made available as a separate 
 			download.
@@ -67,116 +79,51 @@ ob_start();
 	</li>
 	<li><b>Incremental Java Compiler</b>
 	  <ul>
-		<li>Compiler may ignore some specific warnings
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156710">156710</a>)</li>
-		<li>Improve compiler fault-tolerance
+		<li><img src="../ok.gif" height="10" width="10"> Improve compiler fault-tolerance
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156731">156731</a>)</li>
-		<li>Improve option "Unnecessary declaration of thrown checked exceptions"
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>)</li>
-		<li>Null reference analysis: add interprocedural analysis
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126551">126551</a>)</li>
-		<li>Add compiler option to warn overriding methods that do not call super
+		<li><img src="../ok.gif" height="10" width="10"> Add compiler option to warn overriding methods that do not call super
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156736">156736</a>)</li>
-		<li>Tune the existing checks to avoid false positives:
-		  <ul>
-		  	<li>Null checks
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157154">157154</a>)</li>
-		  	<li>Thrown exceptions
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157155">157155</a>)</li>
-		  	<li>Unused parameter
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157162">157162</a>)</li>
-		  </ul>
-		</li>
+		<li><img src="../ok.gif" height="10" width="10"> Tune the existing null checks to avoid false positives
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=157154">157154</a>)</li>
 	  </ul>
 	</li>
 	<li><b>DOM AST</b>
 	  <ul>
-		<li>Need a more flexible way to create multiple ASTs
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150657">bug 150657</a>)</li>
-		<li>Reconcile should support default AST options
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=124662">(bug 124662)</a>)</li>
-		<li>AST for compilation participants
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=156712">(bug 156712)</a>)</li>
-		<li>Find and create bindings in existing binding environments:
-		  <ul>
-			<li><img src="../progress.gif" height="5" width="14"> Type binding with higher dimension
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148224">bug 148224</a>)</li>
-			<li>Find type binding by name or key
-				(<i>bug to be opened</i>)</li>
-			<li>Create or compose type binding in binding environment of AST
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=40096">bug 40096</a>)</li>
-		  </ul>
-		</li>
-		<li>Offer bindings also when some information is missing
-		  <ul>
-			<li>variable bindings when variable type is unresolved
-				(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149567">bug 149567</a>)</li>
-		  </ul>
-		</li>
+		<li><img src="../ok.gif" height="10" width="10"> Offer variable bindings when variable type is unresolved
+			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=149567">149567</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Search</b>
 	  <ul>
-		<li>Get IType from TypeNameRequestor result
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">bug 148380</a>)</li>
-		<li>Allow regex in Java search (requires JDK 1.4)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>)</li>
-		<li>Improve Camel Case matching
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=109695">109695</a>)</li>
-		<li>More powerful search (Semantic Search / Search templates)
-		  <ul>
-		  	<li><img src="../progress.gif" height="5" width="14"> Code pattern based, e.g. search where synchronized on 'JavaModelManager'
-		  		(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110157">110157</a>)</li>
-			<li>Fine grain options for Java Search
-				(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>)</li>
-		  </ul>
-		</li>
+		<li><img src="../ok.gif" height="10" width="10"> Get IType from TypeNameRequestor result
+			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=148380">148380</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Java Model</b></li>
 	  <ul>
-		<li>Support for exclusion/inclusion filters in libraries
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119419">119419</a>)</li>
-		<li>Allow classpath variable to be marked as deprecated
+		<li><img src="../ok.gif" height="10" width="10"> Allow classpath variable to be marked as deprecated
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=138599">138599</a>)</li>
-		<li>Allow classpath variable to be marked as non modifiable
+		<li><img src="../ok.gif" height="10" width="10"> Allow classpath variable to be marked as non modifiable
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156226">156226</a>)</li>
-		<li>Have common supertype for ICompilationUnit and IClassFile
+		<li><img src="../ok.gif" height="10" width="10"> Have common supertype for ICompilationUnit and IClassFile
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=125504">125504</a>)</li>
-		<li>Applying edits to a ICompilationUnit
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>)</li>
-		<li>Accessing annotation on Java elements
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79112">79112</a>)</li>
-		<li>API to get type kind of a CU or class file
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=150393">150393</a>)</li>
-		<li>Java model gives different results
+		<li><img src="../ok.gif" height="10" width="10"> Ensure Java model is always consistent
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=129584">129584</a>)</li>
-		<li>Allow containers to contain containers, variables and class folders
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142135">142135</a>)</li>
-		<li>API to create ITypeBinding from type name
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156871">156871</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Code Assist</b>
 	  <ul>
-		<li>Improve code assist when import missing
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">bug 44984</a>)</li>
-		<li>Code assist for declarations that are already used later in the code
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">bug 150228</a>)</li>
-		<li><img src="../progress.gif" height="5" width="14"> Provide code assist context: AST or other way
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=110181">bug 110181</a>)</li>
-		<li>Constructor completion
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">bug 6930</a>)</li>
+		<li><img src="../ok.gif" height="10" width="10"> Improve code assist when import missing
+			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=44984">44984</a>)</li>
+		<li><img src="../ok.gif" height="10" width="10"> Code assist for declarations that are already used later in the code
+			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=150228">150228</a>)</li>
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Improve empty completion
-			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">bug 102875</a>)</li>
+			(<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102875">102875</a>)</li>
 	  </ul>
 	</li>
 	<li><b>Code Formatter</b>
 	  <ul>
-		<li><img src="../progress.gif" height="5" width="14">
-			Allow formatting directly from DOM AST by moving infrastructure from  compiler AST to DOM AST
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110194">110194</a>)
-		<li>each format shifts code inside &lt;pre&gt; one space to the right
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;"> Fine tune formatting of code in &lt;pre&gt; tags
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99738">99738</a>)
 	  </ul>
 	</li>
@@ -185,16 +132,24 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="RELEASE_PROCESS"></a>
 			<h3>Release Process</h3>
+<!--
 			<ul>
 				<li>Rollup 3.3.1 : <a href="test-3.3.1.php">test plan</a>
 		        </li>
 		    </ul>
+-->
 		</div>
 		<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
-        <li>Rollup 3.3.1, 2007/??/?? : 
+        <li>Rollup 3.3.2, 2008/??/?? : 
+            (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3.2&amp;resolution=FIXED">fixed</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3.2&amp;namedcmd=Assigned">all</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">unresolved</a>)
+            (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">resolved</a>)
+        </li>
+        <li>Rollup 3.3.1, 2007/09/15 : 
             (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.3.1&amp;resolution=FIXED">fixed</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3.1&amp;namedcmd=Assigned">all</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.1">unresolved</a>)
