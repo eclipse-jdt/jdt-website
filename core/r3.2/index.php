@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.4.z20071102-1859.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.4.z20080107-1907.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2007/11/02, 6.99 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2008/01/07, 6.99 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
