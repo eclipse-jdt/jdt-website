@@ -74,7 +74,7 @@ function traverseLinkifyBugs(node) {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised 11:07 CET December 21, 2007</p>
+    <p>Last revised 17:24 CET January 7, 2008</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -119,7 +119,7 @@ function traverseLinkifyBugs(node) {
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>change method signature refactorings should support participants (bug 89422)</Style:committed></li>
-			<li><Style:committed>delete should not happen in the UI thread (bug 187351)</Style:committed></li>
+			<li><Style:committed>change execution should not happen in the UI thread (bug 175733)</Style:committed></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> extract class (bug 185338)</li>
 			<li>new refactoring: extract field (bug 52791)</li>
 			<li>refactoring should report affected binary references (bug 182346)</li>
@@ -165,7 +165,8 @@ function traverseLinkifyBugs(node) {
 		<li><h4>Jar Exporter [<a href="#3">3</a>]</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> export Java application (bug 83258)</li>
-			<li>sign JAR</li>
+			<li>sign JAR (bug 11485)</li>
+			<li>create Ant file from JAR file and Runnable JAR file exporter (bug 117762 and bug 213638)</li>
 		</ul>
 		
 		<li><h4>Java Search [<a href="#3">3</a>]</h4>
@@ -265,12 +266,12 @@ function traverseLinkifyBugs(node) {
 
 
 <tr>
-    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M4 (2007-12-14)</font></font></td>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M5 (2008-2-8)</font></font></td>
 </tr>
 
   <tr> 
     <td WIDTH="100%">
-	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M4 Plan</a>.</p>
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M5 Plan</a>.</p>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
@@ -279,7 +280,7 @@ function traverseLinkifyBugs(node) {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>change method signature refactorings should support participants (bug 89422)</Style:committed></li>
+			<li><Style:committed>change execution should not happen in the UI thread (bug 175733)</Style:committed></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#2">2</a>]</h4>
@@ -287,21 +288,37 @@ function traverseLinkifyBugs(node) {
 			<li><font class="indexsub" color="#8080ff">[3.4 M5]</font> <img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> track rename of Junit 4 bundle to org.junit (bug 153429)</li>
 		</ul>
 		
+	  <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Javadoc view and sticky Javadoc hover [<a href="#2">2</a>]</h4>
+	  See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#rich hovers">Rich Hovers</a> item.
+	  <p>
+	    <ul>
+	      <li><Style:committed>support to follow links (relative URLs, @see, @link,...)</Style:committed></li>
+	      <li><Style:committed>support navigation and history support</Style:committed></li>
+	      <li>allow to pin i.e. link with editor button in Javadoc view</li>
+	    </ul></p>
+		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance [<a href="#1">1</a>]</h4>
 		<ul>
-			<li>investigate and fix organize import performance regression</li>
-			<li>setup local performance testing</li>
-			<li>investigate creation of YourKit performance trace dumps</li>
+			<li>document the setup of local performance testing</li>
+			<li>document how to create YourKit performance trace dumps</li>
+			<li>investigate performance bugs filed by Frédéric</li>
 		</ul>
 		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#2">2</a>]</h4>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Quick Fix [<a href="#2">2</a>]</h4>
 		<ul>
-			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>enable navigation key bindings in proposal list (bug 140550)</Style:committed></li>
-	    </ul>
+			<li><Style:committed>improve cursor jumping on quick fix invocation (bug 201878)</Style:committed>
+			<br>idea: second Ctrl+1 goes back to caret location</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Jar Exporter [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>sign JAR (bug 11485) - review and comment on external contribution</li>
+			<li>create Ant file from JAR file and Runnable JAR file exporter (bug 117762 and bug 213638) - review and comment on external contribution</li>
+		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 	    <ul>
-		  <li><font class="indexsub" color="#8080ff">[3.4 M5]</font> <img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> <Style:committed>add better support for the @inheritDoc tag</Style:committed>
+		  <li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> <Style:committed>add better support for the @inheritDoc tag</Style:committed>
 		  <ul>
 		  	<li>hover</li>
 		  	<li>content assist</li>
@@ -322,7 +339,11 @@ function traverseLinkifyBugs(node) {
 			<li>watch performance tests</li>
 			<li>increase correctness test coverage</li>
 		</ul>
-	
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_4/testing/M5_Test_Plan.html">test plan</a> for the 3.4 M5 test pass.</li>
+		</ul>
       
 		<h3>Previous Milestones</h3>
 		<p>Previous 3.4 milestones can be reviewed <a href="previous_plans.php">here</a>.</p>
