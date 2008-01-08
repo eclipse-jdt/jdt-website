@@ -149,7 +149,9 @@ ob_start();
 			<h4>Comments and Requests</h4>
 			<ul>
 				<li>
-					Source is included in the plugin archive<br>
+					Source is included in the plugin archive or available via CVS:<br>
+					Repository: :pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse<br>
+					Module: jdt-ui-home/plugins/org.eclipse.jdt.astview
 				</li>
 				<li>Comments to
 					<a href="mailto:Martin_Aeschlimann%5Bat%5Dch.ibm.com">Martin_Aeschlimann[at]ch.ibm.com</a>
