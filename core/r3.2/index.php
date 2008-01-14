@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.5.z20080109-1916.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.6.z20080111-1240.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2008/01/09, 6.98 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2008/01/14, 6.98 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -528,11 +528,13 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.3 build. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.2.5".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_688_R32x">v_688_R32x</a>
+            				Plug-in revision ID is "3.2.6".Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_689_R32x">v_689_R32x</a>
 							<br>
                             Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=213723">213723</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=214981">214981</a>
+							Race condition allowed with SetClasspathOperation
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=213723">213723</a>
 							JDT not resolving classpath references to jars in other projects
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208263">208263</a>
 							[ast rewrite] performance problems with lots of changes
@@ -572,7 +574,7 @@ ob_start();
 							NullPointerException in BindingKeyResolver.consumeTypeVariable(...)         
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.107&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.108&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
