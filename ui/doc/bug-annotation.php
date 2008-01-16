@@ -143,6 +143,7 @@ ob_start();
 				bugsWithSummaryJDT("[introduce indirection]", "Bugs related to the introduce indirection refactoring");
 				bugsWithSummaryJDT("[introduce parameter]", "Bugs related to the introduce parameter refactoring");
 				bugsWithSummaryJDT("[rename]", "Bugs related to the rename refactoring");     
+				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");     
 				  
 				bugsByUser("Tobias", "tobias_widmer");
 				bugsWithSummaryJDT("[reorg]", "Bugs related to the copy, move and delete refactorings");
