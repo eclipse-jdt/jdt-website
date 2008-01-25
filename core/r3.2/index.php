@@ -497,14 +497,14 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.2.jar">
+            <td valign="top"><a href="../patches/ecj_3.2.7.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2007/10/26, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2008/01/25, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.2src.zip">
+            <td valign="top"><a href="../patches/ecj_3.2.7src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2007/10/26, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2008/01/25, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.6.z20080111-1240.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.7.z20080125-2232.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2008/01/14, 6.98 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2008/01/25, 6.99 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -528,11 +528,13 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.3 build. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.2.6".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_689_R32x">v_689_R32x</a>
+            				Plug-in revision ID is "3.2.7".Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_690_R32x">v_690_R32x</a>
 							<br>
                             Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=214981">214981</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216569">216569</a>
+							backport bug 178551 to R3_2
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=214981">214981</a>
 							Race condition allowed with SetClasspathOperation
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=213723">213723</a>
 							JDT not resolving classpath references to jars in other projects
