@@ -66,13 +66,98 @@ function traverseLinkifyBugs(node) {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised 17:28 CET January 7, 2008</p>
+    <p>Last revised 16:40 CET February 11, 2008</p>
   </tr>
   
    <tr> 
     <td WIDTH="100%"> 
     <p>The current 3.4 milestone plan can be found <a href="plan.php">here</a>.</p>
   </tr>
+
+
+<tr>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M5 (2008-2-8)</font></font></td>
+</tr>
+
+  <tr> 
+    <td WIDTH="100%">
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M5 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>3.3.x maintenance work</Style:committed></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> 3.3.2 one day test pass (<a href="testing/3.3.2_Test_Plan.html">test plan</a>)</li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><font class="indexsub" color="#8080ff">[3.4 M6]</font> <Style:committed>change execution should not happen in the UI thread (bug 175733)</Style:committed></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><font class="indexsub" color="#8080ff">[3.4 M6]</font> <img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> track rename of Junit 4 bundle to org.junit (bug 153429)</li>
+		</ul>
+		
+	  <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Javadoc hover [<a href="#2">2</a>]</h4>
+	  See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#rich hovers">Rich Hovers</a> item.
+	  <p>
+	    <ul>
+	      <li><img src="../images/ok.gif" border="0" height="10" width="10">  <Style:committed>support to follow links (relative URLs, @see, @link,...)</Style:committed></li>
+	      <li><img src="../images/ok.gif" border="0" height="10" width="10">  <Style:committed>support navigation and history support</Style:committed></li>
+	      <li><img src="../images/ok.gif" border="0" height="10" width="10"> allow to go to Javadoc view</li>
+	    </ul></p>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> document the setup of local performance testing</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> document how to create YourKit performance trace dumps</li>
+			<li><font class="indexsub" color="#8080ff">[3.4 M6]</font> <img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> investigate performance bugs filed by Frédéric</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Quick Fix [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>improve cursor jumping on quick fix invocation (bug 201878)</Style:committed>
+			<br>idea: second Ctrl+1 goes back to caret location</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Jar Exporter [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> sign JAR (bug 11485) - review and comment on external contribution</li>
+			<li><font class="indexsub" color="#8080ff">[3.4 M6]</font> <img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> create Ant file from Runnable JAR file exporter (bug 213638) - review and comment on external contribution</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+	    <ul>
+		  <li><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> <Style:committed>add better support for the @inheritDoc tag</Style:committed>
+		  <ul>
+		  	<li><font class="indexsub" color="#8080ff">[3.4 M6]</font> hover</li>
+		  	<li><img src="../images/ok.gif" border="0" height="10" width="10"> content assist</li>
+		  	<li><img src="../images/ok.gif" border="0" height="10" width="10"> syntax coloring</li>
+		  </ul>
+		  </li>
+		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>revisit showing markers <em>and</em> temporary problems together in rulers</Style:committed>
+		      <br>&rArr; we might want to only show the actual temporary problems (if this feature is enabled)
+		  </li>
+		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>emphasize write access over read access in mark occurrences with a different color</Style:committed></li>
+		</ul>
+
+	
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_4/testing/M5_Test_Plan.html">test plan</a> for the 3.4 M5 test pass.</li>
+		</ul>
+	</td>
+</tr>
+
 
 <tr>
     <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M4 (2007-12-14)</font></font></td>
