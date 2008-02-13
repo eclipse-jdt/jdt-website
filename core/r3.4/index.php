@@ -116,8 +116,8 @@ ob_start();
 	  </ul>
 	<li>Build Path
 	  <ul>
-		<li><i>Allow classpath containers to contain containers</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>) [jerome]</li>
+	    <li><b>Support external library folders</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
 		<li><i>Binary/virtual projects</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>) [jerome]</li>
 		<li><i>Exclusion/inclusion filters for libraries</i>
@@ -197,8 +197,6 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
 	    <li><i>Applying edits to a ICompilationUnit</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
-	    <li><b>Support external library folders</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
 	  </ul>
 	</li>
 	<li>Search
