@@ -61,7 +61,7 @@ ob_start();
 	    <li><img src="../progress.gif" height="5" width="14">
 	    	<i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Improve syntax recovery around annotations</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130778">130778</a>) [david]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
@@ -101,6 +101,8 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Improve 1.6 code generation performance</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=185350">185350</a>) [olivier]</li>
+	    <li><b>Provide a mapping from problem id to preference key</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -133,8 +135,9 @@ ob_start();
 	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>) [david]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
-	    	<i>Enrich completion context</i> (low priority)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
+	    	<b>Enrich completion context</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>, 
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>) [david]</li>
 	  </ul>
 	</li>
 	<li>Code Formatter
@@ -190,6 +193,10 @@ ob_start();
 	    	<b>Honor build path when looking up working copies</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=169970">169970</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194399">194399</a>) [jerome]</li>
+	    <li><b>Fix IType.getFullyQualifiedName(char) for binary types</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
+	    <li><i>Applying edits to a ICompilationUnit</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
 	  </ul>
 	</li>
 	<li>Search
@@ -201,14 +208,16 @@ ob_start();
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200400">200400</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=124624">124624</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=201426">201426</a>) [frederic]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>More finegrained options for Java search</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>,
-			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=211748">211748</a>) [frederic]</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
-	    <li><i>Text search in Java elements</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=199994">199994</a>) [frederic]</li>
+	    <li><i>Search API to handle annotations</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
+	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
 	  </ul>
 	</li>
 	</ul>
@@ -216,30 +225,36 @@ ob_start();
 	
      <a name="milestone-plan"></a>
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-           For <b>3.4-Milestone 4 (2007/12/14)</b>, we will mainly focus on:</p>
+           For <b>3.4-Milestone 6 (2008/03/28)</b>, we will mainly focus on:</p>
       <ul>
+	    <li><b>Formatting should all be done at the core level</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
+	    <li><b>Enrich completion context</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>,
+			 <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>) [david]</li>
+	    <li><b>Fix getFullyQualifiedName(char) for binary types</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
+	    <li><b>Provide a mapping from problem id to preference key</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
+			
+	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
+	    <li>Investigate <i>Provide away to get the matching regions from a search pattern</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
 	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
-	    <li><b>Improve syntax recovery around annotations</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=130778">130778</a>) [david]</li>
-	    <li>Investigate <i>Enrich completion context</i> (low priority)
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>) [david]</li>
-		<li><b>API to get from binding key to a IJavaElement</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=192670">192670</a>) [jerome]</li>
-		<li>Investigate <i>Allow classpath containers to contain containers</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>) [jerome]</li>
-	    <li><b>More finegrained options for Java search</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
-	    <li><b>Tune up region formatting</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208541">208541</a>) [eric]</li>
-	    <li>Investigate <b>Formatting should all be done at the core level</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
+	    <li><i>Search API to handle annotations</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
+	    <li><i>Applying edits to a ICompilationUnit</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
+			 
         <li>Bug fixing 
-			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M4&amp;resolution=FIXED">fixed</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">all</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">unresolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">resolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M4">verified</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M6&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">resolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">verified</a>)</li>
       </ul>
 		</div>
 <!--		
@@ -261,6 +276,18 @@ ob_start();
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4&amp;target_milestone=3.4+M1&amp;target_milestone=3.4+M2&amp;target_milestone=3.4+M3&amp;target_milestone=3.4+M4&amp;target_milestone=3.4+M5&amp;target_milestone=3.4+M6&amp;target_milestone=3.4+M7&amp;target_milestone=3.4+RC1&amp;target_milestone=3.4+RC2&amp;target_milestone=3.4+RC3&amp;target_milestone=3.4+RC4">all</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4&amp;target_milestone=3.4+M1&amp;target_milestone=3.4+M2&amp;target_milestone=3.4+M3&amp;target_milestone=3.4+M4&amp;target_milestone=3.4+M5&amp;target_milestone=3.4+M6&amp;target_milestone=3.4+M7&amp;target_milestone=3.4+RC1&amp;target_milestone=3.4+RC2&amp;target_milestone=3.4+RC3&amp;target_milestone=3.4+RC4">unresolved</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4&amp;target_milestone=3.4+M1&amp;target_milestone=3.4+M2&amp;target_milestone=3.4+M3&amp;target_milestone=3.4+M4&amp;target_milestone=3.4+M5&amp;target_milestone=3.4+M6&amp;target_milestone=3.4+M7&amp;target_milestone=3.4+RC1&amp;target_milestone=3.4+RC2&amp;target_milestone=3.4+RC3&amp;target_milestone=3.4+RC4">resolved</a>)
+        </li>
+		<li>Milestone-7, 2008/05/02 :
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M7&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7&amp;namedcmd=Assigned">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">resolved</a>)
+        </li>
+		<li>Milestone-6, 2008/03/28 :
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M6&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6&amp;namedcmd=Assigned">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">resolved</a>)
         </li>
 		<li>Milestone-5, 2008/02/08 :
 			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M5&amp;resolution=FIXED">fixed</a>)
