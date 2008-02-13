@@ -107,9 +107,9 @@ ob_start();
 	</li>
 	<li>DOM AST
 	  <ul>
-	    <li><b>Issue with nested wildcards</b>
+	    <li><i>Issue with nested wildcards</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>) [frederic]</li>
-	    <li><b>Surface intersection types</b>
+	    <li><i>Surface intersection types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>) [frederic]</li>
 	    <li><i>Don't surface unresolved types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=187430">187430</a>) [frederic]</li>
@@ -174,7 +174,7 @@ ob_start();
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Support for retreiving the default value of an annotation method</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209958">209958</a>) [jerome]</li>
-		<li><b>Improve NamingConventions</b>
+		<li><i>Improve NamingConventions</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=38111">38111</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=85946">85946</a>) [eric]</li>
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Java element delta for all classpath changes</b>
@@ -197,6 +197,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
 	    <li><i>Applying edits to a ICompilationUnit</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
+	    <li><b>Support external library folders</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
 	  </ul>
 	</li>
 	<li>Search
