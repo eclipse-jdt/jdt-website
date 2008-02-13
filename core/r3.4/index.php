@@ -234,6 +234,8 @@ ob_start();
 	    <li><b>Enrich completion context</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>,
 			 <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>) [david]</li>
+	    <li><b>Support external library folders</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
 	    <li><b>Fix getFullyQualifiedName(char) for binary types</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
 	    <li><b>Provide a mapping from problem id to preference key</b>
