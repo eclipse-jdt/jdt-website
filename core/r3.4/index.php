@@ -220,6 +220,8 @@ ob_start();
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
 	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
+	    <li><i>Provide a way to get the matching regions from a search pattern</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
 	  </ul>
 	</li>
 	</ul>
@@ -243,7 +245,7 @@ ob_start();
 			
 	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
-	    <li>Investigate <i>Provide away to get the matching regions from a search pattern</i>
+	    <li>Investigate <i>Provide a way to get the matching regions from a search pattern</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
 	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
