@@ -105,6 +105,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
 		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
+		<li><b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -244,6 +246,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
 		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
+		<li><b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
 			
 	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
