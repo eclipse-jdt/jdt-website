@@ -56,7 +56,7 @@ ob_start();
 	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>) [maxime]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
-	        <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
+	        <i>Concurrent Java compiler (so as to leverage multi-core CPU)</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	    <li><img src="../progress.gif" height="5" width="14">
 	    	<i>Need annotation bindings even when code contains errors</i>
@@ -103,6 +103,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=185350">185350</a>) [olivier]</li>
 	    <li><b>Provide a mapping from problem id to preference key</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
+		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -240,12 +242,14 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
 	    <li><b>Provide a mapping from problem id to preference key</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
+		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
 			
 	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
 	    <li>Investigate <i>Provide a way to get the matching regions from a search pattern</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
-	    <li>Investigate <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
+	    <li>Investigate <i>Concurrent Java compiler (so as to leverage multi-core CPU)</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
 	    <li><i>Search API to handle annotations</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
