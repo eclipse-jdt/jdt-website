@@ -87,6 +87,14 @@ ob_start();
   </tr>
   <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
+    <td width="98%"> <b>FAQ</b>
+      <ul>
+        <li><a href="http://wiki.eclipse.org/JDT_Core_Committer_FAQ">JDT Core Committer FAQ</a></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
     <td width="98%"> <b>Additional tools</b><p>
       Here are tools provided as a courtesy of JDT Core Team:</p>
       <ul>
@@ -111,6 +119,17 @@ ob_start();
 			<h3>Releases</h3>
 <p>JDT/Core exists in multiple flavors, depending on which delivery it is part of.</p>
 			<table>
+<tr>
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
+<td WIDTH="98%"><b>R3.3.x</b>
+<ul>
+<li>Detailed <a href="r3.3/index.php">description</a></li>
+<li>Get the official <a href="r3.3/index.php#SOURCES">sources for JDT/Core</a></li>
+<li><a href="r3.3/index.php#BUGS_RESOLUTION">Bug resolution</a></li>
+<li>Available <a href="r3.3/index.php#UPDATES">updates</a></li>
+</ul>
+</td></tr>
+
 <tr>
 <td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
 <td WIDTH="98%"><b>R3.2.x</b>
