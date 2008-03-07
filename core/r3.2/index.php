@@ -389,7 +389,7 @@ ob_start();
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
-        <li>Rollup 3.2.2, 2006/??/?? : 
+        <li>Rollup 3.2.2, 2007/02/12 : 
             (<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.2.2&amp;resolution=FIXED">fixed</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.2.2&amp;namedcmd=Assigned">all</a>)
             (<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.2.2">unresolved</a>)
