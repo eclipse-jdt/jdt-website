@@ -158,7 +158,7 @@ ob_start();
 <ul>
 <li>Detailed <a href="r3.1/index.php">description</a></li>
 <li>Get the official <a href="r3.1/index.php#SOURCES">sources for JDT/Core</a></li>
-<li><a href="r3.1/index.php#BUG_RESOLUTION">Bug resolution</a></li>
+<li><a href="r3.1/index.php#BUGS">Bug resolution</a></li>
 <li>Available <a href="r3.1/index.php#UPDATES">updates</a></li>
 </ul>
 </td></tr>
