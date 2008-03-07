@@ -58,7 +58,7 @@ ob_start();
 	    <li><img src="../progress.gif" height="5" width="14">
 	        <i>Concurrent Java compiler (so as to leverage multi-core CPU)</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
@@ -105,7 +105,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
 		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
-		<li><b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
+		<li><img src="../progress.gif" height="5" width="14">
+		   <b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
 	  </ul>
 	</li>
@@ -120,7 +121,8 @@ ob_start();
 	  </ul>
 	<li>Build Path
 	  <ul>
-	    <li><b>Support external library folders</b>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	       <b>Support external library folders</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
 		<li><i>Binary/virtual projects</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>) [jerome]</li>
@@ -138,7 +140,7 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=44627">44627</a>) [david]</li>
 	    <li><i>Constructor proposals after "new" for compatible types</i> (low priority)
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=6930">6930</a>) [david]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Enrich completion context</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>, 
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>) [david]</li>
@@ -199,7 +201,8 @@ ob_start();
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194399">194399</a>) [jerome]</li>
 	    <li><b>Fix IType.getFullyQualifiedName(char) for binary types</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
-	    <li><i>Applying edits to a ICompilationUnit</i>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <i>Applying edits to a ICompilationUnit</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
 	  </ul>
 	</li>
