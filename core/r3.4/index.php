@@ -101,11 +101,13 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Improve 1.6 code generation performance</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=185350">185350</a>) [olivier]</li>
-	    <li><b>Provide a mapping from problem id to preference key</b>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <b>Provide a mapping from problem id to preference key</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
-		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
-		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
 		<li><img src="../progress.gif" height="5" width="14">
+		    <b>Add compiler API to call the batch compiler from a stand-alone application</b>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [jerome]</li>
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		   <b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
 	  </ul>
@@ -116,7 +118,8 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=103643">103643</a>) [frederic]</li>
 	    <li><i>Surface intersection types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=99931">99931</a>) [frederic]</li>
-	    <li><i>Don't surface unresolved types</i>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <i>Don't surface unresolved types</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=187430">187430</a>) [frederic]</li>
 	  </ul>
 	<li>Build Path
@@ -199,7 +202,8 @@ ob_start();
 	    	<b>Honor build path when looking up working copies</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=169970">169970</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=194399">194399</a>) [jerome]</li>
-	    <li><b>Fix IType.getFullyQualifiedName(char) for binary types</b>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <b>Fix IType.getFullyQualifiedName(char) for binary types</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <i>Applying edits to a ICompilationUnit</i>
@@ -220,11 +224,10 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
-	    <li><i>Search API to handle annotations</i>
+	    <li><img src="../progress.gif" height="5" width="14">
+	        <i>Search API to handle annotations</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
-	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
 	    <li><i>Provide a way to get the matching regions from a search pattern</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
 	  </ul>
