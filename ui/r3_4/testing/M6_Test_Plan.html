@@ -12,16 +12,16 @@
 <body>
 <h1>3.4 M6 Test Plan</h1>
 Test day: Tuesday, 2008-03-25<br>
-Test Build: start with I20080324-???? and move to I20080325-???? when available<br>
+Test Build: start with I20080324-1800 and move to I20080325-0010 when available<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Benno, Dani, Markus, Martin<br>
 
 
 <h2>Platforms</h2>
 <ul>
-  <li>WindowsXP: Dani</li>
+  <li>WindowsXP: Martin</li>
   <li>WindowsVista: Benno<br>
-  </li><li>Linux GTK: Martin<br>
+  </li><li>Linux GTK: Dani<br>
   </li><li>Mac OS X: Markus<br>
   </li>
 </ul>
@@ -37,82 +37,90 @@ Testers: Benno, Dani, Markus, Martin<br>
 
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
-<br><br>ALL TESTERS: Please have a quick look on your platform that the breadcrumb looks acceptable and works as expected.
+<br><br>ALL TESTERS: Have a quick look on your platform that the breadcrumb and the multi-hyperlink UI look acceptable and work as expected.
 
-<h4>Test item 1 (??? - FAQ: ???)</h4>
+
+<h4>Colored labels (Dani, Markus - FAQ: Martin, Dani)</h4>
 <ul>
-  <li>subitem</li>
+  <li>test that it works in JDT views, content assist and quick assist</li>
+  <li>test that the Platform UI preference works</li>
+  <li>test test that the labels can also be read when its disabled</li>
 </ul>
 
-
-<h4>Test 'move mouse into hover' support (??? - FAQ: Markus)</h4>
+<h4>Java Editor breadcrumb (Markus, Martin - FAQ: Benno)</h4>
 <ul>
-  <li>preferences: all modes</li>
-  <li>test behavior for 'quick' users (e.g moving in and out quickly, move to another hover target, ..)</li>
-  <li>test clicking items in unfocused hovers (enriched and simple hovers)</li>
-  <li>test toolbar buttons</li>
-  <li>test all Java editor hovers (hint: there's a preference page that lists them including modifier keys)</li>
-  <li>test in other editors (some hovers will not allow to move into, but those who do should work)</li>
+<li>test the new look and feel</li>
 </ul>
 
-<h4>Java Editor breadcrumb (??? - FAQ: Benno)</h4>
-<br>
-Test the breadcrumb (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=%5Bbreadcrumb%5D&classification=Eclipse&product=JDT&component=Text&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">known issues</a>):
+<h4>Javadoc hover and view (Markus, Dani - FAQ: Benno)</h4>
 <ul>
-<li>test that it updates on selection/when editor opens/when editor activates</li>
-<li>test enable/disable per perspective</li>
-<li>test actions:
-	<ul>
-		<li>test that they work on breadcrumb selection when focus in breadcrumb</li>
-		<li>test that editor/text actions are disabled when fcous in breadcrumb</li>
-		<li>when moving back to source test that editor actions are active again</li>
-		<li>test switching editors, when focus is in breadcrumb, or when focus is in source viewer</li>
-		<li>test context menu actions</li>
-		<li>test workbench actions</li>
-		<li>test key bindings</li>
-	</ul>
-</li>
-<li>test navigation/open files/filter</li>
+<li>test history (back/forward) in the hover and the view</li>
+<li>test going from hover to view</li>
+<li>test that history is transferred to the view</li>
+<li>test Javadoc view's 'Link with Selection'</li>
+<li>test 'Open External Javadoc' in view and hover</li>
+<li>test that view and hover show the element image</li>
 </ul>
 
-<h4>Format annotations (??? - FAQ: Benno)</h4>
-See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=216541">bug 216541</a>.
+<h4>Multi-hyperlink UI (Martin, Markus - FAQ: Benno)</h4>
 <ul>
-<li>test that it works as expected</li>
-<li>test that updating old formatter profiles works as expected</li>
+<li>test that shows up when there's more than one hyperlink available</li>
+<li>test usability of the UI</li>
+<li>test that changing preferences works (e.g. use different modifier again)</li>
 </ul>
 
-<h4>Cursor jumping on Quick Fix/Assist [Ctrl-1] (??? - FAQ: Benno)</h4>
-See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=201878">bug 201878</a>.
+<h4>Rich problem hover (Dani, Martin - FAQ: Benno)</h4>
 <ul>
-<li>test that it works as expected</li>
-<li>test usability</li>
+<li>test the quick fixes</li>
+<li>test the tool bar buttons</li>
 </ul>
 
-<h4>Auto-expansion of folded members (??? - FAQ: Dani)</h4>
-See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=201878">bug 201878</a>.
+<h4>Quick views (Martin, Benno - FAQ: Dani)</h4>
 <ul>
-<li>test that folded members are auto-expanded using quick views and Outline</li>
-<li>test that members of olded parents are correctly selected and expanded</li>
+<li>test that size is remembered per default</li>
+<li>test that the new view menu settings to remember size and location work as expected</li>
 </ul>
 
-<h4>Find/Replace: retain caps when replacing (??? - FAQ: Dani)</h4>
-<strong>Please verify the feature using the patch attached to <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=217061">bug 217061</a>.</strong>
+<h4>JUnit: display execution time (Dani, Benno - FAQ: Markus)</h4>
 <ul>
-<li>test that casing is preserved when using this new regex</li>
+<li>test  execution time is shown next to each test</li>
+<li>test  that this can be disabled and enabled again via view menu</li>
+</ul>
+
+<h4>Content assist context (Benno, Markus - FAQ: Martin, Dani)</h4>
+<ul>
+<li>test that templates use the correct context</li>
+<li>test that template proposals are more accurate (less proposals than in M5)</li>
+</ul>
+
+<h4>[jar exporter] create ANT build file for current settings (Martin, Benno - FAQ: Benno)</h4>
+<ul>
+<li>test that it works</li>
+</ul>
+
+<h4>Pasting text for methods and statements into Package Explorer (Benno, Dani - FAQ: Markus)</h4>
+<ul>
+<li>test that it works</li>
+</ul>
+
+<h4>Test new quick assist and quick fixes (Benno, Dani - FAQ: Martin, Benno)</h4>
+<ul>
+<li>replace " "+" "+vDate+" "+5+" " by a MessageFormat (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=29562">bug 29562</a>.)/li>
+<li>convert to StringBuilder (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=154199">bug 154199</a>)</li>
+<li>2 versions of 'Extract to local variable' (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=170942">bug 170942</a>)</li>
+<li>Foreach needs quick fix for type mismatch (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=221767">bug 221767</a>)</li>
+</ul>
+
+<h4>Templates view (Markus, Martin - FAQ: Dani)</h4>
+<ul>
+  <li>test the view and its usability (good enough for M6?)</li>
 </ul>
 
 
 <h2>Bug Verification</h2>
-Every tester has to verify 2 bugs. <em>Before starting to verify a bug add a comment indicating
+Every tester has to verify 3 bugs. <em>Before starting to verify a bug add a comment indicating
 that you are about to verify it.</em>
 <ul>
-  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.4%20M6&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  P1 JDT UI bugs, 3.4 M6</a></li>
-
-  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;target_milestone=3.4%20M6&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  P1 Platform Text and Search bugs, 3.4 M6</a></li>
-
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.4%20M6&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
   JDT UI bugs blocker/critical/major, 3.4 M6</a></li>
 
