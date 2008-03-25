@@ -12,7 +12,7 @@
 <body>
 <h1>3.4 M6 Test Plan</h1>
 Test day: Tuesday, 2008-03-25<br>
-Test Build: start with I20080324-1800 and move to I20080325-0100 when available<br>
+Test Build: I20080325-0100<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Benno, Dani, Markus, Martin<br>
 
@@ -20,9 +20,18 @@ Testers: Benno, Dani, Markus, Martin<br>
 <h2>Platforms</h2>
 <ul>
   <li>WindowsXP: Martin</li>
-  <li>WindowsVista: Benno<br>
-  </li><li>Linux GTK: Dani<br>
-  </li><li>Mac OS X: Markus<br>
+  <li>WindowsVista: Benno</li>
+  <li>Linux GTK: Dani</li>
+  <li>Mac OS X: Markus</li>
+</ul>
+
+<h2>When mouse moved into hover preference</h2>
+Use the following setting during the test pass:
+<ul>
+  <li>Close hover: Martin</li>
+  <li>Enrich after delay: Benno</li>
+  <li>Enrich immediately: Dani
+  <li>Enrich on click: Markus<br>
   </li>
 </ul>
 
@@ -109,6 +118,12 @@ Testers: Benno, Dani, Markus, Martin<br>
 <li>convert to StringBuilder (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=154199">bug 154199</a>)</li>
 <li>2 versions of 'Extract to local variable' (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=170942">bug 170942</a>)</li>
 <li>Foreach needs quick fix for type mismatch (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=221767">bug 221767</a>)</li>
+</ul>
+
+<h4>NLS Wizard (Benno, Dani - FAQ: Markus)</h4>
+<ul>
+  <li>test that annotation arguments aren't NLSed</li>
+  <li>verify (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=nls&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.4+M6&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">M6 fixes</a>)</li>
 </ul>
 
 <h4>Templates view (Markus, Martin - FAQ: Dani)</h4>
