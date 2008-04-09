@@ -239,23 +239,18 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.2.jar">
+			<td valign="top"><a href="../patches/ecj_3.3.4.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2007/12/05, 1,49 MB (click on picture)</td>
+			<td valign="top">posted on 2008/04/09, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
+			<td valign="top"><a href="../patches/ecj_3.3.4src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2007/12/05, 1,06 MB (click on picture)</td>
+			<td valign="top">posted on 2008/04/09, 1,06 MB (click on picture)</td>
            </tr>         
-           <tr>
-			<td valign="top"><i>extracted from</i></td>
-			<td valign="top">build 3.3</td>
-          </tr>
-          </tr>
 	  </table>
--->	  
-			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.3 preview </b>
+	  
+		<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.3 preview </b>
       <table>
           <tr>
 			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.4.jar">
