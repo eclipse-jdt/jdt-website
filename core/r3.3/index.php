@@ -255,71 +255,46 @@ ob_start();
           </tr>
 	  </table>
 -->	  
-			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.2 preview </b>
+			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.3 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.2.z20071205-1549.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.4.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2007/12/05, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2008/04/09, 7.17 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
-			<td valign="top">Rollup 3.3.1</td>
+			<td valign="top">Rollup 3.3.2</td>
           </tr>
           <tr>
 			<td valign="top"><i>description</i> </td>
-			<td valign="top">Early preview of 3.3.2 rollup. <br>
-            				Plug-in revision ID is "3.3.2". Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_786_R33x">v_786_R33x</a>
+			<td valign="top">Early preview of 3.3.3 rollup. <br>
+	           				<b>Note:</b> No official 3.3.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
+            				Plug-in revision ID is "3.3.4". Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_794_R33x">v_794_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=187430">187430</a>
-							Unresolved types surfacing through DOM AST for annotation default values<br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=210638">210638</a>
-							[Debug] Can't restore Breakpoints view : concurrent access/hashmap<br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208013">208013</a>
-							ClassCastException: Initializer cannot be cast to IType when resolving binding<br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=178596">178596</a>
-							[search] Search for method references does not find references to interface method
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209150">209150</a>
-							[dom] Recovered type binding for &quot;java.lang.Object&quot; information are not complete
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=186410">186410</a>
-							[dom] StackOverflowError due to endless superclass bindings hierarchy
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209153">209153</a>
-							[1.5][compiler] VerifyError due to generic cast to a non visible type
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207573">207573</a>
-							[1.5][compiler] Internal compiler error: ClassCastException / ArrayBinding
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=208263">208263</a>
-							[ast rewrite] performance problems with lots of changes
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=207441">207441</a>
-							Wrong delta for files created in folders that are on a java project as classes folder
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=193210">193210</a>
-							[1.5][compiler] Internal compiler error java.lang.NullPointerException
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=205860">205860</a>
-							ASTParser.createBindings() returns [null]
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202404">202404</a>
-							[1.5][compiler] Incorrect handling of type variable bounds issued by capture conversion
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=159214">159214</a>
-							[1.5] [compiler] Eclipse compiler wildcard bug
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203318">203318</a>
-							[1.5][compiler] Improper capture of wildcard with lesser bound than parameter 
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=169049">169049</a>
-							[1.5][compiler] Bogus bound mismatch errors
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203905">203905</a>
-							[1.5][compiler] shows wrong error with generics
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203061">203061</a>
-							[compiler] Uninitialized member variables used in nonstatic initializers of peer members don't trigger compilation error 
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204624">204624</a>
-							[1.5][compiler] No error on abstract method implementation with missing parameter generics
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203662">203662</a>
-							Perf: Unnecessary compilation when package added to second source root
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=204652">204652</a>
-							&quot;Open Type&quot;: ClassCastException in conjunction with a class folder
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=200158">200158</a>
-							[compiler] inconsistent handling of unreachable code
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=167262">167262</a>
+							[1.5][compiler] @Override specification
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=220361">220361</a>
+							[1.5][compiler] Compiler incorrectly rejects static raw member type as parameterized
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=220111">220111</a>
+							[1.5][compiler] Type mismatch errors on identical types; code compiles with javac
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=210425">210425</a>
+							[1.5][compiler] @SuppressWarnings(&quot;unchecked&quot;)  not considered necessary for unconstrained generic parameters
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216686">216686</a>
+							[1.5][compiler] Failures of inference and overload resolution
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216683">216683</a>
+							[1.5][compiler] Confusion when homnymous types in local and enclosing scope
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216692">216692</a>
+							[1.5][compiler] Protected type not visible in subclass
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216565">216565</a>
+							[1.5][compiler] Cannot convert T to T
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216100">216100</a>
+							[1.5][compiler] Brigdes are not correcly generated
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.52&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.85&amp;content-type=text/html">build notes</a>.			
 			</table>
 
 		</div>
