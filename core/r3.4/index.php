@@ -55,9 +55,9 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>Improve "Unnecessary declaration of thrown checked exceptions"</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=73244">73244</a>) [maxime]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
-	        <i>Concurrent Java compiler (so as to leverage multi-core CPU)</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
+	        <b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142126">142126</a>) [kent]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<i>Need annotation bindings even when code contains errors</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=196200">196200</a>) [philippe]</li>
@@ -104,12 +104,19 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	        <b>Provide a mapping from problem id to preference key</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
-		<li><img src="../progress.gif" height="5" width="14">
+		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		    <b>Add compiler API to call the batch compiler from a stand-alone application</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [jerome]</li>
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		   <b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
+		<li><i>Leverage new compiler cancellation support into BuildNotifier</i>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227128">227128</a>) [kent]</li>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<i>Improve support for jsr199</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=188796">188796</a>, 
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226890">226890</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226918">226918</a>) [maxime]</li>
 	  </ul>
 	</li>
 	<li>DOM AST
@@ -127,6 +134,9 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	       <b>Support external library folders</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
+	    <li><img src="../progress.gif" height="5" width="14">
+	       <b>Support ZIP archives with extensions other than .zip and .jar</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182360">182360</a>) [jerome]</li>
 		<li><i>Binary/virtual projects</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=7497">7497</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=80162">80162</a>, <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=78067">78067</a>) [jerome]</li>
 		<li><i>Exclusion/inclusion filters for libraries</i>
@@ -153,7 +163,8 @@ ob_start();
 	  <ul>
 	    <li><img src="../progress.gif" height="5" width="14">
 	    	<b>Formatting should all be done at the core level</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>, 
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227043">227043</a>) [eric, frederic]</li>
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Allow to format set of regions</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=203304">203304</a>) [olivier]</li>
@@ -237,42 +248,32 @@ ob_start();
 	
      <a name="milestone-plan"></a>
      <p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-           For <b>3.4-Milestone 6 (2008/03/28)</b>, we will mainly focus on:</p>
+           For <b>3.4-Milestone 7 (2008/05/02)</b>, we will mainly focus on:</p>
       <ul>
 	    <li><b>Formatting should all be done at the core level</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>) [eric]</li>
-	    <li><b>Enrich completion context</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=202470">202470</a>,
-			 <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=202467">202467</a>) [david]</li>
-	    <li><b>Support external library folders</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
-	    <li><b>Fix getFullyQualifiedName(char) for binary types</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=156168">156168</a>) [jerome]</li>
-	    <li><b>Provide a mapping from problem id to preference key</b>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218603">218603</a>) [maxime]</li>
-		<li><b>Add compiler API to call the batch compiler from a stand-alone application</b>
-		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=217233">217233</a>) [kent]</li>
-		<li><b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
-		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
-			
-	    <li><i>Fix TypeNameMatch.getFullyQualifiedName() for binary types</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182179">182179</a>) [frederic]</li>
-	    <li>Investigate <i>Provide a way to get the matching regions from a search pattern</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=218605">218605</a>) [frederic]</li>
-	    <li>Investigate <i>Concurrent Java compiler (so as to leverage multi-core CPU)</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=126121">126121</a>) [kent]</li>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>, 
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227043">227043</a>) [eric, frederic]</li>
+	    <li><b>Concurrent Java compiler (so as to leverage multi-core CPU)</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=142126">142126</a>) [kent]</li>
 	    <li><i>Search API to handle annotations</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
-	    <li><i>Applying edits to a ICompilationUnit</i>
-			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=117694">117694</a>) [martin]</li>
+	    <li><b>Support ZIP archives with extensions other than .zip and .jar</b>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182360">182360</a>) [jerome]</li>
+		<li><i>Leverage new compiler cancellation support into BuildNotifier</i>
+		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227128">227128</a>) [kent]</li>
+	    <li><img src="../progress.gif" height="5" width="14">
+	    	<i>Improve support for jsr199</i>
+			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=188796">188796</a>, 
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226890">226890</a>,
+			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226918">226918</a>) [maxime]</li>
 			 
         <li>Bug fixing 
-			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M6&amp;resolution=FIXED">fixed</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">all</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">unresolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">resolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M6">verified</a>)</li>
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.4+M7&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">resolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=VERIFIED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.4+M7">verified</a>)</li>
       </ul>
 		</div>
 <!--		
