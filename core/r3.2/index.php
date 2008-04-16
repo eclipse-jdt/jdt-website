@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>3.2.3 preview </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.7.z20080125-2232.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.8.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2008/01/25, 6.99 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2008/04/16, 6.99 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -528,11 +528,15 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Early preview of 3.2.3 build. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.2.7".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_690_R32x">v_690_R32x</a>
+            				Plug-in revision ID is "3.2.8".Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_691_R32x">v_691_R32x</a>
 							<br>
                             Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216569">216569</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=225744">225744</a>
+							Bottleneck in SetClasspathOperation
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219855">219855</a>
+							[1.5][compiler] StackOverflowError during: &quot;Requesting Java AST from selection&quot;
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=216569">216569</a>
 							backport bug 178551 to R3_2
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=214981">214981</a>
 							Race condition allowed with SetClasspathOperation
@@ -576,7 +580,7 @@ ob_start();
 							NullPointerException in BindingKeyResolver.consumeTypeVariable(...)         
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.108&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.114&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
