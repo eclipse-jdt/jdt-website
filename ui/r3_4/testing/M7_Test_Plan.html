@@ -20,8 +20,8 @@ Testers: Benno, Dani, Martin<br>
 <h2>Platforms</h2>
 <ul>
   <li>WindowsVista: Benno</li>
-  <li>WindowsXP: Martin</li>
-  <li>Linux GTK: Dani</li>
+  <li>WindowsXP: Dani</li>
+  <li>Linux GTK: Martin</li>
 </ul>
 
 
@@ -71,6 +71,50 @@ Test new code formatter.
   <li>test that non-Java problems also get the hover guessing is working as expected</li>
   <li>test that quick fixes are also shown for non-Java problems</li>
 </ul>
+
+<h4>Accessibility (Martin - FAQ: Martin)</h4>
+<ul>
+  <li>test that all UI can be reached by keyboard navigation</li>
+  <li>test that all widgets are read by the screen reader or accessibility inspecion tool (inspect 32, \\smboti\public\m\transfer\amartin\inspect32) </li>
+</ul>
+
+<h4>BIDI (FAQ: Dani, Martin)</h4>
+<ul>
+  <li>Update Strings.</li>
+  <li>test that all widgets are read by the screen reader or shown by an accessibility inspection tool (inspect32.exe, \\smboti\public\m\transfer\amartin\inspect32) </li>
+</ul>
+
+<h4>External class folder (FAQ: Martin)</h4>
+<ul>
+  <li>Test the UI to configure extrenal classfolders</li>
+  <li>Test our tooling with extrenal classfolders (Export, refactorings, etc...) </li>
+  <li>Test refresh when content changed (Use 'Refresh...' in package explorer)</li>
+</ul>
+
+<h4>JAR files with other file extensions than JAR or ZIP (FAQ: Martin)</h4>
+<ul>
+  <li>Test the UI to configure such archives</li>
+  <li>Test our tooling </li>
+</ul>
+
+<h4>Text search RegEx supports new line character (\R) and case sensitive replace (\C) like find/replace (FAQ: Martin)</h4>
+<ul>
+  <li>Test if it works</li>
+</ul>
+
+<h4>Parameter argument guessing in code assist (FAQ: Martin)</h4>
+<ul>
+  <li>Test the different settins (Fill best guess or not)</li>
+  <li>Test Java corner cases (guessing for parameterized types, ...)</li>
+</ul>
+
+<h4>Quick Fix/Assist (FAQ: Martin)</h4>
+<ul>
+  <li>New quick fix for missing type references (Fix project setup...). Try in PDE projects</li>
+  <li>New quick fix for switch over enum with missing case</li>
+  <li>Extract method quick assist now available on statement selection (on or multiple)</li>
+</ul>
+
 
 <h2>Bug Verification</h2>
 Every tester has to verify 5 bugs. <em>Before starting to verify a bug add a comment indicating
