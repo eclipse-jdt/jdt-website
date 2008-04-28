@@ -33,18 +33,18 @@ Testers: Benno, Dani, Martin<br>
 </ul>
 
 
-<h2>Test New Functionality </h2>
+<h2>test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 <br><b>All testers:</b> Please have a quick look on your platform that the breadcrumb looks acceptable and works as expected.
 
-<h4>New code formatter (??? - FAQ: Benno</h4>
+<h4>New code formatter (Dani - FAQ: Benno)</h4>
 Test new code formatter.
 <ul>
-  <li>Test format on save. Especially format edited lines. Most interesting are corner cases at partition borders.</li>
+  <li>test format on save. Especially format edited lines. Most interesting are corner cases at partition borders.</li>
   <li>Format some random projects, ensure formatting is OK</li>
 </ul>
  
-<h4>Ruler improvements (??? - FAQ: Dani)</h4>
+<h4>Ruler improvements (Martin - FAQ: Dani)</h4>
 <ul>
   <li>test selecting text using Shift+click in the line number ruler</li>
   <li>test that clicking on line number ruler doesn't trigger annotation (e.g. go to overridden method)</li>
@@ -52,17 +52,18 @@ Test new code formatter.
   <li>verify that keyboard focus is not lost (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=184255">bug 184255</a>)</li>
 </ul>
 
-<h4>Enrich annotation and quick diff hovers (??? - FAQ: Dani)</h4>
+<h4>Enrich annotation and quick diff hovers (Martin - FAQ: Dani)</h4>
 <ul>
   <li>verify that the local disk quick diff hover can be enriched</li>
   <li>verify that the CVS quick diff hover can be enriched</li>
   <li>verify that the CVS annotation hover can be enriched</li>
 </ul>
 
-<h4>Parameter guessing (Benno - FAQ: Dani, Martin)</h4>
+<h4>Fill argument names (Benno - FAQ: Dani, Martin)</h4>
 <ul>
   <li>test that the improved preference is understandable and works</li>
-  <li>test that proposal guessing is working as expected</li>
+  <li>test that proposal guessing is working as expected in bot modes</li>
+  <li>test Java corner cases (guessing for parameterized types, ...)</li>  
 </ul>
 
 <h4>Problem hovers (Dani - FAQ: Benno)</h4>
@@ -75,40 +76,34 @@ Test new code formatter.
 <h4>Accessibility (Martin - FAQ: Martin)</h4>
 <ul>
   <li>test that all UI can be reached by keyboard navigation</li>
-  <li>test that all widgets are read by the screen reader or accessibility inspecion tool (inspect 32, \\smboti\public\m\transfer\amartin\inspect32) </li>
-</ul>
-
-<h4>BIDI (FAQ: Dani, Martin)</h4>
-<ul>
-  <li>Update Strings.</li>
   <li>test that all widgets are read by the screen reader or shown by an accessibility inspection tool (inspect32.exe, \\smboti\public\m\transfer\amartin\inspect32) </li>
 </ul>
 
-<h4>External class folder (FAQ: Martin)</h4>
+<h4>BIDI (Benno - FAQ: Dani, Martin)</h4>
 <ul>
-  <li>Test the UI to configure extrenal classfolders</li>
-  <li>Test our tooling with extrenal classfolders (Export, refactorings, etc...) </li>
-  <li>Test refresh when content changed (Use 'Refresh...' in package explorer)</li>
+  <li>verify the BIDI bugs</li>
+  <li>hack the TextProcessor and check that our path strings are going through it</li>
 </ul>
 
-<h4>JAR files with other file extensions than JAR or ZIP (FAQ: Martin)</h4>
+<h4>External class folder (Benno - FAQ: Martin)</h4>
 <ul>
-  <li>Test the UI to configure such archives</li>
-  <li>Test our tooling </li>
+  <li>test the UI to configure external class folders</li>
+  <li>test our tooling with external class folders (Export, refactorings, etc...) </li>
+  <li>test refresh when content changed (Use 'Refresh...' in package explorer)</li>
 </ul>
 
-<h4>Text search RegEx supports new line character (\R) and case sensitive replace (\C) like find/replace (FAQ: Martin)</h4>
+<h4>JAR files with other file extensions than JAR or ZIP (Dani - FAQ: Martin)</h4>
 <ul>
-  <li>Test if it works</li>
+  <li>test the UI to configure such archives</li>
+  <li>test our tooling </li>
 </ul>
 
-<h4>Parameter argument guessing in code assist (FAQ: Martin)</h4>
+<h4>Text search RegEx supports new line character (\R) and case sensitive replace (\C) like find/replace (Dani - FAQ: Martin)</h4>
 <ul>
-  <li>Test the different settins (Fill best guess or not)</li>
-  <li>Test Java corner cases (guessing for parameterized types, ...)</li>
+  <li>test if it works</li>
 </ul>
 
-<h4>Quick Fix/Assist (FAQ: Martin)</h4>
+<h4>Quick Fix/Assist (Benno - FAQ: Martin)</h4>
 <ul>
   <li>New quick fix for missing type references (Fix project setup...). Try in PDE projects</li>
   <li>New quick fix for switch over enum with missing case</li>
