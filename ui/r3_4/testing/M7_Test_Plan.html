@@ -11,18 +11,17 @@
 
 <body>
 <h1>3.4 M7 Test Plan</h1>
-Test day: Tuesday, 2008-04-29<br>
-Test Build: start with I20080428-???? and move to I20080429-???? when available<br>
+Test day: Tuesday, 2008-04-28<br>
+Test Build: start with I20080427-2000<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Benno, Dani, Markus, Martin<br>
+Testers: Benno, Dani, Martin<br>
 
 
 <h2>Platforms</h2>
 <ul>
-  <li>WindowsXP: Dani</li>
   <li>WindowsVista: Benno</li>
-  li>Linux GTK: Martin</li>
-  <li>Mac OS X: Markus</li>
+  <li>WindowsXP: Martin</li>
+  <li>Linux GTK: Dani</li>
 </ul>
 
 
@@ -36,23 +35,45 @@ Testers: Benno, Dani, Markus, Martin<br>
 
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
-<br><br>ALL TESTERS: Please have a quick look on your platform that the breadcrumb looks acceptable and works as expected.
+<br><b>All testers:</b> Please have a quick look on your platform that the breadcrumb looks acceptable and works as expected.
 
-<h4>New code formatter FAQ:Benno</ha>
+<h4>New code formatter (??? - FAQ: Benno</h4>
 Test new code formatter.
 <ul>
-<li>Test format on save. Especially format edited lines. Most interesting are corner cases at partition borders.</li>
-<li>Format some random projects, ensure formatting is ok</li>
+  <li>Test format on save. Especially format edited lines. Most interesting are corner cases at partition borders.</li>
+  <li>Format some random projects, ensure formatting is OK</li>
 </ul>
  
-<h4>Test item 1 (??? - FAQ: ???)</h4>
+<h4>Ruler improvements (??? - FAQ: Dani)</h4>
 <ul>
-  <li>subitem</li>
+  <li>test selecting text using Shift+click in the line number ruler</li>
+  <li>test that clicking on line number ruler doesn't trigger annotation (e.g. go to overridden method)</li>
+  <li>test that the quick diff hover is off when quick diff is disabled</li>
+  <li>verify that keyboard focus is not lost (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=184255">bug 184255</a>)</li>
 </ul>
 
+<h4>Enrich annotation and quick diff hovers (??? - FAQ: Dani)</h4>
+<ul>
+  <li>verify that the local disk quick diff hover can be enriched</li>
+  <li>verify that the CVS quick diff hover can be enriched</li>
+  <li>verify that the CVS annotation hover can be enriched</li>
+</ul>
+
+<h4>Parameter guessing (Benno - FAQ: Dani, Martin)</h4>
+<ul>
+  <li>test that the improved preference is understandable and works</li>
+  <li>test that proposal guessing is working as expected</li>
+</ul>
+
+<h4>Problem hovers (Dani - FAQ: Benno)</h4>
+<ul>
+  <li>test setting non-project specific severity settings is easier than in M6</li>
+  <li>test that non-Java problems also get the hover guessing is working as expected</li>
+  <li>test that quick fixes are also shown for non-Java problems</li>
+</ul>
 
 <h2>Bug Verification</h2>
-Every tester has to verify 2 bugs. <em>Before starting to verify a bug add a comment indicating
+Every tester has to verify 5 bugs. <em>Before starting to verify a bug add a comment indicating
 that you are about to verify it.</em>
 <ul>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.4%20M7&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
