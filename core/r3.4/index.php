@@ -110,9 +110,7 @@ ob_start();
 		<li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 		   <b>Detect unnecessary <code>Throwable</code> or <code>Exception</code> in <code>throws</code> clause</b>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219461">219461</a>) [maxime]</li>
-		<li><i>Leverage new compiler cancellation support into BuildNotifier</i>
-		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227128">227128</a>) [kent]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><!-- <img src="../progress.gif" height="5" width="14"> -->
 	    	<i>Improve support for jsr199</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=188796">188796</a>, 
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226890">226890</a>,
@@ -134,7 +132,7 @@ ob_start();
 	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	       <b>Support external library folders</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182537">182537</a>) [jerome]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	       <b>Support ZIP archives with extensions other than .zip and .jar</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182360">182360</a>) [jerome]</li>
 		<li><i>Binary/virtual projects</i>
@@ -161,7 +159,7 @@ ob_start();
 	</li>
 	<li>Code Formatter
 	  <ul>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li><img alt="OK mark" src="../ok.gif" style="width: 10px; height: 10px;">
 	    	<b>Formatting should all be done at the core level</b>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=102780">102780</a>, 
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227043">227043</a>) [eric, frederic]</li>
@@ -235,7 +233,7 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=155013">155013</a>) [frederic]</li>
 	    <li><i>Optimization of JavaWorkspaceScope</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182738">182738</a>) [frederic]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li>
 	        <i>Search API to handle annotations</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209996">209996</a>,
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=209778">209778</a>) [frederic]</li>
@@ -262,7 +260,7 @@ ob_start();
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=182360">182360</a>) [jerome]</li>
 		<li><i>Leverage new compiler cancellation support into BuildNotifier</i>
 		    (<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227128">227128</a>) [kent]</li>
-	    <li><img src="../progress.gif" height="5" width="14">
+	    <li>
 	    	<i>Improve support for jsr199</i>
 			(<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=188796">188796</a>, 
 			 <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=226890">226890</a>,
