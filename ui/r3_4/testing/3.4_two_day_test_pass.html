@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>3.4 Two Day Test Pass</title>
+</head>
+<body>
+<h1>3.4 Two Day Test Pass: JDT UI, JDT Text, Platform Text,
+and Platform Search</h1>
+<h3>Testers: Benno, Dani, Markus, Martin</h3>
+
+<h3><span style="font-weight: bold;">Build</span></h3>
+Eclipse-SDK 3.4 RC1&nbsp;<br>
+<h3>Platforms</h3>
+<ul>
+  <li>Linux-GTK (Martin)</li>
+  <li>Mac OS X (Markus)</li>
+  <li>Windows Vista (Benno)</li>
+  <li>Windows XP (Dani)</li>
+</ul>
+
+<h3>Workbench Setup</h3>
+<em>Use the Java editor breadcrumb whenever possible.</em> 
+<ul>
+  <li>Dani tests using the Java browsing perspective (Dani)</li>
+  <li>Benno tests using the Java perspective with Package Explorer in project mode</li>
+  <li>Martin tests using the Java perspective with Package Explorer in working set mode<br>
+  </li>
+</ul>
+
+<h2>Verify RC1 Fixes (all)</h2>
+First thing is to verify all our RC1 fixes.
+<p>
+Every tester has to verify 20 bugs. <em>Before starting to verify a bug add a comment indicating
+that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;target_milestone=3.4%20rc1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs, 3.4 RC1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;target_milestone=3.4%20rc1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs, 3.4 RC1</a></li>
+</ul>
+
+
+<h2>New 3.4 Functionality (Dani)</h2>
+Test new features that have been added during 3.4 development.
+Start by testing the features mentioned in the New and Noteworthy
+documents.
+
+<h2>Dialogs, Preferences and Wizards (Martin)</h2>
+<ul>
+  <li>input validation</li>
+  <ul>
+    <li>whenever you have to fill in data in dialogs try to fool the
+dialog by providing incomplete or bogus input</li>
+  </ul>
+  <li>different fonts and colors<br>
+  </li>
+  <ul>
+    <li>test that fonts are applied on apply<br>
+    </li>
+    <li>specified dialog font is used</li>
+    <li>no buttons and labels clipped</li>
+  </ul>
+  <li>mnemonics</li>
+  <ul>
+    <li>test that mnemonics are defined</li>
+    <li>test for conflicts - major items should have a unique mnemonic</li>
+  </ul>
+  <li>initial focus in dialogs</li>
+  <li>size and position</li>
+  <ul>
+    <li>all input dialogs should be resizable<br>
+    </li>
+  </ul>
+  <ul>
+    <li>dialog size should be remembered</li>
+    <li>dialog position only for special dialogs</li>
+    <li>test multiple monitors</li>
+  </ul>
+  <li>NLS problems: modify our NLS files with bogus content</li>
+  <ul>
+    <li>dialog layout</li>
+  </ul>
+  <li>Help<br>
+  </li>
+</ul>
+<h2>Views and Editors (Dani)</h2>
+<ul>
+  <li>resize behavior</li>
+  <li>different fonts and colors</li>
+  <li>detached views</li>
+  <li>multiple windows</li>
+  <li>multiple editor areas</li>
+  <li>help support<br>
+  </li>
+</ul>
+
+<h2>Actions (Benno)</h2>
+<ul>
+  <li>enablement</li>
+  <li>verify that they don't fail</li>
+  <li>locking<br>
+  </li>
+  <ul>
+    <li>To lock the workspace use the org.eclipse.ui.examples.job
+plug-in
+from the Eclipse repository</li>
+    <li>Test Edit, Source and Refactoring actions when the workspace is
+locked</li>
+    <li>Test modifying project properties (build path, compiler
+settings,
+...) when workspace is locked</li>
+    <li>You should always get the blocking dialog</li>
+    <li>Cancel the user action. Make sure that no
+OperationCancelException or other exceptions appear in the log</li>
+  </ul>
+  <li>validate edit</li>
+  <ul>
+    <li>Check-out code from the repository in CVS Watch/Edit mode
+(stores
+file in read-only mode)</li>
+    <li>Test Editing, Source and Refactoring actions on files that are
+read-only</li>
+    <li>Expected result: actions should complete without errors<br>
+    </li>
+  </ul>
+</ul>
+<h2>Compilation Units not on Build Path (Martin)<br>
+</h2>
+<ul>
+  <li>Test Edit, Source and Refactoring actions for compilation units
+not on the build path.</li>
+  <li>Test for:
+    <ul>
+      <li>editors opened on repository files</li>
+      <li>editors opened on Java file excluded from the build path</li>
+      <li>editors opened on Java files stored in Simple projects </li>
+    </ul>
+  </li>
+  <li>Actions should either operate without an error, not be present or
+present a dialog that the CU is not on the build path</li>
+</ul>
+
+<h2>Workspace Setup (Markus)</h2>
+Setup workspace in a way unusual compared to your normal setup.
+Testing should take place in one of the following workspace setups.
+When setting up the workspace test also the functionality to setup
+this workspace style:</p>
+<ul>
+  <li>use external projects<br>
+  </li>
+  <li>use linked resources
+    <ul>
+      <li><font color="#000000">linked output folders</font></li>
+      <li><font color="#000000">linked source folders</font></li>
+      <li><font color="#000000">linked and nested source folders</font></li>
+      <li>test rendering in views</li>
+      <li><font color="#000000">linked class folders</font></li>
+    </ul>
+  </li>
+  <li>use multiple output folder</li>
+  <li>use combination of exclusion &amp; inclusion filters</li>
+  <li>use user defined library containers (JUnit as a user defined
+library)
+    <ul>
+      <li>quick fixes for unbound user libraries</li>
+      <li>quick fixes for build path problems</li>
+    </ul>
+  </li>
+  <li>full source workspace</li>
+</ul>
+
+<h2>Workspace compatibility (Markus)</h2>
+Verify
+that an existing workspace can be started on the new version and is
+fully functional. Check the .log for serious problems.<br>
+<ul>
+  <li>upgrade a 3.2 workspace to 3.4</li>
+  <li>upgrade a 3.3 workspace to 3.4</li>
+</ul>
+
+<h2>Freestyle Testing (all)</h2>
+Once all of the above test items are done, start with a fresh workspace and
+change the settings in a way you normally don't work.
+<p>
+Implement a little feature or tool or fix one of your favorite bugs.</p>
+</body>
+</html>
