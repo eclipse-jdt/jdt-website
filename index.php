@@ -1,7 +1,7 @@
 <?php  																														require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Eclipse Java development tools (JDT) Subproject";
+	$pageTitle 		= "Eclipse Java development tools (JDT)";
 	$pageKeywords	= "JDT, Java, UI, Debug, APT, java, development, tools, java ide, Eclipse";
 	$pageAuthor		= "JDT/Core team";
 	
