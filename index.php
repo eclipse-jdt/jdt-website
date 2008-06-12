@@ -19,7 +19,7 @@ ob_start();
 	<div id="midcolumn">
 		<h1><?= $pageTitle ?></h1>
 		<div class="homeitem3col">
-			<h3>About the JDT Subproject</h3>
+			<h3>About the JDT</h3>
 			<p>The JDT project provides the tool plug-ins that implement a Java IDE 
         supporting the development of any Java application, including Eclipse 
         plug-ins. It adds a Java project nature and Java perspective to the Eclipse 
@@ -31,7 +31,7 @@ ob_start();
 		</div>
 		<div class="homeitem3col">
 			<h3>JDT Components</h3>
-			<p>The JDT subproject is broken down into components. Each component operates 
+			<p>The JDT project is broken down into components. Each component operates 
       like a project unto its own, with its own set of committers, bug categories 
       and mailing lists.
 			</p>

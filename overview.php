@@ -14,7 +14,7 @@
 	
 	#
 	# Begin: page-specific settings.  Change these. 
-	$pageTitle 		= "Eclipse Java development tools (JDT) Subproject Overview";
+	$pageTitle 		= "Eclipse Java development tools (JDT) Overview";
 	$pageKeywords	= "developer, XML, Java, Web development, Security, e-business";
 	$pageAuthor		= "JDT/Core Team";
 	
