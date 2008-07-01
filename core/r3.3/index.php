@@ -37,6 +37,7 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
+			<a name="maintenance"></a>
 			<p>This section describes the JDT/Core implementation of the 
 			   <a href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_3_3.html">official plan</a>.<br>
             </p>
