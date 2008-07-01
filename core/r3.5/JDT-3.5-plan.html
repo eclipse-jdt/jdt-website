@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Untitled Document</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<h1>JDT proposed plan items for release 3.5</h1>
+<br>
+<p:colorscheme
+ colors="#000000,#FFFFFF,#CCCCFF,#808080,#7889FB,#DFFF66,#C0C0C0,#D18213"></p:colorscheme>
+
+<h2> Java 7 support</h2>
+Module (JSR 177/194), more annotations, annotations everywhere (JSR 305/308)
+
+<h2>Pre-processing</h2>
+
+<h2>More flexible classpath layout</h2>
+When adopting Eclipse, some pre-existing project layouts are hard to model in Eclipse:
+<ul>
+<li> multiple source attachments per library<li>
+<li>relax classpath container limitations, which currently do not allow nested containers, source folders etc...</il>
+<li>chained JARs</li>
+<li>nested JARs</li>
+<li>remove limitation on read-only external classfolder</li>
+<li>pluggable archive reader (e.g. RAR support)</li>
+<li>macro-component on buildpath: a la Jazz</li>
+</ul>
+
+<h2>Finer granularity of classpath and compiler settings</h2>
+Allow more configurability of the Java project, such as allowing custom buildpath or settings on a per source folder basis
+
+<h2>Better experience out of the box</h2>
+<ul>
+<li>Couple compiler compliance and JRE setting</li>
+<li>Better integration with project explorer (http://www.codecommit.com/blog/eclipse/the-problem-of-perspective-multiplicity)
+<li>Merge local history and CVS history, offer comparisons (sync) even if offline
+<li>Provide User Explanation and User Action for Messages
+<li>Provide (extensible) mechanism to convert a binary project back into master source form
+</ul>
+
+<h2>Editor improvements</h2>
+<ul>
+<li>Indent lines in control flow statements (84878). Richer compare editor experience.
+</ul>
+
+<h2>Performance</h2>
+<ul>
+<li>Faster plug-in launch configs
+</ul>
+
+<h2>Search improvement</h2>
+<ul>
+<li>Integrate websearch into Java search (http://eclipse-projects.blogspot.com/2008/05/google-is-cool.html)
+</ul>
+
+<h2>Refactoring</h2>
+<ul>
+<li>Refactor signaling ramifications in binary dependents (producing refactoring scripts for these?)
+</ul>
+
+<h2>Code formatting</h2>
+<ul>
+<li>Preserve line breaks
+</ul>
+
+</body>
+</html>
