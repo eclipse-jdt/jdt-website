@@ -42,9 +42,10 @@ ob_start();
             </p>
 			
 		<img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;
-			<b>Rollup 3.3.2 - no date yet</b>
+			<b>Rollup 3.3.2 - completed on 2008/02/21</b>
 		<ul>
-			<li> preview available in <a href="#UPDATES">update</a> area. </li>
+			<li> available on the <a href="http://download.eclipse.org/downloads">download</a> area.</li>
+			<li> final <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.82&amp;content-type=text/html">build notes</a></li>
 			<li> bug fixing :
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">all planned fixes</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.3.2">unresolved</a>)
