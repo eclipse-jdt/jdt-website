@@ -12,20 +12,25 @@
  colors="#000000,#FFFFFF,#CCCCFF,#808080,#7889FB,#DFFF66,#C0C0C0,#D18213"></p:colorscheme>
 
 <h2> Java 7 support</h2>
-Module (JSR 177/194), more annotations, annotations everywhere (JSR 305/308)
+Java 7 may materialize shortly after our 3.5 cycle. If we want to deliver support for it in a timely fashion, we should engage on it as soon as a Java7 specification is published.
+We should avoid delaying support for it by another release/year. These are possible items to consider:
+<ul>
+<li>Support for modules [JSR <a href="http://jcp.org/en/jsr/detail?id=277">277</a>][JSR <a href=http://jcp.org/en/jsr/detail?id=294">294</a>]</li>
+<li> More annotations, annotations everywhere [JSR <a href="http://jcp.org/en/jsr/detail?id=305">305</a>][JSR <a href=http://jcp.org/en/jsr/detail?id=308">308</a>]</li>
+</ul>
 
 <h2>Pre-processing</h2>
 
 <h2>More flexible classpath layout</h2>
 When adopting Eclipse, some pre-existing project layouts are hard to model in Eclipse:
 <ul>
-<li> multiple source attachments per library<li>
-<li>relax classpath container limitations, which currently do not allow nested containers, source folders etc...</il>
-<li>chained JARs</li>
-<li>nested JARs</li>
-<li>remove limitation on read-only external classfolder</li>
-<li>pluggable archive reader (e.g. RAR support)</li>
-<li>macro-component on buildpath: a la Jazz</li>
+<li> Multiple source attachments per library<li>
+<li>Relax classpath container limitations, which currently do not allow nested containers, source folders etc...</il>
+<li>Chained JARs</li>
+<li>Nested JARs</li>
+<li>Remove limitation on read-only external classfolder</li>
+<li>Pluggable archive reader (e.g. RAR support)</li>
+<li>Macro-component on buildpath: a la Jazz</li>
 </ul>
 
 <h2>Finer granularity of classpath and compiler settings</h2>
