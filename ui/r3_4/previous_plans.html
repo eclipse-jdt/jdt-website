@@ -66,13 +66,88 @@ function traverseLinkifyBugs(node) {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised 16:40 CET February 11, 2008</p>
+    <p>Last revised 11:27 CEST July 2, 2008</p>
   </tr>
   
    <tr> 
     <td WIDTH="100%"> 
     <p>The current 3.4 milestone plan can be found <a href="plan.php">here</a>.</p>
   </tr>
+
+<tr>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning">Milestone M6 (2008-3-28)</font></font></td>
+</tr>
+
+  <tr> 
+    <td WIDTH="100%">
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#Milestone_Planning">Platform Text 3.4 M6 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> <Style:committed>change execution should not happen in the UI thread (bug 175733)</Style:committed></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> refactoring should report affected binary references (bug 182346)</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> update JUnit4 to 4.4 (bug 197170)</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> show test running time (bug 102236)</li>
+			<li><font class="indexsub" color="#8080ff">[3.5]</font><img src="../images/progress.gif" border="0" height="5" width="14" align="middle"> track rename of org.junit4 bundle to org.junit (bug 186369)</li>
+		</ul>
+		
+	  <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Javadoc view and sticky Javadoc hover [<a href="#2">2</a>]</h4>
+	  See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.4/plan.php#rich hovers">Rich Hovers</a> item.
+	  <ul>
+  		  <li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> <Style:committed>add better support for the @inheritDoc tag</Style:committed>
+  		  <li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> <Style:committed>add the new Javadoc (links, inheritDoc) functionality as API to <code>JavadocContentAccess</code></Style:committed>
+	      <li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>support to follow links in Javadoc view</Style:committed></li>
+	      <li><img src="../images/ok.gif" border="0" height="10" width="10"> <Style:committed>support navigation and history support in Javadoc view</Style:committed></li>
+	  </ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>enrich the problem hover:
+			<ul>
+				<li><img src="../images/ok.gif" border="0" height="10" width="10"> add a tool bar button or command link(s) when quick fixes are available</li>
+				<li><img src="../images/ok.gif" border="0" height="10" width="10"> add a tool bar button or command link to change the compiler options</li>
+				<li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> add a tool bar button or command link to change clean up on save options</li>
+			</ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add UI support for external class folders (see JDT Core bug 182537)</li>
+		</ul>
+	    
+	  <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#2">2</a>]</h4>
+	    <ul>
+		  <li><font class="indexsub" color="#8080ff">[&gt;3.4]</font> <Style:committed>indicate match in proposal list (similar to Ctrl+3)</Style:committed></li>
+		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> offer API for simpler access to proposal computers preferences (bug 140886)</li>
+	    </ul>
+	  </li>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> investigate performance bugs filed by Frédéric</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Jar Exporter [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> create Ant file from Runnable JAR file exporter (bug 213638) - review and comment on external contribution</li>
+		</ul>
+		
+	
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_4/testing/M6_Test_Plan.html">test plan</a> for the 3.4 M6 test pass.</li>
+		</ul>
+      
+	</td>
+</tr>
 
 
 <tr>
