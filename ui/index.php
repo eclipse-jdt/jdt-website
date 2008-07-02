@@ -77,19 +77,19 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="happening"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p><b>R3.4 Development</b></p>
+			<p><b>R3.5 Development</b></p>
 			<ul>
 				<li>Most active development goes into this stream.</li>
-				<li>The combined JDT Text and JDT UI 3.4 plan is posted <a href="r3_4/plan.php">here</a>.</li>
-				<li>The plan for the next milestone is posted <a href="r3_4/plan.php#Milestone_Planning">here</a>.</li>
+				<li>The combined JDT Text and JDT UI 3.5 plan is posted <a href="r3_5/plan.php">here</a>.</li>
+				<li>The plan for the next milestone is posted <a href="r3_5/plan.php#Milestone_Planning">here</a>.</li>
 			</ul>
-			<p><b>R3.3</b></p>
+			<p><b>R3.4</b></p>
 			<ul>
-				<li>Release 3.3 is available on the <a
+				<li>Release 3.4 is available on the <a
 					href="http://www.eclipse.org/downloads/index.php"
 					target="newdownload&quot;">download</a> area.</li>
 			</ul>
-			<p><b>Pre 3.3 builds</b></p>
+			<p><b>Pre 3.4 builds</b></p>
 			<ul>
 				<li>1.x, 2.x and 3.2.x builds are available from the <a
 					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
