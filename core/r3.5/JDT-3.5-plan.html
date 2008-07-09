@@ -19,18 +19,59 @@ We should avoid delaying support for it by another release/year. These are possi
 <li> More annotations, annotations everywhere [JSR <a href="http://jcp.org/en/jsr/detail?id=305">305</a>][JSR <a href=http://jcp.org/en/jsr/detail?id=308">308</a>]</li>
 </ul>
 
-<h2>Pre-processing</h2>
+<h2>Better support for alternate language toolkits</h2>
+JDT is popular for building Java applications, and it is also a building block for other languages either directly (JSP) or indirectly (JSDT, AJDT). While we understand the need to make the Java IDE
+continuously better and more attractive, we would like to bridge the gap between the level of integration for other language toolkits between where they are today and JDT (uber-integration). 
+
+<ul>
+<li> P1 <b>Pre-processing.</b>  Typical usage is for library writers who comment in/out some portions of the code based on some inlined directives recognized by their preprocessors. Today, these people can write their own builders to transform resources into Java; 
+but this provides a sub optimal experience for end-users, since all Java tooling will not reflect original resources, but only consider derived Java sources. If we did provide some hooks for preprocessor, the hope 
+would be that there would be no need for intermediate derived Java file, and that tooling would properly map back to original files, in particular debugging should hide source transformations
+[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=116143">116143</a>]. </li>
+
+<li> P2 <b>Post-processing.</b> Some clients want to transform .class files into different type of resources. For this to occur, it means that they need to contribute their own builder, and thus need to manage derived .class files
+as well. As part of our contribution to e4, we would like to cross-compile from Java to some scripting language, like Flex/ActionScript. The cross compiler could be a first client to a post-processing API.. </li>
+
+<li> P2 <b>Factor out more JDT functionalities. </b>
+Along the past releases, JDT pushed down some useful functionalities in language agnostic layers (LTK, TEXT) or offered some hooks for others to participate in various operations such as compilation, search, refactoring, codeassist, ...).
+These moves were based on specific requests, and we need to do more to avoid the need for cloning the JDT codebase. Examples of that are for JSDT, AJDT consumptions. Other projects like project 
+<a href="http://eclipse-imp.sourceforge.net/">IMP</a> would also like to generate IDE tools using building bricks extracted out from JDT; for instance, a generic and scalable language model infrastructure, extracted from the Java model would be a useful initial piece of interest.
+</li>
+</ul>
 
 <h2>More flexible classpath layout</h2>
 When adopting Eclipse, some pre-existing project layouts are hard to model in Eclipse:
 <ul>
 <li> Multiple source attachments per library<li>
-<li>Relax classpath container limitations, which currently do not allow nested containers, source folders etc...</il>
+
+<li>P1 <b>Relax classpath container limitations</b>. Today, a classpath container can hold either project or library classpath entries; thus in essence it cannot denote further classpath containers, 
+source folders. This limitation is preventing a range of advanced usage, especially in PDE, or support for user libraries. 
+.
+</il>
+
+<li><b>Improve user library support</b>. User library provide a simple mechanism and UI to define group of libraries to be added to a classpath. Over time, a number of improvements got requested
+to make these user libraries more generally useful. Here are some popular requests: 
+allow user libraries to depend on other user libraries [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140091">140091</a>],
+allow user libraries to aggregate more than JAR/ZIP files [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=115097">115097</a>],
+provide a simple extension point for contributing library definitions [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=172118">172118</a>]</li>
+
 <li>Chained JARs</li>
+
 <li>Nested JARs</li>
+
 <li>Remove limitation on read-only external classfolder</li>
-<li>Pluggable archive reader (e.g. RAR support)</li>
-<li>Macro-component on buildpath: a la Jazz</li>
+
+<li>P2 <b>Support arbitrary archive formats</b>. Today, JDT can only read JAR/ZIP archives. Through an extension point for pluggable archive reader, we could imagine supporting 
+more flavors of archive formats, including some proprietary ones which we couldn't support in the open.
+[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=154032">154032</a>]
+</li>
+
+<li> P2 <b>Macro-component support</b>. When constructing dependencies between plug-ins, micro-managing exact dependencies is error prone (even if this is eased by PDE tooling and manifests). 
+For instance, when building 3rd party tooling on top of JDT, one has to ensure his 3rd party core tooling refers to JDT/Core only, where the 3rd party UI can reference JDT/UI as well. 
+Things would be simpler if one could simply construct against JDT, and the underlying classpath resolution would determine which portion of JDT is elligible for dependency depending on whether 
+a 3rd party component belongs to Core or UI layer. Note that this item should allow for more extensions to handle more complex component models, for example
+for Jazz,  there is more than the distinction between Core and UI due to Server/Client/BuildSystem layering which add more dimensions to the problem. 
+Some of this topic could be covered by PDE, with possible help from JDT (like allow containers in containers), also this should be related to Java7 modularity support.</li>
 </ul>
 
 <h2>Finer granularity of classpath and compiler settings</h2>
@@ -39,23 +80,23 @@ Allow more configurability of the Java project, such as allowing custom buildpat
 
 <h2>Better experience out of the box</h2>
 <ul>
-<li>Couple compiler compliance and JRE setting</li>
+<li>P1 Couple compiler compliance and JRE setting</li>
 <li>Better integration with project explorer (http://www.codecommit.com/blog/eclipse/the-problem-of-perspective-multiplicity)
 <li>Merge local history and CVS history, offer comparisons (sync) even if offline
-<li>Provide User Explanation and User Action for Messages
-<li>Provide (extensible) mechanism to convert a binary project back into master source form
+<li>P1 Provide User Explanation and User Action for Messages
+<li>P2 Provide (extensible) mechanism to convert a binary project back into master source form
 </ul>
 
 <h2>Editor improvements</h2>
 <ul>
-<li>Indent lines in control flow statements
+<li>P2 Indent lines in control flow statements
 [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84878">84878</a>].</li>
-<li>Richer compare editor experience.</li>
+<li>P1 Richer compare editor experience.</li>
 </ul>
 
 <h2>Performance</h2>
 <ul>
-<li>Faster plug-in launch configs
+<li>P1 Faster plug-in launch configs
 </ul>
 
 <h2>Search improvement</h2>
@@ -70,12 +111,12 @@ Allow more configurability of the Java project, such as allowing custom buildpat
 
 <h2>Code formatting</h2>
 <ul>
-<li>Preserve line breaks
+<li>P2 Preserve line breaks
 </ul>
 
 <h2>e4</h2>
 <ul>
-<li>Cross-compilation from Java to Flex/ActionScript</li>
+<li>P1 Cross-compilation from Java to Flex/ActionScript</li>
 </ul>
 
 </body>
