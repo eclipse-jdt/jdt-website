@@ -42,24 +42,22 @@ These moves were based on specific requests, and we need to do more to avoid the
 <h2>More flexible classpath layout</h2>
 When adopting Eclipse, some pre-existing project layouts are hard to model in Eclipse:
 <ul>
-<li> Multiple source attachments per library<li>
 
-<li>P1 <b>Relax classpath container limitations</b>. Today, a classpath container can hold either project or library classpath entries; thus in essence it cannot denote further classpath containers, 
-source folders. This limitation is preventing a range of advanced usage, especially in PDE, or support for user libraries. 
-.
+<li>P1 <b>Relax classpath container limitations</b>. Today, a classpath container can hold either project or library classpath entries; thus effectively it cannot denote further classpath containers
+[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=110176">110176</a>],  source folders [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=100508">100508</a>]. This limitation is preventing a range of advanced usage, especially in PDE, or support for user libraries. 
 </il>
 
-<li><b>Improve user library support</b>. User library provide a simple mechanism and UI to define group of libraries to be added to a classpath. Over time, a number of improvements got requested
-to make these user libraries more generally useful. Here are some popular requests: 
-allow user libraries to depend on other user libraries [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140091">140091</a>],
-allow user libraries to aggregate more than JAR/ZIP files [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=115097">115097</a>],
-provide a simple extension point for contributing library definitions [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=172118">172118</a>]</li>
+<li> P2 <b>Improve user library support</b>. User library provide a simple mechanism and UI to define group of libraries to be added to a classpath. Over time, a number of improvements got requested
+to make these user libraries more generally useful.
+User library should allow user libraries to depend on other user libraries [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140091">140091</a>],
+user libraries should offer aggregating more than JAR/ZIP files [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=115097">115097</a>],
+JDT should provide a simple extension point for contributing library definitions [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=172118">172118</a>],
+user library should allow use of classpath variable, and relative path [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=70417">70417</a>]</li>
 
-<li>Chained JARs</li>
+<li>P2 <b>Improve library support</b>. While generally useful, the support for libraries could be improved to support modern JAR constructions, such as chained JARs,
+nested JARs, or support multiple source attachments per library [173641]</li>
 
-<li>Nested JARs</li>
-
-<li>Remove limitation on read-only external classfolder</li>
+<li>Improve support for external classfolders. In particular, external classfolders should be refreshed in realtime, as opposed to needing a manual refresh today.</li>
 
 <li>P2 <b>Support arbitrary archive formats</b>. Today, JDT can only read JAR/ZIP archives. Through an extension point for pluggable archive reader, we could imagine supporting 
 more flavors of archive formats, including some proprietary ones which we couldn't support in the open.
@@ -76,7 +74,7 @@ Some of this topic could be covered by PDE, with possible help from JDT (like al
 
 <h2>Finer granularity of classpath and compiler settings</h2>
 Allow more configurability of the Java project, such as allowing custom buildpath or settings on a per source folder basis
-[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=87215">87215</a>].
+[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=87215">87215</a>]. 205380
 
 <h2>Better experience out of the box</h2>
 <ul>
@@ -92,11 +90,6 @@ Allow more configurability of the Java project, such as allowing custom buildpat
 <li>P2 Indent lines in control flow statements
 [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84878">84878</a>].</li>
 <li>P1 Richer compare editor experience.</li>
-</ul>
-
-<h2>Performance</h2>
-<ul>
-<li>P1 Faster plug-in launch configs
 </ul>
 
 <h2>Search improvement</h2>
@@ -117,6 +110,11 @@ Allow more configurability of the Java project, such as allowing custom buildpat
 <h2>e4</h2>
 <ul>
 <li>P1 Cross-compilation from Java to Flex/ActionScript</li>
+</ul>
+
+<h2>Wishlist outside JDT</h2>
+<ul>
+<li>P1 [PDE} Faster creation for plug-in launch configs. Today they are orders of magnitude slower to create than vanilla Java launch configs.
 </ul>
 
 </body>
