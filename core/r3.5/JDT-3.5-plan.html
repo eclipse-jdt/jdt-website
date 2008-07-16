@@ -7,9 +7,11 @@
 </head>
 <body>
 <h1>JDT proposed plan items for release 3.5</h1>
+<font size="-1"><i>updated on July 16, 2008 by Philippe Mulet.</i></font>
 <br>
 <p:colorscheme
  colors="#000000,#FFFFFF,#CCCCFF,#808080,#7889FB,#DFFF66,#C0C0C0,#D18213"></p:colorscheme>
+
 
 <h2> Java 7 support</h2>
 Java 7 may materialize shortly after our 3.5 cycle. If we want to deliver support for it in a timely fashion, we should engage on it as soon as a Java7 specification is published.
@@ -79,27 +81,23 @@ Allow more configurability of the Java project, such as allowing custom buildpat
 <h2>Better experience out of the box</h2>
 <ul>
 <li>P1 Couple compiler compliance and JRE setting</li>
-<li>Better integration with project explorer (http://www.codecommit.com/blog/eclipse/the-problem-of-perspective-multiplicity)
-<li>Merge local history and CVS history, offer comparisons (sync) even if offline
 <li>P1 Provide User Explanation and User Action for Messages
 <li>P2 Provide (extensible) mechanism to convert a binary project back into master source form
+<li>P3 Better integration with project explorer (http://www.codecommit.com/blog/eclipse/the-problem-of-perspective-multiplicity)
+<li>P3 Unify local and team history (no more separate menu entries), offer comparisons (sync) even if offline
 </ul>
 
 <h2>Editor improvements</h2>
 <ul>
-<li>P2 Indent lines in control flow statements
+<li>P3 Indent lines in control flow statements
 [<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=84878">84878</a>].</li>
-<li>P1 Richer compare editor experience.</li>
+<li>P1 Richer compare editor experience.
+[<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=169386">169386</a>]</li>
 </ul>
 
 <h2>Search improvement</h2>
 <ul>
 <li>Integrate websearch into Java search (http://eclipse-projects.blogspot.com/2008/05/google-is-cool.html)
-</ul>
-
-<h2>Refactoring</h2>
-<ul>
-<li>Refactor signaling ramifications in binary dependents (producing refactoring scripts for these?)
 </ul>
 
 <h2>Code formatting</h2>
