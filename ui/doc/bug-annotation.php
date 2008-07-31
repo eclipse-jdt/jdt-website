@@ -55,9 +55,6 @@ function bugsWithSummaryJDT($tag, $description) {
 	internalBugsWithSummary($tag, $description, '&product=JDT');
 }
 
-function bugsWithSummaryJDT_UI($tag, $description) {
-	internalBugsWithSummary($tag, $description, '&product=JDT&component=UI');
-}
 
 ob_start();
 ?>
@@ -87,84 +84,71 @@ ob_start();
 		<table width="800" border="1">
 			
 			<?php
-				bugsByUser("Inbox", "jdt-ui-inbox");
-				bugsWithSummaryJDT_UI("[api]", "API bugs: wrong or missing API, API requests");
-				bugsWithSummaryJDT_UI("[dcr]", "New feature requests (design change requests), if possible followed by [refactoring] [code generation]...");
-				bugsWithSummaryJDT_UI("[plan item]", "Official plan items");    
 				bugsWithSummaryJDT("[actions]", "Bugs related to global menu, context menu, and toolbar actions");
-				bugsWithSummaryJDT("[browsing]", "Bugs related to the Java Browsing perspective");
-				bugsWithSummaryJDT("[ccp]", "Copy, Cut, Paste bugs where no refactoring is involved");
-				bugsWithSummaryJDT("[dnd]", "Drag and Drop bugs. This keyword is mostly used together with other keywords like [reorg], [refactoring], [type hierarchy], ...");
-				bugsWithSummaryJDT("[package explorer]", "Bugs related to JDT's package explorer");
-				bugsWithSummaryJDT("[open type]", "Bugs to the open type dialog");
-				bugsWithSummaryJDT("[encapsulate field]", "Bugs to the encapsulate field refactoring");
-				bugsWithSummaryJDT("[expand selection]", "Bugs related to 'Expand selection'");
-				bugsWithSummaryJDT("[extract method]", "Bugs related to the extract method refactoring");
-				bugsWithSummaryJDT("[mark occurrence]", "Bugs related to mark occurrence");  
-				bugsWithSummaryJDT("[introduce factory]", "Bugs related to the introduce factory refactoring");   
-				bugsWithSummaryJDT("[generalize type]", "Bugs related to the generalize type refactoring");
-				bugsWithSummaryJDT("[surround with try/catch]", "Bugs related to the surround with try/catch refactoring");
-				bugsWithSummaryJDT("[refactoring]", "General bugs regarding the refactoring framework");  
-				  
-				bugsByUser("Andre", "andre_weinand");
-				bugsWithSummaryJDT("[compare]", "Bugs related to Java compare functionality. Not used to tag general compare bugs");
-				  
-				bugsByUser("Benno", "benno_baumgartner");
-				bugsWithSummaryJDT("[build path]", "Bugs related to the Java build path page and build path actions");
-				bugsWithSummaryJDT("[clean up]", "Bugs related to the clean up wizard");
-				bugsWithSummaryJDT("[nls tooling]", "Bugs related to nls tooling");
-				bugsWithSummaryJDT("[preferences]", "Bugs related to preference pages");    
-				  
-				bugsByUser("Dirk", "dirk_baeumer");
-				bugsWithSummaryJDT("[expressions]", "Bugs related to org.eclipse.core.expressions");
-				
-				bugsByUser("Martin", "martin_aeschlimann");
-				bugsWithSummaryJDT("[javadoc wizard]", "Bugs related to the Javadoc export wizard");
-				bugsWithSummaryJDT("[quick fix]", "Bugs related to the Quick Fix functionality");
-				bugsWithSummaryJDT("[quick assist]", "Bugs related to the Quick Assist functionality");
+				bugsWithSummaryJDT("[api]", "API bugs: wrong or missing API, API requests");
 				bugsWithSummaryJDT("[ast rewrite]", "AST rewrite bugs");  
-				bugsWithSummaryJDT("[type hierarchy]", "Bugs related to the Type Hierarchy view");
-				bugsWithSummaryJDT_UI("[search]", "Java search bugs. Not used to tag general search bugs");
-				bugsWithSummaryJDT("[type wizards]", "Bugs releated to the new type wizards");
-				bugsWithSummaryJDT("[organize imports]", "Bugs related to organize imports");
-				bugsWithSummaryJDT("[imports on paste]", "Bugs related to imports on paste functionality");
-				bugsWithSummaryJDT("[code templates]", "Bugs related to code templates");
-				bugsWithSummaryJDT("[code style]", "Bugs related to code style settings including new code style options");
-				bugsWithSummaryJDT_UI("[render]", "Bugs related to rendering of Java elements");  
-				  
-				bugsByUser("Markus", "markus_keller");
-				bugsWithSummaryJDT("[JUnit]", "Bugs related to the org.eclipse.jdt.junit plug-in");
+				bugsWithSummaryJDT("[browsing]", "Bugs related to the Java Browsing perspective");
+				bugsWithSummaryJDT("[build path]", "Bugs related to the Java build path page and build path actions");
 				bugsWithSummaryJDT("[call hierarchy]", "Bugs related to the call hierarchy view");    
-				bugsWithSummaryJDT("[inline]", "Bugs related to the inline refactoring");
-				bugsWithSummaryJDT("[infer type arguments]", "Bugs related to the infer type arguments refactoring");  
-				bugsWithSummaryJDT("[extract constant]", "Bugs related to the extract constant refactoring");
-				bugsWithSummaryJDT("[extract local]", "Bugs related to the extract local variable refactoring");   
+				bugsWithSummaryJDT("[ccp]", "Copy, Cut, Paste bugs where no refactoring is involved");
 				bugsWithSummaryJDT("[change method signature]", "Bugs related to the change method signature refactoring");
-				bugsWithSummaryJDT("[introduce indirection]", "Bugs related to the introduce indirection refactoring");
-				bugsWithSummaryJDT("[introduce parameter]", "Bugs related to the introduce parameter refactoring");
-				bugsWithSummaryJDT("[rename]", "Bugs related to the rename refactoring");     
-				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");     
-				  
-				bugsByUser("Tobias", "tobias_widmer");
-				bugsWithSummaryJDT("[reorg]", "Bugs related to the copy, move and delete refactorings");
-				bugsWithSummaryJDT("[jar exporter]", "Bugs related to the jar export wizard");  
+				bugsWithSummaryJDT("[clean up]", "Bugs related to the clean up wizard");
+				bugsWithSummaryJDT("[code style]", "Bugs related to code style settings including new code style options");
+				bugsWithSummaryJDT("[code templates]", "Bugs related to code templates");
+				bugsWithSummaryJDT("[compare]", "Bugs related to Java compare functionality. Not used to tag general compare bugs");
 				bugsWithSummaryJDT("[convert anonymous]", "Bugs related to the convert anonymous to nested class refactoring");  
 				bugsWithSummaryJDT("[convert local]", "Bugs related to the convert local to field refactoring"); 
+				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");     
+				bugsWithSummaryJDT("[dcr]", "New feature requests (design change requests), if possible followed by [refactoring] [code generation]...");
+				bugsWithSummaryJDT("[dnd]", "Drag and Drop bugs. This keyword is mostly used together with other keywords like [reorg], [refactoring], [type hierarchy], ...");
+				bugsWithSummaryJDT("[encapsulate field]", "Bugs to the encapsulate field refactoring");
+				bugsWithSummaryJDT("[expand selection]", "Bugs related to 'Expand selection'");
+				bugsWithSummaryJDT("[expressions]", "Bugs related to org.eclipse.core.expressions");
+				bugsWithSummaryJDT("[extract constant]", "Bugs related to the extract constant refactoring");
 				bugsWithSummaryJDT("[extract interface]", "Bugs related to the extract interface refactoring");  
+				bugsWithSummaryJDT("[extract local]", "Bugs related to the extract local variable refactoring");   
+				bugsWithSummaryJDT("[extract method]", "Bugs related to the extract method refactoring");
 				bugsWithSummaryJDT("[extract superclass]", "Bugs related to the extract superclass refactoring");
-				bugsWithSummaryJDT("[use supertype]", "Bugs related to the use supertype refactoring");    
+				bugsWithSummaryJDT("[generalize type]", "Bugs related to the generalize type refactoring");
 				bugsWithSummaryJDT("[generate constructor]", "Bugs related to the generate constructor wizards");   
 				bugsWithSummaryJDT("[generate delegate]", "Bugs related to the generate delegate wizard");   
 				bugsWithSummaryJDT("[getter setter]", "Bugs related to the generate getter/setter wizard");
-				bugsWithSummaryJDT("[override method]", "Bugs related to the override/implement methods wizard");  
 				bugsWithSummaryJDT("[hashcode/equals]", "Bugs related to the generate hashcode/equals wizard");
+				bugsWithSummaryJDT("[imports on paste]", "Bugs related to imports on paste functionality");
+				bugsWithSummaryJDT("[infer type arguments]", "Bugs related to the infer type arguments refactoring");  
+				bugsWithSummaryJDT("[inline]", "Bugs related to the inline refactoring");
+				bugsWithSummaryJDT("[introduce factory]", "Bugs related to the introduce factory refactoring");   
+				bugsWithSummaryJDT("[introduce indirection]", "Bugs related to the introduce indirection refactoring");
+				bugsWithSummaryJDT("[introduce parameter]", "Bugs related to the introduce parameter refactoring");
+				bugsWithSummaryJDT("[jar exporter]", "Bugs related to the jar export wizard");  
+				bugsWithSummaryJDT("[javadoc wizard]", "Bugs related to the Javadoc export wizard");
+				bugsWithSummaryJDT("[JUnit]", "Bugs related to the org.eclipse.jdt.junit plug-in");
+				bugsWithSummaryJDT("[ltk]", "Bugs related to the refactoring framework, org.eclipse.ltk.refactoring");
+				bugsWithSummaryJDT("[mark occurrence]", "Bugs related to mark occurrence");  
 				bugsWithSummaryJDT("[migrate jar]", "Bugs related to the migrate jar wizard");     
 				bugsWithSummaryJDT("[move member type]", "Bugs related to the convert member to top level refactoring");
 				bugsWithSummaryJDT("[move method]", "Bugs related to the move method refactoring");     
 				bugsWithSummaryJDT("[move static members]", "Bugs related to the move static members refactoring");
+				bugsWithSummaryJDT("[nls tooling]", "Bugs related to NLS tooling");
+				bugsWithSummaryJDT("[open type]", "Bugs to the open type dialog");
+				bugsWithSummaryJDT("[organize imports]", "Bugs related to organize imports");
+				bugsWithSummaryJDT("[override method]", "Bugs related to the override/implement methods wizard");  
+				bugsWithSummaryJDT("[package explorer]", "Bugs related to JDT's package explorer");
+				bugsWithSummaryJDT("[plan item]", "Official plan items");    
+				bugsWithSummaryJDT("[preferences]", "Bugs related to preference pages");    
 				bugsWithSummaryJDT("[pull up]", "Bugs related to the pull up refactoring");
 				bugsWithSummaryJDT("[push down]", "Bugs related to the push down refactoring");
-				bugsWithSummaryJDT("[ltk]", "Bugs related to the refactoring framework, org.eclipse.ltk.refactoring");
+				bugsWithSummaryJDT("[quick assist]", "Bugs related to the Quick Assist functionality");
+				bugsWithSummaryJDT("[quick fix]", "Bugs related to the Quick Fix functionality");
+				bugsWithSummaryJDT("[refactoring]", "General bugs regarding the refactoring framework");  
+				bugsWithSummaryJDT("[rename]", "Bugs related to the rename refactoring");     
+				bugsWithSummaryJDT("[render]", "Bugs related to rendering of Java elements");  
+				bugsWithSummaryJDT("[reorg]", "Bugs related to the copy, move and delete refactorings");
+				bugsWithSummaryJDT("[search]", "Java search bugs. Not used to tag general search bugs");
+				bugsWithSummaryJDT("[surround with try/catch]", "Bugs related to the surround with try/catch refactoring");
+				bugsWithSummaryJDT("[type hierarchy]", "Bugs related to the Type Hierarchy view");
+				bugsWithSummaryJDT("[type wizards]", "Bugs related to the new type wizards");
+				bugsWithSummaryJDT("[use supertype]", "Bugs related to the use supertype refactoring");    
 			?>     
 	  
 		</table>
