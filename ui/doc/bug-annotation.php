@@ -95,6 +95,7 @@ ob_start();
 				bugsWithSummaryJDT("[clean up]", "Bugs related to the clean up wizard");
 				bugsWithSummaryJDT("[code style]", "Bugs related to code style settings including new code style options");
 				bugsWithSummaryJDT("[code templates]", "Bugs related to code templates");
+				bugsWithSummaryJDT("[common navigator]", "Bugs related to JDT extensions for the Common Navigator aka Project Explorer");
 				bugsWithSummaryJDT("[compare]", "Bugs related to Java compare functionality. Not used to tag general compare bugs");
 				bugsWithSummaryJDT("[convert anonymous]", "Bugs related to the convert anonymous to nested class refactoring");  
 				bugsWithSummaryJDT("[convert local]", "Bugs related to the convert local to field refactoring"); 
