@@ -57,7 +57,7 @@ function traverseLinkifyBugs(node) {
 
 function showHiddenWork() {
 	// Open this document with an URL ending in ?work, and the "work" class becomes visible. 
-	if (window.location.search) {
+	if (window.location.search == "?work") {
 		var spans= document.getElementsByTagName("span")
 		for (var i in spans) {
 			var s= spans[i];
