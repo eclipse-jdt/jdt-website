@@ -37,7 +37,7 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p>The JDT/Core 3.5 plan can now be found <a href="http://www.eclipse.org/jdt/core/r3.5/plan.php">here</a>
+			<p>The JDT/Core 3.5 plan can now be found <a href="http://www.eclipse.org/jdt/core/r3.5/plan.php">here</a>.
 			</p>
 	
 		</div>
@@ -82,12 +82,6 @@ ob_start();
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+M5">unresolved</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+M5">resolved</a>)
         </li>
-		<li>Release Candidate 4, 2009/06/?? :
-			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.5+RC4&amp;resolution=FIXED">fixed</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4&amp;namedcmd=Assigned">all</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4">unresolved</a>)
-			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4">resolved</a>)
-        </li>
 		<li>Milestone 6, 2009/03/13 :
 			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.5+M6&amp;resolution=FIXED">fixed</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.5+M6&amp;namedcmd=Assigned">all</a>)
@@ -117,6 +111,12 @@ ob_start();
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC3&amp;namedcmd=Assigned">all</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC3">unresolved</a>)
 			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC3">resolved</a>)
+        </li>
+		<li>Release Candidate 4, 2009/06/?? :
+			(<a href="http://bugs.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=Core&amp;target_milestone=3.5+RC4&amp;resolution=FIXED">fixed</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4&amp;namedcmd=Assigned">all</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4">unresolved</a>)
+			(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.5+RC4">resolved</a>)
         </li>
       </ul>
 		</div>
