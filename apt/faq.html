@@ -82,19 +82,12 @@ reasonably quick and efficient.
 No. They're treated just like any other error.
 
 <p>
-<b><li>Can I get code assist inside annotation values?</b>
-<p>
-Soon. We've got a prototype implementation that allows for a processor to
-provide code assist inside annotation values, but it's not quite ready to be
-checked in. Check back for more info.
-
-<p>
 <b><li>Can I get quick-fixes inside annotation values?</b>
 <p>
 Yes. When you create your error markers via the Messager API, downcast
 to EclipseMessager, and use the printFixable...() APIs. These
 error markers can then be processed with a QuickFixProcessor via 
-the JDT APIs in Eclipse 3.2.<p>
+the JDT APIs in Eclipse.<p>
 
 </ol>
 

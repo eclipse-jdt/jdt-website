@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+	<title>Platform Text 3.5 Plan</title>
+
+<script type="text/javascript">
+<!--
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == document.getElementsByTagName("body")[0]) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node);
+
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var regex= /([Bb]ug\s*)([0-9]+)/;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node);
+			}
+
+		} else {
+			node= nextNode(node);
+		}
+	}
+}
+
+function showHiddenWork() {
+	// Open this document with an URL ending in ?work, and the "work" class becomes visible.
+	if (window.location.search == "?work") {
+		var spans= document.getElementsByTagName("span")
+		for (var i in spans) {
+			var s= spans[i];
+			if (s.className == "work") {
+				s.style.visibility= "visible";
+				s.insertBefore(document.createTextNode("\u00a0"), s.firstChild);
+				s.insertBefore(document.createTextNode("\u00a0"), s.lastChild.nextSibling);
+			}
+		};
+	}
+}
+
+//-->
+</script>
+
+<!--
+	<style>
+		body {
+			background-image: url('../images/proposal.gif');
+			background-repeat: repeat-y
+		}
+	</style>
+-->
+
+	 <style type="text/css">
+  		.priority {
+  			color: blue;
+  			font-style: italic;
+  		}
+  		.work {
+  			background: lightgreen;
+  			visibility: hidden;
+  		}
+	</style>
+
+</head><body onload="linkifyBugs();showHiddenWork();" bgcolor="#ffffff" text="#000000">
+
+<table border="0" cellpadding="2" cellspacing="5" width="100%">
+
+  <tbody><tr>
+    <td width="100%">
+	<p>Last revised $Date: 2008/09/12 05:33:59 $</p>
+
+
+      <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-apt-dev@eclipse.org">jdt-apt-dev@eclipse.org</a> developer mailing list.</p>
+      <h2><a name="Overall_Planning"></a>Overall Goals</h2>
+      <p>The goals for Eclipse 3.5 for the JDT APT component are as follows.
+        </p>
+
+		<p>
+		<strong><a name="1"></a>[1] Performance</strong>.
+		Develop performance tests for the JDT APT component, and use them to guide performance improvements.
+		</p>
+
+		<p>
+		<strong><a name="2"></a>[2] Reliability</strong>.
+		Provide APIs for clients where needed and fix critical bugs.
+		</p>
+
+		<p>
+		<strong><a name="3"></a>[3] Usability</strong>.
+		Improve the ability to configure annotation processing and troubleshoot failures.
+		</p>
+
+	<h2><a name="Work_Items"></a><br>Work Items</h2>
+	<p>
+		This section details the possible work items for Eclipse 3.5 for the JDT APT component
+		with the [corresponding theme].  The JDT APT component is volunteer-staffed, and not
+		all items on this list may be achieved without community support.
+		Some of those items have a <span class="priority">higher priority</span> than others.
+	</p>
+
+	<ul>
+		<li><h4>Performance tests [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">There are currently no automated performance tests for the JDT APT component. Tests need to be created and integrated into the Eclipse performance
+			testing framework. Priority will be given to the JSR-269 (Java 6) processing API rather than the com.sun.mirror.apt (Java 5) API, because the latter
+			is deprecated for future development, but ideally both will be tested.</li>
+		</ul>
+		</li>
+
+		<li><h4>Performance improvements [<a href="#1">1</a>]</h4>
+		<ul>
+			<li>When performance tests are available, it will be possible to profile and improve performance of the annotation processing API. Again, the Java 6 API will be
+			given priority over the Java 5 API. Note that compilation with APT is inherently slower than compilation without, because annotation processors contain third-party
+			code that can ask for any type information at any time, and the compiler is not (and should not be) a general-purpose type database; thus, it will only be
+			appropriate to optimize certain scenarios. Part of this work item will be to determine what those scenarios should be.</li>
+		</ul>
+		</li>
+
+		<li><h4>Implement unimplemented methods [<a href="#2">2</a>]</h4>
+		<ul>
+			<li class="priority">Implementations of some of the JSR269 (Java 6 annotation processing) APIs have been left incomplete, particularly for processors running in the IDE
+			rather than at the command line (e.g., <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=240264">bug 240264</a>). These methods should be fleshed out with
+			working implementations.</li>
+		</ul>
+		</li>
+
+		<li><h4>Monitor annotation-related JSRs [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>JSR-305 concerns annotations for software quality monitoring, and JSR-308 concerns annotations in additional locations. It is not currently clear whether
+			either of these changes will have an effect on the annotation processing API. The JSRs need to be monitored and responded to as necessary.</li>
+		</ul>
+		</li>
+
+		<li><h4>Improved documentation [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">The JDT APT project web site is out of date and needs to be updated with good instructions on how to use APT, particularly with JSR269
+			(Java 6) processors (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=213636">bug 213636</a>). Material for this can be drawn from the EclipseCon 2006
+			tutorial on writing annotation processors.</li>
+		</ul>
+		</li>
+
+		<li><h4>Improved troubleshooting [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>Developing and configuring an annotation processor is a difficult task. The canonical experience is that "nothing happens" when the processor is run.
+			This is often because of exceptions thrown within the processor, because the processor has not been correctly declared, or because Eclipse is not running
+			on a JRE of the appropriate level (e.g., running on a Java 5 JRE while trying to execute a Java 6 processor). The tracing options, problem markers, log
+			entries, and configuration UI all need to be improved to help with this.</li>
+		</ul>
+		</li>
+
+	</ul>
+
+	</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff"><a name="Milestone_Planning_M1">Milestone M1 (2008-08-08)</a></font><a name="Milestone_Planning_M1"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Planning</h4>
+		<ul>
+			<li class="priority"><img src="plan_files/ok.gif" border="0" width="10" height="10"> 3.5 planning <span class="work">1d</span></li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M2">Milestone M2 (2008-09-19)</a></font><a name="Milestone_Planning_M2"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M3">Milestone M3 (2008-10-31)</a></font><a name="Milestone_Planning_M3"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">develop an approach for performance testing (e.g., how to create a large body of interestingly-annotated
+			code and correspondingly interesting annotation processors to exercise it with)</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Reliability [<a href="#2">2</a>]</h4>
+		<ul>
+			<li class="priority">implement unimplemented JSR269 Filer methods in IDE (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=240264">bug 240264</a>)</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M4">Milestone M4 (2008-12-12)</a></font><a name="Milestone_Planning_M4"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">develop performance test framework based on plan in M3</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Usability [<a href="#2">2</a>]</h4>
+		<ul>
+			<li class="priority">improve APT project web site (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=213636">bug 213636</a>)</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M5">Milestone M5 (2009-01-30) -  Major/Big Features Done</a></font><a name="Milestone_Planning_M5"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">Integrate performance test framework into Eclipse automated perf tests</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>Make targeted improvements to troubleshooting: how to help users when a processor is doing nothing?</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M6">Milestone M6 (2009-03-13) - API Freeze</a></font><a name="Milestone_Planning_M6"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Performance [<a href="#1">1</a>]</h4>
+		<ul>
+			<li>Identify key optimization scenarios</li>
+			<li>Use performance test framework to profile and optimize these scenarios</li>
+		</ul>
+
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td colspan="2" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">
+	<a name="Milestone_Planning_M7">Milestone M7 (2009-05-01) - Feature Freeze, Focus on Performance and Polish</a></font><a name="Milestone_Planning_M7"></a></font></td>
+</tr>
+
+ <tr>
+	<td width="100%">
+		<h4><img src="plan_files/Adarrow.gif" align="top" border="0" width="16" height="16"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+			<li>monitor annotation-related JSRs</li>
+		</ul>
+	</td>
+</tr>
+
+</tbody></table>
+<table border="0" cellpadding="2" cellspacing="5" width="100%"><tbody><tr><td colspan="4" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="plan_files/progress.gif" align="absmiddle" border="0" width="14" height="5"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="plan_files/glass.gif" border="0" width="10" height="10"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="plan_files/ok.gif" border="0" width="10" height="10"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="center"><font class="indexsub" color="#8080ff">[xyz]</font></td>
+			<td width="50%">item is deferred (&gt;) from xyz or continues in xyz.</td>
+			<td valign="center"><font class="indexsub"><img src="plan_files/new.gif" border="0"></font></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>&nbsp;
+</body></html>
