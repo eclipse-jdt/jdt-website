@@ -24,19 +24,24 @@
 </tr>
 
 <tr>
-<td COLSPAN="2">The JDT-APT project provides plugins that add Java 5.0 annotation processing support to Eclipse.
-These plugins provide an implementation of the APT APIs provided with the 5.0 JDK in Eclipse.
-By doing this, existing annotation processors written for Sun's commandline APT implementation can run unmodified inside Eclipse.
+<td COLSPAN="2">The JDT-APT project provides plugins that add Java 5 annotation processing support to Eclipse.
 
+A Java annotation processor is a compiler plug-in that can gather information about source code as 
+it is being compiled, generate additional Java types or other resource files, and post warnings 
+and errors. Eclipse 3.2 provided support for annotation processors using the 
+<a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/overview-summary.html">Java 5 Mirror APIs</a>,
+and Eclipse 3.3 added support for processors using the 
+<a href="http://java.sun.com/javase/6/docs/api/javax/annotation/processing/package-summary.html">
+Java 6 annotation processing APIs</a>.</p>
 <p>
-There are two versions of JDT-APT: one that is part of Eclipse 3.2 (as of M5), and another that
-runs on Eclipse 3.1.2, with a modified version of the JDT plug-in.
-<p>
-You can view the presentation given at JavaOne during a session on APT that describes some of the goals
-and technical details <a href="javaone_apt.ppt">here</a>.
-
-<p>
-<b>NEW!</b> We've posted our EclipseCon <a href="Eclipsecon2006.ppt">presentation</a> on APT.
+You can view the presentation given at JavaOne 2005 during a session on APT that describes some of the goals
+and technical details <a href="javaone_apt.ppt">here</a>. At EclipseCon 2006 we made a
+<a href="Eclipsecon2006.ppt">presentation</a> on APT do's and don'ts, and at EclipseCon 2007 this was
+developed into a <a href="eclipsecon2007.zip">tutorial</a> on writing annotation processors for Eclipse,
+including some sample code and more discussion of techniques to achieve good performance. At EclipseCon 2008
+we gave a <a href="eclipsecon2008.ppt">presentation</a> on annotations (which briefly mentions annotation
+processors but does not go into depth) that may be of interest to those looking for background material
+or for alternative strategies to annotation processing.
 
 <p>
 Additional frequently asked questions and their answers can be found in our <a href="faq.html">FAQ</a>.
@@ -45,36 +50,33 @@ Additional frequently asked questions and their answers can be found in our <a h
 </tr>
 
 <tr>
-<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">What is APT?</font></font></b></td>
+<td COLSPAN="2" ALIGN=LEFT VALIGN=TOP BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">
+What is APT?</font></font></b></td>
 </tr>
 <tr>
 <td COLSPAN="2"><font color="#000000">APT stands for Annotation Processing Tool. 
 Sun shipped an API for APT in JDK 1.5, which can be viewed at
-<a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html">http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html</a>.
-
-<p>
-Sun also included a commandline implementation of APT in JDK 1.5. 
-You can find documentation for it at
+<a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html">
+http://java.sun.com/j2se/1.5.0/docs/guide/apt/mirror/index.html</a>. Sun also included a commandline 
+implementation of APT in JDK 1.5. You can find documentation for it at
 <a href="http://java.sun.com/j2se/1.5.0/docs/guide/apt/index.html" target="_blank">http://java.sun.com/j2se/1.5.0/docs/guide/apt/index.html</a>.
-
+In JDK 6, the API was modified considerably and standardized through JSR-269, and the Sun implementation was
+built into the javac compiler rather than requiring a standalone tool.
 <p>
-To quote from their documentation:
+To quote from Sun's documentation:
 <p>
 <code>
 apt is a command-line utility for annotation processing.
 It includes a set of reflective APIs and supporting infrastructure to
-process program annotations
-(JSR 175).
+process program annotations (JSR 175).
 These reflective APIs provide a build-time, source-based,
 read-only view of program structure.  They are designed to cleanly model
 the Java<sup><small>TM</small></sup>
-programming language's type system after the addition of
-generics
-(JSR 14).
+programming language's type system after the addition of generics (JSR 14).
 </code>
 
 <p>
-APT provides a means for generating files and compiling new java classes based on annotations
+So, APT provides a means for generating files and compiling new java classes based on annotations
 found in your source code.
 
 <p>
@@ -87,30 +89,27 @@ the APT APIs that runs entirely within Eclipse.
 
 
 
-<tr><td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">How do I get started?</font></font></b>
+<tr><td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">
+How do I get started?</font></font></b>
 </td></tr>
 
 <tr>
 <td COLSPAN="2"><font color="#000000">
-You have two options, depending on which version of Eclipse you're using. 
-As of Eclipse 3.2 M5a, APT is included in the default installation.  You can
-download the latest stream stable build of Eclipse at 
-<a href="http://download.eclipse.org/eclipse/downloads">
-eclipse.org</a>.
-
 <p>
-If you're using Eclipse 3.1, then you can install our beta for Eclipse 3.1.2. See the installation
-instructions <a href="installOn3.1.html">here</a>. The current version is 3.1.2.apt03, posted 2/27/2006.
-
+If all you need to do is use an annotation processor, you may not need to do anything at all! Many project
+creation wizards will automatically install and enable the necessary processors. To check whether this
+is the case, or to install and enable your own processors, use the Java Compiler -&gt; Annotation Processing
+pane of the project properties.
 <p>
-Once you have either version installed, see <a href="introToAPT.html">Intro to APT</a> to get started
-using it.
+If you need to write your own annotation processor, see <a href="introToAPT.html">Intro to APT</a> to get 
+started using APT, and also see the EclipseCon 2007 tutorial mentioned above.
 </font></td>
 </tr>
 
 
 <tr>
-<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">How can I contribute?</font></font></b></td>
+<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" BGCOLOR="#0080C0"><b><font face="Arial,Helvetica"><font color="#FFFFFF">
+How can I contribute?</font></font></b></td>
 </tr>
 
 <tr>
@@ -119,7 +118,10 @@ using it.
 
 <p>
 You can also check out the mailing list,
-<a href="http://dev.eclipse.org/mailman/listinfo/jdt-apt-dev">jdt-apt-dev@eclipse.org</a>.
+<a href="http://dev.eclipse.org/mailman/listinfo/jdt-apt-dev">jdt-apt-dev@eclipse.org</a>,
+or post questions to the eclipse.tools.jdt <a href="http://www.eclipse.org/newsgroups/">newsgroup</a>.
+The mailing list is primarily for announcements and discussion by people working on the APT tooling
+in Eclipse; if you have technical questions, it is best to use the newsgroup.
 
 
 </td>
