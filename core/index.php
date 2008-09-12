@@ -73,9 +73,9 @@ be run headless.</p>
 <ul>
   <li>Most active development goes into this stream.
   </li>
-  <li> The 3.5 plan is posted <a href="r3.5/index.php#release-plan">here</a>.
+  <li> The 3.5 plan is posted <a href="r3.5/plan.php">here</a>.
   </li>
-  <li> The 3.5 next-milestone plan is posted <a href="r3.5/index.php#milestone-plan">here</a>.
+  <li> The 3.5 next-milestone plan is posted <a href="r3.5/plan.php#current-milestone">here</a>.
   </li>
   <li> Patch available in <a href="r3.5/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
