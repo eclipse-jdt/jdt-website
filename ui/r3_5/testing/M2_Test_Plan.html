@@ -12,7 +12,7 @@
 <body>
 <h1>3.5 M2 Test Plan</h1>
 Test day: Tuesday, 2008-09-16<br>
-Test Build: I20080916-0100<br>
+Test Build: I20080915-1800<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Dani<br>
 
@@ -47,10 +47,71 @@ Testers: Dani<br>
 
 <h4>Sanity-check complex templates</h4>
 <ul>
-  <li>check that the optimized regexes in TemplateTranslator (bug 243691) are OK, e.g in SWT templates</li>
+  <li>check that the optimized regular expressions in <code>TemplateTranslator</code> (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?id=243691">bug 243691</a>) are OK, e.g in SWT templates</li>
 </ul>
 
-<h4>Test N&amp;N items</h4>
+<h4>Test parameter hints for multi-line method calls</h4>
+<ul>
+  <li>test that parameter hints appear on each line of multi-line method calls</li>
+  <li>test that keyboard navigation doesn't close parameter hints when going to another line</li>
+</ul>
+
+<h4>Open With in Resource Dialog</h4>
+<ul>
+  <li>test that context menu item works</li>
+  <li>test that the arrow down button works</li>
+  <li>test that the context menu is correct with different list selections</li>
+  <li>test that the arrow down button is correct with different list selections</li>
+</ul>
+
+<h4>Select comment with double-click</h4>
+<ul>
+  <li>Java editor: test that double-click on start and end of comments selects the whole comment</li>
+  <li>Properties editor: test that double-click on start of #-comment selects the whole comment</li>
+  <li>verify that 3.4 double-click behavior still works as expected</li>
+</ul>
+
+
+<h4>Open Strategy</h4>
+<ul>
+  <li>test JDT views using single-click and double click open mode (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?id=243691">bug 243691</a>)</li>
+</ul>
+
+<h4>Suppress compiler problem for 'switch' case fall-through</h4>
+<ul>
+  <li>test that the keyword works</li>
+  <li>test that changing the preference works</li>
+  <li>test the the quick fix</li>
+</ul>
+
+<h4>Compiler problem for missing synchronized modifier</h4>
+<ul>
+  <li>test that the problem is correctly reported</li>
+  <li>test that changing the preference works</li>
+  <li>test the the quick fix</li>
+</ul>
+
+<h4>Open *.jardesc files with JAR Export Wizard</h4>
+<ul>
+  <li>test that the JAR file export wizard is opened by default</li>
+</ul>
+
+<h4>Open test result files in JUnit view</h4>
+<ul>
+  <li>test opening result files from Eclipse or the Ant JUnit via double-click or via Open With > JUnit View.</li>
+  <li>test opening results via JUnit view via the Test Run History... drop-down menu</li>
+  <li>test that JUnit view's Import... and Export... actions reuse the most recently used location</li>
+</ul>
+
+<h4>Method return type shown per default</h4>
+<ul>
+  <li>verify that the method return type is shown by default in all Java views </li>
+</ul>
+
+<h4>Runnable JAR File exporter exports directory entries" </h4>
+<ul>
+  <li>verify that directories are exported to the JAR</li>
+</ul>
 
 
 <h2>Test 3.4.1 Fixes</h2>
@@ -59,10 +120,10 @@ Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.4.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.4.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
-<h4>Test all fixes against 3.4.1 (Dani)</h4>
-Use M20080801-0800 to verify the bugs. 
+<h4>Test all fixes against 3.4.1</h4>
+Use M20080911-1700 to verify the bugs. 
 
-<h4>Test all fixes against 3.5 M2 (Markus)</h4>
+<h4>Test all fixes against 3.5 M2</h4>
 
 
 <h2>Bug Verification</h2>
