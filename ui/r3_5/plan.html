@@ -174,6 +174,11 @@ function showHiddenWork() {
               </ul>
             </li>
             <li class="priority">allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
+			<li>adapt to JDT/Core support for ".." in build path (bug 248583)</li>
+			<li class="priority">allow to mark source folders as containing test source code (see bug 224708)</li>
+		  	<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> enable styled strings when running in Bidi (depends on Platform UI bug 227559)<span class="work">1d</span></li>
+			<li class="priority">allow to configure problems per source folder (depends on JDT Core)<span class="work">1w</span></li>
 		</ul>
 		
 		<li><h4>Jar Exporter [<a href="#3">3</a>]</h4>
@@ -183,7 +188,9 @@ function showHiddenWork() {
 		
 		<li><h4>Java Search [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>search for text in attached source (bug 247503, depends on JDT Core bug 199994)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.5]</font> search for text in attached source (bug 247503, depends on JDT Core bug 199994)
+				<br>&rarr; will be solved via text search participant support (bug 23341)
+			</li>
 		</ul>
 		
 		<li><h4>Call Hierarchy [<a href="#2">2</a>]</h4>
@@ -209,7 +216,8 @@ function showHiddenWork() {
 		  <li>indicate match in proposal list (similar to Ctrl+3) (depends on Platform UI bug 228397 and JDT Core bug 218605)</li>
 		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> improve handling of parameter hints for multi-line method calls</li>
 		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> out of the box we should not call JDT Core code assist twice for each request (bug 164449) <span class="work">0.25d</span></li></li>
-		  <li>improve handling of constructor proposals (depends on JDT Core bug 6930)
+		  <li class="priority">leverage JDT Core threshold support for code completion, show in editor or proposal popup status line (bug 247433) <span class="work">1d</span></li>
+		  <li>improve handling of constructor proposals (depends on JDT Core bug 6930) <span class="work">1d</span>
 		  <br>&rarr; we should either fix this for 3.5 or mark as WONTFIX
 		  </li>
 		  <li>context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>
@@ -257,13 +265,13 @@ function showHiddenWork() {
 	      <li class="priority">improve editing support in Java compare editor (depends on Platform Compare) <span class="work">0.5m</span></li>
 	      <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> document single-click and double-click behavior together with Platform UI and adjust all views in JDT UI (bug 44277) <span class="work">3d</span></li>
 		  <li class="priority">Open Implementation action on methods (bug 44277) <span class="work">1d</span>
-		  	<br>this could be achieved by a registering a new hyperlink detector</li>  
-		  <li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
-		  <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> enable styled strings when running in Bidi (depends on Platform UI bug 227559)<span class="work">1d</span></li>
+		  	<br>this could be achieved by a registering a new hyperlink detector</li>
 		  <li>add better support for the @inheritDoc tag (content assist, syntax coloring, hyperlinking)</li>
 		  <li>structured selection should support brackets (bug 86835)</li>
 		  <li>paste patch from clipboard into Package Explorer (bug 170879)</li>
 		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> investigate using P2 on local build machine to allow update to latest plug-in export <span class="work">1d</span></li>
+		  <li class="priority">adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
+		  <li class="priority">adopt improved NamingConventions (see bug 38111) <span class="work">1d</span></li>
 	    </ul>
 
 	    <li><h4>General Items [<a href="#2">2</a>]</h4>
@@ -296,8 +304,16 @@ function showHiddenWork() {
 		</li>
 		<li>JDT Core
 		<ul>
-			<li>bug 199994 needs to be fixed in order to provide search for text in attached source (bug 247503)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.5]</font> bug 199994 needs to be fixed in order to provide search for text in attached source (bug 247503)
+				<br>&rarr; will be solved via text search participant support (bug 23341)
+			</li>
 			<li>bug 218605 needs to be fixed in order to indicate match in proposal list (similar to Ctrl+3)</li>
+			<li>add threshold support for code completion (bug 247433)</li>
+			<li>make NodeFinder API (bug 53024)</li>
+			<li>improve NamingConventions (bug 38111)</li>
+			<li>allow to mark source folders as containing test source code (bug 224708)</li>
+			<li>support '..' in classpath entries (bug 57732)</li>
+			<li>allow to configure problems per source folder</li>
 			<li>bug 6930: improve handling of constructor proposals
 		  		<br>&rarr; we should either fix this for 3.5 or mark as WONTFIX</li>
 		</ul>
@@ -433,10 +449,12 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.4.2 maintenance work <span class="work">1w</span></li>
 		</ul>
 		
+		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#2">2</a>]</h4>
 		<ul>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> track rename of org.junit4 bundle to org.junit (bug 186369)</li>
 		</ul>
+		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Jar Exporter [<a href="#3">3</a>]</h4>
 		<ul>
@@ -450,6 +468,8 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> enable styled strings when running in Bidi (depends on Platform UI bug 227559)<span class="work">1d</span></li>
+			<li>adapt to JDT/Core support for ".." in build path: part 1: make sure existing dialogs don't crash (bug 248583)</li>
 			<li class="priority">Compiler compliance, Execution Environment, JRE System Library, ... <span class="work">1w</span>
               <ul>
                 <li>EE should be "normal" case, CC automatically updated (new compliance setting: "From EE") (bug 176516)</li>
@@ -468,13 +488,13 @@ function showHiddenWork() {
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#2">2</a>]</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> out of the box we should not call JDT Core code assist twice for each request (bug 164449) <span class="work">0.25d</span></li>
-			<li>context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>		  
+			<li class="priority">leverage JDT Core threshold support for code completion, show in editor or proposal popup status line (bug 247433) <span class="work">1d</span></li>
+			<li>context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 	    <ul>
 	      <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> improve editing support in Java compare editor <span class="work">0.5m</span></li>
-	      <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> enable styled strings when running in Bidi (depends on Platform UI bug 227559)<span class="work">1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -502,17 +522,32 @@ function showHiddenWork() {
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.5/plan.php#Milestone_Planning_M4">Platform Text 3.5 M4 Plan</a>.</p>
 
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
+			<li class="priority">allow to mark source folders as containing test source code (see bug 224708)</li>
 		</ul>
-
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>improve handling of constructor proposals (depends on JDT Core bug 6930) <span class="work">1d</span></li>
+		</ul>
+		
+		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority">change execution should not happen in the UI thread (bug 175733) <span class="work">2w</span></li>
 			<li class="priority">add 'Rename' refactoring quick assist (bug 239420) <span class="work">1d</span></li>
 			<li class="priority">Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
 		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+		<ul>
+			<li class="priority">adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
+			<li class="priority">adopt improved NamingConventions (see bug 38111) <span class="work">1d</span></li>
+		</ul>
+		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
@@ -537,6 +572,13 @@ function showHiddenWork() {
  <tr> 
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.5/plan.php#Milestone_Planning_M5">Platform Text 3.5 M5 Plan</a>.</p>
+
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">allow to configure problems per source folder (depends on JDT Core)<span class="work">1w</span></li>
+		</ul>
+
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>] <span class="work">1m</span></h4>
 		<ul>
@@ -580,6 +622,11 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.5/plan.php#Milestone_Planning_M6">Platform Text 3.5 M6 Plan</a>.</p>
 
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+		<ul>
+			<li>(adapt to JDT/Core support for ".." in build path (bug 248583))</li>
+		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
