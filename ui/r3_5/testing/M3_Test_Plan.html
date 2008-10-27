@@ -50,28 +50,45 @@ Testers: Dani<br>
   <li>test option to generate blocks in 'if' statements</li>
 </ul>
 
-<h4>Rename in editor and cleanups</h4>
+<h4>New compiler option for missing 'hashCode()'</h4>
 <ul>
-  <li>verify <a href='https://bugs.eclipse.org/bugs/show_bug.cgi?id=248254'>bug 248254</a></li>
+  <li>verify that the new option works (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=250472">bug 250472</a>)</li>
+</ul>
+
+<h4>Rename in editor and clean ups</h4>
+<ul>
+  <li>verify <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=248254">bug 248254</a></li>
   <li>test that a similar scenario with Rename Type (in editor) and clean ups also still works</li>
 </ul>
 
-<h4>Item 1 (??? - FAQ: ???)</h4>
+<h4>Clean Up extension point</h4>
 <ul>
-  <li>...</li>
+  <li>review the documentation</li>
+  <li>test existing clean ups and save actions</li>
+  <li>create a new extension and verify that it works</li>
+</ul>
+
+<h4>CompilationUnitChange API</h4>
+<ul>
+  <li>review the new API</li>
+</ul>
+
+<h4>Improved scope selection in Search dialog</h4>
+<ul>
+  <li>verify <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=248639">bug 248639</a></li>
 </ul>
 
 
 <h2>Test 3.4.2 Fixes</h2>
 Make sure to verify all 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.4.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.4.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.4.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
-<h4>Test all fixes against 3.4.1 (Dani)</h4>
-Use M20080801-0800 to verify the bugs. 
+<h4>Test all fixes against 3.4.2 (Dani)</h4>
+Use M20081023-1830 to verify the bugs (except bug 251758 and bug 251817). 
 
-<h4>Test all fixes against 3.5 M3 (Markus)</h4>
+<h4>Test all fixes against 3.5 M3 (Dani)</h4>
 
 
 <h2>Bug Verification</h2>
