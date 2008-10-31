@@ -241,23 +241,23 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.4.jar">
+			<td valign="top"><a href="../patches/ecj_3.3.5.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2008/04/09, 1,49 MB (click on picture)</td>
+			<td valign="top">posted on 2008/10/31, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.4src.zip">
+			<td valign="top"><a href="../patches/ecj_3.3.5src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2008/04/09, 1,06 MB (click on picture)</td>
+			<td valign="top">posted on 2008/10/31, 1,06 MB (click on picture)</td>
            </tr>         
 	  </table>
 	  
 		<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3.3 preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.4.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.5.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2008/04/09, 7.17 MB (click on picture)</td>
+			<td valign="top">posted on 2008/10/31, 7.18 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
@@ -267,11 +267,53 @@ ob_start();
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Early preview of 3.3.3 rollup. <br>
 	           				<b>Note:</b> No official 3.3.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.3.4". Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_794_R33x">v_794_R33x</a>
+            				Plug-in revision ID is "3.3.5". Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_795_R33x">v_795_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=167262">167262</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=250975">250975</a>
+							[1.5][compiler] Stack overflow on static import.
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=239273">239273</a>
+							[1.5][compiler] ClassCastException in BinaryTypeBinding.convertMemberValue() trying to cast an ArrayBinding as a ReferenceBinding
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=245435">245435</a>
+							[1.5][compiler] &quot;Value for annotation attribute must be a constant expression&quot; error on valid constant expression
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=240214">240214</a>
+							[compiler] final bit should be cleared from class file access flag for anonymous class
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=237931">237931</a>
+							[1.6][compiler] wrong signature of String[][] in class file
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=239758">239758</a>
+							[1.5][compiler] Generic interface inheritance and overriding error
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=232565">232565</a>
+							[1.5][compiler] wrong autoboxing code generation leads to VerifyError at runtime
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=238484">238484</a>
+							[1.5][compiler] Eclipse generates bad code (major regression)
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=235921">235921</a>
+							[1.5][compiler] Incorrect generic signature attribute created for inner anonymous type
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=235882">235882</a>
+							[compiler] constructor-scoped inner classes unable to recognize final member variable initialization
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=235778">235778</a>
+							Potential race condition computing resolved classpath
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=227941">227941</a>
+							org.eclipse.jdt.internal.compiler.batch.Main writes bad characters to an xml log file
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=234619">234619</a>
+							[1.5][compiler] Object#getClass() has wrong expression type binding with JRE from 1.6
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=233800">233800</a>
+							[1.5][compiler] Internal compiler NPE on checkUnsafeCast
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=232814">232814</a>
+							[compiler] Testcase with &quot;value1 - (-value2)&quot; not working when value2 is final
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=225737">225737</a>
+							[compiler][1.5] Generics - JDT cannot compile hudson-core when javac can
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=231861">231861</a>
+							[1.5][compiler] Generics: problem with partial generics
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=228291">228291</a>
+							[1.5][compiler] Incorrect unsafe warning for casting complex but static types.
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=79798">79798</a>
+							[compiler] Wrong compiler error when interface overrides two methods with same signature but different exceptions
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=222326">222326</a>
+							[1.5][compiler] NullPointerException during: "Compute launch button tooltip"
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219855">219855</a>
+							[1.5][compiler] StackOverflowError during: &quot;Requesting Java AST from selection&quot;
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=167262">167262</a>
 							[1.5][compiler] @Override specification
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=220361">220361</a>
 							[1.5][compiler] Compiler incorrectly rejects static raw member type as parameterized
@@ -291,7 +333,7 @@ ob_start();
 							[1.5][compiler] Brigdes are not correcly generated
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.85&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.106&amp;content-type=text/html">build notes</a>.			
 			</table>
 
 		</div>
