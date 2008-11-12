@@ -513,7 +513,7 @@ ob_start();
           </tr>
 	  </table>
 	<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">
-	&nbsp;<b>3.2.3 preview </b>
+	&nbsp;<b>Post 3.2.2 update </b>
       <table>
           <tr>
             <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.8.jar">
@@ -526,7 +526,7 @@ ob_start();
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of 3.2.3 build. <br>
+            <td valign="top">Post 3.2.2 update. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
             				Plug-in revision ID is "3.2.8".Corresponding sources are versionned using tag
 							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_691_R32x">v_691_R32x</a>

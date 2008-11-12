@@ -519,7 +519,7 @@ please inform the JDT/Core team by entering a <a
 	  </table>
 <img
  src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0"
- height="16" width="16">&nbsp;<b>3.1.3 preview</b>
+ height="16" width="16">&nbsp;<b>Post 3.1.2 update</b>
       <table>
           <tr>
             <td valign="top"><a
@@ -534,7 +534,7 @@ picture)</td>
           </tr>
           <tr>
             <td valign="top"><i>description</i> </td>
-            <td valign="top">Early preview of 3.1.3 build. <br/><br/>
+            <td valign="top">Post 3.1.2 update. <br/><br/>
 This patch can be applied by expanding the zip archive into the <code>&lt;install&gt;/eclipse/plugins/</code>
 directory. Be sure to move the src zip files to the proper source
 project.
