@@ -48,6 +48,42 @@ Test that working sets can be deleted when using working sets as top-level eleme
   <li>selection of working sets with other resources/elements results in 'Delete' disable</li>
 </ul>
 
+<h4>Breadcrumb drop down shows containers (Markus, Raksha - FAQ: Dani)</h4>
+Test that the breadcrumb drop down renders container (referenced libraries, JRE, PDE).
+
+<h4>'Never join lines' formatter preferences (Raksha, Markus - FAQ: Dani)</h4>
+Test the new formatter preferences.
+<ul>
+  <li>test that the preference can be set on the 'Line Wrapping' tab</li>
+  <li>test that the preference can be set on the 'Comments' tab</li>
+  <li>test that the mnemonics work on those two preference tabs</li>
+  <li>test that the preference for comments works and does not affect code</li>
+  <li>test that the preference for line wrappings works and does not affect comments</li>
+</ul>
+
+<h4>Initial find field should escape with \R, not \r and \n (Dani, Raksha - FAQ: Markus)</h4>
+Test initial find field escaping.
+<ul>
+  <li>test it in the Find/Replace dialog (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=255701">bug 255701</a>)</li>
+  <li>test it for File Search (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=255708">bug 255708</a>)</li>
+</ul>
+
+<h4>Open actions availability in JDT views and editors (Raksha, Markus - FAQ: Dani)</h4>
+Verify that the the open actions are available when a JDT view or editor has focus (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252611">bug 252611</a>).
+
+<h4>Simpler setup of Content Assist (Markus, Raksha - FAQ: Dani)</h4>
+<ul>
+	<li>verify that the content assist action works out of the box when a content assistant is contributed via source viewer configuration (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138370">bug 138370</a>)</li>
+	<li>verify that the migration guide entry is there and correct</li>
+</ul>
+
+<h4>New FilteredTree look (Raksha, Markus - FAQ: Dani)</h4>
+Test that the new filtered tree looks OK and works as expected.
+<ul>
+  <li>test it in the preference dialog</li>
+  <li>test it in JDT's 'Add JARs...' build path dialog</li>
+</ul>
+
 
 <h2>Test 3.4.2 Fixes</h2>
 Make sure to verify all 
