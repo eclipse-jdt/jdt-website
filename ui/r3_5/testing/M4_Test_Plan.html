@@ -14,7 +14,7 @@
 Test day: Tuesday, 2008-12-09<br>
 Test Build: I20081209-0100<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Dani, Markus, Raksha<br>
+Testers: Dani, Raksha<br>
 
 
 <h2>Platforms</h2>
@@ -22,7 +22,7 @@ Testers: Dani, Markus, Raksha<br>
   <li>WindowsXP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
   <li>WindowsVista: -<br>
   </li><li>Linux GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
-  </li><li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a><br>
+  </li><li>Mac OS X: -<br>
   </li>
 </ul>
 
@@ -39,7 +39,7 @@ Testers: Dani, Markus, Raksha<br>
 <em>First test all those items where you are listed as first tester.</em>
 
 
-<h4>Delete Working Sets from Package Explorer (Markus, Dani - FAQ: Raksha)</h4>
+<h4>Delete Working Sets from Package Explorer (Dani, Raksha - FAQ: Raksha)</h4>
 Test that working sets can be deleted when using working sets as top-level elements in the Package Explorer (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=182539">bug 182539</a>). 
 <ul>
   <li>'Delete' is enabled when the selection only contains working sets</li>
@@ -48,10 +48,10 @@ Test that working sets can be deleted when using working sets as top-level eleme
   <li>selection of working sets with other resources/elements results in 'Delete' disable</li>
 </ul>
 
-<h4>Breadcrumb drop down shows containers (Markus, Raksha - FAQ: Dani)</h4>
+<h4>Breadcrumb drop down shows containers (Raksha, Dani - FAQ: Dani)</h4>
 Test that the breadcrumb drop down renders container (referenced libraries, JRE, PDE).
 
-<h4>'Never join lines' formatter preferences (Raksha, Markus - FAQ: Dani)</h4>
+<h4>'Never join lines' formatter preferences (Raksha, Dani - FAQ: Dani)</h4>
 Test the new formatter preferences.
 <ul>
   <li>test that the preference can be set on the 'Line Wrapping' tab</li>
@@ -68,16 +68,29 @@ Test initial find field escaping.
   <li>test it for File Search (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=255708">bug 255708</a>)</li>
 </ul>
 
-<h4>Open actions availability in JDT views and editors (Raksha, Markus - FAQ: Dani)</h4>
+<h4>Open actions availability in JDT views and editors (Raksha, Dani - FAQ: Dani)</h4>
 Verify that the the open actions are available when a JDT view or editor has focus (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252611">bug 252611</a>).
 
-<h4>Simpler setup of Content Assist (Markus, Raksha - FAQ: Dani)</h4>
+<h4>Simpler setup of Content Assist (Raksha, Dani - FAQ: Dani)</h4>
 <ul>
 	<li>verify that the content assist action works out of the box when a content assistant is contributed via source viewer configuration (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=138370">bug 138370</a>)</li>
 	<li>verify that the migration guide entry is there and correct</li>
 </ul>
 
-<h4>New FilteredTree look (Raksha, Markus - FAQ: Dani)</h4>
+<h4>Test refactorings with participants (Dani, Raksha - FAQ: Markus)</h4>
+<ul>
+	<li>test refactorings with participants (e.g update launch launch configurations and plugin.xml on Rename Type, update breakpoints when moving CUs or renaming members)</li>
+	<li>changes are now executed in background thread (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=175733">bug 175733</a>)</li>
+</ul>
+
+<h4>Test refactorings with participants (Raksha, Dani - FAQ: Markus)</h4>
+<ul>
+	<li>test that the preference page correctly shows the new option</li>
+	<li>test that changing the new option is applied to the open editor</li>
+	<li>test that quick fixes for dead code appear and work</li>
+</ul>
+
+<h4>New FilteredTree look (Raksha, Dani - FAQ: Dani)</h4>
 Test that the new filtered tree looks OK and works as expected.
 <ul>
   <li>test it in the preference dialog</li>
@@ -94,7 +107,7 @@ Make sure to verify all
 <h4>Test all fixes against 3.4.2 (Dani)</h4>
 Use M20081203-0800 to verify the bugs. 
 
-<h4>Test all fixes against 3.5 M4 (Markus)</h4>
+<h4>Test all fixes against 3.5 M4 (Dani)</h4>
 
 
 <h2>Bug Verification</h2>
