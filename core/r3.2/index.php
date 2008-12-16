@@ -497,14 +497,14 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.7.jar">
+            <td valign="top"><a href="../patches/ecj_3.2.9.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-            <td valign="top">posted on 2008/01/25, 1,26 MB (click on picture)</td>
+            <td valign="top">posted on 2008/12/16, 1,26 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.2.7src.zip">
+            <td valign="top"><a href="../patches/ecj_3.2.9src.zip">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-            <td valign="top">posted on 2008/01/25, 1,01 MB (click on picture)</td>
+            <td valign="top">posted on 2008/12/16, 1,01 MB (click on picture)</td>
            </tr>         
            <tr>
             <td valign="top"><i>extracted from</i></td>
@@ -516,9 +516,9 @@ ob_start();
 	&nbsp;<b>Post 3.2.2 update </b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.8.jar">
+            <td valign="top"><a href="../patches/org.eclipse.jdt.core_3.2.9.jar">
                              <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-            <td valign="top">posted on 2008/04/16, 6.99 MB (click on picture), sources included</td>
+            <td valign="top">posted on 2008/12/16, 6.99 MB (click on picture), sources included</td>
           </tr>
           <tr>
             <td valign="top"><i>applies to</i></td>
@@ -528,11 +528,15 @@ ob_start();
             <td valign="top"><i>description</i> </td>
             <td valign="top">Post 3.2.2 update. <br>
             				<b>Note:</b> No official 3.2.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.2.8".Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_691_R32x">v_691_R32x</a>
+            				Plug-in revision ID is "3.2.9".Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_693_R32x">v_693_R32x</a>
 							<br>
                             Addresses the following issues (since 3.2.2): <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=225744">225744</a>
+                            <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=138184">138184</a> 
+                            [search] Type Dialog (Could not uniquely map the name to a type)
+                            <br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=240214">240214</a> 
+                            [compiler] final bit should be cleared from class file access flag for anonymous class
+							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=225744">225744</a>
 							Bottleneck in SetClasspathOperation
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=219855">219855</a>
 							[1.5][compiler] StackOverflowError during: &quot;Requesting Java AST from selection&quot;
@@ -580,7 +584,7 @@ ob_start();
 							NullPointerException in BindingKeyResolver.consumeTypeVariable(...)         
 							<br>
                              Also see corresponding 
-                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.114&amp;content-type=text/html">build notes</a>.			
+                             <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5274.2.117&amp;content-type=text/html">build notes</a>.			
 			</table>
 		</div>
 		<div class="homeitem3col">
