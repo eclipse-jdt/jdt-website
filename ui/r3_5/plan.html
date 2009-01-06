@@ -138,7 +138,7 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> change execution should not happen in the UI thread (bug 175733) <span class="work">2w</span></li>
 			<li class="priority">add 'Rename' refactoring quick assist (bug 239420) <span class="work">1d</span></li>
-			<li class="priority">Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
 			<li>new refactoring: extract field (bug 52791)</li>
 			<li>new refactoring: convert instance method to static</li>
 			<li>new refactoring: move type to new file (bug 43277)
@@ -176,16 +176,17 @@ function showHiddenWork() {
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow to delete working sets from Package Explorer hover enhancements</li>
             <li class="priority">allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
 			<li>adapt to JDT/Core support for ".." in build path (bug 248583)</li>
-			<li class="priority">allow to mark source folders as containing test source code (see bug 224708)</li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5]</font> allow to mark source folders as containing test source code (see bug 224708)<br>
+				&rarr; this got removed from the 3.5 plan by JDT Core</li>
 		  	<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> enable styled strings when running in Bidi (depends on Platform UI bug 227559)<span class="work">1d</span></li>
-			<li class="priority">allow to configure problems per source folder (depends on JDT Core)<span class="work">1w</span></li>
+			<li class="priority">allow to ignore problems per source folder (depends on JDT Core bug 220928)<span class="work">1w</span></li>
+			<li class="priority">add 'Show in Properties File' action to NLS key hover (bug 220002)  <span class="work">1d</span></li>			
 		</ul>
 		
 		<li><h4>Jar Exporter [<a href="#3">3</a>]</h4>
 		<ul>
-		  <li><span class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> add Jar-in-Jar class loader option (contribution) (bug 219530) <span class="work">1w</span></span><br>
-			&rarr; we are still waiting for IP review from eclipse.org</li></li>
+		  <li><span class="priority"><img src="../images/ok.gif" border="0" height="10" width="10">  add Jar-in-Jar class loader option (contribution) (bug 219530) <span class="work">1w</span></span>
 		</ul>
 		
 		<li><h4>Java Search [<a href="#3">3</a>]</h4>
@@ -301,7 +302,7 @@ function showHiddenWork() {
 		</li>
 		<li>Platform UI
 		<ul>
-			<li>bug 228397 needs to be fixed in order to indicate match in proposal list (similar to Ctrl+3)</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 228397 needs to be fixed in order to indicate match in proposal list (similar to Ctrl+3)</li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 227559 needs to be fixed in order to enable styled strings when running in Bidi</li>
 		</ul>
 		</li>
@@ -314,16 +315,18 @@ function showHiddenWork() {
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 247941 needs to be fixed in order to add threshold support for code completion (bug 247433)</li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> make NodeFinder API (bug 53024)</li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> improve NamingConventions (bug 38111)</li>
-			<li>allow to mark source folders as containing test source code (bug 224708)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.5]</font> allow to mark source folders as containing test source code (bug 224708)<br>
+				&rarr; this got removed from the 3.5 plan by JDT Core</li>
+			</li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> support '..' in classpath entries (bug 57732)</li>
-			<li>allow to configure problems per source folder</li>
+			<li>allow to ignore problems per source folder (bug 220928)</li>
 			<li>bug 6930: improve handling of constructor proposals
 		  		<br>&rarr; we should either fix this for 3.5 or mark as WONTFIX</li>
 		</ul>
 		</li>
 		<li>JDT Debug
 		<ul>
-			<li>bug 236296 could influence the resolution for our EE-related bugs (bug 176516, bug 176517)</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 236296 could influence the resolution for our EE-related bugs (bug 176516, bug 176517)</li>
 		</ul>
 		</li>
 	</ul>
@@ -622,26 +625,28 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Jar Exporter [<a href="#3">3</a>]</h4>
 		<ul>
-		  <li><span class="priority"> add Jar-in-Jar class loader option (contribution) (bug 219530) <span class="work">1w</span></span><br>
+		  <li><span class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> add Jar-in-Jar class loader option (contribution) (bug 219530) <span class="work">1w</span></span><br>
 		  		&rarr; IP review from eclipse.org is done but we are still negotiating details</li>
 		</ul>
-		
-		
 
-
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
+		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">allow to configure problems per source folder (depends on JDT Core)<span class="work">1w</span></li>
+			<li class="priority">allow to ignore problems per source folder (depends on JDT Core bug 220928)<span class="work">1w</span></li>
 			<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
+			<li class="priority">add 'Show in Properties File' action to NLS key hover (bug 220002)  <span class="work">1d</span></li>
 		</ul>
 
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>] <span class="work">1m</span></h4>
 		<ul>
 			<li>show horizontal line between methods (bug 13672)</li>
-			<li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
-			<li>visualize code nesting (bug 69455)</li>
+			<li>([misc] draw vertical lines in control flow statements (bug 84878))</li>
+			<li>(visualize code nesting (bug 69455))</li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
