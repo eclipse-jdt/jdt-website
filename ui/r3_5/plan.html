@@ -174,7 +174,7 @@ function showHiddenWork() {
               </ul>
             </li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow to delete working sets from Package Explorer hover enhancements</li>
-            <li class="priority">allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
+            <li>allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
 			<li>adapt to JDT/Core support for ".." in build path (bug 248583)</li>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5]</font> allow to mark source folders as containing test source code (see bug 224708)<br>
 				&rarr; this got removed from the 3.5 plan by JDT Core</li>
@@ -272,7 +272,7 @@ function showHiddenWork() {
 		  	<br>this could be achieved by a registering a new hyperlink detector</li>
 		  <li>add better support for the @inheritDoc tag (content assist, syntax coloring, hyperlinking)</li>
 		  <li>structured selection should support brackets (bug 86835)</li>
-		  <li>paste patch from clipboard into Package Explorer (bug 170879)</li>
+		  <li><img src="../images/ok.gif" border="0" height="10" width="10">paste patch from clipboard into Package Explorer (bug 170879)</li>
 		  <li><img src="../images/ok.gif" border="0" height="10" width="10"> investigate using P2 on local build machine to allow update to latest plug-in export <span class="work">1d</span></li>
 		  <li class="priority">adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
 		  <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> adopt improved NamingConventions (see bug 38111) <span class="work">1d</span></li>
@@ -559,13 +559,13 @@ function showHiddenWork() {
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> allow to mark source folders as containing test source code (see bug 224708)
 				<br>&rarr; deferring to M5 as JDT Core is not ready yet
 			</li>
-			<li class="priority">Compiler compliance, Execution Environment, JRE System Library, ... <span class="work">1w</span>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> Compiler compliance, Execution Environment, JRE System Library, ... <span class="work">1w</span>
               <ul>
                 <li>EE should be "normal" case, CC automatically updated (new compliance setting: "From EE") (bug 176516)</li>
                 <li>make EE the default (bug 176517)</li>
               </ul>
             </li>
-            <li class="priority"> allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
+            <li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
 		</ul>
 		
 		
@@ -574,20 +574,20 @@ function showHiddenWork() {
 			<li><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> improve handling of constructor proposals (depends on JDT Core bug 6930) <span class="work">1d</span>
 				<br>&rarr; deferring to M5 as JDT Core is not ready yet
 			</li>
-			<li>context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>
 		</ul>
 		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> change execution should not happen in the UI thread (bug 175733) <span class="work">2w</span></li>
-			<li class="priority">add 'Rename' refactoring quick assist (bug 239420) <span class="work">1d</span></li>
-			<li class="priority">Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> add 'Rename' refactoring quick assist (bug 239420) <span class="work">1d</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 		<ul>
-			<li class="priority">adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt;3.5 M4]</font> adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> adopt improved NamingConventions (see bug 38111) <span class="work">1d</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> help to improve editing support in Java compare editor (code reviews, provide new APIs) <span class="work">0.5m</span></li>
 		</ul>
@@ -629,15 +629,21 @@ function showHiddenWork() {
 		  		&rarr; IP review from eclipse.org is done but we are still negotiating details</li>
 		</ul>
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#3">2</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
+			<li>context information: show parameters should show parameters for all overloaded methods (bug 58719) <span class="work">1d</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
+			<li class="priority"> Compiler compliance, Execution Environment, JRE System Library, ... <span class="work">1w</span>
+              <ul>
+                <li>EE should be "normal" case, CC automatically updated (new compliance setting: "From EE") (bug 176516)</li>
+                <li>make EE the default (bug 176517)</li>
+              </ul>
+            </li>
 			<li class="priority">allow to ignore problems per source folder (depends on JDT Core bug 220928)<span class="work">1w</span></li>
-			<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
 			<li class="priority">add 'Show in Properties File' action to NLS key hover (bug 220002)  <span class="work">1d</span></li>
 		</ul>
 
@@ -651,6 +657,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> Refactoring Preview should have "Back" button (bug 33737) <span class="work">1d</span></li>
 			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">2w</span>
               <ul>
                 <li>Increase visibility (with info/warning message)?</li>
@@ -660,6 +667,11 @@ function showHiddenWork() {
             </li>
 		</ul>
 		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority"> adopt NodeFinder API (see bug 53024) <span class="work">1d</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li>bugzilla inbox tracking</li>
@@ -684,10 +696,15 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.5/plan.php#Milestone_Planning_M6">Platform Text 3.5 M6 Plan</a>.</p>
 
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability</h4>
+		<ul>
+			<li class="priority">Bidi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">1m</span></li>
+		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 		<ul>
 			<li>(adapt to JDT/Core support for ".." in build path (bug 248583))</li>
+            <li>allow to add class folders to user libraries (bug 115097) <span class="work">1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
