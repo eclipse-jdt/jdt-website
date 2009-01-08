@@ -243,39 +243,26 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 	<a name="current-milestone"></a>
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Build path </h4>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Builder </h4>
 		<ul>
-			<li class="priority"> [<a href="#3">3</a>] custom compiler and Javadoc settings per source folder (bug 87215, bug 220928) <span class="work">[jerome, philippe]</span></li>
-			<li class="priority"> [<a href="#3">3</a>] mark source folders as test only (bug 224708) <span class="work">[jerome]</span></li>
-			<li> [<a href="#3">3</a>] (investigate) nested jars on the buildpath (bug 103136) <span class="work">[jerome]</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> [<a href="#1">1</a>] improve performance when adding a new top-level package (bug 207093) <span class="work">[kent]</span></li>
 		</ul>
 		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code assist</h4>
-	    <ul>
-	      <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> [<a href="#3">3</a>] constructor completion (bug 6930) <span class="work">[david]</span></li>
-		</ul>
-
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Compiler </h4>
 		<ul>
-			<li class="priority">[<a href="#2">2</a>] cleanup lookup semantics (get rid of tiebreak method, add a pointer to overriden method etc...) <span class="work">[kent]</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> [<a href="#2">2</a>] warning to signal presence of dead code (bug 48399) <span class="work">[philippe]</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Formatter</h4>
 		<ul>
-			<li>[<a href="#3">3</a>] (time permitting) formatter should preserve existing line delimiters (bug 198074) <span class="work">[frederic]</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> [<a href="#3">3</a>] formatter should preserve existing line delimiters (bug 198074) <span class="work">[frederic]</span></li>
 		</ul>
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Search</h4>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java model</h4>
 		<ul>
-			<li class="priority">[<a href="#2">2</a>] SearchPattern: provide way to get the matching regions (bug 218605) <span class="work">[frederic]</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> [<a href="#3">3</a>] memory optimizations (bug 227986, bug 257869) <span class="work">[jerome]</span></li>
 		</ul>
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items </h4>
-		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> [<a href="#2">2</a>] (investigate) ability to provide preprocessed source code to compiler (bug 116143) <span class="work">[kent]</span></li>
-			<li> [<a href="#3">3</a>] (helpwanted) custom regions in code folding (bug 63808) <span class="work">[jerome, philippe]</span></li>
-		</ul>
-		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li>bugzilla inbox tracking</li>
@@ -299,16 +286,28 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Build path </h4>
 		<ul>
+			<li class="priority"> [<a href="#3">3</a>] custom compiler and Javadoc settings per source folder (bug 220928) <span class="work">[jerome, philippe]</span></li>
 			<li class="priority"> [<a href="#3">3</a>] source attachment improvements: multiple root path, multiple source path (bug 173641, bug 208171) <span class="work">[jerome]</span></li>
 			<li> [<a href="#3">3</a>] (time permitting) library project (read-only, allow conversion back to source form) (bug 80162) <span class="work">[jerome]</span></li>
 		</ul>
 
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code assist</h4>
+	    <ul>
+	      <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> [<a href="#3">3</a>] constructor completion (bug 6930) <span class="work">[david]</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Compiler </h4>
 		<ul>
+			<li class="priority">[<a href="#2">2</a>] cleanup lookup semantics (get rid of tiebreak method, add a pointer to overriden method etc...) <span class="work">[kent]</span></li>
 			<li>[<a href="#3">3</a>] (provisional) Java 7 support <span class="work">[philippe, kent]</span></li>
 			<li>[<a href="#3">3</a>] (helpwanted) provide error explanations (setup some participative work) (bug 91586) <span class="work">[philippe, kent]</span></li>
 		</ul>
 		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Search</h4>
+		<ul>
+			<li class="priority">[<a href="#2">2</a>] SearchPattern: provide way to get the matching regions (bug 218605) <span class="work">[frederic]</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Options </h4>
 		<ul>
 			<li class="priority"> [<a href="#2">2</a>] detect need to rebuild/update model on option change (bug 106603, bug 201244, bug 46780) <span class="work">[jerome, frederic]</span></li>
@@ -316,6 +315,7 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items </h4>
 		<ul>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> [<a href="#2">2</a>] (investigate) ability to provide preprocessed source code to compiler (bug 116143) <span class="work">[kent]</span></li>
 			<li> [<a href="#2">2</a>] (helpwanted) improve support for java-like source files (bug 36939) <span class="work">[jerome]</span></li>
 		</ul>
 		
