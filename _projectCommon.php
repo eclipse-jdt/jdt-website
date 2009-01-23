@@ -4,7 +4,19 @@
 	# See the Committer Tools "How Do I" for list of themes
 	# https://dev.eclipse.org/committers/
 	# Optional: defaults to system theme 
-	$theme = "";
+	$_theme = "Nova";
+	$theme = "Nova";
+	if(isset($_POST['theme'])) {
+		$_theme = $_POST['theme'];
+	}
+	if($_theme != "" && $App->isValidTheme($_theme)) {
+		setcookie("theme", $_theme);
+		$theme = $_theme;
+	}
+	else {
+		# Get theme from browser, or none default
+		$theme = $App->getUserPreferedTheme();
+	}
 
 	# Define your project-wide Nav bars here.
 	# Format is Link text, link URL (can be http://www.someothersite.com/), target (_self, _blank), level (1, 2 or 3)
