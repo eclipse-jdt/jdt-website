@@ -39,11 +39,20 @@ Testers: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:
 
 
 <h4>Assign Working Sets dialog should preserve check box setting ( - FAQ: Raksha</h4>
-Test that the check box setting in Assign Working Set dialog is preserved (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=182539">bug 256879</a>). 
+Test that the check box setting in Assign Working Set dialog is preserved (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=182539">bug 256879</a>).
 <ul>
-	<li>Setting is preserved only if user presses OK , and not preserved if user presses cancel</li>
-	<li>Check with single/multiple projects</li>
+	<li>test that setting is preserved only if user presses 'OK', and not preserved if user presses 'Cancel'</li>
+	<li>check with single/multiple projects</li>
 	<li>check the javadoc</li>
+</ul>
+
+<h4>Jar-in-Jar class loader of Runnable JAR Exporter ( - FAQ: Benno, Dani</h4>
+Test the new Jar-in-Jar class loader (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=219530">bug 219530</a>):
+<ul>
+	<li>export works</li>
+	<li>JAR is correctly built</li>
+	<li>JAR can be run</li>
+	<li>dialog setting is preserved</li>
 </ul>
 
 
