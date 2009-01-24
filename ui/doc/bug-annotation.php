@@ -81,7 +81,7 @@ ob_start();
 			<a href="http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm">keywords defined by Platform Text</a>.
 		</p>
 		
-		<table border="1">
+		<table width="735" border="1">
 			
 			<?php
 				bugsWithSummaryJDT("[actions]", "Bugs related to global menu, context menu, and toolbar actions");
