@@ -31,7 +31,7 @@ function bugsByUser($name, $email) {
 
 function internalBugsWithSummary($tag, $description, $filter) {
 	echo '<tr>
-		<td width="170">
+		<td style="white-space:nowrap">
 			<a href="' .
 			'https://bugs.eclipse.org/bugs/buglist.cgi?' .
 			'short_desc_type=substring&short_desc=' .
@@ -42,7 +42,7 @@ function internalBugsWithSummary($tag, $description, $filter) {
 			"$tag" .
 			'</a>
 		</td>
-		<td width="514">
+		<td>
 			' .
 			"$description" .
 			'
@@ -81,7 +81,7 @@ ob_start();
 			<a href="http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm">keywords defined by Platform Text</a>.
 		</p>
 		
-		<table width="800" border="1">
+		<table border="1">
 			
 			<?php
 				bugsWithSummaryJDT("[actions]", "Bugs related to global menu, context menu, and toolbar actions");
