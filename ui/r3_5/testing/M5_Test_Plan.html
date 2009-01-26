@@ -38,15 +38,22 @@ Testers: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:
 <em>First test all those items where you are listed as first tester.</em>
 
 
-<h4>Assign Working Sets dialog should preserve check box setting ( - Questions: Raksha)</h4>
+<h4>Assign Working Sets dialog should preserve check box setting (Markus, Dani - Questions: Raksha)</h4>
 Test that the check box setting in Assign Working Set dialog is preserved (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=182539">bug 256879</a>).
 <ul>
 	<li>test that setting is preserved only if user presses 'OK', and not preserved if user presses 'Cancel'</li>
 	<li>check with single/multiple projects</li>
-	<li>check the javadoc</li>
+	<li>check the Javadoc</li>
 </ul>
 
-<h4>Jar-in-Jar class loader of Runnable JAR Exporter ( - Questions: Benno, Dani)</h4>
+<h4>Automatically show new working sets (Markus, Dani - Questions: Raksha)</h4>
+When using 'Working Sets' as top level elements, test that (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=254603">bug 254603</a>):
+<ul>
+	<li>newly created working sets appear automatically</li>
+	<li>we no longer ask the user when creating a new Java working set or a new Java project</li>
+</ul>
+
+<h4>Jar-in-Jar class loader of Runnable JAR Exporter (Markus, Raksha - Questions: Benno, Dani)</h4>
 Test the new Jar-in-Jar class loader (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=219530">bug 219530</a>):
 <ul>
 	<li>export works</li>
@@ -55,7 +62,7 @@ Test the new Jar-in-Jar class loader (see <a href="https://bugs.eclipse.org/bugs
 	<li>dialog setting is preserved</li>
 </ul>
 
-<h4>Model-based synchronizations ( - Questions: Markus)</h4>
+<h4>Model-based synchronizations (Dani, Raksha - Questions: Markus)</h4>
 Test model-based Java synchronizations (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=261198">bug 261198</a>):
 <ul>
 	<li>make sure models are enabled on Preferences &gt; Team  &gt; CVS &gt; Synchronize/Compare</li>
@@ -63,41 +70,37 @@ Test model-based Java synchronizations (see <a href="https://bugs.eclipse.org/bu
 	<li>check CVS decorations in Package Explorer and Project Explorer</li>
 </ul>
 
-<h4>'Rename in workspace' quick fix ( - Questions: Markus)</h4>
+<h4>'Rename in workspace' quick fix (Dani, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>verify that it works</li>
 </ul>
 
-<h4>Go back from refactoring preview ( - Questions: Markus)</h4>
+<h4>Go back from refactoring preview (Raksha, Dani - Questions: Markus)</h4>
 <ul>
 	<li>check refactorings that use a dialog (no Back, Next buttons)</li>
 	<li>verify that Preview, Back, Preview, OK works</li>
 </ul>
 
-<h4>DND updates references ( - Questions: Markus)</h4>
+<h4>DND updates references (Raksha, Dani - Questions: Markus)</h4>
 Test that drag-and-drop in the Package Explorer sets the 'update references' flag (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=239347">bug 239347</a>):
 <ul>
 	<li>to see the flags passed to refactoring participants, you can install
 	com.ibm.zrh.refactoring.testing from our internal CVS repsitory and verify the console output</li>
 </ul>
 
-
-
-<h2>Test 3.4.2 Fixes</h2>
-Make sure to verify all 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.4.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
-
-<h4>Test all fixes against 3.4.2 (Dani)</h4>
-Use M20080801-0800 to verify the bugs. 
-
-<h4>Test all fixes against 3.5 M5 (Markus)</h4>
+<h4>Block selection in textual editors (Raksha, Markus - Questions: Dani)</h4>
+Test block (aka column or rectangular) selection works.
+<ul>
+	<li>test that it can be enabled and disabled via tool bar button (need to enable 'Editor Presentation' action set)</li>
+	<li>test that it can be enabled and disabled by <strong>Alt+Shift+A</strong> key binding</li>
+	<li>test that it works in all textual editors</li>
+	<li>test with different fonts, including proportional</li>
+	<li>test cut, copy & paste</li>
+</ul>
 
 
 <h2>Bug Verification</h2>
-<em>Before starting to verify a bug add a comment indicating
-that you are about to verify it.</em>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.5%20M5&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
   P1 JDT UI bugs, 3.5 M5</a></li>
