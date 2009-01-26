@@ -38,7 +38,7 @@ Testers: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:
 <em>First test all those items where you are listed as first tester.</em>
 
 
-<h4>Assign Working Sets dialog should preserve check box setting ( - FAQ: Raksha</h4>
+<h4>Assign Working Sets dialog should preserve check box setting ( - Questions: Raksha)</h4>
 Test that the check box setting in Assign Working Set dialog is preserved (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=182539">bug 256879</a>).
 <ul>
 	<li>test that setting is preserved only if user presses 'OK', and not preserved if user presses 'Cancel'</li>
@@ -46,7 +46,7 @@ Test that the check box setting in Assign Working Set dialog is preserved (see <
 	<li>check the javadoc</li>
 </ul>
 
-<h4>Jar-in-Jar class loader of Runnable JAR Exporter ( - FAQ: Benno, Dani</h4>
+<h4>Jar-in-Jar class loader of Runnable JAR Exporter ( - Questions: Benno, Dani)</h4>
 Test the new Jar-in-Jar class loader (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=219530">bug 219530</a>):
 <ul>
 	<li>export works</li>
@@ -54,6 +54,33 @@ Test the new Jar-in-Jar class loader (see <a href="https://bugs.eclipse.org/bugs
 	<li>JAR can be run</li>
 	<li>dialog setting is preserved</li>
 </ul>
+
+<h4>Model-based synchronizations ( - Questions: Markus)</h4>
+Test model-based Java synchronizations (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=261198">bug 261198</a>):
+<ul>
+	<li>make sure models are enabled on Preferences &gt; Team  &gt; CVS &gt; Synchronize/Compare</li>
+	<li>verify that Synchronize view shows the right differences for changes in packages</li>
+	<li>check CVS decorations in Package Explorer and Project Explorer</li>
+</ul>
+
+<h4>'Rename in workspace' quick fix ( - Questions: Markus)</h4>
+<ul>
+	<li>verify that it works</li>
+</ul>
+
+<h4>Go back from refactoring preview ( - Questions: Markus)</h4>
+<ul>
+	<li>check refactorings that use a dialog (no Back, Next buttons)</li>
+	<li>verify that Preview, Back, Preview, OK works</li>
+</ul>
+
+<h4>DND updates references ( - Questions: Markus)</h4>
+Test that drag-and-drop in the Package Explorer sets the 'update references' flag (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=239347">bug 239347</a>):
+<ul>
+	<li>to see the flags passed to refactoring participants, you can install
+	com.ibm.zrh.refactoring.testing from our internal CVS repsitory and verify the console output</li>
+</ul>
+
 
 
 <h2>Test 3.4.2 Fixes</h2>
