@@ -4,8 +4,8 @@
 	# See the Committer Tools "How Do I" for list of themes
 	# https://dev.eclipse.org/committers/
 	# Optional: defaults to system theme 
-	$_theme = "Nova";
-	$theme = "Nova";
+	$_theme = "";
+	$theme = "";
 	if(isset($_POST['theme'])) {
 		$_theme = $_POST['theme'];
 	}
