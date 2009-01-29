@@ -20,13 +20,13 @@ ob_start();
 		<h1><?= $pageTitle ?></h1>
 		<div class="homeitem3col">
 			<a name="DEV"></a>
-			<h3>Development Resources</h3>
+			<h2><b>Development Resources</b></h2>
 			<p>If you are already a JDT Core developer, check out the <a href="dev.php">Development
 Resources</a>. In particular, this section summarizes the various development streams.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="JDT_CORE"></a>
-			<h3>JDT Core</h3>
+			<h2><b>JDT Core</b></h2>
 			<p>JDT Core is the Java infrastructure of the Java
 IDE. It includes:</p>
 <ul>
@@ -68,7 +68,7 @@ be run headless.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
-			<h3>What&#8217;s Happening?</h3>
+			<h2><b>What&#8217;s Happening?</b></h2>
 <p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.5 Development</b></p>
 <ul>
   <li>Most active development goes into this stream.
@@ -156,7 +156,7 @@ be run headless.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="INVOLVED"></a>
-			<h3>Get Involved!</h3>
+			<h2><b>Get Involved!</b></h2>
 			<p>If you are interested in participating in the development of the JDT
 Core component, check out the developer&#8217;
 s mailing list:<blockquote><a href="http://dev.eclipse.org/mailman/listinfo/jdt-core-dev">jdt-core-dev@eclipse.org</a>.</blockquote>
