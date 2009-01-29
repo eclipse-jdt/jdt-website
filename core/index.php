@@ -69,7 +69,7 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h2><b>What&#8217;s Happening?</b></h2>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.5 Development</b></p>
+				<h3><b>R3.5 Development</b></h3>
 <ul>
   <li>Most active development goes into this stream.
   </li>
@@ -80,7 +80,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.5/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.4 Maintenance</b></p>
+				<h3><b>R3.4 Maintenance</b></h3>
 <ul>
   <li> Release 3.4 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
   </li>
@@ -89,7 +89,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.4/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.3 Maintenance</b></p>
+				<h3><b>R3.3 Maintenance</b></h3>
 <ul>
   <li> Rollup 3.3.2 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
   </li>
@@ -98,7 +98,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.3/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.2 Maintenance</b></p>
+				<h3><b>R3.2 Maintenance</b></h3>
 <ul>
   <li> Rollup 3.2.2 available on the <a href=" http://archive.eclipse.org/eclipse/downloads">download</a> area.
   </li>
@@ -107,7 +107,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.1 Maintenance</b></p>
+				<h3><b>R3.1 Maintenance</b></h3>
 <ul>
   <li> Rollup 3.1.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
@@ -116,7 +116,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.1/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R3.0 Maintenance</b><p>
+				<h3><b>R3.0 Maintenance</b><h3>
 <ul>
   <li> Rollup 3.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
@@ -125,7 +125,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.0/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.1 Maintenance</b></p>
+				<h3><b>R2.1 Maintenance</b></h3>
 <ul>
   <li> Rollup 2.1.3 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
@@ -134,7 +134,7 @@ be run headless.</p>
   <li> Patch available in <a href="r2.1/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R2.0 Maintenance</b></p>
+				<h3><b>R2.0 Maintenance</b></h3>
 <ul>
   <li> Rollup 2.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
@@ -143,7 +143,7 @@ be run headless.</p>
   <li> Patch available in <a href="r2.0/main.html#updates">update</a> area (for testing purpose).
   </li>
 </ul>
-<p><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16>&nbsp;<b>R1.0 Maintenance</b></p>
+				<h3><b>R1.0 Maintenance</b></h3>
 <ul>
   <li> Release 1.0 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
