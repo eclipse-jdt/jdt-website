@@ -163,7 +163,7 @@ s mailing list:<blockquote><a href="http://dev.eclipse.org/mailman/listinfo/jdt-
 Chat with people there about your problems and interests, and find out
 what you can do to help.
 <p>The JDT Core team is open to suggestions for improving both the experience
-of Java developpers using the Java IDE, and clients to the JDT Core APIs.
+of Java developers using the Java IDE, and clients to the JDT Core APIs.
 If you are interested in Java language semantics, compiler technology,
 Java tooling in general (behavior of our current tools, suggestions for
 new tools), then please interact with the JDT Core team so that we can
