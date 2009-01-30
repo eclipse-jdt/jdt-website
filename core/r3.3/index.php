@@ -241,23 +241,23 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.6.jar">
+			<td valign="top"><a href="../patches/ecj_3.3.7.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2008/12/17, 1,49 MB (click on picture)</td>
+			<td valign="top">posted on 2009/01/30, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.6src.zip">
+			<td valign="top"><a href="../patches/ecj_3.3.7src.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
-			<td valign="top">posted on 2008/12/17, 1,06 MB (click on picture)</td>
+			<td valign="top">posted on 2009/01/30, 1,06 MB (click on picture)</td>
            </tr>         
 	  </table>
 	  
 		<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Post 3.3.2 update </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.6.jar">
+			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.7.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2008/12/17, 7.18 MB (click on picture)</td>
+			<td valign="top">posted on 2009/01/30, 7.18 MB (click on picture)</td>
           </tr>
           <tr>
 			<td valign="top"><i>applies to</i></td>
@@ -267,11 +267,13 @@ ob_start();
 			<td valign="top"><i>description</i> </td>
 			<td valign="top">Post 3.3.2 update. <br>
 	           				<b>Note:</b> No official 3.3.3 is planned so far, this is only a courtesy of the JDT/Core team. <br>
-            				Plug-in revision ID is "3.3.6". Corresponding sources are versionned using tag
-							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_796_R33x">v_796_R33x</a>
+            				Plug-in revision ID is "3.3.7". Corresponding sources are versionned using tag
+							<a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core/?only_with_tag=v_797_R33x">v_797_R33x</a>
 							<br>
 						    Addresses the following issues: <br>
-						    <a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=138184">138184</a>
+							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=257716">257716</a>
+							[compiler] Erroneous blank field field may not have been initialized
+						    <br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=138184">138184</a>
 							[search] Type Dialog (Could not uniquely map the name to a type)
 							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=250975">250975</a>
 							[1.5][compiler] Stack overflow on static import.
@@ -335,7 +337,7 @@ ob_start();
 							[1.5][compiler] Brigdes are not correcly generated
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.109&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5933.2.111&amp;content-type=text/html">build notes</a>.			
 			</table>
 
 		</div>
