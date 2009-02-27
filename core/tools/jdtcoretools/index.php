@@ -91,8 +91,8 @@ ob_start();
 			<h3>Install</h3>
 				<p>
 					Use this update site.<br/>
-					<blockquote>http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-site/</blockquote>
-				</p>			
+					<blockquote><a href="http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-site/">http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-sit</a></blockquote>
+				</p>
 		</div>
 	</div>
 	
