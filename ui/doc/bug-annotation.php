@@ -99,7 +99,7 @@ ob_start();
 				bugsWithSummaryJDT("[compare]", "Bugs related to Java compare functionality. Not used to tag general compare bugs");
 				bugsWithSummaryJDT("[convert anonymous]", "Bugs related to the convert anonymous to nested class refactoring");  
 				bugsWithSummaryJDT("[convert local]", "Bugs related to the convert local to field refactoring"); 
-				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");     
+				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");
 				bugsWithSummaryJDT("[dcr]", "New feature requests (design change requests), if possible followed by [refactoring] [code generation]...");
 				bugsWithSummaryJDT("[dnd]", "Drag and Drop bugs. This keyword is mostly used together with other keywords like [reorg], [refactoring], [type hierarchy], ...");
 				bugsWithSummaryJDT("[encapsulate field]", "Bugs to the encapsulate field refactoring");
@@ -126,9 +126,9 @@ ob_start();
 				bugsWithSummaryJDT("[JUnit]", "Bugs related to the org.eclipse.jdt.junit plug-in");
 				bugsWithSummaryJDT("[ltk]", "Bugs related to the refactoring framework, org.eclipse.ltk.refactoring");
 				bugsWithSummaryJDT("[mark occurrence]", "Bugs related to mark occurrence");  
-				bugsWithSummaryJDT("[migrate jar]", "Bugs related to the migrate jar wizard");     
+				bugsWithSummaryJDT("[migrate jar]", "Bugs related to the migrate jar wizard");
 				bugsWithSummaryJDT("[move member type]", "Bugs related to the convert member to top level refactoring");
-				bugsWithSummaryJDT("[move method]", "Bugs related to the move method refactoring");     
+				bugsWithSummaryJDT("[move method]", "Bugs related to the move method refactoring");
 				bugsWithSummaryJDT("[move static members]", "Bugs related to the move static members refactoring");
 				bugsWithSummaryJDT("[nls tooling]", "Bugs related to NLS tooling");
 				bugsWithSummaryJDT("[open type]", "Bugs to the open type dialog");
@@ -142,15 +142,16 @@ ob_start();
 				bugsWithSummaryJDT("[quick assist]", "Bugs related to the Quick Assist functionality");
 				bugsWithSummaryJDT("[quick fix]", "Bugs related to the Quick Fix functionality");
 				bugsWithSummaryJDT("[refactoring]", "General bugs regarding the refactoring framework");  
-				bugsWithSummaryJDT("[rename]", "Bugs related to the rename refactoring");     
+				bugsWithSummaryJDT("[rename]", "Bugs related to the rename refactoring");
 				bugsWithSummaryJDT("[render]", "Bugs related to rendering of Java elements");  
 				bugsWithSummaryJDT("[reorg]", "Bugs related to the copy, move and delete refactorings");
 				bugsWithSummaryJDT("[search]", "Java search bugs. Not used to tag general search bugs");
 				bugsWithSummaryJDT("[surround with try/catch]", "Bugs related to the surround with try/catch refactoring");
 				bugsWithSummaryJDT("[type hierarchy]", "Bugs related to the Type Hierarchy view");
 				bugsWithSummaryJDT("[type wizards]", "Bugs related to the new type wizards");
-				bugsWithSummaryJDT("[use supertype]", "Bugs related to the use supertype refactoring");    
-			?>     
+				bugsWithSummaryJDT("[use supertype]", "Bugs related to the use supertype refactoring");
+				bugsWithSummaryJDT("[working sets]", "Bugs related to working sets");
+			?>
 	  
 		</table>
 		<br>
