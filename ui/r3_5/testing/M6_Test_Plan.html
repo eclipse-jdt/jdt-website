@@ -19,11 +19,10 @@ Testers: Dani, Markus<br>
 
 <h2>Platforms</h2>
 <ul>
-  <li>WindowsXP: Dani</li>
-  <li>WindowsVista: -<br>
-  </li><li>Linux GTK: Dani<br>
-  </li><li>Mac OS X: Markus<br>
-  </li>
+  <li>WindowsXP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>WindowsVista: -</li>
+  <li>Linux GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 
 
@@ -39,10 +38,85 @@ Testers: Dani, Markus<br>
 <em>First test all those items where you are listed as first tester.</em>
 
 
-<h4>Item 1 (??? - FAQ: ???)</h4>
+<h4>toString() Generator (Raksha, Dani - Questions: Markus)</h4>
 <ul>
-  <li>...</li>
+  <li>test <b>Source &gt; Generate toString()...</b> (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=26070">bug 26070</a>)
+    <ul>
+      <li>test UI / usability</li>
+      <li>test generated toString() methods</li>
+      <li>sanity check that <b>Generate hashCode and equals()</b> still starts (the action now shares some code with the toString() action)</li>
+    </ul>
+  </li>
 </ul>
+
+<h4>'Open Implementation' Hyperlink (Dani, Markus - Questions: Raksha)</h4>
+<ul>
+  <li>test on various kinds of methods, constructors, in Javadoc, etc.</li>
+  <li>test on big classes</li>
+  <li>test on method with many overriding methods</li>
+</ul>
+
+<h4>Sort Working Sets in Package Explorer (Markus, Dani - Questions: Raksha)</h4>
+<ul>
+  <li>test that it doesn't destroy order when migrating from existing 3.4 workspace</li>
+  <li>test that new working sets are properly inserted</li>
+  <li>test renaming of working sets, e.g via the working set actions in the main toolbar (may need to enable action group)</li>
+</ul>
+
+<h4>Export &gt; Runnable JAR File (Dani, Raksha - Questions: Markus)</h4>
+<ul>
+  <li>generate ANT scripts for all 3 modes and verify that the script works</li>
+</ul>
+
+<h4>Sanity check Project Explorer (Raksha, Markus - Questions: Dani)</h4>
+<ul>
+  <li>check dragging elements from Project Explorer to Package Explorer</li>
+  <li>check 'Go Into' with Java project, source folder, package</li>
+</ul>
+
+<h4>Test new SWT Templates (Raksha, Markus - Questions: Benno, Dani)</h4>
+<ul>
+  <li>see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=264052">bug 264052</a></li>
+</ul>
+
+<h4>Quick Outline (Markus, Raksha - Questions: Dani)</h4>
+<ul>
+  <li>see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=88195">bug 88195</a></li>
+  <li>check scrolling on cocoa</li>
+</ul>
+
+<h4>Compiler compliance follows Execution Environment (Raksha, Dani - Questions: Markus)</h4>
+<ul>
+  <li>create new Java Project; verify that EE is first choice and that compiler compliance options are set correctly</li>
+  <li>in an existing Java project, set the JRE on the classpath to an EE; verify that compliance follows</li>
+</ul>
+
+<h4>Generated method names for boolean getters and setters (Markus, Raksha - Questions: Dani)</h4>
+<ul>
+  <li>see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=189294">bug 189294</a></li>
+  <li>test with and without field pre- and suffixes</li>
+  <li>test with field names that contain "is"</li>
+  <li>test Source action and content assist</li>
+</ul>
+
+<h4>Bolding of matched characters in Content Assist and Open Type (Raksha, Markus - Questions: Dani)</h4>
+<ul>
+  <li>test with camelCase patterns (e.g WHaM for WeakHashMap)</li>
+  <li>Open Type: test with "*" and "?" in patterns</li>
+</ul>
+
+<h4>Constructor completion (Raksha, Markus - Questions: Dani)</h4>
+<ul>
+  <li>test content assist for constructors</li>
+  <li>test anonymous type completion</li>
+</ul>
+
+<h4>Block selection mode (Markus, Dani - Questions: Dani)</h4>
+<ul>
+  <li>test undo, copy, cut, paste</li>
+  <li>test drag and drop</li>
+</ul>
+
 
 
 <h2>Bug Verification</h2>
