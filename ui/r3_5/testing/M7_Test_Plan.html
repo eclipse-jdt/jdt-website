@@ -38,7 +38,7 @@ Testers: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>"Show in Properties File" action for NLS Hover (Dani, Markus - Questions: Raksha)</h4>
+<h4>"Show in Properties File" action for NLS Hover (???, ??? - Questions: Raksha)</h4>
 Test that the action is added for NLS string hover and is activated on focus (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=220002">bug 220002</a>).
 <ul>
   <li>test that the right string is located and highlighted in the corresponding properties file</li>
@@ -46,14 +46,14 @@ Test that the action is added for NLS string hover and is activated on focus (se
   <li>test for appropriate messages in the status line</li>
 </ul>
 
-<h4>Java resource mappings (Raksha, Dani - Questions: Markus)</h4>
+<h4>Java resource mappings (???, ??? - Questions: Markus)</h4>
 Test CVS decorator in Packages view (Java Browsing perspective) and Java model in model-based synchronizations.
 <ul>
   <li>verify that no exceptions are written to the log if there are outgoing deletions of packages</li>
   <li>verify structure in model-based synchronizations</li>
 </ul>
 
-<h4>"Expand With Constructors" action in call hierarchy (Dani, Markus - Questions: Raksha)</h4>
+<h4>"Expand With Constructors" action in call hierarchy (???, ??? - Questions: Raksha)</h4>
 Test that the action is added for instance methods and the check state is preserved per method (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102281">bug 102281</a>).
 <ul>
   <li>verify that it works only on instance methods, and in callers mode</li>
@@ -61,8 +61,42 @@ Test that the action is added for instance methods and the check state is preser
   <li>verify for both anonymous and non-anonymous types, also types with only implicit default constructors</li>
 </ul>
 
-<h4>Cancel search in call hierarchy (Markus, Dani - Questions: Raksha)</h4>
+<h4>Cancel search in call hierarchy (???, ??? - Questions: Raksha)</h4>
 Verify that "Cancel Current Search" action collapses the node again, and that the search is restarted wen the node is expanded again.
+
+<h4>Cancel search in call hierarchy (???, ??? - Questions: Dani)</h4>
+Verify that the Java compare editor's structure updates on typing.
+
+<h4>toString() Generator (???, ??? - Questions: Markus)</h4>
+<ul>
+    <li>test that it is now polished (see 'polish' bugs)</li>
+    <li>test generated toString() methods (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=270462">bug 270462</a>)</li>
+</li>
+</ul>
+
+<h4>New preference to set editor navigation targets (???, ??? - Questions: Dani)</h4>
+Test that the new preference works (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=271491">bug 271491</a>).
+<ul>
+  <li>verify that changes are correctly honored by the editor</li>
+  <li>verify that changes also update state in the annotation drop down</li>
+  <li>verify that changes made in the annotation drop down are reflected on the preference page</li>
+  <li>verify that it has a non-conflicting mnemonic</li>
+</ul>
+
+<h4>Editor's 'deleted' and 'changed' dialogs now show the name of the file  (???, ??? - Questions: Dani)</h4>
+Test that the file name is correctly shown in the dialogs (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=29224">bug 29224</a>).
+<ul>
+  <li>changing a file outside Eclipse and verify that the editor's dialog correctly shows the file with its path</li>
+  <li>delete a file outside Eclipse and verify that the editor's dialog correctly shows the file with its path</li>
+</ul>
+
+<h4>For-loop fixes  (???, ??? - Questions: Dani)</h4>
+Verify the following for-loop fixes:
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=264421">bug 264421</a></li>
+  <li><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=269595">bug 269595</a></li>
+</ul>
+
 
 
 <h2>Bug Verification</h2>
