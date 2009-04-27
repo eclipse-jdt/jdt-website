@@ -53,6 +53,16 @@ Test CVS decorator in Packages view (Java Browsing perspective) and Java model i
   <li>verify structure in model-based synchronizations</li>
 </ul>
 
+<h4>"Expand With Constructors" action in call hierarchy (Dani, Markus - Questions: Raksha)</h4>
+Test that the action is added for instance methods and the check state is preserved per method (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=102281">bug 102281</a>).
+<ul>
+  <li>verify that it works only on instance methods, and in callers mode</li>
+  <li>verify that the check state and the expansion work on multiple selections</li>
+  <li>verify for both anonymous and non-anonymous types, also types with only implicit default constructors</li>
+</ul>
+
+<h4>Cancel search in call hierarchy (Markus, Dani - Questions: Raksha)</h4>
+Verify that "Cancel Current Search" action collapses the node again, and that the search is restarted wen the node is expanded again.
 
 
 <h2>Bug Verification</h2>
