@@ -348,6 +348,27 @@ ob_start();
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
 			<td valign="top">posted on 2009/05/08, 4.3 MB (click on picture)</td>
           </tr>
+          <tr>
+			<td valign="top"><i>description</i></td>
+			<td valign="top">Addresses the following issues since 3.4.2 release: <br>
+				<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265962">265962</a>
+				[compiler] Internal compiler error on while with return clause
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265103">265103</a>
+				Manifest Class-Path is not read correctly with ECJ
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=266582">266582</a>
+				[1.5][compiler] AbortCompilation while decoding the type variable of an anonymous type
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=264843">264843</a>
+				[1.5][compiler] Eclipse compiler fails to reject invalid code with primitives autoboxed to generics
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=257716">257716</a>
+				[compiler] Erroneous blank field field may not have been initialized
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=263877">263877</a>
+				[1.5][compiler] forward reference error flagged within enum
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=249930">249930</a>
+				Deadlock with JavaModelManager$PerProjectInfo
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=261510">261510</a>
+				[compiler] Deadlock in static initializer of JDT classes
+			</td>
+		  </tr>
 	  </table>
 <!--			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
       <table>
@@ -408,7 +429,9 @@ ob_start();
 							[1.5][compiler] Duplicate error messages when an annotation value expects a boolean but gets an array
 							<br>
 						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5147&amp;content-type=text/html">build notes</a>.			
+						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5147&amp;content-type=text/html">build notes</a>.
+					</td>
+				</tr>
 			</table>
 -->
 		</div>
