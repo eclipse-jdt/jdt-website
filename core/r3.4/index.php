@@ -342,13 +342,19 @@ ob_start();
 			</p>
 
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.4.x update</b>
-      <table>
-          <tr>
+	<table>
+		<tr>
 			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.4.5.v_895_R34x.jar">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
 			<td valign="top">posted on 2009/05/08, 4.3 MB (click on picture)</td>
-          </tr>
-          <tr>
+		</tr>
+		<tr>
+			<td valign="top"><a href="../patches/patch.zip">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+			<td valign="top">posted on 2009/05/12, 4.1 MB (click on picture)<br>
+			Install by unzipping in the dropins folder.</td>
+		</tr>
+		<tr>
 			<td valign="top"><i>description</i></td>
 			<td valign="top">Addresses the following issues since 3.4.2 release: <br>
 				<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265962">265962</a>
@@ -368,8 +374,8 @@ ob_start();
 				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=261510">261510</a>
 				[compiler] Deadlock in static initializer of JDT classes
 			</td>
-		  </tr>
-	  </table>
+		</tr>
+	</table>
 <!--			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
       <table>
           <tr>
