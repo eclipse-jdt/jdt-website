@@ -255,7 +255,8 @@ ob_start();
 		    </ul>
 		</div>
 -->		
-		<div class="homeitem3col">
+	</div>
+	<div class="homeitem3col">
 			<a name="BUG_RESOLUTION"></a>
 			<h3>Bug Resolution</h3>
       <ul>
