@@ -116,7 +116,7 @@ be run headless.</p>
   <li> Patch available in <a href="r3.1/index.php#UPDATES">update</a> area (for testing purpose).
   </li>
 </ul>
-				<h3>R3.0 Maintenance<h3>
+				<h3>R3.0 Maintenance</h3>
 <ul>
   <li> Rollup 3.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
   </li>
