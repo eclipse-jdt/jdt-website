@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>3.5 Two Day Test Pass</title>
+</head>
+<body>
+<h1>3.5 Two Day Test Pass: JDT UI, JDT Text, Platform Text and Platform Search</h1>
+Test day: Friday, 2009-05-15 and Monday 2009-05-18<br>
+Test Build: I20090514-2000<br>
+Testers: <a href="mailto:markus_keller@ch.ibm.com">Markus</a>, <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+<h2>Platforms</h2>
+<ul>
+  <li>Linux GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+  <li>WindowsXP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>WindowsVista: - </a></li>
+  </li>
+</ul>
+
+<h3>Workbench Setup</h3>
+<em>Use the Java editor breadcrumb whenever possible.</em> 
+<ul>
+  <li>Dani tests using the Java browsing perspective</li>
+  <li>Raksha tests using the Java perspective with Package Explorer in project mode</li>
+  <li>Markus tests using the Java perspective with Package Explorer in working set mode<br>
+  </li>
+</ul>
+
+<h2>Verify RC1 Fixes (Markus, Dani)</h2>
+First thing is to verify all our RC1 fixes.
+<p>
+Every tester has to verify 18 bugs. <em>Markus takes the bugs with lower numbers</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;target_milestone=3.5%20rc1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs, 3.5 RC1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;target_milestone=3.5%20rc1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs, 3.5 RC1</a></li>
+</ul>
+
+
+<h2>New 3.5 Functionality (Raksha, Dani)</h2>
+Test new features that have been added during 3.5 development.
+Start by testing the features mentioned in the M1-M7 New and Noteworthy
+documents.
+
+
+<h2>Views and Editors (Raksha, Dani)</h2>
+<ul>
+  <li>resize behavior</li>
+  <li>different fonts and colors</li>
+  <li>detached views</li>
+  <li>multiple windows</li>
+  <li>multiple editor areas</li>
+  <li>help support<br>
+  </li>
+</ul>
+
+
+<h2>Compilation Units not on Build Path (Dani, Markus)<br>
+</h2>
+<ul>
+  <li>Test Edit, Source and Refactoring actions for compilation units
+not on the build path.</li>
+  <li>Test for:
+    <ul>
+      <li>editors opened on repository files</li>
+      <li>editors opened on Java file excluded from the build path</li>
+      <li>editors opened on Java files stored in Simple projects </li>
+    </ul>
+  </li>
+  <li>Actions should either operate without an error, not be present or
+present a dialog that the CU is not on the build path</li>
+</ul>
+
+<h2>Java Compare (Raksha, Markus)</h2>
+<ul>
+	<li>verify that comparing difference versions works</li>
+	<li>verify that compare with each other works</li>
+	<li>verify that the structure is update while typing</li>
+	<li>verify that Java editor features like Ctrl+O, F3 and content assist work</li>
+</ul>
+
+<h2>Workspace Setup (Markus, Dani)</h2>
+Setup workspace in a way unusual compared to your normal setup.
+Testing should take place in one of the following workspace setups.
+When setting up the workspace test also the functionality to setup
+this workspace style:</p>
+<ul>
+  <li>use external projects<br>
+  </li>
+  <li>use linked resources
+    <ul>
+      <li><font color="#000000">linked output folders</font></li>
+      <li><font color="#000000">linked source folders</font></li>
+      <li><font color="#000000">linked and nested source folders</font></li>
+      <li>test rendering in views</li>
+      <li><font color="#000000">linked class folders</font></li>
+    </ul>
+  </li>
+  <li>use multiple output folder</li>
+  <li>use combination of exclusion &amp; inclusion filters</li>
+  <li>use user defined library containers (JUnit as a user defined
+library)
+    <ul>
+      <li>quick fixes for unbound user libraries</li>
+      <li>quick fixes for build path problems</li>
+    </ul>
+  </li>
+  <li>full source workspace</li>
+</ul>
+
+<h2>Workspace compatibility (Markus, Raksha)</h2>
+Verify
+that an existing workspace can be started on the new version and is
+fully functional. Check the .log for serious problems.<br>
+<ul>
+  <li>upgrade a 3.3 workspace to 3.5</li>
+  <li>upgrade a 3.4 workspace to 3.5</li>
+</ul>
+
+<h2>Freestyle Testing (all)</h2>
+Once all of the above test items are done, start with a fresh workspace and
+change the settings in a way you normally don't work.
+<p>
+Implement a little feature or tool or fix one of your favorite bugs.</p>
+</body>
+</html>
