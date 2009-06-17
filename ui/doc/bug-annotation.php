@@ -87,6 +87,7 @@ ob_start();
 				bugsWithSummaryJDT("[actions]", "Bugs related to global menu, context menu, and toolbar actions");
 				bugsWithSummaryJDT("[api]", "API bugs: wrong or missing API, API requests");
 				bugsWithSummaryJDT("[ast rewrite]", "AST rewrite bugs");  
+				bugsWithSummaryJDT("[BiDi]", "Bugs related to BiDi problems");
 				bugsWithSummaryJDT("[browsing]", "Bugs related to the Java Browsing perspective");
 				bugsWithSummaryJDT("[build path]", "Bugs related to the Java build path page and build path actions");
 				bugsWithSummaryJDT("[call hierarchy]", "Bugs related to the call hierarchy view");    
