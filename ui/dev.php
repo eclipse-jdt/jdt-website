@@ -38,7 +38,7 @@ ob_start();
 
 		<div class="homeitem3col">
 			<a name="documents"></a>
-			<h3>Documents</h3>
+			<h3>JDT Developer Documents</h3>
 			<ul>
 				<li><a href="doc/bug-annotation.php">bug annotation conventions</a></li>
 				<li><a href="smoke-test/smoke.html">smoke test</a></li>
@@ -53,8 +53,23 @@ ob_start();
 					    </ul>
 					</p>
 				</li>
-				<li><a href="M6LeakPass.html">M6 Leak Pass Scenarios</a></li>
-				<li><a href="doc/JDT-Features.ppt">JDT Easter-Egg poster</a> from the OTI ATC 2002</li>
+				<li><a href="M6LeakPass.html">Leak Pass Scenarios</a></li>
+			</ul>
+		</div>
+
+		<div class="homeitem3col">
+			<a name="articles"></a>
+			<h3>Articles and Talks</h3>
+			<ul>
+				<li><a href="articles/JDT_fundamentals.zip">JDT Fundamentals</a>
+					(<a href="http://www.eclipsecon.org/2008/index.php?page=sub/&id=68">Tutorial at EclipseCon 2008</a>)</li>
+				<li><a href="articles/EclipseCon-2007-Refactoring-Talk-final.zip">Unleash the Power of Refactorings in your Products</a>
+					(<a href="http://www.eclipsecon.org/2007/index.php?page=sub/&id=3786">Talk at EclipseCon 2007</a>)</li>
+				<li><a href="http://www.eclipse.org/articles/article.php?file=Article-Unleashing-the-Power-of-Refactoring/index.html">
+					Unleashing the Power of Refactoring</a> (Article at Eclipse Corner)</li>
+				<li><a href="http://www.eclipse.org/articles/article.php?file=Article-JavaCodeManipulation_AST/index.html">
+					Abstract Syntax Tree</a> (Article at Eclipse Corner)</li>
+				<li><a href="http://www.eclipse.org/resources/?category=Java%20development%20tools%20(JDT)">more Eclipse Corner articles</a></li>
 			</ul>
 		</div>
 
