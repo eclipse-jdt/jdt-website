@@ -137,6 +137,7 @@ ob_start();
 			<ul>
 				<li><a href="#bugs">Bugs</a></li>
 				<li><a href="#documents">Documents</a></li>
+				<li><a href="#articles">Articles and Talks</a></li>
 				<li><a href="#plugins">Plug-ins</a></li>
 				<li><a href="#lists">Mailing List</a></li>
 			</ul>
