@@ -52,12 +52,32 @@ Testers: Dani, Markus, Raksha<br>
   <li>test that 'Import...' can import multiple profiles</li>
 </ul>
 
-<h4>Open Implementation command in Navigate menu(Markus, Dani - FAQ: Raksha)</h4>
+<h4>Open Implementation command in Navigate menu (Markus, Dani - FAQ: Raksha)</h4>
 <ul>
   <li>test that the action is enabled on all text selection (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=267369">bug 267369</a>)</li>
   <li>test that it works only on overridable methods</li>
   <li>test that it works for  method declaration, invocation, super method invocation</li>
   <li>test that it is disabled for structured selection (from other views: Outline view, Call Hierarchy view)</li>  
+</ul>
+
+<h4>Emulated resize support for hovers on Linux (Dani, Markus - FAQ: Markus)</h4>
+<ul>
+  <li>test that hovers based on AbstractInformationControl are resizable (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=62652">bug 62652</a>)</li>
+  <li>Note: Source hovers are not yet resizable, but content assist additional info popups are</li>
+  <li>test that the resize support "feels" right (wrong cursor, bad corner cases, etc.)</li>
+</ul>
+
+<h4>Javadoc without browser widget (Dani, Markus - FAQ: Markus)</h4>
+<ul>
+  <li>verify that the Javadoc view shows something if the browser widget is not available (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=284728">bug 284728</a>)</li>
+</ul>
+
+<h4>Extract Method (Raksha, Dani - FAQ: Markus)</h4>
+<ul>
+  <li>a number of <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=[extract+method]&classification=Eclipse&product=JDT&target_milestone=3.6+M1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&resolution=FIXED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailqa_contact2=1&emailcc2=1&emaillongdesc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">
+bugs</a> have been fixed recently</li>
+  <li>sanity check refactoring dialog (also for selections in nested and anonymous classes)</li>
+  <li>sanity check refactoring results</li>
 </ul>
 
 
@@ -67,13 +87,13 @@ Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.5.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.5.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
-<h4>Test all fixes against 3.5.1 (???)</h4>
+<h4>Test all fixes against 3.5.1 (Markus)</h4>
 Use M20090729-0903.
 
-<h4>Test all fixes against 3.6 M1 (???)</h4>
+<h4>Test all fixes against 3.6 M1 (Raksha)</h4>
 
 
-<h2>Bug Verification (???)</h2>
+<h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.6%20M1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
