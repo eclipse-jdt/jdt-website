@@ -90,6 +90,10 @@ ob_start();
 					href="http://www.eclipse.org/downloads/index.php"
 					target="newdownload&quot;">download</a> area.</li>
 			</ul>
+			
+			<h4> <a NAME="Maintenance_Planning"></a>3.5 Maintenance</h4>
+		    <p>Information about 3.5 maintenance releases can be found <a href="http://wiki.eclipse.org/Galileo_Simultaneous_Release#Coordinated_Service_Releases">here</a>.</p>
+			
 			<p><b>Pre 3.5 builds</b></p>
 			<ul>
 				<li>3.4.x builds are available from the <a
