@@ -81,7 +81,7 @@ ob_start();
 			<ul>
 				<li>Most active development goes into this stream.</li>
 				<li>The combined JDT Text and JDT UI 3.6 plan is posted <a href="r3_6/plan.php">here</a>.</li>
-				<li>The plan for the next milestone is posted <a href="r3_6/plan.php#Milestone_Planning_M4">here</a>.</li>
+				<li>The plan for the next milestone is posted <a href="r3_6/plan.php#Milestone_Planning_M1">here</a>.</li>
 				<li>The original plans for previous milestones can be found <a href="r3_6/plan.php#Milestone_Planning_M1">here</a>.</li>
 			</ul>
 			<p><b>R3.5</b></p>
