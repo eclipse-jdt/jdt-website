@@ -37,10 +37,27 @@ Testers: Dani, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-
-<h4>Item 1 (??? - FAQ: ???)</h4>
+<h4>Remove from view Action (Markus, Dani - FAQ: Raksha)</h4>
 <ul>
-  <li>item 1</li>
+  <li>test that the action is enabled for method wrapper instances, and disabled for nodes whose children are being fetched (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=41702">bug 41702</a>)</li>
+  <li>test that it works for multiple selections, parent/child selections, not for '...' node</li>
+  <li>test that it works for [constructor] and [callers] nodes</li>
+</ul>
+
+<h4>Export All... from Formatter Preference page (Markus, Dani - FAQ: Raksha)</h4>
+<ul>
+  <li>test that the button is enabled on the main page (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=48966">bug 48966</a>)</li>
+  <li>test that it exports all the non-default profiles into an xml file</li>
+  <li>test that it reports duplicate file name, profile names</li>
+  <li>test that 'Import...' can import multiple profiles</li>
+</ul>
+
+<h4>Open Implementation command in Navigate menu(Markus, Dani - FAQ: Raksha)</h4>
+<ul>
+  <li>test that the action is enabled on all text selection (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=267369">bug 267369</a>)</li>
+  <li>test that it works only on overridable methods</li>
+  <li>test that it works for  method declaration, invocation, super method invocation</li>
+  <li>test that it is disabled for structured selection (from other views: Outline view, Call Hierarchy view)</li>  
 </ul>
 
 
