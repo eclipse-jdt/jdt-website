@@ -94,7 +94,8 @@ ob_start();
 			
 			<p><b>3.5 Maintenance</b></p>
 		    <ul>
-		    	<li>Information about 3.5 maintenance releases can be found <a href="http://wiki.eclipse.org/Galileo_Simultaneous_Release#Coordinated_Service_Releases">here</a>.</li>
+		    	<li>Information about 3.5 maintenance releases can be found <a href="http://wiki.eclipse.org/Galileo_Simultaneous_Release#Coordinated_Service_Releases">here</a>
+		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
 		    </ul>
 			
 			<p><b>Pre 3.5 builds</b></p>
