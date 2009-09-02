@@ -86,6 +86,10 @@ showElem("cc_edit_area")
 fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
 fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default QA");
 
+// Edit CC list:
+hideElem("dup_id_container");
+showElem("dup_id")
+
 
 // Add accesskeys for Status (does not work):
 //var bug_statusElem= document.getElementById("bug_status");
