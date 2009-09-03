@@ -92,7 +92,7 @@ hideElem("dup_id_container");
 showElem("dup_id")
 
 
-// Fix Status & Resolution (expand, fix focus, add accesskeys):
+// Fix Status & Resolution (enlarge, fix focus, add accesskey):
 var bug_statusElem= document.getElementById("bug_status");
 if (bug_statusElem) {
     bug_statusElem.size= 6;
@@ -104,6 +104,20 @@ if (resolutionElem) {
     resolutionElem.size= 6;
     resolutionElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('resolution').focus(); }, 10)");
     resolutionElem.setAttribute("accesskey", "r");
+}
+
+// Add [diff] after [details] in attachment references:
+var anchors= document.getElementsByTagName("a");
+for (var i in anchors) {
+    var aElem= anchors[i];
+    var ex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
+    if (aElem.textContent == "[details]" && aElem.href.search(ex) != -1) {
+        var diffElem= document.createElement("a");
+        diffElem.textContent= "[diff]";
+        diffElem.href= aElem.href.replace(ex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
+        aElem.parentNode.appendChild(document.createTextNode(" "));
+        aElem.parentNode.appendChild(diffElem);
+    }
 }
 
 
