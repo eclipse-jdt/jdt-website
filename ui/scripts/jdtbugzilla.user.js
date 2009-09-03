@@ -20,6 +20,7 @@
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
 // @include       https://bugs.eclipse.org/bugs/enter_bug.cgi*
+// @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // ==/UserScript==
 
 
