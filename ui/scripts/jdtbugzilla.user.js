@@ -92,20 +92,20 @@ hideElem("dup_id_container");
 showElem("dup_id")
 
 
-// Add accesskeys for Status (does not work):
-//var bug_statusElem= document.getElementById("bug_status");
-//if (bug_statusElem) {
-//    var labelElem= document.createElement("label");
-//    labelElem.accesskey="s";
-//    labelElem.setAttribute("for", "bug_status");
-//    labelElem.textContent= ">>>";
-//    bug_statusElem.parentNode.insertBefore(labelElem, bug_statusElem);
-//    bug_statusElem.setAttribute("accesskey", "e");
-//}
-//var resolutionElem= document.getElementById("resolution");
-//if (resolutionElem) {
-//    resolutionElem.setAttribute("accesskey", "r");
-//}
+// Fix Status & Resolution (expand, fix focus, add accesskeys):
+var bug_statusElem= document.getElementById("bug_status");
+if (bug_statusElem) {
+    bug_statusElem.size= 6;
+    bug_statusElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)");
+    bug_statusElem.setAttribute("accesskey", "e");
+}
+var resolutionElem= document.getElementById("resolution");
+if (resolutionElem) {
+    resolutionElem.size= 6;
+    resolutionElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('resolution').focus(); }, 10)");
+    resolutionElem.setAttribute("accesskey", "r");
+}
+
 
 // Fix baseline of labels:
 var headElem= document.getElementsByTagName("head")[0];
