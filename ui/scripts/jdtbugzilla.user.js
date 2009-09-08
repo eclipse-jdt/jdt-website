@@ -123,9 +123,12 @@ for (var i in anchors) {
 
 // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
 if (window.location.pathname.match(/.*query\.cgi/)) {
-    var match= window.location.search.replace(/.*&longdesc=([^\&]+)&.*/, "$1");
-    var longdescElem= document.getElementById("longdesc");
-    longdescElem.value= match;
+    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
+    if (location.search.match(longdescRegex)) {
+	    var match= window.location.search.replace(longdescRegex, "$1");
+	    var longdescElem= document.getElementById("longdesc");
+	    longdescElem.value= match;
+	}
 }
 
 
