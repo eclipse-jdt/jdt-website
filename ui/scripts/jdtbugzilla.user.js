@@ -21,6 +21,7 @@
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
 // @include       https://bugs.eclipse.org/bugs/enter_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
+// @include       https://bugs.eclipse.org/bugs/query.cgi*
 // ==/UserScript==
 
 
@@ -87,7 +88,7 @@ showElem("cc_edit_area")
 fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
 fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default QA");
 
-// Edit CC list:
+// Edit CC list (already hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=288125 ):
 hideElem("dup_id_container");
 showElem("dup_id")
 
@@ -118,6 +119,13 @@ for (var i in anchors) {
         aElem.parentNode.appendChild(document.createTextNode(" "));
         aElem.parentNode.appendChild(diffElem);
     }
+}
+
+// Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
+if (window.location.pathname.match(/.*query\.cgi/)) {
+    var match= window.location.search.replace(/.*&longdesc=([^\&]+)&.*/, "$1");
+    var longdescElem= document.getElementById("longdesc");
+    longdescElem.value= match;
 }
 
 
