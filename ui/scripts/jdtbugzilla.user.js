@@ -107,17 +107,50 @@ if (resolutionElem) {
     resolutionElem.setAttribute("accesskey", "r");
 }
 
-// Add [diff] after [details] in attachment references:
+function addStatusLink(name, status, resolution, commitElem) {
+    var statusLinkElem= document.createElement("a");
+    statusLinkElem.href= "javascript:void(0);";
+    statusLinkElem.setAttribute("onclick", 'document.getElementById("bug_status").value="' + status + '";'
+            + 'document.getElementById("resolution").value="' + resolution + '";'
+            + 'showHideStatusItems("", ["",""]);'
+            + 'YAHOO.util.Event.preventDefault(this);');
+    statusLinkElem.innerHTML= name;
+    commitElem.parentNode.insertBefore(statusLinkElem, commitElem);
+    commitElem.parentNode.insertBefore(document.createTextNode(" "), commitElem);
+}
+
+var commitElem= document.getElementById("commit");
+if (commitElem && bug_statusElem && resolutionElem) {
+    addStatusLink("FIXED", "RESOLVED", "FIXED", commitElem);
+    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", commitElem);
+    addStatusLink("INVALID", "RESOLVED", "INVALID", commitElem);
+}
+
+// TODO:
+// - links to set ASSIGN MK, ASSIGN DM (ASSIGNED|NEW ?)
+// - set target milestone when FIXED? 
+
+// Loop over <a>s:
 var anchors= document.getElementsByTagName("a");
+var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 for (var i in anchors) {
     var aElem= anchors[i];
-    var ex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
-    if (aElem.textContent == "[details]" && aElem.href.search(ex) != -1) {
+    
+    // Add [diff] after [details] in attachment references:
+    if (aElem.textContent == "[details]" && aElem.href.search(detailsRegex) != -1) {
         var diffElem= document.createElement("a");
         diffElem.textContent= "[diff]";
-        diffElem.href= aElem.href.replace(ex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
+        diffElem.href= aElem.href.replace(detailsRegex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
         aElem.parentNode.appendChild(document.createTextNode(" "));
         aElem.parentNode.appendChild(diffElem);
+    }
+    
+    // Show obsolete attachments initially:
+    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
+        var scriptElem= document.createElement("script");
+        scriptElem.type="text/javascript";
+        scriptElem.innerHTML= 'toggle_display(this.previousSibling);';
+        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
     }
 }
 
@@ -127,7 +160,7 @@ if (window.location.pathname.match(/.*query\.cgi/)) {
     if (location.search.match(longdescRegex)) {
 	    var match= window.location.search.replace(longdescRegex, "$1");
 	    var longdescElem= document.getElementById("longdesc");
-	    longdescElem.value= match;
+	    longdescElem.value= decodeURIComponent(match);
 	}
 }
 
