@@ -209,6 +209,17 @@ if (window.location.pathname.match(/.*query\.cgi/)) {
 	}
 }
 
+// Center horizontally:
+if (false) { // works, but I don't like it...
+	var attachment_tableElem= document.getElementById("attachment_table");
+	if (attachment_tableElem) {
+	    attachment_tableElem.setAttribute("align", "center");
+	}
+	var comment_status_commitElem= document.getElementById("comment_status_commit");
+	if (comment_status_commitElem) {
+	    comment_status_commitElem.parentNode.parentNode.parentNode.setAttribute("align", "center");
+	}
+}
 
 // Fix baseline of labels:
 var headElem= document.getElementsByTagName("head")[0];
