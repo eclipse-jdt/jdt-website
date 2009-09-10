@@ -93,42 +93,72 @@ hideElem("dup_id_container");
 showElem("dup_id")
 
 
-// Fix Status & Resolution (enlarge, fix focus, add accesskey):
+// Fix Status & Resolution (fix focus, add accesskey):
 var bug_statusElem= document.getElementById("bug_status");
 if (bug_statusElem) {
-    bug_statusElem.size= 6;
+//    bug_statusElem.size= 6;
     bug_statusElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)");
     bug_statusElem.setAttribute("accesskey", "e");
 }
 var resolutionElem= document.getElementById("resolution");
 if (resolutionElem) {
-    resolutionElem.size= 6;
+//    resolutionElem.size= 6;
     resolutionElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('resolution').focus(); }, 10)");
     resolutionElem.setAttribute("accesskey", "r");
 }
 
-function addStatusLink(name, status, resolution, commitElem) {
-    var statusLinkElem= document.createElement("a");
-    statusLinkElem.href= "javascript:void(0);";
-    statusLinkElem.setAttribute("onclick", 'document.getElementById("bug_status").value="' + status + '";'
+function addLink(name, href, parentElem) {
+    var linkElem= document.createElement("a");
+    linkElem.href= href;
+    linkElem.innerHTML= name;
+    if (parentElem.hasChildNodes()) {
+        parentElem.appendChild(document.createTextNode(" | "));
+    }
+    parentElem.appendChild(linkElem);
+}
+
+function addStatusLink(name, status, resolution, parentElem) {
+    var href= 'javascript:document.getElementById("bug_status").value="' + status + '";'
             + 'document.getElementById("resolution").value="' + resolution + '";'
             + 'showHideStatusItems("", ["",""]);'
-            + 'YAHOO.util.Event.preventDefault(this);');
-    statusLinkElem.innerHTML= name;
-    commitElem.parentNode.insertBefore(statusLinkElem, commitElem);
-    commitElem.parentNode.insertBefore(document.createTextNode(" "), commitElem);
+            + 'void(0);';
+    addLink(name, href, parentElem);
 }
 
-var commitElem= document.getElementById("commit");
-if (commitElem && bug_statusElem && resolutionElem) {
-    addStatusLink("FIXED", "RESOLVED", "FIXED", commitElem);
-    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", commitElem);
-    addStatusLink("INVALID", "RESOLVED", "INVALID", commitElem);
+function addAssigneeLink(name, email, parentElem) {
+    var href= 'javascript:document.getElementById("assigned_to").value="' + email + '";'
+            + 'void(0);';
+    addLink(name, href, parentElem);
 }
 
-// TODO:
-// - links to set ASSIGN MK, ASSIGN DM (ASSIGNED|NEW ?)
-// - set target milestone when FIXED? 
+// Move Status to right spot:
+var statusElem= document.getElementById("status");
+var bz_assignee_inputElem= document.getElementById("bz_assignee_input");
+if (statusElem && bz_assignee_inputElem) {
+	var statusTRElem= statusElem.parentNode.parentNode;
+	var bz_assignee_inputTRElem= bz_assignee_inputElem.parentNode.parentNode;
+	bz_assignee_inputTRElem.parentNode.insertBefore(statusTRElem, bz_assignee_inputTRElem);
+	
+	// Add shortcut status links:
+	var dup_id_discoverableElem= document.getElementById("dup_id_discoverable");
+	var dup_id_discoverableElem= document.getElementById("dup_id_discoverable");
+	var statusLinksDivElem= document.createElement("div");
+	dup_id_discoverableElem.parentNode.insertBefore(statusLinksDivElem, dup_id_discoverableElem.nextSibling);
+
+	if (dup_id_discoverableElem && bug_statusElem && resolutionElem) {
+	    addStatusLink("NEW", "NEW", "", statusLinksDivElem);
+	    addStatusLink("ASSIGNED", "ASSIGNED", "", statusLinksDivElem);
+	    
+	    addStatusLink("FIXED", "RESOLVED", "FIXED", statusLinksDivElem);
+	    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
+	    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", statusLinksDivElem);
+	    addStatusLink("WORKSFORME", "RESOLVED", "WORKSFORME", statusLinksDivElem);
+	}
+	
+	addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
+	addAssigneeLink("MK", "markus_keller@ch.ibm.com", bz_assignee_inputElem)
+	addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
+}
 
 // Loop over <a>s:
 var anchors= document.getElementsByTagName("a");
