@@ -64,11 +64,14 @@ headerIconsElem.parentNode.removeChild(headerIconsElem);
 // Rewrite header for direct copy/paste as CVS comment ("Bug xxx: Summary"):
 var titleElem= document.getElementById("title");
 if (titleElem) {
-	var idx= titleElem.textContent.lastIndexOf('Bug');
-	if (idx != -1) {
+    var short_descElem= document.getElementById("short_desc");
+    var bugRegex= /Bug\s+(\d+)/i
+    if (short_descElem && bugRegex.test(titleElem.textContent)) {
+	    var bugElem= document.createElement("p");
+	    bugElem.innerHTML= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
+	    titleElem.appendChild(bugElem);
 	    var subtitleElem= document.getElementById("subtitle");
 	    if (subtitleElem) {
-		    titleElem.textContent= titleElem.textContent.substring(idx) + ': ' + subtitleElem.textContent;
 		    subtitleElem.textContent= "";
 		}
 	}
