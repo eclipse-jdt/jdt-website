@@ -188,9 +188,10 @@ for (var i in anchors) {
     
     // Show obsolete attachments initially:
     if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
+        aElem.setAttribute("name", "toggle_display"); // have to give this a name so we can refer to it from the embedded script afterwards
         var scriptElem= document.createElement("script");
         scriptElem.type="text/javascript";
-        scriptElem.innerHTML= 'toggle_display(this.previousSibling);';
+        scriptElem.innerHTML= 'confirm(document.anchors["toggle_display"]); toggle_display(document.anchors["toggle_display"]);';
         aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
     }
 }
