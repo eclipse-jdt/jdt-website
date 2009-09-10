@@ -121,12 +121,14 @@ function addStatusLink(name, status, resolution, parentElem) {
     var href= 'javascript:document.getElementById("bug_status").value="' + status + '";'
             + 'document.getElementById("resolution").value="' + resolution + '";'
             + 'showHideStatusItems("", ["",""]);'
+            + 'document.getElementById("assigned_to").focus();';
             + 'void(0);';
     addLink(name, href, parentElem);
 }
 
 function addAssigneeLink(name, email, parentElem) {
     var href= 'javascript:document.getElementById("assigned_to").value="' + email + '";'
+            + 'document.getElementById("assigned_to").focus();';
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -158,6 +160,15 @@ if (statusElem && bz_assignee_inputElem) {
 	addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
 	addAssigneeLink("MK", "markus_keller@ch.ibm.com", bz_assignee_inputElem)
 	addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
+}
+
+// Add a convenient Commit button:
+var bz_qa_contact_inputElem= document.getElementById("bz_qa_contact_input");
+if (bz_qa_contact_inputElem) {
+    var commitElem= document.createElement("input");
+    commitElem.setAttribute("type", "submit");
+    commitElem.setAttribute("value", "     Commit     ");
+    bz_qa_contact_inputElem.appendChild(commitElem);
 }
 
 // Loop over <a>s:
