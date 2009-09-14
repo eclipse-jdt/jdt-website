@@ -37,6 +37,17 @@ Testers: Dani, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
+<h4>JUnit split (Raksha, Dani - FAQ: Markus)</h4>
+<ul>
+  <li>test that the Core/UI split of the org.eclipse.jdt.junit plug-in (added o.e.jdt.junit.core) didn't cause regressions</li>
+  <li>test that view is still opened when JUnit launch configuration is run</li>
+  <li>test scenarios with multiple test runs running in parallel</li>
+  <li>test scenarios with multiple JUnit views (in multiple windows)</li>
+  <li>test switching between test runs</li>
+  <li>verify that terminated and invisible test runs are swapped out to disk (there should only be a TestRoot object in memory
+    for test runs that are currently shown or that are not terminated yet)</li>
+</ul>
+
 <h4>Find/Replace changes (Markus, Raksha - FAQ: Dani)</h4>
 <ul>
   <li>test that 'Wrap search' is enabled by default in a new workspace</li>
