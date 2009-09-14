@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>3.6 M2 Test Plan</title>
+  
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style></head>
+
+<body>
+<h1>3.6 M2 Test Plan</h1>
+Test day: Tuesday, 2009-09-15<br>
+Test Build: I20090915-0100<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Dani, Markus, Raksha<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows Vista: -</li>
+  <li>Linux-GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 3.6 M1</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check performance</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+<em>First test all those items where you are listed as first tester.</em>
+
+<h4>Find/Replace changes (Markus, Raksha - FAQ: Dani)</h4>
+<ul>
+  <li>test that 'Wrap search' is enabled by default in a new workspace</li>
+  <li>test that 'Wrap search' setting is preserved</li>
+  <li>verify that regex content assist works but isn't triggered automatically (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=259592">bug 259592</a>)</li>
+  <li>test that 'Replace All' replaces all matches no matter where the caret is (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=285821">bug 285821</a>)</li>
+</ul>
+
+<h4>Improved adding of Javadoc (Raksha, Markus - FAQ: Dani)</h4>
+Test that adding Javadoc (Alt+Shift+J) works as expected (see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=282468">bug 282468</a>).
+<ul>
+  <li>verify that it is fast</li>
+  <li>verify that it does not show a dialog when executed inside the editor</li>
+  <li>test that it works when executed from the Package Explorer</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.6%20M2&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.6 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;target_milestone=3.6%20M2&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.6 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M2&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.6 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M2&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.6 M2</a></li>
+</ul>
+
+</body></html>
