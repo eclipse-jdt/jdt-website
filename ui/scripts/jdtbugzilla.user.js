@@ -19,6 +19,7 @@
 // @description   Script to tune bugzilla for JDT
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
+// @include       https://bugs.eclipse.org/bugs/attachment.cgi
 // @include       https://bugs.eclipse.org/bugs/enter_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
@@ -95,6 +96,17 @@ fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default
 hideElem("dup_id_container");
 showElem("dup_id")
 
+// Fix Product & Component (lose focus on change):
+if (! window.location.pathname.match(/.*query\.cgi/)) {
+	var productElem= document.getElementById("product");
+	if (productElem) {
+	    productElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('product').focus(); }, 10)");
+	}
+	var componentElem= document.getElementById("component");
+	if (componentElem) {
+	    componentElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('component').focus(); }, 10)");
+	}
+}
 
 // Fix Status & Resolution (fix focus, add accesskey):
 var bug_statusElem= document.getElementById("bug_status");
@@ -158,6 +170,7 @@ if (statusElem && bz_assignee_inputElem) {
 	    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
 	    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", statusLinksDivElem);
 	    addStatusLink("WORKSFORME", "RESOLVED", "WORKSFORME", statusLinksDivElem);
+	    addStatusLink("NOT_ECLIPSE", "RESOLVED", "NOT_ECLIPSE", statusLinksDivElem);
 	}
 	
 	addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
@@ -199,13 +212,19 @@ for (var i in anchors) {
     }
 }
 
-// Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
 if (window.location.pathname.match(/.*query\.cgi/)) {
+    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
     var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
     if (location.search.match(longdescRegex)) {
 	    var match= window.location.search.replace(longdescRegex, "$1");
 	    var longdescElem= document.getElementById("longdesc");
 	    longdescElem.value= decodeURIComponent(match);
+	}
+	
+	// Use GET for search, not POST:
+	var queryformElem= document.getElementsByName("queryform");
+	if (queryformElem.length > 0) {
+	    queryformElem[0].method= "get";
 	}
 }
 
