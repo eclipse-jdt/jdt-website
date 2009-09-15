@@ -69,6 +69,7 @@ be run headless.</p>
 		<div class="homeitem3col">
 			<a name="HAPPENING"></a>
 			<h2><b>What&#8217;s Happening?</b></h2>
+
 <h3>R3.6 Development</h3>
 <ul>
   <li>Most active development goes into this stream.
