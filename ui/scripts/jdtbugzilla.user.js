@@ -178,13 +178,26 @@ if (statusElem && bz_assignee_inputElem) {
 	addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
 }
 
-// Add a convenient Commit button:
+// Add a convenient Commit buttons:
 var bz_qa_contact_inputElem= document.getElementById("bz_qa_contact_input");
 if (bz_qa_contact_inputElem) {
     var commitElem= document.createElement("input");
     commitElem.setAttribute("type", "submit");
     commitElem.setAttribute("value", "     Commit     ");
     bz_qa_contact_inputElem.appendChild(commitElem);
+}
+
+// Another Commit button on top of Additional Comments field
+var labels= document.getElementsByTagName("label");
+for (var i in labels) {
+    var labelElem= labels[i];
+    if (labelElem.getAttribute("for") == "comment") {
+	    var commitElem= document.createElement("input");
+	    commitElem.setAttribute("type", "submit");
+	    commitElem.setAttribute("class", "knob-buttons");
+	    commitElem.setAttribute("value", "Commit");
+	    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
+    }
 }
 
 // Loop over <a>s:
@@ -202,14 +215,14 @@ for (var i in anchors) {
         aElem.parentNode.appendChild(diffElem);
     }
     
-    // Show obsolete attachments initially:
-    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
-        aElem.setAttribute("name", "toggle_display"); // have to give this a name so we can refer to it from the embedded script afterwards
-        var scriptElem= document.createElement("script");
-        scriptElem.type="text/javascript";
-        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
-        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
-    }
+//    // Show obsolete attachments initially:
+//    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
+//        aElem.setAttribute("name", "toggle_display"); // have to give this a name so we can refer to it from the embedded script afterwards
+//        var scriptElem= document.createElement("script");
+//        scriptElem.type="text/javascript";
+//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
+//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
+//    }
 }
 
 if (window.location.pathname.match(/.*query\.cgi/)) {
@@ -221,28 +234,20 @@ if (window.location.pathname.match(/.*query\.cgi/)) {
 	    longdescElem.value= decodeURIComponent(match);
 	}
 	
-	// Use GET for search, not POST:
+	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, etc.):
 	var queryformElem= document.getElementsByName("queryform");
 	if (queryformElem.length > 0) {
 	    queryformElem[0].method= "get";
 	}
 }
 
-// Center horizontally:
-if (false) { // works, but I don't like it...
-	var attachment_tableElem= document.getElementById("attachment_table");
-	if (attachment_tableElem) {
-	    attachment_tableElem.setAttribute("align", "center");
-	}
-	var comment_status_commitElem= document.getElementById("comment_status_commit");
-	if (comment_status_commitElem) {
-	    comment_status_commitElem.parentNode.parentNode.parentNode.setAttribute("align", "center");
-	}
-}
-
-// Fix baseline of labels:
 var headElem= document.getElementsByTagName("head")[0];
 var styleElem= document.createElement("style");
 styleElem.type= "text/css";
-styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }";
+// Fix baseline of labels:
+styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
+// Fix attachments table width:
+    + "#attachment_table { width: auto ! important; }\n"
+// Make "Show Obsolete" more prominent:
+    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important}";
 headElem.appendChild(styleElem);
