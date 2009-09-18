@@ -51,6 +51,51 @@ function fixCheckboxField(containerId, inputId, labelText) {
 		inputIdElem.getElementsByTagName("label")[0].textContent= labelText;
 	}
 }
+
+function nextNode(node) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == document.getElementsByTagName("body")[0]) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node);
+			
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+			
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var regex= /(Bug\s*)\n(\d+)/i;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+				
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+				
+				var linkNode= document.createElement("a");
+				linkNode.href= "show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + " #\n" + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+				
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node);
+			}
+			
+		} else {
+			node= nextNode(node);
+		}
+	}
+}
+
 //-----------
 
 
@@ -96,8 +141,9 @@ fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default
 hideElem("dup_id_container");
 showElem("dup_id")
 
-// Fix Product & Component (lose focus on change):
+
 if (! window.location.pathname.match(/.*query\.cgi/)) {
+    // Fix Product & Component (lose focus on change):
 	var productElem= document.getElementById("product");
 	if (productElem) {
 	    productElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('product').focus(); }, 10)");
@@ -106,6 +152,79 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	if (componentElem) {
 	    componentElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('component').focus(); }, 10)");
 	}
+	
+	// Copy QA and Assignee to the right (read-only):
+	var assigneeCopy, qaCopy;
+	var bz_assignee_edit_containerElem= document.getElementById("bz_assignee_edit_container");
+	if (bz_assignee_edit_containerElem) {
+	    var spans= bz_assignee_edit_containerElem.getElementsByTagName("span");
+		for (var i in spans) {
+		    var spanElem= spans[i];
+		    if (spanElem.getAttribute("class") == "vcard") {
+		        assigneeCopy= spanElem.cloneNode(true);
+		    }
+		}
+	}
+	var bz_qa_contact_edit_containerElem= document.getElementById("bz_qa_contact_edit_container");
+	if (bz_qa_contact_edit_containerElem) {
+	    var spans= bz_qa_contact_edit_containerElem.getElementsByTagName("span");
+		for (var i in spans) {
+		    var spanElem= spans[i];
+		    if (spanElem.getAttribute("class") == "vcard") {
+		        qaCopy= spanElem.cloneNode(true);
+		    }
+		}
+	}
+	
+    var bz_show_bug_column_2Elem= document.getElementById("bz_show_bug_column_2");
+    if (bz_show_bug_column_2Elem) {
+        var trs= bz_show_bug_column_2Elem.getElementsByTagName("tr");
+	    if (qaCopy) {
+	        var qaTr= document.createElement("tr");
+	        
+	        var qaTdLabel= document.createElement("td");
+	        qaTdLabel.setAttribute("class", "field_label");
+	        qaTdLabel.innerHTML= "<b>QA Contact</b>:";
+	        qaTr.appendChild(qaTdLabel);
+	        
+	        var qaTdValue= document.createElement("td");
+	        qaTdValue.appendChild(qaCopy);
+	        qaTr.appendChild(qaTdValue);
+	        
+	        if (trs.length > 0) {
+	            trs[1].parentNode.insertBefore(qaTr, trs[1]);
+	        }
+	    }
+        if (assigneeCopy) {
+	        var assigneeTr= document.createElement("tr");
+	        
+	        var assigneeTdLabel= document.createElement("td");
+	        assigneeTdLabel.setAttribute("class", "field_label");
+	        assigneeTdLabel.innerHTML= "<b>Assignee</b>:";
+	        assigneeTr.appendChild(assigneeTdLabel);
+	        
+	        var assigneeTdValue= document.createElement("td");
+	        assigneeTdValue.appendChild(assigneeCopy);
+	        assigneeTr.appendChild(assigneeTdValue);
+	        
+	        if (trs.length > 0) {
+	            trs[1].parentNode.insertBefore(assigneeTr, trs[1]);
+	        }
+        }
+	}
+	
+	// Fix Bugzilla bug that prevents bug link at end of line (https://bugzilla.mozilla.org/show_bug.cgi?id=514703 ):
+	var pres= document.getElementsByTagName("pre");
+    var bugLineEndRegex= /(Bug\s+\n)(\d+)/gi;
+	for (var i in pres) {
+        // Iterate <pre class="bz_comment_text"  id="comment_text_0">, regex-replace bug <nr> with link
+		var preElem= pres[i];
+		var preId= preElem.getAttribute("id");
+        if (preId && preId.indexOf("comment_text_") == 0) {
+        	traverseLinkifyBugs(preElem);
+        }
+	}
+	
 }
 
 // Fix Status & Resolution (fix focus, add accesskey):
