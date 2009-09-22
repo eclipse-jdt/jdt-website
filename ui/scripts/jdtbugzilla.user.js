@@ -52,28 +52,30 @@ function fixCheckboxField(containerId, inputId, labelText) {
 	}
 }
 
-function nextNode(node) {
+function nextNode(node, stopNode) {
 	if (node.nextSibling) {
 		return node.nextSibling;
-	} else if (node.parentNode == document.getElementsByTagName("body")[0]) {
+	} else if (node.parentNode == stopNode) {
 		return null;
 	} else {
 		return nextNode(node.parentNode);
 	}
 }
 function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode; 
+	var regex= /(Bug\s*)\n(\d+)/i;
 	while (node) {
 		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
-			node= nextNode(node);
+			node= nextNode(node, stopNode);
 			
 		} else if (node.childNodes != null && node.childNodes.length > 0) {
 			node= node.childNodes[0];
 			
 		} else if (node.nodeType == 3/*text*/) {
 			var txt= node.data;
-			var regex= /(Bug\s*)\n(\d+)/i;
 			var res= regex.exec(txt);
 			if (res) {
+			    GM_log("match: " + res[2]);
 				var matchStart= txt.indexOf(res[0]);
 				
 				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
@@ -87,11 +89,11 @@ function traverseLinkifyBugs(node) {
 				node.data= txt.substr(matchStart + res[0].length);
 				// continue with current (shortened) node...
 			} else {
-				node= nextNode(node);
+				node= nextNode(node, stopNode);
 			}
 			
 		} else {
-			node= nextNode(node);
+			node= nextNode(node, stopNode);
 		}
 	}
 }
