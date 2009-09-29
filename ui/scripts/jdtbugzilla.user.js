@@ -172,6 +172,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
     }
 
+
+
 } else if (window.location.pathname.match(/.*query\.cgi/)) {
 
     // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
@@ -187,6 +189,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	if (queryformElem.length > 0) {
 	    queryformElem[0].method= "get";
 	}
+
+
 	
 } else { // For all result pages:
 
@@ -197,7 +201,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var bugRegex= /Bug\s+(\d+)/i
 	    if (short_descElem && bugRegex.test(titleElem.textContent)) {
 		    var bugElem= document.createElement("p");
-		    bugElem.innerHTML= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
+		    bugElem.textContent= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
 		    titleElem.appendChild(bugElem);
 		    var subtitleElem= document.getElementById("subtitle");
 		    if (subtitleElem) {
