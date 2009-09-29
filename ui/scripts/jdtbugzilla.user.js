@@ -26,6 +26,121 @@
 // ==/UserScript==
 
 
+var textCategories= [
+"-- Text category --",
+"[api]",
+"[BiDi]",
+"[block selection]",
+"[breadcrumb]",
+"[clean up]",
+"[content assist]",
+"[correction]",
+"[dnd]",
+"[encoding]",
+"[find/replace]",
+"[formatting]",
+"[help]",
+"[hovering]",
+"[implementation]",
+"[javadoc]",
+"[key binding]",
+"[language family]",
+"[linked mode]",
+"[navigation]",
+"[nls tooling]",
+"[painting]",
+"[performance]",
+"[preferences]",
+"[printing]",
+"[projection]",
+"[quick diff]",
+"[RCP]",
+"[reconciling]",
+"[rulers]",
+"[spell checking]",
+"[syntax highlighting]",
+"[templates]",
+"[templates view]",
+"[typing]",
+"[validateEdit]",
+"[wording]",
+"[5.0]",
+];
+
+var jdtCategories= [
+"-- JDT category --",
+"[actions]",
+"[api]",
+"[ast rewrite]",
+"[BiDi]",
+"[browsing]",
+"[build path]",
+"[call hierarchy]",
+"[ccp]",
+"[change method signature]",
+"[clean up]",
+"[code style]",
+"[code templates]",
+"[common navigator]",
+"[compare]",
+"[convert anonymous]",
+"[convert local]",
+"[create on paste]",
+"[dcr]",
+"[dnd]",
+"[encapsulate field]",
+"[expand selection]",
+"[expressions]",
+"[extract constant]",
+"[extract interface]",
+"[extract local]",
+"[extract method]",
+"[extract superclass]",
+"[generalize type]",
+"[generate constructor]",
+"[generate delegate]",
+"[getter setter]",
+"[hashcode/equals]",
+"[imports on paste]",
+"[infer type arguments]",
+"[inline]",
+"[introduce factory]",
+"[introduce indirection]",
+"[introduce parameter]",
+"[jar exporter]",
+"[javadoc wizard]",
+"[JUnit]",
+"[ltk]",
+"[mark occurrence]",
+"[migrate jar]",
+"[move member type]",
+"[move method]",
+"[move static members]",
+"[nls tooling]",
+"[open type]",
+"[organize imports]",
+"[override method]",
+"[package explorer]",
+"[plan item]",
+"[preferences]",
+"[pull up]",
+"[push down]",
+"[quick assist]",
+"[quick fix]",
+"[refactoring]",
+"[rename]",
+"[render]",
+"[reorg]",
+"[search]",
+"[surround with try/catch]",
+"[toString]",
+"[type hierarchy]",
+"[type wizards]",
+"[use supertype]",
+"[working sets]",
+];
+
+
 //----------- Functions:
 function hideElem(id) {
     var elem= document.getElementById(id);
@@ -75,7 +190,6 @@ function traverseLinkifyBugs(node) {
 			var txt= node.data;
 			var res= regex.exec(txt);
 			if (res) {
-			    GM_log("match: " + res[2]);
 				var matchStart= txt.indexOf(res[0]);
 				
 				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
@@ -126,6 +240,45 @@ function addAssigneeLink(name, email, parentElem) {
     addLink(name, href, parentElem);
 }
 
+function createCategoriesChooser(categories) {
+	var categoriesElem= document.createElement("select");
+	categoriesElem.setAttribute("name", "categories_selection");
+	categoriesElem.setAttribute("onchange", 
+		"if (this.value[0] != '[') return;" +
+		"var form= document.changeform;" +
+		"var hasCat= form.short_desc.value.indexOf('[') == 0;" +
+		"form.short_desc.value=this.value + (hasCat ? '' : ' ') + form.short_desc.value;"
+	);
+	for (var k= 0; k < categories.length; k++) {
+		var newOption= document.createElement("option");
+		var categoriesName= categories[k];
+		newOption.setAttribute("value", categoriesName);
+		newOption.innerHTML = categoriesName.substring(1, categoriesName.length - 1);
+		categoriesElem.appendChild(newOption);
+	}
+	return categoriesElem;
+}
+
+function createCategoriesLink(title, href) {
+	var categoriesLink= document.createElement("a")
+	categoriesLink.textContent= title;
+	categoriesLink.href= href;
+	categoriesLink.setAttribute("style", "font-size: small; font-weight: normal");
+	return categoriesLink;
+}
+
+function createCategoryChoosers() {
+    var choosers= document.createElement("span");
+    choosers.appendChild(createCategoriesChooser(textCategories));
+	choosers.appendChild(document.createTextNode(" "));
+	choosers.appendChild(createCategoriesLink("(Text categories)", "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm"));
+	choosers.appendChild(document.createTextNode(" "));
+	choosers.appendChild(createCategoriesChooser(jdtCategories));
+	choosers.appendChild(document.createTextNode(" "));
+	choosers.appendChild(createCategoriesLink("(JDT categories)", "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php"));
+	return choosers;
+}
+
 //-----------
 
 
@@ -166,11 +319,24 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     if (short_descElems.length > 0) {
 	    var commitElem= document.createElement("input");
 	    commitElem.setAttribute("type", "submit");
-	    commitElem.setAttribute("value", "     Commit     ");
+	    commitElem.setAttribute("value", "  Commit  ");
 	    var space= document.createTextNode(" ");
 	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
+	    short_descElems[0].size= 79;
+	    
+		// Add bug categories choosers:
+		var tr= document.createElement("tr");
+		tr.appendChild(document.createElement("th"));
+		var td= document.createElement("td");
+		td.setAttribute("colspan", "3");
+		td.appendChild(createCategoryChoosers());
+		tr.appendChild(td);
+		
+		var summaryTr= short_descElems[0].parentNode.parentNode;
+		summaryTr.parentNode.insertBefore(tr, summaryTr);
     }
+    
 
 
 
@@ -199,15 +365,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	if (titleElem) {
 	    var short_descElem= document.getElementById("short_desc");
 	    var bugRegex= /Bug\s+(\d+)/i
-	    if (short_descElem && bugRegex.test(titleElem.textContent)) {
-		    var bugElem= document.createElement("p");
-		    bugElem.textContent= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
-		    titleElem.appendChild(bugElem);
-		    var subtitleElem= document.getElementById("subtitle");
-		    if (subtitleElem) {
-			    subtitleElem.textContent= "";
+	    if (short_descElem) {
+	        if (bugRegex.test(titleElem.textContent)) {
+			    var bugElem= document.createElement("p");
+			    bugElem.textContent= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
+			    titleElem.appendChild(bugElem);
+			    var subtitleElem= document.getElementById("subtitle");
+			    if (subtitleElem) {
+				    subtitleElem.textContent= "";
+				}
 			}
-		}
+			
+			// Add bug categories choosers:
+			var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
+			short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+  		}
 	}
 
 	// Edit summary:
