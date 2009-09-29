@@ -109,9 +109,11 @@ function addLink(name, href, parentElem) {
 }
 
 function addStatusLink(name, status, resolution, parentElem) {
-    var href= 'javascript:document.getElementById("bug_status").value="' + status + '";'
-            + 'document.getElementById("resolution").value="' + resolution + '";'
-            + 'showHideStatusItems("", ["",""]);'
+    var href= 'javascript:document.getElementById("bug_status").value="' + status + '";';
+    if (resolution) {
+        href += 'document.getElementById("resolution").value="' + resolution + '";';
+    }
+    href += 'showHideStatusItems("", ["",""]);'
             + 'document.getElementById("assigned_to").focus();';
             + 'void(0);';
     addLink(name, href, parentElem);
@@ -147,8 +149,46 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
 headElem.appendChild(styleElem);
 
 
-// For all except query:
-if (! window.location.pathname.match(/.*query\.cgi/)) {
+if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
+    // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
+    var tds= document.getElementsByTagName("td");
+	for (var i= 0; i < tds.length; i++) {
+		var tdElem= tds[i];
+		if (tdElem.getAttribute("class") == "comment") {
+		    var tbody= tdElem.parentNode.parentNode;
+		    tbody.parentNode.removeChild(tbody.previousSibling.previousSibling);
+		    tbody.parentNode.removeChild(tbody);
+		    break;
+		}
+	}
+    // Add another Commit button after Subject):
+    var short_descElems= document.getElementsByName("short_desc");
+    if (short_descElems.length > 0) {
+	    var commitElem= document.createElement("input");
+	    commitElem.setAttribute("type", "submit");
+	    commitElem.setAttribute("value", "     Commit     ");
+	    var space= document.createTextNode(" ");
+	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
+	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
+    }
+
+} else if (window.location.pathname.match(/.*query\.cgi/)) {
+
+    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
+    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
+    if (location.search.match(longdescRegex)) {
+	    var match= window.location.search.replace(longdescRegex, "$1");
+	    var longdescElem= document.getElementById("longdesc");
+	    longdescElem.value= decodeURIComponent(match);
+	}
+	
+	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, may fail for complex queries):
+	var queryformElem= document.getElementsByName("queryform");
+	if (queryformElem.length > 0) {
+	    queryformElem[0].method= "get";
+	}
+	
+} else { // For all result pages:
 
 	// Rewrite header for direct copy/paste as CVS comment ("Bug xxx: Summary"):
 	var titleElem= document.getElementById("title");
@@ -195,7 +235,7 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	var bz_assignee_edit_containerElem= document.getElementById("bz_assignee_edit_container");
 	if (bz_assignee_edit_containerElem) {
 	    var spans= bz_assignee_edit_containerElem.getElementsByTagName("span");
-		for (var i in spans) {
+		for (var i= 0; i < spans.length; i++) {
 		    var spanElem= spans[i];
 		    if (spanElem.getAttribute("class") == "vcard") {
 		        assigneeCopy= spanElem.cloneNode(true);
@@ -205,7 +245,7 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	var bz_qa_contact_edit_containerElem= document.getElementById("bz_qa_contact_edit_container");
 	if (bz_qa_contact_edit_containerElem) {
 	    var spans= bz_qa_contact_edit_containerElem.getElementsByTagName("span");
-		for (var i in spans) {
+		for (var i= 0; i < spans.length; i++) {
 		    var spanElem= spans[i];
 		    if (spanElem.getAttribute("class") == "vcard") {
 		        qaCopy= spanElem.cloneNode(true);
@@ -253,7 +293,7 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	// Fix Bugzilla bug that prevents bug link at end of line (https://bugzilla.mozilla.org/show_bug.cgi?id=514703 ):
 	var pres= document.getElementsByTagName("pre");
     var bugLineEndRegex= /(Bug\s+\n)(\d+)/gi;
-	for (var i in pres) {
+	for (var i= 0; i < pres.length; i++) {
         // Iterate <pre class="bz_comment_text"  id="comment_text_0">, regex-replace bug <nr> with link
 		var preElem= pres[i];
 		var preId= preElem.getAttribute("id");
@@ -291,8 +331,13 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 		dup_id_discoverableElem.parentNode.insertBefore(statusLinksDivElem, dup_id_discoverableElem.nextSibling);
 	
 		if (dup_id_discoverableElem && bug_statusElem && resolutionElem) {
-		    addStatusLink("NEW", "NEW", "", statusLinksDivElem);
-		    addStatusLink("ASSIGNED", "ASSIGNED", "", statusLinksDivElem);
+		    if (bug_statusElem.options[0].value == "NEW") {
+			    addStatusLink("NEW", "NEW", "", statusLinksDivElem);
+			    addStatusLink("ASSIGNED", "ASSIGNED", "", statusLinksDivElem);
+			} else {
+			    addStatusLink("REOPENED", "REOPENED", "", statusLinksDivElem);
+			    addStatusLink("VERIFIED", "VERIFIED", null, statusLinksDivElem);
+			}
 		    
 		    addStatusLink("FIXED", "RESOLVED", "FIXED", statusLinksDivElem);
 		    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
@@ -317,7 +362,7 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	
 	// Another Commit button on top of Additional Comments field
 	var labels= document.getElementsByTagName("label");
-	for (var i in labels) {
+	for (var i= 0; i < labels.length; i++) {
 	    var labelElem= labels[i];
 	    if (labelElem.getAttribute("for") == "comment") {
 		    var commitElem= document.createElement("input");
@@ -331,7 +376,7 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
-	for (var i in anchors) {
+	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    
 	    // Add [diff] after [details] in attachment references:
@@ -351,21 +396,5 @@ if (! window.location.pathname.match(/.*query\.cgi/)) {
 	//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
 	//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
 	//    }
-	}
-	
-} else { // For query:
-
-    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
-    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
-    if (location.search.match(longdescRegex)) {
-	    var match= window.location.search.replace(longdescRegex, "$1");
-	    var longdescElem= document.getElementById("longdesc");
-	    longdescElem.value= decodeURIComponent(match);
-	}
-	
-	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, may fail for complex queries):
-	var queryformElem= document.getElementsByName("queryform");
-	if (queryformElem.length > 0) {
-	    queryformElem[0].method= "get";
 	}
 }
