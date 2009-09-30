@@ -28,6 +28,7 @@
 
 var textCategories= [
 "-- Text category --",
+"-- clean --",
 "[api]",
 "[BiDi]",
 "[block selection]",
@@ -69,6 +70,7 @@ var textCategories= [
 
 var jdtCategories= [
 "-- JDT category --",
+"-- clean --",
 "[actions]",
 "[api]",
 "[ast rewrite]",
@@ -244,10 +246,15 @@ function createCategoriesChooser(categories) {
 	var categoriesElem= document.createElement("select");
 	categoriesElem.setAttribute("name", "categories_selection");
 	categoriesElem.setAttribute("onchange", 
-		"if (this.value[0] != '[') return;" +
 		"var form= document.changeform;" +
+		"if (this.value[0] != '[') {" +
+		"    if (this.value == '-- clean --') {" +
+		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w ]*\\]\\s*)+/, '');" +
+		"    }" +
+		"    return;" +
+		"}" +
 		"var hasCat= form.short_desc.value.indexOf('[') == 0;" +
-		"form.short_desc.value=this.value + (hasCat ? '' : ' ') + form.short_desc.value;"
+		"form.short_desc.value= this.value + (hasCat ? '' : ' ') + form.short_desc.value;"
 	);
 	for (var k= 0; k < categories.length; k++) {
 		var newOption= document.createElement("option");
@@ -263,19 +270,19 @@ function createCategoriesLink(title, href) {
 	var categoriesLink= document.createElement("a")
 	categoriesLink.textContent= title;
 	categoriesLink.href= href;
-	categoriesLink.setAttribute("style", "font-size: small; font-weight: normal");
 	return categoriesLink;
 }
 
 function createCategoryChoosers() {
     var choosers= document.createElement("span");
-    choosers.appendChild(createCategoriesChooser(textCategories));
+	choosers.setAttribute("style", "font-size: small; font-weight: normal");
+	choosers.appendChild(createCategoriesLink("Text:", "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm"));
 	choosers.appendChild(document.createTextNode(" "));
-	choosers.appendChild(createCategoriesLink("(Text categories)", "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm"));
+    choosers.appendChild(createCategoriesChooser(textCategories));
+	choosers.appendChild(document.createTextNode(" | "));
+	choosers.appendChild(createCategoriesLink("JDT:", "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php"));
 	choosers.appendChild(document.createTextNode(" "));
 	choosers.appendChild(createCategoriesChooser(jdtCategories));
-	choosers.appendChild(document.createTextNode(" "));
-	choosers.appendChild(createCategoriesLink("(JDT categories)", "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php"));
 	return choosers;
 }
 
@@ -378,7 +385,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			
 			// Add bug categories choosers:
 			var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
-			short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+            // Insert before summary:
+            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+            // Insert after summary:
+//            var choosers= createCategoryChoosers();
+//            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
+//            short_descElem.setAttribute("style", "width: auto;");
+//            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
   		}
 	}
 
