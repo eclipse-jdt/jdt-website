@@ -246,7 +246,7 @@ function createCategoriesChooser(categories) {
 	var categoriesElem= document.createElement("select");
 	categoriesElem.setAttribute("name", "categories_selection");
 	categoriesElem.setAttribute("onchange", 
-		"var form= document.changeform;" +
+		"var form= document.changeform ? document.changeform : document.queryform;" +
 		"if (this.value[0] != '[') {" +
 		"    if (this.value == '-- clean --') {" +
 		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w ]*\\]\\s*)+/, '');" +
@@ -362,6 +362,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	if (queryformElem.length > 0) {
 	    queryformElem[0].method= "get";
 	}
+	
+	// Add bug categories choosers:
+	var Search_topElem= document.getElementById("Search_top");
+	if (Search_topElem) {
+	    var choosers= createCategoryChoosers();
+	    choosers.style.paddingRight = "1em";
+	    Search_topElem.parentNode.insertBefore(choosers, Search_topElem);
+	}
 
 
 	
@@ -384,14 +392,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			}
 			
 			// Add bug categories choosers:
-			var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
             // Insert before summary:
+//            var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
 //            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+
             // Insert after summary:
             var choosers= createCategoryChoosers();
             choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
             short_descElem.setAttribute("style", "width: 60%;");
             short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
+            var summaryElem= document.getElementById("summary");
+            if (summaryElem) {
+                summaryElem.setAttribute("style", "width: 100%;"); // necessary for process_bug.cgi, dont ask...
+                summaryElem.parentNode.parentNode.setAttribute("style", "width: 99%;"); // fix horizonal scrollbars
+            }
   		}
 	}
 
