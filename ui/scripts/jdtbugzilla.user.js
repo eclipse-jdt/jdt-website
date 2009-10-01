@@ -386,12 +386,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			// Add bug categories choosers:
 			var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
             // Insert before summary:
-            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+//            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
             // Insert after summary:
-//            var choosers= createCategoryChoosers();
-//            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
-//            short_descElem.setAttribute("style", "width: auto;");
-//            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
+            var choosers= createCategoryChoosers();
+            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
+            short_descElem.setAttribute("style", "width: 60%;");
+            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
   		}
 	}
 
