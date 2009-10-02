@@ -326,11 +326,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     if (short_descElems.length > 0) {
 	    var commitElem= document.createElement("input");
 	    commitElem.setAttribute("type", "submit");
+	    commitElem.setAttribute("tabindex", "99");
 	    commitElem.setAttribute("value", "  Commit  ");
 	    var space= document.createTextNode(" ");
 	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
 	    short_descElems[0].size= 79;
+	    
+	    // set initial focus:
+	    short_descElems[0].focus();
 	    
 		// Add bug categories choosers:
 		var tr= document.createElement("tr");
