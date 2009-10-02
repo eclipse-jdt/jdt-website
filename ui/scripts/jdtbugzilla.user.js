@@ -274,8 +274,8 @@ function createCategoriesLink(title, href) {
 }
 
 function createCategoryChoosers() {
-    var choosers= document.createElement("span");
-	choosers.setAttribute("style", "font-size: small; font-weight: normal");
+    var choosers= document.createElement("form"); // dummy form to avoid submitting fields with main form
+	choosers.setAttribute("style", "font-size: small; font-weight: normal; display: inline;"); // make form behave like a <span> (inline element)
 	choosers.appendChild(createCategoriesLink("Text:", "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm"));
 	choosers.appendChild(document.createTextNode(" "));
     choosers.appendChild(createCategoriesChooser(textCategories));
