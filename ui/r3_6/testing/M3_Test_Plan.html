@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>3.6 M3 Test Plan</title>
+  
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style></head>
+
+<body>
+<h1>3.6 M3 Test Plan</h1>
+Test day: Tuesday, 2009-10-27<br>
+Test Build: I20091027-0100 or latest available<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Dani, Raksha<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows Vista: -</li>
+  <li>Linux-GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Mac OS X: -</li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 3.6 M2</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check performance</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+<em>First test all those items where you are listed as first tester.</em>
+
+<h4>JUnit view (Dani, Raksha - Questions: Dani)</h4>
+<ul>
+  <li>test importing test result files from URL via history drop-down and via drag-and-drop</li>
+  <li>verify that the view appears promptly again (like in 3.5) when launching PDE JUnit tests</li>
+</ul>
+
+<h4>Clean Up and Save Action for @Override (???, ??? - Questions: Dani)</h4>
+<ul>
+  <li>test that they work as expected with the changes from bug 163194</li>
+</ul>
+
+<h4>Ruler painting performace (???, ??? - Questions: Dani)</h4>
+<ul>
+  <li>verify that editor rulers (Java, Ant, PDE) are correctly re-painted and don't flicker (we removed custom double-buffering)</li>
+  <li>verify that scrolling did not get slower in a document with many visible annotations (e.g. text search matches)</li>
+</ul>
+
+<h4>Call Hierarchy (???, ??? - Questions: Raksha)</h4>
+<ul>
+  <li>test refreshing of selected nodes (only refreshes immediate children)</li>
+  <li>test callers and callees modes</li>
+  <li>test Refresh View action in toolbar</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.6%20M3&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;target_milestone=3.6%20M3&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M3&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M3&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.6 M3</a></li>
+</ul>
+
+</body></html>
