@@ -556,6 +556,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
 		addAssigneeLink("MK", "markus_keller@ch.ibm.com", bz_assignee_inputElem)
 		addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
+		addAssigneeLink("DA", "deepak.azad@in.ibm.com", bz_assignee_inputElem)
 	}
 	
 	// Add a convenient Commit buttons:
