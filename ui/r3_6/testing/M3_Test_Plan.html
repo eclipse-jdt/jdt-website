@@ -12,15 +12,16 @@
 <body>
 <h1>3.6 M3 Test Plan</h1>
 Test day: Tuesday, 2009-10-27<br>
-Test Build: I20091027-0100 or latest available<br>
+Test Build: I20091027-0100 or newest available<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Dani, Raksha<br>
+Testers: Dani, Raksha, Deepak<br>
 
 
 <h2>Platforms</h2>
 <ul>
-  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Windows Vista: -</li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Linux-GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Mac OS X: -</li>
 </ul>
@@ -37,30 +38,64 @@ Testers: Dani, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>JUnit view (Dani, Raksha - Questions: Dani)</h4>
+<h4>JUnit view (Dani, Deepak - Questions: Dani)</h4>
 <ul>
   <li>test importing test result files from URL via history drop-down and via drag-and-drop</li>
   <li>verify that the view appears promptly again (like in 3.5) when launching PDE JUnit tests</li>
 </ul>
 
-<h4>Clean Up and Save Action for @Override (???, ??? - Questions: Dani)</h4>
+<h4>Clean Up and Save Action for @Override (Raksha, Deepak - Questions: Dani)</h4>
 <ul>
   <li>test that they work as expected with the changes from <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=163194"> bug 163194</a></li>
 </ul>
 
-<h4>Ruler painting performace (???, ??? - Questions: Dani)</h4>
+<h4>Ruler painting performance (Dani, Deepak - Questions: Dani)</h4>
 <ul>
   <li>verify that editor rulers (Java, Ant, PDE) are correctly re-painted and don't flicker (we removed custom double-buffering)</li>
   <li>verify that scrolling did not get slower in a document with many visible annotations (e.g. text search matches)</li>
 </ul>
 
-<h4>Call Hierarchy Refresh Element Action (???, ??? - Questions: Raksha)</h4>
+<h4>Call Hierarchy Refresh Element Action (Dani, Deepak - Questions: Raksha)</h4>
 <ul>
   <li>test refreshing of selected nodes (only refreshes immediate children), also test structural changes(additions/deletions)</li>
   <li>test refreshing multiple nodes (even in the same hierarchy)</li>
   <li>test that the key binding works fine with Refresh and not Refresh View Action</li>  
   <li>test callers and callees modes</li>
   <li>test Refresh View action in toolbar</li>
+</ul>
+
+<h4>New Java Project Wizard (Raksha, Dani - Questions: Deepak)</h4>
+<ul>
+  <li>verify that the location section on the first screen looks exactly same as in the new simple project wizard (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=262050">bug 262050</a>)</li>
+  <li>verify that if a project is present in the selected location then the build path is setup correctly
+ </li>
+</ul>
+
+<h4>Preference UI Changes (Raksha, Dani - Questions: Deepak)</h4>
+<ul>
+  <li>verify the new note on quick diff preference page - 'Changing the reference source does not update open editors (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=277684">bug 277684</a>)</li>
+  <li>the note needs to be disabled when the preference is disabled.</li>
+  <li>verify the titles of edit dialogs on Content Assist -> Favorites preference page (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=276424">bug 276424</a>)</li>
+ </li>
+</ul>
+
+<h4>New Preference Transfers (Deepak, Raksha - Questions: Dani)</h4>
+<ul>
+  <li>verify that Java Compiler settings can be imported and exported by its own</li>
+  <li>verify that the Java Appearance settings can be imported and exported by its own</li>
+ </li>
+</ul>
+
+<h4>Java Compare (Deepak, Raksha - Questions: Dani)</h4>
+<ul>
+  <li>test auto-indent in Java compare editor (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=260531">bug 260531</a>)</li>
+</ul>
+
+<h4>Improved Handling of Unmappable Characters on Save (Deepak, Raksha - Questions: Dani)</h4>
+Test the new dialog that comes up when saving an editor that contains characters which cannot be encoded with the current encoding.
+<ul>
+  <li>test the dialog which comes up in case of unmappable characters looks OK</li>
+  <li>test all the buttons work as expected</li>
 </ul>
 
 
