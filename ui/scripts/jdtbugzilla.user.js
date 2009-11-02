@@ -246,7 +246,9 @@ function createCategoriesChooser(categories) {
 	var categoriesElem= document.createElement("select");
 	categoriesElem.setAttribute("name", "categories_selection");
 	categoriesElem.setAttribute("onchange", 
-		"var form= document.changeform ? document.changeform : document.queryform;" +
+		"var form= document.changeform;" +
+		"if (!form) { form= document.queryform; }" +
+		"if (!form) { form= document.Create; }" +
 		"if (this.value[0] != '[') {" +
 		"    if (this.value == '-- clean --') {" +
 		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w ]*\\]\\s*)+/, '');" +
