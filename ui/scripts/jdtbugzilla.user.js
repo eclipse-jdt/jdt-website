@@ -540,7 +540,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		dup_id_discoverableElem.parentNode.insertBefore(statusLinksDivElem, dup_id_discoverableElem.nextSibling);
 	
 		if (dup_id_discoverableElem && bug_statusElem && resolutionElem) {
-		    if (bug_statusElem.options[0].value == "NEW") {
+		    var firstStatus= bug_statusElem.options[0].value;
+		    if (firstStatus == "NEW" || firstStatus == "ASSIGNED" || firstStatus == "REOPENED") {
 			    addStatusLink("NEW", "NEW", "", statusLinksDivElem);
 			    addStatusLink("ASSIGNED", "ASSIGNED", "", statusLinksDivElem);
 			} else {
