@@ -34,6 +34,7 @@ var textCategories= [
 "[block selection]",
 "[breadcrumb]",
 "[clean up]",
+"[compare]",
 "[content assist]",
 "[correction]",
 "[dnd]",
