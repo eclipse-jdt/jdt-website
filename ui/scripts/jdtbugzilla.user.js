@@ -26,6 +26,8 @@
 // ==/UserScript==
 
 
+var target_milestone= "3.6 M4";
+
 var textCategories= [
 "-- Text category --",
 "-- clean --",
@@ -241,6 +243,15 @@ function addAssigneeLink(name, email, parentElem) {
             + 'document.getElementById("assigned_to").focus();';
             + 'void(0);';
     addLink(name, href, parentElem);
+}
+
+function addTargetLink(parentElem) {
+    var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestone + '";'
+            + 'document.getElementById("bug_status").value="RESOLVED";'
+            + 'document.getElementById("resolution").value="FIXED";'
+            + 'document.getElementById("assigned_to").focus();';
+            + 'void(0);';
+    addLink("FIXED in " + target_milestone, href, parentElem);
 }
 
 function createCategoriesChooser(categories) {
@@ -524,6 +535,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	//    resolutionElem.size= 6;
 	    resolutionElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('resolution').focus(); }, 10)");
 	    resolutionElem.setAttribute("accesskey", "r");
+	}
+	
+	// Add shortcut target milestone link:
+	var targetElem= document.getElementById("target_milestone");
+	if (targetElem) {
+		var targetLinkSpanElem= document.createElement("span");
+		targetLinkSpanElem.style.marginLeft= "1em";
+		targetElem.parentNode.insertBefore(targetLinkSpanElem, targetElem.nextSibling);
+		addTargetLink(targetLinkSpanElem);
 	}
 	
 	// Move Status to right spot:
