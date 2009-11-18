@@ -233,7 +233,8 @@ function addStatusLink(name, status, resolution, parentElem) {
         href += 'document.getElementById("resolution").value="' + resolution + '";';
     }
     href += 'showHideStatusItems("", ["",""]);'
-            + 'document.getElementById("assigned_to").focus();';
+            + 'document.getElementById("assigned_to").focus();'
+            + 'document.getElementById("assigned_to").select();';
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -249,9 +250,11 @@ function addTargetLink(parentElem) {
     var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestone + '";'
             + 'document.getElementById("bug_status").value="RESOLVED";'
             + 'document.getElementById("resolution").value="FIXED";'
-            + 'document.getElementById("assigned_to").focus();';
+            + 'showHideStatusItems("", ["",""]);'
+            + 'document.getElementById("assigned_to").focus();'
+            + 'document.getElementById("assigned_to").select();';
             + 'void(0);';
-    addLink("FIXED in " + target_milestone, href, parentElem);
+    addLink("(in " + target_milestone + ")", href, parentElem);
 }
 
 function createCategoriesChooser(categories) {
@@ -537,15 +540,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    resolutionElem.setAttribute("accesskey", "r");
 	}
 	
-	// Add shortcut target milestone link:
-	var targetElem= document.getElementById("target_milestone");
-	if (targetElem) {
-		var targetLinkSpanElem= document.createElement("span");
-		targetLinkSpanElem.style.marginLeft= "1em";
-		targetElem.parentNode.insertBefore(targetLinkSpanElem, targetElem.nextSibling);
-		addTargetLink(targetLinkSpanElem);
-	}
-	
 	// Move Status to right spot:
 	var statusElem= document.getElementById("status");
 	var bz_assignee_inputElem= document.getElementById("bz_assignee_input");
@@ -571,6 +565,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			}
 		    
 		    addStatusLink("FIXED", "RESOLVED", "FIXED", statusLinksDivElem);
+		    // Add shortcut target milestone link:
+		    var targetLinkSpanElem= document.createElement("span");
+		    targetLinkSpanElem.style.marginLeft= ".5em";
+		    statusLinksDivElem.appendChild(targetLinkSpanElem);
+		    addTargetLink(targetLinkSpanElem);
+		    
 		    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
 		    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", statusLinksDivElem);
 		    addStatusLink("WORKSFORME", "RESOLVED", "WORKSFORME", statusLinksDivElem);
