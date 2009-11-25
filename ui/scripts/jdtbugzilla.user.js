@@ -202,6 +202,7 @@ function traverseLinkifyBugs(node) {
 				
 				var linkNode= document.createElement("a");
 				linkNode.href= "show_bug.cgi?id=" + res[2];
+				linkNode.title= "No resolution and summary available (link inserted by Greasemonkey script)";
 				linkNode.appendChild(document.createTextNode(res[1] + " #\n" + res[2]));
 				node.parentNode.insertBefore(linkNode, node);
 				
