@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>3.6 M4 Test Plan</title>
+  
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style></head>
+
+<body>
+<h1>3.6 M4 Test Plan</h1>
+Test day: Tuesday, 2009-12-08<br>
+Test Build: I20091208-0100 or newest available<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Deepak, Markus, Raksha<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Windows Vista: -</li>
+  <li>Windows 7: -</li>
+  <li>Linux-GTK: -</li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li></li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 3.6 M3</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check performance</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+<em>First test all those items where you are listed as first tester.</em>
+
+<h4> Content Assist: Better handling of getter/setter proposals (?, ? - Questions: Markus)</h4>
+<ul>
+  <li>test that setter proposals for non-final fields appear and work (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=51187">bug 51187</a>)</li>
+  <li>test that setter proposals do not appear for final fields (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=51187">bug 51187</a>)</li>
+  <li>test all expected proposals appear in case of name clashes (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=285568">bug 285568</a>)</li>
+</ul>
+
+<h4>Open Attached Javadoc using preferred browser (?, ? - Questions: Markus)</h4>
+Test that opening attached Javadoc (formerly Open External Javadoc) works as expected (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=251789">bug 251789</a>).
+<ul>
+  <li>test that it works in the editor using the menu and the shortcut</li>
+  <li>test that it works in the hover via button which is in the hover</li>
+  <li>test that it works in the Javadoc view via shortcut and via local toolbar button</li>
+  <li>test that it works when a web page is shown in the Javadoc view (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=295905">bug 295905</a>).
+</ul>
+
+<h4>Textual editors ignore orientation switching (?, ? - Questions: Markus)</h4>
+<ul>
+  <li>test that <b>Ctrl + left_Shift</b> and <b>Ctrl + right_Shift</b> don't switch widget orientation <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=291950">bug 291950</a></li>
+</ul>
+
+<h4>Search dialog no longer clipping UI elements (?, ? - Questions: Markus)</h4>
+<ul>
+  <li>test in all search pages that no UI elements get clipped when using large fonts <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=293661">bug 293661</a></li>
+</ul>
+
+
+<h2>Test 3.5.2 Fixes</h2>
+Make sure to verify all 
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
+<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
+
+<h4>Test all fixes against 3.5.2 (?)</h4>
+Use M20091202-0800.
+
+<h4>Test all fixes against 3.6 M4 (?)</h4>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;target_milestone=3.6%20M4&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.6 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;target_milestone=3.6%20M4&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.6 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M4&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.6 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;target_milestone=3.6%20M4&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.6 M4</a></li>
+</ul>
+
+</body></html>
