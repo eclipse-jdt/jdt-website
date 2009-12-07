@@ -74,6 +74,21 @@ Test that opening attached Javadoc (formerly Open External Javadoc) works as exp
   <li>overall testing with focus on JDT</li>
 </ul>
 
+<h4> Background computing of Type Hierarchy(?, ? - Questions: Raksha)</h4>
+Test that the type hierarchy computation happens in the background  (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=30881">bug 30881</a>)
+<ul>
+  <li>test for both restore and refresh on new input</li>
+  <li>test that the viewer is empty till the new hierarchy is updated, and grey when there's no input</li>
+  <li>test for long running computations and all 3 types of hierarchy computations</li>
+</ul>
+
+<h4> Support for multi-fixes in Problem Hover(?, ? - Questions: Raksha)</h4>
+Test that multi-fixes are supported in the problem hover (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=296318">bug 296318</a>)
+<ul>
+  <li>test that the similar problems are correctly identified and the fix is applied to all similar problems in the file</li>
+  <li>test that multi-fix link is not shown when only one problem is present in the file</li>
+  <li>test that the link is properly indented along with the icon</li>
+</ul>
 
 <h2>Test 3.5.2 Fixes</h2>
 Make sure to verify all 
