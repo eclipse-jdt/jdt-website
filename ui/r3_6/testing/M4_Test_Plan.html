@@ -23,7 +23,7 @@ Testers: Deepak, Markus, Raksha<br>
   <li>Windows Vista: -</li>
   <li>Windows 7: -</li>
   <li>Linux-GTK: -</li>
-  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 
 
@@ -38,14 +38,14 @@ Testers: Deepak, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4> Content Assist: Better handling of getter/setter proposals (?, ? - Questions: Markus)</h4>
+<h4> Content Assist: Better handling of getter/setter proposals (Deepak, Raksha - Questions: Markus)</h4>
 <ul>
   <li>test that setter proposals for non-final fields appear and work (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=51187">bug 51187</a>)</li>
   <li>test that setter proposals do not appear for final fields (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=51187">bug 51187</a>)</li>
   <li>test all expected proposals appear in case of name clashes (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=285568">bug 285568</a>)</li>
 </ul>
 
-<h4>Open Attached Javadoc using preferred browser (?, ? - Questions: Markus)</h4>
+<h4>Open Attached Javadoc using preferred browser (Deepak, Markus - Questions: Markus)</h4>
 Test that opening attached Javadoc (formerly Open External Javadoc) works as expected (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=251789">bug 251789</a>).
 <ul>
   <li>test that it works in the editor using the menu and the shortcut</li>
@@ -54,35 +54,36 @@ Test that opening attached Javadoc (formerly Open External Javadoc) works as exp
   <li>test that it works when a web page is shown in the Javadoc view (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=295905">bug 295905</a>).
 </ul>
 
-<h4>Textual editors ignore orientation switching (?, ? - Questions: Markus)</h4>
+<h4>Textual editors ignore orientation switching (Raksha, Deepak - Questions: Markus)</h4>
 <ul>
   <li>test that <b>Ctrl + left_Shift</b> and <b>Ctrl + right_Shift</b> don't switch widget orientation <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=291950">bug 291950</a></li>
 </ul>
 
-<h4>Search dialog no longer clipping UI elements (?, ? - Questions: Markus)</h4>
+<h4>Search dialog no longer clipping UI elements (Markus, Deepak - Questions: Markus)</h4>
 <ul>
   <li>test in all search pages that no UI elements get clipped when using large fonts <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=293661">bug 293661</a></li>
 </ul>
 
-<h4>Virtual Folders AKA Groups (?, ? - Questions: Szymon)</h4>
+<h4>Virtual Folders AKA Groups (Markus, Deepak - Questions: Szymon)</h4>
 <ul>
   <li>overall testing with focus on JDT</li>
 </ul>
 
-<h4>Resource tree filtering (?, ? - Questions: Szymon)</h4>
+<h4>Resource tree filtering (Raksha, Markus - Questions: Szymon)</h4>
 <ul>
   <li>overall testing with focus on JDT</li>
 </ul>
 
-<h4> Background computing of Type Hierarchy(?, ? - Questions: Raksha)</h4>
+<h4> Background computing of Type Hierarchy (Deepak, Markus - Questions: Raksha)</h4>
 Test that the type hierarchy computation happens in the background  (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=30881">bug 30881</a>)
 <ul>
   <li>test for both restore and refresh on new input</li>
   <li>test that the viewer is empty till the new hierarchy is updated, and grey when there's no input</li>
   <li>test for long running computations and all 3 types of hierarchy computations</li>
+  <li>test that opening a new hierarchy cancels previous computation</li>
 </ul>
 
-<h4> Support for multi-fixes in Problem Hover(?, ? - Questions: Raksha)</h4>
+<h4> Support for multi-fixes in Problem Hover (Deepak, Markus - Questions: Raksha)</h4>
 Test that multi-fixes are supported in the problem hover (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=296318">bug 296318</a>)
 <ul>
   <li>test that the similar problems are correctly identified and the fix is applied to all similar problems in the file</li>
@@ -90,20 +91,65 @@ Test that multi-fixes are supported in the problem hover (<a href="https://bugs.
   <li>test that the link is properly indented along with the icon</li>
 </ul>
 
-<h4>Preference UI Changes (?, ? - Questions: Deepak)</h4>
+<h4> Open Implementation hyperlink (Deepak, Markus - Questions: Raksha)</h4>
+<ul>
+  <li>sanity-check that it behaves as expected (jump to single implementation / open quick hierarchy for multiple)</li>
+</ul>
+
+<h4> Call Hierarchy: New "Expand with Constructors" dialog (Deepak, Markus - Questions: Raksha)</h4>
+<ul>
+  <li>test that method and type preferences work</li>
+  <li>test that preferences that have been stored in a 3.5 workspace are properly converted when the 3.5 workspace is started with the test build</li>
+</ul>
+
+<h4>Preference UI Changes (Markus, Raksha - Questions: Deepak)</h4>
 <ul>
   <li>verify the note on Compiler &gt; Javadoc preference page - '<strong>Note:</strong>  This also affects features like search, refactoring, content assist and  missing/unused imports.' (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=292860">bug 292860</a>)</li>
 </ul>
 
-<h4>NLS Tooling  (?, ? - Questions: Deepak)</h4>
+<h4>NLS Tooling  (Raksha, Markus - Questions: Deepak)</h4>
 <ul>
-  <li>verify that Find Broken Externalized Strings utility could handle constants for message keys (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=247012">bug 247012</a>)</li>
+  <li>verify that Find Broken Externalized Strings utility can handle constants for message keys (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=247012">bug 247012</a>)</li>
 </ul>
 
-<h4>Externalized Strings   (?, ? - Questions: Deepak)</h4>
+<h4>Externalized Strings   (Raksha, Deepak - Questions: Deepak)</h4>
 <ul>
   <li>verify that  "(s)" is not used as placeholder for singular and plural (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=266094">bug 266094</a>)</li>
   <li>verify that there are no unused externalized strings in JDT UI (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=294552">bug 294552</a>)</li>
+</ul>
+
+<h4>JUnit 4 (Raksha, Deepak - Questions: Markus)</h4>
+The org.junit 3.8.2 plugin stayed and an org.junit 4.7.0 has been added, see <a href="http://wiki.eclipse.org/Eclipse/Testing/JUnit4_Changes">http://wiki.eclipse.org/Eclipse/Testing/JUnit4_Changes</a>:
+<ul>
+  <li>verify that the JUnit library works for JUnit 3 and JUnit 4 (add library to build path, verify that source is attached and that tests can be executed)</li>
+  <li>verify that Plug-in tests work when a plug-in:
+    <ul>
+      <li>requires org.junit;bundle-version="[3.8.2,3.9.0)" and uses Execution Environment (EE) 1.4</li>
+      <li>requires org.junit;bundle-version="3.8.2" and EE 1.4 or 1.5</li>
+      <li>requires org.junit;bundle-version="4.7.0" and EE 1.5</li>
+      <li>requires org.junit4;bundle-version="4.3.1" and EE 1.5</li>
+    </ul>
+  </li>
+</ul>
+
+<h4>JUnit launch configuration dialog (Deepak, Raksha - Questions: Markus)</h4>
+On the "Test" tab of "JUnit" and "JUnit Plug-in Test" launch configurations, the "Test Method" is now editable
+<ul>
+  <li>verify that adding / removing a test method works</li>
+  <li>verify that the Search button finds the test methods</li>
+  <li>test with JUnit 3 and JUnit 4 tests (hint: the selected test runner influences the found test methods</li>
+</ul>
+
+<h4>JUnit View: Rerun Failed First also for JUnit 4 (Raksha, Deepak - Questions: Markus)</h4>
+<ul>
+  <li>verify that the "Rerun Test - Failed First" action in the JUnit view toolbar is also active for JUnit 4 tests</li>
+  <li>verify that it really runs failed tests first</li>
+</ul>
+
+<h4>Source actions generate methods in declaration order (Deepak, Raksha - Questions: Markus)</h4>
+See <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=140971">Bug 140971</a>.
+<ul>
+  <li>verify that order of generated methods is the same as the order of the original elements</li>
 </ul>
 
 
@@ -113,10 +159,10 @@ Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
-<h4>Test all fixes against 3.5.2 (?)</h4>
+<h4>Test all fixes against 3.5.2 (Deepak)</h4>
 Use M20091202-0800.
 
-<h4>Test all fixes against 3.6 M4 (?)</h4>
+<h4>Test all fixes against 3.6 M4 (Markus)</h4>
 
 
 <h2>Bug Verification (All)</h2>
