@@ -27,6 +27,8 @@
 
 
 var target_milestone= "3.6 M4";
+var target_milestone_next= "3.6 M5"
+var target_milestone_release= "3.6"
 
 var textCategories= [
 "-- Text category --",
@@ -247,7 +249,7 @@ function addAssigneeLink(name, email, parentElem) {
     addLink(name, href, parentElem);
 }
 
-function addTargetLink(parentElem) {
+function addFixedInTargetLink(parentElem) {
     var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestone + '";'
             + 'document.getElementById("bug_status").value="RESOLVED";'
             + 'document.getElementById("resolution").value="FIXED";'
@@ -256,6 +258,14 @@ function addTargetLink(parentElem) {
             + 'document.getElementById("assigned_to").select();';
             + 'void(0);';
     addLink("(in " + target_milestone + ")", href, parentElem);
+}
+
+function addTargetLink(parentElem, milestone) {
+    var href= 'javascript:document.getElementById("target_milestone").value="' + milestone + '";'
+            + 'document.getElementById("assigned_to").focus();'
+            + 'document.getElementById("assigned_to").select();';
+            + 'void(0);';
+    addLink(milestone, href, parentElem);
 }
 
 function createCategoriesChooser(categories) {
@@ -541,6 +551,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    resolutionElem.setAttribute("accesskey", "r");
 	}
 	
+	// Add shortcut target milestone link:
+	var targetElem= document.getElementById("target_milestone");
+	if (targetElem) {
+		var targetLinkSpanElem= document.createElement("span");
+		targetLinkSpanElem.style.marginLeft= "1em";
+		targetElem.parentNode.insertBefore(targetLinkSpanElem, targetElem.nextSibling);
+		addTargetLink(targetLinkSpanElem, target_milestone);
+		if (target_milestone_next)
+		    addTargetLink(targetLinkSpanElem, target_milestone_next);
+		if (target_milestone_next)
+		    addTargetLink(targetLinkSpanElem, target_milestone_release);
+	}
+	
 	// Move Status to right spot:
 	var statusElem= document.getElementById("status");
 	var bz_assignee_inputElem= document.getElementById("bz_assignee_input");
@@ -570,7 +593,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    var targetLinkSpanElem= document.createElement("span");
 		    targetLinkSpanElem.style.marginLeft= ".5em";
 		    statusLinksDivElem.appendChild(targetLinkSpanElem);
-		    addTargetLink(targetLinkSpanElem);
+		    addFixedInTargetLink(targetLinkSpanElem);
 		    
 		    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
 		    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", statusLinksDivElem);
