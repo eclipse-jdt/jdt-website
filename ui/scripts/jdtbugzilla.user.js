@@ -26,8 +26,8 @@
 // ==/UserScript==
 
 
-var target_milestone= "3.6 M4";
-var target_milestone_next= "3.6 M5"
+var target_milestone= "3.6 M5";
+var target_milestone_next= "3.6 M6"
 var target_milestone_release= "3.6"
 
 var textCategories= [
