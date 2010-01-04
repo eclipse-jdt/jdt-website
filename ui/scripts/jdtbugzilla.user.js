@@ -381,13 +381,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 } else if (window.location.pathname.match(/.*query\.cgi/)) {
 
-    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
-    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
-    if (location.search.match(longdescRegex)) {
-	    var match= window.location.search.replace(longdescRegex, "$1");
-	    var longdescElem= document.getElementById("longdesc");
-	    longdescElem.value= decodeURIComponent(match);
-	}
+//    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
+//    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
+//    if (location.search.match(longdescRegex)) {
+//	    var match= window.location.search.replace(longdescRegex, "$1");
+//	    var longdescElem= document.getElementById("longdesc");
+//	    longdescElem.value= decodeURIComponent(match);
+//	}
 	
 	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, may fail for complex queries):
 	var queryformElem= document.getElementsByName("queryform");
