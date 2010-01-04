@@ -551,7 +551,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    resolutionElem.setAttribute("accesskey", "r");
 	}
 	
-	// Add shortcut target milestone link:
+	// Add shortcut to set Platform to All/All:
+	var rep_platformElem= document.getElementById("rep_platform");
+	var op_sysElem= document.getElementById("op_sys");
+	if (rep_platformElem && op_sysElem) {
+		var allLinkSpanElem= document.createElement("span");
+		allLinkSpanElem.style.marginLeft= "1em";
+		op_sysElem.parentNode.insertBefore(allLinkSpanElem, op_sysElem.nextSibling);
+		
+	    var href= 'javascript:document.getElementById("rep_platform").value="All";'
+	            + 'document.getElementById("op_sys").value="All";'
+	            + 'void(0);';
+	    addLink("All", href, allLinkSpanElem);
+	}
+	
+	// Add shortcut target milestone links:
 	var targetElem= document.getElementById("target_milestone");
 	if (targetElem) {
 		var targetLinkSpanElem= document.createElement("span");
@@ -560,7 +574,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addTargetLink(targetLinkSpanElem, target_milestone);
 		if (target_milestone_next)
 		    addTargetLink(targetLinkSpanElem, target_milestone_next);
-		if (target_milestone_next)
+		if (target_milestone_release)
 		    addTargetLink(targetLinkSpanElem, target_milestone_release);
 	}
 	
