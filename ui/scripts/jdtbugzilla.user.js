@@ -55,7 +55,6 @@ var textCategories= [
 "[navigation]",
 "[nls tooling]",
 "[painting]",
-"[performance]",
 "[preferences]",
 "[printing]",
 "[projection]",
