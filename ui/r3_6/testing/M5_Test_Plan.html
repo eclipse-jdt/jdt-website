@@ -65,8 +65,8 @@ function traverseLinkifyBugs(node) {
 
 <body onload="linkifyBugs();">
 <h1>3.6 M5 Test Plan</h1>
-Test day: Tuesday, 2010-01-26<br>
-Test Build: I20100126-0100 or newest available<br>
+Test day: Monday 2010-01-25, Tuesday, 2010-01-26 and Wednesday, 2010-01-27<br>
+Test Build: I20100124-2000 or newer (<em>always switch to latest available build</em>)<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Dani, Deepak, Markus, Raksha<br>
 
@@ -91,6 +91,17 @@ Testers: Dani, Deepak, Markus, Raksha<br>
 
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
+
+<h4>Improved parameter hints (Ctrl + Shift + Space) (?, ? - Questions: Dani)</h4>
+Test that the improvements to the parameter hints feature work (bug 58719).
+<ul>
+	<li>test that the parameter hints appear after pressing <b>Ctrl + Space</b></li>
+	<li>test that the parameter hints appear after pressing <b>Ctrl + Shift + Space</b> if there are no overloaded methods</li>
+	<li>test that the method selector pop-up appears after using <b>Ctrl + Shift + Space</b> if there are overloaded methods</li>
+	<ul>
+		<li>verify that the previously chosen method is selected in the pop-up</li>
+	</ul>
+</ul>
 
 <h4>All folded annotations shown in rulers (?, ? - Questions: Dani)</h4>
 <ul>
