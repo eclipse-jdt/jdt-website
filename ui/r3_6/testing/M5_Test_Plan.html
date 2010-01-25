@@ -139,6 +139,22 @@ Test the new enhancements made in the Breakpoints view (bug 238956).
 	<li>test that old/known functionality still works</li>
 </ul>
 
+<h4> Copy files out of a JAR (??,??  - Questions: Raksha)</h4>
+<ul>
+  <li>test that 'Copy' and 'Copy Qualified Name' actions are enabled and work for Jar Entry Resources (bug 297449)</li>
+  <li>test that the 'Copy' action only copies the simple names and 'Copy Qualified Name' copies the path from the root of the archive to the jar
+entry resource</li>
+  <li>test that they work with multi-selection also with other resources and java elements</li>
+  <li>test that the actions do not allow copying of items that don't have the same parent</li>
+</ul>
+
+<h4> Render Overwrite mode after filtering proposals (??,??  - Questions: Raksha)</h4>
+<ul>
+  <li>test that the overwrite mode is rendered after filtering of proposals with the text presentation listener (bug 287078)</li>
+  <li>test that the style range from the other listeners are intact(like the red squiggle)</li>
+  <li>test that the feature is not broken for viewers that do not implement ITextViewerExtension4</li>  
+</ul>
+
 <h4>Pull Up to interface (?, ? - Questions: Markus)</h4>
 Test pull up to interfaces (bug 188595).
 <ul>
