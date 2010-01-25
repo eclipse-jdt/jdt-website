@@ -116,6 +116,33 @@ Test the new enhancements made in the Breakpoints view (bug 238956).
 	<li>test that old/known functionality still works</li>
 </ul>
 
+<h4>Pull Up to interface (?, ? - Questions: Markus)</h4>
+Test pull up to interfaces (bug 188595).
+<ul>
+	<li>still works for fields and methods</li>
+	<li>does not add unnecessary imports</li>
+	<li>does not add more unnecessary visibility changes than in M4 (we still have some open bugs in that area)</li>
+</ul>
+
+<h4>Unused Object Allocation (?, ? - Questions: Markus)</h4>
+See bug 285000.
+<ul>
+	<li>test project-specific and workspace options</li>
+	<li>test quick fixes (for exceptions and for other types)</li>
+</ul>
+
+<h4>Inline Local Variable / Inline Constant: Test with auto-boxing (?, ? - Questions: Markus)</h4>
+See bug 297760, bug 297868.
+<ul>
+	<li>test other scenarios with these 2 refactorings that involve boxing/unboxing of expressions</li>
+</ul>
+
+<h4>Refactoring Undo in background (?, ? - Questions: Markus)</h4>
+<ul>
+	<li>test that Undo/Redo of refactorings and quick fixes works</li>
+	<li>test with open and closed editors</li>
+</ul>
+
 
 <h2>Test 3.5.2 Fixes</h2>
 Make sure to verify all 
