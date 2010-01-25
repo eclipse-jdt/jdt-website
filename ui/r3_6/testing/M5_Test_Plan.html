@@ -92,7 +92,7 @@ Testers: Dani, Deepak, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Improved parameter hints (Ctrl + Shift + Space) (?, ? - Questions: Dani)</h4>
+<h4>Improved parameter hints (Ctrl + Shift + Space) (Markus, Deepak - Questions: Dani)</h4>
 Test that the improvements to the parameter hints feature work (bug 58719).
 <ul>
 	<li>test that the parameter hints appear after pressing <b>Ctrl + Space</b></li>
@@ -103,24 +103,24 @@ Test that the improvements to the parameter hints feature work (bug 58719).
 	</ul>
 </ul>
 
-<h4>All folded annotations shown in rulers (?, ? - Questions: Dani)</h4>
+<h4>All folded annotations shown in rulers (Deepak, Markus - Questions: Dani)</h4>
 <ul>
 	<li>test that all annotation from folded code are shown in the vertical and overview ruler (bug 238956)</li>
 </ul>
 
-<h4>Problems view marker navigation (?, ? - Questions: Dani)</h4>
+<h4>Problems view marker navigation (Markus, Raksha - Questions: Dani)</h4>
 <ul>
 	<li>test in Problems view that going to marker does not change the view's selection (bug 294120)</li>
 </ul>
 
-<h4> Spell check engine  (?, ? - Questions: Deepak)</h4>
+<h4> Spell check engine  (Raksha, Markus - Questions: Deepak)</h4>
 <ul>
   <li>test that spell checker works correctly and correct proposals are given for an incorrect word (bug 233156)</li>
   <li>test that org.eclipse.jdt.text.tests.performance.SpellCheckingTest returns 858 problems</li>
-  <li>test that when spell check is disabled the spellcheck engine and dictionary objects are destroyed (bug 295629)</li>
+  <li>test that when spell check is disabled the spell check engine and dictionary objects are destroyed (bug 295629)</li>
 </ul>
 
-<h4> Use new PrintDialog.setPrinterData() API (?, ? - Questions: Deepak)</h4>
+<h4> Use new PrintDialog.setPrinterData() API (Raksha, Dani - Questions: Deepak)</h4>
 <ul>
   <li> test that the following properties are remembered: selected printer, Print to file, printer preferences (printer specific data like margins, paper size,orientation etc). (bug 267427)</li>
 </ul>
@@ -139,7 +139,7 @@ Test the new enhancements made in the Breakpoints view (bug 238956).
 	<li>test that old/known functionality still works</li>
 </ul>
 
-<h4> Copy files out of a JAR (??,??  - Questions: Raksha)</h4>
+<h4> Copy files out of a JAR (Markus, Deepak  - Questions: Raksha)</h4>
 <ul>
   <li>test that 'Copy' and 'Copy Qualified Name' actions are enabled and work for Jar Entry Resources (bug 297449)</li>
   <li>test that the 'Copy' action only copies the simple names and 'Copy Qualified Name' copies the path from the root of the archive to the jar
@@ -148,14 +148,14 @@ entry resource</li>
   <li>test that the actions do not allow copying of items that don't have the same parent</li>
 </ul>
 
-<h4> Render Overwrite mode after filtering proposals (??,??  - Questions: Raksha)</h4>
+<h4> Render Overwrite mode after filtering proposals (Deepak, Dani - Questions: Raksha)</h4>
 <ul>
   <li>test that the overwrite mode is rendered after filtering of proposals with the text presentation listener (bug 287078)</li>
-  <li>test that the style range from the other listeners are intact(like the red squiggle)</li>
-  <li>test that the feature is not broken for viewers that do not implement ITextViewerExtension4</li>  
+  <li>test that the style range from the other listeners are intact(like the red squiggles)</li>
+  <li>test that the feature is not broken for viewers that do not implement <code>ITextViewerExtension4</code></li>  
 </ul>
 
-<h4>Pull Up to interface (?, ? - Questions: Markus)</h4>
+<h4>Pull Up to interface (Raksha, Dani - Questions: Markus)</h4>
 Test pull up to interfaces (bug 188595).
 <ul>
 	<li>still works for fields and methods</li>
@@ -163,36 +163,25 @@ Test pull up to interfaces (bug 188595).
 	<li>does not add more unnecessary visibility changes than in M4 (we still have some open bugs in that area)</li>
 </ul>
 
-<h4>Unused Object Allocation (?, ? - Questions: Markus)</h4>
+<h4>Unused Object Allocation (Deepak, Raksha - Questions: Markus)</h4>
 See bug 285000.
 <ul>
 	<li>test project-specific and workspace options</li>
 	<li>test quick fixes (for exceptions and for other types)</li>
 </ul>
 
-<h4>Inline Local Variable / Inline Constant: Test with auto-boxing (?, ? - Questions: Markus)</h4>
+<h4>Inline Local Variable / Inline Constant: Test with auto-boxing (Dani, Deepak - Questions: Markus)</h4>
 See bug 297760, bug 297868.
 <ul>
 	<li>test other scenarios with these 2 refactorings that involve boxing/unboxing of expressions</li>
 </ul>
 
-<h4>Refactoring Undo in background (?, ? - Questions: Markus)</h4>
+<h4>Refactoring Undo in background (Dani, Raksha - Questions: Markus)</h4>
 <ul>
-	<li>test that Undo/Redo of refactorings and quick fixes works</li>
+	<li>test that Undo/Redo of refactorings and quick fixes work</li>
 	<li>test with open and closed editors</li>
+	<li>verify fix for bug 300536</li>
 </ul>
-
-
-<h2>Test 3.5.2 Fixes</h2>
-Make sure to verify all 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and 
-<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.5.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
-
-<h4>Test all fixes against 3.5.2 (???)</h4>
-Use latest M-build.
-
-<h4>Test all fixes against 3.6 M5 (???)</h4>
 
 
 <h2>Bug Verification (All)</h2>
