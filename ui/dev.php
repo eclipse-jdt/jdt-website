@@ -97,6 +97,7 @@ ob_start();
 			<br>
 			<h4>JUnit integration:</h4>
 			<ul>
+				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit.core/">org.eclipse.jdt.junit.core</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit/">org.eclipse.jdt.junit</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit.runtime/">org.eclipse.jdt.junit.runtime</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit4.runtime/">org.eclipse.jdt.junit4.runtime</a></li>
