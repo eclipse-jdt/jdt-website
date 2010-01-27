@@ -345,20 +345,31 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.4.x update</b>
 	<table>
 		<tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.4.5.v_895_R34x.jar">
+			<td valign="top"><a href="../patches/patch2.zip">
 						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2009/05/08, 4.3 MB (click on picture)</td>
-		</tr>
-		<tr>
-			<td valign="top"><a href="../patches/patch.zip">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
-			<td valign="top">posted on 2009/05/12, 4.1 MB (click on picture)<br>
+			<td valign="top">posted on 2010/01/27, 7.77 MB (click on picture)<br>
 			Install by unzipping in the dropins folder.</td>
 		</tr>
 		<tr>
 			<td valign="top"><i>description</i></td>
 			<td valign="top">Addresses the following issues since 3.4.2 release: <br>
-				<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265962">265962</a>
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=299051">299051</a>
+				Clone of bug 296343
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=288211">288211</a>
+				APT uses a lot of memory
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=293443">293443</a>
+				AbortCompilation when invoking content assist
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=124646">124646</a>
+				Connecting type parameter fails for local types
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=291322">291322</a>
+				Test errors when running JDT Core tests on Windows 7
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=285124">285124</a>
+				serialVersionUID still causes error/warning
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=275330">275330</a>
+				NPE from org.eclipse.jdt.internal.core.ClasspathChange.requestIndexing
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=261722">261722</a>
+				[search] NPE after removing a project
+				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265962">265962</a>
 				[compiler] Internal compiler error on while with return clause
 				<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=265103">265103</a>
 				Manifest Class-Path is not read correctly with ECJ
@@ -377,70 +388,6 @@ ob_start();
 			</td>
 		</tr>
 	</table>
-<!--			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
-      <table>
-          <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.0.200604051115.jar">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
-			<td valign="top">posted on 2006/04/05, 3.78 MB (click on picture)</td>
-          </tr>
-          <tr>
-			<td valign="top"><i>applies to</i></td>
-			<td valign="top">build 3.3M6</td>
-          </tr>
-          <tr>
-			<td valign="top"><i>description</i> </td>
-			<td valign="top">Early preview of the next integration build. <br>
-						     Addresses the following issues: <br>
-							<a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=131707">131707</a>
-							Cannot add classpath variables when starting with -pluginCustomization option
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134839">134839</a>
-							[compiler] Incorrect compile errors reported in 1.3 compliance level
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=128423">128423</a>
-							[1.5][compiler] ClassCastException on illegal code fragment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=107901">107901</a>
-							Clarify Javadoc for ASTParser#setUnitName
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=132841">132841</a>
-							[1.5][compiler] Incorrectly compared method parameters when member types
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=132831">132831</a>
-							[1.5][compiler] Compiler generate brige when not needed
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=119844">119844</a>
-							javadoc extraction: type comment
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=131519">131519</a>
-							JDK with attached source unnavigable.
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=92357">92357</a>
-							ITypeHierarchy#getType() should return an unresolved handle
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=97494">97494</a>
-							[1.5][compiler] Inappropriate error level and message for generic type mismatch
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134172">134172</a>
-							Crap Perfomance opening Java file with lots of imports
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134255">134255</a>
-							Unoptimal JavaElementInfo construction
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134645">134645</a>
-							[1.5][compiler] Java Compiler throws internal exception..
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134118">134118</a>
-							[1.5][compiler] 'ambiguous' error on legal static import
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=96648">96648</a>
-							Batch compiler - error messages for duplicate output, bootclasspath, sourcepath and extdirs entries could be more explicit
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=86813">86813</a>
-							[compiler] step into switch statement locate wrong line
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=83318">83318</a>
-							[1.5] 'Open declaration' fails for type variables in class files
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134345">134345</a>
-							Problems from CompilationParticipants do not get cleaned up unless there are Java errors
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=133918">133918</a>
-							[1.5][compiler] Duplicate return; in CastExpression line 258
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=89347">89347</a>
-							[compiler] public constructor of protected inner class invisible in subclass
-							<br><a href="http://bugs.eclipse.org/bugs/show_bug.cgi?id=134064">134064</a>
-							[1.5][compiler] Duplicate error messages when an annotation value expects a boolean but gets an array
-							<br>
-						     Also see corresponding 
-						     <a href="http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/org.eclipse.jdt.core/buildnotes_jdt-core.html?rev=1.5147&amp;content-type=text/html">build notes</a>.
-					</td>
-				</tr>
-			</table>
--->
 		</div>
 		<div class="homeitem3col">
 			<a name="SOURCES"></a>
