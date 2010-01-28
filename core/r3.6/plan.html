@@ -217,7 +217,6 @@ function showHiddenWork() {
 
  <tr> 
 	<td width="100%">
-		<a name="current-milestone"></a>
 	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> General Items </h4>
 	<ul>
 		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] 3.5.2 maintenance work <span class="work">[all]</span></li>
@@ -274,12 +273,81 @@ function showHiddenWork() {
 <tr>
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M5"></a>Milestone M5 (2010-01-29)</font></font></td>
 </tr>
-<tr><td>TBD</td>
+<tr>
+	<td width="100%">
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> General Items </h4>
+	<ul>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] 3.5.2 maintenance work <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#3">3</a>] 3.6 planning <span class="work">[olivier]</span></li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Java 7 support </h4>
+	<ul>
+		<li><img src="../images/progress.png" border="0" alt="progress"> [<a href="#2">4</a>] investigate jsr 308 support (bug 287648) <span class="work">[srikanth]</span>
+		<br>A new branch "JSR_308" has been created to reflect the work on that jsr.</li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing
+		(<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced;bug_status=RESOLVED;bug_status=VERIFIED;component=Core;resolution=FIXED;classification=Eclipse;product=JDT;target_milestone=3.6%20M5">fixed</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.6+M5&amp;namedcmd=Assigned">all</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.6+M5">unresolved</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.6+M5">resolved</a>)
+		</li>
+		<li>watch performance tests</li>
+	</ul>
+	</td>
 </tr>
 <tr>
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M6"></a>Milestone M6 (2010-03-12) - API FREEZE</font></font></td>
 </tr>
-<tr><td>TBD</td>
+<tr>
+	<td width="100%">
+	<a name="current-milestone"></a>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> General Items </h4>
+	<ul>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#3">3</a>] 3.6 planning <span class="work">[olivier]</span></li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Java 7 support </h4>
+	<ul>
+		<li><img src="../images/progress.png" border="0" alt="progress"> [<a href="#2">4</a>] investigate jsr 308 support (bug 287648) <span class="work">[srikanth]</span>
+		<br>A new branch "JSR_308" has been created to reflect the work on that jsr.</li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Bug fixes</h4>
+	<ul>
+	<li>Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=281551">281551</a> - [build path] Source attachments wrong for automatically added libraries<span class="work">[Jay]</span>
+	</li>
+	<li> Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=294057">294057</a> - [1.5][compiler] Imports not resolved correctly with generics and inner interfaces<span class="work">[Srikanth]</span>
+	</li>
+	<li> Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=300783">300783</a> - [compiler] private Instance Variable hides public Inner class<span class="work">[Srikanth]</span>
+	</li>
+	<li> Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=300940">300940</a> -  Buffer of opened external CU (*.java file) is not updated while typing<span class="work">[Olivier]</span>
+	</li>
+ 	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> API</h4>
+	<ul>
+	<li><img src="../images/progress.png" border="0" alt="progress">Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=252431">252431</a> - New API is needed to better identify referenced jars in the Class-Path: entry<span class="work">[Jay]</span>
+	</li>
+	<li><img src="../images/progress.png" border="0" alt="progress">Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=283806">283806</a> - New API is needed to attach source code for referenced jars in the Class-Path: entry<span class="work">[Jay]</span>
+	</li>
+	<li>Bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=246594">246594</a> -  [model] API request: ITypeParameter#getBoundsSignatures() or #getSignature()<span class="work">[Jay]</span>
+	</li>
+	
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing
+		(<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced;bug_status=RESOLVED;bug_status=VERIFIED;component=Core;resolution=FIXED;classification=Eclipse;product=JDT;target_milestone=3.6%20M6">fixed</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.6+M6&amp;namedcmd=Assigned">all</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.6+M6">unresolved</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.6+M6">resolved</a>)
+		</li>
+		<li>watch performance tests</li>
+	</ul>
+	</td>
 </tr>
 <tr>
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M7"></a>Milestone M7 (2010-04-30) - FEATURE FREEZE</font></font></td>
