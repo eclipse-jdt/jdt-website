@@ -91,9 +91,13 @@ Testers: Deepak, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Item 1 (???, ??? - Questions: ???)</h4>
+<h4>Move Type to New File Refactoring (??, ?? - Questions: Raksha)</h4>
+Test the new refactoring to move a secondary type to a new file (bug 43277).
 <ul>
-	<li>test step 1</li>
+	<li>test that the action is enabled and works for both member types and secondary types</li>	
+	<li>test that the enclosing instance is not created in case of secondary types and appropriate warning is shown if a type already exists with the same name</li>
+	<li>test that imports are properly copied or added to the new file</li>
+	<li>test that all the tests pass in MoveInnerToTopLevelTests.java</li>
 </ul>
 
 
