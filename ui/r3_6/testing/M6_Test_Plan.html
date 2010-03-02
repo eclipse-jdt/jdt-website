@@ -73,7 +73,7 @@ Testers: Deepak, Markus, Raksha<br>
 
 <h2>Platforms</h2>
 <ul>
-  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Windows XP: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Windows 7: -</li>
   <li>Linux-GTK: -</li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
@@ -91,7 +91,7 @@ Testers: Deepak, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Move Type to New File Refactoring (??, ?? - Questions: Raksha)</h4>
+<h4>Move Type to New File refactoring (??, ?? - Questions: Raksha)</h4>
 Test the new refactoring to move a secondary type to a new file (bug 43277).
 <ul>
 	<li>test that the action is enabled and works for both member types and secondary types</li>	
@@ -99,6 +99,26 @@ Test the new refactoring to move a secondary type to a new file (bug 43277).
 	<li>test that imports are properly copied or added to the new file</li>
 	<li>test that all the tests pass in MoveInnerToTopLevelTests.java</li>
 </ul>
+
+<h4>Word Completion (??, ?? - Questions: Raksha)</h4>
+Test the new implementation for Word Completion (bug 270385).
+<ul>
+	<li>test that Word Completion works as expected (test with one and more open editors)</li>	
+	<li>test content assist suggests the expected word proposals (test with one and more open editors)</li>	
+	<li>test that the performance is much better (see bug 270385 for details)</li>
+</ul>
+
+<h4>Editing external CUs (??, ?? - Questions: Dani)</h4>
+Verify that external CUs can be edited and saved and that the Java model is updated while typing (bug 300940).
+
+<h4>No leaks when closing hovers (??, ?? - Questions: Dani)</h4>
+Test that we don't leak objects and resources when closing hovers (bug 231788).
+
+<h4>Less unexpected expansion of folded regions (??, ?? - Questions: Dani)</h4>
+Test that we no longer expand unaffected folded regions (bug 178203).
+
+<h4>Improved File Search's File name pattern history (??, ?? - Questions: Dani)</h4>
+Test that we correctly remember the recently used file name patterns (bug 71340).
 
 
 <h2>Bug Verification (All)</h2>
