@@ -107,6 +107,8 @@ ob_start();
 			<br>
 			<h4>Documentation and tests:</h4>
 			<ul>
+				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.core.refactoring.tests/">org.eclipse.ltk.core.refactoring.tests</a></li>
+				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.ui.refactoring.tests/">org.eclipse.ltk.ui.refactoring.tests</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui.tests/">org.eclipse.jdt.ui.tests</a></li>
 				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui.tests.refactoring/">org.eclipse.jdt.ui.tests.refactoring</a></li>
