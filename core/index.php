@@ -9,7 +9,6 @@
 	# $Nav->addNavSeparator("My Page Links", 	"downloads.php");
 	# $Nav->addCustomNav("My Link", "mypage.php", "_self", 3);
 	# $Nav->addCustomNav("Google", "http://www.google.com/", "_blank", 3);
-	$Nav->addNavSeparator( "Project Name", "/jdt/core" );
 	$Nav->addCustomNav( "About This Project", "/projects/project_summary.php?projectid=eclipse.jdt.core", "", 1  );
 	# End: page-specific settings
 	#
