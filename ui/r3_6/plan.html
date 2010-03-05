@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2010/02/16 14:35:18 $</p>
+    <p>Last revised $Date: 2010/03/05 15:50:57 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -140,13 +140,14 @@ function showHiddenWork() {
 	</p>
 
 	<ul>
-		<li><h4>Java 7 [<a href="#4">4</a>]</h4>
+		<li><h4><font class="indexsub" color="#8080ff">[&gt; 3.6]</font> Java 7 [<a href="#4">4</a>]</h4>
 		</p>
 		Work for JSR308 which is publicly available is in progress in JDT Core. For the JSR292, JSR294 and project Coin we need to wait for publicly available specifications.
 		This probably means that Java 7 support won't be completely done for the 3.6 release. We might be able to get all we need in time for 3.6.1.</p>
-		<ul>
-			<li><span class="priority">individual items TBD</span</li>
-		</ul></li>
+		<strong>Note:</strong> In order to align our schedule with the delayed official Java 7 appearance and due to lack of publicly available
+		specifications (including lack of a Java 7 JSR), we have decided to move the development work to a separate branch and decouple it from the
+		3.6 release. In that branch we will continue to develop the Java 7 features as they become publicly accessible. We will deliver separate
+		updates for the official builds in order to provide early access to Java 7 features. 
 		
 		<li><h4>Windows 7 Support [<a href="#4">4</a>]</h4>
 		<ul>
@@ -560,11 +561,6 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.6/plan.php#Milestone_Planning_M6">Platform Text 3.6 M6 Plan</a>.</p>
 		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 7 [<a href="#4">4</a>]</h4>
-		<span class="priority">individual items TBD</span 
-		<ul>
-		</ul></li>
-		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Javadoc view and sticky Javadoc hover [<a href="#3">3</a>]</h4>
 		<ul>
 			<li>show Java annotations (bug 236850) <span class="work">Markus: 2d</span></li>
@@ -575,26 +571,10 @@ function showHiddenWork() {
 			<li class="priority">new refactoring: move type to new file (bug 43277) <span class="work">Raksha: 3d</span></li>
 		</ul>
 		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
-		<ul>
-			<li class="priority">make sure that we run on the e4 compatibility layer <span class="work">2w</span>
-				<br>NOTE: Depends on the availability of the compatibility layer.
-				<ul>
-					<li>test our bundles against it</li>
-					<li>help to investigate and fix bugs in the compatibility layer</li>
-				</ul>
-			</li>
-		</ul>
-		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#3">3</a>]</h4>
-		<ul>
-			<li>fix constructor completion bugs <span class="work">Dani: 3d</span></li>
-		</ul>
-		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
 		<ul>
 			<li>provide a way for RefactoringWizardOpenOperation/RefactoringWizard to use a specified IRunnableContext (bug 283427) <span class="work">Markus</span></li>
-			<li>provide container name for JUnit container (bug 161566) <span class="work">Markus</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide container name for JUnit container (bug 161566) <span class="work">Markus</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -629,6 +609,22 @@ function showHiddenWork() {
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">0.5m</span></h4>
 		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
 		<ul>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">make sure that we run on the e4 compatibility layer <span class="work">2w</span>
+				<br>NOTE: Depends on the availability of the compatibility layer.
+				<ul>
+					<li>test our bundles against it</li>
+					<li>help to investigate and fix bugs in the compatibility layer</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>fix constructor completion bugs <span class="work">Dani: 3d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
