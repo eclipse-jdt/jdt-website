@@ -120,6 +120,21 @@ Test that we no longer expand unaffected folded regions (bug 178203).
 <h4>Improved File Search's File name pattern history (??, ?? - Questions: Dani)</h4>
 Test that we correctly remember the recently used file name patterns (bug 71340).
 
+<h4>Compare Editor (Deepak, ?? - Questions: Dani)</h4>
+Test that clicking 'Next Difference' very fast in Synchronize view does not lead to Exceptions. (bug 300157).
+
+<h4> Find Broken Externalized Strings utility (???, ??? - Questions: Deepak)</h4>
+The utility should ignore methods which do not take a single string parameter. For example- calls like Messages.getResourceBundle() should not be listed as undefined keys. (Bug 295040)</li>
+
+<h4> Output folder deletion dialog (???, ??? - Questions: Deepak)</h4>
+Test that the messages displayed in Output folder deletion dialog are appropriate. (Bug 276906)</li>
+
+<h4> New Command ('Show Ruler Annotation Tooltip') for annotation hover (???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Test that the new command shows the 'summary hover' irrespective of 'Java -> Editor -> Hovers -> Expand vertical ruler icons upon hovering' preference. (Bug 272172)</li>	
+	<li>Test that the hover has focus, and is resizable and scrollable. </li>	
+	<li>Note: 'Summary hover' -> hover with textual description. 'Expansion hover' - hover with annotation icons.</li>
+</ul>
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
