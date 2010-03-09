@@ -66,9 +66,9 @@ function traverseLinkifyBugs(node) {
 <body onload="linkifyBugs();">
 <h1>3.6 M6 Test Plan</h1>
 Test day: Tuesday, 2010-03-09<br>
-Test Build: I20100308-2000 or newer (<em>always switch to latest available build</em>)<br>
+Test Build: I20100308-1800 or newer (<em>always switch to latest available build</em>)<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Deepak, Markus, Raksha<br>
+Testers: Deepak, Markus<br>
 
 
 <h2>Platforms</h2>
@@ -91,16 +91,16 @@ Testers: Deepak, Markus, Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Move Type to New File refactoring (??, ?? - Questions: Raksha)</h4>
+
+<h4>Move Type to New File refactoring (Deepak, Markus - Questions: Raksha)</h4>
 Test the new refactoring to move a secondary type to a new file (bug 43277).
 <ul>
 	<li>test that the action is enabled and works for both member types and secondary types</li>	
 	<li>test that the enclosing instance is not created in case of secondary types and appropriate warning is shown if a type already exists with the same name</li>
-	<li>test that imports are properly copied or added to the new file</li>
-	<li>test that all the tests pass in MoveInnerToTopLevelTests.java</li>
+	<li>test that imports are properly copied or added to the new file (note: we already have bugs for some issues)</li>
 </ul>
 
-<h4>Word Completion (??, ?? - Questions: Raksha)</h4>
+<h4>Word Completion (Deepak, Markus - Questions: Raksha)</h4>
 Test the new implementation for Word Completion (bug 270385).
 <ul>
 	<li>test that Word Completion works as expected (test with one and more open editors)</li>	
@@ -108,33 +108,62 @@ Test the new implementation for Word Completion (bug 270385).
 	<li>test that the performance is much better (see bug 270385 for details)</li>
 </ul>
 
-<h4>Editing external CUs (??, ?? - Questions: Dani)</h4>
+<h4>Editing external CUs (Deepak, Markus - Questions: Dani)</h4>
 Verify that external CUs can be edited and saved and that the Java model is updated while typing (bug 300940).
 
-<h4>No leaks when closing hovers (??, ?? - Questions: Dani)</h4>
+<h4>No leaks when closing hovers (Markus, Deepak - Questions: Dani)</h4>
 Test that we don't leak objects and resources when closing hovers (bug 231788).
 
-<h4>Less unexpected expansion of folded regions (??, ?? - Questions: Dani)</h4>
+<h4>Less unexpected expansion of folded regions (Deepak, Markus - Questions: Dani)</h4>
 Test that we no longer expand unaffected folded regions (bug 178203).
 
-<h4>Improved File Search's File name pattern history (??, ?? - Questions: Dani)</h4>
+<h4>Improved File Search's File name pattern history (Markus, Deepak - Questions: Dani)</h4>
 Test that we correctly remember the recently used file name patterns (bug 71340).
 
-<h4>Compare Editor (Deepak, ?? - Questions: Dani)</h4>
+<h4>Compare Editor (Deepak, Markus - Questions: Dani)</h4>
 Test that clicking 'Next Difference' very fast in Synchronize view does not lead to Exceptions. (bug 300157).
 
-<h4> Find Broken Externalized Strings utility (???, ??? - Questions: Deepak)</h4>
-The utility should ignore methods which do not take a single string parameter. For example- calls like Messages.getResourceBundle() should not be listed as undefined keys. (Bug 295040)</li>
+<h4>Find Broken Externalized Strings utility (Markus, Deepak - Questions: Deepak)</h4>
+The utility should ignore methods which do not take a single string parameter. For example- calls like Messages.getResourceBundle() should not be listed as undefined keys. (Bug 295040)
 
-<h4> Output folder deletion dialog (???, ??? - Questions: Deepak)</h4>
-Test that the messages displayed in Output folder deletion dialog are appropriate. (Bug 276906)</li>
+<h4>Output folder deletion dialog (Markus, Deepak - Questions: Deepak)</h4>
+Test that the messages displayed in Output folder deletion dialog are appropriate. (Bug 276906)
 
-<h4> New Command ('Show Ruler Annotation Tooltip') for annotation hover (???, ??? - Questions: Deepak)</h4>
+<h4>New Command ('Show Ruler Annotation Tooltip') for annotation hover (Markus, Deepak - Questions: Deepak)</h4>
 <ul>
-	<li>Test that the new command shows the 'summary hover' irrespective of 'Java -> Editor -> Hovers -> Expand vertical ruler icons upon hovering' preference. (Bug 272172)</li>	
-	<li>Test that the hover has focus, and is resizable and scrollable. </li>	
+	<li>Test that the new command shows the 'summary hover' irrespective of 'Java -> Editor -> Hovers -> Expand vertical ruler icons upon hovering' preference. (Bug 272172)</li>
+	<li>Test that the hover has focus, and is resizable and scrollable. </li>
 	<li>Note: 'Summary hover' -> hover with textual description. 'Expansion hover' - hover with annotation icons.</li>
 </ul>
+
+<h4>JUnit 4 (Markus, Deepak - Questions: Markus)</h4>
+<ul>
+<li>Verify that JUnit classpath container still works and has attached source (changes from bug 304573)</li>
+<li>Verify with shared install</li>
+</ul>
+
+<h4>Code Formatter Options (Deepak, Markus - Questions: Markus)</h4>
+<ul>
+<li>Test the new code formatter options</li>
+<li>See N&amp;N or bug 303163, bug 303314, bug 303405, bug 303773, bug 303506, bug 304534, bug 304052</li>
+</ul>
+
+<h4>Test new compiler option to suppress optional errors with @SuppressWarnings (Deepak, Markus - Questions: Markus)</h4>
+<ul>
+<li>bug 303945</li>
+<li>quick fix to add @SuppressWarnings</li>
+</ul>
+
+<h4>Test support for referenced JARs (Deepak, Markus - Questions: Markus)</h4>
+<ul>
+<li>Referenced JARs are JARs that are on the resolved classpath because they are referenced by another JAR via a 'Class-Path:' attribute in the MANIFEST.MF</li>
+<li>check rendering (origin comment at end of label)</li>
+<li>check enablement of 'Remove from Build Path' (bug 303155)</li>
+<li>check that source and Javadoc attachments can be modified and looks reasonable in .classpath</li>
+<li>known bug 304394: Javadoc attachment not used e.g. in hover.</li>
+<li>Build Path dialog does <i>not</i> yet show referenced JARs</li>
+</ul>
+
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
