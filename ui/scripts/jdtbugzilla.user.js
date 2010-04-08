@@ -29,6 +29,7 @@
 var target_milestone= "3.6 M7";
 var target_milestone_next= false; //"3.6 M7"
 var target_milestone_release= "3.6"
+var target_milestone_next_release= "3.7"
 
 var textCategories= [
 "-- Text category --",
@@ -575,6 +576,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    addTargetLink(targetLinkSpanElem, target_milestone_next);
 		if (target_milestone_release)
 		    addTargetLink(targetLinkSpanElem, target_milestone_release);
+		
+		if (target_milestone_next_release)
+    		addTargetLink(targetLinkSpanElem, target_milestone_next_release);
+		addTargetLink(targetLinkSpanElem, "---");
 	}
 	
 	// Move Status to right spot:
