@@ -21,6 +21,7 @@ ob_start();
 		<ul>
 		  <li>use active voice instead of passive voice.</li>
 		  <li>can&#8217;t &#8211;&gt; cannot</li>
+		  <li>may &#8211;&gt; can</li>
 		  <li>may not &#8211;&gt; cannot
 		    <ul>
 		      <li>selection cannot be empty.</li>
