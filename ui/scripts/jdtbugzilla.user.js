@@ -27,6 +27,7 @@
 
 
 var target_milestone= "3.6 M7";
+// all of the target_milestone_* can also be 'false', which hides the links
 var target_milestone_next= false; //"3.6 M7"
 var target_milestone_release= "3.6"
 var target_milestone_next_release= "3.7"
@@ -244,7 +245,18 @@ function addStatusLink(name, status, resolution, parentElem) {
 
 function addAssigneeLink(name, email, parentElem) {
     var href= 'javascript:document.getElementById("assigned_to").value="' + email + '";'
-            + 'document.getElementById("assigned_to").focus();';
+            + 'document.getElementById("set_default_assignee").checked= false;'
+            + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");'
+            + 'document.getElementById("assigned_to").focus();'
+            + 'void(0);';
+    addLink(name, href, parentElem);
+}
+
+function addNewccLink(name, email, parentElem) {
+    var href= 'javascript:document.getElementById("newcc").value="' + email + ' " + document.getElementById("newcc").value;'
+            + 'document.getElementById("newcc").focus();'
+            + 'document.getElementById("newcc").selectionStart= 0;'
+            + 'document.getElementById("newcc").selectionEnd= ' + email.length + ';'
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -619,10 +631,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    addStatusLink("NOT_ECLIPSE", "RESOLVED", "NOT_ECLIPSE", statusLinksDivElem);
 		}
 		
+	    // Add shortcut assignee links:
 		addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
 		addAssigneeLink("MK", "markus_keller@ch.ibm.com", bz_assignee_inputElem)
 		addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
 		addAssigneeLink("DA", "deepak.azad@in.ibm.com", bz_assignee_inputElem)
+	}
+	
+	var newccElem= document.getElementById("newcc");
+	if (newccElem) {
+	    // Add shortcut cc links:
+		addNewccLink("DM", "daniel_megert@ch.ibm.com", newccElem.parentNode)
+		addNewccLink("MK", "markus_keller@ch.ibm.com", newccElem.parentNode)
+		addNewccLink("RV", "raksha.vasisht@in.ibm.com", newccElem.parentNode)
+		addNewccLink("DA", "deepak.azad@in.ibm.com", newccElem.parentNode)
 	}
 	
 	// Add a convenient Commit buttons:
