@@ -148,6 +148,14 @@ var jdtCategories= [
 "[working sets]",
 ];
 
+var assignees= [
+"DM", "daniel_megert@ch.ibm.com",
+"MK", "markus_keller@ch.ibm.com",
+"RV", "raksha.vasisht@in.ibm.com",
+"DA", "deepak.azad@in.ibm.com",
+];
+
+var ccs= assignees;
 
 //----------- Functions:
 function hideElem(id) {
@@ -257,6 +265,28 @@ function addNewccLink(name, email, parentElem) {
             + 'document.getElementById("newcc").focus();'
             + 'document.getElementById("newcc").selectionStart= 0;'
             + 'document.getElementById("newcc").selectionEnd= ' + email.length + ';'
+            + 'void(0);';
+    addLink(name, href, parentElem);
+}
+
+function addEmailLinks(emailElemName) {
+	var emailElems= document.getElementsByName(emailElemName);
+	if (emailElems.length > 0) {
+		var tr= document.createElement("tr");
+		var td= document.createElement("td");
+		tr.appendChild(td);
+	    var emailLinksTr= emailElems[0].parentNode.parentNode;
+		emailLinksTr.parentNode.insertBefore(tr, null);
+		
+	    for (var i= 0; i < ccs.length; i= i+2) {
+	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, td);
+	    }
+	}
+}
+
+function addEmailLink(name, email, emailElemName, parentElem) {
+    var href= 'javascript:document.getElementsByName("' + emailElemName + '")[0].value="' + email + '";'
+            + 'document.getElementsByName("' + emailElemName + '")[0].focus();'
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -415,6 +445,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    Search_topElem.parentNode.insertBefore(choosers, Search_topElem);
 	}
 
+    // Add shortcut email links:
+	addEmailLinks("email1");
+	addEmailLinks("email2");
 
 	
 } else { // For all result pages:
@@ -632,19 +665,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 		
 	    // Add shortcut assignee links:
-		addAssigneeLink("DM", "daniel_megert@ch.ibm.com", bz_assignee_inputElem)
-		addAssigneeLink("MK", "markus_keller@ch.ibm.com", bz_assignee_inputElem)
-		addAssigneeLink("RV", "raksha.vasisht@in.ibm.com", bz_assignee_inputElem)
-		addAssigneeLink("DA", "deepak.azad@in.ibm.com", bz_assignee_inputElem)
+	    for (var i= 0; i < assignees.length; i= i+2) {
+            addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem)
+        }
 	}
 	
 	var newccElem= document.getElementById("newcc");
 	if (newccElem) {
 	    // Add shortcut cc links:
-		addNewccLink("DM", "daniel_megert@ch.ibm.com", newccElem.parentNode)
-		addNewccLink("MK", "markus_keller@ch.ibm.com", newccElem.parentNode)
-		addNewccLink("RV", "raksha.vasisht@in.ibm.com", newccElem.parentNode)
-		addNewccLink("DA", "deepak.azad@in.ibm.com", newccElem.parentNode)
+	    for (var i= 0; i < ccs.length; i= i+2) {
+            addNewccLink(ccs[i], ccs[i + 1], newccElem.parentNode)
+        }
 	}
 	
 	// Add a convenient Commit buttons:
