@@ -65,16 +65,16 @@ function traverseLinkifyBugs(node) {
 
 <body onload="linkifyBugs();">
 <h1>3.6 M7 Test Plan</h1>
-Test day: Tuesday, 2010-04-27<br>
-Test Build: I20100427-0100 (<em>always switch to latest available build</em>)<br>
+Test day: Monday, 2010-04-26<br>
+Test Build: I20100425-2000 (<em>always switch to latest available build</em>)<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Deepak, Markus<br>
+Testers: Dani, Deepak, Markus, Raksha<br>
 
 
 <h2>Platforms</h2>
 <ul>
   <li>Windows XP: <a href="raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
-  <li>Windows 7: -</li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Linux-GTK: -</li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
@@ -97,6 +97,30 @@ Test that all Java code style preferences (including those from nested preferenc
 <ul>
 	<li>test that all settings are correctly exported</li>	
 	<li>test that all settings are correctly imported</li>	
+</ul>
+
+<h4>Compare editor (???, ??? - Questions: Dani)</h4>
+<ul>
+	<li>test context menu &amp; Open With opens with the same selection as currently in the compare editor (bug 267171)</li>
+	<li><b>Ctrl+O</b> resets viewport so that the selected element is shown in the editor (bug 307757)</li>
+</ul>
+
+<h4>Paste patch into Package Explorer shows patch in Synchronize view (???, ??? - Questions: Dani)</h4>
+<ul>
+	<li>test that out of the box it works like in 3.5 (modal wizard)</li>
+	<li>enable <b>Apply patch in Synchronize view</b> on the <b>Team</b> page and verify that it works</li>
+</ul>
+
+<h4>Show In offers the Project Explorer in  (???, ??? - Questions: Dani)</h4>
+Verify that views in the JDT perspectives now show the Project Explorer in the Show In menu (bug 175857).
+
+<h4>Drag & Drop (???, ??? - Questions: Dani)</h4>
+Verify that drag and drop works as expected with regards on the new Link support. Test in Package Explorer, Project Explorer and Navigator.
+<ul>
+	<li>test DnD inside the workspace</li>	
+	<li>test DnD from the OS explorer</li>	
+	<li>test all options of the dialog that comes on drop</li>
+	<li>test that all DnD options from the 'Linked Resources' preference page work</li>
 </ul>
 
 
