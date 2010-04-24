@@ -123,6 +123,20 @@ Verify that drag and drop works as expected with regards on the new Link support
 	<li>test that all DnD options from the 'Linked Resources' preference page work</li>
 </ul>
 
+<h4>Mark projects that have build path problems (???, ??? - Questions: Deepak)</h4>
+Verify that the new icon (a red "!") is overlaid on Project and Working Set icons only for Build path problems (bug 215980).
+
+<h4>Combined "Delete" on mixed selection package/folders does not delete all resources (???, ??? - Questions: Deepak)</h4>
+Verify that deleting a package and a (non-source) folder deletes both (bug 292505).
+
+<h4>Hover on string constant should show NLSed string (???, ??? - Questions: Deepak)</h4>
+Verify that hovering over a string constant (NLS key) shows the NLSed string (bug 306168).
+
+<h4>Unable to refactor expression without resolved type in variable initializer (???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Verify that Extract Constant and Extract Local Variable refactorings work when there is an error in the selected expression (bug 307758).</li>
+	<li>Verify that Introduce Parameter refactoring does not work if there is an error in the selected expression.</li>
+</ul> 
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
