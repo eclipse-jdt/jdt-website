@@ -138,6 +138,27 @@ Verify that hovering over a string constant (NLS key) shows the NLSed string (bu
 	<li>Verify that Introduce Parameter refactoring does not work if there is an error in the selected expression.</li>
 </ul> 
 
+<h4> Prevent creation of resources inside virtual folders (???, ??? - Questions: Raksha)</h4>
+Verify that no resources can be created inside a virtual folder (bug 297442)
+<ul>
+	<li>test that the source folder or package is not virtual while creating a new class or package</li>	
+	<li>test that a new source folder cannot be created if its virtual </li>	
+</ul>
+
+<h4> Prevent creation of filtered resources in JDT Wizards (???, ??? - Questions: Raksha)</h4>
+Verify that no filtered resources can be created from any JDT Wizard (bug 308957)
+
+<h4> Disable Open Location action in the Location Viewer context menu when selection is empty (???, ??? - Questions: Raksha)</h4>
+Verify that Open Location action in the Location Viewer context menu is disabled when selection is empty (bug 307816)
+
+<h4> Disable Refresh and Refresh View actions when unnecessary (???, ??? - Questions: Raksha)</h4>
+Verify that Refresh and Refresh View actions are not shown or disabled when not applicable (bug 303788)
+<ul>
+	<li>test that the Refresh action in call hierarchy view is not shown in the menu when selection is empty</li>	
+	<li>test that the Refresh View action in the call hierarchy view is disabled when the view is empty</li>
+	<li>test that Refresh action works in the Location Viewer</li>	
+</ul>
+
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
