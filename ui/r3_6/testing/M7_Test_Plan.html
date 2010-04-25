@@ -111,10 +111,10 @@ Test that all Java code style preferences (including those from nested preferenc
 	<li>enable <b>Apply patch in Synchronize view</b> on the <b>Team</b> page and verify that it works</li>
 </ul>
 
-<h4>Show In offers the Project Explorer in  (???, ??? - Questions: Dani)</h4>
+<h4>Show In offers the Project Explorer in JDT perspectives (???, ??? - Questions: Dani)</h4>
 Verify that views in the JDT perspectives now show the Project Explorer in the Show In menu (bug 175857).
 
-<h4>Drag & Drop (???, ??? - Questions: Dani)</h4>
+<h4>Drag &amp; Drop (???, ??? - Questions: Dani)</h4>
 Verify that drag and drop works as expected with regards on the new Link support. Test in Package Explorer, Project Explorer and Navigator.
 <ul>
 	<li>test DnD inside the workspace</li>	
@@ -143,21 +143,24 @@ Verify that no resources can be created inside a virtual folder (bug 297442)
 <ul>
 	<li>test that the source folder or package is not virtual while creating a new class or package</li>	
 	<li>test that a new source folder cannot be created if its virtual </li>	
+	<li>test that new Java elements can still be created inside a linked folder</li>
 </ul>
 
 <h4> Prevent creation of filtered resources in JDT Wizards (???, ??? - Questions: Raksha)</h4>
 Verify that no filtered resources can be created from any JDT Wizard (bug 308957)
 
-<h4> Disable Open Location action in the Location Viewer context menu when selection is empty (???, ??? - Questions: Raksha)</h4>
-Verify that Open Location action in the Location Viewer context menu is disabled when selection is empty (bug 307816)
-
-<h4> Disable Refresh and Refresh View actions when unnecessary (???, ??? - Questions: Raksha)</h4>
-Verify that Refresh and Refresh View actions are not shown or disabled when not applicable (bug 303788)
+<h4> Call Hierarchy actions (???, ??? - Questions: Raksha)</h4>
 <ul>
-	<li>test that the Refresh action in call hierarchy view is not shown in the menu when selection is empty</li>	
-	<li>test that the Refresh View action in the call hierarchy view is disabled when the view is empty</li>
-	<li>test that Refresh action works in the Location Viewer</li>	
+    <li>Verify that Open Location action in the Location Viewer context menu is disabled when selection is empty (bug 307816)</li>
+    <li>Verify that Refresh and Refresh View actions are not shown or disabled when not applicable (bug 303788)
+		<ul>
+			<li>test that the Refresh action in call hierarchy view is not shown in the menu when selection is empty</li>	
+			<li>test that the Refresh View action in the call hierarchy view is disabled when the view is empty</li>
+			<li>test that Refresh action works in the Location Viewer</li>	
+		</ul>
+	</li>
 </ul>
+
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
