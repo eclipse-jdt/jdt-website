@@ -28,9 +28,9 @@
 
 var target_milestone= "3.6 M7";
 // all of the target_milestone_* can also be 'false', which hides the links
-var target_milestone_next= false; //"3.6 M7"
-var target_milestone_release= "3.6"
-var target_milestone_next_release= "3.7"
+var target_milestone_next= "3.6 RC1";
+var target_milestone_release= "3.6";
+var target_milestone_next_release= "3.7";
 
 var textCategories= [
 "-- Text category --",
@@ -394,10 +394,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Add another Commit button after Subject):
     var short_descElems= document.getElementsByName("short_desc");
     if (short_descElems.length > 0) {
-	    var commitElem= document.createElement("input");
+	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
 	    commitElem.setAttribute("tabindex", "99");
-	    commitElem.setAttribute("value", "  Commit  ");
+	    commitElem.innerHTML= "C<u>o</u>mmit";
+	    commitElem.setAttribute("accesskey", "o");
+	    commitElem.style.paddingLeft= "1em";
+	    commitElem.style.paddingRight= "1em";
 	    var space= document.createTextNode(" ");
 	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
@@ -681,9 +684,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Add a convenient Commit buttons:
 	var bz_qa_contact_inputElem= document.getElementById("bz_qa_contact_input");
 	if (bz_qa_contact_inputElem) {
-	    var commitElem= document.createElement("input");
+	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
-	    commitElem.setAttribute("value", "     Commit     ");
+	    commitElem.innerHTML= "C<u>o</u>mmit";
+	    commitElem.style.paddingLeft= "2em";
+	    commitElem.style.paddingRight= "2em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
@@ -692,10 +697,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	for (var i= 0; i < labels.length; i++) {
 	    var labelElem= labels[i];
 	    if (labelElem.getAttribute("for") == "comment") {
-		    var commitElem= document.createElement("input");
+		    var commitElem= document.createElement("button");
 		    commitElem.setAttribute("type", "submit");
 		    commitElem.setAttribute("class", "knob-buttons");
-		    commitElem.setAttribute("value", "Commit");
+		    commitElem.innerHTML= "C<u>o</u>mmit";
+		    commitElem.setAttribute("accesskey", "o");
+		    commitElem.style.paddingLeft= "1em";
+		    commitElem.style.paddingRight= "1em";
 		    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
 	    }
 	}
