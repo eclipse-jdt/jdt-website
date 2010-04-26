@@ -92,29 +92,30 @@ Testers: Dani, Deepak, Markus, Raksha<br>
 <em>First test all those items where you are listed as first tester.</em>
 
 
-<h4>Java Code Style preference transfer category (???, ??? - Questions: Dani)</h4>
+<h4>Java Code Style preference transfer category (Raksha, Deepak - Questions: Dani)</h4>
 Test that all Java code style preferences (including those from nested preference pages) are covered by the new 'Java Code Style' preference transfer category.
 <ul>
 	<li>test that all settings are correctly exported</li>	
 	<li>test that all settings are correctly imported</li>	
 </ul>
 
-<h4>Compare editor (???, ??? - Questions: Dani)</h4>
+<h4>Compare editor (Markus, Raksha - Questions: Dani)</h4>
 <ul>
 	<li>test context menu &amp; Open With opens with the same selection as currently in the compare editor (bug 267171)</li>
 	<li><b>Ctrl+O</b> resets viewport so that the selected element is shown in the editor (bug 307757)</li>
 </ul>
 
-<h4>Paste patch into Package Explorer shows patch in Synchronize view (???, ??? - Questions: Dani)</h4>
+<h4>Paste patch into Package Explorer shows patch in Synchronize view (Deepak, Markus - Questions: Dani)</h4>
 <ul>
 	<li>test that out of the box it works like in 3.5 (modal wizard)</li>
 	<li>enable <b>Apply patch in Synchronize view</b> on the <b>Team</b> page and verify that it works</li>
+	<li><em>Note: the changes may not be visible due to bug 310365!</em></li>
 </ul>
 
-<h4>Show In offers the Project Explorer in JDT perspectives (???, ??? - Questions: Dani)</h4>
+<h4>Show In offers the Project Explorer in JDT perspectives (Raksha, Deepak - Questions: Dani)</h4>
 Verify that views in the JDT perspectives now show the Project Explorer in the Show In menu (bug 175857).
 
-<h4>Drag &amp; Drop (???, ??? - Questions: Dani)</h4>
+<h4>Drag &amp; Drop (Markus, Deepak - Questions: Dani)</h4>
 Verify that drag and drop works as expected with regards on the new Link support. Test in Package Explorer, Project Explorer and Navigator.
 <ul>
 	<li>test DnD inside the workspace</li>	
@@ -123,22 +124,22 @@ Verify that drag and drop works as expected with regards on the new Link support
 	<li>test that all DnD options from the 'Linked Resources' preference page work</li>
 </ul>
 
-<h4>Mark projects that have build path problems (???, ??? - Questions: Deepak)</h4>
+<h4>Mark projects that have build path problems (Dani, Raksha - Questions: Deepak)</h4>
 Verify that the new icon (a red "!") is overlaid on Project and Working Set icons only for Build path problems (bug 215980).
 
-<h4>Combined "Delete" on mixed selection package/folders does not delete all resources (???, ??? - Questions: Deepak)</h4>
+<h4>Combined "Delete" on mixed selection package/folders does not delete all resources (Raksha, Dani - Questions: Deepak)</h4>
 Verify that deleting a package and a (non-source) folder deletes both (bug 292505).
 
-<h4>Hover on string constant should show NLSed string (???, ??? - Questions: Deepak)</h4>
+<h4>Hover on string constant should show NLSed string (Raksha, Markus - Questions: Deepak)</h4>
 Verify that hovering over a string constant (NLS key) shows the NLSed string (bug 306168).
 
-<h4>Unable to refactor expression without resolved type in variable initializer (???, ??? - Questions: Deepak)</h4>
+<h4>Unable to refactor expression without resolved type in variable initializer (Dani, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that Extract Constant and Extract Local Variable refactorings work when there is an error in the selected expression (bug 307758).</li>
-	<li>Verify that Introduce Parameter refactoring does not work if there is an error in the selected expression.</li>
+	<li>Verify that Introduce Parameter refactoring still does not work if there is an error in the selected expression.</li>
 </ul> 
 
-<h4> Prevent creation of resources inside virtual folders (???, ??? - Questions: Raksha)</h4>
+<h4> Prevent creation of resources inside virtual folders (Deepak, Markus - Questions: Raksha)</h4>
 Verify that no resources can be created inside a virtual folder (bug 297442)
 <ul>
 	<li>test that the source folder or package is not virtual while creating a new class or package</li>	
@@ -146,10 +147,10 @@ Verify that no resources can be created inside a virtual folder (bug 297442)
 	<li>test that new Java elements can still be created inside a linked folder</li>
 </ul>
 
-<h4> Prevent creation of filtered resources in JDT Wizards (???, ??? - Questions: Raksha)</h4>
+<h4> Prevent creation of filtered resources in JDT Wizards (Deepak, Markus - Questions: Raksha)</h4>
 Verify that no filtered resources can be created from any JDT Wizard (bug 308957)
 
-<h4> Call Hierarchy actions (???, ??? - Questions: Raksha)</h4>
+<h4> Call Hierarchy actions (Deepak, Dani - Questions: Raksha)</h4>
 <ul>
     <li>Verify that Open Location action in the Location Viewer context menu is disabled when selection is empty (bug 307816)</li>
     <li>Verify that Refresh and Refresh View actions are not shown or disabled when not applicable (bug 303788)
@@ -159,6 +160,59 @@ Verify that no filtered resources can be created from any JDT Wizard (bug 308957
 			<li>test that Refresh action works in the Location Viewer</li>	
 		</ul>
 	</li>
+</ul>
+
+<h4>Package name abbreviations (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+    <li>test the new option on Preferences &gt; Java &gt; Appearance (bug 299514)</li>
+    <li>also test in connection with the "Compress package names" option</li>
+</ul>
+
+<h4>New Java Project Wizard (Dani, Deepak - Questions: Markus)</h4>
+<ul>
+    <li>test creation of new Java projects at default location and at custom locations (bug 305155)</li>
+    <li>test with custom locations inside the workspace (not directly, but nested in another folder or project)</li>
+</ul>
+
+<h4>Deadlocks when appying quick fix on GTK (Markus - Questions: Markus)</h4>
+<ul>
+    <li>GTK: Provoke deadlock situation from bug 293995 in an older build (by setting some breakpoints)</li>
+    <li>verify that deadlock doesn't happen any more in test build with the same steps</li>
+</ul>
+
+<h4>Open Resource (Dani, Deepak - Questions: Markus)</h4>
+<ul>
+    <li>verify that file name patterns (without a /) work as before (except that files closer to the
+    current context are higher up in the list of matches</li>
+    <li>verify that performance in a workspace with many files (e.g. import all as source) is comparable to performance in M6 for file patterns</li>
+    <li>verify that folder patterns work (bug 86973)</li>
+    <li>verify that camelCase patterns with file extensions work (bug 212565, bug 227289)</li>
+</ul>
+
+<h4>Quit confirmation on the Mac (Markus - Questions: Markus)</h4>
+<ul>
+    <li>Test quit confirmation dialog on carbon and cocoa (bug 283345)</li>
+</ul>
+
+<h4>Java 1.7 support removed from Java Compiler preference/properties page (Raksha, Deepak - Questions: Markus)</h4>
+<ul>
+    <li>the page should only show 1.7 in the project properties dialog when one of the version options has been set to 1.7 in the prefs file in .settings (bug 309163)</li>
+    <li>verify that the error and warning messages make sense in different setups</li>
+    <li>verify that setting the Execution Environment to JavaSE-1.7 sets the compiler compliance to 1.6</li>
+    <li>test scenarios with and without a 1.7 JDK installed</li>
+</ul>
+
+<h4>Javadoc hovers show annotations (Deepak, Raksha - Questions: Markus)</h4>
+<ul>
+    <li>test that the Javadoc hovers and the Javadoc view show annotations (bug 236850)</li>
+    <li>test that the links in the annotations work</li>
+    <li>test for source and binary with attached source</li>
+</ul>
+
+<h4>Javadoc hovers show value of {@value} (Raksha, Deepak - Questions: Markus)</h4>
+<ul>
+    <li>test that {@value} and {@value#CONSTANT} work in Javadoc hovers and the Javadoc view (bug 72139)</li>
+    <li>test for source and binary with attached source</li>
 </ul>
 
 
