@@ -401,6 +401,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    commitElem.setAttribute("accesskey", "o");
 	    commitElem.style.paddingLeft= "1em";
 	    commitElem.style.paddingRight= "1em";
+	    commitElem.style.fontSize= "small";
 	    var space= document.createTextNode(" ");
 	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
@@ -689,6 +690,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    commitElem.innerHTML= "C<u>o</u>mmit";
 	    commitElem.style.paddingLeft= "2em";
 	    commitElem.style.paddingRight= "2em";
+	    commitElem.style.fontSize= "small";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
@@ -704,6 +706,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    commitElem.setAttribute("accesskey", "o");
 		    commitElem.style.paddingLeft= "1em";
 		    commitElem.style.paddingRight= "1em";
+		    commitElem.style.fontSize= "small";
 		    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
 	    }
 	}
