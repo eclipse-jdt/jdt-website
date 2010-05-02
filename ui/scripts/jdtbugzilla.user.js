@@ -55,7 +55,6 @@ var textCategories= [
 "[language family]",
 "[linked mode]",
 "[navigation]",
-"[nls tooling]",
 "[painting]",
 "[preferences]",
 "[printing]",
