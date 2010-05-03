@@ -26,11 +26,7 @@
 // ==/UserScript==
 
 
-var target_milestone= "3.6 M7";
-// all of the target_milestone_* can also be 'false', which hides the links
-var target_milestone_next= "3.6 RC1";
-var target_milestone_release= "3.6";
-var target_milestone_next_release= "3.7";
+var target_milestones= ["3.6 RC1", "3.6 RC2", "3.6.1", "3.7"];
 
 var textCategories= [
 "-- Text category --",
@@ -228,10 +224,13 @@ function traverseLinkifyBugs(node) {
 	}
 }
 
-function addLink(name, href, parentElem) {
+function addLink(name, href, parentElem, tooltip) {
     var linkElem= document.createElement("a");
     linkElem.href= href;
     linkElem.innerHTML= name;
+    if (tooltip) {
+        linkElem.title= tooltip;
+    }
     if (parentElem.hasChildNodes()) {
         parentElem.appendChild(document.createTextNode(" | "));
     }
@@ -256,7 +255,7 @@ function addAssigneeLink(name, email, parentElem) {
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");'
             + 'document.getElementById("assigned_to").focus();'
             + 'void(0);';
-    addLink(name, href, parentElem);
+    addLink(name, href, parentElem, email);
 }
 
 function addNewccLink(name, email, parentElem) {
@@ -265,7 +264,7 @@ function addNewccLink(name, email, parentElem) {
             + 'document.getElementById("newcc").selectionStart= 0;'
             + 'document.getElementById("newcc").selectionEnd= ' + email.length + ';'
             + 'void(0);';
-    addLink(name, href, parentElem);
+    addLink(name, href, parentElem, email);
 }
 
 function addEmailLinks(emailElemName) {
@@ -287,18 +286,18 @@ function addEmailLink(name, email, emailElemName, parentElem) {
     var href= 'javascript:document.getElementsByName("' + emailElemName + '")[0].value="' + email + '";'
             + 'document.getElementsByName("' + emailElemName + '")[0].focus();'
             + 'void(0);';
-    addLink(name, href, parentElem);
+    addLink(name, href, parentElem, email);
 }
 
 function addFixedInTargetLink(parentElem) {
-    var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestone + '";'
+    var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestones[0] + '";'
             + 'document.getElementById("bug_status").value="RESOLVED";'
             + 'document.getElementById("resolution").value="FIXED";'
             + 'showHideStatusItems("", ["",""]);'
             + 'document.getElementById("assigned_to").focus();'
             + 'document.getElementById("assigned_to").select();';
             + 'void(0);';
-    addLink("(in " + target_milestone + ")", href, parentElem);
+    addLink("(in " + target_milestones[0] + ")", href, parentElem);
 }
 
 function addTargetLink(parentElem, milestone) {
@@ -619,14 +618,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var targetLinkSpanElem= document.createElement("span");
 		targetLinkSpanElem.style.marginLeft= "1em";
 		targetElem.parentNode.insertBefore(targetLinkSpanElem, targetElem.nextSibling);
-		addTargetLink(targetLinkSpanElem, target_milestone);
-		if (target_milestone_next)
-		    addTargetLink(targetLinkSpanElem, target_milestone_next);
-		if (target_milestone_release)
-		    addTargetLink(targetLinkSpanElem, target_milestone_release);
-		
-		if (target_milestone_next_release)
-    		addTargetLink(targetLinkSpanElem, target_milestone_next_release);
+		for (var i= 0; i < target_milestones.length; i++) {
+			addTargetLink(targetLinkSpanElem, target_milestones[i]);
+		}
 		addTargetLink(targetLinkSpanElem, "---");
 	}
 	
