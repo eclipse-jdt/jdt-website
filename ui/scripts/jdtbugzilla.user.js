@@ -19,14 +19,14 @@
 // @description   Script to tune bugzilla for JDT
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
-// @include       https://bugs.eclipse.org/bugs/attachment.cgi
+// @include       https://bugs.eclipse.org/bugs/attachment.cgi*
 // @include       https://bugs.eclipse.org/bugs/enter_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
 // ==/UserScript==
 
 
-var target_milestones= ["3.6 RC1", "3.6 RC2", "3.6.1", "3.7"];
+var target_milestones= ["3.6 RC2", "3.6 RC3", "3.6.1", "3.7"];
 
 var textCategories= [
 "-- Text category --",
@@ -370,6 +370,11 @@ var styleElem= document.createElement("style");
 styleElem.type= "text/css";
 // Fix baseline of labels:
 styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
+// Fix color of links in title:
+    + "#titles a { color: #039 ! important; }\n"
+    + "#titles a:visited { color: #636 ! important; }\n"
+    + "#titles a:hover { color: #333 ! important; }\n"
+    + "#titles a:active { color: #000 ! important; }\n"
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
@@ -461,8 +466,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var bugRegex= /Bug\s+(\d+)/i
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
+	            var bugId= bugRegex.exec(titleElem.textContent)[1];
+			    var bugLink= document.createElement("a");
+			    bugLink.href= "../" + bugId;
+			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
+			    
 			    var bugElem= document.createElement("p");
-			    bugElem.textContent= "Bug " + bugRegex.exec(titleElem.textContent)[1] + ": " + short_descElem.value;
+			    bugElem.appendChild(bugLink);
+			    bugElem.appendChild(document.createTextNode(": " + short_descElem.value));
+
 			    titleElem.appendChild(bugElem);
 			    var subtitleElem= document.getElementById("subtitle");
 			    if (subtitleElem) {
