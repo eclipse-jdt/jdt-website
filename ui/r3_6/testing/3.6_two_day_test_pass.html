@@ -9,7 +9,7 @@
 <body>
 <h1>3.6 Two Day Test Pass: JDT UI, JDT Text, Platform Text and Platform Search</h1>
 Testing days: Monday, 2010-05-24 (public holiday in Switzerland) and Monday 2010-05-25<br>
-Test Build: I20100520-1744<br>
+Test Build: I20100520-1744 (or declared RC2 build)<br>
 Testers: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:deepak.azad@in.ibm.com">Deepak</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a><br>
 
 
@@ -18,9 +18,8 @@ Testers: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:dee
   <li>Linux GTK: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
   <li>Windows XP: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a>, <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
-  <li>Windows 7: - <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li></li>
-  <li>WindowsVista: - </a></li>
-  </li>
+  <li>Windows 7: - <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Windows Vista: - </li>
 </ul>
 
 
@@ -28,25 +27,27 @@ Testers: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:dee
 <em>Use the Java editor breadcrumb whenever possible.</em> 
 <ul>
   <li>Dani tests using the Java browsing perspective</li>
-  <li>Deepak tests using the Java perspective with Package Explorer replaced by the Project Explorer<br>
-  <li>Markus tests using the Java perspective with Package Explorer in working set mode<br>
+  <li>Deepak tests using the Java perspective with Package Explorer replaced by the Project Explorer</li>
+  <li>Markus tests using the Java perspective with Package Explorer in working set mode</li>
   <li>Raksha tests using the Java perspective with Package Explorer in project mode</li>
-  </li>
 </ul>
 
 <h2>Make sure all RC* Fixes are verified (Deepak, Markus)</h2>
-First thing is to make sure that all RC1, RC2 and RC3 fixes are verified.
+First thing is to make sure that all RC1 and RC2 fixes are verified.
 <p>
 
 
 <h2>New 3.6 Functionality (Deepak, Dani)</h2>
 Test all new features that have been added during 3.6 development.
-This can be done by testing the features mentioned in the M1-M7 New and Noteworthy documents.
+This can be done by testing the features mentioned in the M1-M7
+<a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.6M7-201004291549/eclipse-news-M7.html">New and Noteworthy</a>
+documents.
 
 
 <h2>Views and Editors (Dani, Raksha)</h2>
 <ul>
   <li>resize behavior</li>
+  <li>scrolling (rulers)</li>
   <li>different fonts and colors</li>
   <li>detached views</li>
   <li>multiple windows</li>
@@ -76,7 +77,7 @@ present a dialog that the CU is not on the build path</li>
 Setup workspace in a way unusual compared to your normal setup.
 Testing should take place in one of the following workspace setups.
 When setting up the workspace test also the functionality to setup
-this workspace style:</p>
+this workspace style:
 <ul>
   <li>use external projects<br>
   </li>
@@ -89,7 +90,7 @@ this workspace style:</p>
       <li><font color="#000000">linked class folders</font></li>
     </ul>
   </li>
-  <li>use multiple output folder</li>
+  <li>use multiple output folders</li>
   <li>use combination of exclusion &amp; inclusion filters</li>
   <li>use user defined library containers (JUnit as a user defined
 library)
