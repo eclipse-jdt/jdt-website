@@ -26,7 +26,7 @@
 // ==/UserScript==
 
 
-var target_milestones= ["3.6 RC2", "3.6 RC3", "3.6.1", "3.7"];
+var target_milestones= ["3.6 RC4", "3.6 RC5", "3.6.1", "3.7"];
 
 var textCategories= [
 "-- Text category --",
