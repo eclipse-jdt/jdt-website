@@ -26,7 +26,8 @@
 // ==/UserScript==
 
 
-var target_milestones= ["3.6 RC4", "3.6 RC5", "3.6.1", "3.7"];
+// Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
+var target_milestones= ["3.6 RC4", "3.6.1", "3.7"];
 
 var textCategories= [
 "-- Text category --",
@@ -378,7 +379,10 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
-    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important}";
+    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }"
+// Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
+    + "#comment { overflow-y:scroll; }"
+    ;
 headElem.appendChild(styleElem);
 
 
