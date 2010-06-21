@@ -1,0 +1,542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+	<title>Combined JDT Text and JDT UI Component 3.7 Plan</title>
+
+<script type="text/javascript">
+<!--
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode; 
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+			
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+			
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+				
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+				
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+				
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+			
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+
+function showHiddenWork() {
+	// Open this document with an URL ending in ?work, and the "work" class becomes visible. 
+	if (window.location.search == "?work") {
+		var spans= document.getElementsByTagName("span")
+		for (var i in spans) {
+			var s= spans[i];
+			if (s.className == "work") {
+				s.style.visibility= "visible";
+				s.insertBefore(document.createTextNode("\u00a0"), s.firstChild);
+				s.insertBefore(document.createTextNode("\u00a0"), s.lastChild.nextSibling);
+			}
+		};
+	}
+}
+
+//-->
+</script>
+
+	
+	 <style type="text/css">
+  		.priority {
+  			color: blue;
+  			font-style: italic;
+  		}
+  		.work {
+  			background: lightgreen;
+			visibility: hidden;
+  		}
+		#midcolumn ul {list-style:square none;}
+	</style>	
+	
+</head>
+
+<body text="#000000" bgcolor="#FFFFFF" onload="linkifyBugs();showHiddenWork();">
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+
+  <tr> 
+    <td WIDTH="100%"> 
+    <p>Last revised $Date: 2010/06/21 13:40:47 $</p>
+
+    
+      <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
+      <p><strong>Note:</strong> This plan depends on the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php">Platform Text Plan</a>.</p>
+      
+      <h2><a NAME="Overall_Planning"></a>Overall Goals</h2>
+      <p>This section lists the goals for Eclipse 3.7 for the JDT Text and the JDT UI component as listed on the 
+        <a href="http://www.eclipse.org/projects/project-plan.php?projectid=eclipse">Eclipse Project 3.7 Draft Plan</a>.
+        </p>
+
+
+		<p>
+		<strong><a name="1"></a>[1] Scaling Up</strong>.
+		Monitor overall performance and memory consumption which includes the addition of new performance tests for new features.  
+		</p>
+
+		<p>
+		<strong><a name="2"></a>[2] Design for Extensibility</strong>.
+		Provide APIs for clients where needed.
+		</p>
+		
+		<p>
+		<strong><a name="3"></a>[3] Ease of Use</strong>.
+		Make sure we run on the e4 compatibility layer and deliver new productivity features like TBD. 
+		</p>
+		
+		<p>
+		<strong><a name="4"></a>[4] Technology Trends</strong>.
+		Add support for Java 7. 
+		</p>
+
+	<h2><a NAME="Work_Items"></a><br>Work Items</h2>
+	<p>
+		This section lists the <em>possible</em> work items for Eclipse 3.7 for the JDT Text and the JDT UI component
+		with the [corresponding theme].
+		Some of those items have a <span class="priority">higher priority</span> than others.
+	</p>
+
+	<ul>
+		<li><h4>Java 7 [<a href="#4">4</a>]</h4>
+		</p>
+		Work for JSR308 which is publicly available is in progress in JDT Core. For the JSR292, JSR294 and project Coin we need to wait for publicly available specifications.
+		This probably means that Java 7 support won't be completely done for the 3.7 release. We might be able to get all we need in time for 3.6.1.</p>
+		<strong>Note:</strong> In order to align our schedule with the delayed official Java 7 appearance and due to lack of publicly available
+		specifications (including lack of a Java 7 JSR), we have decided to move the development work to a separate branch and decouple it from the
+		3.6 release. In that branch we will continue to develop the Java 7 features as they become publicly accessible. We will deliver separate
+		updates for the official builds in order to provide early access to Java 7 features. 
+		
+		<li><h4>Adopt New Platform Features [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
+				<ul>
+					<li>test our bundles against it</li>
+					<li>help to investigate and fix bugs in the compatibility layer</li>
+				</ul>
+			</li>
+		</ul></li>
+		
+		<li><h4>API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>allow changing the default superclass in NewTestCaseWizardPageOne (bug 312204) <span class="work">Markus: 0.5d</span></li>
+			<li>add new participant-aware refactorings to IRefactoringProcessorIds  (bug 230244) <span class="work">Markus: 0.5d</span></li>
+			<li>expose JUnitModel.exportTestRunSession(...) as API (bug 316199) <span class="work">Markus: 0.5d</span></li>
+		</ul></li>
+
+		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
+			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2w</span>
+				<ul>
+					<li>Increase visibility (with info/warning message)?</li>
+					<li>add delegation if possible (with info/warning message)?</li>
+					<li>offer possibility to "fix" warning on error page?</li>
+				</ul>
+			</li>
+		</ul></li>
+		
+		<li><h4>Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>provide error/warning icon decorator and hover for hidden Problems view<span class="work">2d</span>
+				<ul>
+					<li>needs to be discussed with UI team first</li>
+				</ul>
+			</li>
+		  	<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
+		</ul>
+		
+		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 2d</span></li>
+		</ul>
+		
+		<li><h4>Type Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>multi-select packages and show in Type Hierarchy (bug 21417) <span class="work">Raksha: 3d</span></li>
+			<li>opening a type hierarchy on a logical package (bug 28472) <span class="work">Raksha: 3d</span></li>
+		</ul>
+		
+		<li><h4>JUnit [<a href="#4">4</a>]</h4>
+		<ul>
+			<li class="priority">update JUnit to its latest version<span class="work">Markus: 1d</span></li>
+		</ul>
+
+	  <li><h4>Content Assist [<a href="#3">3</a>]</h4>
+	    <ul>
+		  <li class="priority">fix constructor completion bugs <span class="work">Dani: 3d</span></li>
+	    </ul>
+	  </li>
+	
+	  <li><h4>Code Visualization [<a href="#3">3</a>]</h4>
+	    <ul>
+	      <li>show horizontal line between methods (bug 13672) <span class="work">Raksha or Deepak: 1w</span></li>
+	      <li>visualize code nesting (bug 69455) <span class="work">Raksha or Prakash: 2w</span>
+	      	<br>&rarr; could be implemented as semantic highlighting</li>
+	      <li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
+	    </ul>
+	  </li>
+  
+	  <li><h4>Quick views [<a href="#3">3</a>]</h4>
+	 	<ul>
+	  	  <li>allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">Raksha or Prakash: 2d</span>
+	    </ul>
+	  </li>
+	
+	  <li><h4>Performance And Memory Consumption [<a href="#1">1</a>]</h4>
+        <ul>
+		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> constantly watch performance test results and act when red</li>
+		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests</li>
+		</ul>
+			
+	  <li><h4>Miscellaneous</h4>
+	    <ul>
+		  <li>structured selection should support brackets (bug 86835) <span class="work">???</span></li>
+	    </ul>
+
+	    <li><h4>General Items</h4>
+		<ul>
+			<li class="priority">resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
+			<li class="priority">3.6.x maintenance work <span class="work">2w</span></li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> look at bugs with patches and review those</li>
+		</ul></li>
+	</ul>
+	
+
+	<h2><br>Cross Team Issues</h2>
+	<p>This section contains cross team issues that have to be clarified. The 
+	concrete outcome affects the plan items listed above.</p>
+	<ul>
+		<li>SWT
+		<ul>
+			<li>bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
+		</ul>
+		</li>
+		<li>Platform Compare
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>Platform UI
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>JDT Core (<a href="http://www.eclipse.org/jdt/core/r3.7/plan.php">3.7 plan</a>)
+		<ul>
+			<li>Java 7 features; detailed bugs TBD</li>
+		</ul>
+		</li>
+		<li>JDT Debug
+		<ul>
+			TBD
+		</ul>
+		</li>
+	</ul>
+  </td>
+</tr>
+
+
+<tr>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M1">Milestone M1 (2010-08-??)</font></font></td>
+</tr>
+
+  <tr> 
+    <td WIDTH="100%">
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M1">Platform Text 3.7 M1 Plan</a>.</p>
+
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
+			<li class="priority">3.6.1 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.7 planning <span class="work">1d</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Call Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M1_Test_Plan.html">test plan</a> for the 3.7 M1 test pass.</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M2">Milestone M2 (2010-09-??)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M2">Platform Text 3.7 M2 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">3.6.1 maintenance work <span class="work">1w</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/3.6.1_RC2_Test_Plan.html">test plan</a> for the 3.6.1 RC2 test pass.</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/3.6.1_RC3_Test_Plan.html">test plan</a> for the 3.6.1 RC3 test pass.</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M2_Test_Plan.html">test plan</a> for the 3.7 M2 test pass.</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M3">Milestone M3 (2010-10-??)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M3">Platform Text 3.7 M3 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">3.6.2 maintenance work <span class="work">1w</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M3_Test_Plan.html">test plan</a> for the 3.7 M3 test pass.</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M4">Milestone M4 (2010-12-??)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M4">Platform Text 3.7 M4 Plan</a>.</p>
+
+
+	    <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">3.6.2 maintenance work <span class="work">1w</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M4_Test_Plan.html">test plan</a> for the 3.7 M4 test pass.</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M5">Milestone M5 (2011-01-??) -  Major/Big Features Done</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M5">Platform Text 3.7 M5 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">3.6.2 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.6.2 one day test pass (<a href="testing/3.6.2_Test_Plan.html">test plan</a>)</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M5_Test_Plan.html">test plan</a> for the 3.7 M5 test pass.</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M6">Milestone M6 (2011-03-??) - API Freeze</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M6">Platform Text 3.7 M6 Plan</a>.</p>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M6_Test_Plan.html">test plan</a> for the 3.7 M6 test pass.</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M7">Milestone M7 (2011-04-??) - Feature Freeze, Focus on Performance and Polish</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M7">Platform Text 3.7 M7 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">0.5m</span></h4>
+		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
+		<ul>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">0.5m</span></h4>
+		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
+		<ul>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
+				<br>NOTE: Depends on the availability of the compatibility layer.
+				<ul>
+					<li>test our bundles against it</li>
+					<li>help to investigate and fix bugs in the compatibility layer</li>
+				</ul>
+			</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>watch performance tests</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M7_Test_Plan.html">test plan</a> for the 3.7 M7 test pass.</li>
+		</ul>
+		
+	</td>
+</tr>
+
+
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Tracking</font></font></td>
+</tr>
+
+<tr>
+<td>
+<ul>
+<li><a href="https://bugs.eclipse.org/bugs/query.cgi?bug_file_loc=&bug_file_loc_type=allwordssubstr&bug_id=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bugidtype=include&chfieldfrom=&chfieldto=Now&chfieldvalue=&classification=Eclipse&component=Text&component=UI&email1=&email2=&emailtype1=substring&emailtype2=substring&field-1-0-0=classification&field-1-1-0=product&field-1-2-0=component&field-1-3-0=bug_status&field0-0-0=noop&keywords=&keywords_type=allwords&long_desc=&long_desc_type=allwordssubstr&product=JDT&query_format=advanced&remaction=&short_desc=&short_desc_type=allwordssubstr&status_whiteboard=&status_whiteboard_type=allwordssubstr&type-1-0-0=anyexact&type-1-1-0=anyexact&type-1-2-0=anyexact&type-1-3-0=anyexact&type0-0-0=noop&value-1-0-0=Eclipse&value-1-1-0=JDT&value-1-2-0=Text%2CUI&value-1-3-0=UNCONFIRMED%2CNEW%2CASSIGNED%2CREOPENED&value0-0-0=&votes=">find a bug report</a></li>
+<li><a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT">report a bug</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="5" width="100%"><tbody><tr><td colspan="4" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="../images/glass.gif" border="0" height="10" width="10"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/ok.gif" border="0" height="10" width="10"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="center"><font class="indexsub" color="#8080ff">[xyz]</font></td>
+			<td width="50%">item is deferred (&gt;) from xyz or continues in xyz.</td>
+			<td valign="center"><font class="indexsub"><img src="../images/new.gif" border="0"></font></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>&nbsp;
+</body>
+</html>
