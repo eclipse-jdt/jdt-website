@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2010/06/21 13:40:47 $</p>
+    <p>Last revised $Date: 2010/06/21 16:15:43 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -171,22 +171,30 @@ function showHiddenWork() {
 					<li>offer possibility to "fix" warning on error page?</li>
 				</ul>
 			</li>
+			<li>permanent local rename mode [experimental]
+			<ul>
+				<li>editing always updates like "Local Rename" (automatically enter linked mode)</li>
+				<li>investigate interplay with "refactoring only" mode</li>
+			</ul></li>
 		</ul></li>
 		
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>provide error/warning icon decorator and hover for hidden Problems view<span class="work">2d</span>
+			<li>provide error/warning icon decorator and hover for hidden Problems view <span class="work">2d</span>
 				<ul>
 					<li>needs to be discussed with UI team first</li>
 				</ul>
 			</li>
-		  	<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
+			<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
+			<li>better support for Java properties files (native2ascii conversion) (bug 65571)</li>
+			<li>command to open 'Java Stack Trace Console' (bug 48880) <span class="work">Deepak</span></li>
 		</ul>
 		
 		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
 			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 2d</span></li>
+			<li>document positions not updated for call locations (bug 121900) <span class="work">Raksha</span></li>
 		</ul>
 		
 		<li><h4>Type Hierarchy [<a href="#3">3</a>]</h4>
