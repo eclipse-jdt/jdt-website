@@ -303,8 +303,10 @@ function addFixedInTargetLink(parentElem) {
 
 function addTargetLink(parentElem, milestone) {
     var href= 'javascript:document.getElementById("target_milestone").value="' + milestone + '";'
-            + 'document.getElementById("assigned_to").focus();'
-            + 'document.getElementById("assigned_to").select();';
+            + 'var assigned_toElem=document.getElementById("assigned_to");'
+            + 'if(assigned_toElem){'
+            +   'assigned_toElem.focus();assigned_toElem.select();'
+            + '}'
             + 'void(0);';
     addLink(milestone, href, parentElem);
 }
@@ -454,6 +456,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var choosers= createCategoryChoosers();
 	    choosers.style.paddingRight = "1em";
 	    Search_topElem.parentNode.insertBefore(choosers, Search_topElem);
+	}
+
+	// Add target milestone links:
+	var targetElem= document.getElementById("target_milestone");
+	if (targetElem) {
+		var targetLinkSpanElem= document.createElement("span");
+		targetLinkSpanElem.style.marginLeft= ".5em";
+		targetLinkSpanElem.style.fontWeight= "normal";
+		targetElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(targetLinkSpanElem);
+		for (var i= 0; i < target_milestones.length; i++) {
+			addTargetLink(targetLinkSpanElem, target_milestones[i]);
+		}
+		addTargetLink(targetLinkSpanElem, "---");
 	}
 
     // Add shortcut email links:
