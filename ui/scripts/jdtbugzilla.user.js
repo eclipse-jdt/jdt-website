@@ -477,6 +477,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 	
 } else { // For all result pages:
+	var bugId;
 
 	// Rewrite header for direct copy/paste as CVS comment ("Bug xxx: Summary"):
 	var titleElem= document.getElementById("title");
@@ -485,7 +486,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var bugRegex= /Bug\s+(\d+)/i
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
-	            var bugId= bugRegex.exec(titleElem.textContent)[1];
+	            bugId= bugRegex.exec(titleElem.textContent)[1];
 			    var bugLink= document.createElement("a");
 			    bugLink.href= "../" + bugId;
 			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
@@ -738,6 +739,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
+	var commentRegex= /c(\d+)/; // c42
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    
@@ -748,6 +750,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        diffElem.href= aElem.href.replace(detailsRegex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
 	        aElem.parentNode.appendChild(document.createTextNode(" "));
 	        aElem.parentNode.appendChild(diffElem);
+	    
+	    // Add >bug 170000 comment 42< to simplify copy/paste of reference:
+	    } else if (aElem.name.match(commentRegex)) {
+	        var refElem= document.createElement("span");
+	        refElem.textContent= ">bug " + bugId + " comment " + commentRegex.exec(aElem.name)[1] + "< ";
+	        refElem.className= "quote";
+	        aElem.parentNode.insertBefore(refElem, aElem);
 	    }
 	    
 	//    // Show obsolete attachments initially:
