@@ -739,7 +739,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
-	var commentRegex= /c(\d+)/; // c42
+	var commentRegex= /^c(\d+)$/; // c42
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    
