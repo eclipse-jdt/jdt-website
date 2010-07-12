@@ -52,3 +52,20 @@ the view's dropdown menu (the triangle) is the right place.
 - all menu entries, toolbar tooltips, etc should use chapter capitalization 
 (note that it's OK to capitalize a short word if it's the last in the label)
 
+
+
+
+Dumping some general Issues:
+- don't submit a patch that has any warning (Markus and I have the rule that if we touch a file that has warnings, we also go and fix those, even if not created by us)
+- make sure your code is formatted
+	- this should happen automatically if you use save actions
+	- example of wrong formatting: if (!<space>condition)
+	- however: do not format the whole file - only format the code you add or touch
+- labels:
+	- must have mnemonic (use same if used in same button elsewhere if possible)
+	- never use (s) but have both forms, e.g. working set and working sets
+	- if only one, then show the name, e.g. delete working set 'foo'
+	- use single quotes when displaying a UI element
+	- never put UI strings into code: they must be externalized
+	- enable spell checking so you don't have typos like 'Dont'
+
