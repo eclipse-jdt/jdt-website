@@ -40,30 +40,12 @@ ob_start();
 			<p>Here are listed links to information about the current development stream (HEAD).</p>
 			<table>
 			  <tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>Bug resolution</b>
-<ul>
-<li>
-<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&changedin=7&product=JDT&component=Core" >Resolved in the last week</a></li>
-
-<li>
-<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=CORE" >New, Assigned and Reopened</a>&nbsp;
-(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&priority=P1&product=JDT&version=&component=CORE" >priority 1</a>)
-(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=JDT&component=Core&target_milestone=---" >uncommitted</a>
-)
-</li>
-
-<li>
-<a href="http://dev.eclipse.org/bugs/buglist.cgi?resolution=LATER&product=JDT&component=Core" >Deferred</a></li>
-
-</ul>
-</td>
 </tr>
   <tr>
     <td align=right valign=top width="2%"><img src="http://dev.eclipse.org/images/Adarrow.gif" border=0 height=16 width=16></td>
     <td width="98%"> <b>How To</b>
       <ul>
-        <li><a href="http://help.eclipse.org/help31/topic/org.eclipse.jdt.doc.isv/guide/jdt_api_compile.htm">run the batch compiler</a> </li>
+        <li><a href="http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.jdt.doc.isv/guide/jdt_api_compile.htm">run the batch compiler</a> </li>
         <li><a href="howto/generate%20parser/generateParser.html">generate the parser</a> </li>
       </ul>
     </td>
@@ -99,8 +81,6 @@ ob_start();
       Here are tools provided as a courtesy of JDT Core Team:</p>
       <ul>
         <li><a href="tools/jdtcoretools/index.php">JDT/Core utilities</a></li>
-        <li><a href="tools/diff/index.php">Diff</a></li>
-        <li><a href="tools/internal/index.php">Internal</a></li>
       </ul>
     </td>
   </tr>
@@ -109,7 +89,7 @@ ob_start();
     <td width="98%"> <b>Compiler DTD file</b><p>
       The compiler DTD for XML compiler log can be found here: </p>
       <ul>
-       <li><a href="compiler_32_001.dtd" type="text/plain">Version 3.2.001 compiler.dtd</a></li>
+       <li><a href="compiler_32_004.dtd" type="text/plain">Version 3.2.004 compiler.dtd</a></li>
       </ul>
     </td>
   </tr></table>
@@ -121,7 +101,7 @@ ob_start();
 			<table>
 <tr>
 <td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.4.x (development in progress)</b>
+<td WIDTH="98%"><b>R3.4.x</b>
 <ul>
 <li>Detailed <a href="r3.4/index.php">description</a></li>
 <li>Get the official <a href="r3.4/index.php#SOURCES">sources for JDT/Core</a></li>
