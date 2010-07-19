@@ -70,15 +70,25 @@ be run headless.</p>
 			<a name="HAPPENING"></a>
 			<h2><b>What&#8217;s Happening?</b></h2>
 
-<h3>R3.6 Development</h3>
+<h3>R3.7 Development</h3>
 <ul>
   <li>Most active development goes into this stream.
   </li>
-  <li> The 3.6 plan is posted <a href="r3.6/plan.php">here</a>.
+  <li> The 3.7 plan is posted <a href="r3.7/plan.php">here</a>.
   </li>
-  <li> The 3.6 next-milestone plan is posted <a href="r3.6/plan.php#current-milestone">here</a>.
+  <li> The 3.7 next-milestone plan is posted <a href="r3.7/plan.php#current-milestone">here</a>.
   </li>
 </ul>
+
+<h3>R3.6 Development</h3>
+<ul>
+  <li> Release 3.6 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
+  </li>
+  <li> Latest information on further maintenance is available <a href="r3.6/index.php#maintenance">here</a>.
+  </li>
+  <li> Patch available in <a href="r3.6/index.php#UPDATES">update</a> area (for testing purpose).
+  </li>
+</ul>	
 			
 				<h3>R3.5 Maintenance</h3>
 <ul>
