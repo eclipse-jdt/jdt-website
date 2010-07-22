@@ -751,12 +751,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        aElem.parentNode.appendChild(document.createTextNode(" "));
 	        aElem.parentNode.appendChild(diffElem);
 	    
-	    // Add >bug 170000 comment 42< to simplify copy/paste of reference:
+	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
 	    } else if (aElem.name.match(commentRegex)) {
-	        var refElem= document.createElement("span");
-	        refElem.textContent= ">bug " + bugId + " comment " + commentRegex.exec(aElem.name)[1] + "< ";
-	        refElem.className= "quote";
-	        aElem.parentNode.insertBefore(refElem, aElem);
+	        aElem.textContent= "comment " + commentRegex.exec(aElem.name)[1];
+	        var pre= document.createTextNode(">bug " + bugId + " ");
+	        aElem.parentNode.insertBefore(pre, aElem);
+	        var post= document.createTextNode("<");
+	        aElem.parentNode.insertBefore(post, aElem.nextSibling);
 	    }
 	    
 	//    // Show obsolete attachments initially:
