@@ -378,6 +378,8 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + "#titles a:visited { color: #636 ! important; }\n"
     + "#titles a:hover { color: #333 ! important; }\n"
     + "#titles a:active { color: #000 ! important; }\n"
+// Fix color of comment number:
+    + ".bz_comment_number { color: #65379c; }\n"
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
@@ -750,14 +752,27 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        diffElem.href= aElem.href.replace(detailsRegex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
 	        aElem.parentNode.appendChild(document.createTextNode(" "));
 	        aElem.parentNode.appendChild(diffElem);
+	        i++; //skip new anchor
 	    
 	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
 	    } else if (aElem.name.match(commentRegex)) {
 	        aElem.textContent= "comment " + commentRegex.exec(aElem.name)[1];
-	        var pre= document.createTextNode(">bug " + bugId + " ");
+	        
+	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
-	        var post= document.createTextNode("<");
-	        aElem.parentNode.insertBefore(post, aElem.nextSibling);
+	        
+//	        // turns bugId into a link:
+//	        var pre= document.createTextNode("bug ");
+//	        aElem.parentNode.insertBefore(pre, aElem);
+//	        
+//		    var bugLink= document.createElement("a");
+//		    bugLink.href= "../" + bugId;
+//		    bugLink.textContent= bugId;
+//	        aElem.parentNode.insertBefore(bugLink, aElem);
+//	        i++; //prevent endless loop
+//	        
+//	        var space= document.createTextNode(" ");
+//	        aElem.parentNode.insertBefore(space, aElem);
 	    }
 	    
 	//    // Show obsolete attachments initially:
