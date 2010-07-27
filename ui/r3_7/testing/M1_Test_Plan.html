@@ -65,8 +65,8 @@ function traverseLinkifyBugs(node) {
 
 <body onload="linkifyBugs();">
 <h1>3.7 M1 Test Plan</h1>
-Test day: Tuesday, 2010-08-??<br>
-Test Build: I201008??-2000 (<em>always switch to latest available build</em>)<br>
+Test day: Tuesday, 2010-08-03<br>
+Test Build: I20100802-2000 (<em>always switch to latest available build</em>)<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Dani, Deepak, Markus, Raksha<br>
 
@@ -134,6 +134,16 @@ Verify that hand pointer is shown correctly for
 <h4>NLS Tooling (???, ??? - Questions: Deepak)</h4>
 Externalize strings escapes ISO 8859-1 (bug 320133)
 
+<h4>'F' decorator for local variables (???, ??? - Questions: Dani)</h4>
+Verify that the 'F' decorator works as expected: 
+<ul>
+	<li>verify that final local variables show the 'F' decorator in hovers (bug 320876)</li>
+	<li>verify that final local variables show the 'F' decorator in the Javadoc view (bug 320876)</li>
+	<li>verify that final local variables show the 'F' decorator in the Search view (bug 320876)</li>
+	<li>think of other places in the UI where local variables could be rendered an test them</li>
+	<li>verify the above scenarios for non-final local variables</li>
+	<li>verify the above scenarios for fields</li>
+</ul>
 
 <h2>Test 3.6.1 Fixes</h2>
 Make sure to verify all 
