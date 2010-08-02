@@ -104,9 +104,10 @@ Verify that the memory leak fixes work.
 <ul>
 	<li>workspace window (and tons of objects depending on it) when closed (bug 315620)</li>
 	<li>label providers and images of tabbed property pages (bug 275702)</li>
+	<li>PopupDialog leaks Tracker (bug 317076, Questions: Markus)</li>
 </ul>
 
-<h4>Show hand pointer for single-click tables and trees (bug 277862) (???, ??? - Questions: Deepak)</h4>
+<h4>Show hand pointer for single-click tables and trees (bug 277862) (Markus, Dani - Questions: Deepak)</h4>
 Verify that hand pointer is shown correctly for
 <ul>
 	<li>Quick Outline</li>
@@ -119,7 +120,7 @@ Verify that hand pointer is shown correctly for
 	<li>Window > Navigate > Next Editor/View/Perspective commands</li>
 </ul>
 
-<h4>Better UI to find preferences on Java > Compiler > Errors/Warnings (bug 315772) (???, ??? - Questions: Deepak)</h4>
+<h4>Better UI to find preferences on Java > Compiler > Errors/Warnings (bug 315772) (Dani, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that you can filter on preference labels.</li>
 	<li>Verify that you can filter on preference values.</li>
@@ -127,33 +128,33 @@ Verify that hand pointer is shown correctly for
 	<li>Verify that the 'Clear text' button in the filter box works correctly.</li>
 </ul>
 
-<h4>Refactoring (???, ??? - Questions: Deepak)</h4>
+<h4>Refactoring (Dani, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Autoboxing breaks method inlining (bug 267386)</li>
 	<li>'Extract Method' into an enclosing class fails when the inner class has a method of the same name (bug 318127)</li>
 </ul>
 
-<h4>Wizards(???, ??? - Questions: Deepak)</h4>
+<h4>Wizards(Raksha, Dani - Questions: Deepak)</h4>
 <ul>
 	<li>New Source folder wizard enables finish without valid project (bug 314777) </li>
 	<li>New Test Case wizard: Browse... does nothing(bug 313478)</li>
 </ul>
 
-<h4>NLS Tooling (???, ??? - Questions: Deepak)</h4>
+<h4>NLS Tooling (Dani, Markus - Questions: Deepak)</h4>
 Externalize strings escapes ISO 8859-1 (bug 320133)
 
-<h4>'F' decorator for local variables (???, ??? - Questions: Dani)</h4>
+<h4>'F' decorator for local variables (Raksha, Markus - Questions: Dani)</h4>
 Verify that the 'F' decorator works as expected: 
 <ul>
 	<li>verify that final local variables show the 'F' decorator in hovers (bug 320876)</li>
 	<li>verify that final local variables show the 'F' decorator in the Javadoc view (bug 320876)</li>
 	<li>verify that final local variables show the 'F' decorator in the Search view (bug 320876)</li>
-	<li>think of other places in the UI where local variables could be rendered an test them</li>
+	<li>think of other places in the UI where local variables could be rendered and test them</li>
 	<li>verify the above scenarios for non-final local variables</li>
 	<li>verify the above scenarios for fields</li>
 </ul>
 
-<h4>Platform Team fixes (???, ??? - Questions: Dani)</h4>
+<h4>Platform Team fixes (Raksha, Markus - Questions: Dani)</h4>
 Verify the following fixes/enhancements: 
 <ul>
 	<li>'Check Out As' dialog should honor the auto-refresh tag preference (bug 319516)</li>
@@ -161,7 +162,7 @@ Verify the following fixes/enhancements:
 	<li>Synchronize view: Refresh (F5) does not refresh but start synchronizing (bug 109039)</li>
 </ul>
 
-<h4>Open Hyperlink (???, ??? - Questions: Raksha)</h4>
+<h4>Open Hyperlink (Deepak, Markus - Questions: Raksha)</h4>
 Verify that the new command works in text editors with key binding and command/action works in Java and Properties File editors (bug 78522)
 <ul>
 	<li>Test that it works when there is only one hyperlink at the current caret location</li>
@@ -170,7 +171,7 @@ Verify that the new command works in text editors with key binding and command/a
 	<li>Test that it works on read only files (bug 321329)</li>
 </ul>
 
-<h4>Refactorings (???, ??? - Questions: Raksha)</h4>
+<h4>Refactorings (Markus, Deepak - Questions: Raksha)</h4>
 Verify that Convert Anonymous Class to Nested... refactoring stores all the settings in the wizard (bug 167590) 
 <ul>
 	<li>Test that it stores the settings when toggled and even on pressing cancel</li>
@@ -193,7 +194,7 @@ Verify that Encapsulate Field... generates getter and setter in the same order a
 	<li>Test that the quick fix also generates in the same order and that there are no test failures</li>
 </ul>
 
-<h4>Search In options (???, ??? - Questions: Raksha)</h4>
+<h4>Search In options (Deepak, Dani - Questions: Raksha)</h4>
 Verify that the Search In dialog is added to the Call Hierarchy view menu (bug 234849)
 <ul>
 	<li>Test that the Call Hierarchy is refreshed when the Search scope or Search In options are changed and the description is updated</li>
@@ -201,14 +202,14 @@ Verify that the Search In dialog is added to the Call Hierarchy view menu (bug 2
 	<li>Test that it works for one or more working sets</li>	
 </ul>
 
-<h4> Open declaration (???, ??? - Questions: Raksha)</h4>
+<h4> Open declaration (Deepak, Markus - Questions: Raksha)</h4>
 Verify that Open Declaration works well on .java files that are not on the build path (bug 311283) 
 <ul>
 	<li>Test that it jumps to the declaration for references within the same file</li>
 	<li>Test that it opens other references that are on the classpath and shows the error dialog otherwise</li>		
 </ul>
 
-<h4> UserLibraryPreferencePage (???, ??? - Questions: Raksha)</h4>
+<h4> UserLibraryPreferencePage (Markus, Deepak - Questions: Raksha)</h4>
 Verify that after renaming a user library the Up, Down, Remove buttons work as expected (bug 312054) 
 <ul>
 	<li>Test renaming multiple times and each time creating/editing a jar or its attributes</li>
@@ -220,40 +221,41 @@ Verify that Edit/Remove work as expected when same jar is contained in 2 or more
 </ul>
 
 
-<h4> Hover and Javadoc view colors (???, ??? - Questions: Markus)</h4>
+<h4> Hover and Javadoc view colors (Deepak, Dani - Questions: Markus)</h4>
 <ul>
 	<li>Test that hovers (source, Javadoc, changed lines) and the Javadoc view are readable even with unusual tooltip colors (e.g. green-on-black)</li>
 	<li>Test that colors are updated when the OS color is changed</li>			
 </ul>
 
-<h4> Decorator on CUs for Deprecated and package-visible (???, ??? - Questions: Markus)</h4>
+<h4> Decorator on CUs for Deprecated and package-visible (Raksha, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>Test that the "Java Type Indicator" decorator also shows deprecated and package-visible overlays (bug 314283, bug 168520)</li>
+	<li>Comment in bug 314283 if you have a better idea how to avoid too much overlap between decorators</li>
 </ul>
 
-<h4> Extract to constant or local variable Quick Assists without selection (???, ??? - Questions: Markus)</h4>
+<h4> Extract to constant or local variable Quick Assists without selection (Deepak, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>Quick Assists should also be available and work with a zero-length selection (bug 315909)</li>
 </ul>
 
-<h4> Naming of File &gt; Convert Line Delimiters To &gt; ... (Deepak, Dani - Questions: Markus)</h4>
+<h4> Naming of File &gt; Convert Line Delimiters To &gt; ... (Deepak, Markus - Questions: Markus)</h4>
 <ul>
 	<li>check that the action names are readable in menus, Keys preference page, Ctrl+3 (bug 315557)</li>
 </ul>
 
-<h4> Breadcrumb (???, ???? - Questions: Markus)</h4>
+<h4> Breadcrumb (Raksha, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>Test that drop-down remembers maximal height (bug 251200)</li>
 	<li>Test Hide context menu item (bug 310470)</li>
 </ul>
 
-<h4> Open Resource (???, ???? - Questions: Markus)</h4>
+<h4> Open Resource (Dani, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>Test that patterns like <code>FileName.ext&lt;</code> show exact matches first (bug 319852)</li>
 	<li>Test that camel-case patterns and incomplete extensions are still found</li>
 </ul>
 
-<h4> JUnit 4 test suite wizard (???, ???? - Questions: Markus)</h4>
+<h4> JUnit 4 test suite wizard (Raksha, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>Test New &gt; Test Suite wizard can create JUnit 4 test suites (bug 155828)</li>
 	<li>Test that Recreate Test Suite... from context menu works</li>
