@@ -161,6 +161,64 @@ Verify the following fixes/enhancements:
 	<li>Synchronize view: Refresh (F5) does not refresh but start synchronizing (bug 109039)</li>
 </ul>
 
+<h4>Open Hyperlink (???, ??? - Questions: Raksha)</h4>
+Verify that the new command works in text editors with key binding and command/action works in Java and Properties File editors (bug 78522)
+<ul>
+	<li>Test that it works when there is only one hyperlink at the current caret location</li>
+	<li>Test that the error dialog is shown on non-hyperlink targets from the command as well as the action</li>
+	<li>Test that the control takes focus when the command is invoked and that F1 help works for the action</li>
+	<li>Test that it works on read only files (bug 321329)</li>
+</ul>
+
+<h4>Refactorings (???, ??? - Questions: Raksha)</h4>
+Verify that Convert Anonymous Class to Nested... refactoring stores all the settings in the wizard (bug 167590) 
+<ul>
+	<li>Test that it stores the settings when toggled and even on pressing cancel</li>
+	<li>Test the scenarios mentioned in the bug comment #8</li>
+	<li>Test that visibility settings are set to default for local inner classes and remembered for other cases</li>	
+</ul>
+Verify that Extract Constant... is enabled in the context menu and works for Annotations (bug 303617)
+<ul>
+	<li>Test that the action in pop up behaves similar to the action in Refactor menu</li>
+	<li>Test that it works on different kinds of Annotation nodes </li>
+</ul>
+Verify that the comments do not get deleted after Move Type to New File... refactoring (bug 305103)
+<ul>
+	<li>Test that it works in various examples from bug 305103 for scenarios where different types of comments are moved to the new CU as well as when the comments remain in the old CU- compare with AST View</li>
+	<li>Test that it works with multiple single line comments (ex from bug 306524)</li>
+	<li>Test that it works for both inner classes as well as secondary classes</li>
+</ul>
+Verify that Encapsulate Field... generates getter and setter in the same order as Source -> Generate getters and setters (bug 315363)
+<ul>
+	<li>Test that the quick fix also generates in the same order and that there are no test failures</li>
+</ul>
+
+<h4>Search In options (???, ??? - Questions: Raksha)</h4>
+Verify that the Search In dialog is added to the Call Hierarchy view menu (bug 234849)
+<ul>
+	<li>Test that the Call Hierarchy is refreshed when the Search scope or Search In options are changed and the description is updated</li>
+	<li>Test the the Call Hierarchy Search In dialog settings are stored and context help works</li>
+	<li>Test that it works for one or more working sets</li>	
+</ul>
+
+<h4> Open declaration (???, ??? - Questions: Raksha)</h4>
+Verify that Open Declaration works well on .java files that are not on the build path (bug 311283) 
+<ul>
+	<li>Test that it jumps to the declaration for references within the same file</li>
+	<li>Test that it opens other references that are on the classpath and shows the error dialog otherwise</li>		
+</ul>
+
+<h4> UserLibraryPreferencePage (???, ??? - Questions: Raksha)</h4>
+Verify that after renaming a user library the Up, Down, Remove buttons work as expected (bug 312054) 
+<ul>
+	<li>Test renaming multiple times and each time creating/editing a jar or its attributes</li>
+	<li>Test the enablement of Up/Down/Remove buttons</li>			
+</ul>
+Verify that Edit/Remove work as expected when same jar is contained in 2 or more libs (bug 320199)
+<ul>
+	<li>Test that changing different attribute values or removing them reflects on the right element in the preference page</li>		
+</ul>
+
 <h2>Test 3.6.1 Fixes</h2>
 Make sure to verify all 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
