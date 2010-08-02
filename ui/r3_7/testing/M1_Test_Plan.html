@@ -219,6 +219,49 @@ Verify that Edit/Remove work as expected when same jar is contained in 2 or more
 	<li>Test that changing different attribute values or removing them reflects on the right element in the preference page</li>		
 </ul>
 
+
+<h4> Hover and Javadoc view colors (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>Test that hovers (source, Javadoc, changed lines) and the Javadoc view are readable even with unusual tooltip colors (e.g. green-on-black)</li>
+	<li>Test that colors are updated when the OS color is changed</li>			
+</ul>
+
+<h4> Decorator on CUs for Deprecated and package-visible (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>Test that the "Java Type Indicator" decorator also shows deprecated and package-visible overlays (bug 314283, bug 168520)</li>
+</ul>
+
+<h4> Extract to constant or local variable Quick Assists without selection (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>Quick Assists should also be available and work with a zero-length selection (bug 315909)</li>
+</ul>
+
+<h4> Naming of File &gt; Convert Line Delimiters To &gt; ... (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>check that the action names are readable in menus, Keys preference page, Ctrl+3 (bug 315557)</li>
+</ul>
+
+<h4> Breadcrumb (???, ???? - Questions: Markus)</h4>
+<ul>
+	<li>Test that drop-down remembers maximal height (bug 251200)</li>
+	<li>Test Hide context menu item (bug 310470)</li>
+</ul>
+
+<h4> Open Resource (???, ???? - Questions: Markus)</h4>
+<ul>
+	<li>Test that patterns like <code>FileName.ext&lt;</code> show exact matches first (bug 319852)</li>
+	<li>Test that camel-case patterns and incomplete extensions are still found</li>
+</ul>
+
+<h4> JUnit 4 test suite wizard (???, ???? - Questions: Markus)</h4>
+<ul>
+	<li>Test New &gt; Test Suite wizard can create JUnit 4 test suites (bug 155828)</li>
+	<li>Test that Recreate Test Suite... from context menu works</li>
+	<li>Test that support for JUnit 3 test suites still works</li>
+</ul>
+
+
+
 <h2>Test 3.6.1 Fixes</h2>
 Make sure to verify all 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
@@ -226,7 +269,7 @@ Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.6.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
 <h4>Test all fixes against 3.6.1 (???, ???)</h4>
-Use M20090729-0903.
+Use M20100728-0800.
 
 <h4>Test all fixes against 3.7 M1 (???, ???)</h4>
 
