@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2010/07/26 19:05:56 $</p>
+    <p>Last revised $Date: 2010/08/04 14:28:54 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -138,10 +138,10 @@ function showHiddenWork() {
 		<li><h4>Java 7 [<a href="#4">4</a>]</h4>
 		</p>
 		Work for JSR308 which is publicly available is in progress in JDT Core. For the JSR292, JSR294 and project Coin we need to wait for publicly available specifications.
-		This probably means that Java 7 support won't be completely done for the 3.7 release. We might be able to get all we need in time for 3.6.1.</p>
+		This probably means that Java 7 support won't be completely done for the 3.7 release.</p>
 		<strong>Note:</strong> In order to align our schedule with the delayed official Java 7 appearance and due to lack of publicly available
-		specifications (including lack of a Java 7 JSR), we have decided to move the development work to a separate branch and decouple it from the
-		3.6 release. In that branch we will continue to develop the Java 7 features as they become publicly accessible. We will deliver separate
+		specifications (including lack of a Java 7 JSR), we have decided to move the development work to a separate branch and decouple it from 
+		HEAD for now. In that branch we will continue to develop the Java 7 features as they become publicly accessible. We will deliver separate
 		updates for the official builds in order to provide early access to Java 7 features. 
 		
 		<li><h4>Adopt New Platform Features [<a href="#3">3</a>]</h4>
@@ -156,9 +156,9 @@ function showHiddenWork() {
 		
 		<li><h4>API [<a href="#2">2</a>]</h4>
 		<ul>
-			<li>allow changing the default superclass in NewTestCaseWizardPageOne (bug 312204) <span class="work">Markus: 0.5d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow changing the default superclass in NewTestCaseWizardPageOne (bug 312204) <span class="work">Markus: 0.5d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> expose JUnitModel.exportTestRunSession(...) as API (bug 316199) <span class="work">Markus: 0.5d</span></li>
 			<li>add new participant-aware refactorings to IRefactoringProcessorIds  (bug 230244) <span class="work">Markus: 0.5d</span></li>
-			<li>expose JUnitModel.exportTestRunSession(...) as API (bug 316199) <span class="work">Markus: 0.5d</span></li>
 		</ul></li>
 
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
@@ -180,6 +180,8 @@ function showHiddenWork() {
 		
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to filter on the 'Errors/Warnings' preference/property page (bug 315772) <span class="work">Deepak 1w</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> show hand pointer for single-click tables and trees (bug 277862) <span class="work">Deepak 2d</span></li>
 			<li>provide error/warning icon decorator and hover for hidden Problems view <span class="work">Dani: 2d</span>
 				<ul>
 					<li>needs to be discussed with UI team first</li>
@@ -194,6 +196,8 @@ function showHiddenWork() {
 		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> offer additional search scopes via new 'Search In...' view menu<span class="work">Raksha: 2d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> refresh view automatically after switching scopes<span class="work">Raksha: 0.5d</span></li>
 			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 2d</span></li>
 			<li>document positions not updated for call locations (bug 121900) <span class="work">Raksha</span></li>
 		</ul>
@@ -206,13 +210,14 @@ function showHiddenWork() {
 		
 		<li><h4>JUnit [<a href="#4">4</a>]</h4>
 		<ul>
-			<li class="priority">update JUnit to its latest version<span class="work">Markus: 1d</span></li>
+			<li class="priority">update JUnit to its latest version <span class="work">Markus: 1d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> external contribution: add JUnit 4 support to test suite wizard (bug 155828) <span class="work">Markus: 1d</span></li>
 		</ul>
 
-	  <li><h4>Content Assist [<a href="#3">3</a>]</h4>
-	    <ul>
-		  <li class="priority">fix constructor completion bugs <span class="work">Dani: 3d</span></li>
-	    </ul>
+		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">fix constructor completion bugs <span class="work">Dani: 3d</span></li>
+		</ul>
 	  </li>
 	
 	  <li><h4>Code Visualization [<a href="#3">3</a>]</h4>
@@ -243,8 +248,8 @@ function showHiddenWork() {
 
 	    <li><h4>General Items</h4>
 		<ul>
-			<li class="priority">resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
-			<li class="priority">3.6.x maintenance work <span class="work">2w</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.6.1 maintenance work <span class="work">1w</span></li>
 			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> look at bugs with patches and review those</li>
 		</ul></li>
 	</ul>
@@ -295,16 +300,34 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority">resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
-			<li class="priority">3.6.1 maintenance work <span class="work">1w</span></li>
-			<li class="priority">3.7 planning <span class="work">1d</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M2]</font> resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M2]</font> 3.6.1 maintenance work <span class="work">1w</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7 planning <span class="work">1d</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow changing the default superclass in NewTestCaseWizardPageOne (bug 312204) <span class="work">Markus: 0.5d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> expose JUnitModel.exportTestRunSession(...) as API (bug 316199) <span class="work">Markus: 0.5d</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to filter on the 'Errors/Warnings' preference/property page (bug 315772) <span class="work">Deepak 1w</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> show hand pointer for single-click tables and trees (bug 277862) <span class="work">Deepak 2d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> offer additional search scopes via new 'Search In...' view menu<span class="work">Raksha: 2d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> refresh view automatically after switching scopes<span class="work">Raksha: 0.5d</span></li>
 		</ul>
-
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> external contribution: add JUnit 4 support to test suite wizard (bug 155828) <span class="work">Markus: 1d</span></li>
+		</ul>
+		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li>bugzilla inbox tracking</li>
@@ -315,7 +338,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M1_Test_Plan.html">test plan</a> for the 3.7 M1 test pass.</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M1_Test_Plan.html">test plan</a> for the 3.7 M1 test pass.</li>
 		</ul>
 	</td>
 </tr>
@@ -332,6 +355,16 @@ function showHiddenWork() {
 			<li class="priority">3.6.1 maintenance work <span class="work">1w</span></li>
 		</ul>
 		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Call Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">fix constructor completion bugs <span class="work">Dani: 3d</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li>bugzilla inbox tracking</li>
