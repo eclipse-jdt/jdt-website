@@ -151,13 +151,22 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/progress.png" border="0" alt="progress"> constantly watch performance test results and act when red</li>
 			<li class="priority"><img src="../images/progress.png" border="0" alt="progress"> continue to provide new tests</li>
 			<li class="priority"><img src="../images/progress.png" border="0" alt="progress"> improve code coverage</li>
+			<li>Make APT more scalable. This might require changes in DOM/AST binding story.</li>
+			<li>Improve performances for classpath resolution</li>
 		</ul>
 		</li>
 		<li><h4>General Items</h4>
-		<ul>
-			<li class="priority"><img src="../images/progress.png" border="0" alt="progress"> 3.6.x maintenance work <span class="work">[all]</span></li>
-			<li><img src="../images/progress.png" border="0" alt="progress"> look at bugs with patches and review those</li>
-		</ul></li>
+			<ul>
+				<li class="priority"><img src="../images/progress.png" border="0" alt="progress"> 3.6.x maintenance work <span class="work">[all]</span></li>
+				<li><img src="../images/progress.png" border="0" alt="progress"> look at bugs with patches and review those</li>
+				<li>Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a></li>
+				<li>Add encoding support for source attachment: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=303511">303511</a></li>
+				<li>Improve support of Java 5 code being referenced from a 1.4 project (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=305259">305259</a>)</li>
+				<li>Improve AST rewrite to better handle changes into changes (bugs <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=308886">308886</a> and <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=319448">319448</a>)</li>
+				<li>Add regexp to Java search (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>)</li>
+				<li>A couple of new enhancements in the code formatter</li>
+			</ul>
+		</li>
 	</ul>
 </td>
 </tr>
