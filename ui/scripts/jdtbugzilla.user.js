@@ -268,6 +268,15 @@ function addNewccLink(name, email, parentElem) {
     addLink(name, href, parentElem, email);
 }
 
+function addCcLink(name, email, parentElem) {
+    var href= 'javascript:document.getElementsByName("cc")[0].value="' + email + ' " + document.getElementsByName("cc")[0].value;'
+            + 'document.getElementsByName("cc")[0].focus();'
+            + 'document.getElementsByName("cc")[0].selectionStart= 0;'
+            + 'document.getElementsByName("cc")[0].selectionEnd= ' + email.length + ';'
+            + 'void(0);';
+    addLink(name, href, parentElem, email);
+}
+
 function addEmailLinks(emailElemName) {
 	var emailElems= document.getElementsByName(emailElemName);
 	if (emailElems.length > 0) {
@@ -433,6 +442,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		summaryTr.parentNode.insertBefore(tr, summaryTr);
     }
     
+	var ccElems= document.getElementsByName("cc");
+	if (ccElems.length > 0) {
+	    var ccElem= ccElems[0];
+	    // Add shortcut cc links:
+	    for (var i= 0; i < ccs.length; i= i+2) {
+            addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode)
+        }
+        // Make URL field wider, so that inserted cc links do not wrap:
+        var bug_file_locElems= document.getElementsByName("bug_file_loc");
+        if (bug_file_locElems.length > 0) {
+            bug_file_locElems[0].setAttribute("size", "55");
+        }
+	}
 
 
 
