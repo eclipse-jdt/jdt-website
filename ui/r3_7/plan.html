@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2010/08/04 14:28:54 $</p>
+    <p>Last revised $Date: 2010/08/11 11:21:43 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -182,7 +182,7 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to filter on the 'Errors/Warnings' preference/property page (bug 315772) <span class="work">Deepak 1w</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> show hand pointer for single-click tables and trees (bug 277862) <span class="work">Deepak 2d</span></li>
-			<li>provide error/warning icon decorator and hover for hidden Problems view <span class="work">Dani: 2d</span>
+			<li><strong>[Platform UI]</strong> provide error/warning icon decorator and hover for hidden Problems view <span class="work">Dani: 2d</span>
 				<ul>
 					<li>needs to be discussed with UI team first</li>
 				</ul>
@@ -190,15 +190,18 @@ function showHiddenWork() {
 			<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
 			<li>better support for Java properties files (native2ascii conversion) (bug 65571)</li>
 			<li>command to 'Open from Clipboard' (bug 48880) <span class="work">Deepak</span></li>
-			<li>Create a problem if a new project specific setting is introduced (bug 300523)</li>
+			<li>create a problem if a new project specific setting is introduced (bug 300523)</li>
+			<li>add 'Open Declared Type' and 'Open Return Type' hyperlink (bug 88434) <span class="work">Raksha 3d</span></li>
+			<li>add 'Open from Clipboard' command (bug 48880) <span class="work">Deepak 3d</span></li>
+			<li><strong>[JDT Debug]</strong> allow to invoke 'Format Source' from Outline view <span class="work">Deepak 1d</span></li>
 		</ul>
 		
 		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 3d</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> offer additional search scopes via new 'Search In...' view menu<span class="work">Raksha: 2d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> refresh view automatically after switching scopes<span class="work">Raksha: 0.5d</span></li>
-			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 2d</span></li>
+			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 3d</span></li>
 			<li>document positions not updated for call locations (bug 121900) <span class="work">Raksha</span></li>
 		</ul>
 		
@@ -357,7 +360,8 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 2d</span></li>
+			<li class="priority">allow to pin Call Hierarchy (bug 304135) <span class="work">Raksha: 3d</span></li>
+			<li>control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 3d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Content Assist [<a href="#3">3</a>]</h4>
@@ -561,7 +565,7 @@ function showHiddenWork() {
 		<tr>
 			<td valign="center"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"></td>
 			<td width="50%">item is under development.</td>
-			<td valign="top"><img src="../images/glass.gif" border="0" height="10" width="10"></td>
+			<td valign="top"><img src="../images/glass.gif" border="0" height="10" width="10" align="bottom" title="Under Investigation"></td>
 			<td width="50%">item is under investigation.</td>
 		</tr>
 		<tr>
