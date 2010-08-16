@@ -450,11 +450,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    for (var i= 0; i < ccs.length; i= i+2) {
             addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode)
         }
-        // Make URL field wider, so that inserted cc links do not wrap:
-        var bug_file_locElems= document.getElementsByName("bug_file_loc");
-        if (bug_file_locElems.length > 0) {
-            bug_file_locElems[0].setAttribute("size", "55");
-        }
+        // inserted cc links should not wrap:
+        ccElem.parentNode.setAttribute("style", "white-space:nowrap;");
 	}
 
 
