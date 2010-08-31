@@ -68,12 +68,12 @@ function traverseLinkifyBugs(node) {
 Test day: Tuesday, 2010-09-14<br>
 Test Build: I20100913-2000 (<em>always switch to latest available build</em>)<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Dani, Deepak, Markus, Raksha<br>
+Testers: Dani, Deepak, Markus, Raksha and Rajesh<br>
 
 
 <h2>Platforms</h2>
 <ul>
-  <li>Windows XP: <a href="raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows XP: <a href="raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:rthakkar@in.ibm.com">Rajesh</a></li>
   <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
@@ -93,8 +93,8 @@ Testers: Dani, Deepak, Markus, Raksha<br>
 
 <h4>Inline method refactoring with compile error (bug 314407). (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>Verify that inlining all invocations inlines all valid invocations.</li>	
-	<li>Verify that inlining a single invocation with compile error fails.</li>	
+	<li>verify that inlining all invocations inlines all valid invocations.</li>	
+	<li>verify that inlining a single invocation with compile error fails.</li>	
 </ul>
 
 <h4>Quick Assist -'Replace conditional with if-else' (bug 272334). (???, ??? - Questions: Deepak)</h4>	
@@ -110,15 +110,35 @@ Verify that the quick assist correctly sets up the linked mode when invoked on c
 
 <h4>Preferences - Improve scroll bars in Errors/Warnings page. (Bug 321693) (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>Verify that the vertical scroll bar is always visible.</li>
-	<li>Verify that the horizontal scroll bar is visible only when needed.</li>
-	<li>Verify that there is no horizontal scroll bar when the preference page is first opened.</li>
+	<li>verify that the vertical scroll bar is always visible.</li>
+	<li>verify that the horizontal scroll bar is visible only when needed.</li>
+	<li>verify that there is no horizontal scroll bar when the preference page is first opened.</li>
 </ul>
 
 <h4>Preferences - 'Errors/Warnings' page: allow to filter a section for a value. (Bug 321818) (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>Verify that patterns like 'Code Style ~ignore' work as expected.</li>
-	<li>Verify that the functionality present in M1 is not broken.</li>
+	<li>verify that patterns like 'Code Style ~ignore' work as expected.</li>
+	<li>verify that the functionality present in M1 is not broken.</li>
+</ul>
+
+<h4>Spell Checking - allow dictionaries without country in locale (???, ??? - Questions: Dani)</h4>	
+<ul>
+	<li>verify that dictionaries without country in locale work (bug 261498 )</li>
+	<li>verify that existing dictionaries work</li>
+</ul>
+
+<h4>Platform CVS fixes (???, Markus - Questions: Dani)</h4>
+Verify the following fixes/enhancements: 
+<ul>
+	<li>Compare editors show author on left side (bug 138853)
+		<ul>
+			<li>test via Package Explorer</li>
+			<li>test via Synchronize view</li>
+			<li>test via History view</li>
+		</ul>
+	</li>
+	<li>'Apply Patch' wizard shows unnecessary error dialog when applying workspace patch to file  (bug 303624)</li>
+	<li>Files lost from CVS when replacing with nonexistent version (bug 323628)</li>
 </ul>
 
 <h2>Test 3.6.1 Fixes</h2>
