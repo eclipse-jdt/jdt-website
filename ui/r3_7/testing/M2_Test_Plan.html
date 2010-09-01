@@ -91,34 +91,38 @@ Testers: Dani, Deepak, Markus, Raksha and Rajesh<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Inline method refactoring with compile error (bug 314407). (???, ??? - Questions: Deepak)</h4>	
+<h4>Inline method refactoring with compile error. (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>verify that inlining all invocations inlines all valid invocations.</li>	
+	<li>verify that inlining all invocations inlines all valid invocations. (bug 314407) </li>	
 	<li>verify that inlining a single invocation with compile error fails.</li>	
 </ul>
 
-<h4>Quick Assist -'Replace conditional with if-else' (bug 272334). (???, ??? - Questions: Deepak)</h4>	
-Verify that the quick assist is available and works correctly for 
+<h4>Quick Assist -'Replace conditional with if-else'. (???, ??? - Questions: Deepak)</h4>	
+Verify that the quick assist is available (bug 272334) and works correctly for
 <ul>
 	<li>VariableDeclarationStatement</li>
 	<li>ExpressionStatement</li>
 	<li>ReturnStatement</li>
 </ul>
 
-<h4>Quick Assist - Assigning a parameter to an existing field allows incomplete linked mode. (Bug 302831) (???, ??? - Questions: Deepak)</h4>	
-Verify that the quick assist correctly sets up the linked mode when invoked on constructors and methods.
+<h4>Quick Assist - Assigning a parameter to an existing field allows incomplete linked mode. (???, ??? - Questions: Deepak)</h4>	
+Verify that the quick assist correctly sets up the linked mode when invoked on constructors and methods. (Bug 302831)
 
-<h4>Preferences - Improve scroll bars in Errors/Warnings page. (Bug 321693) (???, ??? - Questions: Deepak)</h4>	
+<h4>Preferences - Errors/Warnings page. (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>verify that the vertical scroll bar is always visible.</li>
-	<li>verify that the horizontal scroll bar is visible only when needed.</li>
-	<li>verify that there is no horizontal scroll bar when the preference page is first opened.</li>
-</ul>
-
-<h4>Preferences - 'Errors/Warnings' page: allow to filter a section for a value. (Bug 321818) (???, ??? - Questions: Deepak)</h4>	
-<ul>
-	<li>verify that patterns like 'Code Style ~ignore' work as expected.</li>
-	<li>verify that the functionality present in M1 is not broken.</li>
+	<li>Improve scroll bars. (Bug 321693)
+		<ul>
+			<li>verify that the vertical scroll bar is always visible.</li>
+			<li>verify that the horizontal scroll bar is visible only when needed.</li>
+			<li>verify that there is no horizontal scroll bar when the preference page is first opened.</li>
+		</ul>
+	</li>
+	<li>Allow to filter a section for a value. (Bug 321818)
+		<ul>
+			<li>verify that patterns like 'Code Style ~ignore' work as expected.</li>
+			<li>verify that the functionality present in M1 is not broken.</li>
+		</ul>
+	</li>
 </ul>
 
 <h4>Spell Checking - allow dictionaries without country in locale (???, ??? - Questions: Dani)</h4>	
