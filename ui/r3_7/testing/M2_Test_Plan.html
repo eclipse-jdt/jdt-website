@@ -125,6 +125,46 @@ Verify that the quick assist correctly sets up the linked mode when invoked on c
 	</li>
 </ul>
 
+<h4>Open from Clipboard action. (???, ??? - Questions: Deepak)</h4>	
+<ul>
+	<li>verify that the action opens stack trace from clipboard and the Console view's settings (format, pin) are respected. (bug 48880)</li>
+	<li>verify that the action opens Java Elements. Some examples
+	 	<ul>
+			<li>java.lang.String</li>
+			<li>String#getBytes</li>
+			<li>java.lang.String.getBytes(String, int[], int)</li>
+			<li>String.java:123</li>
+			<li>at java.lang.String.matches(String.java:1550)</li>
+			<li>java.lang.String.valueOf(char) line: 1456</li>
+		</ul> 
+	</li>
+	<li>verify that the search behavior is good - quality of search matches, search response time, and busy cursor/progress dialog behavior.</li>
+</ul>
+
+<h4>Refactoring bugs when CU not on Build path. (???, ??? - Questions: Deepak)</h4>	
+Verify that the refactorings show a proper message or work correctly when CU is not on build path 
+e.g. file not in workspace, file in a non-java project, a .class file (bug 272334). 
+Make sure to test with the selection in Java Editor and in Java views (Outline, PE etc). 
+<ul>
+	<li>Introduce Indirection (Bug 139197)
+		<ul>
+			<li>verify that the refactoring works when invoked on .class file (see comment 3).</li>
+			<li>verify that a proper message is shown in other cases.</li>
+		</ul>
+	</li>
+	<li>Extract Interface, Use Supertype, Extract class (Bug 314063)
+		<ul>
+			<li>verify that the Use Supertype refactoring works when invoked on .class file (see comment 3).</li>
+			<li>verify that a proper message is shown in other cases.</li>
+		</ul>
+	</li>
+	<li>Introduce Parameter Object (Bug 314069)
+		<ul>
+			<li>verify that a proper message is shown in all cases.</li>
+		</ul>
+	</li>
+</ul>
+
 <h4>Spell Checking - allow dictionaries without country in locale (???, ??? - Questions: Dani)</h4>	
 <ul>
 	<li>verify that dictionaries without country in locale work (bug 261498 )</li>
