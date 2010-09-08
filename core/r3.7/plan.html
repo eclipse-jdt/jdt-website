@@ -89,7 +89,7 @@ function showHiddenWork() {
 
   <tr> 
     <td width="100%"> 
-    <p>Last revised $Date: 2010/09/08 12:29:26 $</p>
+    <p>Last revised $Date: 2010/09/08 12:37:47 $</p>
 
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-core-dev@eclipse.org">jdt-core-dev@eclipse.org</a> developer mailing list.</p>
       
@@ -161,7 +161,7 @@ function showHiddenWork() {
 				<li><img src="../images/progress.png" border="0" alt="progress"> look at bugs with patches and review those</li>
 				<li>Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a></li>
 				<li>Add encoding support for source attachment: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=303511">303511</a></li>
-				<li>Improve support of Java 5 code being referenced from a 1.4 project (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=305259">305259</a>)</li>
+				<li><img src="../images/ok.png" border="0" alt="ok"> Improve support of Java 5 code being referenced from a 1.4 project (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=305259">305259</a>)</li>
 				<li>Improve AST rewrite to better handle changes into changes (bugs <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=308886">308886</a> and <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=319448">319448</a>)</li>
 				<li>Add regexp to Java search (bug <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=36897">36897</a>)</li>
 				<li>A couple of new enhancements in the code formatter</li>
@@ -200,9 +200,27 @@ function showHiddenWork() {
 <tr>
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M2"></a>Milestone M2 (2010-09-17)</font></font></td>
 </tr>
-
 <tr>
 	<td width="100%">
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> General Items </h4>
+	<ul>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] 3.6.1 maintenance work <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#3">3</a>] 3.7 planning <span class="work">[olivier]</span></li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M2&amp;resolution=FIXED">fixed</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M2&amp;namedcmd=Assigned">all</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M2">unresolved</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M2">resolved</a>)
+		</li>
+		<li>watch performance tests</li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Current code coverage (B01)</h4>
+	<p>The code coverage for version 3.7M2 is <a href="../codecoverage/3.7M2/index.html">here</a></p>
 	</td>
 </tr>
 
@@ -210,8 +228,30 @@ function showHiddenWork() {
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M3"></a>Milestone M3 (2010-10-29)</font></font></td>
 </tr>
 
- <tr> 
+<tr>
 	<td width="100%">
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> General Items </h4>
+	<ul>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] 3.6.2 maintenance work <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/ok.png" border="0" alt="ok"> [<a href="#3">3</a>] 3.7 planning <span class="work">[olivier]</span></li>
+		<li>Make APT more scalable. This might require changes in DOM/AST binding story.<span class="work">[satyam]</span></li>
+		<li>Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a><span class="work">[ayushman]</span></li>
+		<li>Add encoding support for source attachment: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=303511">303511</a><span class="work">[jay]</span></li>
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M3&amp;resolution=FIXED">fixed</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M3&amp;namedcmd=Assigned">all</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M3">unresolved</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M3">resolved</a>)
+		</li>
+		<li>watch performance tests</li>
+	</ul>
+	<!-- h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"> Current code coverage (B01)</h4>
+	<p>The code coverage for version 3.7M2 is <a href="../codecoverage/3.7M2/index.html">here</a></p -->
 	</td>
 </tr>
 <tr>
