@@ -139,11 +139,12 @@ Verify that the quick assist correctly sets up the linked mode when invoked on c
 		</ul> 
 	</li>
 	<li>verify that the search behavior is good - quality of search matches, search response time, and busy cursor/progress dialog behavior.</li>
+	<li>verify that the context help works and the help text makes sense. (known issue in context help: bug 324871)</li>
 </ul>
 
-<h4>Refactoring bugs when CU not on Build path. (???, ??? - Questions: Deepak)</h4>	
-Verify that the refactorings show a proper message or work correctly when CU is not on build path 
-e.g. file not in workspace, file in a non-java project, a .class file (bug 314227). 
+<h4>Refactoring bugs when CU not on Build path or non editable. (???, ??? - Questions: Deepak)</h4>	
+Verify that the refactorings show a proper message or work correctly when CU is not on build path or non editable 
+e.g. external file, file in a non-java project, a .class file (bug 314227). 
 Make sure to test with the selection in Java Editor and in Java views (Outline, PE etc). 
 <ul>
 	<li>Introduce Indirection (Bug 139197)
