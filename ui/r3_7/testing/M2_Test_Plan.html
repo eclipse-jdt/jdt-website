@@ -187,6 +187,48 @@ Verify the following fixes/enhancements:
 	<li>History view: Double-click in single-click mode should activate editor  (bug 248135)</li>
 </ul>
 
+<h4>'Open Implementation' should work for private methods seamlessly (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that Open Implementation works for non-overridden methods as well (bug 321157 )</li>
+	<li>verify that both command and action work</li>
+</ul>
+
+<h4>"Expand with Constructors" should auto-expand single constructor (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that 'Expand with Constructors' auto expands a single constructor node (bug 322538 )</li>
+	<li>verify that it works when set in the list using Expand with Constructor dialog</li>
+</ul>
+
+<h4>Multi-select Java elements and show in Type Hierarchy (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that Open Type Hierarchy command works for multi-selection of Java elements (bug 21417 )</li>
+	<li>verify that it works even if there's one valid element and for logical packages (bug 28472)</li>
+	<li>verify that it works for selection of different kinds of java elements and appropriately labeled in the view</li>
+	<li>verify that it works in the same view or when opened in an another perspective (by setting Java Preferences)</li>
+	<li>verify that the history entries are correct and selection from history drop down works well</li>
+	<li>verify that the History... and Clear History actions work as expected</li>
+	<li>verify that the multi-selection type hierarchy is restored when closed and restarted</li>
+</ul>
+
+<h4>Refresh view when selection is empty (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that 'Refresh' action is enabled in the context menu when selection is empty (bug 323690 )</li>
+	<li>verify that it works in both Call Hierarchy and Location viewers</li>
+</ul>
+
+<h4>Superclass entry should be enabled for new JUnit Test Case Wizard (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that the superclass field should be editable for both kinds of tests. (bug 275574 )</li>
+	<li>verify that the defaults are appropriately set and changes when toggled</li>
+	<li>verify that the defaults are set when superclass field is empty and Browse button is appropriately enabled</li>
+</ul>
+
+<h4>F1 help (???, ??? - Questions: Raksha)</h4>	
+<ul>
+	<li>verify that 'F1' help is enabled for the actions in the context menu in the editor (bug 67412 )</li>	
+</ul>
+
+
 <h2>Test 3.6.1 Fixes</h2>
 Make sure to verify all 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
