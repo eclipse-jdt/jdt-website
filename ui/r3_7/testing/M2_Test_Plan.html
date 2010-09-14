@@ -74,7 +74,7 @@ Testers: Dani, Deepak, Markus, Raksha and Rajesh<br>
 <h2>Platforms</h2>
 <ul>
   <li>Windows XP: <a href="raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:rthakkar@in.ibm.com">Rajesh</a></li>
-  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
   <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
@@ -91,13 +91,13 @@ Testers: Dani, Deepak, Markus, Raksha and Rajesh<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Inline method refactoring with compile error. (???, ??? - Questions: Deepak)</h4>	
+<h4>Inline method refactoring with compile error. (Rajesh, Dani - Questions: Deepak)</h4>	
 <ul>
 	<li>verify that inlining all invocations inlines all valid invocations. (bug 314407) </li>	
 	<li>verify that inlining a single invocation with compile error fails.</li>	
 </ul>
 
-<h4>Quick Assist -'Replace conditional with if-else'. (???, ??? - Questions: Deepak)</h4>	
+<h4>Quick Assist -'Replace conditional with if-else'. (Raksha, Rajesh - Questions: Deepak)</h4>	
 Verify that the quick assist is available (bug 272334) and works correctly for
 <ul>
 	<li>VariableDeclarationStatement</li>
@@ -105,10 +105,10 @@ Verify that the quick assist is available (bug 272334) and works correctly for
 	<li>ReturnStatement</li>
 </ul>
 
-<h4>Quick Assist - Assigning a parameter to an existing field allows incomplete linked mode. (???, ??? - Questions: Deepak)</h4>	
+<h4>Quick Assist - Assigning a parameter to an existing field allows incomplete linked mode. (Dani, Raksha - Questions: Deepak)</h4>	
 Verify that the quick assist correctly sets up the linked mode when invoked on constructors and methods. (Bug 302831)
 
-<h4>Preferences - Errors/Warnings page. (???, ??? - Questions: Deepak)</h4>	
+<h4>Preferences - Errors/Warnings page. (Markus, Raksha - Questions: Deepak)</h4>	
 <ul>
 	<li>Improve scroll bars. (Bug 321693)
 		<ul>
@@ -125,7 +125,7 @@ Verify that the quick assist correctly sets up the linked mode when invoked on c
 	</li>
 </ul>
 
-<h4>Open from Clipboard action. (???, ??? - Questions: Deepak)</h4>	
+<h4>Open from Clipboard action. (Markus, Rajesh - Questions: Deepak)</h4>	
 <ul>
 	<li>verify that the action opens stack trace from clipboard and the Console view's settings (format, pin) are respected. (bug 48880)</li>
 	<li>verify that the action opens Java Elements. Some examples
@@ -142,7 +142,7 @@ Verify that the quick assist correctly sets up the linked mode when invoked on c
 	<li>verify that the context help works and the help text makes sense. (known issue in context help: bug 324871)</li>
 </ul>
 
-<h4>Refactoring bugs when CU not on Build path or non editable. (???, ??? - Questions: Deepak)</h4>	
+<h4>Refactoring bugs when CU not on Build path or non editable. (Raksha, Markus - Questions: Deepak)</h4>	
 Verify that the refactorings show a proper message or work correctly when CU is not on build path or non editable 
 e.g. external file, file in a non-java project, a .class file (bug 314227). 
 Make sure to test with the selection in Java Editor and in Java views (Outline, PE etc). 
@@ -166,13 +166,13 @@ Make sure to test with the selection in Java Editor and in Java views (Outline, 
 	</li>
 </ul>
 
-<h4>Spell Checking - allow dictionaries without country in locale (???, ??? - Questions: Dani)</h4>	
+<h4>Spell Checking - allow dictionaries without country in locale (Raksha, Deepak - Questions: Dani)</h4>	
 <ul>
 	<li>verify that dictionaries without country in locale work (bug 261498 )</li>
 	<li>verify that existing dictionaries work</li>
 </ul>
 
-<h4>Platform Team/CVS fixes (???, Markus - Questions: Dani)</h4>
+<h4>Platform Team/CVS fixes (Deepak, Markus - Questions: Dani)</h4>
 Verify the following fixes/enhancements: 
 <ul>
 	<li>Compare editors show author on left side (bug 138853)
@@ -187,19 +187,19 @@ Verify the following fixes/enhancements:
 	<li>History view: Double-click in single-click mode should activate editor  (bug 248135)</li>
 </ul>
 
-<h4>'Open Implementation' should work for private methods seamlessly (???, ??? - Questions: Raksha)</h4>	
+<h4>'Open Implementation' should work for private methods seamlessly (Markus, Deepak - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that Open Implementation works for non-overridden methods as well (bug 321157 )</li>
 	<li>verify that both command and action work</li>
 </ul>
 
-<h4>"Expand with Constructors" should auto-expand single constructor (???, ??? - Questions: Raksha)</h4>	
+<h4>"Expand with Constructors" should auto-expand single constructor (Deepak, Rajesh - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that 'Expand with Constructors' auto expands a single constructor node (bug 322538 )</li>
 	<li>verify that it works when set in the list using Expand with Constructor dialog</li>
 </ul>
 
-<h4>Multi-select Java elements and show in Type Hierarchy (???, ??? - Questions: Raksha)</h4>	
+<h4>Multi-select Java elements and show in Type Hierarchy (Deepak, Rajesh - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that Open Type Hierarchy command works for multi-selection of Java elements (bug 21417 )</li>
 	<li>verify that it works even if there's one valid element and for logical packages (bug 28472)</li>
@@ -210,25 +210,58 @@ Verify the following fixes/enhancements:
 	<li>verify that the multi-selection type hierarchy is restored when closed and restarted</li>
 </ul>
 
-<h4>Refresh view when selection is empty (???, ??? - Questions: Raksha)</h4>	
+<h4>Refresh view when selection is empty (Dani, Deepak - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that 'Refresh' action is enabled in the context menu when selection is empty (bug 323690 )</li>
 	<li>verify that it works in both Call Hierarchy and Location viewers</li>
 </ul>
 
-<h4>Superclass entry should be enabled for new JUnit Test Case Wizard (???, ??? - Questions: Raksha)</h4>	
+<h4>Superclass entry should be enabled for new JUnit Test Case Wizard (Rajesh, Deepak - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that the superclass field should be editable for both kinds of tests. (bug 275574 )</li>
 	<li>verify that the defaults are appropriately set and changes when toggled</li>
 	<li>verify that the defaults are set when superclass field is empty and Browse button is appropriately enabled</li>
 </ul>
 
-<h4>F1 help (???, ??? - Questions: Raksha)</h4>	
+<h4>F1 help (Markus, Rajesh - Questions: Raksha)</h4>	
 <ul>
 	<li>verify that 'F1' help is enabled for the actions in the context menu in the editor (bug 67412 )</li>	
 </ul>
 
+<h4>Closing last workbench window should focus confirmation dialog (Deepak, Markus - Questions: Markus)</h4>
+<ul>
+	<li>Verify that the workbench window comes to front and the confirmation dialog gets focus (bug 323727)</li>
+</ul>
 
+<h4>Test keyboard behavior of Find/Replace dialog (Deepak, Raksha - Questions: Rajesh)</h4>
+<ul>
+	<li>Verify that the behavior makes sense and is convenient</li>
+	<li>Shift+Find (Click, Enter key) should find backwards (bug 27996)</li>
+	<li>focus should stay in Find or Replace field when mnemonic or default button is executed (bug 324187)</li>
+</ul>
+
+<h4>Test preference to disable smart auto-indent on return (Markus, Raksha - Questions: Rajesh)</h4>
+<ul>
+	<li>see bug 319532</li>
+</ul>
+
+<h4>JUnit view preserves line delimiters (Dani, Raksha - Questions: Markus)</h4>
+<ul>
+	<li>Verify that string-comparisons in the comparison dialog show the right line delimiters (bug 324285)</li>
+	<li>Verify that it's also correct after export/import of test result</li>
+</ul>
+
+<h4>Hyperlink hover has nice borders (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify that borders are the same on all sides (bug 324008)</li>
+</ul>
+
+<h4>Formatter options (Raksha, Rajesh - Questions: Markus)</h4>
+<ul>
+	<li>verify that formatter options New Lines &gt; Annotations &gt; New lines... work (bug 318010)</li>
+</ul>
+
+<!--
 <h2>Test 3.6.1 Fixes</h2>
 Make sure to verify all 
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.1&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>, 
@@ -240,6 +273,7 @@ Don't set bugs to verified.
 
 <h4>Test all fixes against 3.6.1 (???, ???)</h4>
 Use ???, set bugs to verified.
+-->
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
