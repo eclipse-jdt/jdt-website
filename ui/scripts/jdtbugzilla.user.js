@@ -805,3 +805,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	//    }
 	}
 }
+
+if (window.location.pathname.match(/.*attachment\.cgi/)) {
+    // Enlarge the "Comment" field on the "Attachment Details" page:
+    var commentElem= document.getElementById("comment");
+	if (commentElem) {
+	    commentElem.setAttribute("rows", "10");
+	    commentElem.setAttribute("cols", "80");
+	    commentElem.setAttribute("onFocus", "this.rows=25");
+	}
+}
