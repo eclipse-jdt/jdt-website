@@ -94,7 +94,7 @@ ob_start();
 			
 			<p><b>3.6 Maintenance</b></p>
 		    <ul>
-		    	<li>Information about 3.6 maintenance releases can be found <a href="http://wiki.eclipse.org/Galileo_Simultaneous_Release#Coordinated_Service_Releases">here</a>
+		    	<li>Information about 3.6 maintenance releases can be found <a href="http://wiki.eclipse.org/Helios_Simultaneous_Release#Coordinated_Service_Releases">here</a>
 		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
 		    </ul>
 			
