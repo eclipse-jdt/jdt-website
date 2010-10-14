@@ -73,7 +73,7 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 
 <h2>Platforms</h2>
 <ul>
-  <li>Windows XP: <a href="raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:rthakkar@in.ibm.com">Rajesh</a></li>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a>, <a href="mailto:rthakkar@in.ibm.com">Rajesh</a></li>
   <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
   <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
@@ -82,7 +82,7 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 
 <h2>Goal</h2>
 <ul>
-  <li>test new functionality added since M1</li>
+  <li>test new functionality added since M2</li>
   <li>verify that severe bugs are correctly fixed</li>
   <li>sanity check performance</li>
 </ul>
@@ -134,6 +134,33 @@ that the following features work:
 	<li>verify that the quick fixes in the dialog show the correct icon</li>
 	<li>verify in the Quick Fix dialog that the quick fixes show the correct icon</li>
 	<li>verify in the Quick Fix dialog that the button enablement is correct</li>
+</ul>
+
+<h4>New Javadoc compiler option to ignore missing @param tags for method type parameters (???, ??? - Questions: Markus)</h4>	
+<ul>
+	<li>verify that changing the workspace preference works</li>
+	<li>verify that changing the project specific option works</li>
+	<li>verify that other missing tags are still reported</li>
+</ul>
+
+<h4>Paste Link to XML test results into JUnit view (???, ??? - Questions: Markus)</h4>	
+<ul>
+	<li>verify that it works for links from test results mails</li>
+	<li>try with broken URL</li>
+	<li>try local file://... URL with 'nasty' characters</li>
+</ul>
+
+<h4>Multi-field declarations keep initializers and annotations (???, ??? - Questions: Markus)</h4>	
+<ul>
+	<li>verify bug 319069</li>
+	<li>try to break code that changes modifiers in multi-field declarations (quick fixes, refactorings where the moved code references fields that need to be made more visible)</li>
+</ul>
+
+<h4>Whitespace rendering (???, ??? - Questions: Deepak)</h4>	
+<ul>
+	<li>test the new preference options in plain text, Java, and other editors</li>
+	<li>test the new preference options in compare editors</li>
+	<li>look out for screen cheese (partial redraws) when scrolling lines and when switching editors</li>
 </ul>
 
 <!--
