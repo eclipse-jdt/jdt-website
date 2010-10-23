@@ -158,7 +158,7 @@ that the following features work:
 
 <h4>Whitespace rendering (???, ??? - Questions: Deepak)</h4>	
 <ul>
-	<li>test the new preference options in plain text, Java, and other editors (bug 257313)</li>
+	<li>test the new preference options in plain text, Java, and other editors (bug 257313, bug 172018)</li>
 	<li>test the new preference options in compare editors</li>
 	<li>look out for screen cheese (partial redraws) when scrolling lines and when switching editors (bug 326905)</li>
 </ul>
@@ -168,6 +168,14 @@ that the following features work:
 	<li>test that the action supports Javadoc references with parameter list (bug 325239)</li>
 	<li>test the action is fast (bug 325244)</li>
 	<li>test that the action does not report progress twice</li>
+</ul>
+
+<h4>NLS tooling (???, ??? - Questions: Deepak)</h4>	
+<ul>
+	<li>test that the properties file editor auto-converts typed and pasted non ISO-8859-1 characters(bug 65571)</li>
+	<li>test that the properties file editor shows a hover if the underlying string contains some special characters (\uxxx,\t,\n etc) (bug 328223)</li>
+	<li>verify that the hover shows the real string and preserves whitespace (bug 65571, bug 328198)</li>
+	<li>verify that the Externalize Strings wizard behaves correctly (bug 268525, bug 328233)</li>
 </ul>
 
 <!--
