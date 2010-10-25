@@ -156,6 +156,14 @@ that the following features work:
 	<li>try to break code that changes modifiers in multi-field declarations (quick fixes, refactorings where the moved code references fields that need to be made more visible)</li>
 </ul>
 
+<h4>Configure default workspace for PDE JUnit launch configurations (???, ??? - Questions: Markus)</h4>	
+<ul>
+	<li>select <b>Preferences &gt; Plug-in Development &gt; Create workspaces inside this folder</b></li>
+	<li>create multiple new PDE JUnit launch configurations and run them in parallel</li>
+	<li>verify that each launch config gets its own workspace and configuration area, even if you rename the config right after creating it</li>
+	<li>verify that the default setting still shows a dialog when you try to launch a second plug-in test</li>
+</ul>
+
 <h4>Whitespace rendering (???, ??? - Questions: Deepak)</h4>	
 <ul>
 	<li>test the new preference options in plain text, Java, and other editors (bug 257313, bug 172018)</li>
@@ -186,6 +194,13 @@ that the following features work:
 <h4>Outline View (???, ??? - Questions: Rajesh)</h4>	
 <ul>
 	<li>test that the 'Collapse All' action in Java Outline view works correctly (bug 41092)</li>
+</ul>
+
+<h4>Format Java Element in Outline (???, ??? - Questions: Rajesh)</h4>	
+<ul>
+	<li>test that after selecting one or more elements from Outline view, selecting Source >&gt; Format Element in main menu formats those elements only (bug 87576)</li>
+	<li>test that opening a Read-only file and doing the above leads to a dialog asking the user to make the file writable (bug 87576)</li>
+	<li>test that making an already open file Read-only and doing the above leads to a dialog asking the user to make the file writable (bug 87576)</li> 
 </ul>
 
 <h4>Type Hierarchy (???, ??? - Questions: Raksha)</h4>	
