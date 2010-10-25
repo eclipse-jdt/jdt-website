@@ -91,7 +91,7 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Improved textual editor font configuration (???, ??? - Questions: Dani)</h4>
+<h4>Improved textual editor font configuration (Markus, Deepak - Questions: Dani)</h4>
 Several improvements have been made to ease the font configuration of textual editors. Verify
 that the following features work:
 <ul>
@@ -105,27 +105,27 @@ that the following features work:
 	<li>verify that those links have the same wording</li>
 </ul>
 
-<h4>Remove/delete in Call Hierarchy (???, ??? - Questions: Dani)</h4>
+<h4>Remove/delete in Call Hierarchy (Raksha, Markus - Questions: Dani)</h4>
 <ul>
 	<li>verify that the 'Delete' key only removes the element from the view</li>
 	<li>verify that 'Remove from View' is in the context menu and works</li>
 	<li>verify that 'Cut' and 'Delete' are not in the context menu</li>
 </ul>
 
-<h4>JUnit result comparison dialog updating (???, ??? - Questions: Dani)</h4>
+<h4>JUnit result comparison dialog updating (Raksha, Deepak - Questions: Dani)</h4>
 <ul>
 	<li>verify that the dialog updates when another test is selected</li>
 	<li>verify that the test name is updated in the dialog when another test is selected</li>
 </ul>
 
-<h4>New compiler option to honor 'assert' in null analysis (???, ??? - Questions: Dani, Ayush)</h4>
+<h4>New compiler option to honor 'assert' in null analysis (Markus, Rajesh - Questions: Dani, Ayush)</h4>
 <ul>
 	<li>verify that the UI is correct</li>
 	<li>verify that changing the workspace preference works</li>
 	<li>verify that changing the project specific option works</li>
 </ul>
 
-<h4>Improved Quick Fix support in Problems view (???, ??? - Questions: Dani)</h4>
+<h4>Improved Quick Fix support in Problems view (Deepak, Markus - Questions: Dani)</h4>
 <ul>
 	<li>verify that the quick fix icons are correctly shown in the Problems view</li>
 	<li>verify that quick fix works for single selection</li>
@@ -136,27 +136,27 @@ that the following features work:
 	<li>verify in the Quick Fix dialog that the button enablement is correct</li>
 </ul>
 
-<h4>New Javadoc compiler option to ignore missing @param tags for method type parameters (???, ??? - Questions: Markus)</h4>
+<h4>New Javadoc compiler option to ignore missing @param tags for method type parameters (Raksha, Rajesh - Questions: Markus)</h4>
 <ul>
 	<li>verify that changing the workspace preference works</li>
 	<li>verify that changing the project specific option works</li>
 	<li>verify that other missing tags are still reported</li>
 </ul>
 
-<h4>Paste Link to XML test results into JUnit view (???, ??? - Questions: Markus)</h4>
+<h4>Paste Link to XML test results into JUnit view (Deepak, Rajesh - Questions: Markus)</h4>
 <ul>
 	<li>verify that it works for links from test results mails</li>
 	<li>try with broken URL</li>
 	<li>try local file://... URL with 'nasty' characters</li>
 </ul>
 
-<h4>Multi-field declarations keep initializers and annotations (???, ??? - Questions: Markus)</h4>
+<h4>Multi-field declarations keep initializers and annotations (Dani, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>verify bug 319069</li>
 	<li>try to break code that changes modifiers in multi-field declarations (quick fixes, refactorings where the moved code references fields that need to be made more visible)</li>
 </ul>
 
-<h4>Configure default workspace for PDE JUnit launch configurations (???, ??? - Questions: Markus)</h4>
+<h4>Configure default workspace for PDE JUnit launch configurations (Raksha, Dani - Questions: Markus)</h4>
 <ul>
 	<li>select <b>Preferences &gt; Plug-in Development &gt; Create workspaces inside this folder</b></li>
 	<li>create multiple new PDE JUnit launch configurations and run them in parallel</li>
@@ -164,21 +164,21 @@ that the following features work:
 	<li>verify that the default setting still shows a dialog when you try to launch a second plug-in test</li>
 </ul>
 
-<h4>Whitespace rendering (???, ??? - Questions: Deepak)</h4>
+<h4>Whitespace rendering (Rajesh, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>test the new preference options in plain text, Java, and other editors (bug 257313, bug 172018)</li>
 	<li>test the new preference options in compare editors</li>
 	<li>look out for screen cheese (partial redraws) when scrolling lines and when switching editors (bug 326905)</li>
 </ul>
 
-<h4>Open from Clipboard (???, ??? - Questions: Deepak)</h4>
+<h4>Open from Clipboard (Dani, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>test that the action supports Javadoc references with parameter list (bug 325239)</li>
 	<li>test the action is fast (bug 325244)</li>
 	<li>test that the action does not report progress twice</li>
 </ul>
 
-<h4>NLS tooling (???, ??? - Questions: Deepak)</h4>
+<h4>NLS tooling (Raksha, Markus - Questions: Deepak)</h4>
 <ul>
 	<li>test that the properties file editor auto-converts typed and pasted non ISO-8859-1 characters (bug 65571)</li>
 	<li>test that the properties file editor shows a hover if the underlying string contains some special characters (\uxxx,\t,\n etc) (bug 328223)</li>
@@ -186,12 +186,12 @@ that the following features work:
 	<li>verify that the Externalize Strings wizard behaves correctly (bug 268525, bug 328233)</li>
 </ul>
 
-<h4>Auto Indentation (???, ??? - Questions: Rajesh)</h4>
+<h4>Auto Indentation (Markus, Deepak - Questions: Rajesh)</h4>
 <ul>
 	<li>test that Auto-indentation happens correctly for continuation scenarios described in the bug (bug 65317)</li>
 </ul>
 
-<h4>Outline View (???, ??? - Questions: Rajesh)</h4>
+<h4>Outline View (Deepak, Raksha - Questions: Rajesh)</h4>
 <ul>
 	<li>test that the 'Collapse All' action in Java Outline view works correctly (bug 41092)</li>
 	<li>test that after selecting one or more elements from Outline view, selecting Source >&gt; Format Element in main menu formats those elements only (bug 87576)</li>
@@ -199,14 +199,14 @@ that the following features work:
 	<li>test that making an already open file Read-only and doing the above leads to a dialog asking the user to make the file writable (bug 87576)</li>
 </ul>
 
-<h4>Type Hierarchy (???, ??? - Questions: Raksha)</h4>
+<h4>Type Hierarchy (Rajesh, Dani - Questions: Raksha)</h4>
 <ul>
 	<li>test that 'Open Type Hierarchy' works on logical packages (bug 325812)</li>
 	<li>test the improved label rendering in Type Hierarchy (bug 325258)</li>
 	<li>test the improved label in history dropdown for Multi-select Java elements and show in Type Hierarchy (bug 325250, bug 325408)</li>
 </ul>
 
-<h4>Pin Call Hierarchy (???, ??? - Questions: Raksha)</h4>
+<h4>Pin Call Hierarchy (Markus, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>test that 'Pin Call Hierarchy' is added to the Call Hierarchy view (bug 304135)</li>
 	<li>test that the new input is shown in the last active view which is unpinned</li>
@@ -214,7 +214,7 @@ that the following features work:
 	<li>test that 'Clear History' clears and updates all views and pin view action is still enabled with no input</li>
 </ul>
 
-<h4> Open Return and Declared Types  (???, ??? - Questions: Raksha)</h4>
+<h4> Open Return and Declared Types  (Rajesh, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>test that the new hyperlinks 'Open Declared Type' and 'Open Return Type' are added for variables and methods respectively (bug 88434)</li>
 	<li>test that the Open Declared Type' works for local variables and fields at all positions in the code (ex: return statement, invocations, parameters etc)</li>
@@ -223,7 +223,7 @@ that the following features work:
     <li>test that an error is shown for primitive or invalid types in the status line</li>
 </ul>
 
-<h4>Call Hierarchy (???, ??? - Questions: Raksha)</h4>
+<h4>Call Hierarchy (Rajesh, Dani - Questions: Raksha)</h4>
 <ul>
 	<li>test that there is no "widget is disposed" error when view is closed (bug 325752)</li>
 	<li>test that the view title gets bold when the input changes for a hidden view (bug 328315)</li>
