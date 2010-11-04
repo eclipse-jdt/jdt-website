@@ -101,7 +101,6 @@ ob_start();
 				bugsWithSummaryJDT("[convert anonymous]", "Bugs related to the convert anonymous to nested class refactoring");  
 				bugsWithSummaryJDT("[convert local]", "Bugs related to the convert local to field refactoring"); 
 				bugsWithSummaryJDT("[create on paste]", "Bugs related to creating Java elements when pasting source into the Package Explorer");
-				bugsWithSummaryJDT("[dcr]", "New feature requests (design change requests), if possible followed by [refactoring] [code generation]...");
 				bugsWithSummaryJDT("[dnd]", "Drag and Drop bugs. This keyword is mostly used together with other keywords like [reorg], [refactoring], [type hierarchy], ...");
 				bugsWithSummaryJDT("[encapsulate field]", "Bugs to the encapsulate field refactoring");
 				bugsWithSummaryJDT("[expand selection]", "Bugs related to 'Expand selection'");

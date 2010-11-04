@@ -90,7 +90,6 @@ var jdtCategories= [
 "[convert anonymous]",
 "[convert local]",
 "[create on paste]",
-"[dcr]",
 "[dnd]",
 "[encapsulate field]",
 "[expand selection]",
