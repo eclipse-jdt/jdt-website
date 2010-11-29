@@ -320,6 +320,13 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
+function setOptionSize(elementId, size) {
+    var elem= document.getElementById(elementId);
+    if (elem) {
+        elem.setAttribute("size", size);
+    }
+}
+
 function createCategoriesChooser(categories) {
 	var categoriesElem= document.createElement("select");
 	categoriesElem.setAttribute("name", "categories_selection");
@@ -491,6 +498,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 		addTargetLink(targetLinkSpanElem, "---");
 	}
+	
+	setOptionSize("classification", 6);
+	setOptionSize("product", 6);
+	setOptionSize("component", 6);
+	setOptionSize("version", 6);
+	setOptionSize("target_milestone", 6);
+	
+	setOptionSize("bug_status", 8);
+	setOptionSize("resolution", 8);
+	setOptionSize("bug_severity", 8);
+	setOptionSize("priority", 8);
+	setOptionSize("rep_platform", 8);
+	setOptionSize("op_sys", 8);
+	
+	setOptionSize("chfield", 5);
 
     // Add shortcut email links:
 	addEmailLinks("email1");
