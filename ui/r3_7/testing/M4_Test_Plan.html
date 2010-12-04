@@ -109,6 +109,19 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>verify changes in external archive which is on the build path</li>
 </ul>
 
+<h4>NLS tooling (???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Verify that Properties file editor does not auto-escape non-ISO-8859-1 characters if they can be encoded in the properties file encoding (e.g. UTF-8).</li>
+	<li>Verify the color of '=', ':' characters on continuation lines in a properties file.</li>
+	<li>Verify that Ctrl+Click on a key in a properties file is extremely fast for o.e.jdt.ui. Also verify that the feature works for non Eclipse Style NLS, and in plugin.properties.</li>
+</ul>
+
+<h4>Quick Assist (???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Verify that 'Cast and Assign' quick assist is available and works correctly from anywhere in the condition of 'if' and 'while' statements and on the first line of the 'if' and 'while' blocks.</li>
+	<li>Verify that 'Exchange Operands' quick assist is available and works correctly for all operators. Verify the quick assist with expressions containing multiple operators.</li>
+	<li>Verify that 'Join variable declaration' quick assist is available and works correctly for declarations with null initializers.</li>
+</ul>
 
 <!--
 <h2>Test 3.6.2 Fixes</h2>
