@@ -109,6 +109,21 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>verify changes in external archive which is on the build path</li>
 </ul>
 
+<h4>PDE: Configurable default workspace locations (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>test the new options on Preferences &gt; Plug-in Development work</li>
+	<li>test the Edit... button in the "Workspace Cannot Be Locked" dialog that shows up when starting 2 PDE launch configs with the same workspace at the same time</li>
+	<li>test the link to configure default workspace locations on the Main tab of PDE launch configs</li>
+</ul>
+
+<h4>JUnit 4 runner running single JUnit 3 test methods (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>test running individual method tests in JUnit 3 and JUnit 4 tests</li>
+	<li>test running individual method tests in JUnit 3 tests with a suite method</li>
+	<li>test running individual method tests in JUnit 3 tests with a setUpTest method</li>
+	<li>test the above in a project with JUnit 4 on the classpath</li>
+</ul>
+
 <h4>NLS tooling (???, ??? - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that Properties file editor does not auto-escape non-ISO-8859-1 characters if they can be encoded in the properties file encoding (e.g. UTF-8).</li>
@@ -129,7 +144,7 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>Verify that 'Unescape backslashes' quick assist is available and works correctly when the selection contains one or more escaped backslash character.</li>
 	<li>Verify that these quick assists also work when no text is selected, in this case they should work on the underlying key or value.</li>
 	<li>Verify that on paste, a popup for 'Escape backslashes' quick assist comes up automatically, if backslashes should be escaped in the pasted string. e.g. "c:\bar"</li>
-	<li>Verify that the UI feels nice for the auto-popup case.</li>
+	<li>Verify that the UI feels nice for the auto-popup case (e.g. popup doesn't show up if you quickly continue editing).</li>
 </ul>
 
 <h4>Auto-Indent on paste and 'Enter' (???, ??? - Questions: Rajesh)</h4>
@@ -139,7 +154,7 @@ Verify that auto-indent works like in 3.7 M2 and that all the recently reported 
 <ul>
 	<li>Verify that 'Open Super Implementation' is available as hyperlink on methods.</li>
 	<li>Verify that it appears only on overridden methods and also inside anonymous types.</li>
-	<li>Verify that there is not much delay when the hyperlink appears.</li>
+	<li>Verify that there is no noticeable delay until the hyperlink appears.</li>
 </ul>
 
 <h4>'Open Return Type' hyperlink should not open on primitive types (???, ??? - Questions: Raksha)</h4>
