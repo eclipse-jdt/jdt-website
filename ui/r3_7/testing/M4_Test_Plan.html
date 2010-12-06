@@ -135,6 +135,32 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 <h4>Auto-Indent on paste and 'Enter' (???, ??? - Questions: Rajesh)</h4>
 Verify that auto-indent works like in 3.7 M2 and that all the recently reported regressions introduced during M3 and M4 are fixed.
 
+<h4>Add 'Open Super Implementation' as hyperlink (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>Verify that 'Open Super Implementation' is available as hyperlink on methods.</li>
+	<li>Verify that it appears only on overridden methods and also inside anonymous types.</li>
+	<li>Verify that there is not much delay when the hyperlink appears.</li>
+</ul>
+
+<h4>'Open Return Type' hyperlink should not open on primitive types (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>Verify that 'Open Return Type' does not appear on 'void' or primitive types.</li>
+	<li>Verify that it does not appear on primitive array types.</li>	
+</ul>
+
+<h4>Dead code detection quick fix should add/remove curly braces as needed(???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>Verify that Dead code detection quick fix removes/adds curly braces for single statement vs block statements respectively.</li>
+	<li>Verify different cases with switch statements and nested if-else blocks.</li>	
+</ul>
+
+<h4>Clearing history should clear the status bar of the call hierarchy view (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>Verify that 'Clear History' clears the view title along with the input.</li>
+	<li>Verify in case of multiple instances of the view all views are cleared.</li>	
+</ul>
+
+
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>,
