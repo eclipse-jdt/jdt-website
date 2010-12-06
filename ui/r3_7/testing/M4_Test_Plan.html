@@ -123,6 +123,15 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>Verify that 'Join variable declaration' quick assist is available and works correctly for declarations with null initializers.</li>
 </ul>
 
+<h4>Properties file editor - Quick assists (???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Verify that 'Escape backslashes' quick assist is available and works correctly when the selection contains one or more unescaped backslash character.</li>
+	<li>Verify that 'Unescape backslashes' quick assist is available and works correctly when the selection contains one or more escaped backslash character.</li>
+	<li>Verify that these quick assists also work when no text is selected, in this case they should work on the underlying key or value.</li>
+	<li>Verify that on paste, a popup for 'Escape backslashes' quick assist comes up automatically, if backslashes should be escaped in the pasted string. e.g. "c:\bar"</li>
+	<li>Verify that the UI feels nice for the auto-popup case.</li>
+</ul>
+
 <!--
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
