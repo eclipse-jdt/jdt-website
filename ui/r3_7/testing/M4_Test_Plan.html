@@ -91,7 +91,7 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Rendering of compressed package names (???, ??? - Questions: Markus)</h4>
+<h4>Rendering of compressed package names (Raksha, Rajesh - Questions: Markus)</h4>
 The compression patterns from the 'Java &gt; Appearance' preference page are used in more views now (bug 329677).
 <ul>
 	<li>verify that compression works and is used consistently in all views</li>
@@ -100,7 +100,7 @@ The compression patterns from the 'Java &gt; Appearance' preference page are use
 	<li>verify that filtering still works in Quick Outline and Quick Hierarchy</li>
 </ul>
 
-<h4>Refresh (F5) in Package and Project Explorer (???, ??? - Questions: Markus)</h4>
+<h4>Refresh (F5) in Package and Project Explorer (Dani, Raksha - Questions: Markus)</h4>
 Verify that the Project and Package Explorer refresh correctly when external files change:
 <ul>
 	<li>verify with normal, Java and Plug-in projects</li>
@@ -109,14 +109,14 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>verify changes in external archive which is on the build path</li>
 </ul>
 
-<h4>PDE: Configurable default workspace locations (???, ??? - Questions: Markus)</h4>
+<h4>PDE: Configurable default workspace locations (Raksha, Dani - Questions: Markus)</h4>
 <ul>
 	<li>test the new options on Preferences &gt; Plug-in Development work</li>
 	<li>test the Edit... button in the "Workspace Cannot Be Locked" dialog that shows up when starting 2 PDE launch configs with the same workspace at the same time</li>
 	<li>test the link to configure default workspace locations on the Main tab of PDE launch configs</li>
 </ul>
 
-<h4>JUnit 4 runner running single JUnit 3 test methods (???, ??? - Questions: Markus)</h4>
+<h4>JUnit 4 runner running single JUnit 3 test methods (Deepak, Dani - Questions: Markus)</h4>
 <ul>
 	<li>test running individual method tests in JUnit 3 and JUnit 4 tests</li>
 	<li>test running individual method tests in JUnit 3 tests with a suite method</li>
@@ -124,21 +124,21 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>test the above in a project with JUnit 4 on the classpath</li>
 </ul>
 
-<h4>NLS tooling (???, ??? - Questions: Deepak)</h4>
+<h4>NLS tooling (Raksha, Markus - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that Properties file editor does not auto-escape non-ISO-8859-1 characters if they can be encoded in the properties file encoding (e.g. UTF-8).</li>
 	<li>Verify the color of '=', ':' characters on continuation lines in a properties file.</li>
 	<li>Verify that Ctrl+Click on a key in a properties file is extremely fast for o.e.jdt.ui. Also verify that the feature works for non Eclipse Style NLS, and in plugin.properties.</li>
 </ul>
 
-<h4>Quick Assist (???, ??? - Questions: Deepak)</h4>
+<h4>Quick Assist (Markus, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that 'Cast and Assign' quick assist is available and works correctly from anywhere in the condition of 'if' and 'while' statements and on the first line of the 'if' and 'while' blocks.</li>
 	<li>Verify that 'Exchange Operands' quick assist is available and works correctly for all operators. Verify the quick assist with expressions containing multiple operators.</li>
 	<li>Verify that 'Join variable declaration' quick assist is available and works correctly for declarations with null initializers.</li>
 </ul>
 
-<h4>Properties file editor - Quick assists (???, ??? - Questions: Deepak)</h4>
+<h4>Properties file editor - Quick assists (Rajesh, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Verify that 'Escape backslashes' quick assist is available and works correctly when the selection contains one or more unescaped backslash character.</li>
 	<li>Verify that 'Unescape backslashes' quick assist is available and works correctly when the selection contains one or more escaped backslash character.</li>
@@ -147,29 +147,29 @@ Verify that the Project and Package Explorer refresh correctly when external fil
 	<li>Verify that the UI feels nice for the auto-popup case (e.g. popup doesn't show up if you quickly continue editing).</li>
 </ul>
 
-<h4>Auto-Indent on paste and 'Enter' (???, ??? - Questions: Rajesh)</h4>
+<h4>Auto-Indent on paste and 'Enter' (Deepak, Markus - Questions: Rajesh)</h4>
 Verify that auto-indent works like in 3.7 M2 and that all the recently reported regressions introduced during M3 and M4 are fixed.
 
-<h4>Add 'Open Super Implementation' as hyperlink (???, ??? - Questions: Raksha)</h4>
+<h4>Add 'Open Super Implementation' as hyperlink (Dani, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that 'Open Super Implementation' is available as hyperlink on methods.</li>
 	<li>Verify that it appears only on overridden methods and also inside anonymous types.</li>
 	<li>Verify that there is no noticeable delay until the hyperlink appears.</li>
 </ul>
 
-<h4>'Open Return Type' hyperlink should not open on primitive types (???, ??? - Questions: Raksha)</h4>
+<h4>'Open Return Type' hyperlink should not open on primitive types (Rajesh, Markus - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that 'Open Return Type' does not appear on 'void' or primitive types.</li>
 	<li>Verify that it does not appear on primitive array types.</li>	
 </ul>
 
-<h4>Dead code detection quick fix should add/remove curly braces as needed(???, ??? - Questions: Raksha)</h4>
+<h4>Dead code detection quick fix should add/remove curly braces as needed(Rajesh, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that Dead code detection quick fix removes/adds curly braces for single statement vs block statements respectively.</li>
 	<li>Verify different cases with switch statements and nested if-else blocks.</li>	
 </ul>
 
-<h4>Clearing history should clear the status bar of the call hierarchy view (???, ??? - Questions: Raksha)</h4>
+<h4>Clearing history should clear the status bar of the call hierarchy view (Markus, Rajesh - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that 'Clear History' clears the view title along with the input.</li>
 	<li>Verify in case of multiple instances of the view all views are cleared.</li>	
@@ -182,10 +182,10 @@ Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&product=Platform&component=Text&target_milestone=3.6.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform/JDT Text</a> and
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=UI&target_milestone=3.6.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">JDT UI</a> fixes.
 
-<h4>Test all fixes against 3.7 M4 (???, ???)</h4>
+<h4>Test all fixes against 3.7 M4 (Rajesh, Deepak)</h4>
 Don't set bugs to verified.
 
-<h4>Test all fixes against 3.6.2 (???, Markus/Dani)</h4>
+<h4>Test all fixes against 3.6.2 (Deepak, Markus/Dani)</h4>
 Use M20101201-0800, set bugs to verified.
 <p>
 Verify bug 331563.</p>
