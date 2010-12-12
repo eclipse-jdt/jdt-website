@@ -379,9 +379,13 @@ function createCategoryChoosers() {
 // Remove Eclipse ads:
 var headerElem= document.getElementById("header");
 var tableElem= headerElem.getElementsByTagName("table");
-headerElem.removeChild(tableElem[0]);
+if (headerElem && tableElem) {
+    headerElem.removeChild(tableElem[0]);
+}
 var headerIconsElem= document.getElementById("header-icons");
-headerIconsElem.parentNode.removeChild(headerIconsElem);
+if (headerIconsElem) {
+    headerIconsElem.parentNode.removeChild(headerIconsElem);
+}
 
 
 var headElem= document.getElementsByTagName("head")[0];
