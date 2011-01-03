@@ -411,7 +411,7 @@ headElem.appendChild(styleElem);
 
 
 // Remove info message (<https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403>):
-messageElem= document.getElementById("message");
+var messageElem= document.getElementById("message");
 if (messageElem) {
     messageElem.parentNode.removeChild(messageElem);
 }
