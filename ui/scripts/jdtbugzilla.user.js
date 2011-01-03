@@ -401,6 +401,9 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + "#titles a:active { color: #000 ! important; }\n"
 // Fix color of comment number:
     + ".bz_comment_number { color: #65379c; }\n"
+// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
+    + ".bz_enhancement { background-color: transparent ! important; }\n"
+    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
@@ -411,13 +414,11 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
 headElem.appendChild(styleElem);
 
 
-// Remove info message (<https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403>):
+// Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
 var messageElem= document.getElementById("message");
 if (messageElem) {
-    GM_log("message found");
     messageElem.parentNode.removeChild(messageElem);
 }
-else {GM_log("message not found")};
 
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
