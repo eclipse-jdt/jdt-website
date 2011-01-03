@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------
 //
-// JDT Bugzilla Add-on V 1.1 for Bugzilla 3.4
+// JDT Bugzilla Add-on V 1.2 for Bugzilla 3.6.3
 //
 // This is a Greasemonkey user script.  To install it, you need
 // Greasemonkey: http://greasemonkey.mozdev.org/
@@ -240,12 +240,12 @@ function addLink(name, href, parentElem, tooltip) {
 
 function addStatusLink(name, status, resolution, parentElem) {
     var href= 'javascript:document.getElementById("bug_status").value="' + status + '";';
+    href += 'showHideStatusItems("",["",""]);';
     if (resolution) {
         href += 'document.getElementById("resolution").value="' + resolution + '";';
     }
-    href += 'showHideStatusItems("", ["",""]);'
-            + 'document.getElementById("assigned_to").focus();'
-            + 'document.getElementById("assigned_to").select();';
+    href += 'document.getElementById("assigned_to").focus();'
+            + 'document.getElementById("assigned_to").select();'
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -408,6 +408,13 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + "#comment { overflow-y:scroll; }"
     ;
 headElem.appendChild(styleElem);
+
+
+// Remove info message (<https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403>):
+messageElem= document.getElementById("message");
+if (messageElem) {
+    messageElem.parentNode.removeChild(messageElem);
+}
 
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
@@ -651,29 +658,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 	}
 	
-	// Fix Bugzilla bug that prevents bug link at end of line (https://bugzilla.mozilla.org/show_bug.cgi?id=514703 ):
-	var pres= document.getElementsByTagName("pre");
-    var bugLineEndRegex= /(Bug\s+\n)(\d+)/gi;
-	for (var i= 0; i < pres.length; i++) {
-        // Iterate <pre class="bz_comment_text"  id="comment_text_0">, regex-replace bug <nr> with link
-		var preElem= pres[i];
-		var preId= preElem.getAttribute("id");
-        if (preId && preId.indexOf("comment_text_") == 0) {
-        	traverseLinkifyBugs(preElem);
-        }
-	}
-	
-	// Fix Status & Resolution (fix focus, add accesskey):
+	// Add accesskeys to Status & Resolution:
 	var bug_statusElem= document.getElementById("bug_status");
 	if (bug_statusElem) {
-	//    bug_statusElem.size= 6;
-	    bug_statusElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)");
 	    bug_statusElem.setAttribute("accesskey", "e");
 	}
 	var resolutionElem= document.getElementById("resolution");
 	if (resolutionElem) {
-	//    resolutionElem.size= 6;
-	    resolutionElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('resolution').focus(); }, 10)");
 	    resolutionElem.setAttribute("accesskey", "r");
 	}
 	
@@ -719,7 +710,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 		if (dup_id_discoverableElem && bug_statusElem && resolutionElem) {
 		    var firstStatus= bug_statusElem.options[0].value;
-		    if (firstStatus == "NEW" || firstStatus == "ASSIGNED" || firstStatus == "REOPENED") {
+		    var secondStatus= bug_statusElem.options[1].value;
+		    if ((firstStatus == "NEW" || firstStatus == "ASSIGNED" || firstStatus == "REOPENED") && secondStatus != "RESOLVED") {
 			    addStatusLink("NEW", "NEW", "", statusLinksDivElem);
 			    addStatusLink("ASSIGNED", "ASSIGNED", "", statusLinksDivElem);
 			} else {
@@ -790,34 +782,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    
-	    // Add [diff] after [details] in attachment references:
-	    if (aElem.textContent == "[details]" && aElem.href.search(detailsRegex) != -1) {
-	        var diffElem= document.createElement("a");
-	        diffElem.textContent= "[diff]";
-	        diffElem.href= aElem.href.replace(detailsRegex, "attachment.cgi?id=$1&action=diff"); // attachment.cgi?id=125382&amp;action=diff
-	        aElem.parentNode.appendChild(document.createTextNode(" "));
-	        aElem.parentNode.appendChild(diffElem);
-	        i++; //skip new anchor
-	    
 	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
-	    } else if (aElem.name.match(commentRegex)) {
+	    if (aElem.name.match(commentRegex)) {
 	        aElem.textContent= "comment " + commentRegex.exec(aElem.name)[1];
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
-	        
-//	        // turns bugId into a link:
-//	        var pre= document.createTextNode("bug ");
-//	        aElem.parentNode.insertBefore(pre, aElem);
-//	        
-//		    var bugLink= document.createElement("a");
-//		    bugLink.href= "../" + bugId;
-//		    bugLink.textContent= bugId;
-//	        aElem.parentNode.insertBefore(bugLink, aElem);
-//	        i++; //prevent endless loop
-//	        
-//	        var space= document.createTextNode(" ");
-//	        aElem.parentNode.insertBefore(space, aElem);
 	    }
 	    
 	//    // Show obsolete attachments initially:
