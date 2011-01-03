@@ -404,6 +404,8 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
 // Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
     + ".bz_enhancement { background-color: transparent ! important; }\n"
     + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
+// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
+    + "tr.bz_buglist_header th a { white-space: nowrap; }"
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
@@ -534,6 +536,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	addEmailLinks("email2");
 
 	
+} else if (window.location.pathname.match(/.*buglist\.cgi/)) {
+    // Not a result page -- nothing to do.
+
 } else { // For all result pages:
 	var bugId;
 
@@ -781,7 +786,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
-	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	var commentRegex= /^c(\d+)$/; // c42
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
