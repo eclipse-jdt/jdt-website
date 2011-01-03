@@ -23,6 +23,7 @@
 // @include       https://bugs.eclipse.org/bugs/enter_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
+// @include       https://bugs.eclipse.org/bugs/buglist.cgi*
 // ==/UserScript==
 
 
@@ -413,8 +414,10 @@ headElem.appendChild(styleElem);
 // Remove info message (<https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403>):
 var messageElem= document.getElementById("message");
 if (messageElem) {
+    GM_log("message found");
     messageElem.parentNode.removeChild(messageElem);
 }
+else {GM_log("message not found")};
 
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
