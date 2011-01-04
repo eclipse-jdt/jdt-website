@@ -412,6 +412,8 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }"
 // Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
     + "#comment { overflow-y:scroll; }"
+// Render <button> like <input>:
+    + "button { font-family: Verdana, sans-serif; font-size: small; }"
     ;
 headElem.appendChild(styleElem);
 
@@ -441,15 +443,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
 	    commitElem.setAttribute("tabindex", "99");
-	    commitElem.innerHTML= "C<u>o</u>mmit";
-	    commitElem.setAttribute("accesskey", "o");
-	    commitElem.style.paddingLeft= "1em";
-	    commitElem.style.paddingRight= "1em";
-	    commitElem.style.fontSize= "small";
+	    commitElem.innerHTML= "S<u>u</u>bmit Bug";
+	    commitElem.setAttribute("accesskey", "u");
 	    var space= document.createTextNode(" ");
 	    short_descElems[0].parentNode.insertBefore(space, short_descElems[0].nextSibling);
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
-	    short_descElems[0].size= 79;
+	    short_descElems[0].size= 76;
 	    
 	    // set initial focus:
 	    short_descElems[0].focus();
@@ -760,10 +759,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	if (bz_qa_contact_inputElem) {
 	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
-	    commitElem.innerHTML= "C<u>o</u>mmit";
-	    commitElem.style.paddingLeft= "2em";
-	    commitElem.style.paddingRight= "2em";
-	    commitElem.style.fontSize= "small";
+	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
@@ -775,11 +772,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    var commitElem= document.createElement("button");
 		    commitElem.setAttribute("type", "submit");
 		    commitElem.setAttribute("class", "knob-buttons");
-		    commitElem.innerHTML= "C<u>o</u>mmit";
-		    commitElem.setAttribute("accesskey", "o");
-		    commitElem.style.paddingLeft= "1em";
-		    commitElem.style.paddingRight= "1em";
-		    commitElem.style.fontSize= "small";
+		    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+		    commitElem.setAttribute("accesskey", "v");
 		    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
 	    }
 	}
