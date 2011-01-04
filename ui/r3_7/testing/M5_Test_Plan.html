@@ -109,6 +109,13 @@ Test the new feature that allows to store the encoding of derived files separate
 	<li>verify that it behaves reasonably well (no exceptions) when an old build is used but the encoding is stored separately</li>
 </ul>
 
+<h4>New compiler option: Generic types &gt; Ignore unavoidable generic type problems (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that unavoidable problems (e.g. raw type in overriding method signature) are not reported</li>
+	<li>verify that problems are reported when checkbox is unchecked</li>
+	<li>try to find other cases where 1.5 code references raw APIs and cannot avoid type safety warnings</li>
+</ul>
+
 
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
