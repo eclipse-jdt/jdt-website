@@ -91,10 +91,22 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Item 1 (???, ??? - Questions: ???)</h4>
-Item 1.
+<h4>Semantic highlighting for abstract classes (???, ??? - Questions: Dani)</h4>
+Test the new semantic highlighting (SH) for abstract classes:
 <ul>
-	<li>test 1</li>
+	<li>verify that it's disabled out of the box</li>
+	<li>verify that it works when enabled</li>
+	<li>verify that interface coloring is not affected by this</li>
+</ul>
+
+<h4>Separate encoding for derived files (Dani, Markus - Questions: Dani)</h4>
+Test the new feature that allows to store the encoding of derived files separately:
+<ul>
+	<li>verify that it's disabled out of the box</li>
+	<li>verify that out of the box everything works as before</li>
+	<li>verify that storing the encoding for derived files separately works</li>
+	<li>verify that disabling the feature again, results in the old (3.6) state</li>
+	<li>verify that it behaves reasonably well (no exceptions) when an old build is used but the encoding is stored separately</li>
 </ul>
 
 
