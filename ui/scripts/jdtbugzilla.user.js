@@ -534,9 +534,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	addEmailLinks("email1");
 	addEmailLinks("email2");
 
-	
+
+} else if (window.location.pathname.match(/.*attachment\.cgi/)) {
+    // Enlarge the "Comment" field on the "Attachment Details" page:
+    var commentElem= document.getElementById("comment");
+	if (commentElem) {
+	    commentElem.setAttribute("rows", "10");
+	    commentElem.setAttribute("cols", "80");
+	    commentElem.setAttribute("onFocus", "this.rows=25");
+	}
+
+
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Not a result page -- nothing to do.
+
 
 } else { // For all result pages:
 	var bugId;
@@ -800,15 +811,5 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
 	//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
 	//    }
-	}
-}
-
-if (window.location.pathname.match(/.*attachment\.cgi/)) {
-    // Enlarge the "Comment" field on the "Attachment Details" page:
-    var commentElem= document.getElementById("comment");
-	if (commentElem) {
-	    commentElem.setAttribute("rows", "10");
-	    commentElem.setAttribute("cols", "80");
-	    commentElem.setAttribute("onFocus", "this.rows=25");
 	}
 }
