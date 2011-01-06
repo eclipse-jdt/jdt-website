@@ -537,16 +537,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	addEmailLinks("email2");
 
 
-} else if (window.location.pathname.match(/.*attachment\.cgi/)) {
-    // Enlarge the "Comment" field on the "Attachment Details" page:
-    var commentElem= document.getElementById("comment");
-	if (commentElem) {
-	    commentElem.setAttribute("rows", "10");
-	    commentElem.setAttribute("cols", "80");
-	    commentElem.setAttribute("onFocus", "this.rows=25");
-	}
-
-
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Not a result page -- nothing to do.
 
@@ -777,23 +767,36 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
+    // Enlarge the "Comment" field on the "Attachment Details" page:
+    if (window.location.pathname.match(/.*attachment\.cgi/)) {
+	    var commentElem= document.getElementById("comment");
+		if (commentElem) {
+		    commentElem.setAttribute("rows", "10");
+		    commentElem.setAttribute("cols", "80");
+		    commentElem.setAttribute("onFocus", "this.rows=25");
+		}
+    }
+
+	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
+	
 	// Another Commit button on top of Additional Comments field
-	var labels= document.getElementsByTagName("label");
-	for (var i= 0; i < labels.length; i++) {
-	    var labelElem= labels[i];
-	    if (labelElem.getAttribute("for") == "comment") {
-		    var commitElem= document.createElement("button");
-		    commitElem.setAttribute("type", "submit");
-		    commitElem.setAttribute("class", "knob-buttons");
-		    commitElem.innerHTML= "Sa<u>v</u>e Changes";
-		    commitElem.setAttribute("accesskey", "v");
-		    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
-	    }
+    if (window.location.href.search(detailsRegex) == -1) { // attachment.cgi is used for 3 purposes: add new, edit details, result after adding
+		var labels= document.getElementsByTagName("label");
+		for (var i= 0; i < labels.length; i++) {
+		    var labelElem= labels[i];
+		    if (labelElem.getAttribute("for") == "comment") {
+			    var commitElem= document.createElement("button");
+			    commitElem.setAttribute("type", "submit");
+			    commitElem.setAttribute("class", "knob-buttons");
+			    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+			    commitElem.setAttribute("accesskey", "v");
+			    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
+		    }
+		}
 	}
 	
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
-	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
 	var commentRegex= /^c(\d+)$/; // c42
 	for (var i= 0; i < anchors.length; i++) {
