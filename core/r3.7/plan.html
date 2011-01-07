@@ -89,7 +89,7 @@ function showHiddenWork() {
 
   <tr> 
     <td width="100%"> 
-    <p>Last revised $Date: 2010/11/09 16:55:17 $</p>
+    <p>Last revised $Date: 2011/01/07 19:29:23 $</p>
 
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-core-dev@eclipse.org">jdt-core-dev@eclipse.org</a> developer mailing list.</p>
       
@@ -134,11 +134,11 @@ function showHiddenWork() {
 		If by the end of M3, we cannot have access to the specifications, this item will be completely dropped from 3.7 and postponed
 		to a later release.</p>
 		<ul>
-			<li class="priority">implement the jsr 308 (Annotations on type)</li>
-			<li class="priority">implement the jsr 294 (module support) (depending on getting access to the specification)</li>
+			<li class="priority">implement the jsr 308 (Annotations on type) - Deferred to future release as this jsr has been moved for inclusion in JDK 8</li>
+			<li class="priority">implement the jsr 294 (module support) - Deferred to future release as this jsr has been moved for inclusion in JDK 8</li>
 			<li class="priority">implement the jsr 292 (invokedynamic support) (depending on getting access to the specification)</li>
 			<li class="priority">implement proposals for the coin project (depending on getting access to the specification)</li>
-			<li class="priority">implement proposals for the lambda project (depending on getting access to the specification)</li>
+			<li class="priority">implement proposals for the lambda project - Deferred to future release as this jsr has been moved for inclusion in JDK 8</li>
 			<li class="priority">... depending on what is included in Java 7</li>
 		</ul>
 		</li>
@@ -260,18 +260,17 @@ function showHiddenWork() {
 </tr>
 <tr>
 	<td width="100%">
-	<a name="current-milestone"></a>
 	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> General Items </h4>
 	<ul>
 		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#2">2</a>] 3.6.2 maintenance work <span class="work">[all]</span></li>
 		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
 		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#3">3</a>] 3.7 planning <span class="work">[olivier]</span></li>
-		<li><img src="../images/progress.png" border="0" alt="in progress"/> Make APT more scalable. This might require changes in DOM/AST binding story.<span class="work">[Satyam]</span></li>
-		<li><img src="../images/progress.png" border="0" alt="in progress"/> Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a><span class="work">[Ayushman]</span></li>
-		<li><!-- img src="../images/progress.png" border="0" alt="in progress"/ --> Compiler option to ignore unavoidable type safety problems due to raw APIs: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=322817">322817</a>.<span class="work">[Srikanth]</span></li>
-		<li><img src="../images/progress.png" border="0" alt="in progress"/> Fix open issues about generic support in the compiler. <span class="work">[srikanth]</span></li> 
-		<li><!-- img src="../images/progress.png" border="0" alt="in progress"/ --> Add new compiler diagnostic for method that could be defined as static: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=318682">318682</a>.<span class="work">[Ayushman]</span></li> 
-		<li><!-- img src="../images/progress.png" border="0" alt="in progress"/ --> Add new compiler diagnostic for null field reference: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=247564">247564</a>.<span class="work">[Ayushman]</span></li> 
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Make APT more scalable. This might require changes in DOM/AST binding story.<span class="work">[Satyam]</span></li>
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a><span class="work">[Ayushman]</span></li>
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Compiler option to ignore unavoidable type safety problems due to raw APIs: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=322817">322817</a>.<span class="work">[Srikanth]</span></li>
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Fix open issues about generic support in the compiler. <span class="work">[srikanth]</span></li> 
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Add new compiler diagnostic for method that could be defined as static: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=318682">318682</a>.<span class="work">[Ayushman]</span></li> 
+		<li><font class="indexsub" color="#8080ff">[M5]</font> Add new compiler diagnostic for null field reference: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=247564">247564</a>.<span class="work">[Ayushman]</span></li> 
 	</ul>
 	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> Permanent Items</h4>
 	<ul>
@@ -284,8 +283,8 @@ function showHiddenWork() {
 		</li>
 		<li>watch performance tests</li>
 	</ul>
-	<!-- h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> Current code coverage (B22)</h4>
-	<p>The code coverage for version 3.7M3 is <a href="../codecoverage/3.7M3/index.html">here</a></p -->
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> Current code coverage (B28)</h4>
+	<p>The code coverage for version 3.7M4 is <a href="../codecoverage/3.7M4/index.html">here</a></p>
 	</td>
 </tr>
 
@@ -294,8 +293,35 @@ function showHiddenWork() {
 </tr>
 <tr>
 	<td width="100%">
+	<a name="current-milestone"></a>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> General Items </h4>
+	<ul>
+		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#2">2</a>] 3.6.2 maintenance work <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#2">2</a>] bug fixing <span class="work">[all]</span></li>
+		<li class="priority"><img src="../images/progress.png" border="0" alt="in progress"/> [<a href="#3">3</a>] 3.7 planning <span class="work">[olivier]</span></li>
+		<li><img src="../images/progress.png" border="0" alt="in progress"/> Make APT more scalable. This might require changes in DOM/AST binding story.<span class="work">[Satyam]</span></li>
+		<li><img src="../images/progress.png" border="0" alt="in progress"/> Improve Javadoc support inside JDT (support proxies, different doc format): <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=313644">313644</a>, <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=136091">136091</a><span class="work">[Ayushman]</span></li>
+		<li><img src="../images/ok.png" border="0" alt="in progress"/> Compiler option to ignore unavoidable type safety problems due to raw APIs: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=322817">322817</a>.<span class="work">[Srikanth]</span></li>
+		<li><img src="../images/progress.png" border="0" alt="in progress"/> Fix open issues about generic support in the compiler. <span class="work">[srikanth]</span></li> 
+		<li><img src="../images/progress.png" border="0" alt="in progress"/> Add new compiler diagnostic for method that could be defined as static: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=318682">318682</a>.<span class="work">[Ayushman]</span></li> 
+		<li><img src="../images/progress.png" border="0" alt="in progress"/> Add new compiler diagnostic for null field reference: <a href"https://bugs.eclipse.org/bugs/show_bug.cgi?id=247564">247564</a>.<span class="work">[Ayushman]</span></li> 
+	</ul>
+	<h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> Permanent Items</h4>
+	<ul>
+		<li>bugzilla inbox tracking</li>
+		<li>bug fixing
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M5&amp;resolution=FIXED">fixed</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?product=JDT&amp;component=CORE&amp;target_milestone=3.7+M5&amp;namedcmd=Assigned">all</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M5">unresolved</a>)
+		(<a href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;product=JDT&amp;component=CORE&amp;target_milestone=3.7+M5">resolved</a>)
+		</li>
+		<li>watch performance tests</li>
+	</ul>
+	<!-- h4><img src="../images/adarrow.png" border="0" height="16" width="16" align="top" alt="arrow"/> Current code coverage (B22)</h4>
+	<p>The code coverage for version 3.7M5 is <a href="../codecoverage/3.7M5/index.html">here</a></p -->
 	</td>
 </tr>
+
 <tr>
 	<td align="left" valign="top" colspan="2" width="100%" bgcolor="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M6"></a>Milestone M6 (2011-03-11) - API FREEZE</font></font></td>
 </tr>
