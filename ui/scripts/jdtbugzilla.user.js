@@ -812,18 +812,18 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    
-	    // Add [diff] after [details] in attachment references:
-	    if (aElem.textContent == "[details]" && aElem.href.search(detailsRegex) != -1) {
+	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
+	    if (aElem.name.substr(0, 7) == "attach_" && aElem.href.search(diffRegex) != -1) {
+	        var origHref= aElem.href;
+	        aElem.setAttribute("href", origHref.replace(diffRegex, "attachment.cgi?id=$1"))
+	        
+	        // Add [diff] after [details] in attachment references:
 	        var diffElem= document.createElement("a");
 	        diffElem.textContent= "[diff]";
-	        diffElem.href= aElem.href.replace(detailsRegex, "attachment.cgi?id=$1&action=diff");
+	        diffElem.href= origHref.replace(diffRegex, "attachment.cgi?id=$1&action=diff");
 	        aElem.parentNode.appendChild(document.createTextNode(" "));
 	        aElem.parentNode.appendChild(diffElem);
-	        i++; //skip new anchor
-	        
-	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
-	    } else if (aElem.name.substr(0, 7) == "attach_" && aElem.href.search(diffRegex) != -1) {
-	        aElem.setAttribute("href", aElem.href.replace(diffRegex, "attachment.cgi?id=$1"))
+	        i+= 2; //skip [details] and new anchor
 	    
 	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
 	    } else if (aElem.name.match(commentRegex)) {
