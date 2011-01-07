@@ -795,6 +795,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 	}
 	
+	// Move "Expand / Collapse All" away to avoid interfering with selections in the comments section:
+	var bz_collapse_expand_commentsElems= document.evaluate("//ul[@class='bz_collapse_expand_comments']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+    if (bz_collapse_expand_commentsElems.snapshotLength > 0) {
+		var bz_group_visibility_sectionElems= document.evaluate("//div[@class='bz_group_visibility_section']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+		if (bz_group_visibility_sectionElems.snapshotLength > 0) {
+		    var bz_collapse_expand_commentsElem= bz_collapse_expand_commentsElems.snapshotItem(0);
+		    bz_collapse_expand_commentsElem.setAttribute("style", "padding-top: 4em;");
+            bz_group_visibility_sectionElems.snapshotItem(0).parentNode.appendChild(bz_collapse_expand_commentsElem);
+        }
+    }
+	
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
 	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
