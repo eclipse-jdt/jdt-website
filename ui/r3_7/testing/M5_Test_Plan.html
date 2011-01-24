@@ -149,6 +149,32 @@ Test that marker deletions can be undone:
 	<li>verify that the Breakpoints view keeps an individual (local) history per breakpoint</li>
 </ul>
 
+<h4>Call Hierarchy (???, ??? - Questions: Raksha)</h4>
+Verify that Control-drag feature to add methods to a call hierarchy instead of replace works as expected:
+<ul>
+	<li>verify that Ctrl+ drag feature works on the current view regardless of the pin state of the target view and view description is updated after every addition</li>
+	<li>verify that the newly added elements are selected and revealed and expanded when dropped on either hierarchy or location viewers</li>
+	<li>verify that the drag and drop of elements inside the call hierarchy view is a no-op on the existing elements but allowed on any white space</li>
+	<li>verify that the history of the elements is updated after elements are added and all the elements in a view are remembered as one entry</li>
+	<li>verify that shift+ drop from any other view to call hierarchy view shows the link operation, ctrl+ drop shows the copy operation (+ sign)</li>
+</ul>
+Verify that Clearing history should clear the status bar:
+<ul>
+	<li>verify that the status bar is cleared when history is cleared in Call Hierarchy and Type Hierarchy views</li>
+</ul>	
+
+<h4>Open Declared Type hyperlink should not show up when the variable type is primitive (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>verify that the Open Declared Type hyperlink does not show up for primitive types like int, char</li>
+</ul>
+
+<h4>New JUnit 4 Test Case wizard should create a test method when class under test is null(???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>verify that a new test method with the  JUnit-4-specific '@Test' annotation is created when an empty test is created without a class under test</li>
+	<li>verify that the new test appears in the list of classes when New JUnit 4 Test Suite wizard is created</li>
+	<li>verify that a new test method with the  JUnit-4-specific '@Test' annotation is created when no methods are selected in page 2 of the wizard</li>
+</ul>
+
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>,
