@@ -116,6 +116,45 @@ Test the new feature that allows to store the encoding of derived files separate
 	<li>try to find other cases where 1.5 code references raw APIs and cannot avoid type safety warnings</li>
 </ul>
 
+<h4>Compiler options for methods that could be static (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that the 2 new options work (the potential one is for methods that could be overridden)</li>
+	<li>verify that the quick fix works</li>
+</ul>
+
+<h4>Quick Outline shows inherited members of nested types (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that inherited members are shown for all focus types (top-level types and the type that contains the caret)</li>
+	<li>verify that all focus types have the focus adornment (arrow in icon)</li>
+</ul>
+
+<h4>Overview ruler annotations (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that annotations are drawn at the right spot (see OverviewRuler#computeY(int, WidgetInfos) for the used strategy</li>
+	<li>verify with editors of different size, short and huge documents, annotations in various positions</li>
+	<li>verify multi-line annotations (quick diff)</li>
+	<li>verify that the mouse arming is correct (hand pointer on annotations)</li>
+	<li>verify that annotation hovers are correct</li>
+	<li>verify that clicking empty lines still works</li>
+</ul>
+
+<h4>No stale projects in working sets (???, ??? - Questions: Markus)</h4>
+Before bug 300368, it could happen that a resource working set contained a project that did not exist in the workspace
+(e.g. after importing <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=300368#c17">this</a> team project set). 
+<ul>
+	<li>with 3.6, create a workspace with such a stale project</li>
+	<li>verify that the project magically disappears when launching with 3.7 M5</li>
+	<li>try to break the fix, e.g. by removing a project on the file system, or using a project whose location is outside of the wokspace</li>
+</ul>
+
+<h4>Help button in dialogs (???, ??? - Questions: Markus)</h4>
+The help button in dialogs is now a toggle. 
+<ul>
+	<li>verify the toggling on click (F1 or platform help button does <i>not</i> toggle)</li>
+	<li>verify that the keyboard focus is properly restored when you close the tray</li>
+	<li>verify that the right help context is used</li>
+</ul>
+
 <h4>Quick assist/quick fix: Add missing case statements (in an enum switch)(???, ??? - Questions: Deepak)</h4>
 <ul>
 	<li>verify that the quick assist is available at all places it should be.</li>
@@ -168,12 +207,13 @@ Verify that Clearing history should clear the status bar:
 	<li>verify that the Open Declared Type hyperlink does not show up for primitive types like int, char</li>
 </ul>
 
-<h4>New JUnit 4 Test Case wizard should create a test method when class under test is null(???, ??? - Questions: Raksha)</h4>
+<h4>New JUnit 4 Test Case wizard should create a test method when class under test is null (???, ??? - Questions: Raksha)</h4>
 <ul>
-	<li>verify that a new test method with the  JUnit-4-specific '@Test' annotation is created when an empty test is created without a class under test</li>
+	<li>verify that a new test method with the JUnit-4-specific '@Test' annotation is created when an empty test is created without a class under test</li>
 	<li>verify that the new test appears in the list of classes when New JUnit 4 Test Suite wizard is created</li>
-	<li>verify that a new test method with the  JUnit-4-specific '@Test' annotation is created when no methods are selected in page 2 of the wizard</li>
+	<li>verify that a new test method with the JUnit-4-specific '@Test' annotation is created when no methods are selected in page 2 of the wizard</li>
 </ul>
+
 
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
