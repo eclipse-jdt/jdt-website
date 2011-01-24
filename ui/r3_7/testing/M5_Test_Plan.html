@@ -123,6 +123,32 @@ Test the new feature that allows to store the encoding of derived files separate
 	<li>verify the behavior with compiler option "Enum type constant not covered on 'switch'" disabled.</li>
 </ul>
 
+<h4>Undo marker deletions (???, ??? - Questions: Dani)</h4>
+Test that marker deletions can be undone:
+<ul>
+	<li>verify that deletions in the Problems view can be undone via Problems view and Package Explorer</li>
+	<li>verify that deletions in the Tasks view can be undone via Tasks view and Package Explorer</li>
+	<li>verify that deletions in the Bookmarks view can be undone via Bookmarks view and Package Explorer</li>
+	<li>verify that deletions in the Breakpoints view can be undone via Breakpoints view and Package Explorer</li>	
+	<li>verify that deleting a breakpoint via Java editor ruler can be undone via Package Explorer</li>	
+	<li>test above icons using the menu and the keyboard (Ctrl+Z)</li>
+</ul>
+
+<h4>Warn when deleting conditional breakpoint in the Java editor (???, ??? - Questions: Dani)</h4>
+<ul>
+	<li>verify that there's a warning dialog when deleting a conditional breakpoint via ruler in the Java editor</li>
+	<li>test that the warning dialog works as expected</li>
+	<li>verify that the corresponding preference on the Java &gt; Debug preference page works as expected</li>
+</ul>
+
+<h4>History for conditional breakpoints (???, ??? - Questions: Dani)</h4>
+<ul>
+	<li>verify that the history works in the properties dialog</li>
+	<li>verify that the history works in the Breakpoints view</li>
+	<li>verify that the same history is used in the dialog and the view</li>
+	<li>verify that the Breakpoints view keeps an individual (local) history per breakpoint</li>
+</ul>
+
 <h2>Test 3.6.2 Fixes</h2>
 Make sure to verify all
 <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=Platform&component=Search&target_milestone=3.6.2&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">Platform Search</a>,
