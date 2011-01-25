@@ -91,7 +91,7 @@ Testers: Dani, Deepak, Markus, Rajesh and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Semantic highlighting for abstract classes (???, ??? - Questions: Dani)</h4>
+<h4>Semantic highlighting for abstract classes (Markus, Raksha - Questions: Dani)</h4>
 Test the new semantic highlighting (SH) for abstract classes:
 <ul>
 	<li>verify that it's disabled out of the box</li>
@@ -109,26 +109,26 @@ Test the new feature that allows to store the encoding of derived files separate
 	<li>verify that it behaves reasonably well (no exceptions) when an old build is used but the encoding is stored separately</li>
 </ul>
 
-<h4>New compiler option: Generic types &gt; Ignore unavoidable generic type problems (???, ??? - Questions: Markus)</h4>
+<h4>New compiler option: Generic types &gt; Ignore unavoidable generic type problems (Deepak, Dani - Questions: Markus)</h4>
 <ul>
 	<li>verify that unavoidable problems (e.g. raw type in overriding method signature) are not reported</li>
 	<li>verify that problems are reported when checkbox is unchecked</li>
 	<li>try to find other cases where 1.5 code references raw APIs and cannot avoid type safety warnings</li>
 </ul>
 
-<h4>Compiler options for methods that could be static (???, ??? - Questions: Markus)</h4>
+<h4>Compiler options for methods that could be static (Raksha, Rajesh - Questions: Markus)</h4>
 <ul>
 	<li>verify that the 2 new options work (the potential one is for methods that could be overridden)</li>
 	<li>verify that the quick fix works</li>
 </ul>
 
-<h4>Quick Outline shows inherited members of nested types (???, ??? - Questions: Markus)</h4>
+<h4>Quick Outline shows inherited members of nested types (Deepak, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>verify that inherited members are shown for all focus types (top-level types and the type that contains the caret)</li>
 	<li>verify that all focus types have the focus adornment (arrow in icon)</li>
 </ul>
 
-<h4>Overview ruler annotations (???, ??? - Questions: Markus)</h4>
+<h4>Overview ruler annotations (Raksha, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>verify that annotations are drawn at the right spot (see OverviewRuler#computeY(int, WidgetInfos) for the used strategy</li>
 	<li>verify with editors of different size, short and huge documents, annotations in various positions</li>
@@ -138,7 +138,7 @@ Test the new feature that allows to store the encoding of derived files separate
 	<li>verify that clicking empty lines still works</li>
 </ul>
 
-<h4>No stale projects in working sets (???, ??? - Questions: Markus)</h4>
+<h4>No stale projects in working sets (Raksha, Dani - Questions: Markus)</h4>
 Before bug 300368, it could happen that a resource working set contained a project that did not exist in the workspace
 (e.g. after importing <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=300368#c17">this</a> team project set). 
 <ul>
@@ -147,7 +147,7 @@ Before bug 300368, it could happen that a resource working set contained a proje
 	<li>try to break the fix, e.g. by removing a project on the file system, or using a project whose location is outside of the wokspace</li>
 </ul>
 
-<h4>Help button in dialogs (???, ??? - Questions: Markus)</h4>
+<h4>Help button in dialogs (Deepak, Rajesh - Questions: Markus)</h4>
 The help button in dialogs is now a toggle. 
 <ul>
 	<li>verify the toggling on click (F1 or platform help button does <i>not</i> toggle)</li>
@@ -155,14 +155,14 @@ The help button in dialogs is now a toggle.
 	<li>verify that the right help context is used</li>
 </ul>
 
-<h4>Quick assist/quick fix: Add missing case statements (in an enum switch)(???, ??? - Questions: Deepak)</h4>
+<h4>Quick assist/quick fix: Add missing case statements (in an enum switch) (Rajesh, Markus - Questions: Deepak)</h4>
 <ul>
 	<li>verify that the quick assist is available at all places it should be.</li>
 	<li>verify the behavior with compiler option "Enum type constant not covered on 'switch'" enabled.</li>
 	<li>verify the behavior with compiler option "Enum type constant not covered on 'switch'" disabled.</li>
 </ul>
 
-<h4>Undo marker deletions (???, ??? - Questions: Dani)</h4>
+<h4>Undo marker deletions (Markus, Deepak - Questions: Dani)</h4>
 Test that marker deletions can be undone:
 <ul>
 	<li>verify that deletions in the Problems view can be undone via Problems view and Package Explorer</li>
@@ -170,17 +170,17 @@ Test that marker deletions can be undone:
 	<li>verify that deletions in the Bookmarks view can be undone via Bookmarks view and Package Explorer</li>
 	<li>verify that deletions in the Breakpoints view can be undone via Breakpoints view and Package Explorer</li>	
 	<li>verify that deleting a breakpoint via Java editor ruler can be undone via Package Explorer</li>	
-	<li>test above icons using the menu and the keyboard (Ctrl+Z)</li>
+	<li>test above items using the menu and the keyboard (Ctrl+Z)</li>
 </ul>
 
-<h4>Warn when deleting conditional breakpoint in the Java editor (???, ??? - Questions: Dani)</h4>
+<h4>Warn when deleting conditional breakpoint in the Java editor (Rajesh, Markus - Questions: Dani)</h4>
 <ul>
 	<li>verify that there's a warning dialog when deleting a conditional breakpoint via ruler in the Java editor</li>
 	<li>test that the warning dialog works as expected</li>
 	<li>verify that the corresponding preference on the Java &gt; Debug preference page works as expected</li>
 </ul>
 
-<h4>History for conditional breakpoints (???, ??? - Questions: Dani)</h4>
+<h4>History for conditional breakpoints (Deepak, Raksha - Questions: Dani)</h4>
 <ul>
 	<li>verify that the history works in the properties dialog</li>
 	<li>verify that the history works in the Breakpoints view</li>
@@ -188,7 +188,7 @@ Test that marker deletions can be undone:
 	<li>verify that the Breakpoints view keeps an individual (local) history per breakpoint</li>
 </ul>
 
-<h4>Call Hierarchy (???, ??? - Questions: Raksha)</h4>
+<h4>Call Hierarchy (Rajesh, Deepak - Questions: Raksha)</h4>
 Verify that Control-drag feature to add methods to a call hierarchy instead of replace works as expected:
 <ul>
 	<li>verify that Ctrl+ drag feature works on the current view regardless of the pin state of the target view and view description is updated after every addition</li>
@@ -202,12 +202,12 @@ Verify that Clearing history should clear the status bar:
 	<li>verify that the status bar is cleared when history is cleared in Call Hierarchy and Type Hierarchy views</li>
 </ul>	
 
-<h4>Open Declared Type hyperlink should not show up when the variable type is primitive (???, ??? - Questions: Raksha)</h4>
+<h4>Open Declared Type hyperlink should not show up when the variable type is primitive (Markus, Rajesh - Questions: Raksha)</h4>
 <ul>
 	<li>verify that the Open Declared Type hyperlink does not show up for primitive types like int, char</li>
 </ul>
 
-<h4>New JUnit 4 Test Case wizard should create a test method when class under test is null (???, ??? - Questions: Raksha)</h4>
+<h4>New JUnit 4 Test Case wizard should create a test method when class under test is null (Dani, Rajesh - Questions: Raksha)</h4>
 <ul>
 	<li>verify that a new test method with the JUnit-4-specific '@Test' annotation is created when an empty test is created without a class under test</li>
 	<li>verify that the new test appears in the list of classes when New JUnit 4 Test Suite wizard is created</li>
