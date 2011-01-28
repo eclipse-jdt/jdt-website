@@ -28,7 +28,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.7 M5", "3.7 M6", "3.7", "3.6.2"];
+var target_milestones= ["3.7 M6", "3.7 M7", "3.7", "3.6.2"];
 
 var textCategories= [
 "-- Text category --",
@@ -538,7 +538,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
-    // Not a result page -- nothing to do.
+    // Add access key to Edit Query:
+    var bz_query_editElems= document.getElementsByClassName("bz_query_edit");
+	if (bz_query_editElems.length > 0) {
+	    var bz_query_editElem= bz_query_editElems[0];
+	    var aElem= bz_query_editElem.childNodes[1];
+		aElem.setAttribute("accesskey", "e");
+		aElem.firstChild.replaceData(0, 1, "");
+		var mnemonic= document.createElement("b");
+		mnemonic.appendChild(document.createTextNode("E"));
+		aElem.insertBefore(mnemonic, aElem.firstChild);
+	}
 
 
 } else { // For all result pages:
