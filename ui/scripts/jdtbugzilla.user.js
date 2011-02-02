@@ -426,6 +426,20 @@ if (messageElem) {
     messageElem.parentNode.removeChild(messageElem);
 }
 
+// Add shortcut to set Platform to All/All:
+var rep_platformElem= document.getElementById("rep_platform");
+var op_sysElem= document.getElementById("op_sys");
+if (rep_platformElem && op_sysElem) {
+	var allLinkSpanElem= document.createElement("span");
+	allLinkSpanElem.style.marginLeft= "1em";
+	op_sysElem.parentNode.insertBefore(allLinkSpanElem, op_sysElem.nextSibling);
+	
+    var href= 'javascript:document.getElementById("rep_platform").value="All";'
+            + 'document.getElementById("op_sys").value="All";'
+            + 'void(0);';
+    addLink("All", href, allLinkSpanElem);
+}
+	
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
@@ -687,20 +701,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var resolutionElem= document.getElementById("resolution");
 	if (resolutionElem) {
 	    resolutionElem.setAttribute("accesskey", "r");
-	}
-	
-	// Add shortcut to set Platform to All/All:
-	var rep_platformElem= document.getElementById("rep_platform");
-	var op_sysElem= document.getElementById("op_sys");
-	if (rep_platformElem && op_sysElem) {
-		var allLinkSpanElem= document.createElement("span");
-		allLinkSpanElem.style.marginLeft= "1em";
-		op_sysElem.parentNode.insertBefore(allLinkSpanElem, op_sysElem.nextSibling);
-		
-	    var href= 'javascript:document.getElementById("rep_platform").value="All";'
-	            + 'document.getElementById("op_sys").value="All";'
-	            + 'void(0);';
-	    addLink("All", href, allLinkSpanElem);
 	}
 	
 	// Add shortcut target milestone links:
