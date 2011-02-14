@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>3.7 M6 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+<script type="text/javascript">
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode;
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+</script>
+
+</head>
+
+
+<body onload="linkifyBugs();">
+<h1>3.7 M6 Test Plan</h1>
+Test day: Tuesday, 2011-03-08<br>
+Test Build: I20110307-1800<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Deepak, Markus, Rajesh and Raksha<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows 7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+  <li>Linux-GTK: <a href="mailto:rthakkar@in.ibm.com">Rajesh</a></li>
+  <li>Mac OS X: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since M5</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check performance</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+<em>First test all those items where you are listed as first tester.</em>
+
+<h4>Undo in Java breakpoint condition editor (???, ??? - Questions: Markus)</h4>
+Verify that Undo and Redo work in the Java breakpoint editor.
+<ul>
+	<li>verify that it works in the Breakpoints view</li>
+	<li>verify that it works in the Breakpoint properties dialog</li>
+</ul>
+
+<h4>Editor (input) as search scope (???, ??? - Questions: Markus)</h4>
+Verify that the editor (input) can be used a search scope in the search dialog.
+<ul>
+	<li>verify that 'Selected resources' is enabled when the search dialog is opened while an editor is active</li>
+	<li>verify that it all search pages work</li>
+	<li>verify that with Text, Java and PDE editors</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20M6&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.7 M6</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20M6&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.7 M6</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20M6&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.7 M6</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20M6&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.7 M6</a></li>
+</ul>
+
+</body></html>
