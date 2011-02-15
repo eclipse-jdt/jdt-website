@@ -278,6 +278,15 @@ function addCcLink(name, email, parentElem) {
     addLink(name, href, parentElem, email);
 }
 
+function addProductLink(name, parentElem) {
+    var href= 'javascript:document.getElementById("product").value="' + name + '";'
+            + 'document.getElementById("set_default_assignee").checked= true;'
+            + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
+            + 'document.getElementById("product").focus();'
+            + 'void(0);';
+    addLink(name, href, parentElem);
+}
+
 function addEmailLinks(emailElemName) {
 	var emailElems= document.getElementsByName(emailElemName);
 	if (emailElems.length > 0) {
@@ -627,6 +636,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var productElem= document.getElementById("product");
 	if (productElem) {
 	    productElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('product').focus(); }, 10)");
+	    
+	    // Add shortcuts to set Product:
+		var productsLinkSpanElem= document.createElement("span");
+		productsLinkSpanElem.style.marginLeft= "1em";
+		productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
+	    addProductLink("Platform", productsLinkSpanElem);
+	    addProductLink("JDT", productsLinkSpanElem);
+	    addProductLink("PDE", productsLinkSpanElem);
+	    addProductLink("Equinox", productsLinkSpanElem);
 	}
 	var componentElem= document.getElementById("component");
 	if (componentElem) {
