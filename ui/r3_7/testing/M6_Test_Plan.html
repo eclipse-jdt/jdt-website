@@ -113,6 +113,37 @@ There are new APIs and a new extension point that allows to configure SCM URLs f
 	<li>review the APIs and extension point</li>
 </ul>
 
+<h4>Correct number of parentheses (???, ??? - Questions: Deepak)</h4>
+Try to find a case where extra parentheses are created or where necessary parentheses are removed/not added. Only known case is bug 337680.
+<ul>
+	<li>verify that 'Remove unnecessary parentheses' cleanup removes all unnecessary parentheses, but does not remove any necessary parentheses.</li>
+	<li>verify that refactorings, quick assists, quick fixes do not create any extra parentheses.</li>
+</ul>
+
+<h4>Verify the new 'Put expression in parentheses' quick assist(???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>verify that it works for all kinds of expressions, e.g cast, conditional etc</li>
+	<li>make sure that 'parentheses' (plural) and 'parenthesis' (singular) are used correctly.</li>
+</ul>
+
+<h4>Quick assists(???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>verify that 'Pull Negation up' and 'Push Negation down' quick assists always do something meaningful, e.g they are not available on cases like "if (!b) { }"</li>
+	<li>verify that inversion of 'value' of conditional expressions is correct, e.g. in 'Invert if statement', 'Push Negation down', 'Pull Negation up', 'Invert local variable' etc </li>
+</ul>
+
+<h4>Inline refactoring(???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>Inline method refactoring: verify that the returned value is cast if required.</li>
+	<li>Inline constant/temp refactoring: verify that the initializer is cast if required.</li>
+	<li>Test for cases involving generics and generics with wildcards.</li>	
+</ul>
+
+<h4>NLS tooling(???, ??? - Questions: Deepak)</h4>
+<ul>
+	<li>verify that the tooling (e.g. hovers for NLSed strings) does not throw an IAE when a properties file contains an invalid unicode escape. Only known case is bug 337086.</li>
+</ul>
+
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
