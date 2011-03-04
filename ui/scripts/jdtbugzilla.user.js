@@ -573,6 +573,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		aElem.insertBefore(mnemonic, aElem.firstChild);
 	}
 
+	// Add target milestone links (for "Change Several Bugs at Once"):
+	var targetElem= document.getElementById("target_milestone");
+	if (targetElem) {
+		var targetLinkSpanElem= document.createElement("span");
+		targetLinkSpanElem.style.marginLeft= ".5em";
+		targetLinkSpanElem.style.fontWeight= "normal";
+		targetElem.parentNode.appendChild(targetLinkSpanElem);
+		for (var i= 0; i < target_milestones.length; i++) {
+			addTargetLink(targetLinkSpanElem, target_milestones[i]);
+		}
+		addTargetLink(targetLinkSpanElem, "---");
+	}
+
 
 } else { // For all result pages:
 	var bugId;
