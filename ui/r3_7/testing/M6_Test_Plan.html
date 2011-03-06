@@ -144,6 +144,27 @@ Try to find a case where extra parentheses are created or where necessary parent
 	<li>verify that the tooling (e.g. hovers for NLSed strings) does not throw an IAE when a properties file contains an invalid unicode escape. Only known case is bug 337086.</li>
 </ul>
 
+<h4> Hyperlink/Open Declaration on break and continue (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>verify that break and continue are now clickable with and without labels.</li>
+	<li>verify that open action on break  jumps to the end of target statement, while on continue it jumps to the beginning of the target statement and on labels it jumps to the label declaration.</li>
+	<li>verify that hyperlink are enabled only when there's a valid target.</li>	
+</ul>
+
+<h4> Ensure consistent relative ordering of active working sets (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>verify that WorkingSetDropAdapterTest.testRearrange* pass in any order the working sets are created or set as active.</li>
+	<li>verify that WorkingSetDropAdapterTest.testRearrange* fails with IAE when setWorkingSets(..) with different order of all and active working sets as parameters (in PackageExplorerPart.internalTestShowWorkingSets(..))</li>
+</ul>
+
+<h4> Working set order lost for non visible working sets  (???, ??? - Questions: Raksha)</h4>
+<ul>
+	<li>verify that non visible working sets can be re-ordered through Configure Working Sets dialog</li>
+	<li>verify that drag and drop for working sets works fine</li>
+	<li>verify that restoring from memento keeps the order and restores all working sets when new working is added while closing Package Explorer</li>
+	<li>verify that Working Sets Assignment and toggle sort work fine</li>
+</ul>
+
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
