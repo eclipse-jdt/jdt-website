@@ -91,14 +91,14 @@ Testers: Deepak, Markus, Rajesh and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Undo in Java breakpoint condition editor (???, ??? - Questions: Markus)</h4>
+<h4>Undo in Java breakpoint condition editor (Deepak, Markus - Questions: Markus)</h4>
 Verify that Undo and Redo work in the Java breakpoint editor.
 <ul>
 	<li>verify that it works in the Breakpoints view</li>
 	<li>verify that it works in the Breakpoint properties dialog</li>
 </ul>
 
-<h4>Editor (input) as search scope (???, ??? - Questions: Markus)</h4>
+<h4>Editor (input) as search scope (Raksha, Rajesh - Questions: Markus)</h4>
 Verify that the editor (input) can be used as search scope in the search dialog.
 <ul>
 	<li>verify that 'Selected resources' is enabled when the search dialog is opened while an editor is active</li>
@@ -106,58 +106,58 @@ Verify that the editor (input) can be used as search scope in the search dialog.
 	<li>verify that with Text, Java and PDE editors</li>
 </ul>
 
-<h4>API and UI to configure SCM URLs for import (Markus, ??? - Questions: Ankur and Tomasz)</h4>
+<h4>API and UI to configure SCM URLs for import (Markus, Deepak - Questions: Ankur and Tomasz)</h4>
 There are new APIs and a new extension point that allows to configure SCM URLs for import (bug 330490).
 <ul>
 	<li>verify that it works</li>
 	<li>review the APIs and extension point</li>
 </ul>
 
-<h4>Correct number of parentheses (???, ??? - Questions: Deepak)</h4>
+<h4>Correct number of parentheses (Rajesh, Markus - Questions: Deepak)</h4>
 Try to find a case where extra parentheses are created or where necessary parentheses are removed/not added. Only known case is bug 337680.
 <ul>
 	<li>verify that 'Remove unnecessary parentheses' cleanup removes all unnecessary parentheses, but does not remove any necessary parentheses.</li>
 	<li>verify that refactorings, quick assists, quick fixes do not create any extra parentheses.</li>
 </ul>
 
-<h4>Verify the new 'Put expression in parentheses' quick assist(???, ??? - Questions: Deepak)</h4>
+<h4>Verify the new 'Put expression in parentheses' quick assist (Rajesh, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>verify that it works for all kinds of expressions, e.g cast, conditional etc</li>
 	<li>make sure that 'parentheses' (plural) and 'parenthesis' (singular) are used correctly.</li>
 </ul>
 
-<h4>Quick assists(???, ??? - Questions: Deepak)</h4>
+<h4>Quick assists (Raksha, Markus - Questions: Deepak)</h4>
 <ul>
 	<li>verify that 'Pull Negation up' and 'Push Negation down' quick assists always do something meaningful, e.g they are not available on cases like "if (!b) { }"</li>
 	<li>verify that inversion of 'value' of conditional expressions is correct, e.g. in 'Invert if statement', 'Push Negation down', 'Pull Negation up', 'Invert local variable' etc </li>
 </ul>
 
-<h4>Inline refactoring(???, ??? - Questions: Deepak)</h4>
+<h4>Inline refactoring (Markus, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>Inline method refactoring: verify that the returned value is cast if and only if required.</li>
 	<li>Inline constant/temp refactoring: verify that the initializer is cast if and only if required.</li>
 	<li>Test for cases involving generics and generics with wildcards.</li>	
 </ul>
 
-<h4>NLS tooling(???, ??? - Questions: Deepak)</h4>
+<h4>NLS tooling (Rajesh, Raksha - Questions: Deepak)</h4>
 <ul>
 	<li>verify that the tooling (e.g. hovers for NLSed strings) does not throw an IAE when a properties file contains an invalid unicode escape. Only known case is bug 337086.</li>
 </ul>
 
-<h4> Hyperlink/Open Declaration on break and continue (???, ??? - Questions: Raksha)</h4>
+<h4> Hyperlink/Open Declaration on break and continue (Deepak, Rajesh - Questions: Raksha)</h4>
 <ul>
 	<li>verify that break and continue are now clickable with and without labels.</li>
 	<li>verify that open action on break  jumps to the end of target statement, while on continue it jumps to the beginning of the target statement and on labels it jumps to the label declaration.</li>
 	<li>verify that hyperlink are enabled only when there's a valid target.</li>	
 </ul>
 
-<h4> Ensure consistent relative ordering of active working sets (???, ??? - Questions: Raksha)</h4>
+<h4> Ensure consistent relative ordering of active working sets (Deepak, Rajesh - Questions: Raksha)</h4>
 <ul>
 	<li>verify that WorkingSetDropAdapterTest.testRearrange* pass in any order the working sets are created or set as active.</li>
 	<li>verify that WorkingSetDropAdapterTest.testRearrange* fails with IAE when setWorkingSets(..) with different order of all and active working sets as parameters (in PackageExplorerPart.internalTestShowWorkingSets(..))</li>
 </ul>
 
-<h4> Working set order lost for non visible working sets (Package Explorer) (???, ??? - Questions: Raksha)</h4>
+<h4> Working set order lost for non visible working sets (Package Explorer) (Markus, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>verify that non visible working sets can be re-ordered through Configure Working Sets dialog</li>
 	<li>verify that drag and drop for working sets works fine</li>
@@ -165,7 +165,7 @@ Try to find a case where extra parentheses are created or where necessary parent
 	<li>verify that Working Sets Assignment and toggle sort work fine</li>
 </ul>
 
-<h4>Quick Fixes more relevant than Quick Assists (???, ??? - Questions: Markus)</h4>
+<h4>Quick Fixes more relevant than Quick Assists (Raksha, Deepak - Questions: Markus)</h4>
 We've fixed a few problems with Quick Assists whose priority was too high in case a warning or error
 was present at the caret location (e.g. Rename in file, Extract to local variable), or where the
 top proposal was not the most likely action (e.g. "Return the allocated Object" was hiding "Assign statement to local variable")
@@ -173,25 +173,25 @@ top proposal was not the most likely action (e.g. "Return the allocated Object" 
 	<li>sanity-check quick fix proposal ordering for various problem kinds</li>
 </ul>
 
-<h4>Quick Fixes for generics-related problems (???, ??? - Questions: Markus)</h4>
+<h4>Quick Fixes for generics-related problems (Deepak, Rajesh - Questions: Markus)</h4>
 <ul>
 	<li>verify that quick fixes for generics-related problems make sense and have the right relevance</li>
 	<li>check raw types, wrong type arguments, type mismatch in assignment, unchecked method invocation</li>
 </ul>
 
-<h4>Hyperlink/Open Declaration on {@inheritDoc} tags (???, ??? - Questions: Markus)</h4>
+<h4>Hyperlink/Open Declaration on {@inheritDoc} tags (Raksha, Rajesh - Questions: Markus)</h4>
 <ul>
 	<li>verify that links work and jump to the correct target</li>
 </ul>
 
-<h4>Content Assist on methods with 'Fill method arguments' preference enabled (???, ??? - Questions: Markus)</h4>
+<h4>Content Assist on methods with 'Fill method arguments' preference enabled (Deepak, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>verify that typing ',' jumps to the next argument</li>
 	<li>verify that typing ';' behaves according to the setting for semicolons on the Typing preference page</li>
 	<li>verify that typing in a linked field and then pressing 'Enter' behaves consistently no matter how quickly 'Enter' is pressed after typing the argument</li>
 </ul>
 
-<h4>Type Hierarchy: Method overriding problems (???, ??? - Questions: Markus)</h4>
+<h4>Type Hierarchy: Method overriding problems (Rajesh, Deepak - Questions: Markus)</h4>
 We've fixed problems in the Type Hierarchy where methods were wrongly found as overriding/overridden methods.
 <ul>
 	<li>verify that only instance methods are considered</li>
