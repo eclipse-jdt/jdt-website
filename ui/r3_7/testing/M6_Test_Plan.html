@@ -99,7 +99,7 @@ Verify that Undo and Redo work in the Java breakpoint editor.
 </ul>
 
 <h4>Editor (input) as search scope (???, ??? - Questions: Markus)</h4>
-Verify that the editor (input) can be used a search scope in the search dialog.
+Verify that the editor (input) can be used as search scope in the search dialog.
 <ul>
 	<li>verify that 'Selected resources' is enabled when the search dialog is opened while an editor is active</li>
 	<li>verify that it all search pages work</li>
@@ -134,8 +134,8 @@ Try to find a case where extra parentheses are created or where necessary parent
 
 <h4>Inline refactoring(???, ??? - Questions: Deepak)</h4>
 <ul>
-	<li>Inline method refactoring: verify that the returned value is cast if required.</li>
-	<li>Inline constant/temp refactoring: verify that the initializer is cast if required.</li>
+	<li>Inline method refactoring: verify that the returned value is cast if and only if required.</li>
+	<li>Inline constant/temp refactoring: verify that the initializer is cast if and only if required.</li>
 	<li>Test for cases involving generics and generics with wildcards.</li>	
 </ul>
 
@@ -157,13 +157,48 @@ Try to find a case where extra parentheses are created or where necessary parent
 	<li>verify that WorkingSetDropAdapterTest.testRearrange* fails with IAE when setWorkingSets(..) with different order of all and active working sets as parameters (in PackageExplorerPart.internalTestShowWorkingSets(..))</li>
 </ul>
 
-<h4> Working set order lost for non visible working sets  (???, ??? - Questions: Raksha)</h4>
+<h4> Working set order lost for non visible working sets (Package Explorer) (???, ??? - Questions: Raksha)</h4>
 <ul>
 	<li>verify that non visible working sets can be re-ordered through Configure Working Sets dialog</li>
 	<li>verify that drag and drop for working sets works fine</li>
 	<li>verify that restoring from memento keeps the order and restores all working sets when new working is added while closing Package Explorer</li>
 	<li>verify that Working Sets Assignment and toggle sort work fine</li>
 </ul>
+
+<h4>Quick Fixes more relevant than Quick Assists (???, ??? - Questions: Markus)</h4>
+We've fixed a few problems with Quick Assists whose priority was too high in case a warning or error
+was present at the caret location (e.g. Rename in file, Extract to local variable), or where the
+top proposal was not the most likely action (e.g. "Return the allocated Object" was hiding "Assign statement to local variable")
+<ul>
+	<li>sanity-check quick fix proposal ordering for various problem kinds</li>
+</ul>
+
+<h4>Quick Fixes for generics-related problems (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that quick fixes for generics-related problems make sense and have the right relevance</li>
+	<li>check raw types, wrong type arguments, type mismatch in assignment, unchecked method invocation</li>
+</ul>
+
+<h4>Hyperlink/Open Declaration on {@inheritDoc} tags (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that links work and jump to the correct target</li>
+</ul>
+
+<h4>Content Assist on methods with 'Fill method arguments' preference enabled (???, ??? - Questions: Markus)</h4>
+<ul>
+	<li>verify that typing ',' jumps to the next argument</li>
+	<li>verify that typing ';' behaves according to the setting for semicolons on the Typing preference page</li>
+	<li>verify that typing in a linked field and then pressing 'Enter' behaves consistently no matter how quickly 'Enter' is pressed after typing the argument</li>
+</ul>
+
+<h4>Type Hierarchy: Method overriding problems (???, ??? - Questions: Markus)</h4>
+We've fixed problems in the Type Hierarchy where methods were wrongly found as overriding/overridden methods.
+<ul>
+	<li>verify that only instance methods are considered</li>
+	<li>verify that private methods are not considered</li>
+	<li>verify that constructors are not considered (even if a method has the same name as a constructor)</li>
+</ul>
+
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
