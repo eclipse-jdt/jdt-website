@@ -28,7 +28,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.7 M6", "3.7 M7", "3.7", "3.6.2"];
+var target_milestones= ["3.7 M7", "3.7 RC1", "3.7", "3.6.2"];
 
 var textCategories= [
 "-- Text category --",
@@ -254,6 +254,7 @@ function addStatusLink(name, status, resolution, parentElem) {
 function addAssigneeLink(name, email, parentElem) {
     var href= 'javascript:document.getElementById("assigned_to").value="' + email + '";'
             + 'document.getElementById("set_default_assignee").checked= false;'
+            + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");'
             + 'document.getElementById("assigned_to").focus();'
             + 'void(0);';
@@ -281,6 +282,7 @@ function addCcLink(name, email, parentElem) {
 function addProductLink(name, parentElem) {
     var href= 'javascript:document.getElementById("product").value="' + name + '";'
             + 'document.getElementById("set_default_assignee").checked= true;'
+            + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
             + 'document.getElementById("product").focus();'
             + 'void(0);';
@@ -540,6 +542,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addTargetLink(targetLinkSpanElem, "---");
 	}
 	
+	// Increase option list sizes to avoid scrolling:
 	setOptionSize("classification", 6);
 	setOptionSize("product", 6);
 	setOptionSize("component", 6);
@@ -636,10 +639,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	showElem("summary_alias_input")
 	
 	
-	// Edit CC list (already hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=288125 ):
+	// Edit CC list (already badly hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=334083 ):
 	hideElem("cc_edit_area_showhide_container");
 	showElem("cc_edit_area")
 	
+	setOptionSize("cc", 6);
 	
 	// Edit & rearrange Assignee & QA:
 	fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
@@ -648,7 +652,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Fix Product & Component (lose focus on change):
 	var productElem= document.getElementById("product");
 	if (productElem) {
-	    productElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('product').focus(); }, 10)");
+	    productElem.setAttribute("onchange", "window.setTimeout(function() {"
+	                + "document.getElementById('product').focus();"
+	                + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
+                    + "}, 10)"
+	                );
 	    
 	    // Add shortcuts to set Product:
 		var productsLinkSpanElem= document.createElement("span");
@@ -661,7 +669,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	var componentElem= document.getElementById("component");
 	if (componentElem) {
-	    componentElem.setAttribute("onchange", "window.setTimeout(function() { document.getElementById('component').focus(); }, 10)");
+	    componentElem.setAttribute("onchange", "window.setTimeout(function() {"
+	                + "document.getElementById('component').focus();"
+	                + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
+                    + "}, 10)"
+	                );
 	}
 	
 	// Copy QA and Assignee to the right (read-only):
