@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2011/02/14 15:10:45 $</p>
+    <p>Last revised $Date: 2011/03/15 17:00:42 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -140,8 +140,7 @@ function showHiddenWork() {
 		</p>
 		For the JSR292, JSR294 and project Coin we need to wait for publicly available specifications.
 		This probably means that Java 7 support won't be completely done for the 3.7 release.</p>
-		<strong>Note:</strong> In order to align our schedule with the delayed official Java 7 appearance and due to lack of publicly available
-		specifications (including lack of a Java 7 JSR), we have decided to move the development work to a separate branch and decouple it from 
+		<strong>Note:</strong> In order to align our schedule with the delayed official Java 7 appearance and specifications, we have decided to move the development work to a separate branch ('BETA_JAVA7') and decouple it from 
 		HEAD for now. In that branch we will continue to develop the Java 7 features as they become publicly accessible. We will deliver separate
 		updates for the official builds in order to provide early access to Java 7 features. 
 		
@@ -159,13 +158,13 @@ function showHiddenWork() {
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow changing the default superclass in NewTestCaseWizardPageOne (bug 312204) <span class="work">Markus: 0.5d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> expose JUnitModel.exportTestRunSession(...) as API (bug 316199) <span class="work">Markus: 0.5d</span></li>
-			<li>add new participant-aware refactorings to IRefactoringProcessorIds  (bug 230244) <span class="work">Markus: 0.5d</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add new participant-aware refactorings to IRefactoringProcessorIds  (bug 230244) <span class="work">Markus: 0.5d</span></li>
 		</ul>
 		</li>
 
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
 			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2w</span>
 				<ul>
 					<li>Increase visibility (with info/warning message)?</li>
@@ -192,7 +191,7 @@ function showHiddenWork() {
 			<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> better support for Java properties files (native2ascii conversion) (bug 65571) <span class="work">Deepak: 2w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> improve NLS tooling <span class="work">Deepak: 2w</span></li>
-			<li>create a problem if a new project specific setting is introduced (bug 300523) <span class="work">Rajesh: 1w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">Rajesh: 1w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add 'Open Declared Type' and 'Open Return Type' hyperlink (bug 88434) <span class="work">Raksha: 3d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <strong>[JDT Debug]</strong> add 'Open from Clipboard' command (bug 48880) <span class="work">Deepak: 3d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow to invoke 'Format Source' from Outline view (bug 86576) <span class="work">Rajesh (reassigned from Deepak): 1d</span></li>
@@ -236,7 +235,7 @@ function showHiddenWork() {
 	
 		<li><h4>Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> show horizontal line between methods (bug 13672) <span class="work">Rajesh: 1w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> show horizontal line between methods (bug 13672) <span class="work">Rajesh: 1w</span></li>
 			<li>visualize code nesting (bug 69455) <span class="work">Raksha or Deepak: 2w</span>
 				<br>&rarr; could be implemented as semantic highlighting</li>
 			<li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
@@ -259,7 +258,7 @@ function showHiddenWork() {
 		<li><h4>Miscellaneous</h4>
 		<ul>
 			<li>structured selection should support brackets (bug 86835) <span class="work">???</span></li>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
 		</ul>
 		</li>
 
@@ -401,7 +400,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle">  <font class="indexsub" color="#8080ff">[3.7 M3]</font> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M3]</font> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -463,12 +462,12 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M4]</font> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><font class="indexsub" color="#8080ff">[&gt;3.7 M3]</font>new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt;3.7 M3]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -601,7 +600,7 @@ function showHiddenWork() {
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/3.6.2_RC2_Test_Plan.html">test plan</a> for the 3.6.2 RC2 test pass.</li>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M5_Test_Plan.html">test plan</a> for the 3.7 M5 test pass.</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M5_Test_Plan.html">test plan</a> for the 3.7 M5 test pass.</li>
 		</ul>
 		
 	</td>
@@ -619,46 +618,51 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.6.2 maintenance work <span class="work">1w</span></li>
 		</ul>
 		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add new participant-aware refactorings to IRefactoringProcessorIds  (bug 230244) <span class="work">Markus: 0.5d</span></li>
+		</ul>
+		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>create a problem if a new project specific setting is introduced (bug 300523) <span class="work">Rajesh: 1w</span></li>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">Rajesh: 1w</span></li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M7]</font> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <img src="../images/new.gif" border="0" align="absmiddle"> <strong>[JDT Debug]</strong> Add Undo support for condition editor (bug 186036) <span class="work">Dani: 1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> update JUnit to version 4.9 <span class="work">Markus: 1d</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 M7]</font> update JUnit to version 4.8.2 <span class="work">Markus: 1d</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> show horizontal line between methods (bug 13672) <span class="work">Rajesh: 1w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> show horizontal line between methods (bug 13672) <span class="work">Rajesh: 1w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
-			<li>bugzilla inbox tracking</li>
-			<li>bug fixing</li>
-			<li>watch performance tests</li>
-			<li>increase correctness test coverage</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bugzilla inbox tracking</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug fixing</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> watch performance tests</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> increase correctness test coverage</li>
 		</ul>
 		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/3.6.2_RC3_Test_Plan.html">test plan</a> for the 3.6.2 RC3 test pass.</li>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M6_Test_Plan.html">test plan</a> for the 3.7 M6 test pass.</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/3.6.2_RC3_Test_Plan.html">test plan</a> for the 3.6.2 RC3 test pass.</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M6_Test_Plan.html">test plan</a> for the 3.7 M6 test pass.</li>
 		</ul>
 		
 	</td>
@@ -670,6 +674,21 @@ function showHiddenWork() {
  <tr> 
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.7/plan.php#Milestone_Planning_M7">Platform Text 3.7 M7 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 7 [<a href="#4">4</a>]</h4>
+		<ul>
+			<li>start to to adopt Java 7 features that are implemented in JDT Core, for details see the <a href="http://wiki.eclipse.org/JDT_Core/Java7">current status</a>.</li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
+		<ul>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> update JUnit to version 4.8.2 <span class="work">Markus: 1d</span></li>
+		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">0.5m</span></h4>
 		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
