@@ -152,6 +152,8 @@ ob_start();
 				bugsWithSummaryJDT("[type wizards]", "Bugs related to the new type wizards");
 				bugsWithSummaryJDT("[use supertype]", "Bugs related to the use supertype refactoring");
 				bugsWithSummaryJDT("[working sets]", "Bugs related to working sets");
+				bugsWithSummaryJDT("[5.0]", "Bugs related to J2SE 5.0");
+				bugsWithSummaryJDT("[1.7]", "Bugs related to J2SE 7.0");
 			?>
 	  
 		</table>

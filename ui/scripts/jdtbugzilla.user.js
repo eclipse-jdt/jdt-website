@@ -68,7 +68,6 @@ var textCategories= [
 "[typing]",
 "[validateEdit]",
 "[wording]",
-"[5.0]",
 ];
 
 var jdtCategories= [
@@ -142,6 +141,8 @@ var jdtCategories= [
 "[type wizards]",
 "[use supertype]",
 "[working sets]",
+"[5.0]",
+"[1.7]",
 ];
 
 var assignees= [
