@@ -105,7 +105,7 @@ ob_start();
                 </li>
 		        <li>Open a Java file in the editor</li>
 		        <li>Click on 'Show AST of active editor' (<img
-		 style="width: 16px; height: 16px;" src="setfocus.gif" alt=""> ) to
+		 style="width: 16px; height: 16px;" src="setfocus.gif" alt="">) to
 		populate the view: The view shows the AST of the file opened in the
 		editor and will also reveal the element corresponding to the current
 		text selection<br>
@@ -141,7 +141,7 @@ ob_start();
 				primitive node attribute (String, int or boolean)<br>
 				</li>
 				<li>bindings are shown in blue. Only selected bindings are
-				shown</li>
+				shown initially. The rest can be toggled via view menu &gt; Hide Non-Relevant Attributes</li>
 			</ul>
 			
 			<br>
@@ -170,6 +170,7 @@ ob_start();
 				<li>Comments to
 					<a href="mailto:markus_keller%5Bat%5Dch.ibm.com">markus_keller[at]ch.ibm.com</a>
 				</li>
+				<li>Bugs / enhancement requests go to the JDT/UI component (preferably with patches;-)</li>
 				<li>
 					Thanks and credits go to Christian Hauser: The current AST view plug-in
 					is based his AST view implementation from the Zuerich Code Camp. Thanks
@@ -186,6 +187,5 @@ ob_start();
 	ob_end_clean();
 
 	# Generate the web page
-	
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 ?>
