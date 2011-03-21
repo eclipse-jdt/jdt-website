@@ -43,11 +43,13 @@ ob_start();
 			</p>
 			
       		<h4>Source:</h4>
-			<p>
-				Source is included in the plugin archives or available via CVS:<br>
-				Repository: <code>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code><br>
-				Module: <code>jdt-ui-home/plugins/org.eclipse.jdt.astview</code>
-			</p>
+      		<ul>
+				<li>
+					Source is included in the plugin archives or available via CVS:<br>
+					Repository: <code>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code><br>
+					Module: <code>jdt-ui-home/plugins/org.eclipse.jdt.astview</code>
+				</li>
+			</ul>
 				
 			<br>
 			<h4>Manual Install:</h4>
@@ -169,10 +171,10 @@ ob_start();
 					<a href="mailto:markus_keller%5Bat%5Dch.ibm.com">markus_keller[at]ch.ibm.com</a>
 				</li>
 				<li>
-					Thanks and credits go to Christian Hauser: The current AST view plugin
+					Thanks and credits go to Christian Hauser: The current AST view plug-in
 					is based his AST view implementation from the Zuerich Code Camp. Thanks
 					a lot!<br>
-					Martin Aeschlimann productized and maintained it in the first few years.
+					Martin Aeschlimann productized and maintained the plug-in in the first few years.
 				</li>
 			</ul>
 			
