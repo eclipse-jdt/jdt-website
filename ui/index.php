@@ -66,12 +66,10 @@ ob_start();
 				<p>JDT UI contributes some plugins that are not part of
 				the Eclipse SDK but can be downloaded from this update site:</p>
 				<div style="margin-left: 40px;"><b>http://www.eclipse.org/jdt/ui/update-site</b></div>
-				<p>Consult the plugin description page for more information about the plugins.</p>
+				<p>Consult the plugin description pages for more information:</p>
 				<ul>
-					<li><a href="astview/index.php">org.eclipse.jdt.astview</a>
-					- AST view <img style="width: 31px; height: 14px" alt="New"
-						src="images/new.gif"><br>
-					</li>
+					<li><a href="astview/index.php">org.eclipse.jdt.astview</a> - ASTView</li>
+					<li><a href="jeview/index.php">org.eclipse.jdt.jeview</a> - JavaElement View</li>
 				</ul>
 		</div>
 		<div class="homeitem3col">
