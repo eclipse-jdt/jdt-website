@@ -1,7 +1,7 @@
 <?php  																														require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php"); 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php"); 	$App 	= new App();	$Nav	= new Nav();	$Menu 	= new Menu();		include($App->getProjectCommon());    # All on the same line to unclutter the user's desktop'
 	# Begin: page-specific settings.  Change these. 
 	$pageTitle 		= "org.eclipse.jdt.astview - AST View";
-	$pageKeywords	= "JDT/UI, JDT, Java development tools UI, Java, java, development, tools, java ide, Eclipse";
+	$pageKeywords	= "ASTView, JDT/UI, JDT, Java development tools UI, Java, java, development, tools, java ide, Eclipse";
 	$pageAuthor		= "JDT/UI Team";
 	
 	# Add page-specific Nav bars here
@@ -42,10 +42,22 @@ ob_start();
 				</ul>
 			</p>
 			
+      		<h4>Source:</h4>
+			<p>
+				Source is included in the plugin archives or available via CVS:<br>
+				Repository: <code>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code><br>
+				Module: <code>jdt-ui-home/plugins/org.eclipse.jdt.astview</code>
+			</p>
+				
 			<br>
 			<h4>Manual Install:</h4>
 			<p>
 				<ul>
+					<li>
+						for Eclipse 3.5 and higher
+						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.7.201103211622.jar">org.eclipse.jdt.astview_1.1.7.201103211622.jar</a>
+						(copy to 'dropins' directory)
+					</li>
 					<li>
 						for Eclipse 3.4 M6 and higher
 						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.6.200803260035.jar">org.eclipse.jdt.astview_1.1.6.200803260035.jar</a>
@@ -135,12 +147,12 @@ ob_start();
 			<ul>
 				<li>You can toggle between the AST Level 2 and AST level 3 in
 				the view menu (triangle). AST level 3 is the extended and modified AST
-				that includes the new 5.0 language constructs. Note that the AST level
+				that includes the new 1.5 language constructs. Note that the AST level
 				3 is only available in 3.1 and later builds
 				</li>
 				<li>You can choose to show or hide bindings in the view menu
 				</li>
-				<li>You can choose the method to generate an AST in 'Advance Options' in the view menu
+				<li>You can choose the method to generate an AST in the view menu
 				</li>
 				<li>You can choose 'Add to Comparison Tray' in the context menu of a binding.
 				This moves the binding to a special area in the view. When you select another binding
@@ -153,22 +165,17 @@ ob_start();
 			<br>
 			<h4>Comments and Requests</h4>
 			<ul>
-				<li>
-					Source is included in the plugin archive or available via CVS:<br>
-					Repository: <code>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code><br>
-					Module: <code>jdt-ui-home/plugins/org.eclipse.jdt.astview</code>
-				</li>
 				<li>Comments to
-					<a href="mailto:Martin_Aeschlimann%5Bat%5Dch.ibm.com">Martin_Aeschlimann[at]ch.ibm.com</a>
+					<a href="mailto:markus_keller%5Bat%5Dch.ibm.com">markus_keller[at]ch.ibm.com</a>
+				</li>
+				<li>
+					Thanks and credits go to Christian Hauser: The current AST view plugin
+					is based his AST view implementation from the Zuerich Code Camp. Thanks
+					a lot!<br>
+					Martin Aeschlimann productized and maintained it in the first few years.
 				</li>
 			</ul>
 			
-			<p>
-				Thanks and credits go to Christian Hauser: The current AST view plugin
-				is based his AST view implementation from the Zuerich Code Camp. Thanks
-				a lot!<br>
-				Markus Keller has helped absorbing AST changes and implemented more features.
-			</p>
 
 	</div>
 	
@@ -178,13 +185,5 @@ ob_start();
 
 	# Generate the web page
 	
-# workaround for bug 148047:
-	$App->AddExtraHtmlHeader("<style type=\"text/css\">
-.homeitem3col ol li {
-	list-style-image: none;
-}
-</style>");
-# end of workaround
-
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 ?>
