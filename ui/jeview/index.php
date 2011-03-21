@@ -86,18 +86,18 @@ ob_start();
 				</li>
 				<li>Open a Java file in the editor</li>
 				<li>Click "Set input from current editor's selection (codeSelect)" (<img
-		 style="width: 16px; height: 16px;" src="codeSelect.gif" alt=""> ) to use the resolved element
-		 at the current caret location as view input.<br>
+		 style="width: 16px; height: 16px;" src="codeSelect.gif" alt="">) to use the resolved element
+		 at the current caret location as view input<br>
 				</li>
 				<li>Click "Set input from current editor's selection location (getElementAt)" (<img
-		 style="width: 16px; height: 16px;" src="setfocus.gif" alt=""> ) to use the element
-		 that encloses the current caret location as view input.<br>
+		 style="width: 16px; height: 16px;" src="setfocus.gif" alt="">) to use the element
+		 that encloses the current caret location as view input<br>
 				</li>
-				<li>Use the view menu to create a new Java element from a handle identifier.</li>
-				<li>Double click an element to show it in the Package Explorer or open it in an editor.</li>
-				<li>Use Navigate &gt; Show In &gt; ... to show the element somewhere else.</li>
-				<li>Use context menu &gt; Properties to show non-structural properties of the selected element.</li>
-				<li>Use the context menu on JAVA PROJECT elements to find a type by name or to create an element out of a binding key.</li>
+				<li>Use the view menu to create a new Java element from a handle identifier</li>
+				<li>Double click an element to show it in the Package Explorer or open it in an editor</li>
+				<li>Use Navigate &gt; Show In &gt; ... to show the element somewhere else</li>
+				<li>Use context menu &gt; Properties to show non-structural properties of the selected element</li>
+				<li>Use the context menu on JAVA PROJECT elements to find a type by name or to create an element out of a binding key</li>
 			</ol>
 
 			<br>
