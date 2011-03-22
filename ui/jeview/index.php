@@ -57,7 +57,7 @@ ob_start();
 			<p>
 				<ul>
 					<li>
-						for Eclipse 3.6 and higher
+						for Eclipse 3.7 and higher
 						<a href="../update-site/plugins/org.eclipse.jdt.jeview_1.0.8.201103211622.jar">org.eclipse.jdt.jeview_1.0.8.201103211622.jar</a>
 						(copy to 'dropins' directory)
 					</li>
