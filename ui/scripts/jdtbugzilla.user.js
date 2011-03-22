@@ -28,7 +28,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.7 M7", "3.7 RC1", "3.7", "3.6.2"];
+var target_milestones= ["3.7 M7", "3.7 RC1", "3.7", "3.8"];
 
 var textCategories= [
 "-- Text category --",
