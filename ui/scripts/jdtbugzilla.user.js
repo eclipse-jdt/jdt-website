@@ -150,7 +150,6 @@ var assignees= [
 "MK", "markus_keller@ch.ibm.com",
 "RV", "raksha.vasisht@in.ibm.com",
 "DA", "deepak.azad@in.ibm.com",
-"RT", "rthakkar@in.ibm.com",
 ];
 
 var ccs= assignees;
