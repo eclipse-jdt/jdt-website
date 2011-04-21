@@ -105,6 +105,14 @@ Verify the new lightweight refresh option (General &gt; Workspace) works when di
 	<li>verify in editors and views that the content is up-to-date and/or the operation is performed on the new content and that no out-of-sync is reported when the option is enabled</li>
 </ul>
 
+<h4>'Non-shared projects' filter  (???, ??? - Questions: Dani)</h4>
+Verify that the 'Non-shared projects' filter works as expected:
+<ul>
+	<li>verify that it filters non-shared projects</li>
+	<li>verify that it filters non-shared projects that are imported via PDE</li>
+	<li>verify that it does not filter shared PDE projects</li>
+</ul>
+
 <h4>1.7 compiler compliance disabled (???, ??? - Questions: Dani)</h4>
 Verify that the 1.7 compiler compliance is disabled in the UI. 
 <ul>
@@ -114,6 +122,14 @@ Verify that the 1.7 compiler compliance is disabled in the UI.
 	<li>verify that the 'Java Compiler' property page warns if an 1.7 EE is selected</li>
 	<li>verify that the New Java Project wizard works as expected</li>
 	<li>verify that the New Java Project wizard warns if a 1.7 EE is selected</li>
+</ul>
+
+<h4>Search/replace with linked resources (???, ??? - Questions: Dani)</h4>
+Verify that global search/replace works.
+<ul>
+	<li>verify that generally works</li>
+	<li>verify that all matches in the same file are correctly replaced</li>
+	<li>verify that the same file reached via multiple links isn't corrupted (bug 320533)</li>
 </ul>
 
 <h4>Quick Assist - Change modifiers to final where possible (???, ??? - Questions: Deepak)</h4>
