@@ -91,21 +91,21 @@ Testers: Dani, Deepak, Markus, and Raksha<br>
 <h2>Test New Functionality </h2>
 <em>First test all those items where you are listed as first tester.</em>
 
-<h4>Double-click word selection (???, ??? - Questions: Dani)</h4>
+<h4>Double-click word selection (Raksha, Deepak - Questions: Dani)</h4>
 Test that double-click correctly selects words and numbers.
 <ul>
 	<li>verify that it works in the text editor</li>
 	<li>verify that it works in the Java editor (test code, comments and strings</li>
 </ul>
 
-<h4>New lightweight refresh (???, ??? - Questions: Dani)</h4>
+<h4>New lightweight refresh (Deepak, Raksha - Questions: Dani)</h4>
 Verify the new lightweight refresh option (General &gt; Workspace) works when disabled (default) and when enabled.
 <ul>
 	<li>verify in editors and views that out-of-sync is reported when the option is disabled</li>
 	<li>verify in editors and views that the content is up-to-date and/or the operation is performed on the new content and that no out-of-sync is reported when the option is enabled</li>
 </ul>
 
-<h4>'Non-shared projects' filter  (???, ??? - Questions: Dani)</h4>
+<h4>'Non-shared projects' filter  (Raksha, Deepak - Questions: Dani)</h4>
 Verify that the 'Non-shared projects' filter works as expected:
 <ul>
 	<li>verify that it filters non-shared projects</li>
@@ -113,18 +113,20 @@ Verify that the 'Non-shared projects' filter works as expected:
 	<li>verify that it does not filter shared PDE projects</li>
 </ul>
 
-<h4>1.7 compiler compliance disabled (???, ??? - Questions: Dani)</h4>
+<h4>1.7 compiler compliance disabled (Markus, Deepak - Questions: Dani)</h4>
 Verify that the 1.7 compiler compliance is disabled in the UI. 
 <ul>
-	<li>verify that one can still choose select a 1.7 EE</li>
+	<li>verify that one can still choose a 1.7 EE</li>
 	<li>verify that on cannot choose 1.7 compiler compliance in the 'Compiler' preference page</li>
 	<li>verify that on cannot choose 1.7 compiler compliance on the 'Java Compiler' property page</li>
 	<li>verify that the 'Java Compiler' property page warns if an 1.7 EE is selected</li>
 	<li>verify that the New Java Project wizard works as expected</li>
 	<li>verify that the New Java Project wizard warns if a 1.7 EE is selected</li>
+	<li>verify that a project still compiles (with 1.6 compiler) if options are changed to 1.7 in the .prefs file</li>
+	<li>verify that a program can be launched using the 1.7 EE</li>
 </ul>
 
-<h4>Search/replace with linked resources (???, ??? - Questions: Dani)</h4>
+<h4>Search/replace with linked resources (Raksha, Markus - Questions: Dani)</h4>
 Verify that global search/replace works.
 <ul>
 	<li>verify that generally works</li>
@@ -132,43 +134,43 @@ Verify that global search/replace works.
 	<li>verify that the same file reached via multiple links isn't corrupted (bug 320533)</li>
 </ul>
 
-<h4>Quick Assist - Change modifiers to final where possible (???, ??? - Questions: Deepak)</h4>
+<h4>Quick Assist - Change modifiers to final where possible (Markus, Raksha - Questions: Deepak)</h4>
 Verify that the quick assist is not too prominent.
 <ul>
 	<li>It is NOT available when only a class or method name is selected.</li>
 	<li>It is available when the entire class/method, or a set of statements are selected.</li>
 </ul>
 
-<h4>Inline Local Variable refactoring (???, ??? - Questions: Raksha)</h4>
+<h4>Inline Local Variable refactoring (Dani, Deepak - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that Inline Local Variable refactoring does not delete comment before or after the variable declaration</li>
 </ul>
 
-<h4>Opening a project in Package Explorer  (???, ??? - Questions: Raksha)</h4>
+<h4>Opening a project in Package Explorer  (Dani, Markus - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that opening a selected project in Package Explorer opens the closed project(s) and not the dialog (bug 296786)</li>
 </ul>
 
-<h4>Ctrl+click on continue must jump to the label  (???, ??? - Questions: Raksha)</h4>
+<h4>Ctrl+click on continue must jump to the label  (Markus, Dani - Questions: Raksha)</h4>
 <ul>
 	<li>Verify that Ctrl+click on continue without a label highlights and jumps to the label if there's one </li>
 	<li>Verify that click on break without a label highlights the label along with the end of target statement (braces)</li>
 </ul>
 
-<h4>Performance improvements in StyledCellLabelProvider (???, ??? - Questions: Markus)</h4>
+<h4>Performance improvements in StyledCellLabelProvider (Deepak, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>Verify that styled Table and Tree items are rendered correctly</li>
 	<li>Verify that selected and unselected items are correct</li>
 	<li>Verify that rendering and click area are correct when content of an item changed (e.g in Open Type dialog or when filtering search results)</li>
 </ul>
 
-<h4>Text editor templates with non-ASCII variable names (???, ??? - Questions: Markus)</h4>
+<h4>Text editor templates with non-ASCII variable names (Dani, Raksha - Questions: Markus)</h4>
 <ul>
 	<li>Verify that user-created templates work, also after restarting Eclipse</li>
 	<li>Verify that pre-defined templates (e.g. /org.eclipse.jdt.ui/templates/default-templates.xml) work</li>
 </ul>
 
-<h4>Second click on Help button closes dialog tray (???, ??? - Questions: Markus)</h4>
+<h4>Second click on Help button closes dialog tray (Deepak, Markus - Questions: Markus)</h4>
 <ul>
 	<li>Verify that toggling works</li>
 	<li>Verify that help can still be shown when tray was opened by cheat sheet (bug 339267)</li>
