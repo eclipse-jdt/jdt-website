@@ -65,12 +65,10 @@ function traverseLinkifyBugs(node) {
 
 
 <body onload="linkifyBugs();">
-<h1>3.7 RC0 Test Plan</h1>
-Test day: Tuesday, 2011-05-02<br>
-Test Build: 3.7M7<br>
-Components: JDT Core<br>
+<h1>3.7 Two Day Test Pass: JDT Core</h1>
+Testing days: Monday, 2011-05-02 and Tuesday 2011-05-03<br>
+Test Build: Declared 3.7 M7/RC0 build (I20110428-0848)<br>
 Testers: Jay, Ayushman, Srikanth, Satyam and Olivier<br>
-
 
 <h2>Platforms</h2>
 <ul>
@@ -82,6 +80,8 @@ Testers: Jay, Ayushman, Srikanth, Satyam and Olivier<br>
   <li>Ayushman: </li>
 </ul>
 
+<strong style="color:red">Each new bug must state whether it is a regression compared to 3.6 or whether it is not.<br>
+If yes, then the bug must state if there is a workaround and assess the severity of the issue.</strong> 
 
 <h2>Goal</h2>
 <ul>
@@ -90,8 +90,15 @@ Testers: Jay, Ayushman, Srikanth, Satyam and Olivier<br>
   <li>sanity check performance</li>
 </ul>
 
-<h2>Test New Functionality </h2>
+<h2>Test New Functionality added for 3.7</h2>
+
+<p>Test all new features that have been added during 3.7 development.
+This can be done by testing the features mentioned in the M1-M7
+<a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.7M7-I201104280848/eclipse-news-M7.html">New and Noteworthy</a>
+documents.</p>
+
 <p>The work will be split among JDT/Core committers after Monday's call.</p>
+
 <ul>
 <li>Check usage of inherit javadoc</li>
 <li>Check new "javadoc" token for @SuppressWarnings</li>
@@ -110,5 +117,11 @@ Testers: Jay, Ayushman, Srikanth, Satyam and Olivier<br>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Core&target_milestone=3.7&target_milestone=3.7+M1&target_milestone=3.7+M2&target_milestone=3.7+M3&target_milestone=3.7+M4&target_milestone=3.7+M5&target_milestone=3.7+M6&target_milestone=3.7+M7&target_milestone=3.7+RC1&target_milestone=3.7+RC2&target_milestone=3.7+RC3&target_milestone=3.7+RC4&longdesc_type=allwordssubstr&longdesc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_severity=blocker&bug_severity=critical&emailtype1=substring&email1=&emailtype2=substring&email2=&bug_id_type=anyexact&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">
   critical and blocker JDT Core bugs</a></li>
 </ul>
+
+<h2>Freestyle Testing (all)</h2>
+Once all of the above test items are done (including those where you are listed as second tester), start with a fresh workspace and
+change the settings in a way you normally don't work.
+<p>
+Implement a little feature or tool or fix one of your favorite bugs.</p>
 
 </body></html>
