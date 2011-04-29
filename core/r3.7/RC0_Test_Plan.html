@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>3.7 RC0 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+<script type="text/javascript">
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode;
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+</script>
+
+</head>
+
+
+<body onload="linkifyBugs();">
+<h1>3.7 RC0 Test Plan</h1>
+Test day: Tuesday, 2011-05-02<br>
+Test Build: 3.7M7<br>
+Components: JDT Core<br>
+Testers: Jay, Ayushman, Srikanth, Satyam and Olivier<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Olivier</a>: Windows 7<br>
+  Will test 3.7M7 on top of a 4.1 I-build</li>
+  <li>Jay: </li>
+  <li>Satyam: </li>
+  <li>Srikanth: </li>
+  <li>Ayushman: </li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added for 3.7</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check performance</li>
+</ul>
+
+<h2>Test New Functionality </h2>
+<p>The work will be split among JDT/Core committers after Monday's call.</p>
+<ul>
+<li>Check usage of inherit javadoc</li>
+<li>Check new "javadoc" token for @SuppressWarnings</li>
+<li>Check the new option for the code formatter to preserve whitespace between code and trailing comment</li>
+<li>Check the new compiler option to suppress unavoidable generic type problems</li>
+<li>Check the new compiler option to detect methods that can be static</li>
+<li>Check the detection of unread local variables</li>
+<li>Check the improved null analysis (check with assert statement, conditions,...)</li>
+<li>Check the code formatter options around annotations formatting</li>
+<li>Check the method parameter annotations can be retrieved in the Java Model</li>
+</ul>
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Core&target_milestone=3.7&target_milestone=3.7+M1&target_milestone=3.7+M2&target_milestone=3.7+M3&target_milestone=3.7+M4&target_milestone=3.7+M5&target_milestone=3.7+M6&target_milestone=3.7+M7&target_milestone=3.7+RC1&target_milestone=3.7+RC2&target_milestone=3.7+RC3&target_milestone=3.7+RC4&longdesc_type=allwordssubstr&longdesc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&bug_status=VERIFIED&bug_severity=blocker&bug_severity=critical&emailtype1=substring&email1=&emailtype2=substring&email2=&bug_id_type=anyexact&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">
+  critical and blocker JDT Core bugs</a></li>
+</ul>
+
+</body></html>
