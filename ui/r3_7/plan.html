@@ -95,7 +95,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2011/04/05 10:25:08 $</p>
+    <p>Last revised $Date: 2011/04/29 12:22:52 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -150,9 +150,9 @@ function showHiddenWork() {
 
 		<li><h4>Adopt New Platform Features [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10">  make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
 				<ul>
-					<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> test our bundles against it</li>
+					<li>test our bundles against it</li>
 				</ul>
 			</li>
 		</ul>
@@ -169,14 +169,14 @@ function showHiddenWork() {
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
-			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2w</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2w</span>
 				<ul>
 					<li>Increase visibility (with info/warning message)?</li>
 					<li>add delegation if possible (with info/warning message)?</li>
 					<li>offer possibility to "fix" warning on error page?</li>
 				</ul>
 			</li>
-			<li>permanent local rename mode [experimental]
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> permanent local rename mode [experimental]
 				<ul>
 					<li>editing always updates like "Local Rename" (automatically enter linked mode)</li>
 					<li>investigate interplay with "refactoring only" mode</li>
@@ -192,7 +192,7 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> <strong>[Platform UI]</strong> hover for hidden Problems view (bug 297337) <span class="work">Dani: 0.5d</span>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> <strong>[Platform UI]</strong> provide error/warning icon decorator for hidden Problems view (bug 170244) <span class="work">Dani: 2d</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> <strong>[Platform UI]</strong> Problems view: can't start quick fixes from a multi-selection (bug 252587) <span class="work">Dani: 1w</span></li>
-			<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> better support for Java properties files (native2ascii conversion) (bug 65571) <span class="work">Deepak: 2w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> improve NLS tooling <span class="work">Deepak: 2w</span></li>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">Rajesh: 1w</span></li>
@@ -200,7 +200,7 @@ function showHiddenWork() {
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <strong>[JDT Debug]</strong> add 'Open from Clipboard' command (bug 48880) <span class="work">Deepak: 3d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> allow to invoke 'Format Source' from Outline view (bug 86576) <span class="work">Rajesh (reassigned from Deepak): 1d</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> provide 'Collapse All' action in Outline view (bug 41092) <span class="work">Rajesh: 1d</span></li>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <img src="../images/new.gif" border="0" align="absmiddle"> <strong>[JDT Debug]</strong> Add Undo support for condition editor (bug 186036) <span class="work">Dani: 1d</span></li>
 		</ul>
 		</li>
@@ -211,7 +211,7 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> offer additional search scopes via new 'Search In...' view menu<span class="work">Raksha: 2d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> refresh view automatically after switching scopes<span class="work">Raksha: 0.5d</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> control-drag (or something) to add to a call hierarchy instead of replace (bug 316356) <span class="work">Raksha: 3d</span></li>
-			<li>document positions not updated for call locations (bug 121900) <span class="work">Raksha</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> document positions not updated for call locations (bug 121900) <span class="work">Raksha</span></li>
 		</ul>
 		</li>
 		
@@ -240,28 +240,28 @@ function showHiddenWork() {
 		<li><h4>Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> show horizontal line between methods (bug 13672) <span class="work">Rajesh: 1w</span></li>
-			<li>visualize code nesting (bug 69455) <span class="work">Raksha or Deepak: 2w</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> visualize code nesting (bug 69455) <span class="work">Raksha or Deepak: 2w</span>
 				<br>&rarr; could be implemented as semantic highlighting</li>
-			<li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> [misc] draw vertical lines in control flow statements (bug 84878)</li>
 		</ul>
 		</li>
   
 		<li><h4>Quick views [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">Raksha: 2d</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">Raksha: 2d</span>
 		</ul>
 		</li>
 	
 		<li><h4>Performance And Memory Consumption [<a href="#1">1</a>]</h4>
 		<ul>
-		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> constantly watch performance test results and act when red</li>
-		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests</li>
+		  <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> constantly watch performance test results and act when red</li>
+		  <li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> continue to provide new tests</li>
 		</ul>
 		</li>
 			
 		<li><h4>Miscellaneous</h4>
 		<ul>
-			<li>structured selection should support brackets (bug 86835) <span class="work">???</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> structured selection should support brackets (bug 86835) <span class="work">???</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> move JDT UI over to J2SE-1.5 (bug 320875) <span class="work">Markus: 1w</span></li>
 		</ul>
 		</li>
@@ -271,7 +271,7 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> resolve bugs that got deferred from 3.6 to 3.7<span class="work">all</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.6.1 maintenance work <span class="work">1w</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.6.2 maintenance work <span class="work">1w</span></li>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> look at bugs with patches and review those</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> look at bugs with patches and review those</li>
 		</ul>
 		</li>
 	</ul>
@@ -283,7 +283,7 @@ function showHiddenWork() {
 	<ul>
 		<li>SWT
 		<ul>
-			<li>bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
 		</ul>
 		</li>
 		<li>Platform Compare
@@ -686,7 +686,7 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10">  improve smart indent on 'Enter' and paste<span class="work">Rajesh: 2w</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
@@ -695,18 +695,18 @@ function showHiddenWork() {
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">0.5m</span></h4>
-		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
+		<img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.7 RC1]</font> Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
 		<ul>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">0.5m</span></h4>
-		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
+		<img src="../images/ok.gif" border="0" height="10" width="10">  Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
 		<ul>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> make sure that we smoothly run on Eclipse SDK 4.1<span class="work">2w</span>
 				<br>NOTE: Depends on the availability of the compatibility layer.
 				<ul>
 					<li>test our bundles against it</li>
@@ -717,16 +717,16 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
-			<li>bugzilla inbox tracking</li>
-			<li>bug fixing</li>
-			<li>watch performance tests</li>
-			<li>increase correctness test coverage</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bugzilla inbox tracking</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug fixing</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> watch performance tests</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> increase correctness test coverage</li>
 		</ul>
 		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M7_Test_Plan.html">test plan</a> for the 3.7 M7 test pass.</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_7/testing/M7_Test_Plan.html">test plan</a> for the 3.7 M7 test pass.</li>
 		</ul>
 		
 	</td>
