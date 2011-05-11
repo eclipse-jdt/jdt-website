@@ -289,6 +289,15 @@ function addProductLink(name, parentElem) {
     addLink(name, href, parentElem);
 }
 
+function addComponentLink(name, parentElem) {
+    var href= 'javascript:document.getElementById("component").value="' + name + '";'
+            + 'document.getElementById("set_default_assignee").checked= true;'
+            + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
+            + 'document.getElementById("component").focus();'
+            + 'void(0);';
+    addLink(name, href, parentElem);
+}
+
 function addEmailLinks(emailElemName) {
 	var emailElems= document.getElementsByName(emailElemName);
 	if (emailElems.length > 0) {
@@ -674,6 +683,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	                + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
                     + "}, 10)"
 	                );
+	    
+	    // Add shortcuts to set Component:
+		var componentsLinkSpanElem= document.createElement("span");
+		componentsLinkSpanElem.style.marginLeft= "1em";
+		componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
+	    addComponentLink("Core", componentsLinkSpanElem);
+	    addComponentLink("Debug", componentsLinkSpanElem);
+	    addComponentLink("Doc", componentsLinkSpanElem);
+	    addComponentLink("SWT", componentsLinkSpanElem);
+	    addComponentLink("Text", componentsLinkSpanElem);
+	    addComponentLink("UI", componentsLinkSpanElem);
 	}
 	
 	// Copy QA and Assignee to the right (read-only):
@@ -821,14 +841,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	
     // Enlarge the "Comment" field on the "Attachment Details" page:
-    if (window.location.pathname.match(/.*attachment\.cgi/)) {
+//    if (window.location.pathname.match(/.*attachment\.cgi/)) {
 	    var commentElem= document.getElementById("comment");
 		if (commentElem) {
 		    commentElem.setAttribute("rows", "10");
-		    commentElem.setAttribute("cols", "80");
+		    commentElem.setAttribute("cols", "81");
 		    commentElem.setAttribute("onFocus", "this.rows=25");
 		}
-    }
+//    }
 
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	
