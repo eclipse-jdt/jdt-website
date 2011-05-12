@@ -28,7 +28,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.7 RC1", "3.7 RC2", "3.7 RC3", "3.7 RC4", "3.7", "3.8"];
+var target_milestones= ["3.7 RC2", "3.7 RC3", "3.7 RC4", "3.7", "3.8"];
 
 var textCategories= [
 "-- Text category --",
@@ -840,15 +840,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
-    // Enlarge the "Comment" field on the "Attachment Details" page:
-//    if (window.location.pathname.match(/.*attachment\.cgi/)) {
-	    var commentElem= document.getElementById("comment");
-		if (commentElem) {
-		    commentElem.setAttribute("rows", "10");
-		    commentElem.setAttribute("cols", "81");
-		    commentElem.setAttribute("onFocus", "this.rows=25");
-		}
-//    }
+    // Enlarge the "Comment" field (too small on the "Attachment Details" page,
+    //     default cols=80 is too narrow for proper wrapping preview when scroll bars are shown):
+    var commentElem= document.getElementById("comment");
+	if (commentElem) {
+	    commentElem.setAttribute("rows", "10");
+	    commentElem.setAttribute("cols", "81");
+	    commentElem.setAttribute("onFocus", "this.rows=25");
+	}
 
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	
