@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>3.7 RC1 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+<script type="text/javascript">
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode;
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+</script>
+
+</head>
+
+
+<body onload="linkifyBugs();">
+<h1>3.7 RC1 Test Plan</h1>
+Test day: Monday, 2011-05-16<br>
+Test Build: 3.7RC1 (I20110512-2000)<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Dani, Deepak, Markus, and Raksha<br>
+
+
+<h2>Platforms</h2>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+  <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>verify all bug fixes since M7</li>
+  <li>free-style testing with focus on JDT and Text</li>
+</ul>
+
+
+<h2>Test items</h2>
+
+<h4>Test selection, drag-and-drop, etc. in Table and Tree (Deepak, Markus - Questions: Markus)</h4>
+DND and checkbox selection problems have been fixed on GTK and Cocoa. Look out for collateral damage.
+<ul>
+	<li>verify that drag-and-drop works when widget had focus and when it had not</li>
+	<li>verify that it works as expected with checkbox widgets (e.g. Breakpoints view with Group By > *) and normal widgets</li>
+	<li>verify that selection and mousedown events are coming promptly (ControlExample)</li>
+</ul>
+
+<h4>Free-style testing with focus on JDT and Text (All)</h4>
+<ul>
+	<li>work on a pet project or on a bug fix</li>
+	<li>goal is to use as many JDT and Text features as possible</li>
+	<li>no doc writing (since that doesn't test our features)</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20RC1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs, 3.7 RC1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.7%20RC1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs, 3.7 RC1</a></li>
+  
+  <li>Help PDE and Debug verifying bugs. Start with <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;classification=Eclipse&amp;product=PDE&amp;target_milestone=3.7+RC1&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;emailtype1=substring&amp;email1=&amp;emailassigned_to2=1&amp;emailtype2=substring&amp;email2=daniel_megert%40ch.ibm.com&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">
+  Dani's bugs</a></li>
+</ul>
+
+</body></html>
