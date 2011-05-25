@@ -618,7 +618,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    bugElem.appendChild(bugLink);
 			    bugElem.appendChild(document.createTextNode(": " + short_descElem.value));
 
-			    titleElem.appendChild(bugElem);
+//			    titleElem.appendChild(bugElem);
+				titleElem.replaceChild(bugElem, titleElem.firstChild.nextSibling);
+			    
+			    // Hack to stitch header to top, so that it is also visible when scrolled down:
+			    var tableElem= titleElem.parentNode.parentNode.parentNode;
+			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px;");
+			    // leave some space behind the fixed table:
+			    var spacerElem= document.createElement("div");
+			    spacerElem.appendChild(document.createTextNode("&nbsp;"));
+			    tableElem.parentNode.insertBefore(spacerElem, tableElem);
+			    
 			    var subtitleElem= document.getElementById("subtitle");
 			    if (subtitleElem) {
 				    subtitleElem.textContent= "";
