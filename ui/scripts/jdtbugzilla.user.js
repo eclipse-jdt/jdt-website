@@ -610,15 +610,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
 	            bugId= bugRegex.exec(titleElem.textContent)[1];
-			    var bugLink= document.createElement("a");
-			    bugLink.href= "../" + bugId;
-			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
-			    
+	            
 			    var bugElem= document.createElement("p");
-			    bugElem.appendChild(bugLink);
-			    bugElem.appendChild(document.createTextNode(": " + short_descElem.value));
-
-//			    titleElem.appendChild(bugElem);
+			    bugElem.appendChild(document.createTextNode("Bug " + bugId + ": " + short_descElem.value));
 				titleElem.replaceChild(bugElem, titleElem.firstChild.nextSibling);
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
@@ -891,18 +885,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var anchors= document.getElementsByTagName("a");
 	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
 	var commentRegex= /^c(\d+)$/; // c42
+	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
+	    var aElemHref= aElem.getAttribute("href");
+	    if (!aElemHref)
+	        continue;
 	    
 	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
-	    if (aElem.name.substr(0, 7) == "attach_" && aElem.href.search(diffRegex) != -1) {
-	        var origHref= aElem.href;
-	        aElem.setAttribute("href", origHref.replace(diffRegex, "attachment.cgi?id=$1"))
+	    if (aElem.name.substr(0, 7) == "attach_" && aElemHref.match(diffRegex)) {
+	        aElem.setAttribute("href", aElemHref.replace(diffRegex, "attachment.cgi?id=$1"))
 	        
 	        // Add [diff] after [details] in attachment references:
 	        var diffElem= document.createElement("a");
 	        diffElem.textContent= "[diff]";
-	        diffElem.href= origHref.replace(diffRegex, "attachment.cgi?id=$1&action=diff");
+	        diffElem.href= aElemHref.replace(diffRegex, "attachment.cgi?id=$1&action=diff");
 	        aElem.parentNode.appendChild(document.createTextNode(" "));
 	        aElem.parentNode.appendChild(diffElem);
 	        i+= 2; //skip [details] and new anchor
@@ -913,6 +910,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
+	        
+	    // Change https://bugs.eclipse.org/bugs/show_bug.cgi?id=* to https://bugs.eclipse.org/342697
+	    } else if (aElemHref.match(bugrefRegex)) {
+	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
+	            // only in header (replacing in comments would break the "visited" state)
+                aElem.setAttribute("href", aElemHref.replace(bugrefRegex, "/$1"))
+            }
 	    }
 	    
 	//    // Show obsolete attachments initially:
