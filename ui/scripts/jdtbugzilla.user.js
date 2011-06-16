@@ -28,11 +28,11 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.7 RC3", "3.7 RC4", "3.7", "3.7.1", "3.8"];
+var target_milestones= ["3.7.1", "3.8"];
 
 var textCategories= [
 "-- Text category --",
-"-- clean --",
+"-- clear categories --",
 "[api]",
 "[BiDi]",
 "[block selection]",
@@ -72,7 +72,7 @@ var textCategories= [
 
 var jdtCategories= [
 "-- JDT category --",
-"-- clean --",
+"-- clear categories --",
 "[actions]",
 "[api]",
 "[ast rewrite]",
@@ -356,7 +356,7 @@ function createCategoriesChooser(categories) {
 		"if (!form) { form= document.queryform; }" +
 		"if (!form) { form= document.Create; }" +
 		"if (this.value[0] != '[') {" +
-		"    if (this.value == '-- clean --') {" +
+		"    if (this.value == '-- clear categories --') {" +
 		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w ]*\\]\\s*)+/, '');" +
 		"    }" +
 		"    return;" +
