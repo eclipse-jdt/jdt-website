@@ -25,6 +25,7 @@ Testers: JDT Team + PDE Team<br>
 
 
 <h3>JREs</h3>
+Use the latest Oracle and IBM JREs from <a href="http://w3.hursley.ibm.com/java/jim/jim/index.html">JIM</a> (don't download from anywhere else).
 <ul>
 	<li>primary tester (listed as first one) uses the IBM JRE</li>
 	<li>secondary tester (listed as second one) uses the Oracle JRE</li>
@@ -59,8 +60,7 @@ For each item test the following things (if applicable):
 	<li>the compiler tolerates the new syntax when in 1.7 mode</li>
 	<li>the compiler does not tolerate the new syntax when below 1.7</li>
 	<li>new options added for the feature (compiler, formatter)</li>
-	<li>new quick assists for the feature</li>
-	<li>new quick fixes for the feature</li>
+	<li><a href="#quick_fixes">new quick assists and quick fixes</a>: verify that they are appropriate, work as expected, have the correct relevance in the quick fix pop-up</li>
 	<li>test that the refactorings work</li>
 	<li>test code navigation (F3, hyperlinking)</li>
 	<li>test hovers in the editor</li>
@@ -100,5 +100,24 @@ For each item test the following things (if applicable):
 
 <h2>Freestyle Testing (all)</h2>
 Once you have completed all assigned test items (including those where you are listed as secondary tester), you can implement a little feature or tool, or fix one of your favorite bugs, preferably using Java 7 constructs.</p>
+
+
+<h2>Appendix</h2>
+<h3><A name="quick_fixes">New Quick Assists and Quick Fixes</h3>
+<ul>
+	<li>'Surround with try/multi-catch' quick fix - for multiple uncaught exceptions</li>
+	<li>'Add exceptions to existing catch clause' quick fix - allows you to add uncaught exceptions to an existing catch clause</li>
+	<li>'Use separate catch blocks' quick assist - replace a multi-catch clause with individual catch blocks</li>
+	<li>'Move exceptions to separate catch block' quick assist - pick out one or more selected exceptions from a multi-catch clause</li>
+	<li>'Combine catch blocks' quick assist - combine separate catch blocks into a single multi-catch block</li>
+	<li>'Remove exception' and 'Replace exception with throws' quick fixes - on the error shown when an exception in a multi-catch clause is already caught by an alternative exception</li>
+	<li>'Add @SafeVarargs' quick fix - for potential heap pollution warnings on method declarations</li>
+	<li>'Add @SafeVarargs to 'asList(...)'' quick fix - same quick fix as above but from call site</li>
+	<li>'Remove @SafeVarargs' quick fix - for incorrect usage of @SafeVarargs annotation</li>
+	<li>'Remove type arguments' quick fix - for 'Redundant type arguments' warning</li>
+	<li>'Insert inferred type arguments' quick assist and as quick fix - for class instance creations</li>
+	<li>'Convert 'switch' to 'if-else'' quick assist - an old quick assist but updated for strings in switch</li>
+	<li>'Change compiler compliance' quick fix - when a 1.7 feature is used with compiler compliance less than 1.7</li>
+</ul>
 </body>
 </html>
