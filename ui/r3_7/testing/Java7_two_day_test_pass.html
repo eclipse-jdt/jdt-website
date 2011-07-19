@@ -104,6 +104,7 @@ Once you have completed all assigned test items (including those where you are l
 
 <h2>Appendix</h2>
 <h3><A name="quick_fixes">New Quick Assists and Quick Fixes</h3>
+<h4>Multi-catch</h4>
 <ul>
 	<li>'Surround with try/multi-catch' quick fix - for multiple uncaught exceptions</li>
 	<li>'Add exceptions to existing catch clause' quick fix - allows you to add uncaught exceptions to an existing catch clause</li>
@@ -111,11 +112,20 @@ Once you have completed all assigned test items (including those where you are l
 	<li>'Move exceptions to separate catch block' quick assist - pick out one or more selected exceptions from a multi-catch clause</li>
 	<li>'Combine catch blocks' quick assist - combine separate catch blocks into a single multi-catch block</li>
 	<li>'Remove exception' and 'Replace exception with throws' quick fixes - on the error shown when an exception in a multi-catch clause is already caught by an alternative exception</li>
+</ul>
+<h4>@SafeVarargs</h4>
+<ul>
 	<li>'Add @SafeVarargs' quick fix - for potential heap pollution warnings on method declarations</li>
 	<li>'Add @SafeVarargs to 'asList(...)'' quick fix - same quick fix as above but from call site</li>
 	<li>'Remove @SafeVarargs' quick fix - for incorrect usage of @SafeVarargs annotation</li>
+</ul>
+<h4>Diamond</h4>
+<ul>
 	<li>'Remove type arguments' quick fix - for 'Redundant type arguments' warning</li>
 	<li>'Insert inferred type arguments' quick assist and as quick fix - for class instance creations</li>
+</ul>
+<h4>Others</h4>
+<ul>
 	<li>'Convert 'switch' to 'if-else'' quick assist - an old quick assist but updated for strings in switch</li>
 	<li>'Change compiler compliance' quick fix - when a 1.7 feature is used with compiler compliance less than 1.7</li>
 </ul>
