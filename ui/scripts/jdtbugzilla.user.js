@@ -610,9 +610,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
 	            bugId= bugRegex.exec(titleElem.textContent)[1];
-	            
+			    var bugLink= document.createElement("a");
+			    bugLink.href= "../" + bugId;
+			    bugLink.appendChild(document.createTextNode("Bugs " + bugId));
+			    
 			    var bugElem= document.createElement("p");
-			    bugElem.appendChild(document.createTextNode("Bug " + bugId + ": " + short_descElem.value));
+			    bugElem.appendChild(bugLink);
+			    bugElem.appendChild(document.createTextNode(": " + short_descElem.value));
+
 				titleElem.replaceChild(bugElem, titleElem.firstChild.nextSibling);
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
@@ -914,8 +919,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    // Change https://bugs.eclipse.org/bugs/show_bug.cgi?id=* to https://bugs.eclipse.org/342697
 	    } else if (aElemHref.match(bugrefRegex)) {
 	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
-	            // only in header (replacing in comments would break the "visited" state)
-                aElem.setAttribute("href", aElemHref.replace(bugrefRegex, "/$1"))
+	        	// Replace link with text to allow easy copy of bug number
+	            var pre= document.createTextNode("bug " + bugId);
+	            aElem.parentNode.insertBefore(pre, aElem);
+	            aElem.parentNode.removeChild(aElem);
             }
 	    }
 	    
