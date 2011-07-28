@@ -24,6 +24,15 @@
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
 // @include       https://bugs.eclipse.org/bugs/buglist.cgi*
+//
+// https://bugs.eclipse.org/bugs/show_bug.cgi?id=337245:
+// @include       https://bugs.eclipse.org/bugstest/show_bug.cgi*
+// @include       https://bugs.eclipse.org/bugstest/process_bug.cgi
+// @include       https://bugs.eclipse.org/bugstest/attachment.cgi*
+// @include       https://bugs.eclipse.org/bugstest/enter_bug.cgi*
+// @include       https://bugs.eclipse.org/bugstest/post_bug.cgi*
+// @include       https://bugs.eclipse.org/bugstest/query.cgi*
+// @include       https://bugs.eclipse.org/bugstest/buglist.cgi*
 // ==/UserScript==
 
 
@@ -612,7 +621,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	            bugId= bugRegex.exec(titleElem.textContent)[1];
 			    var bugLink= document.createElement("a");
 			    bugLink.href= "../" + bugId;
-			    bugLink.appendChild(document.createTextNode("Bugs " + bugId));
+			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
 			    
 			    var bugElem= document.createElement("p");
 			    bugElem.appendChild(bugLink);
@@ -916,10 +925,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
 	        
-	    // Change https://bugs.eclipse.org/bugs/show_bug.cgi?id=* to https://bugs.eclipse.org/342697
+	    // Remove link in bug header to allow easy copying of bug number
 	    } else if (aElemHref.match(bugrefRegex)) {
 	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
-	        	// Replace link with text to allow easy copy of bug number
 	            var pre= document.createTextNode("bug " + bugId);
 	            aElem.parentNode.insertBefore(pre, aElem);
 	            aElem.parentNode.removeChild(aElem);
