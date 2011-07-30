@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Juno M1 Test Plan</title>
+</head>
+<body>
+<h1>Juno M1 Test Plan</h1>
+Testing days: Tuesday 2011-08-02<br>
+Test Build: Always switch to latest available build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Raksha, Deepak, Markus and Dani<br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>3.8 build: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>4.2 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Mac OS X: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+
+<h3>JREs</h3>
+Use the latest available Oracle and IBM JREs from <a href="http://w3.hursley.ibm.com/java/jim/jim/index.html">JIM</a> (don't download from anywhere else).
+<ul>
+	<li>primary tester (listed as first one) uses the IBM JRE</li>
+	<li>secondary tester (listed as second one) uses the Oracle JRE</li>
+</ul>
+
+<h3>Workbench</h3>
+Use your preferred workbench setup but make sure to start with a new workspace, so that bugs can be reproduced more easily.
+
+<p>
+<em>First test all items where you are listed as first (or only) tester. Only when you have completed all those items, you can start with those where you are listed as second tester.</em>
+</p> 
+
+
+<h2>New Java 7 Support and Features</h2>
+Test that the new Java 7 features are in and are working as expected.
+<ul>
+	<li>Switch on strings (Deepak, Dani)
+	<li>Binary literals (Dani, Deepak)</li>
+	<li>Underscores in literals (Dani, Markus)</li>
+	<li>Multi-catch (Markus, Dani)</li>
+	<li>More precise rethrow (Raksha, Markus)</li>
+	<li>Try-with-resources (Markus, Raksha)</li>
+	<li>Simplified varargs method invocation (Raksha, Deepak)</li>
+	<li>Diamond (Deepak, Raksha)</li>
+	<li>Polymorphic methods (aka invoke dynamic) (Raksha, Markus)</li>
+	<li>API Tools support: verify that we can find invalid references to 1.7 system libraries (Dani, Deepak)</li>
+</ul>
+
+<h2>Bug Verification</h2>
+
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=[1.7]+&classification=Eclipse&product=JDT&component=Text&component=UI&longdesc_type=allwordssubstr&longdesc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=RESOLVED&resolution=FIXED&emailtype1=substring&email1=&emailtype2=substring&email2=&bug_id_type=anyexact&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Last+Changed&field0-0-0=noop&type0-0-0=noop&value0-0-0=">
+  [1.7] bugs</a></li>
+</ul>
+
+<h2>Freestyle Testing (all)</h2>
+Once you have completed all assigned test items (including those where you are listed as secondary tester), you can implement a little feature or tool, or fix one of your favorite bugs, preferably using Java 7 constructs.</p>
+
+</body>
+</html>
