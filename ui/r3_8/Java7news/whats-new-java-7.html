@@ -57,17 +57,21 @@ and many additions to the libraries. The Eclipse compiler implements all the new
     </td>
   </tr>
   
-  <tr id="content-assist">
+  <tr id="content-assist-diamond">
     <td class="title">Content assist inserts diamond</td>
     <td class="content">
-        Where possible, content assist now inserts a diamond instead of explicit type arguments.
+        Where possible, content assist for constructor invocations now inserts a diamond instead of explicit type arguments.
+        
+        <p><img src="images/content-assist-diamond-1.png" alt="Content assist after 'new HashMap'"/></p>
+        Result:
+        <p><img src="images/content-assist-diamond-2.png" alt="Content assist inserted 'new HashMap&lt;&gt;()'"/></p>
     </td>
   </tr>
   
   <tr id="redundant-specification-of-type-arguments">
     <td class="title">Detection of redundant type arguments</td>
     <td class="content">
-        The compiler detects <b>redundant specification of type arguments</b>, which you can remove via <b>Remove type arguments</b> quick fix.
+        The compiler can now detect <b>redundant specifications of type arguments</b>, which you can remove via the <b>Remove type arguments</b> quick fix.
         <p><img src="images/redundant-specification-of-type-arguments.png" alt="Redundant specification of type arguments"/></p>
         
         <p>This option is disabled by default but can be enabled on the <b>Java &gt; Compiler &gt; Errors/Warnings</b> preference page:</p>
@@ -243,24 +247,15 @@ and many additions to the libraries. The Eclipse compiler implements all the new
   </tr>
   
   <tr id="invokeExact-javadoc">
-    <td class="title">Polymorphic method signature in javadoc hover</td>
+    <td class="title">Polymorphic method signature in Javadoc hover</td>
     <td class="content">
-        Javadoc hover for references of polymorphic methods shows the polymorphic method signature.
+        Javadoc hovers for references to
+        <a href="http://download.oracle.com/javase/7/docs/api/java/lang/invoke/MethodHandle.html#sigpoly">polymorphic methods</a>
+        show the actually used method signature.
         <p><img src="images/invokeExact-javadoc.png" alt="Polymorphic method signature in javadoc hover"/></p>
     </td>
   </tr>
 
-  <tr id="invokeExact-search">
-    <td class="title">Search references of polymorphic methods</td>
-    <td class="content">
-        You can search for all references of a polymorphic method. E.g. reference search for 'java.lang.invoke.MethodHandle.invokeExact(java.lang.Object[])' matches both invocations
-        <p><img src="images/invokeExact-search-2.png" alt="All references of invokeExact"/></p>
-        
-        <p>You can also search for a particular form of a polymorphic method. E.g.  reference search for 'MethodHandle.invokeExact(String)' only matches the first invocation</p>
-        <p><img src="images/invokeExact-search-1.png" alt="References of particular form of invokeExact"/></p>
-    </td>
-  </tr>
-  
   <tr>
     <td colspan="2"/>
   </tr>
