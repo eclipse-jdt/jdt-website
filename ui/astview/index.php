@@ -56,6 +56,11 @@ ob_start();
 			<p>
 				<ul>
 					<li>
+						for Eclipse 3.7.1 and higher
+						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.8.201108081127.jar">org.eclipse.jdt.astview_1.1.8.201108081127.jar</a>
+						(copy to 'dropins' directory)
+					</li>
+					<li>
 						for Eclipse 3.5 and higher
 						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.7.201103211622.jar">org.eclipse.jdt.astview_1.1.7.201103211622.jar</a>
 						(copy to 'dropins' directory)
