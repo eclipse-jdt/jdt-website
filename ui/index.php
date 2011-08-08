@@ -22,7 +22,8 @@ ob_start();
 			<h3>Development Resources</h3>
 			<p>If you are already a JDT UI developer, check out the <a href="dev.php">Development 
 			Resources</a>.</p>
-			Here's some more <a href="/projects/project_summary.php?projectid=eclipse.jdt.ui">information about eclipse.jdt.ui</a>.
+			<p>The project summary page contains some
+			more <a href="/projects/project_summary.php?projectid=eclipse.jdt.ui">information about eclipse.jdt.ui</a>.</p>
 		</div>
 		<div class="homeitem3col">
 			<a name="jdt ui"></a>
