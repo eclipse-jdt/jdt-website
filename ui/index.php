@@ -77,31 +77,31 @@ ob_start();
 		<div class="homeitem3col">
 			<a name="happening"></a>
 			<h3>What&#8217;s Happening?</h3>
-			<p><b>R3.7 Development</b></p>
+			<p><b>R3.8 Development</b></p>
 			<ul>
 				<li>Most active development goes into this stream which can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>The combined JDT Text and JDT UI 3.7 plan is posted <a href="r3_7/plan.php">here</a>.</li>
-				<li>The plan for the current milestone is posted <a href="r3_7/plan.php#Milestone_Planning_M4">here</a>.</li>
-				<li>The original plans for previous milestones can be found <a href="r3_7/plan.php#Milestone_Planning_M1">here</a>.</li>
+				<li>The combined JDT Text and JDT UI 3.8 plan is posted <a href="r3_8/plan.php">here</a>.</li>
+				<li>The plan for the current milestone is posted <a href="r3_8/plan.php#Milestone_Planning_M1">here</a>.</li>
+				<li>The original plans for previous milestones can be found <a href="r3_8/plan.php#Milestone_Planning_M1">here</a>.</li>
 			</ul>
 			
-			<p><b>R3.6</b></p>
+			<p><b>R3.7</b></p>
 			<ul>
-				<li>The current release is R3.6 which is available on the <a
+				<li>The current release is R3.7 which is available on the <a
 					href="http://www.eclipse.org/downloads/index.php"
 					target="newdownload&quot;">download</a> area.</li>
 			</ul>
 			
-			<p><b>3.6 Maintenance</b></p>
+			<p><b>3.7 Maintenance</b></p>
 		    <ul>
-		    	<li>Information about 3.6 maintenance releases can be found <a href="http://wiki.eclipse.org/Helios_Simultaneous_Release#Coordinated_Service_Releases">here</a>
+		    	<li>Information about 3.7 maintenance releases can be found <a href="http://wiki.eclipse.org/Indigo_Simultaneous_Release#Coordinated_Service_Releases">here</a>
 		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
 		    </ul>
 			
-			<p><b>Pre 3.6 builds</b></p>
+			<p><b>Pre 3.7 builds</b></p>
 			<ul>
-				<li>3.5.x builds are available from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>1.x, 2.x, 3.2.x, 3.3.x and 3.4.x builds are available from the <a
+				<li>3.6.2 builds are available from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
+				<li>1.x, 2.x, 3.2.x, 3.3.x, 3.4.x, 3.5.x and 3.6.1 builds are available from the <a
 					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
 			</ul>
 		</div>
