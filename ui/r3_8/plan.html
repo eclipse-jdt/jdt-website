@@ -102,7 +102,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2011/08/11 07:39:38 $</p>
+    <p>Last revised $Date: 2011/08/23 12:18:35 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -132,6 +132,7 @@ function showHiddenWork() {
 		<p>
 		<strong><a name="4"></a>[4] Technology Trends</strong>.
 		Add support for Java 7.
+		Start to work on Java 8 support.
 		</p>
 
 	<h2><a NAME="Work_Items"></a><br>Work Items</h2>
@@ -145,16 +146,24 @@ function showHiddenWork() {
 	<ul>
 		<li><h4>Java 7 [<a href="#4">4</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a></li>
-			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1</a></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a> <span class="work">20 weeks</span></li></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1 <span class="work">6 weeks</span></li>
+		</ul>
+		</li>
+
+		<li><h4>Java 8 [<a href="#4">4</a>]</h4>
+		<ul>
+			<li class="priority">start to work on Java 8 features <span class="work">40 weeks</span></li>
 		</ul>
 		</li>
 
 		<li><h4>Adopt New Platform Features [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">make sure that we smoothly run on Eclipse SDK 3.8 and 4.2<span class="work">2w</span>
+			<li class="priority">help productizing Eclipse 4.2  <span class="work">4 weeks</span>
 				<ul>
-					<li>test our bundles against it</li>
+					<li>make sure that we smoothly run on Eclipse SDK 3.8 and 4.2</li>
+					<li>provide feedback on outstanding issues to the Platform UI team</li>
+					<li>test our bundles against 4.2</li>
 				</ul>
 			</li>
 		</ul>
@@ -168,8 +177,8 @@ function showHiddenWork() {
 
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2w</span></li>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2w</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">Raksha: 2 weeks</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2 weeks</span>
 				<ul>
 					<li>Increase visibility (with info/warning message)?</li>
 					<li>add delegation if possible (with info/warning message)?</li>
@@ -187,8 +196,14 @@ function showHiddenWork() {
 		
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">6w</span></li>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1w</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">20 weeks</span></li>
+			<li class="priority">improve BiDi support for complext static expressions: adopt new TextProcessor replacement(depends on SWT bug 183164) <span class="work">6 weeks</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1 week</span></li>
+			<li class="priority">ability to plug-in decompiler <span class="work">2 weeks</span></li>
+			<li class="priority">add Quick Assists to synchronize Java properties file and corresponding message class <span class="work">2 weeks</span></li>
+			<li class="priority">address outstanding accessibility defects <span class="work">2 weeks</span></li>
+			<li class="priority">angle brackets wrongly auto-closed when starting at the beginning of a line (bug 347734) <span class="work">2 weeks</span></li>
+			<li class="priority"><strong>[Platform Releng]</strong> help to make the Releng Tool Git aware (bug 345668) <span class="work">1 week</span></li>
 		</ul>
 		</li>
 		
@@ -206,7 +221,7 @@ function showHiddenWork() {
 		
 		<li><h4>JUnit [<a href="#4">4</a>]</h4>
 		<ul>
-			TBD
+			<li class="priority">update JUnit to its latest version <span class="work">Markus: 2 weeks</span></li>
 		</ul>
 		</li>
 
@@ -218,8 +233,14 @@ function showHiddenWork() {
 	
 		<li><h4>Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> show horizontal line between methods (bug 13672) <span class="work">1w</span></li>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> visualize code nesting (bug 69455) <span class="work">Raksha or Deepak: 2w</span>
+			<li class="priority">better matching bracket support<span class="work">4 weeks</span>
+				<ul>
+					<li>provide a hover (bug 184056)</li>
+					<li>show the corresponding bracket in the Overview ruler</li>
+				</ul>
+			</li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> show horizontal line between methods (bug 13672) <span class="work">1 week</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> visualize code nesting (bug 69455) <span class="work">Raksha or Deepak: 2 weeks</span>
 				<br>&rarr; could be implemented as semantic highlighting</li>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> [misc] draw vertical lines in control flow statements (bug 84878)</li>
 		</ul>
@@ -227,30 +248,33 @@ function showHiddenWork() {
   
 		<li><h4>Quick views [<a href="#3">3</a>]</h4>
 		<ul>
-			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">Raksha: 2d</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">Raksha: 2 days</span>
 		</ul>
 		</li>
 	
 		<li><h4>Performance And Memory Consumption [<a href="#1">1</a>]</h4>
 		<ul>
-		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> constantly watch performance test results and act when red</li>
-		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests</li>
+		  <li class="priority">allow to contribute the index for binary package fragment roots <span class="work">2 days</span></li>
+		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> constantly watch performance test results and act when red <span class="work">5 weeks</span></li>
+		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests <span class="work">1 week</span></li>
 		</ul>
 		</li>
 			
 		<li><h4>Miscellaneous</h4>
 		<ul>
+			<li class="priority">migration to Git <span class="work">all: 3 weeks in total</span></li>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> structured selection should support brackets (bug 86835) <span class="work">???</span></li>
+			<li class="priority">replace Intro Samples Page with p2 based page <span class="work">2 weeks</span></li>
 		</ul>
 		</li>
 
 		<li><h4>General Items</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.8 planning <span class="work">1d</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.8 planning <span class="work">1 week</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> resolve bugs that got deferred from 3.7 to 3.8<span class="work">all</span></li>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.7.1 maintenance work <span class="work">1w</span></li>
-			<li class="priority">3.7.2 maintenance work <span class="work">1w</span></li>
-			<li>look at bugs with patches and review those</li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.7.1 maintenance work <span class="work">3 weeks</span></li>
+			<li class="priority">3.7.2 maintenance work <span class="work">3 weeks</span></li>
+			<li class="priority">look at bugs with patches and review those <span class="work">4 weeks</span></li>
 		</ul>
 		</li>
 	</ul>
@@ -263,6 +287,7 @@ function showHiddenWork() {
 		<li>SWT
 		<ul>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
+			<li>bug 183164 needs to be fixed in order to provide improved BiDi support for complex static expressions</li>
 		</ul>
 		</li>
 		<li>Platform Compare
@@ -300,10 +325,15 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 7 [<a href="#4">4</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a></li>
-			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1</a></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a> <span class="work">20 weeks</span></li></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1 <span class="work">6 weeks</span></li>
 		</ul>
-		
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.8 M2]</font> 3.8 planning <span class="work">2 days</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bugzilla inbox tracking</li>
@@ -327,11 +357,16 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.8/plan.php#Milestone_Planning_M2">Platform Text 3.8 M2 Plan</a>.</p>
 
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Miscellaneous</h4>
+		<ul>
+			<li class="priority">prepare Git migration <span class="work">all: 3 weeks in total</span></li>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.8 planning <span class="work">1d</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.8 planning <span class="work">3 days</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> resolve bugs that got deferred from 3.7 to 3.8<span class="work">all</span></li>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.7.1 maintenance work <span class="work">1w</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.7.1 maintenance work <span class="work">3 weeks</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -361,7 +396,7 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority">3.7.2 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -391,7 +426,7 @@ function showHiddenWork() {
 
 	    <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority">3.7.2 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -420,7 +455,7 @@ function showHiddenWork() {
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority">3.7.2 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -450,7 +485,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
 		<ul>
-			<li class="priority">3.7.2 maintenance work <span class="work">1w</span></li>
+			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
@@ -490,7 +525,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">make sure that we smoothly run on Eclipse SDK 3.8 and 4.2<span class="work">2w</span>
+			<li class="priority">make sure that we smoothly run on Eclipse SDK 3.8 and 4.2<span class="work">2 weeks</span>
 				<ul>
 					<li>test our bundles against it</li>
 					<li>help to investigate and fix bugs in the compatibility layer</li>
