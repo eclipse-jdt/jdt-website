@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Juno M2 Test Plan</h1>
-Testing day: Tuesday 2011-08-02<br>
+Testing day: Tuesday 2011-09-13<br>
 Test Build: Always switch to latest available I-build<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
 Testers: Raksha, Deepak, Markus and Dani<br>
@@ -17,22 +17,40 @@ Testers: Raksha, Deepak, Markus and Dani<br>
 <h2>Setup</h2>
 <h3>Builds</h3>
 <ul>
-  <li>3.8 build: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
-  <li>4.2 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+  <li>4.2 build: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>3.8 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 <h3>Platforms</h3>
 <ul>
-  <li>Windows XP: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
-  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
   <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
-  <li>Mac OS X 10.6: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+  <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 
 <h4>Extract constant refactoring (???, ??? - Questions: Deepak)</h4>	
 Verify that the refactoring works correctly while extracting a switch case statement expression.
 
 <h4>Mark occurrences (???, ??? - Questions: Deepak)</h4>	
-Verify that the feature does not mark already caught exceptions. (Hint: Search > Occurrences in File > Throwing Exception) 
+Verify that the feature does not mark already caught exceptions. (Hint: Search &gt; Occurrences in File &gt; Throwing Exception) 
+
+<h4>Convert enhanced for loop to indexed/Iterator loop (???, ??? - Questions: Markus)</h4>	
+<ul>
+<li>Test quick assist enablement and functioning</li>
+<li>Verify that indexed version is available for arrays and java.util.Lists</li>
+<li>Verify that Iterator version is available for java.lang.Iterables</li>
+<li>Verify that Iterator version is available for java.lang.Iterables</li>
+<li>Verify that quick assist doesn't change semantics, also for complex target expressions</li>
+<li>Verify that modifiers and annotations on the variable are not lost</li>
+</ul>
+
+<h4>Rename type (???, ??? - Questions: Markus)</h4>
+We've fixed a problem where the Rename Type refactoring didn't show an error when the rename leads to a shadowing problem in this situation:
+p.A is renamed to C, but another type with the simple name C is *-imported in another CU in p, so after the rename, the reference in the other CU would resolve to the renamed p.C instead of the *-imported type.     
+<ul>
+<li>Verify that an error is shown in this situation</li>
+<li>Verify that no error is shown if this problem doesn't occur (i.e. usually)</li>
+</ul>
+
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
