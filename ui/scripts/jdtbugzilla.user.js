@@ -350,7 +350,7 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
-function addProductLink(parentElem, classification, product) {
+function addQueryProductLink(parentElem, classification, product) {
     var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
             + 'doOnSelectProduct(1);'
             + 'document.getElementById("product").value="' + product + '";'
@@ -576,8 +576,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		productLinkSpanElem.style.marginLeft= ".5em";
 		productLinkSpanElem.style.fontWeight= "normal";
 		productElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(productLinkSpanElem);
-		addProductLink(productLinkSpanElem, "Technology", "EGit");
-		addProductLink(productLinkSpanElem, "Technology", "JGit");
+		addQueryProductLink(productLinkSpanElem, "Technology", "EGit");
+		addQueryProductLink(productLinkSpanElem, "Technology", "JGit");
 	}
 	
 	// Increase option list sizes to avoid scrolling:
