@@ -37,7 +37,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 M2", "3.8 M3", "3.8", "3.7.1"];
+var target_milestones= ["3.8 M3", "3.8 M4", "3.8", "3.7.2"];
 
 var textCategories= [
 "-- Text category --",
@@ -350,6 +350,15 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
+function addProductLink(parentElem, classification, product) {
+    var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
+            + 'doOnSelectProduct(1);'
+            + 'document.getElementById("product").value="' + product + '";'
+            + 'doOnSelectProduct(2);'
+            + 'void(0);';
+    addLink(product, href, parentElem);
+}
+
 function setOptionSize(elementId, size) {
     var elem= document.getElementById(elementId);
     if (elem) {
@@ -558,6 +567,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			addTargetLink(targetLinkSpanElem, target_milestones[i]);
 		}
 		addTargetLink(targetLinkSpanElem, "---");
+	}
+	
+	// Add E/JGit product links:
+	var productElem= document.getElementById("product");
+	if (productElem) {
+		var productLinkSpanElem= document.createElement("span");
+		productLinkSpanElem.style.marginLeft= ".5em";
+		productLinkSpanElem.style.fontWeight= "normal";
+		productElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(productLinkSpanElem);
+		addProductLink(productLinkSpanElem, "Technology", "EGit");
+		addProductLink(productLinkSpanElem, "Technology", "JGit");
 	}
 	
 	// Increase option list sizes to avoid scrolling:
