@@ -89,29 +89,29 @@ ob_start();
 			<p>The JDT UI component consists of the following plug-ins:</p>
 			<h4>Main Plug-ins:</h4>
 			<ul>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui/">org.eclipse.jdt.ui</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.core.manipulation/">org.eclipse.jdt.core.manipulation</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.core.refactoring/">org.eclipse.ltk.core.refactoring</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.ui.refactoring/">org.eclipse.ltk.ui.refactoring</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui/">org.eclipse.jdt.ui</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.core.manipulation/">org.eclipse.jdt.core.manipulation</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.core.refactoring/">org.eclipse.ltk.core.refactoring</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.ui.refactoring/">org.eclipse.ltk.ui.refactoring</a></li>
 			</ul>
 			<br>
 			<h4>JUnit integration:</h4>
 			<ul>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit.core/">org.eclipse.jdt.junit.core</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit/">org.eclipse.jdt.junit</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit.runtime/">org.eclipse.jdt.junit.runtime</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.junit4.runtime/">org.eclipse.jdt.junit4.runtime</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.junit/">org.junit</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.junit4/">org.junit4</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit.core/">org.eclipse.jdt.junit.core</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit/">org.eclipse.jdt.junit</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit.runtime/">org.eclipse.jdt.junit.runtime</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit4.runtime/">org.eclipse.jdt.junit4.runtime</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.junit/">org.junit</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.junit4/">org.junit4</a></li>
 			</ul>
 			<br>
 			<h4>Documentation and tests:</h4>
 			<ul>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.core.refactoring.tests/">org.eclipse.ltk.core.refactoring.tests</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.ltk.ui.refactoring.tests/">org.eclipse.ltk.ui.refactoring.tests</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui.tests/">org.eclipse.jdt.ui.tests</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.ui.tests.refactoring/">org.eclipse.jdt.ui.tests.refactoring</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.core.refactoring.tests/">org.eclipse.ltk.core.refactoring.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.ui.refactoring.tests/">org.eclipse.ltk.ui.refactoring.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests/">org.eclipse.jdt.ui.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests.refactoring/">org.eclipse.jdt.ui.tests.refactoring</a></li>
 			</ul>
 		</div>
 

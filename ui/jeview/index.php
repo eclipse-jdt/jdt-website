@@ -46,9 +46,9 @@ ob_start();
 			<h4>Source:</h4>
 				<ul>
 				<li>
-					Source is included in the plugin archives or available via CVS:<br>
-					Repository: <code>:pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse</code><br>
-					Module: <code>jdt-ui-home/plugins/org.eclipse.jdt.jeview</code>
+					Source is included in the plugin archives or available via <href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.jeview">web</a> or via Git:<br>
+					Repository: <code>git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git</code><br>
+					Project: <code>org.eclipse.jdt.jeview</code>
 				</li>
 			</ul>
 

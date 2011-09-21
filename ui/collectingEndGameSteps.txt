@@ -52,6 +52,9 @@
 - CVS file types checking
 	- informing releng about exceptions (e.g. binary files)
 
+- Git file types checking
+	- informing releng about exceptions (e.g. binary files)
+
 - code
 	- no System.out.println in source (easy to search for)
 	- no empty catch blocks (we have never done this) 
