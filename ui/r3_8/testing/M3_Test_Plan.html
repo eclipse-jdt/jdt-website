@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Juno M3 Test Plan</title>
+</head>
+<body>
+<h1>Juno M3 Test Plan</h1>
+Testing day: Tuesday 2011-10-25<br>
+Test Build: Always switch to latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Raksha, Markus and Dani<br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>3.8 build: <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>4.2 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Linux-GTK: -</li>
+  <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+<h4>Associate editor to class files without source (Raksha, Markus - Questions: Dani)</h4>	
+<ul>
+	<li>verify that out of the box our Class File editor appears</li>
+	<li>verify that the association appears on the preference page</li>
+	<li>verify that an associated internal editor opens for class files without source</li>
+	<li>verify that an associated external editor opens for class files without source</li>
+	<li>verify that always our Class File editor opens when source is available</li>
+</ul>
+
+<h4>Output location overlapping source folder problem detection (Markus, Raksha - Questions: Dani)</h4>
+<ul>
+	<li>verify that out of the box it is not possible to create such a setup</li>
+	<li>set the severity to 'Warning' and verify that one can now setup such a project</li>
+	<li>now verify that we report a warning on such a project</li>
+	<li>set the severity to 'Ignore' and verify that one can now setup such a project</li>
+	<li>now verify that we do not report any warning on such a project</li>
+	<li><em>verify all the above steps tomorrow in M20111026-0800</em></li>
+</ul>
+
+<h4>Preference to show annotations saturated in the Overview ruler (Dani, Markus - Questions: Raksha)</h4>
+<ul>
+	<li>test that out of the box the annotations appear as before</li>
+	<li>verify that annotations are rendered with saturated colors if the preference is enabled</li>
+	<li>test that editor updates when toggling the preference and pressing 'Apply'</li>
+	<li>verify that the documentation (F1 in preference page) is available and accurate</li>
+</ul>
+
+<h4>New warning for missing try-with-resources (Dani, Markus - Questions: Deepak)</h4>
+<ul>
+	<li>sanity check the wording of the new option</li>
+	<li>test that the new option works (change to 'Ignore', 'Warning' and 'Error')</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.8 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.8 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.8 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.8 M3</a></li>
+</ul>
+
+</body>
+</html>
