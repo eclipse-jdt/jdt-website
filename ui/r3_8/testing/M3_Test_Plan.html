@@ -65,18 +65,32 @@ Testers: Raksha, Markus and Dani<br>
 <ul>
 	<li>sanity check the wording of the new options</li>
 	<li>test that the new options works (change to 'Ignore', 'Warning' and 'Error')</li>
-	<li>try to break the Resource Leak and and Potential resource Leak warnings</li>
-	<ul>
-		<li>check for false positives and/or incorrect warnings</li>
-		<li>check for cases where a warning is missing</li>
-		<li>check if the warnings are easy to understand (Hint: Resource is not closed at this location)</li>
-	</ul>
-	<li>factors that should be considered</li>
-	<ul>
-		<li>resource object flows out of a method - as a parameter in a method call, as a return value, by assignment to a field</li>
-		<li>resource is not closed on all code paths - if and switch statements, try-finally blocks, try-catch blocks, try-catch-finally blocks etc</li>
-		<li>reassignment to another resource variable</li>
-	</ul>
+	<li>try to break the Resource Leak and and Potential resource Leak warnings
+		<ul>
+			<li>check for false positives and/or incorrect warnings</li>
+			<li>check for cases where a warning is missing</li>
+			<li>check if the warnings are easy to understand (Hint: Resource is not closed at this location)</li>
+		</ul>
+	</li>
+	<li>factors that should be considered
+		<ul>
+			<li>resource object flows out of a method - as a parameter in a method call, as a return value, by assignment to a field</li>
+			<li>resource is not closed on all code paths - if and switch statements, try-finally blocks, try-catch blocks, try-catch-finally blocks etc</li>
+			<li>reassignment to another resource variable</li>
+		</ul>
+	</li>
+</ul>
+
+<h4>Convert to enhanced for loop (Markus, Raksha - Questions: Deepak)</h4>
+<ul>
+	<li>let the clean up run on big projects and verify the results</li>
+</ul>
+
+<h4>Delete projects dialog shows project locations (Dani, Raksha - Questions: Markus)</h4>
+<ul>
+	<li>verify that the project location(s) are shown on the first wizard page</li>
+	<li>verify that the project location(s) are shown on the preview page</li>
+	<li>bonus points: try it with a project that is not on the local file system (if you know how to set this up)</li>
 </ul>
 
 <h2>Bug Verification (All)</h2>
