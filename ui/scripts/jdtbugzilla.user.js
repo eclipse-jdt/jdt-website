@@ -37,7 +37,7 @@
 
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 M3", "3.8 M4", "3.8", "3.7.2"];
+var target_milestones= ["3.8 M4", "3.8 M5", "3.8", "3.7.2"];
 
 var textCategories= [
 "-- Text category --",
@@ -235,14 +235,15 @@ function traverseLinkifyBugs(node) {
 	}
 }
 
-function addLink(name, href, parentElem, tooltip) {
+function addLink(name, href, parentElem, tooltip, separator) {
+//GM_log(name + "," + href + "," + tooltip + "," + separator)
     var linkElem= document.createElement("a");
     linkElem.href= href;
     linkElem.innerHTML= name;
     if (tooltip) {
         linkElem.title= tooltip;
     }
-    if (parentElem.hasChildNodes()) {
+    if (parentElem.hasChildNodes() && !(separator == false)) {
         parentElem.appendChild(document.createTextNode(" | "));
     }
     parentElem.appendChild(linkElem);
@@ -350,13 +351,29 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
-function addQueryProductLink(parentElem, classification, product) {
+function addQueryProductLink(parentElem, classification, product, separator) {
     var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
             + 'doOnSelectProduct(1);'
             + 'document.getElementById("product").value="' + product + '";'
             + 'doOnSelectProduct(2);'
             + 'void(0);';
-    addLink(product, href, parentElem);
+    addLink(product, href, parentElem, product, separator);
+}
+
+function addQueryProductsLink(parentElem, classification, products, name) {
+    var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
+            + 'doOnSelectProduct(1);'
+            + 'document.getElementById("product").value="' + products[0] + '";';
+    
+    for (var i = 0; i < products.length; i++) {
+        href += 'var productOptions= document.getElementById("product").options;'
+              + 'for (var i = 0; i < productOptions.length; i++) {'
+              + '    if (productOptions[i].text == "' + products[i] + '") productOptions[i].selected= true'
+              + '}';
+    }
+    href += 'doOnSelectProduct(2);'
+            + 'void(0);';
+    addLink(name, href, parentElem, products, false);
 }
 
 function setOptionSize(elementId, size) {
@@ -577,7 +594,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		productLinkSpanElem.style.fontWeight= "normal";
 		productElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(productLinkSpanElem);
 		addQueryProductLink(productLinkSpanElem, "Technology", "EGit");
-		addQueryProductLink(productLinkSpanElem, "Technology", "JGit");
+		addQueryProductsLink(productLinkSpanElem, "Technology", new Array("EGit", "JGit"), " & ");
+		addQueryProductLink(productLinkSpanElem, "Technology", "JGit", false);
 	}
 	
 	// Increase option list sizes to avoid scrolling:
