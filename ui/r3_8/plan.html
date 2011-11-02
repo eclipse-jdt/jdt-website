@@ -103,7 +103,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2011/10/28 12:23:53 $</p>
+    <p>Last revised $Date: 2011/11/02 14:56:08 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -149,6 +149,7 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a> <span class="work">20 weeks</span></li></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1 <span class="work">6 weeks</span></li>
+			<li>add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
 		</ul>
 		</li>
 
@@ -198,7 +199,7 @@ function showHiddenWork() {
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">all: 20 weeks</span></li>
-			<li class="priority">improve BiDi support for complext static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">Raksha: 6 weeks</span></li>
+			<li class="priority">improve BiDi support for complex static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">6 weeks</span></li>
 			<li><font class="indexsub" color="#8080ff">[&gt; 3.7]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1 week</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to associate an editor to class files which have no source (bug 360642) <span class="work">Dani: 2 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> add Quick Assists to synchronize Java properties file and corresponding message class (bug 358384) <span class="work">Deepak: 2 weeks</span></li>
@@ -255,7 +256,7 @@ function showHiddenWork() {
 	
 		<li><h4>Performance And Memory Consumption [<a href="#1">1</a>]</h4>
 		<ul>
-		  <li class="priority">allow to contribute the index for binary package fragment roots (bug 356620) <span class="work">2 days</span></li>
+		  <li class="priority">allow to contribute the index for binary package fragment roots (bug 356620) <span class="work">Deepak: 2 days</span></li>
 		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> constantly watch performance test results and act when red <span class="work">5 weeks</span></li>
 		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests <span class="work">1 week</span></li>
 		</ul>
@@ -277,6 +278,7 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7.1 maintenance work <span class="work">3 weeks</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> 3.7.2 maintenance work <span class="work">3 weeks</span></li>
 			<li class="priority">look at bugs with patches and review those <span class="work">4 weeks</span></li>
+			<li class="priority">EclipseCon Europe (preparation and attendance) <span class="work">Markus: 1 week</span></li>
 		</ul>
 		</li>
 	</ul>
@@ -446,12 +448,17 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority">resolve bugs that got deferred from 3.7 to 3.8 <span class="work">all</span></li>
 			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
+			<li class="priority">EclipseCon Europe (preparation and attendance) <span class="work">Markus: 1 week</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance And Memory Consumption [<a href="#1">1</a>]</h4>
+		<ul>
+		  <li class="priority">allow to contribute the index for binary package fragment roots (bug 356620) <span class="work">Deepak: 2 days</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority">need better choice for syntax color in high contrast mode (bug 224741) <span class="work">Raksha: 1 week</span></li>
-			<li class="priority">improve BiDi support for complext static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">Raksha: 6 weeks</span></li>
 			<li class="priority">allow to use annotations for null checking (bug 186342) <span class="work">Markus: 2 weeks</span></li>
 		</ul>
 
@@ -494,6 +501,17 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority">3.7.2 maintenance work <span class="work">1 week</span></li>
 		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 7 [<a href="#4">4</a>]</h4>
+		<ul>
+			<li>add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">improve BiDi support for complex static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">6 weeks</span></li>
+		</ul>
+
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
