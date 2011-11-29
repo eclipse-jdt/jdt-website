@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Juno M4 Test Plan</title>
+</head>
+<body>
+<h1>Juno M4 Test Plan</h1>
+Testing day: Tuesday 2011-12-06<br>
+Test Build: Always switch to latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: Raksha, Deepak, Markus and Dani<br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>3.8 build: <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
+  <li>4.2 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>, <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Linux-GTK: -</li>
+  <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
+</ul>
+
+<h4>JAR Export wizard (???, ??? - Questions: Dani)</h4>
+Test the problem reporting based on the problem handling options on the second page of the wizard.
+<ul>
+	<li>verify that it warns when class files are not exported due to problems</li>
+	<li>verify that it tells when class files are exported with problems</li>
+</ul>
+
+<h4>Templates (???, ??? - Questions: Dani)</h4>
+<ul>
+	<li>test the improved 'static_final' template</li>
+	<li>test the new 'public_static_method' template</li>
+</ul>
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 3.8 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 3.8 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 3.8 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=3.8%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 3.8 M4</a></li>
+</ul>
+
+</body>
+</html>
