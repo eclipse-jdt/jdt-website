@@ -27,30 +27,45 @@ Testers: Raksha, Deepak, Markus and Dani<br>
   <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 
-<h4>JAR Export wizard (???, ??? - Questions: Dani)</h4>
+<h4>JAR Export wizard (Deepak, Markus - Questions: Dani)</h4>
 Test the problem reporting based on the problem handling options on the second page of the wizard.
 <ul>
 	<li>verify that it warns when class files are not exported due to problems</li>
 	<li>verify that it tells when class files are exported with problems</li>
 </ul>
 
-<h4>Templates (???, ??? - Questions: Dani)</h4>
+<h4>Templates (Markus, Raksha - Questions: Dani)</h4>
 <ul>
 	<li>test the improved 'static_final' template</li>
 	<li>test the new 'public_static_method' template</li>
 </ul>
 
-<h4>Quick assists in Properties File editor (???, ??? - Questions: Deepak)</h4>
+<h4>Quick assists in Properties File editor (Raksha, Dani - Questions: Deepak)</h4>
 <ul>
 	<li>verify that the preview looks good and is correct e.g. for 'Remove Properties' quick assist</li>
 	<li>verify that the invoking quick assists does not throw an exception</li>
 </ul>
 
-<h4>Move Instance Method refactoring (???, ??? - Questions: Deepak)</h4>
+<h4>Move Instance Method refactoring (Markus, Raksha - Questions: Deepak)</h4>
 The refactoring dialog has changed a little
 <ul>
 	<li>verify that the current dialog looks good and is easy to understand for an average user</li>
 	<li>sanity check the refactoring</li>
+</ul>
+
+<h4>Method parameter annotations (Raksha, Deepak - Questions: Markus)</h4>
+<ul>
+	<li>verify that annotations on method/constructor parameters show up in Javadoc view and hovers</li>
+	<li>verify that references are actually clickable links</li>
+	<li>verify graceful degradation in case of invalid source (no exceptions thrown)</li>
+	<li>if you don't like the rendering, compare it first to javadoc.exe output (e.g. missing handling of HTML tags in string literals ...)</li>
+</ul>
+
+<h4>Null annotations (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify properties and workspace perference pages</li>
+	<li>verify that the org.eclipse.jdt.annotation bundle can be used from a plug-in project and as standalone JAR</li>
+	<li>play with the compiler implementation (quick fixes have not been released yet)</li>
 </ul>
 
 <h2>Bug Verification (All)</h2>
