@@ -975,7 +975,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
-	        i+= 2;
+	        i+= 1;
 	        
 	    // Remove link in bug header to allow easy copying of bug number
 	    } else if (aElemHref.match(bugrefRegex)) {
