@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------
 //
-// JDT Bugzilla Add-on V 1.2 for Bugzilla 3.6.3
+// JDT Bugzilla Add-on V 1.3 for Bugzilla 4.0.2
 //
 // This is a Greasemonkey user script.  To install it, you need
 // Greasemonkey: http://greasemonkey.mozdev.org/
@@ -309,16 +309,13 @@ function addComponentLink(name, parentElem) {
 }
 
 function addEmailLinks(emailElemName) {
-	var emailElems= document.getElementsByName(emailElemName);
-	if (emailElems.length > 0) {
-		var tr= document.createElement("tr");
-		var td= document.createElement("td");
-		tr.appendChild(td);
-	    var emailLinksTr= emailElems[0].parentNode.parentNode;
-		emailLinksTr.parentNode.insertBefore(tr, null);
-		
+	var emailElem= document.getElementById(emailElemName);
+	if (emailElem) {
+		var sp= document.createElement("span");
+		sp.appendChild(document.createElement("br"));
+		emailElem.parentNode.appendChild(sp);
 	    for (var i= 0; i < ccs.length; i= i+2) {
-	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, td);
+	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
 	    }
 	}
 }
@@ -461,25 +458,37 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
 // Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
     + ".bz_enhancement { background-color: transparent ! important; }\n"
     + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
+    
 // Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
-    + "tr.bz_buglist_header th a { white-space: nowrap; }"
+    + "tr.bz_buglist_header th a { white-space: nowrap; }\n"
+// Remove disgusting underlines:
+    + "td.bz_short_desc_column a { text-decoration: none; }\n"
+    + "td.bz_short_desc_column a:hover { text-decoration: underline; }\n"
+// Highlight row background on hover:
+//    + "tr.bz_bugitem:hover { background-color: #CCCCFF; ! important }" // doesnt work, since other rules are more important...
+
 // Fix attachments table width:
     + "#attachment_table { width: auto ! important; }\n"
 // Make "Show Obsolete" more prominent:
-    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }"
+    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }\n"
 // Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
-    + "#comment { overflow-y:scroll; }"
+    + "#comment { overflow-y:scroll; }\n"
 // Render <button> like <input>:
-    + "button { font-family: Verdana, sans-serif; font-size: small; }"
+    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
+// Don't fill whole line with email field:
+    + ".bz_userfield { width: auto ! important; }\n"
+    
+// Search field dimensions:
+    + ".search_field_grid select { height: 20ex ! important; width: 12em; ! important}\n"
     ;
 headElem.appendChild(styleElem);
 
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
-var messageElem= document.getElementById("message");
-if (messageElem) {
-    messageElem.parentNode.removeChild(messageElem);
-}
+//var messageElem= document.getElementById("message");
+//if (messageElem) {
+//    messageElem.parentNode.removeChild(messageElem);
+//}
 
 // Add shortcut to set Platform to All/All:
 var rep_platformElem= document.getElementById("rep_platform");
@@ -498,15 +507,9 @@ if (rep_platformElem && op_sysElem) {
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
-    var tds= document.getElementsByTagName("td");
-	for (var i= 0; i < tds.length; i++) {
-		var tdElem= tds[i];
-		if (tdElem.getAttribute("class") == "comment") {
-		    var tbody= tdElem.parentNode.parentNode;
-		    tbody.parentNode.removeChild(tbody.previousSibling.previousSibling);
-		    tbody.parentNode.removeChild(tbody);
-		    break;
-		}
+    var os_guess_noteElem= document.getElementById("os_guess_note");
+	if (os_guess_noteElem) {
+	    os_guess_noteElem.parentNode.parentNode.removeChild(os_guess_noteElem.parentNode);
 	}
     // Add another Commit button after Subject):
     var short_descElems= document.getElementsByName("short_desc");
@@ -574,12 +577,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 
 	// Add target milestone links:
-	var targetElem= document.getElementById("target_milestone");
+	var targetElem= document.getElementById("field_label_target_milestone");
 	if (targetElem) {
 		var targetLinkSpanElem= document.createElement("span");
-		targetLinkSpanElem.style.marginLeft= ".5em";
+//		targetLinkSpanElem.style.marginLeft= ".5em";
 		targetLinkSpanElem.style.fontWeight= "normal";
-		targetElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(targetLinkSpanElem);
+		targetElem.appendChild(targetLinkSpanElem);
 		for (var i= 0; i < target_milestones.length; i++) {
 			addTargetLink(targetLinkSpanElem, target_milestones[i]);
 		}
@@ -587,18 +590,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	
 	// Add E/JGit product links:
-	var productElem= document.getElementById("product");
+	var productElem= document.getElementById("field_label_product");
 	if (productElem) {
+	    productElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
+	    productElem.setAttribute("style", "text-align: left;");
 		var productLinkSpanElem= document.createElement("span");
-		productLinkSpanElem.style.marginLeft= ".5em";
+//		productLinkSpanElem.style.marginLeft= ".5em";
 		productLinkSpanElem.style.fontWeight= "normal";
-		productElem.parentNode.parentNode.parentNode.firstChild.childNodes[1].appendChild(productLinkSpanElem);
+		productElem.firstElementChild.appendChild(productLinkSpanElem);
 		addQueryProductLink(productLinkSpanElem, "Technology", "EGit");
 		addQueryProductsLink(productLinkSpanElem, "Technology", new Array("EGit", "JGit"), " & ");
 		addQueryProductLink(productLinkSpanElem, "Technology", "JGit", false);
 	}
 	
-	// Increase option list sizes to avoid scrolling:
+	// Increase option list sizes to avoid scrolling (these are probably not used any more):
 	setOptionSize("classification", 6);
 	setOptionSize("product", 6);
 	setOptionSize("component", 6);
@@ -617,7 +622,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Add shortcut email links:
 	addEmailLinks("email1");
 	addEmailLinks("email2");
+	addEmailLinks("email3");
 
+    // Fix layout of date fields:
+    var history_filter_sectionElem= document.getElementById("history_filter_section");
+    if (history_filter_sectionElem) {
+        history_filter_sectionElem.lastElementChild.setAttribute("style", "width: auto");
+    }
 
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Add access key to Edit Query:
@@ -672,7 +683,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px;");
 			    // leave some space behind the fixed table:
 			    var spacerElem= document.createElement("div");
-			    spacerElem.appendChild(document.createTextNode("&nbsp;"));
+			    spacerElem.appendChild(document.createTextNode("..."));
 			    tableElem.parentNode.insertBefore(spacerElem, tableElem);
 			    
 			    var subtitleElem= document.getElementById("subtitle");
@@ -880,13 +891,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	var newccElem= document.getElementById("newcc");
 	if (newccElem) {
+	    var addDiv= newccElem.parentNode.firstElementChild;
 	    // Add shortcut cc links:
 	    for (var i= 0; i < ccs.length; i= i+2) {
-            addNewccLink(ccs[i], ccs[i + 1], newccElem.parentNode)
+            addNewccLink(ccs[i], ccs[i + 1], addDiv)
         }
 	}
 	
-	// Add a convenient Commit buttons:
+	// Add a convenient Commit button:
 	var bz_qa_contact_inputElem= document.getElementById("bz_qa_contact_input");
 	if (bz_qa_contact_inputElem) {
 	    var commitElem= document.createElement("button");
@@ -901,7 +913,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     var commentElem= document.getElementById("comment");
 	if (commentElem) {
 	    commentElem.setAttribute("rows", "10");
-	    commentElem.setAttribute("cols", "81");
+//	    commentElem.setAttribute("cols", "81");
 	    commentElem.setAttribute("onFocus", "this.rows=25");
 	}
 
@@ -936,7 +948,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
 	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
-	var commentRegex= /^c(\d+)$/; // c42
+	var commentIdRegex= /^c(\d+)$/; // c42
+	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
 	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
@@ -957,11 +970,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        i+= 2; //skip [details] and new anchor
 	    
 	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
-	    } else if (aElem.name.match(commentRegex)) {
-	        aElem.textContent= "comment " + commentRegex.exec(aElem.name)[1];
+	    } else if (aElemHref.match(commentRegex) && aElem.parentNode.parentNode.parentNode.id && aElem.parentNode.parentNode.parentNode.id.match(commentIdRegex)) {
+	        aElem.textContent= "comment " + commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
+	        i+= 2;
 	        
 	    // Remove link in bug header to allow easy copying of bug number
 	    } else if (aElemHref.match(bugrefRegex)) {
@@ -970,6 +984,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	            aElem.parentNode.insertBefore(pre, aElem);
 	            aElem.parentNode.removeChild(aElem);
             }
+        
+	    // Turn "Add comment" link into a button
+	    } else if (aElem.parentNode.getAttribute("class") == "bz_add_comment") {
+	        var buttonElem= document.createElement("button");
+	        buttonElem.setAttribute("onclick", aElem.getAttribute("onclick"));
+	        buttonElem.textContent= aElem.textContent;
+	        aElem.parentNode.replaceChild(buttonElem, aElem);
 	    }
 	    
 	//    // Show obsolete attachments initially:
