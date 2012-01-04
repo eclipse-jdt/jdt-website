@@ -189,52 +189,6 @@ function fixCheckboxField(containerId, inputId, labelText) {
 	}
 }
 
-function nextNode(node, stopNode) {
-	if (node.nextSibling) {
-		return node.nextSibling;
-	} else if (node.parentNode == stopNode) {
-		return null;
-	} else {
-		return nextNode(node.parentNode);
-	}
-}
-function traverseLinkifyBugs(node) {
-    var stopNode= node.parentNode; 
-	var regex= /(Bug\s*)\n(\d+)/i;
-	while (node) {
-		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
-			node= nextNode(node, stopNode);
-			
-		} else if (node.childNodes != null && node.childNodes.length > 0) {
-			node= node.childNodes[0];
-			
-		} else if (node.nodeType == 3/*text*/) {
-			var txt= node.data;
-			var res= regex.exec(txt);
-			if (res) {
-				var matchStart= txt.indexOf(res[0]);
-				
-				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
-				node.parentNode.insertBefore(beforeNode, node);
-				
-				var linkNode= document.createElement("a");
-				linkNode.href= "show_bug.cgi?id=" + res[2];
-				linkNode.title= "No resolution and summary available (link inserted by Greasemonkey script)";
-				linkNode.appendChild(document.createTextNode(res[1] + " #\n" + res[2]));
-				node.parentNode.insertBefore(linkNode, node);
-				
-				node.data= txt.substr(matchStart + res[0].length);
-				// continue with current (shortened) node...
-			} else {
-				node= nextNode(node, stopNode);
-			}
-			
-		} else {
-			node= nextNode(node, stopNode);
-		}
-	}
-}
-
 function addLink(name, href, parentElem, tooltip, separator) {
 //GM_log(name + "," + href + "," + tooltip + "," + separator)
     var linkElem= document.createElement("a");
@@ -479,7 +433,7 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + ".bz_userfield { width: auto ! important; }\n"
     
 // Search field dimensions:
-    + ".search_field_grid select { height: 20ex ! important; width: 12em; ! important}\n"
+    + ".search_field_grid select { height: 19ex ! important; width: 12em; ! important}\n"
     ;
 headElem.appendChild(styleElem);
 
@@ -568,6 +522,25 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    queryformElem[0].method= "get";
 	}
 	
+    // Remove spam header:
+    var search_helpElem= document.getElementById("search_help");
+    if (search_helpElem) {
+        search_helpElem.parentNode.removeChild(search_helpElem);
+    }
+    
+    // Remove section headers and expand contents:
+    var bz_section_titleElems= document.evaluate("//div[@class='bz_section_title']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (var i = 0; i < bz_section_titleElems.snapshotLength; i++) {
+        bz_section_titleElem= bz_section_titleElems.snapshotItem(i);
+        bz_section_titleElem.parentNode.replaceChild(document.createElement("hr"), bz_section_titleElem);
+    }
+    
+    var bz_search_sectionElems= document.evaluate("//div[contains(@class,'bz_search_section')] | //ul[contains(@class,'bz_search_section')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (var i = 0; i < bz_search_sectionElems.snapshotLength; i++) {
+        bz_search_sectionElem= bz_search_sectionElems.snapshotItem(i);
+        bz_search_sectionElem.setAttribute("style", "display: block ! important;");
+    }
+    
 	// Add bug categories choosers:
 	var Search_topElem= document.getElementById("Search_top");
 	if (Search_topElem) {
@@ -629,6 +602,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     if (history_filter_sectionElem) {
         history_filter_sectionElem.lastElementChild.setAttribute("style", "width: auto");
     }
+    
+    // Fix label height:
+    styleElem.innerHTML= styleElem.innerHTML
+        + ".field_label { line-height: 1.5em ! important; }\n";
+        + ".search_field_row { line-height: auto ! important; }\n";
 
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Add access key to Edit Query:
