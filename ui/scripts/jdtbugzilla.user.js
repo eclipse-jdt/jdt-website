@@ -886,12 +886,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
-    // Enlarge the "Comment" field (too small on the "Attachment Details" page,
-    //     default cols=80 is too narrow for proper wrapping preview when scroll bars are shown):
+    // Fix the "Comment" field size (too small on the "Attachment Details" page,
+    //     default cols=80 is too wide for proper wrapping preview):
     var commentElem= document.getElementById("comment");
 	if (commentElem) {
 	    commentElem.setAttribute("rows", "10");
-//	    commentElem.setAttribute("cols", "81");
+	    commentElem.setAttribute("cols", "79");
 	    commentElem.setAttribute("onFocus", "this.rows=25");
 	}
 
