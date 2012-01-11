@@ -433,7 +433,8 @@ styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }
     + ".bz_userfield { width: auto ! important; }\n"
     
 // Search field dimensions:
-    + ".search_field_grid select { height: 19ex ! important; width: 12em; ! important}\n"
+    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
+    + ".search_field_grid { margin-top: 0em; }\n"
     ;
 headElem.appendChild(styleElem);
 
@@ -522,10 +523,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    queryformElem[0].method= "get";
 	}
 	
-    // Remove spam header:
+    // Remove spam headers:
     var search_helpElem= document.getElementById("search_help");
     if (search_helpElem) {
         search_helpElem.parentNode.removeChild(search_helpElem);
+    }
+    var titlesElem= document.getElementById("titles");
+    if (titlesElem) {
+        titlesElem.parentNode.removeChild(titlesElem);
+    }
+    
+    // Reduce tabs size:
+    var tabsElems= document.getElementsByClassName("tabs")
+    if (tabsElems.length > 0) {
+        tabsElems[0].setAttribute("cellpadding", "3");
     }
     
     // Remove section headers and expand contents:
