@@ -327,6 +327,20 @@ function addQueryProductsLink(parentElem, classification, products, name) {
     addLink(name, href, parentElem, products, false);
 }
 
+function addQueryStatusesLink(parentElem, statuses, name) {
+    var href= 'javascript:var bug_statusOptions= document.getElementById("bug_status").options;';
+    href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
+          + '    bug_statusOptions[i].selected= false;'
+          + '};';
+    for (var i = 0; i < statuses.length; i++) {
+        href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
+              + '    if (bug_statusOptions[i].text == "' + statuses[i] + '") bug_statusOptions[i].selected= true;'
+              + '};';
+    }
+    href += 'void(0);';
+    addLink(name, href, parentElem);
+}
+
 function setOptionSize(elementId, size) {
     var elem= document.getElementById(elementId);
     if (elem) {
@@ -587,6 +601,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addQueryProductLink(productLinkSpanElem, "Technology", "JGit", false);
 	}
 	
+	// Add open/closed links:
+	var bug_statusElem= document.getElementById("field_label_bug_status");
+	if (bug_statusElem) {
+	    bug_statusElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
+	    bug_statusElem.setAttribute("style", "text-align: left;");
+		var statusLinkSpanElem= document.createElement("span");
+		statusLinkSpanElem.style.marginLeft= ".5em";
+		statusLinkSpanElem.style.fontWeight= "normal";
+		bug_statusElem.firstElementChild.appendChild(statusLinkSpanElem);
+		addQueryStatusesLink(statusLinkSpanElem, new Array("UNCONFIRMED", "NEW", "ASSIGNED", "REOPENED"), " Open");
+		addQueryStatusesLink(statusLinkSpanElem, new Array("RESOLVED", "VERIFIED", "CLOSED"), "Closed");
+	}
+	
+	
 	// Increase option list sizes to avoid scrolling (these are probably not used any more):
 	setOptionSize("classification", 6);
 	setOptionSize("product", 6);
@@ -706,9 +734,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Edit CC list (already badly hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=334083 ):
 	hideElem("cc_edit_area_showhide_container");
-	showElem("cc_edit_area")
+	var cc_edit_areaElem= showElem("cc_edit_area")
+	if (cc_edit_areaElem) {
+		cc_edit_areaElem.removeChild(cc_edit_areaElem.getElementsByTagName("br")[0]);
+	}
 	
-	setOptionSize("cc", 6);
+	setOptionSize("cc", 8);
 	
 	// Edit & rearrange Assignee & QA:
 	fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
@@ -959,7 +990,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        i+= 2; //skip [details] and new anchor
 	    
 	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
-	    } else if (aElemHref.match(commentRegex) && aElem.parentNode.parentNode.parentNode.id && aElem.parentNode.parentNode.parentNode.id.match(commentIdRegex)) {
+	    } else if (aElemHref.match(commentRegex) && aElem.parentNode.getAttribute("class") == "bz_comment_number") {
 	        aElem.textContent= "comment " + commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
