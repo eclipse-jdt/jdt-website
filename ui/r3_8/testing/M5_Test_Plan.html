@@ -39,6 +39,14 @@ Test the new JDT Core feature.
 <h4>Detecting null field references (???, ??? - Questions: Ayush, Stephan)</h4>
 Test the new JDT Core feature.
 
+<h4>Resource leak warnings (???, ??? - Questions: Stephan, Satyam)</h4>
+Test the improved JDT Core feature.
+<ul>
+	<li>verify that real leaks are still detected (e.g. in source of Eclipse SDK 3.8.0)</li>
+	<li>verify that unreal leaks are not reported (e.g. with StringReader, BufferedInputStream, ...)</li>
+</ul>
+
+
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
