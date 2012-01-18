@@ -939,18 +939,23 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	
-	// Another Commit button on top of Additional Comments field
+	// Loop over <label>s:
     if (window.location.href.search(detailsRegex) == -1) { // attachment.cgi is used for 3 purposes: add new, edit details, result after adding
 		var labels= document.getElementsByTagName("label");
 		for (var i= 0; i < labels.length; i++) {
 		    var labelElem= labels[i];
-		    if (labelElem.getAttribute("for") == "comment") {
+		    var forAtt= labelElem.getAttribute("for");
+			// Another Commit button on top of Additional Comments field
+		    if (forAtt == "comment") {
 			    var commitElem= document.createElement("button");
 			    commitElem.setAttribute("type", "submit");
 			    commitElem.setAttribute("class", "knob-buttons");
 			    commitElem.innerHTML= "Sa<u>v</u>e Changes";
 			    commitElem.setAttribute("accesskey", "v");
 			    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
+			// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
+		    } else if (forAtt == "group_15") {
+		        labelElem.removeAttribute("for");
 		    }
 		}
 	}
@@ -1009,7 +1014,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    } else if (aElem.parentNode.getAttribute("class") == "bz_add_comment") {
 	        var buttonElem= document.createElement("button");
 	        buttonElem.setAttribute("onclick", aElem.getAttribute("onclick"));
-	        buttonElem.textContent= aElem.textContent;
+	        buttonElem.textContent= aElem.textContent + "...";
 	        aElem.parentNode.replaceChild(buttonElem, aElem);
 	    }
 	    
