@@ -44,14 +44,24 @@ Test the new JDT Core feature.
 	<li>test the generated index is used when specified in the <code>.classpath</code> file</li>
 </ul>
 
-<h4>Detecting null field references (???, ??? - Questions: Ayush, Stephan)</h4>
+<h4>Detecting null field references (???, Deepak - Questions: Ayush, Stephan)</h4>
 Test the new JDT Core feature.
 
-<h4>Resource leak warnings (???, ??? - Questions: Stephan, Satyam)</h4>
+<h4>Resource leak warnings (Deepak, ??? - Questions: Stephan, Satyam)</h4>
 Test the improved JDT Core feature.
 <ul>
 	<li>verify that real leaks are still detected (e.g. in source of Eclipse SDK 3.8.0)</li>
 	<li>verify that unreal leaks are not reported (e.g. with StringReader, BufferedInputStream, ...)</li>
+</ul>
+
+<h4>Source attachment encoding (???, ??? - Questions: Deepak)</h4>
+Verify that you can specify the encoding for source attachments not in workspace, and that the value is persisted correctly 
+and used correctly to read the source attachment. 
+<ul>
+	<li>verify the above for normal jar libraries.</li>
+	<li>verify the above for jar libraries added using classpath variables.</li>
+	<li>verify the above for jars in 'User Library container'.</li>
+	<li>verify that encoding editing is disabled for 'JRE container' and a correct default is shown.</li>
 </ul>
 
 
