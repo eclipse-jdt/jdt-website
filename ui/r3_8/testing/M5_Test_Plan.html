@@ -47,11 +47,18 @@ Test the new JDT Core feature.
 <h4>Detecting null field references (Dani, Deepak - Questions: Ayush, Stephan)</h4>
 Test the new JDT Core feature and the new option in the UI.
 
-<h4>Resource leak warnings (Markus, Deepak - Questions: Stephan, Satyam)</h4>
+<h4>Resource leak warnings (Deepak, Markus - Questions: Stephan, Satyam)</h4>
 Test the improved JDT Core feature.
 <ul>
 	<li>verify that real leaks are still detected (e.g. in source of Eclipse SDK 3.8.0)</li>
 	<li>verify that unreal leaks are not reported (e.g. with StringReader, BufferedInputStream, ...)</li>
+</ul>
+
+<h4>Extract Method (Markus, Deepak - Questions: Deepak)</h4>
+<ul>
+	<li>verify that the refactoring now also works if the trailing ";" of an assignment is not selected</li>
+	<li>verify that similar cases are handled properly</li>
+	<li>verify that the enablement of the quick assist corresponds to the enablement of the refactoring, also if comments are selected</li>
 </ul>
 
 <h4>Source attachment encoding (Markus, Dani - Questions: Deepak)</h4>
