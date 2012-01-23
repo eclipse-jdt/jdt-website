@@ -11,18 +11,18 @@
 Testing day: Tuesday 2012-01-24<br>
 Test Build: Always switch to latest available I-build<br>
 Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
-Testers: Raksha, Deepak, Markus and Dani<br>
+Testers: Deepak, Markus and Dani<br>
 
 
 <h2>Setup</h2>
 <h3>Builds</h3>
 <ul>
   <li>3.8 build: <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
-  <li>4.2 build: <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a> and <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>4.2 build: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
 </ul>
 <h3>Platforms</h3>
 <ul>
-  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a> and <a href="mailto:raksha.vasisht@in.ibm.com">Raksha</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
   <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
   <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
@@ -35,7 +35,7 @@ Testers: Raksha, Deepak, Markus and Dani<br>
 
 
 <h2>Test New Functionality </h2>
-<h4>Pre-built index (Markus, Dani - Questions: Satyam)</h4>
+<h4>Pre-built index (Deepak, Dani - Questions: Satyam)</h4>
 Test the new JDT Core feature.
 <ul>
 	<li>verify that the documentation for the command is good</li>
@@ -44,17 +44,17 @@ Test the new JDT Core feature.
 	<li>test the generated index is used when specified in the <code>.classpath</code> file</li>
 </ul>
 
-<h4>Detecting null field references (???, Deepak - Questions: Ayush, Stephan)</h4>
-Test the new JDT Core feature.
+<h4>Detecting null field references (Dani, Deepak - Questions: Ayush, Stephan)</h4>
+Test the new JDT Core feature and the new option in the UI.
 
-<h4>Resource leak warnings (Deepak, ??? - Questions: Stephan, Satyam)</h4>
+<h4>Resource leak warnings (Markus, Deepak - Questions: Stephan, Satyam)</h4>
 Test the improved JDT Core feature.
 <ul>
 	<li>verify that real leaks are still detected (e.g. in source of Eclipse SDK 3.8.0)</li>
 	<li>verify that unreal leaks are not reported (e.g. with StringReader, BufferedInputStream, ...)</li>
 </ul>
 
-<h4>Source attachment encoding (???, ??? - Questions: Deepak)</h4>
+<h4>Source attachment encoding (Markus, Dani - Questions: Deepak)</h4>
 Verify that you can specify the encoding for source attachments not in workspace, and that the value is persisted correctly 
 and used correctly to read the source attachment. 
 <ul>
