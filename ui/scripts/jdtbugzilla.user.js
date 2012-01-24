@@ -225,20 +225,11 @@ function addAssigneeLink(name, email, parentElem) {
     addLink(name, href, parentElem, email);
 }
 
-function addNewccLink(name, email, parentElem) {
-    var href= 'javascript:document.getElementById("newcc").value="' + email + ' " + document.getElementById("newcc").value;'
-            + 'document.getElementById("newcc").focus();'
-            + 'document.getElementById("newcc").selectionStart= 0;'
-            + 'document.getElementById("newcc").selectionEnd= ' + email.length + ';'
-            + 'void(0);';
-    addLink(name, href, parentElem, email);
-}
-
-function addCcLink(name, email, parentElem) {
-    var href= 'javascript:document.getElementsByName("cc")[0].value="' + email + ' " + document.getElementsByName("cc")[0].value;'
-            + 'document.getElementsByName("cc")[0].focus();'
-            + 'document.getElementsByName("cc")[0].selectionStart= 0;'
-            + 'document.getElementsByName("cc")[0].selectionEnd= ' + email.length + ';'
+function addCcLink(name, email, parentElem, fieldName) {
+    var href= 'javascript:document.getElementById("' + fieldName + '").value="' + email + ', " + document.getElementById("' + fieldName + '").value;'
+            + 'document.getElementById("' + fieldName + '").focus();'
+            + 'document.getElementById("' + fieldName + '").selectionStart= 0;'
+            + 'document.getElementById("' + fieldName + '").selectionEnd= ' + (email.length + 2) + ';'
             + 'void(0);';
     addLink(name, href, parentElem, email);
 }
@@ -412,46 +403,47 @@ if (headerIconsElem) {
 
 
 var headElem= document.getElementsByTagName("head")[0];
-var styleElem= document.createElement("style");
-styleElem.type= "text/css";
-// Fix baseline of labels:
-styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
-// Fix color of links in title:
-    + "#titles a { color: #039 ! important; }\n"
-    + "#titles a:visited { color: #636 ! important; }\n"
-    + "#titles a:hover { color: #333 ! important; }\n"
-    + "#titles a:active { color: #000 ! important; }\n"
-// Fix color of comment number:
-    + ".bz_comment_number { color: #65379c; }\n"
-// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
-    + ".bz_enhancement { background-color: transparent ! important; }\n"
-    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
-    
-// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
-    + "tr.bz_buglist_header th a { white-space: nowrap; }\n"
-// Remove disgusting underlines:
-    + "td.bz_short_desc_column a { text-decoration: none; }\n"
-    + "td.bz_short_desc_column a:hover { text-decoration: underline; }\n"
-// Highlight row background on hover:
-//    + "tr.bz_bugitem:hover { background-color: #CCCCFF; ! important }" // doesnt work, since other rules are more important...
-
-// Fix attachments table width:
-    + "#attachment_table { width: auto ! important; }\n"
-// Make "Show Obsolete" more prominent:
-    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }\n"
-// Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
-    + "#comment { overflow-y:scroll; }\n"
-// Render <button> like <input>:
-    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
-// Don't fill whole line with email field:
-    + ".bz_userfield { width: auto ! important; }\n"
-    
-// Search field dimensions:
-    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
-    + ".search_field_grid { margin-top: 0em; }\n"
-    ;
-headElem.appendChild(styleElem);
-
+if (headElem) {
+	var styleElem= document.createElement("style");
+	styleElem.type= "text/css";
+	// Fix baseline of labels:
+	styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
+	// Fix color of links in title:
+	    + "#titles a { color: #039 ! important; }\n"
+	    + "#titles a:visited { color: #636 ! important; }\n"
+	    + "#titles a:hover { color: #333 ! important; }\n"
+	    + "#titles a:active { color: #000 ! important; }\n"
+	// Fix color of comment number:
+	    + ".bz_comment_number { color: #65379c; }\n"
+	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
+	    + ".bz_enhancement { background-color: transparent ! important; }\n"
+	    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
+	    
+	// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
+	    + "tr.bz_buglist_header th a { white-space: nowrap; }\n"
+	// Remove disgusting underlines:
+	    + "td.bz_short_desc_column a { text-decoration: none; }\n"
+	    + "td.bz_short_desc_column a:hover { text-decoration: underline; }\n"
+	// Highlight row background on hover:
+	//    + "tr.bz_bugitem:hover { background-color: #CCCCFF; ! important }" // doesnt work, since other rules are more important...
+	
+	// Fix attachments table width:
+	    + "#attachment_table { width: auto ! important; }\n"
+	// Make "Show Obsolete" more prominent:
+	    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }\n"
+	// Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
+	    + "#comment { overflow-y:scroll; }\n"
+	// Render <button> like <input>:
+	    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
+	// Don't fill whole line with email field:
+	    + ".bz_userfield { width: auto ! important; }\n"
+	    
+	// Search field dimensions:
+	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
+	    + ".search_field_grid { margin-top: 0em; }\n"
+	    ;
+	headElem.appendChild(styleElem);
+}
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
 //var messageElem= document.getElementById("message");
@@ -513,7 +505,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var ccElem= ccElems[0];
 	    // Add shortcut cc links:
 	    for (var i= 0; i < ccs.length; i= i+2) {
-            addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode)
+            addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode, "cc")
         }
         // inserted cc links should not wrap:
         ccElem.parentNode.setAttribute("style", "white-space:nowrap;");
@@ -914,7 +906,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var addDiv= newccElem.parentNode.firstElementChild;
 	    // Add shortcut cc links:
 	    for (var i= 0; i < ccs.length; i= i+2) {
-            addNewccLink(ccs[i], ccs[i + 1], addDiv)
+            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc")
         }
 	}
 	
