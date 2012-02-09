@@ -59,7 +59,7 @@ ob_start();
 				elements with a version of an element from the local history.</li>
 			</ul>
 			<p>
-				Take a look at the <a href="screenCasts/index.php">screen casts</a> to see some JDT features like the new J2SE 5.0 support and code refactoring in action.
+				Take a look at the <a href="screenCasts/index.php">screen casts</a> to see some JDT features like the new Java 7 support and code refactoring in action.
 			</p>
 		</div>
 				<div class="homeitem3col">

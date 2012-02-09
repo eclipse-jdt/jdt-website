@@ -24,7 +24,9 @@ ob_start();
 			<ul>
 				<li><a href="FirstContact.htm">Eclipse 3.1 and J2SE 5.0 - Your First Contact</a> (2.1 MB)</li>
 				<li><a href="JavaEditor_J2SE50.htm">The	Java Editor and J2SE 5.0</a> (4.1 MB)</li>
-		        <li><a href="Refactoring.htm">How to use refactoring to restructure your code</a> (1.8 MB)</li>
+				<li><a href="Refactoring.htm">How to use refactoring to restructure your code</a> (1.8 MB)</li>
+				<li><a href="http://live.eclipse.org/node/1040">Java 7 support in Eclipse Java development tools</a></li>				
+				<li><a href="http://live.eclipse.org/node/908">What's New in Helios</a></li>				
 			</ul>
 		</p>
 
