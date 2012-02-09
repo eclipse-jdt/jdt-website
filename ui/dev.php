@@ -104,13 +104,17 @@ ob_start();
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.junit4/">org.junit4</a></li>
 			</ul>
 			<br>
-			<h4>Documentation and tests:</h4>
+			<h4>Tests:</h4>
 			<ul>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.core.refactoring.tests/">org.eclipse.ltk.core.refactoring.tests</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.ui.refactoring.tests/">org.eclipse.ltk.ui.refactoring.tests</a></li>
-				<li><a href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests/">org.eclipse.jdt.ui.tests</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests.refactoring/">org.eclipse.jdt.ui.tests.refactoring</a></li>
+			</ul>
+			<h4>Documentation:</h4>
+			<ul>
+				<li><a href="http://git.eclipse.org/c/platform/eclipse.platform.common.git/tree/bundles/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
+				<li><a href="http://git.eclipse.org/c/platform/eclipse.platform.common.git/tree/bundles/org.eclipse.jdt.doc.isv/">org.eclipse.jdt.doc.isv</a></li>
 			</ul>
 		</div>
 
