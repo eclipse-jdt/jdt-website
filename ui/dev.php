@@ -61,6 +61,8 @@ ob_start();
 			<a name="articles"></a>
 			<h3>Articles and Talks</h3>
 			<ul>
+				<li><a href="articles/JDT_fundamentals2010.zip">JDT Fundamentals</a>
+					(<a href="http://www.eclipsecon.org/2010/sessions/?page=sessions&id=1339">Tutorial at EclipseCon 2010</a>)</li>
 				<li><a href="articles/JDT_fundamentals.zip">JDT Fundamentals</a>
 					(<a href="http://www.eclipsecon.org/2008/index.php?page=sub/&id=68">Tutorial at EclipseCon 2008</a>)</li>
 				<li><a href="articles/EclipseCon-2007-Refactoring-Talk-final.zip">Unleash the Power of Refactorings in your Products</a>
