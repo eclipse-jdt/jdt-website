@@ -56,7 +56,7 @@ the view's dropdown menu (the triangle) is the right place.
 
 
 Dumping some general Issues:
-- don't submit a patch that has any warning (Markus and I have the rule that if we touch a file that has warnings, we also go and fix those, even if not created by us)
+- don't submit a patch that has any warning (We have the rule that if we touch a file that has warnings, we also go and fix those, even if not created by us)
 - make sure your code is formatted
 	- this should happen automatically if you use save actions
 	- example of wrong formatting: if (!<space>condition)
