@@ -112,6 +112,7 @@ ob_start();
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.ltk.ui.refactoring.tests/">org.eclipse.ltk.ui.refactoring.tests</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests/">org.eclipse.jdt.ui.tests</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.ui.tests.refactoring/">org.eclipse.jdt.ui.tests.refactoring</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.text.tests/">org.eclipse.jdt.text.tests</a></li>
 			</ul>
 			<br>
 			<h4>Documentation:</h4>
