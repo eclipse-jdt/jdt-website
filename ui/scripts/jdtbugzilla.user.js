@@ -163,6 +163,13 @@ var assignees= [
 
 var ccs= assignees;
 
+var commitURLs= [
+"jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
+"platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
+"platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id="
+];
+
+
 //----------- Functions:
 function hideElem(id) {
     var elem= document.getElementById(id);
@@ -622,6 +629,30 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	setOptionSize("op_sys", 8);
 	
 	setOptionSize("chfield", 5);
+	
+	
+	// Add Content field:
+	var longdescElem= document.getElementById("longdesc");
+	if (longdescElem) {
+	    var divElem= document.createElement("div");
+	    divElem.setAttribute("class", "search_field_row");
+	    
+	    var spanElem= document.createElement("span");
+	    spanElem.setAttribute("class", "field_label");
+	    spanElem.innerHTML= '<a class="field_help_link" href="page.cgi?id=fields.html#content" title="Full-text search in Summary or Comment">Content:</a>';
+	    divElem.appendChild(spanElem);
+	    
+	    var textElem= document.createTextNode("Summary or Comment contains:  ");
+	    divElem.appendChild(textElem);
+	    
+	    var inputElem= document.createElement("input");
+	    inputElem.setAttribute("id", "content");
+	    inputElem.setAttribute("name", "content");
+	    inputElem.setAttribute("size", "43");
+	    divElem.appendChild(inputElem);
+	    
+	    longdescElem.parentNode.parentNode.insertBefore(divElem, longdescElem.parentNode.nextSibling);
+	}
 
     // Add shortcut email links:
 	addEmailLinks("email1");
@@ -636,7 +667,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     
     // Fix label height:
     styleElem.innerHTML= styleElem.innerHTML
-        + ".field_label { line-height: 1.5em ! important; }\n";
+        + ".field_label { line-height: 1.3em ! important; }\n";
         + ".search_field_row { line-height: auto ! important; }\n";
 
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
@@ -689,7 +720,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
 			    var tableElem= titleElem.parentNode.parentNode.parentNode;
-			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px;");
+			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px; z-index:1000;");
 			    // leave some space behind the fixed table:
 			    var spacerElem= document.createElement("div");
 			    spacerElem.appendChild(document.createTextNode("..."));
@@ -901,6 +932,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 	}
 	
+	// On the "Add an attachment" page, add an "Add me to CC list" checkbox (no idea whether this works...):
+	if (! document.getElementById("newcc")) {
+	    var takebugElem= document.getElementById("takebug");
+	    if (takebugElem) {
+	        var divElem= document.createElement("div");
+	        divElem.innerHTML= '<div><br><label for="newcc"><b>Add CC (experimental greasemonkey hack!): </b></label></div> <input id="newcc" class="bz_userfield" size="30" value="" name="newcc">';
+	        takebugElem.parentNode.appendChild(divElem);
+	    }
+	}
+	
 	var newccElem= document.getElementById("newcc");
 	if (newccElem) {
 	    var addDiv= newccElem.parentNode.firstElementChild;
@@ -938,7 +979,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    var labelElem= labels[i];
 		    var forAtt= labelElem.getAttribute("for");
 			// Another Commit button on top of Additional Comments field
-		    if (forAtt == "comment") {
+		    if (forAtt == "comment" && labelElem.nextSibling) {
 			    var commitElem= document.createElement("button");
 			    commitElem.setAttribute("type", "submit");
 			    commitElem.setAttribute("class", "knob-buttons");
@@ -960,6 +1001,26 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			bz_collapse_expand_commentsElems[0].setAttribute("style", "padding-top: 4em;");
 			bz_group_visibility_sectionElems[0].parentNode.appendChild(bz_collapse_expand_commentsElems[0]);
 		}
+		
+		// Add links to help enter a URL to a Git commit:
+		var pElem= document.createElement("p");
+		pElem.style.marginLeft= "1em";
+		pElem.style.lineHeight= "2em";
+		pElem.appendChild(document.createElement("br"));
+		for (var i = 0; i < commitURLs.length; i+= 2) {
+            var aElem= document.createElement("a");
+			aElem.appendChild(document.createTextNode(commitURLs[i]));
+            aElem.href='javascript:var cElem=document.getElementById("comment");'
+                + 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
+                + 'var url= "' + commitURLs[i + 1] + '";'
+                + 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
+                + 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
+                + 'void(0);';
+            aElem.title= "Insert commit URL prefix at caret";
+			pElem.appendChild(aElem);
+			pElem.appendChild(document.createElement("br"));
+        }
+		bz_collapse_expand_commentsElems[0].parentNode.appendChild(pElem);
 	}
 	
 	// Loop over <a>s:
