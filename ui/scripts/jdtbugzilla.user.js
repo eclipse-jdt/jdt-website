@@ -157,7 +157,6 @@ var jdtCategories= [
 var assignees= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus_keller@ch.ibm.com",
-"RV", "raksha.vasisht@in.ibm.com",
 "DA", "deepak.azad@in.ibm.com",
 ];
 
