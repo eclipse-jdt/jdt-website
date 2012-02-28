@@ -1,14 +1,22 @@
+/*******************************************************************************
+ * Copyright (c) 2012 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
 //---------------------------------------------------------------------
 //
-// JDT Bugzilla Add-on V 1.3 for Bugzilla 4.0.2
+// JDT Bugzilla Add-on V 1.4 for Bugzilla 4.0.4 at bugs.eclipse.org.
 //
 // This is a Greasemonkey user script.  To install it, you need
-// Greasemonkey: http://greasemonkey.mozdev.org/
+// Greasemonkey: http://www.greasespot.net/
 // Then restart Firefox and revisit this script.
-// Under Tools, there will be a new menu item to "Install User Script".
-// Accept the default configuration and install.
 //
-// To uninstall, go to Tools/Manage User Scripts,
+// To uninstall, go to Add-ons > User Scripts,
 // select "JDT Bugzilla Add-on", and click Uninstall.
 //
 // --------------------------------------------------------------------
@@ -35,13 +43,43 @@
 // @include       https://bugs.eclipse.org/bugstest/buglist.cgi*
 // ==/UserScript==
 
+// --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
 var target_milestones= ["3.8 M6", "3.8 M7", "3.8", "3.7.2"];
 
-var textCategories= [
-"-- Text category --",
-"-- clear categories --",
+// Add "<name>", "<email>" pairs for people you frequently CC:
+var ccs= [
+"DM", "daniel_megert@ch.ibm.com",
+"MK", "markus_keller@ch.ibm.com",
+"DA", "deepak.azad@in.ibm.com",
+];
+
+// Add "<name>", "<email>" pairs for people you frequently assign bugs to:
+var assignees= ccs;
+
+// Add "<name>", "<url>" pairs for repo URLs that you frequently insert into the comment field:
+var commitURLs= [
+"jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
+"platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
+"platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id=",
+"pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id="
+];
+
+// Add Products and Components to which you frequently move bugs:
+var moveProducts= [ "Platform", "JDT", "PDE", "Equinox" ];
+var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
+
+// Add "<name>", "<Classification>", ["<product1>", "<product2>", ...] triplets for quick product links on the search page:
+var queryProducts= [
+"EGit", "Technology", new Array("EGit"),
+" & ", "Technology", new Array("EGit", "JGit"),
+"JGit", "Technology", new Array("JGit"),
+];
+
+// Add tags to categorize bugs within a component:
+var categories= new Array();
+categories["Text"]= [
 "[api]",
 "[BiDi]",
 "[block selection]",
@@ -78,10 +116,9 @@ var textCategories= [
 "[validateEdit]",
 "[wording]",
 ];
+categories["Text"].url= "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm";
 
-var jdtCategories= [
-"-- JDT category --",
-"-- clear categories --",
+categories["JDT"]= [
 "[actions]",
 "[api]",
 "[ast rewrite]",
@@ -153,21 +190,10 @@ var jdtCategories= [
 "[5.0]",
 "[1.7]",
 ];
+categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
-var assignees= [
-"DM", "daniel_megert@ch.ibm.com",
-"MK", "markus_keller@ch.ibm.com",
-"DA", "deepak.azad@in.ibm.com",
-];
 
-var ccs= assignees;
-
-var commitURLs= [
-"jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
-"platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
-"platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id=",
-"pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id="
-];
+// --- /Configurable options ------------------------------------------
 
 
 //----------- Functions:
@@ -300,15 +326,6 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
-function addQueryProductLink(parentElem, classification, product, separator) {
-    var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
-            + 'doOnSelectProduct(1);'
-            + 'document.getElementById("product").value="' + product + '";'
-            + 'doOnSelectProduct(2);'
-            + 'void(0);';
-    addLink(product, href, parentElem, product, separator);
-}
-
 function addQueryProductsLink(parentElem, classification, products, name) {
     var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
             + 'doOnSelectProduct(1);'
@@ -346,7 +363,7 @@ function setOptionSize(elementId, size) {
     }
 }
 
-function createCategoriesChooser(categories) {
+function createCategoriesChooser(component, categories) {
 	var categoriesElem= document.createElement("select");
 	categoriesElem.setAttribute("name", "categories_selection");
 	categoriesElem.setAttribute("onchange", 
@@ -362,9 +379,14 @@ function createCategoriesChooser(categories) {
 		"var hasCat= form.short_desc.value.indexOf('[') == 0;" +
 		"form.short_desc.value= this.value + (hasCat ? '' : ' ') + form.short_desc.value;"
 	);
-	for (var k= 0; k < categories.length; k++) {
+	var allCategories= [
+"-- " + component + " category --",
+"-- clear categories --"
+];
+    allCategories= allCategories.concat(categories);
+	for (var k= 0; k < allCategories.length; k++) {
 		var newOption= document.createElement("option");
-		var categoriesName= categories[k];
+		var categoriesName= allCategories[k];
 		newOption.setAttribute("value", categoriesName);
 		newOption.innerHTML = categoriesName.substring(1, categoriesName.length - 1);
 		categoriesElem.appendChild(newOption);
@@ -372,23 +394,14 @@ function createCategoriesChooser(categories) {
 	return categoriesElem;
 }
 
-function createCategoriesLink(title, href) {
-	var categoriesLink= document.createElement("a")
-	categoriesLink.textContent= title;
-	categoriesLink.href= href;
-	return categoriesLink;
-}
-
 function createCategoryChoosers() {
     var choosers= document.createElement("form"); // dummy form to avoid submitting fields with main form
 	choosers.setAttribute("style", "font-size: small; font-weight: normal; display: inline;"); // make form behave like a <span> (inline element)
-	choosers.appendChild(createCategoriesLink("Text:", "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm"));
-	choosers.appendChild(document.createTextNode(" "));
-    choosers.appendChild(createCategoriesChooser(textCategories));
-	choosers.appendChild(document.createTextNode(" | "));
-	choosers.appendChild(createCategoriesLink("JDT:", "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php"));
-	choosers.appendChild(document.createTextNode(" "));
-	choosers.appendChild(createCategoriesChooser(jdtCategories));
+	for (var component in categories) {
+	    addLink(component + ":", categories[component].url, choosers)
+		choosers.appendChild(document.createTextNode(" "));
+	    choosers.appendChild(createCategoriesChooser(component, categories[component]));
+    }
 	return choosers;
 }
 
@@ -595,9 +608,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 //		productLinkSpanElem.style.marginLeft= ".5em";
 		productLinkSpanElem.style.fontWeight= "normal";
 		productElem.firstElementChild.appendChild(productLinkSpanElem);
-		addQueryProductLink(productLinkSpanElem, "Technology", "EGit");
-		addQueryProductsLink(productLinkSpanElem, "Technology", new Array("EGit", "JGit"), " & ");
-		addQueryProductLink(productLinkSpanElem, "Technology", "JGit", false);
+		for (var i= 0; i < queryProducts.length; i= i+3) {
+            addQueryProductsLink(productLinkSpanElem, queryProducts[i+1], queryProducts[i+2], queryProducts[i]);
+        }
 	}
 	
 	// Add open/closed links:
@@ -781,10 +794,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var productsLinkSpanElem= document.createElement("span");
 		productsLinkSpanElem.style.marginLeft= "1em";
 		productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
-	    addProductLink("Platform", productsLinkSpanElem);
-	    addProductLink("JDT", productsLinkSpanElem);
-	    addProductLink("PDE", productsLinkSpanElem);
-	    addProductLink("Equinox", productsLinkSpanElem);
+	    for (var i= 0; i < moveProducts.length; i++) {
+	        addProductLink(moveProducts[i], productsLinkSpanElem);
+        }
 	}
 	var componentElem= document.getElementById("component");
 	if (componentElem) {
@@ -798,12 +810,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var componentsLinkSpanElem= document.createElement("span");
 		componentsLinkSpanElem.style.marginLeft= "1em";
 		componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
-	    addComponentLink("Core", componentsLinkSpanElem);
-	    addComponentLink("Debug", componentsLinkSpanElem);
-	    addComponentLink("Doc", componentsLinkSpanElem);
-	    addComponentLink("SWT", componentsLinkSpanElem);
-	    addComponentLink("Text", componentsLinkSpanElem);
-	    addComponentLink("UI", componentsLinkSpanElem);
+	    for (var i= 0; i < moveComponents.length; i++) {
+	        addComponentLink(moveComponents[i], componentsLinkSpanElem);
+        }
 	}
 	
 	// Copy QA and Assignee to the right (read-only):
