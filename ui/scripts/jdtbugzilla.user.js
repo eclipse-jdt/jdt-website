@@ -1062,9 +1062,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
-	        i+= 1;
 	        
-	    // Remove link in bug header to allow easy copying of bug number
+	    // Remove link in bug header to allow easy copying of bug number:
 	    } else if (aElemHref.match(bugrefRegex)) {
 	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
 	            var pre= document.createTextNode("bug " + bugId);
@@ -1072,12 +1071,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	            aElem.parentNode.removeChild(aElem);
             }
         
-	    // Turn "Add comment" link into a button
+	    // Turn "Add comment" link into a button:
 	    } else if (aElem.parentNode.getAttribute("class") == "bz_add_comment") {
 	        var buttonElem= document.createElement("button");
 	        buttonElem.setAttribute("onclick", aElem.getAttribute("onclick"));
 	        buttonElem.textContent= aElem.textContent + "...";
 	        aElem.parentNode.replaceChild(buttonElem, aElem);
+	    
+	    // Tune user links to include name in email address (for copy-paste as Git author):
+	    } else if (aElem.getAttribute("class") == "email") {
+	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
 	    }
 	    
 	//    // Show obsolete attachments initially:
