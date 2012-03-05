@@ -975,7 +975,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     var commentElem= document.getElementById("comment");
 	if (commentElem) {
 	    commentElem.setAttribute("rows", "10");
-//	    commentElem.setAttribute("cols", "79");
+	    commentElem.setAttribute("cols", "79");
 	    commentElem.setAttribute("onFocus", "this.rows=25");
 	}
 
