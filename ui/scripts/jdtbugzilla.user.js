@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 M6", "3.8 M7", "3.8", "3.7.2"];
+var target_milestones= ["3.8 M7", "3.8", "4.3", "3.7.2"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -72,9 +72,9 @@ var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
 
 // Add "<name>", "<Classification>", ["<product1>", "<product2>", ...] triplets for quick product links on the search page:
 var queryProducts= [
-"EGit", "Technology", new Array("EGit"),
-" & ", "Technology", new Array("EGit", "JGit"),
-"JGit", "Technology", new Array("JGit"),
+"EGit", "Technology", ["EGit"],
+" & ", "Technology", ["EGit", "JGit"],
+"JGit", "Technology", ["JGit"],
 ];
 
 // Add tags to categorize bugs within a component:
@@ -360,6 +360,13 @@ function setOptionSize(elementId, size) {
     var elem= document.getElementById(elementId);
     if (elem) {
         elem.setAttribute("size", size);
+    }
+}
+
+function setAccessKey(elementId, key) {
+    var elem= document.getElementById(elementId);
+    if (elem) {
+        elem.setAttribute("accesskey", key);
     }
 }
 
@@ -683,6 +690,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         + ".field_label { line-height: 1.3em ! important; }\n";
         + ".search_field_row { line-height: auto ! important; }\n";
 
+	// Add accesskeys:
+	setAccessKey("short_desc", "s");
+	setAccessKey("longdesc", "c");
+	setAccessKey("bug_status", "t");
+	setAccessKey("resolution", "r");
+	setAccessKey("target_milestone", "m");
+	setAccessKey("chfieldfrom", "b");
+	
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Add access key to Edit Query:
     var bz_query_editElems= document.getElementsByClassName("bz_query_edit");
@@ -875,15 +890,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 	}
 	
-	// Add accesskeys to Status & Resolution:
-	var bug_statusElem= document.getElementById("bug_status");
-	if (bug_statusElem) {
-	    bug_statusElem.setAttribute("accesskey", "e");
-	}
-	var resolutionElem= document.getElementById("resolution");
-	if (resolutionElem) {
-	    resolutionElem.setAttribute("accesskey", "r");
-	}
+	// Add accesskeys:
+	setAccessKey("bug_status", "t");
+	setAccessKey("resolution", "r");
+	setAccessKey("target_milestone", "m");
 	
 	// Add shortcut target milestone links:
 	var targetElem= document.getElementById("target_milestone");
@@ -911,7 +921,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var statusLinksDivElem= document.createElement("div");
 		dup_id_discoverableElem.parentNode.insertBefore(statusLinksDivElem, dup_id_discoverableElem.nextSibling);
 	
-		if (dup_id_discoverableElem && bug_statusElem && resolutionElem) {
+		var bug_statusElem= document.getElementById("bug_status");
+		if (dup_id_discoverableElem && bug_statusElem) {
 		    var firstStatus= bug_statusElem.options[0].value;
 		    var secondStatus= bug_statusElem.options[1].value;
 		    if ((firstStatus == "NEW" || firstStatus == "ASSIGNED" || firstStatus == "REOPENED") && secondStatus != "RESOLVED") {
