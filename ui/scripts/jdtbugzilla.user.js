@@ -62,6 +62,7 @@ var assignees= ccs;
 var commitURLs= [
 "jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
 "platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
+"platform.common", "http://git.eclipse.org/c/platform/eclipse.platform.common.git/commit/?id=",
 "platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id=",
 "platform.team", "http://git.eclipse.org/c/platform/eclipse.platform.team.git/commit/?id=",
 "pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id="
