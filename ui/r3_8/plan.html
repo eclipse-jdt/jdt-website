@@ -103,7 +103,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2012/02/13 08:26:32 $</p>
+    <p>Last revised $Date: 2012/03/20 10:59:21 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -161,13 +161,7 @@ function showHiddenWork() {
 
 		<li><h4>Adopt New Platform Features [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">help productizing Eclipse 4.2  <span class="work">4 weeks</span>
-				<ul>
-					<li>make sure that we smoothly run on Eclipse SDK 3.8 and 4.2</li>
-					<li>provide feedback on outstanding issues to the Platform UI team</li>
-					<li>test our bundles against 4.2</li>
-				</ul>
-			</li>
+			<li>none at this point</li>
 		</ul>
 		</li>
 		
@@ -206,6 +200,8 @@ function showHiddenWork() {
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> need better choice for syntax color in high contrast mode (bug 224741) <span class="work">1 week</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> angle brackets wrongly auto-closed when starting at the beginning of a line (bug 347734) <span class="work">Deepak: 1 day</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to use annotations for null checking (bug 186342) <span class="work">Markus: 2 weeks</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> support to ignore warnings from certain source folders (bug 220928) <span class="work">Markus: 3 days</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> CamelCase pattern matching in quick outline and quick hierarchy (bug 106228) <span class="work">Markus</span></li>
 		</ul>
 		</li>
 		
@@ -229,7 +225,7 @@ function showHiddenWork() {
 
 		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
 		<ul>
-			TBD
+			<li>remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
 		</ul>
 		</li>
 	
@@ -515,6 +511,7 @@ function showHiddenWork() {
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M5]</font> add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M5]</font> make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> polish preference UI for null annotations (bug 366013) <span class="work">Markus: 1 day</span></li>
+			<li>add highlight for inherited fields (has patch) (bug 348368) <span class="work">Dani: 1 day</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>]</h4>
@@ -567,23 +564,25 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
-			<li class="priority">make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
-			<li class="priority">support to ignore warnings from certain source folders (bug 220928) <span class="work">Markus: 3 days</span></li>
-			<li class="priority">BiDi support for complex static expressions: review new TextProcessor replacement (depends on SWT bug 183164) <span class="work">1 week</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> support to ignore warnings from certain source folders (bug 220928) <span class="work">Markus: 3 days</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> BiDi support for complex static expressions: review new TextProcessor replacement (depends on SWT bug 183164) <span class="work">1 week</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> CamelCase pattern matching in quick outline and quick hierarchy (bug 106228) <span class="work">Markus</span></li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> update JUnit to its latest version (bug 356065) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle">  <font class="indexsub" color="#8080ff">[3.8 M7]</font> update JUnit to its latest version (bug 356065) <span class="work">Markus: 1 week</span>
+				<br>&rarr; filed CQ</li>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> better matching bracket support <span class="work">Deepak: 4 weeks</span>
+			<li class="priority">better matching bracket support <span class="work">Deepak: 4 weeks</span>
 				<ul>
-					<li>provide a hover (bug 184056)</li>
-					<li>show the corresponding bracket in the ruler (bug 358347)</li>
+					<li><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> provide a hover (bug 184056)</li>
+					<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> show the corresponding bracket in the ruler (bug 358347)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> highlight both matching brackets (bug 27372)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> matching bracket (Ctrl+Shift+P) should work anywhere in the file (bug 40580)</li>
 				</ul>
@@ -592,17 +591,17 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
-			<li>bugzilla inbox tracking</li>
-			<li>bug fixing</li>
-			<li>watch performance tests</li>
-			<li>increase correctness test coverage</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bugzilla inbox tracking</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug fixing</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> watch performance tests</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> increase correctness test coverage</li>
 		</ul>
 		
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_8/testing/3.7.2_RC3_Test_Plan.html">test plan</a> for the 3.7.2 RC3 test pass</li>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_8/testing/M6_Test_Plan.html">test plan</a> for the 3.8 M6 test pass</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> <a href="http://www.eclipse.org/jdt/ui/r3_8/testing/M6_Test_Plan.html">test plan</a> for the 3.8 M6 test pass</li>
 		</ul>
 		
 	</td>
@@ -615,26 +614,44 @@ function showHiddenWork() {
 	<td WIDTH="100%">
 		See also the <a href="http://www.eclipse.org/eclipse/platform-text/3.8/plan.php#Milestone_Planning_M7">Platform Text 3.8 M7 Plan</a>.</p>
 
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">0.5m</span></h4>
+		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
+		</ul>
+		</li>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
+			<li class="priority">make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
+			<li class="priority">BiDi support for complex static expressions: review new TextProcessor replacement (depends on SWT bug 183164) <span class="work">1 week</span></li>
+			<li>add highlight for inherited fields (has patch) (bug 348368) <span class="work">Dani: 1 day</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
+		<ul>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> update JUnit to its latest version (bug 356065) <span class="work">Markus: 1 week</span></li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Code Visualization [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority">better matching bracket support
+				<ul>
+					<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> provide a hover (bug 184056)<span class="work">Deepak: 1 week</span></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">Deepak: 2 weeks</span></h4>
 		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
 		<ul>
 		</ul>
 		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">0.5m</span></h4>
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">all: &frac12; week each</span></h4>
 		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
 		<ul>
 		</ul>
-		
-		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Adopt New Platform Features [<a href="#3">3</a>]</h4>
-		<ul>
-			<li class="priority">make sure that we smoothly run on Eclipse SDK 3.8 and 4.2<span class="work">2 weeks</span>
-				<ul>
-					<li>test our bundles against it</li>
-					<li>help to investigate and fix bugs in the compatibility layer</li>
-				</ul>
-			</li>
-		</ul>
-		
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
 			<li>bugzilla inbox tracking</li>
@@ -646,7 +663,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
 		<ul>
-			<li><a href="http://www.eclipse.org/jdt/ui/r3_8/testing/M7_Test_Plan.html">test plan</a> for the 3.8 M7 test pass</li>
+			<li><a href="testing/M7_Test_Plan.html">test plan</a> for the 3.8 M7 test pass</li>
 		</ul>
 		
 	</td>
