@@ -103,7 +103,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2012/03/20 10:59:21 $</p>
+    <p>Last revised $Date: 2012/03/20 12:04:51 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -149,7 +149,7 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> finish the <a href="http://wiki.eclipse.org/JDT_UI/Java7">work on Java 7 support</a> <span class="work">20 weeks</span></li></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> backport the Java 7 support to 3.7.1 <span class="work">6 weeks</span></li>
-			<li>add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
 		</ul>
 		</li>
 
@@ -167,21 +167,24 @@ function showHiddenWork() {
 		
 		<li><h4>API [<a href="#2">2</a>]</h4>
 		<ul>
-			<li>none at this point</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide a way to implement refactorings that depend on resources that have to be explicitly released (bug 347599) <span class="work">Markus</span>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add enablement to Java completion proposal category extension point (patch) (bug 345213) <span class="work">Dani</span>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add extended listener support for Code Completion Interfaces (patch)  (bug 350409) <span class="work">Dani</span>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> make ASTRewriteCorrectionProposal and parents public API  (bug 287136) <span class="work">Deepak</span>
 		</ul>
 		</li>
 
 		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>new refactoring: convert instance method to static (bug 118032) <span class="work">2 weeks</span></li>
-			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2 weeks</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> new refactoring: convert instance method to static (bug 118032) <span class="work">2 weeks</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2 weeks</span>
 				<ul>
 					<li>Increase visibility (with info/warning message)?</li>
 					<li>add delegation if possible (with info/warning message)?</li>
 					<li>offer possibility to "fix" warning on error page?</li>
 				</ul>
 			</li>
-			<li>permanent local rename mode [experimental]
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> permanent local rename mode [experimental]
 				<ul>
 					<li>editing always updates like "Local Rename" (automatically enter linked mode)</li>
 					<li>investigate interplay with "refactoring only" mode</li>
@@ -207,7 +210,7 @@ function showHiddenWork() {
 		
 		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>document positions not updated for call locations (bug 121900)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> document positions not updated for call locations (bug 121900)</li>
 		</ul>
 		</li>
 		
@@ -231,24 +234,24 @@ function showHiddenWork() {
 	
 		<li><h4>Code Visualization [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> better matching bracket support <span class="work">Deepak: 4 weeks</span>
+			<li class="priority">better matching bracket support <span class="work">Deepak: 4 weeks</span>
 				<ul>
-					<li>provide a hover (bug 184056)</li>
-					<li>show the corresponding bracket in the ruler (bug 358347)</li>
+					<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> provide a hover (bug 184056)</li>
+					<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> show the corresponding bracket in the ruler (bug 358347)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> highlight both matching brackets (bug 27372)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> matching bracket (Ctrl+Shift+P) should work anywhere in the file (bug 40580)</li>
 				</ul>
 			</li>
-			<li>show horizontal line between methods (bug 13672) <span class="work">1 week</span></li>
-			<li>visualize code nesting (bug 69455) <span class="work">2 weeks</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> show horizontal line between methods (bug 13672) <span class="work">1 week</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> visualize code nesting (bug 69455) <span class="work">2 weeks</span>
 				<br>&rarr; could be implemented as semantic highlighting</li>
-			<li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> [misc] draw vertical lines in control flow statements (bug 84878)</li>
 		</ul>
 		</li>
   
 		<li><h4>Quick views [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">2 days</span>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">2 days</span>
 		</ul>
 		</li>
 	
@@ -263,7 +266,7 @@ function showHiddenWork() {
 		<li><h4>Miscellaneous</h4>
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> migration to Git <span class="work">all: 3 weeks in total</span></li>
-			<li>structured selection should support brackets (bug 86835) <span class="work">???</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> structured selection should support brackets (bug 86835) <span class="work">???</span></li>
 			<li class="priority">replace Intro Samples Page with p2 based page <span class="work">2 weeks</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> new warning for missing try-with-resources (bug 349326) <span class="work">Deepak: 4 days (review and UI)</span></li>
 		</ul>
@@ -272,7 +275,7 @@ function showHiddenWork() {
 		<li><h4>General Items</h4>
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.8 planning <span class="work">1 week</span></li>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> resolve bugs that got deferred from 3.7 to 3.8 <span class="work">all</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> resolve bugs that got deferred from 3.7 to 3.8 <span class="work">all</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7.1 maintenance work <span class="work">3 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7.2 maintenance work <span class="work">3 weeks</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> look at bugs with patches and review those <span class="work">4 weeks</span></li>
@@ -288,8 +291,8 @@ function showHiddenWork() {
 	<ul>
 		<li>SWT
 		<ul>
-			<li>bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
-			<li>bug 183164 needs to be fixed in order to provide improved BiDi support for complex static expressions</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 230854 needs to be fixed in order to provide BiDi support for input fields/combos</li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> bug 183164 needs to be fixed in order to provide improved BiDi support for complex static expressions</li>
 		</ul>
 		</li>
 		<li>Platform Compare
@@ -404,7 +407,12 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.8 M4]</font> 3.7.2 maintenance work <span class="work">1 week</span></li>
 			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[3.8 M4]</font> resolve bugs that got deferred from 3.7 to 3.8 <span class="work">all</span></li>
 		</ul>
-		
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide a way to implement refactorings that depend on resources that have to be explicitly released (bug 347599) <span class="work">Markus</span>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to associate an editor to class files which have no source (bug 360642) <span class="work">Dani: 2 weeks</span></li>
@@ -505,6 +513,11 @@ function showHiddenWork() {
 			<li>add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
 		</ul>
 
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add enablement to Java completion proposal category extension point (patch) (bug 345213) <span class="work">Dani</span>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> need better choice for syntax color in high contrast mode (bug 224741) <span class="work">1 week</span></li>
@@ -562,6 +575,12 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> look at bugs with patches and review those <span class="work">Dani: 2 weeks</span></li>
 		</ul>
 		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add extended listener support for Code Completion Interfaces (patch)  (bug 350409) <span class="work">Dani</span>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> make ASTRewriteCorrectionProposal and parents public API  (bug 287136) <span class="work">Deepak</span>
+		</ul>
+
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
