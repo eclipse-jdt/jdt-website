@@ -1092,7 +1092,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        aElem.parentNode.replaceChild(buttonElem, aElem);
 	    
 	    // Tune user links to include name in email address (for copy-paste as Git author):
-	    } else if (aElem.getAttribute("class") == "email") {
+	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
 	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
 	    }
 	    
