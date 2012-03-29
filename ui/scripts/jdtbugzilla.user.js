@@ -954,16 +954,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 	}
 	
-	// On the "Add an attachment" page, add an "Add me to CC list" checkbox (no idea whether this works...):
-	if (! document.getElementById("newcc")) {
-	    var takebugElem= document.getElementById("takebug");
-	    if (takebugElem) {
-	        var divElem= document.createElement("div");
-	        divElem.innerHTML= '<div><br><label for="newcc"><b>Add CC (experimental greasemonkey hack!): </b></label></div> <input id="newcc" class="bz_userfield" size="30" value="" name="newcc">';
-	        takebugElem.parentNode.appendChild(divElem);
-	    }
-	}
-	
 	var newccElem= document.getElementById("newcc");
 	if (newccElem) {
 	    var addDiv= newccElem.parentNode.firstElementChild;
