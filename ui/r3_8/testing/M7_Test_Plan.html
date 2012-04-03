@@ -36,27 +36,13 @@ Testers: Deepak, Markus and Dani<br>
 
 <h2>Test New Functionality </h2>
 
-<h4>Test better matching bracket support (Markus, Dani - Questions: Deepak, Dani, Markus)</h4>
+<h4>Problem decorations on packages (Deepak, Dani - Questions: Markus)</h4>
 <ul>
-	<li>test highlighting both matching brackets (bug 27372)</li>
-	<li>verify that matching bracket (Ctrl+Shift+P) works anywhere in the file (bug 40580)</li>
-	<li>verify that highlighting enclosing brackets works and is quick enough</li>
-	<li>verify that toggling highlighting enclosing brackets doesn't leak listeners</li>
+	<li>verify that problem markers on a package (e.g. due to missing @NonNullByDefault) are not propagated to "parent" package</li>
+	<li>verify with hierarchical packages mode</li>
+	<li>verify in Java Browsing perspective with logical packages</li>
 </ul>
 
-<h4>CamelCase matching in Quick Outline and Quick Type Hierarchy (Dani, Deepak - Questions: Markus)</h4>
-CamelCase matching works for the first identifier in the label. The rest is matched using the normal StringMatcher (* and ?).
-<ul>
-	<li>verify that camelCase matching works</li>
-	<li>verify that old pattern matching still works</li>
-	<li>verify that camelCase followed by a method parameter list (in parentheses) works</li>
-</ul>
-
-<h4>'Remove unnecessary casts' Clean Up (Deepak, Dani - Questions: Markus)</h4>
-<ul>
-	<li>verify that it doesn't remove necessary casts</li>
-	<li>verify that it works fine with nested casts that may be enclosed in parentheses</li>
-</ul>
 
 
 <h2>Bug Verification (All)</h2>
