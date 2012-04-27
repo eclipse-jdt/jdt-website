@@ -103,7 +103,7 @@ function showHiddenWork() {
 
   <tr> 
     <td WIDTH="100%"> 
-    <p>Last revised $Date: 2012/03/20 12:46:41 $</p>
+    <p>Last revised $Date: 2012/04/27 09:52:00 $</p>
 
     
       <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
@@ -195,9 +195,9 @@ function showHiddenWork() {
 		
 		<li><h4>Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">all: 20 weeks</span></li>
-			<li class="priority">improve BiDi support for complex static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">6 weeks</span></li>
-			<li>create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1 week</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">all: 20 weeks</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> improve BiDi support for complex static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">6 weeks</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1 week</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to associate an editor to class files which have no source (bug 360642) <span class="work">Dani: 2 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> add Quick Assists to synchronize Java properties file and corresponding message class (bug 358384) <span class="work">Deepak: 2 weeks</span></li>
 			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> need better choice for syntax color in high contrast mode (bug 224741) <span class="work">1 week</span></li>
@@ -205,6 +205,8 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> allow to use annotations for null checking (bug 186342) <span class="work">Markus: 2 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> support to ignore warnings from certain source folders (bug 220928) <span class="work">Markus: 3 days</span></li>
 			<li><img src="../images/ok.gif" border="0" height="10" width="10"> CamelCase pattern matching in quick outline and quick hierarchy (bug 106228) <span class="work">Markus</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
 		</ul>
 		</li>
 		
@@ -228,7 +230,7 @@ function showHiddenWork() {
 
 		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
 		</ul>
 		</li>
 	
@@ -236,8 +238,9 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority">better matching bracket support <span class="work">Deepak: 4 weeks</span>
 				<ul>
-					<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> provide a hover (bug 184056)</li>
-					<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> show the corresponding bracket in the ruler (bug 358347)</li>
+					<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide a hover (bug 184056)</li>
+					<li>show the corresponding bracket in the ruler (bug 358347)</li>
+					<br>&rarr; did not look good; decided to mark as WONTFIX</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> highlight both matching brackets (bug 27372)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> matching bracket (Ctrl+Shift+P) should work anywhere in the file (bug 40580)</li>
 				</ul>
@@ -278,7 +281,7 @@ function showHiddenWork() {
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> resolve bugs that got deferred from 3.7 to 3.8 <span class="work">all</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7.1 maintenance work <span class="work">3 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> 3.7.2 maintenance work <span class="work">3 weeks</span></li>
-			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> look at bugs with patches and review those <span class="work">4 weeks</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> look at bugs with patches and review those <span class="work">4 weeks</span></li>
 			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> EclipseCon Europe (preparation and attendance) <span class="work">Markus: 1 week</span></li>
 		</ul>
 		</li>
@@ -510,7 +513,7 @@ function showHiddenWork() {
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 7 [<a href="#4">4</a>]</h4>
 		<ul>
-			<li>add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> add clean ups to convert multiple catch blocks to a single multi-catch block and vice versa (bug 351179) <span class="work">Deepak: 1 week</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> API [<a href="#2">2</a>]</h4>
@@ -601,7 +604,8 @@ function showHiddenWork() {
 			<li class="priority">better matching bracket support <span class="work">Deepak: 4 weeks</span>
 				<ul>
 					<li><font class="indexsub" color="#8080ff">[&gt; 3.8 M6]</font> provide a hover (bug 184056)</li>
-					<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> show the corresponding bracket in the ruler (bug 358347)</li>
+					<li>show the corresponding bracket in the ruler (bug 358347)
+					<br>&rarr; did not look good; decided to mark as WONTFIX</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> highlight both matching brackets (bug 27372)</li>
 					<li><img src="../images/ok.gif" border="0" height="10" width="10"> matching bracket (Ctrl+Shift+P) should work anywhere in the file (bug 40580)</li>
 				</ul>
@@ -635,16 +639,16 @@ function showHiddenWork() {
 
 		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
 		<ul>
-			<li>remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
+			<li><font class="indexsub" color="#8080ff">[&gt; 3.8]</font> remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
 		</ul>
 		</li>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Usability [<a href="#3">3</a>]</h4>
 		<ul>
-			<li class="priority">add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
-			<li class="priority">make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
-			<li class="priority">BiDi support for complex static expressions: review new TextProcessor replacement (depends on SWT bug 183164) <span class="work">1 week</span></li>
-			<li>add highlight for inherited fields (has patch) (bug 348368) <span class="work">Dani: 1 day</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> add quick fixes and quick assist for null annotations support (bug 337977) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><img src="../images/ok.gif" border="0" height="10" width="10"> make it easier to setup null analysis (bug 366014) <span class="work">Markus: 1 week</span></li>
+			<li class="priority"><font class="indexsub" color="#8080ff">[&gt; 3.8]</font>  BiDi support for complex static expressions: review new TextProcessor replacement (depends on SWT bug 183164) <span class="work">1 week</span></li>
+			<li><img src="../images/ok.gif" border="0" height="10" width="10"> add highlight for inherited fields (has patch) (bug 348368) <span class="work">Dani: 1 day</span></li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> JUnit [<a href="#4">4</a>]</h4>
@@ -656,27 +660,27 @@ function showHiddenWork() {
 		<ul>
 			<li class="priority">better matching bracket support
 				<ul>
-					<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> provide a hover (bug 184056)<span class="work">Deepak: 1 week</span></li>
+					<li><img src="../images/ok.gif" border="0" height="10" width="10"> provide a hover (bug 184056)<span class="work">Deepak: 1 week</span></li>
 				</ul>
 			</li>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">Deepak: 2 weeks</span></h4>
-		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
+		<img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
 		<ul>
 		</ul>
 		
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">all: &frac12; week each</span></h4>
-		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
+		<img src="../images/ok.gif" border="0" height="10" width="10"> Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
 		<ul>
 		</ul>
 
 		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
 		<ul>
-			<li>bugzilla inbox tracking</li>
-			<li>bug fixing</li>
-			<li>watch performance tests</li>
-			<li>increase correctness test coverage</li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> bugzilla inbox tracking</li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> bug fixing</li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> watch performance tests</li>
+			<li><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> increase correctness test coverage</li>
 		</ul>
 		
 		
