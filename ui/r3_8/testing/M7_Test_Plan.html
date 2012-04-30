@@ -22,8 +22,8 @@ Testers: Deepak, Markus and Dani<br>
 </ul>
 <h3>Platforms</h3>
 <ul>
-  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Dani</a></li>
-  <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a></li>
+  <li>Windows 7: <a href="mailto:daniel_megert@ch.ibm.com">Deepak</a>, Dani, Markus</li>
+  <li>Linux-GTK: <a href="mailto:deepak.azad@in.ibm.com">Dani</a></li>
   <li>Mac OS X 10.7: <a href="mailto:markus_keller@ch.ibm.com">Markus</a></li>
 </ul>
 
@@ -45,9 +45,7 @@ Testers: Deepak, Markus and Dani<br>
 
 <h4>Content assist in package-info.java (Dani, Markus - Questions: Ayush)</h4>
 <ul>
-	<li>verify that problem markers on a package (e.g. due to missing @NonNullByDefault) are not propagated to "parent" package</li>
-	<li>verify with hierarchical packages mode</li>
-	<li>verify in Java Browsing perspective with logical packages</li>
+	<li>verify for package declaration, annotations, in Javadoc</li>
 </ul>
 
 <h4>New Package wizard creates package-info.java (Deepak, Dani - Questions: Markus)</h4>
@@ -56,12 +54,41 @@ Testers: Deepak, Markus and Dani<br>
 	<li>verify that New Package wizard generates a correct the package.html if compliance is &lt; 1.5</li>
 </ul>
 
+<h4>Sanity-check JUnit 4.10.0 (Deepak, Markus - Questions: Markus)</h4>
+<ul>
+	<li>run 3.8 and 4.x tests and plug-in tests</li>
+</ul>
+
+<h4>Java Hyperlinks (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify that the 4 kinds of Java hyperlinks have acceptable performance in big files</li>
+	<li>verify that the hyperlinks are correct when clicked quickly after moving the mouse to another hyperlink target</li>
+</ul>
+
+<h4>Generated overriding methods should copy annotations (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify that only annotations with runtime and class retention are copied</li>
+	<li>verify that annotations are copied in all places where we generate overriding methods</li>
+	<li>verify that ordering of annotations and other modifiers makes sense</li>
+</ul>
+
+<h4>Quick fix to import static from favorite (Dani, Deepak - Questions: Markus)</h4>
+<ul>
+	<li>should work the same as content assist, e.g. to import java.lang.Math.* for unknown max(1, 2)</li>
+</ul>
+
+<h4>Null Analysis (Deepak, Dani - Questions: Markus)</h4>
+<ul>
+	<li>test quick fix on nullity annotation reference to add annotations JAR to plain Java project and to bundle</li>
+	<li>sanity check quick fixes that are already implemented (bug 337977)</li>
+</ul>
+
 <h4>'Show In' from Open Resource dialog context menu (Dani, Deepak - Questions: Markus)</h4>
 <ul>
 	<li>verify that it works on single and multi-selection for history items and matched resources</li>
 </ul>
 
-<h4>Bracket Matching (???, ??? - Questions: Deepak)</h4>
+<h4>Bracket Matching (Markus, Dani - Questions: Deepak)</h4>
 Verify that the matching bracket highlighting and Go To > Matching Bracket action work correctly. 
 <ul>
 	<li>verify that the performance of enclosing brackets is acceptable</li>
@@ -70,7 +97,7 @@ Verify that the matching bracket highlighting and Go To > Matching Bracket actio
 	<li>verify that the bracket tooltip works correctly</li>
 </ul>
 
-<h4>Misc (???, ??? - Questions: Deepak)</h4>
+<h4>Misc (Markus, Deepak - Questions: Deepak)</h4>
 <ul>
 	<li>verify that F2 uses BestMatchHover</li>
 	<li>verify that annotation range is drawn correctly in Overview ruler for multi-line annotations</li>
