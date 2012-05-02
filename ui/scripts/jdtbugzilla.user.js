@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 M7", "3.8", "4.3", "3.7.2"];
+var target_milestones= ["3.8 RC0", "3.8 RC1", "3.8 RC2", "4.3"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
