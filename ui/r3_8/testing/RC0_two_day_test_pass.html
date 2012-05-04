@@ -36,14 +36,19 @@ Testers: <a href="mailto:deepak.azad@in.ibm.com">Deepak</a>, <a href="mailto:mar
   <li>??? tests using the Java perspective with Package Explorer in project mode</li>
 </ul>
 
-<strong style="color:red">Each new bug must state whether it is a regression compared to 3.8 or 4.1 or whether it is not.</strong> 
+<strong style="color:red">Each new bug must state whether it is a regression or not.</strong> 
 
 
-<h2>New Juno Functionality (Dani)</h2>
+<h2>New Juno Functionality</h2>
 Test all new features that have been added during Juno development.
 This can be done by testing the features mentioned in the M1-M7
 <a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.8M7-201104280848/eclipse-news-M7.html">New and Noteworthy</a>
 documents.
+<ul>
+  <li>M1-M4 (Dani)</li>
+  <li>M5 (Markus)</li>
+  <li>M6 & M7 (Deepak)</li>
+</ul>
 
 
 <h2>Views and Editors (Deepak)</h2>
@@ -58,22 +63,6 @@ documents.
   </li>
 </ul>
 
-
-<h2>Compilation Units not on Build Path (Deepak)<br>
-</h2>
-<ul>
-  <li>Test Edit, Source and Refactoring actions for compilation units
-not on the build path.</li>
-  <li>Test for:
-    <ul>
-      <li>editors opened on repository files</li>
-      <li>editors opened on Java file excluded from the build path</li>
-      <li>editors opened on Java files stored in Simple projects </li>
-    </ul>
-  </li>
-  <li>Actions should either operate without an error, not be present or
-present a dialog that the CU is not on the build path</li>
-</ul>
 
 <h2>Workspace and project setup (Markus)</h2>
 Setup workspaces and projects in ways unusual compared to your normal setup.
@@ -91,6 +80,7 @@ Test the following workspace and project setups:
   </li>
   <li>use resource filters</li>
   <li>use multiple output folders</li>
+  <li>use source folders with ignored compile problems</li>
   <li>use combination of exclusion &amp; inclusion filters</li>
   <li>use user defined library containers (JUnit as a user defined library)
     <ul>
@@ -101,24 +91,22 @@ Test the following workspace and project setups:
   <li>full source workspace</li>
 </ul>
 
-<h2>Workspace compatibility (Markus)</h2>
-Verify
-that an existing workspace can be started on the new version and is
+<h2>Workspace compatibility</h2>
+Verify that an existing workspace can be started on the new version and is
 fully functional. Also verify that preferences exported with an older workspace can be imported and work. Check the .log for serious problems.<br>
 <ul>
-  <li>upgrade a 3.6 workspace to 3.8</li>
-  <li>upgrade a 3.7 workspace to 3.8</li>
-  <li>upgrade a 3.6 workspace to 4.2</li>
-  <li>upgrade a 3.7 workspace to 4.2</li>
-  <li>upgrade a 4.0 workspace to 4.2</li>
-  <li>upgrade a 4.1 workspace to 4.2</li>
+  <li>upgrade a 3.6 workspace to 3.8 (Markus)</li>
+  <li>upgrade a 3.6 workspace to 4.2 (Markus)</li>
+  <li>upgrade a 3.7 workspace to 3.8 (Deepak)</li>
+  <li>upgrade a 3.7 workspace to 4.2 (Deepak)</li>
+  <li>upgrade a 3.8 workspace to 4.2 (Dani)</li>
 </ul>
-Verify that projects created and checked into CVS with an older version can be checked out with Juno.
+Verify that projects created and checked into a repository with an older version can be checked out with Juno.
 
 <h2>Freestyle Testing (all)</h2>
-Once all of the above test items are done (including those where you are listed as second tester), start with a fresh workspace and
+Once all of the above test items are done, start with a fresh workspace and
 change the settings in a way you normally don't work.
 <p>
-Implement a little feature or tool or fix one of your favorite bugs.</p>
+Implement a little feature or tool or fix one of your favorite bugs. Use refactorings and UI gestures you don't normally use.</p>
 </body>
 </html>
