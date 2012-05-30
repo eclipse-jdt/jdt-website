@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 RC1", "3.8 RC2", "3.8 RC3", "4.3"];
+var target_milestones= ["3.8 RC3", "3.8 RC4", "3.8.1", "4.3"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -77,6 +77,12 @@ var queryProducts= [
 "EGit", "Technology", ["EGit"],
 " & ", "Technology", ["EGit", "JGit"],
 "JGit", "Technology", ["JGit"],
+];
+
+// Add "<name>", ["<component1>", "<component2>", ...] pairs for quick component links on the search page:
+var queryComponents= [
+"UI", ["UI"],
+" & IDE", ["UI", "IDE"],
 ];
 
 // Add tags to categorize bugs within a component:
@@ -344,6 +350,20 @@ function addQueryProductsLink(parentElem, classification, products, name) {
     addLink(name, href, parentElem, products, false);
 }
 
+function addQueryComponentsLink(parentElem, components, name) {
+    var href= 'javascript:'
+            + 'document.getElementById("component").value="' + components[0] + '";';
+    
+    for (var i = 0; i < components.length; i++) {
+        href += 'var componentOptions= document.getElementById("component").options;'
+              + 'for (var i = 0; i < componentOptions.length; i++) {'
+              + '    if (componentOptions[i].text == "' + components[i] + '") componentOptions[i].selected= true'
+              + '}';
+    }
+    href += 'void(0);';
+    addLink(name, href, parentElem, components, false);
+}
+
 function addQueryStatusesLink(parentElem, statuses, name) {
     var href= 'javascript:var bug_statusOptions= document.getElementById("bug_status").options;';
     href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
@@ -493,7 +513,16 @@ if (rep_platformElem && op_sysElem) {
             + 'void(0);';
     addLink("All", href, allLinkSpanElem);
 }
-	
+
+// Fix the "Comment" field size (too small on the "Attachment Details" page,
+//     default cols=80 is too wide for proper wrapping preview):
+var commentElem= document.getElementById("comment");
+if (commentElem) {
+    commentElem.setAttribute("rows", "10");
+    commentElem.setAttribute("cols", "79");
+    commentElem.setAttribute("onFocus", "this.rows=25");
+}
+
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
@@ -608,7 +637,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addTargetLink(targetLinkSpanElem, "---");
 	}
 	
-	// Add E/JGit product links:
+	// Add quick product links:
 	var productElem= document.getElementById("field_label_product");
 	if (productElem) {
 	    productElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
@@ -619,6 +648,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		productElem.firstElementChild.appendChild(productLinkSpanElem);
 		for (var i= 0; i < queryProducts.length; i= i+3) {
             addQueryProductsLink(productLinkSpanElem, queryProducts[i+1], queryProducts[i+2], queryProducts[i]);
+        }
+	}
+	
+	// Add quick component links:
+	var componentElem= document.getElementById("field_label_component");
+	if (componentElem) {
+	    componentElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
+	    componentElem.setAttribute("style", "text-align: left;");
+		var componentLinkSpanElem= document.createElement("span");
+//		componentLinkSpanElem.style.marginLeft= ".5em";
+		componentLinkSpanElem.style.fontWeight= "normal";
+		componentElem.firstElementChild.appendChild(componentLinkSpanElem);
+		for (var i= 0; i < queryComponents.length; i= i+2) {
+            addQueryComponentsLink(componentLinkSpanElem, queryComponents[i+1], queryComponents[i]);
         }
 	}
 	
@@ -973,15 +1016,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
-    // Fix the "Comment" field size (too small on the "Attachment Details" page,
-    //     default cols=80 is too wide for proper wrapping preview):
-    var commentElem= document.getElementById("comment");
-	if (commentElem) {
-	    commentElem.setAttribute("rows", "10");
-	    commentElem.setAttribute("cols", "79");
-	    commentElem.setAttribute("onFocus", "this.rows=25");
-	}
-
 	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
 	
 	// Loop over <label>s:
