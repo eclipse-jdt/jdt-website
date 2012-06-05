@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 RC3", "3.8 RC4", "3.8.1", "4.3"];
+var target_milestones= ["3.8 RC4", "3.8.1", "4.3"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -58,8 +58,9 @@ var ccs= [
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
 var assignees= ccs;
 
-// Add "<name>", "<url>" pairs for repo URLs that you frequently insert into the comment field:
-var commitURLs= [
+// Add "<name>", "<string>" pairs for template strings that you frequently insert into the comment field (e.g. repo URLs):
+var commentTemplates= [
+"Fixed with ", "Fixed with ",
 "jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
 "platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
 "platform.common", "http://git.eclipse.org/c/platform/eclipse.platform.common.git/commit/?id=",
@@ -1053,16 +1054,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		pElem.style.marginLeft= "1em";
 		pElem.style.lineHeight= "2em";
 		pElem.appendChild(document.createElement("br"));
-		for (var i = 0; i < commitURLs.length; i+= 2) {
+		for (var i = 0; i < commentTemplates.length; i+= 2) {
             var aElem= document.createElement("a");
-			aElem.appendChild(document.createTextNode(commitURLs[i]));
+			aElem.appendChild(document.createTextNode(commentTemplates[i]));
             aElem.href='javascript:var cElem=document.getElementById("comment");'
                 + 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
-                + 'var url= "' + commitURLs[i + 1] + '";'
+                + 'var url= "' + commentTemplates[i + 1] + '";'
                 + 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
                 + 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
                 + 'void(0);';
-            aElem.title= "Insert commit URL prefix at caret";
+            aElem.title= "Insert comment template at caret";
 			pElem.appendChild(aElem);
 			pElem.appendChild(document.createElement("br"));
         }
