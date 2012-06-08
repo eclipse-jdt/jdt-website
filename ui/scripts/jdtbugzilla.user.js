@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["3.8 RC4", "3.8.1", "4.3"];
+var target_milestones= ["4.3", "4.3 M1", "3.8.1"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -463,6 +463,7 @@ if (headElem) {
 	    + "#titles a:visited { color: #636 ! important; }\n"
 	    + "#titles a:hover { color: #333 ! important; }\n"
 	    + "#titles a:active { color: #000 ! important; }\n"
+	    + "#titles { padding-top: 0.3em; padding-bottom: 0.3em; }\n"
 	// Fix color of comment number:
 	    + ".bz_comment_number { color: #65379c; }\n"
 	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
