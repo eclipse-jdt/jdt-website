@@ -46,7 +46,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3", "4.3 M1", "3.8.1"];
+var target_milestones= ["4.3 M1", "BETA J8", "3.8.1"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -352,12 +352,11 @@ function addQueryProductsLink(parentElem, classification, products, name) {
 }
 
 function addQueryComponentsLink(parentElem, components, name) {
-    var href= 'javascript:'
-            + 'document.getElementById("component").value="' + components[0] + '";';
+    var href= 'javascript:document.getElementById("component").selectedIndex= -1;'
+        + '    var componentOptions= document.getElementById("component").options;';
     
     for (var i = 0; i < components.length; i++) {
-        href += 'var componentOptions= document.getElementById("component").options;'
-              + 'for (var i = 0; i < componentOptions.length; i++) {'
+        href += 'for (var i = 0; i < componentOptions.length; i++) {'
               + '    if (componentOptions[i].text == "' + components[i] + '") componentOptions[i].selected= true'
               + '}';
     }
@@ -366,10 +365,9 @@ function addQueryComponentsLink(parentElem, components, name) {
 }
 
 function addQueryStatusesLink(parentElem, statuses, name) {
-    var href= 'javascript:var bug_statusOptions= document.getElementById("bug_status").options;';
-    href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
-          + '    bug_statusOptions[i].selected= false;'
-          + '};';
+    var href= 'javascript:document.getElementById("bug_status").selectedIndex= -1;'
+        + '    var bug_statusOptions= document.getElementById("bug_status").options;';
+    
     for (var i = 0; i < statuses.length; i++) {
         href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
               + '    if (bug_statusOptions[i].text == "' + statuses[i] + '") bug_statusOptions[i].selected= true;'
