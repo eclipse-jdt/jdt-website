@@ -1163,13 +1163,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    
 	    // Tune user links into (1) link containing plain email address and (2) link containing name <email_address> (e.g. to copy-paste as Git author):
 	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
-	        aElem.parentNode.insertBefore(document.createTextNode(" ("), aElem.nextSibling);
 		    var fullElem= aElem.cloneNode();
-		    fullElem.textContent= "full";
-		    fullElem.href= "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">";
+		    fullElem.textContent= "@";
+		    fullElem.title= aElemHref.substr(7);
 		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
-	        aElem.parentNode.insertBefore(document.createTextNode(")"), fullElem.nextSibling);
-	        aElem.setAttribute("title", aElemHref.substr(7));
+		    
+	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
 		    i+= 2;
 	    }
 	    
