@@ -73,14 +73,21 @@ var commentTemplates= [
 var moveProducts= [ "Platform", "JDT", "PDE", "Equinox" ];
 var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
 
-// Add "<name>", "<Classification>", ["<product1>", "<product2>", ...] triplets for quick product links on the search page:
+// Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...] pairs):
+var queryClassifications= [
+"E", ["Eclipse"],
+" & ", ["Eclipse", "RT"],
+"RT", ["RT"],
+];
+
+// Add quick product links on the search page ("<name>", "<Classification>", ["<product1>", "<product2>", ...] triplets):
 var queryProducts= [
 "EGit", "Technology", ["EGit"],
 " & ", "Technology", ["EGit", "JGit"],
 "JGit", "Technology", ["JGit"],
 ];
 
-// Add "<name>", ["<component1>", "<component2>", ...] pairs for quick component links on the search page:
+// Add quick component links on the search page ("<name>", ["<component1>", "<component2>", ...] pairs):
 var queryComponents= [
 "UI", ["UI"],
 " & IDE", ["UI", "IDE"],
@@ -335,6 +342,36 @@ function addTargetLink(parentElem, milestone) {
     addLink(milestone, href, parentElem);
 }
 
+function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
+	fieldLabelElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
+	fieldLabelElem.setAttribute("style", "text-align: left;");
+
+	var spanElem= document.createElement("span");
+//	spanElem.style.marginLeft= ".5em";
+	spanElem.style.fontWeight= "normal";
+	var href= 'javascript:document.getElementById("' + fieldId + '").selectedIndex= -1;'
+			+ 'document.getElementById("' + fieldId + '").focus();'
+			+ 'void(0);'
+	addLink("&empty;", href, spanElem, "select none", false)
+	spanElem.appendChild(document.createTextNode(" "));
+	
+	fieldLabelElem.firstElementChild.appendChild(spanElem);
+	return spanElem;
+}
+
+function addQueryClassificationsLink(parentElem, classifications, name) {
+    var href= 'javascript:document.getElementById("classification").selectedIndex= -1;'
+        + '    var classificationOptions= document.getElementById("classification").options;';
+    
+    for (var i = 0; i < classifications.length; i++) {
+        href += 'for (var i = 0; i < classificationOptions.length; i++) {'
+              + '    if (classificationOptions[i].text == "' + classifications[i] + '") classificationOptions[i].selected= true'
+              + '}';
+    }
+    href += 'void(0);';
+    addLink(name, href, parentElem, classifications, false);
+}
+
 function addQueryProductsLink(parentElem, classification, products, name) {
     var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
             + 'doOnSelectProduct(1);'
@@ -374,7 +411,7 @@ function addQueryStatusesLink(parentElem, statuses, name) {
               + '};';
     }
     href += 'void(0);';
-    addLink(name, href, parentElem);
+    addLink(name, href, parentElem, null, false);
 }
 
 function setOptionSize(elementId, size) {
@@ -637,15 +674,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		addTargetLink(targetLinkSpanElem, "---");
 	}
 	
+	// Add quick classification links:
+	var classificationElem= document.getElementById("field_label_classification");
+	if (classificationElem) {
+		var classificationLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(classificationElem, "classification");
+		for (var i= 0; i < queryClassifications.length; i= i+2) {
+            addQueryClassificationsLink(classificationLinkSpanElem, queryClassifications[i+1], queryClassifications[i]);
+        }
+	}
+	
 	// Add quick product links:
 	var productElem= document.getElementById("field_label_product");
 	if (productElem) {
-	    productElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
-	    productElem.setAttribute("style", "text-align: left;");
-		var productLinkSpanElem= document.createElement("span");
-//		productLinkSpanElem.style.marginLeft= ".5em";
-		productLinkSpanElem.style.fontWeight= "normal";
-		productElem.firstElementChild.appendChild(productLinkSpanElem);
+		var productLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(productElem, "product");
 		for (var i= 0; i < queryProducts.length; i= i+3) {
             addQueryProductsLink(productLinkSpanElem, queryProducts[i+1], queryProducts[i+2], queryProducts[i]);
         }
@@ -654,12 +695,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Add quick component links:
 	var componentElem= document.getElementById("field_label_component");
 	if (componentElem) {
-	    componentElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
-	    componentElem.setAttribute("style", "text-align: left;");
-		var componentLinkSpanElem= document.createElement("span");
-//		componentLinkSpanElem.style.marginLeft= ".5em";
-		componentLinkSpanElem.style.fontWeight= "normal";
-		componentElem.firstElementChild.appendChild(componentLinkSpanElem);
+		var componentLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(componentElem, "component");
 		for (var i= 0; i < queryComponents.length; i= i+2) {
             addQueryComponentsLink(componentLinkSpanElem, queryComponents[i+1], queryComponents[i]);
         }
@@ -668,16 +704,25 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Add open/closed links:
 	var bug_statusElem= document.getElementById("field_label_bug_status");
 	if (bug_statusElem) {
-	    bug_statusElem.firstElementChild.firstElementChild.setAttribute("style", "display: inline;");
-	    bug_statusElem.setAttribute("style", "text-align: left;");
-		var statusLinkSpanElem= document.createElement("span");
-		statusLinkSpanElem.style.marginLeft= ".5em";
-		statusLinkSpanElem.style.fontWeight= "normal";
-		bug_statusElem.firstElementChild.appendChild(statusLinkSpanElem);
+		var statusLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(bug_statusElem, "bug_status");
 		addQueryStatusesLink(statusLinkSpanElem, new Array("UNCONFIRMED", "NEW", "ASSIGNED", "REOPENED"), " Open");
+		statusLinkSpanElem.appendChild(document.createTextNode(" "));
 		addQueryStatusesLink(statusLinkSpanElem, new Array("RESOLVED", "VERIFIED", "CLOSED"), "Closed");
 	}
 	
+	// Add "Resolution: not FIXED" link:
+	var resolutionElem= document.getElementById("field_label_resolution");
+	if (resolutionElem) {
+		var resolutionLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(resolutionElem, "resolution");
+		
+	    var href= 'javascript:'
+	          + '    var resolutionOptions= document.getElementById("resolution").options;'
+              + 'for (var i = 0; i < resolutionOptions.length; i++) {'
+              + '    if (resolutionOptions[i].text != "FIXED") resolutionOptions[i].selected= true;'
+              + '};'
+	          + 'void(0);';
+	    addLink("!FIXED", href, resolutionLinkSpanElem);
+	}	
 	
 	// Increase option list sizes to avoid scrolling (these are probably not used any more):
 	setOptionSize("classification", 6);
@@ -1115,9 +1160,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        buttonElem.textContent= aElem.textContent + "...";
 	        aElem.parentNode.replaceChild(buttonElem, aElem);
 	    
-	    // Tune user links to include name in email address (for copy-paste as Git author):
+	    // Tune user links into (1) link containing plain email address and (2) link containing name <email_address> (e.g. to copy-paste as Git author):
 	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
-	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
+	        aElem.parentNode.insertBefore(document.createTextNode(" ("), aElem.nextSibling);
+		    var fullElem= aElem.cloneNode();
+		    fullElem.textContent= "full";
+		    fullElem.href= "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">";
+		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
+	        aElem.parentNode.insertBefore(document.createTextNode(")"), fullElem.nextSibling);
+	        aElem.setAttribute("title", aElemHref.substr(7));
+		    i+= 2;
 	    }
 	    
 	//    // Show obsolete attachments initially:
