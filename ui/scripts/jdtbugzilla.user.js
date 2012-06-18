@@ -205,6 +205,7 @@ categories["JDT"]= [
 "[working sets]",
 "[5.0]",
 "[1.7]",
+"[1.8]",
 ];
 categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
