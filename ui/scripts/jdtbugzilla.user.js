@@ -369,7 +369,8 @@ function addQueryClassificationsLink(parentElem, classifications, name) {
               + '    if (classificationOptions[i].text == "' + classifications[i] + '") classificationOptions[i].selected= true'
               + '}';
     }
-    href += 'void(0);';
+    href += 'doOnSelectProduct(1);'
+            + 'void(0);';
     addLink(name, href, parentElem, classifications, false);
 }
 
