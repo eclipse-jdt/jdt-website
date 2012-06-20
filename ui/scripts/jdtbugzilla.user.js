@@ -416,6 +416,19 @@ function addQueryStatusesLink(parentElem, statuses, name) {
     addLink(name, href, parentElem, null, false);
 }
 
+function addQueryOSLink(parentElem, oses, name) {
+    var href= 'javascript:document.getElementById("op_sys").selectedIndex= -1;'
+        + '    var op_sysOptions= document.getElementById("op_sys").options;';
+    
+    for (var i = 0; i < oses.length; i++) {
+        href += 'for (var i = 0; i < op_sysOptions.length; i++) {'
+              + '    if (op_sysOptions[i].text == "' + oses[i] + '") op_sysOptions[i].selected= true;'
+              + '};';
+    }
+    href += 'void(0);';
+    addLink(name, href, parentElem, null, true);
+}
+
 function setOptionSize(elementId, size) {
     var elem= document.getElementById(elementId);
     if (elem) {
@@ -666,14 +679,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Add target milestone links:
 	var targetElem= document.getElementById("field_label_target_milestone");
 	if (targetElem) {
-		var targetLinkSpanElem= document.createElement("span");
-//		targetLinkSpanElem.style.marginLeft= ".5em";
-		targetLinkSpanElem.style.fontWeight= "normal";
-		targetElem.appendChild(targetLinkSpanElem);
+		var targetLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(targetElem, "target_milestone");
 		for (var i= 0; i < target_milestones.length; i++) {
 			addTargetLink(targetLinkSpanElem, target_milestones[i]);
 		}
 		addTargetLink(targetLinkSpanElem, "---");
+		
+		targetLinkSpanElem.replaceChild(document.createElement("br"), targetLinkSpanElem.childNodes[2]);
 	}
 	
 	// Add quick classification links:
@@ -723,8 +735,33 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
               + '    if (resolutionOptions[i].text != "FIXED") resolutionOptions[i].selected= true;'
               + '};'
 	          + 'void(0);';
-	    addLink("!FIXED", href, resolutionLinkSpanElem);
-	}	
+	    addLink("¬FIXED", href, resolutionLinkSpanElem, null, false);
+	}
+	
+	// Add quick links to detailed bug info fields:
+	var versionElem= document.getElementById("field_label_version");
+	if (versionElem) {
+		createFieldLabelClearAndQuickLinkSpan(versionElem, "version");
+    }
+	var bug_severityElem= document.getElementById("field_label_bug_severity");
+	if (bug_severityElem) {
+		createFieldLabelClearAndQuickLinkSpan(bug_severityElem, "bug_severity");
+    }
+	var priorityElem= document.getElementById("field_label_priority");
+	if (priorityElem) {
+		createFieldLabelClearAndQuickLinkSpan(priorityElem, "priority");
+    }
+	var rep_platformElem= document.getElementById("field_label_rep_platform");
+	if (rep_platformElem) {
+		createFieldLabelClearAndQuickLinkSpan(rep_platformElem, "rep_platform");
+    }
+	var op_sysElem= document.getElementById("field_label_op_sys");
+	if (op_sysElem) {
+		var op_sysLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(op_sysElem, "op_sys");
+		addQueryOSLink(op_sysLinkSpanElem, new Array("Mac OS X", "Mac OS X - Cocoa"), "Mac");
+		addQueryOSLink(op_sysLinkSpanElem, new Array("AIX GTK", "AIX Motif", "HP-UX", "HP-UX GTK", "Linux", "Linux-GTK", "Linux-Motif", "Linux Qt", "Solaris", "Solaris-GTK", "Solaris-Motif", "Unix All"), "*nix");
+    }
+	
 	
 	// Increase option list sizes to avoid scrolling (these are probably not used any more):
 	setOptionSize("classification", 6);
@@ -1166,12 +1203,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    // (1) link containing name <email_address> (e.g. to copy-paste as Git author), and
 	    // (2) link containing plain email address
 	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
-	        aElem.parentNode.insertBefore(document.createTextNode(" <"), aElem.nextSibling);
 		    var fullElem= aElem.cloneNode();
-		    fullElem.textContent= "@";
+		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
+		    fullElem.style.textDecoration="none";
 		    fullElem.title= aElemHref.substr(7);
 		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
-	        aElem.parentNode.insertBefore(document.createTextNode(">"), fullElem.nextSibling);
 		    
 	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
 		    i+= 1; // skip new link
