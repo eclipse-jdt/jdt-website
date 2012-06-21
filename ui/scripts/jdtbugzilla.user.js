@@ -735,7 +735,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
               + '    if (resolutionOptions[i].text != "FIXED") resolutionOptions[i].selected= true;'
               + '};'
 	          + 'void(0);';
-	    addLink("¬FIXED", href, resolutionLinkSpanElem, null, false);
+	    addLink("&not;FIXED", href, resolutionLinkSpanElem, null, false);
 	}
 	
 	// Add quick links to detailed bug info fields:
