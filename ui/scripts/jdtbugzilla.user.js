@@ -352,8 +352,8 @@ function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
 	spanElem.style.fontWeight= "normal";
 	var href= 'javascript:document.getElementById("' + fieldId + '").selectedIndex= -1;'
 			+ 'document.getElementById("' + fieldId + '").focus();'
-			+ 'void(0);'
-	addLink("&empty;", href, spanElem, "select none", false)
+			+ 'void(0);';
+	addLink("&empty;", href, spanElem, "select none", false);
 	spanElem.appendChild(document.createTextNode(" "));
 	
 	fieldLabelElem.firstElementChild.appendChild(spanElem);
@@ -422,7 +422,7 @@ function addQueryOSLink(parentElem, oses, name) {
     
     for (var i = 0; i < oses.length; i++) {
         href += 'for (var i = 0; i < op_sysOptions.length; i++) {'
-              + '    if (op_sysOptions[i].text == "' + oses[i] + '") op_sysOptions[i].selected= true;'
+              + '    if (op_sysOptions[i].text.indexOf("' + oses[i] + '") == 0) op_sysOptions[i].selected= true;'
               + '};';
     }
     href += 'void(0);';
@@ -478,7 +478,7 @@ function createCategoryChoosers() {
     var choosers= document.createElement("form"); // dummy form to avoid submitting fields with main form
 	choosers.setAttribute("style", "font-size: small; font-weight: normal; display: inline;"); // make form behave like a <span> (inline element)
 	for (var component in categories) {
-	    addLink(component + ":", categories[component].url, choosers)
+	    addLink(component + ":", categories[component].url, choosers);
 		choosers.appendChild(document.createTextNode(" "));
 	    choosers.appendChild(createCategoriesChooser(component, categories[component]));
     }
@@ -615,7 +615,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var ccElem= ccElems[0];
 	    // Add shortcut cc links:
 	    for (var i= 0; i < ccs.length; i= i+2) {
-            addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode, "cc")
+            addCcLink(ccs[i], ccs[i + 1], ccElem.parentNode, "cc");
         }
         // inserted cc links should not wrap:
         ccElem.parentNode.setAttribute("style", "white-space:nowrap;");
@@ -650,7 +650,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     }
     
     // Reduce tabs size:
-    var tabsElems= document.getElementsByClassName("tabs")
+    var tabsElems= document.getElementsByClassName("tabs");
     if (tabsElems.length > 0) {
         tabsElems[0].setAttribute("cellpadding", "3");
     }
@@ -758,8 +758,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var op_sysElem= document.getElementById("field_label_op_sys");
 	if (op_sysElem) {
 		var op_sysLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(op_sysElem, "op_sys");
-		addQueryOSLink(op_sysLinkSpanElem, new Array("Mac OS X", "Mac OS X - Cocoa"), "Mac");
-		addQueryOSLink(op_sysLinkSpanElem, new Array("AIX GTK", "AIX Motif", "HP-UX", "HP-UX GTK", "Linux", "Linux-GTK", "Linux-Motif", "Linux Qt", "Solaris", "Solaris-GTK", "Solaris-Motif", "Unix All"), "*nix");
+		addQueryOSLink(op_sysLinkSpanElem, new Array("Mac OS X"), "Mac");
+		addQueryOSLink(op_sysLinkSpanElem, new Array("AIX", "HP-UX", "Linux", "Solaris", "Unix"), "*nix");
     }
 	
 	
@@ -861,7 +861,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var titleElem= document.getElementById("title");
 	if (titleElem) {
 	    var short_descElem= document.getElementById("short_desc");
-	    var bugRegex= /Bug\s+(\d+)/i
+	    var bugRegex= /Bug\s+(\d+)/i;
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
 	            bugId= bugRegex.exec(titleElem.textContent)[1];
@@ -909,12 +909,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 	// Edit summary:
 	hideElem("summary_alias_container");
-	showElem("summary_alias_input")
+	showElem("summary_alias_input");
 	
 	
 	// Edit CC list (already badly hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=334083 ):
 	hideElem("cc_edit_area_showhide_container");
-	var cc_edit_areaElem= showElem("cc_edit_area")
+	var cc_edit_areaElem= showElem("cc_edit_area");
 	if (cc_edit_areaElem) {
 		cc_edit_areaElem.removeChild(cc_edit_areaElem.getElementsByTagName("br")[0]);
 	}
@@ -1077,7 +1077,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		
 	    // Add shortcut assignee links:
 	    for (var i= 0; i < assignees.length; i= i+2) {
-            addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem)
+            addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem);
         }
 	}
 	
@@ -1086,7 +1086,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var addDiv= newccElem.parentNode.firstElementChild;
 	    // Add shortcut cc links:
 	    for (var i= 0; i < ccs.length; i= i+2) {
-            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc")
+            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
         }
 	}
 	
@@ -1124,9 +1124,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	
 	// Move "Expand / Collapse All" away to avoid interfering with selections in the comments section:
-	var bz_collapse_expand_commentsElems= document.getElementsByClassName("bz_collapse_expand_comments")
+	var bz_collapse_expand_commentsElems= document.getElementsByClassName("bz_collapse_expand_comments");
 	if (bz_collapse_expand_commentsElems.length > 0) {
-		var bz_group_visibility_sectionElems= document.getElementsByClassName("bz_group_visibility_section")
+		var bz_group_visibility_sectionElems= document.getElementsByClassName("bz_group_visibility_section");
 		if (bz_group_visibility_sectionElems.length > 0) {
 			bz_collapse_expand_commentsElems[0].setAttribute("style", "padding-top: 4em;");
 			bz_group_visibility_sectionElems[0].parentNode.appendChild(bz_collapse_expand_commentsElems[0]);
@@ -1167,7 +1167,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    
 	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
 	    if (aElem.name.substr(0, 7) == "attach_" && aElemHref.match(diffRegex)) {
-	        aElem.setAttribute("href", aElemHref.replace(diffRegex, "attachment.cgi?id=$1"))
+	        aElem.setAttribute("href", aElemHref.replace(diffRegex, "attachment.cgi?id=$1"));
 	        
 	        // Add [diff] after [details] in attachment references:
 	        var diffElem= document.createElement("a");
