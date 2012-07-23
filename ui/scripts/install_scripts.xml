@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     ====================================================================== -->
+<project name="project" default="default">
+    <description>
+        install Greasemonkey scripts if
+         1. file got modified, and
+         2. global Ant property of file name exists (with full OS path to file as value)
+            E.g. set property jdtbugzilla.user.js to C:\Users\[user]\AppData\Roaming\Mozilla\Firefox\Profiles\[random].default\gm_scripts\JDT_UI_Bugzilla_Add-On\jdtbugzilla.user.js
+    </description>
+
+    <!-- ================================= 
+          target: default
+         ================================= -->
+    <target name="default" description="install">
+    	<doinstall file="jdtbugzilla.user.js"/>
+    	<doinstall file="eclipse_test_results.user.js"/>
+    </target>
+	
+	<target name="dummy_clean"/>
+	
+	<macrodef name="doinstall">
+	  <attribute name="file"/>
+	  <sequential>
+    	<antcall target="undefined">
+    		<param name="file" value="@{file}"/>
+    	</antcall>
+    	<antcall target="copyfile">
+    		<param name="file" value="@{file}"/>
+    	</antcall>
+	  </sequential>
+	</macrodef>
+	
+	
+    <target name="undefined" unless="${file}">
+    	<echo>not copying ${file} because global Ant property "${file}" is undefined</echo>
+    </target>
+	
+    <target name="copyfile" if="${file}">
+    	<propertycopy name="filepath" from="${file}"/>
+    	<uptodate property="isUpToDate" srcfile="${file}" targetfile="${filepath}"/>
+    	<antcall target="update_time_stamp"/>
+    	
+        <copy file="${file}" tofile="${filepath}" verbose="true"/>
+<!-- 
+    	<echo>copy file="${file}" tofile="${filepath}"</echo>
+-->
+    </target>
+	
+	<target name="update_time_stamp" unless="${isUpToDate}">
+    	<tstamp>
+    		<format property="DTSTAMP" pattern="yyyyMMdd'T'HHmm" timezone="Europe/Zurich"/>
+    	</tstamp>
+    	<replaceregexp file="${file}" match="(// @version\s+\d+\.)\d+T\d+" replace="\1${DTSTAMP}"/>
+	</target>
+
+	<macrodef name="propertycopy">
+	  <attribute name="name"/>
+	  <attribute name="from"/>
+	  <sequential>
+	    <property name="@{name}" value="${@{from}}"/>
+	  </sequential>
+	</macrodef>
+	
+</project>

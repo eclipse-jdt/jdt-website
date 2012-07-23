@@ -17,7 +17,7 @@
 // Then restart Firefox and revisit this script.
 //
 // To uninstall, go to Add-ons > User Scripts,
-// select "JDT UI Bugzilla", and click Remove.
+// select "JDT UI Bugzilla Add-On", and click Remove.
 //
 // --------------------------------------------------------------------
 //
@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.7
+// @version 1.20120723T1917
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -37,7 +37,7 @@
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
 // @include       https://bugs.eclipse.org/bugs/buglist.cgi*
 //
-// https://bugs.eclipse.org/bugs/show_bug.cgi?id=337245:
+// Test install for new Bugzilla versions:
 // @include       https://bugs.eclipse.org/bugstest/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugstest/process_bug.cgi
 // @include       https://bugs.eclipse.org/bugstest/attachment.cgi*
