@@ -10,21 +10,24 @@
  *******************************************************************************/
 //---------------------------------------------------------------------
 //
-// JDT Bugzilla Add-on V 1.4 for Bugzilla 4.0.4 at bugs.eclipse.org.
+// JDT UI Bugzilla Add-on for Bugzilla at bugs.eclipse.org.
 //
 // This is a Greasemonkey user script.  To install it, you need
 // Greasemonkey: http://www.greasespot.net/
 // Then restart Firefox and revisit this script.
 //
 // To uninstall, go to Add-ons > User Scripts,
-// select "JDT Bugzilla Add-on", and click Uninstall.
+// select "JDT UI Bugzilla", and click Remove.
 //
 // --------------------------------------------------------------------
 //
 // ==UserScript==
-// @name          JDT Bugzilla Add-On
+// @name          JDT UI Bugzilla Add-On
 // @namespace     http://www.eclipse.org/jdt/ui
-// @description   Script to tune bugzilla for JDT
+// @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
+// @description   Script to tune Bugzilla for JDT UI
+// @version 1.4
+
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
 // @include       https://bugs.eclipse.org/bugs/attachment.cgi*
