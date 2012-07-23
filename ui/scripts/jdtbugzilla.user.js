@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.6
+// @version 1.7
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -491,17 +491,23 @@ function createCategoryChoosers() {
 
 //-----------
 
+//----------- Start the real work
+
+// Don't run in frames or iframes:
+if (window.top != window.self) {
+    return;
+}
 
 // Remove Eclipse ads:
-var headerElem= document.getElementById("header");
-if (headerElem) {
-    var tableElem= headerElem.getElementsByTagName("table");
-    if (tableElem && tableElem[0]) {
-        headerElem.removeChild(tableElem[0]);
-    } else {
-        var bannerElem= document.getElementById("banner");
-        if (bannerElem) {
-            bannerElem.parentNode.removeChild(bannerElem);
+var bannerElem= document.getElementById("banner");
+if (bannerElem) {
+    bannerElem.parentNode.removeChild(bannerElem);
+} else {
+    var headerElem= document.getElementById("header");
+    if (headerElem) {
+        var tableElem= headerElem.getElementsByTagName("table");
+        if (tableElem && tableElem[0] && tableElem[0].parentNode == headerElem) {
+            headerElem.removeChild(tableElem[0]);
         }
     }
 }
@@ -1109,28 +1115,31 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
 	
-	var detailsRegex= /attachment\.cgi\?id=(\d+)&action=edit/; // attachment.cgi?id=146395&amp;action=edit
-	
 	// Loop over <label>s:
-    if (window.location.href.search(detailsRegex) == -1) { // attachment.cgi is used for 3 purposes: add new, edit details, result after adding
-		var labels= document.getElementsByTagName("label");
-		for (var i= 0; i < labels.length; i++) {
-		    var labelElem= labels[i];
-		    var forAtt= labelElem.getAttribute("for");
-			// Another Commit button on top of Additional Comments field
-		    if (forAtt == "comment" && labelElem.nextSibling) {
-			    var commitElem= document.createElement("button");
-			    commitElem.setAttribute("type", "submit");
-			    commitElem.setAttribute("class", "knob-buttons");
-			    commitElem.innerHTML= "Sa<u>v</u>e Changes";
-			    commitElem.setAttribute("accesskey", "v");
-			    labelElem.parentNode.insertBefore(commitElem, labelElem.nextSibling.nextSibling);
-			// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
-		    } else if (forAtt == "group_15") {
-		        labelElem.removeAttribute("for");
-		    }
-		}
+	var labels= document.getElementsByTagName("label");
+	for (var i= 0; i < labels.length; i++) {
+	    var labelElem= labels[i];
+	    var forAtt= labelElem.getAttribute("for");
+		// Another Commit button on top of Additional Comments field
+	    if (forAtt == "comment" && labelElem.nextSibling) {
+		    var commitElem= document.createElement("button");
+		    commitElem.setAttribute("type", "submit");
+		    commitElem.setAttribute("class", "knob-buttons");
+		    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+		    commitElem.setAttribute("accesskey", "v");
+		    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
+		    // Of course, the "comment" area is implemented differently on each page...
+		    labelElem.parentNode.insertBefore(commitElem, labelElem.parentNode.lastChild.previousSibling);
+		// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
+	    } else if (forAtt == "group_15") {
+	        labelElem.removeAttribute("for");
+	    }
 	}
+	
+	// Edit attachment details: 
+	if (document.getElementById("attachment_information_read_only")) {
+        location.assign("javascript:toggle_attachment_details_visibility();void(0)");
+    }
 	
 	// Move "Expand / Collapse All" away to avoid interfering with selections in the comments section:
 	var bz_collapse_expand_commentsElems= document.getElementsByClassName("bz_collapse_expand_comments");
