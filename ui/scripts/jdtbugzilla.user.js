@@ -26,7 +26,7 @@
 // @namespace     http://www.eclipse.org/jdt/ui
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @description   Script to tune Bugzilla for JDT UI
-// @version 1.4
+// @version 1.5
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
