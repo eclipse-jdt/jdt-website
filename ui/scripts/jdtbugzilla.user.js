@@ -49,7 +49,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 M1", "BETA J8", "3.8.1"];
+var target_milestones= ["4.3 M1", "BETA J8", "3.8.1", "4.2.1"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
