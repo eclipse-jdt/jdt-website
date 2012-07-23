@@ -24,8 +24,9 @@
 // ==UserScript==
 // @name          JDT UI Bugzilla Add-On
 // @namespace     http://www.eclipse.org/jdt/ui
-// @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @description   Script to tune Bugzilla for JDT UI
+// @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
+// @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @version 1.5
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
