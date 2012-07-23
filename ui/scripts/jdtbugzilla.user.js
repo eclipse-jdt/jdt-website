@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.5
+// @version 1.6
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -496,8 +496,13 @@ function createCategoryChoosers() {
 var headerElem= document.getElementById("header");
 if (headerElem) {
     var tableElem= headerElem.getElementsByTagName("table");
-    if (tableElem) {
+    if (tableElem && tableElem[0]) {
         headerElem.removeChild(tableElem[0]);
+    } else {
+        var bannerElem= document.getElementById("banner");
+        if (bannerElem) {
+            bannerElem.parentNode.removeChild(bannerElem);
+        }
     }
 }
 var headerIconsElem= document.getElementById("header-icons");
