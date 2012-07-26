@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120723T1917
+// @version 1.20120726T2051
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -516,7 +516,14 @@ if (headerIconsElem) {
     headerIconsElem.parentNode.removeChild(headerIconsElem);
 }
 
+// Identify ourselves:
+var headerElem= document.getElementById("header");
+if (headerElem && headerElem.lastElementChild) {
+    headerElem.lastElementChild.innerHTML +=
+        '<span class="separator">| </span><li>Page <a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js">tweaked</a>!</li>';
+}
 
+// Various CSS fixes:
 var headElem= document.getElementsByTagName("head")[0];
 if (headElem) {
 	var styleElem= document.createElement("style");
@@ -557,6 +564,8 @@ if (headElem) {
 	// Search field dimensions:
 	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
 	    + ".search_field_grid { margin-top: 0em; }\n"
+	// Don't waste another line for Search > Bugs numbered:
+	    + "#bug_id_container .field_help { display:inline; }\n"
 	    ;
 	headElem.appendChild(styleElem);
 }
@@ -590,6 +599,29 @@ if (commentElem) {
     commentElem.setAttribute("onFocus", "this.rows=25");
 }
 
+// Loop over <label>s:
+var labels= document.getElementsByTagName("label");
+for (var i= 0; i < labels.length; i++) {
+    var labelElem= labels[i];
+    var forAtt= labelElem.getAttribute("for");
+	// Another Commit button on top of Additional Comments field
+    if (forAtt == "comment" && labelElem.nextSibling) {
+	    var commitElem= document.createElement("button");
+	    commitElem.setAttribute("type", "submit");
+	    commitElem.setAttribute("class", "knob-buttons");
+	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+	    commitElem.setAttribute("accesskey", "v");
+	    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
+	    // Of course, the "comment" area is implemented differently on each page...
+	    labelElem.parentNode.insertBefore(commitElem, labelElem.parentNode.lastChild.previousSibling);
+	
+	// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
+    } else if (forAtt == "group_15") {
+        labelElem.removeAttribute("for");
+    }
+}
+
+//----------- Page-specific fixes:
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
@@ -681,6 +713,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     for (var i = 0; i < bz_search_sectionElems.snapshotLength; i++) {
         bz_search_sectionElem= bz_search_sectionElems.snapshotItem(i);
         bz_search_sectionElem.setAttribute("style", "display: block ! important;");
+    }
+    
+    var bug_id_containerElem= document.getElementById("bug_id_container");
+    if (bug_id_containerElem) {
+        var toCopy= bug_id_containerElem.parentNode.nextSibling.nextSibling.firstChild;
+        while (toCopy) {
+            var next= toCopy.nextSibling;
+            bug_id_containerElem.parentNode.appendChild(toCopy);
+            toCopy= next;
+        }
     }
     
 	// Add bug categories choosers:
@@ -1114,28 +1156,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 	}
-	
-	// Loop over <label>s:
-	var labels= document.getElementsByTagName("label");
-	for (var i= 0; i < labels.length; i++) {
-	    var labelElem= labels[i];
-	    var forAtt= labelElem.getAttribute("for");
-		// Another Commit button on top of Additional Comments field
-	    if (forAtt == "comment" && labelElem.nextSibling) {
-		    var commitElem= document.createElement("button");
-		    commitElem.setAttribute("type", "submit");
-		    commitElem.setAttribute("class", "knob-buttons");
-		    commitElem.innerHTML= "Sa<u>v</u>e Changes";
-		    commitElem.setAttribute("accesskey", "v");
-		    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
-		    // Of course, the "comment" area is implemented differently on each page...
-		    labelElem.parentNode.insertBefore(commitElem, labelElem.parentNode.lastChild.previousSibling);
-		// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
-	    } else if (forAtt == "group_15") {
-	        labelElem.removeAttribute("for");
-	    }
-	}
-	
+		
 	// Edit attachment details: 
 	if (document.getElementById("attachment_information_read_only")) {
         location.assign("javascript:toggle_attachment_details_visibility();void(0)");
