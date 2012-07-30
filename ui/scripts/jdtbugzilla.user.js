@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120726T2051
+// @version 1.20120730T1434
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -310,12 +310,13 @@ function addComponentLink(name, parentElem) {
 function addEmailLinks(emailElemName) {
 	var emailElem= document.getElementById(emailElemName);
 	if (emailElem) {
+	    emailElem.parentNode.setAttribute("style", "width: 100%");
 		var sp= document.createElement("span");
-		sp.appendChild(document.createElement("br"));
-		emailElem.parentNode.appendChild(sp);
+		emailElem.parentNode.parentNode.insertBefore(sp, emailElem.parentNode);
 	    for (var i= 0; i < ccs.length; i= i+2) {
 	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
 	    }
+		emailElem.parentNode.parentNode.insertBefore(document.createElement("br"), emailElem.parentNode);
 	}
 }
 
@@ -530,11 +531,13 @@ if (headElem) {
 	styleElem.type= "text/css";
 	// Fix baseline of labels:
 	styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
-	// Fix color of links in title:
+	// Fix colors in title:
 	    + "#titles a { color: #039 ! important; }\n"
 	    + "#titles a:visited { color: #636 ! important; }\n"
 	    + "#titles a:hover { color: #333 ! important; }\n"
 	    + "#titles a:active { color: #000 ! important; }\n"
+	    + "#titles { background-color: #C0C0C0; color: #000000; }\n"
+	// Decrease height of title:
 	    + "#titles { padding-top: 0.3em; padding-bottom: 0.3em; }\n"
 	// Fix color of comment number:
 	    + ".bz_comment_number { color: #65379c; }\n"
@@ -558,12 +561,13 @@ if (headElem) {
 	    + "#comment { overflow-y:scroll; }\n"
 	// Render <button> like <input>:
 	    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
-	// Don't fill whole line with email field:
-	    + ".bz_userfield { width: auto ! important; }\n"
+	// Make auto-complete drop-downs look like drop-downs:
+	    + ".yui-ac-content { box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); }\n"
 	    
 	// Search field dimensions:
 	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
 	    + ".search_field_grid { margin-top: 0em; }\n"
+	    + ".search_email_fields { width: 300px; }\n"
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
 	    ;
@@ -666,6 +670,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
         // inserted cc links should not wrap:
         ccElem.parentNode.setAttribute("style", "white-space:nowrap;");
+        // fix width: (default is 100%, which would make the CC links overflow into flags table)
+        ccElem.setAttribute("style", "width: 300px");
 	}
 
 
@@ -713,16 +719,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     for (var i = 0; i < bz_search_sectionElems.snapshotLength; i++) {
         bz_search_sectionElem= bz_search_sectionElems.snapshotItem(i);
         bz_search_sectionElem.setAttribute("style", "display: block ! important;");
-    }
-    
-    var bug_id_containerElem= document.getElementById("bug_id_container");
-    if (bug_id_containerElem) {
-        var toCopy= bug_id_containerElem.parentNode.nextSibling.nextSibling.firstChild;
-        while (toCopy) {
-            var next= toCopy.nextSibling;
-            bug_id_containerElem.parentNode.appendChild(toCopy);
-            toCopy= next;
-        }
     }
     
 	// Add bug categories choosers:
@@ -978,6 +974,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	setOptionSize("cc", 8);
 	
+	var newcc_autocompleteElem= document.getElementById("newcc_autocomplete");
+	if (newcc_autocompleteElem) {
+	    var addDiv= newcc_autocompleteElem.parentNode.firstElementChild;
+	    // Add shortcut cc links:
+	    for (var i= 0; i < ccs.length; i= i+2) {
+            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
+        }
+	}
+	
+	// Edit see_also:
+	hideElem("container_showhide_see_also");
+	showElem("container_see_also");
+	
 	// Edit & rearrange Assignee & QA:
 	fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
 	fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default QA");
@@ -1135,15 +1144,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    // Add shortcut assignee links:
 	    for (var i= 0; i < assignees.length; i= i+2) {
             addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem);
-        }
-	}
-	
-	var newccElem= document.getElementById("newcc");
-	if (newccElem) {
-	    var addDiv= newccElem.parentNode.firstElementChild;
-	    // Add shortcut cc links:
-	    for (var i= 0; i < ccs.length; i= i+2) {
-            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
         }
 	}
 	
