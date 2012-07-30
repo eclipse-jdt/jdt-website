@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120730T1434
+// @version 1.20120730T1540
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -240,6 +240,7 @@ function fixCheckboxField(containerId, inputId, labelText) {
 	if (inputIdElem) {
 		inputIdElem.removeChild(inputIdElem.getElementsByTagName("br")[0]);
 		inputIdElem.getElementsByTagName("label")[0].textContent= labelText;
+		inputIdElem.firstElementChild.setAttribute("style", "margin-right: 1em");
 	}
 }
 
@@ -563,6 +564,8 @@ if (headElem) {
 	    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
 	// Make auto-complete drop-downs look like drop-downs:
 	    + ".yui-ac-content { box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); }\n"
+	// Don't fill whole line with email field on bug page (Bugzilla sets to 100% which makes quick links wrap):
+	    + ".bz_userfield { width: 300px; }\n"
 	    
 	// Search field dimensions:
 	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
