@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120730T1540
+// @version 1.20120731T1204
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -522,7 +522,8 @@ if (headerIconsElem) {
 var headerElem= document.getElementById("header");
 if (headerElem && headerElem.lastElementChild) {
     headerElem.lastElementChild.innerHTML +=
-        '<span class="separator">| </span><li>Page <a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js">tweaked</a>!</li>';
+        '<span class="separator">| </span><li><a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js" '
+        + 'title="Page tweaked by jdtbugzilla.user.js ' + GM_info.script.version + '" >Tweaked</a>!</li>';
 }
 
 // Various CSS fixes:
@@ -689,11 +690,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 //	    longdescElem.value= decodeURIComponent(match);
 //	}
 	
-	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, may fail for complex queries):
-	var queryformElem= document.getElementsByName("queryform");
-	if (queryformElem.length > 0) {
-	    queryformElem[0].method= "get";
-	}
+//	// Use GET for search, not POST (makes queries bookmarkable, avoids "do you want to resend?" messages, may fail for complex queries):
+//	var queryformElem= document.getElementsByName("queryform");
+//	if (queryformElem.length > 0) {
+//	    queryformElem[0].method= "get";
+//	}
 	
     // Remove spam headers:
     var search_helpElem= document.getElementById("search_help");
@@ -835,30 +836,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	setOptionSize("chfield", 5);
 	
-	
-	// Add Content field:
-	var longdescElem= document.getElementById("longdesc");
-	if (longdescElem) {
-	    var divElem= document.createElement("div");
-	    divElem.setAttribute("class", "search_field_row");
-	    
-	    var spanElem= document.createElement("span");
-	    spanElem.setAttribute("class", "field_label");
-	    spanElem.innerHTML= '<a class="field_help_link" href="page.cgi?id=fields.html#content" title="Full-text search in Summary or Comment">Content:</a>';
-	    divElem.appendChild(spanElem);
-	    
-	    var textElem= document.createTextNode("Summary or Comment contains:  ");
-	    divElem.appendChild(textElem);
-	    
-	    var inputElem= document.createElement("input");
-	    inputElem.setAttribute("id", "content");
-	    inputElem.setAttribute("name", "content");
-	    inputElem.setAttribute("size", "43");
-	    divElem.appendChild(inputElem);
-	    
-	    longdescElem.parentNode.parentNode.insertBefore(divElem, longdescElem.parentNode.nextSibling);
-	}
-
     // Add shortcut email links:
 	addEmailLinks("email1");
 	addEmailLinks("email2");
