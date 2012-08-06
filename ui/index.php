@@ -85,16 +85,16 @@ ob_start();
 				<li>The plans for the previous milestones can be found <a href="r4_3/plan.php#Milestone_Planning_M1">here</a>.</li>
 			</ul>
 			
-			<p><b>R3.8/R4.2</b></p>
+			<p><b>R3.8 / 4.2</b></p>
 			<ul>
 				<li>The current releases are R3.8 and R4.2 which are available on the <a
 					href="http://www.eclipse.org/downloads/index.php"
 					target="newdownload&quot;">download</a> area.</li>
 			</ul>
 			
-			<p><b>3.8/4.2 Maintenance</b></p>
+			<p><b>R3.8 / 4.2 Maintenance</b></p>
 		    <ul>
-		    	<li>Information about 3.8/4.2 maintenance releases can be found <a href="http://wiki.eclipse.org/Juno/Simultaneous_Release_Plan#Service_Releases">here</a>
+		    	<li>Information about R3.8 / 4.2 maintenance releases can be found <a href="http://wiki.eclipse.org/Juno/Simultaneous_Release_Plan#Service_Releases">here</a>
 		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
 		    </ul>
 			
