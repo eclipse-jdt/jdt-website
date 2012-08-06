@@ -1,0 +1,564 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+	<title>Combined JDT Text and JDT UI Component 4.3 Plan</title>
+
+<script type="text/javascript">
+<!--
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode; 
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+			
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+			
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+				
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+				
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+				
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+			
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+
+function showHiddenWork() {
+	// Open this document with an URL ending in ?work, and the "work" class becomes visible. 
+	if (window.location.search == "?work") {
+		var spans= document.getElementsByTagName("span")
+		for (var i in spans) {
+			var s= spans[i];
+			if (s.className == "work") {
+				s.style.visibility= "visible";
+				s.insertBefore(document.createTextNode("\u00a0"), s.firstChild);
+				s.insertBefore(document.createTextNode("\u00a0"), s.lastChild.nextSibling);
+			}
+		};
+	}
+}
+
+//-->
+</script>
+
+	<style>
+		body {  
+			background-image: url('../images/proposal.gif');
+			background-repeat: repeat-y
+		}
+	</style>
+
+	
+	 <style type="text/css">
+  		.priority {
+  			color: blue;
+  			font-style: italic;
+  		}
+  		.work {
+  			background: lightgreen;
+			visibility: hidden;
+  		}
+		#midcolumn ul {list-style:square none;}
+	</style>	
+	
+</head>
+
+<body text="#000000" bgcolor="#FFFFFF" onload="linkifyBugs();showHiddenWork();">
+
+<table BORDER=0 CELLSPACING=5 CELLPADDING=2 WIDTH="100%" >
+
+  <tr> 
+    <td WIDTH="100%"> 
+    <p>Last revised $Date: 2012/08/06 12:21:00 $</p>
+
+    
+      <p>This plan is under continuous refinement. Please send comments about this plan to the <a href="mailto:jdt-ui-dev@eclipse.org">jdt-ui-dev@eclipse.org</a> developer mailing list.</p>
+      <p><strong>Note:</strong> This plan depends on the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php">Platform Text Plan</a>.</p>
+      
+      <h2><a NAME="Overall_Planning"></a>Overall Goals</h2>
+      <p>This section lists the goals for Eclipse 4.3 for the JDT Text and the JDT UI component as listed on the 
+        <a href="http://www.eclipse.org/projects/project-plan.php?planurl=http://www.eclipse.org/eclipse/development/plans/eclipse_project_plan_4_3.xml">Eclipse Project 4.3 Draft Plan</a>.
+        </p>
+
+		<p>
+		<strong><a name="1"></a>[1] Platforms</strong>.
+		Start to work on Java 8 support and stay current with JUnit
+		</p>
+
+		<p>
+		<strong><a name="2"></a>[2] Robustness</strong>.
+		Provide APIs for clients where needed. Monitor overall performance and memory consumption which includes the addition of new performance tests for new features.
+		</p>
+		
+		<p>
+		<strong><a name="3"></a>[3] Ease of Use</strong>.
+		Deliver new productivity features. 
+		</p>
+
+	<h2><a NAME="Work_Items"></a><br>Work Items</h2>
+	<p>
+		This section lists the <em>possible</em> work items for Eclipse 4.3 for the JDT Text and the JDT UI component
+		with the [corresponding theme].
+		Some of those items have a <span class="priority">higher priority</span> than others.
+		Work items that are annotated with <strong>[<em>component name</em>]</strong> are delivered for another component.
+	</p>
+
+	<ul>
+		<li><h4>Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 features <span class="work">80 weeks</span></li>
+		</ul>
+		</li>
+
+		<li><h4>Adopt New Platform Features [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>none at this point</li>
+		</ul>
+		</li>
+		
+		<li><h4>API [<a href="#2">2</a>]</h4>
+		<ul>
+			<li>none at this point</li>
+		</ul>
+		</li>
+
+		<li><h4>Refactoring [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>new refactoring: convert instance method to static (bug 118032) <span class="work">2 weeks</span></li>
+			<li>decide on strategy to handle visibility errors after refactorings (and implement it correctly): <span class="work">Markus: 2 weeks</span>
+				<ul>
+					<li>Increase visibility (with info/warning message)?</li>
+					<li>add delegation if possible (with info/warning message)?</li>
+					<li>offer possibility to "fix" warning on error page?</li>
+				</ul>
+			</li>
+			<li>permanent local rename mode [experimental]
+				<ul>
+					<li>editing always updates like "Local Rename" (automatically enter linked mode)</li>
+					<li>investigate interplay with "refactoring only" mode</li>
+				</ul>
+			</li>
+		</ul>
+		</li>
+		
+		<li><h4>Usability [<a href="#3">3</a>]</h4>
+		<ul>
+			<li class="priority"> BiDi support for input fields/combos (<a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=bidi&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">related bugs</a>, depends on SWT bug 230854) <span class="work">all: 20 weeks</span></li>
+			<li class="priority"> improve BiDi support for complex static expressions: adopt new TextProcessor replacement (depends on SWT bug 183164) <span class="work">6 weeks</span></li>
+			<li> create a problem if a new project specific setting is introduced (bug 300523) <span class="work">1 week</span></li>
+			<li class="priority"> need better choice for syntax color in high contrast mode (bug 224741) <span class="work">1 week</span></li>
+		</ul>
+		</li>
+		
+		<li><h4>Call Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li> document positions not updated for call locations (bug 121900)</li>
+		</ul>
+		</li>
+		
+		<li><h4>Type Hierarchy [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>none at this point</li>
+		</ul>
+		</li>
+		
+		<li><h4>JUnit [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">update JUnit to its latest version (bug TBD) <span class="work">Markus: 2 weeks</span></li>
+		</ul>
+		</li>
+
+		<li><h4>Content Assist [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>remove '>' on backspace when type arguments inserted by content assist (bug 301990) <span class="work">Dani: 2 days</span></li>
+		</ul>
+		</li>
+	
+		<li><h4>Code Visualization [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>show horizontal line between methods (bug 13672) <span class="work">1 week</span></li>
+			<li>visualize code nesting (bug 69455) <span class="work">2 weeks</span>
+				<br>&rarr; could be implemented as semantic highlighting</li>
+			<li>[misc] draw vertical lines in control flow statements (bug 84878)</li>
+		</ul>
+		</li>
+  
+		<li><h4>Quick views [<a href="#3">3</a>]</h4>
+		<ul>
+			<li>allow to open quick views from any Java element from any view (e.g. from the Package Explorer or Outline view) (bug 285411) <span class="work">2 days</span>
+		</ul>
+		</li>
+	
+		<li><h4>Performance And Memory Consumption [<a href="#2">2</a>]</h4>
+		<ul>
+		  <li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> continue to provide new tests <span class="work">1 week</span></li>
+		</ul>
+		</li>
+			
+		<li><h4>Miscellaneous</h4>
+		<ul>
+			<li>structured selection should support brackets (bug 86835) <span class="work">???</span></li>
+			<li class="priority"> replace Intro Samples Page with p2 based page <span class="work">2 weeks</span></li>
+		</ul>
+		</li>
+
+		<li><h4>General Items</h4>
+		<ul>
+			<li class="priority">4.3 planning <span class="work">1 week</span></li>
+			<li class="priority">resolve bugs that got deferred from 3.8 to 4.3 <span class="work">all</span></li>
+			<li class="priority">Juno SR1 maintenance work <span class="work">3 weeks</span></li>
+			<li class="priority">Juno SR2 maintenance work <span class="work">3 weeks</span></li>
+			<li class="priority">look at bugs with patches and review those <span class="work">4 weeks</span></li>
+		</ul>
+		</li>
+	</ul>
+	
+
+	<h2><br>Cross Team Issues</h2>
+	<p>This section contains cross team issues that have to be clarified. The 
+	concrete outcome affects the plan items listed above.</p>
+	<ul>
+		<li>SWT
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>Platform Compare
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>Platform UI
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>JDT Core
+		<ul>
+			TBD
+		</ul>
+		</li>
+		<li>JDT Debug
+		<ul>
+			TBD
+		</ul>
+		</li>
+	</ul>
+  </td>
+</tr>
+
+
+<tr>
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M1">Milestone M1 (2011-08-05)</font></font></td>
+</tr>
+
+  <tr> 
+    <td WIDTH="100%">
+	See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M1">Platform Text 4.3 M1 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[4.3 M2]</font> 4.3 planning <span class="work">2 days</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[4.3 M2]</font> resolve bugs that got deferred from 3.8 to 4.3 <span class="work">all</span></li>
+			<li class="priority"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"> <font class="indexsub" color="#8080ff">[4.3 M2]</font> Juno SR1 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M1_Test_Plan.html">test plan</a> for the 4.3 M1 test pass</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M2">Milestone M2 (2011-09-16)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M2">Platform Text 4.3 M2 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">4.3 planning <span class="work">3 days</span></li>
+			<li class="priority">resolve bugs that got deferred from 3.8 to 4.3 <span class="work">all</span></li>
+			<li class="priority">Juno SR1 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">start to work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/Juno_SR1_RC2_Test_Plan.html">test plan</a> for the Juno SR1 RC2 test pass</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/Juno_SR1_RC3_Test_Plan.html">test plan</a> for the Juno SR1 RC3 test pass</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M2_Test_Plan.html">test plan</a> for the 4.3 M2 test pass</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M3">Milestone M3 (2011-10-28)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M3">Platform Text 4.3 M3 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">Juno SR2 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M3_Test_Plan.html">test plan</a> for the 4.3 M3 test pass</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M4">Milestone M4 (2011-12-09)</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M4">Platform Text 4.3 M4 Plan</a>.</p>
+
+
+	    <h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">Juno SR2 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M4_Test_Plan.html">test plan</a> for the 4.3 M4 test pass</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M5">Milestone M5 (2012-01-27) -  Major/Big Features Done</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M5">Platform Text 4.3 M5 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">Juno SR2 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/Juno_SR2_RC2_Test_Plan.html">test plan</a> for the Juno SR2 RC2 test pass</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M5_Test_Plan.html">test plan</a> for the 4.3 M5 test pass</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M6">Milestone M6 (2012-03-16) - API Freeze</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M6">Platform Text 4.3 M6 Plan</a>.</p>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> General Items</h4>
+		<ul>
+			<li class="priority">Juno SR2 maintenance work <span class="work">1 week</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/Juno_SR2_RC3_Test_Plan.html">test plan</a> for the Juno SR2 RC3 test pass</li>
+			<li><a href="http://www.eclipse.org/jdt/ui/r4_3/testing/M6_Test_Plan.html">test plan</a> for the 4.3 M6 test pass</li>
+		</ul>
+		
+	</td>
+</tr>
+<tr>
+	<td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF"><a name="Milestone_Planning_M7">Milestone M7 (2012-05-04) - Feature Freeze, Focus on Performance and Polish</font></font></td>
+</tr>
+
+ <tr> 
+	<td WIDTH="100%">
+		See also the <a href="http://www.eclipse.org/eclipse/platform-text/4.3/plan.php#Milestone_Planning_M7">Platform Text 4.3 M7 Plan</a>.</p>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Performance <span class="work">2 weeks</span></h4>
+		Work on bugs tagged with the <a href="https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=performance&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'performance' keyword</a>.
+		<ul>
+		</ul>
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Polish <span class="work">all: &frac12; week each</span></h4>
+		Fix all bugs tagged with the <a href= "https://bugs.eclipse.org/bugs/buglist.cgi?query_format=advanced&short_desc_type=allwordssubstr&short_desc=&classification=Eclipse&product=JDT&component=Text&component=UI&long_desc_type=allwordssubstr&long_desc=&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=allwords&keywords=polish&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&emailtype1=substring&email1=&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&cmdtype=doit&order=Reuse+same+sort+as+last+time&field0-0-0=noop&type0-0-0=noop&value0-0-0=">'polish' keyword</a>.
+		<ul>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Java 8 [<a href="#1">1</a>]</h4>
+		<ul>
+			<li class="priority">work on Java 8 support <span class="work">80 weeks</span></li>
+		</ul>
+
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" border="0" height="16" width="16" align="top"> Permanent Items</h4>
+		<ul>
+			<li>bugzilla inbox tracking</li>
+			<li>bug fixing</li>
+			<li>increase correctness test coverage</li>
+		</ul>
+		
+		
+		<h4><img src="http://www.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16" align="top"> Testing</h4>
+		<ul>
+			<li><a href="testing/M7_Test_Plan.html">test plan</a> for the 4.3 M7 test pass</li>
+		</ul>
+		
+	</td>
+</tr>
+
+
+  <tr> 
+    <td ALIGN=LEFT VALIGN=TOP COLSPAN="2" WIDTH="100%" BGCOLOR="#595791"><font face="Arial,Helvetica"><font color="#FFFFFF">Bug Tracking</font></font></td>
+</tr>
+
+<tr>
+<td>
+<ul>
+<li><a href="https://bugs.eclipse.org/bugs/query.cgi?bug_file_loc=&bug_file_loc_type=allwordssubstr&bug_id=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bugidtype=include&chfieldfrom=&chfieldto=Now&chfieldvalue=&classification=Eclipse&component=Text&component=UI&email1=&email2=&emailtype1=substring&emailtype2=substring&field-1-0-0=classification&field-1-1-0=product&field-1-2-0=component&field-1-3-0=bug_status&field0-0-0=noop&keywords=&keywords_type=allwords&long_desc=&long_desc_type=allwordssubstr&product=JDT&query_format=advanced&remaction=&short_desc=&short_desc_type=allwordssubstr&status_whiteboard=&status_whiteboard_type=allwordssubstr&type-1-0-0=anyexact&type-1-1-0=anyexact&type-1-2-0=anyexact&type-1-3-0=anyexact&type0-0-0=noop&value-1-0-0=Eclipse&value-1-1-0=JDT&value-1-2-0=Text%2CUI&value-1-3-0=UNCONFIRMED%2CNEW%2CASSIGNED%2CREOPENED&value0-0-0=&votes=">find a bug report</a></li>
+<li><a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT">report a bug</a></li>
+</ul>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="2" cellspacing="5" width="100%"><tbody><tr><td colspan="4" align="left" bgcolor="#595791" valign="top" width="100%"><font face="Arial,Helvetica"><font color="#ffffff">Legend
+			</font></font></td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/progress.gif" border="0" height="5" width="14" align="absmiddle"></td>
+			<td width="50%">item is under development.</td>
+			<td valign="top"><img src="../images/glass.gif" border="0" height="10" width="10" align="bottom" title="Under Investigation"></td>
+			<td width="50%">item is under investigation.</td>
+		</tr>
+		<tr>
+			<td valign="center"><img src="../images/ok.gif" border="0" height="10" width="10"></td>
+			<td width="50%">item is finished.</td>
+			<td valign="top">( )</td>
+			<td width="50%">item is time permitted.</td>
+		</tr>
+		<tr>
+			<td valign="center"><font class="indexsub" color="#8080ff">[xyz]</font></td>
+			<td width="50%">item is deferred (&gt;) from xyz or continues in xyz.</td>
+			<td valign="center"><img src="../images/new.gif" border="0" align="absmiddle"></td>
+			<td width="50%">new</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>&nbsp;
+</body>
+</html>
