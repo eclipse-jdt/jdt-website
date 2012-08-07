@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120731T1502
+// @version 1.20120807T1238
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -50,7 +50,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 M1", "4.3 M2", "BETA J8", "3.8.1", "4.2.1"];
+var target_milestones= ["4.3 M2", "4.3 M3", "BETA J8", "3.8.1", "4.2.1"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -258,6 +258,29 @@ function addLink(name, href, parentElem, tooltip, separator) {
     parentElem.appendChild(linkElem);
 }
 
+function addMultiLink(name, onClick, onModifierClick, parentElem, tooltip, separator) {
+    var linkElem= document.createElement("a");
+    var href= 'javascript:'
+            + 'var modClick= event.shiftKey || event.ctrlKey || event.altKey || event.metaKey || event.button == 1;'
+            + 'if (modClick) {'
+            +   onModifierClick
+            + '} else {'
+            +   onClick
+            + '}'
+            + 'return false;';
+    linkElem.setAttribute("onmouseup", href);
+    linkElem.setAttribute("onclick", "return false;"); // blocks Ctrl+Click from opening a new tab (but not middle-click)
+    linkElem.href= "javascript:void('Modifier+Click to toggle')";
+    linkElem.innerHTML= name;
+    if (tooltip) {
+        linkElem.title= tooltip;
+    }
+    if (parentElem.hasChildNodes() && !(separator == false)) {
+        parentElem.appendChild(document.createTextNode(" | "));
+    }
+    parentElem.appendChild(linkElem);
+}
+
 function addStatusLink(name, status, resolution, parentElem) {
     var href= 'javascript:document.getElementById("bug_status").value="' + status + '";';
     href += 'showHideStatusItems("",["",""]);';
@@ -340,13 +363,24 @@ function addFixedInTargetLink(parentElem) {
 }
 
 function addTargetLink(parentElem, milestone) {
-    var href= 'javascript:document.getElementById("target_milestone").value="' + milestone + '";'
-            + 'var assigned_toElem=document.getElementById("assigned_to");'
-            + 'if(assigned_toElem){'
+    var onModifierClick=
+              'if (!document.getElementById("assigned_to")) {'
+            +   'var target_milestoneElem= document.getElementById("target_milestone");'
+            +   'target_milestoneOptions= target_milestoneElem.options;'
+            +   'for (var i= 0; i < target_milestoneOptions.length; i++) {'
+            +     'if (target_milestoneOptions[i].text == "' + milestone + '") target_milestoneOptions[i].selected= !target_milestoneOptions[i].selected;'
+            +   '}'
+            + '}';
+
+    var onClick=
+              'var target_milestoneElem= document.getElementById("target_milestone");'
+            + 'target_milestoneElem.value="' + milestone + '";'
+            + 'var assigned_toElem= document.getElementById("assigned_to");'
+            + 'if (assigned_toElem) {'
             +   'assigned_toElem.focus();assigned_toElem.select();'
-            + '}'
-            + 'void(0);';
-    addLink(milestone, href, parentElem);
+            + '}';
+    
+    addMultiLink(milestone, onClick, onModifierClick, parentElem);
 }
 
 function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
@@ -410,29 +444,49 @@ function addQueryComponentsLink(parentElem, components, name) {
 }
 
 function addQueryStatusesLink(parentElem, statuses, name) {
-    var href= 'javascript:document.getElementById("bug_status").selectedIndex= -1;'
-        + '    var bug_statusOptions= document.getElementById("bug_status").options;';
-    
+    var onClick=
+          'document.getElementById("bug_status").selectedIndex= -1;'
+        + 'var bug_statusOptions= document.getElementById("bug_status").options;';
     for (var i = 0; i < statuses.length; i++) {
-        href += 'for (var i = 0; i < bug_statusOptions.length; i++) {'
-              + '    if (bug_statusOptions[i].text == "' + statuses[i] + '") bug_statusOptions[i].selected= true;'
-              + '};';
+        onClick+=
+          'for (var i = 0; i < bug_statusOptions.length; i++) {'
+        + '    if (bug_statusOptions[i].text == "' + statuses[i] + '") bug_statusOptions[i].selected= true;'
+        + '};';
     }
-    href += 'void(0);';
-    addLink(name, href, parentElem, null, false);
+    
+    var onModifierClick=
+          'var bug_statusOptions= document.getElementById("bug_status").options;';
+    for (var i = 0; i < statuses.length; i++) {
+        onModifierClick+=
+          'for (var i = 0; i < bug_statusOptions.length; i++) {'
+        + '  if (bug_statusOptions[i].text == "' + statuses[i] + '") bug_statusOptions[i].selected= !bug_statusOptions[i].selected;'
+        + '};';
+    }
+    
+    addMultiLink(name, onClick, onModifierClick, parentElem, null, false);
 }
 
 function addQueryOSLink(parentElem, oses, name) {
-    var href= 'javascript:document.getElementById("op_sys").selectedIndex= -1;'
-        + '    var op_sysOptions= document.getElementById("op_sys").options;';
-    
+    var onClick=
+          'document.getElementById("op_sys").selectedIndex= -1;'
+        + 'var op_sysOptions= document.getElementById("op_sys").options;';
     for (var i = 0; i < oses.length; i++) {
-        href += 'for (var i = 0; i < op_sysOptions.length; i++) {'
-              + '    if (op_sysOptions[i].text.indexOf("' + oses[i] + '") == 0) op_sysOptions[i].selected= true;'
-              + '};';
+        onClick+=
+          'for (var i = 0; i < op_sysOptions.length; i++) {'
+        + '    if (op_sysOptions[i].text.indexOf("' + oses[i] + '") == 0) op_sysOptions[i].selected= true;'
+        + '};';
     }
-    href += 'void(0);';
-    addLink(name, href, parentElem, null, true);
+    
+    var onModifierClick=
+          'var op_sysOptions= document.getElementById("op_sys").options;';
+    for (var i = 0; i < oses.length; i++) {
+        onModifierClick+=
+          'for (var i = 0; i < op_sysOptions.length; i++) {'
+        + '  if (op_sysOptions[i].text.indexOf("' + oses[i] + '") == 0) op_sysOptions[i].selected= !op_sysOptions[i].selected;'
+        + '};';
+    }
+    
+    addMultiLink(name, onClick, onModifierClick, parentElem, null, true);
 }
 
 function setOptionSize(elementId, size) {
@@ -521,9 +575,13 @@ if (headerIconsElem) {
 // Identify ourselves:
 var headerElem= document.getElementById("header");
 if (headerElem && headerElem.lastElementChild) {
+    var ver= "";
+    if (typeof GM_info !== "undefined") {
+        ver= GM_info.script.version;
+    }
     headerElem.lastElementChild.innerHTML +=
         '<span class="separator">| </span><li><a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js" '
-        + 'title="Page tweaked by jdtbugzilla.user.js ' + GM_info.script.version + '" >Tweaked</a>!</li>';
+        + 'title="Page tweaked by jdtbugzilla.user.js ' + ver + '" >Tweaked</a>!</li>';
 }
 
 // Various CSS fixes:
@@ -574,6 +632,8 @@ if (headElem) {
 	    + ".search_email_fields { width: 300px; }\n"
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
+	// Make closed bug/comment links look like links:
+	    + ".bz_closed, .bz_CLOSED td { text-decoration: underline line-through; }\n"
 	    ;
 	headElem.appendChild(styleElem);
 }
