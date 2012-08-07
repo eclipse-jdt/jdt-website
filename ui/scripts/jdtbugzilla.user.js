@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120807T1238
+// @version 1.20120807T1744
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1014,10 +1014,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	setOptionSize("cc", 8);
 	
+	// Add shortcut cc links:
+	   // ... with auto-complete:
 	var newcc_autocompleteElem= document.getElementById("newcc_autocomplete");
 	if (newcc_autocompleteElem) {
 	    var addDiv= newcc_autocompleteElem.parentNode.firstElementChild;
-	    // Add shortcut cc links:
+	    for (var i= 0; i < ccs.length; i= i+2) {
+            addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
+        }
+	}
+	
+	   // ... without auto-complete (https://bugs.eclipse.org/386744):
+	var newccElem= document.getElementById("newcc");
+	if (newccElem) {
+	    var addDiv= newccElem.parentNode.firstElementChild;
 	    for (var i= 0; i < ccs.length; i= i+2) {
             addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
         }
