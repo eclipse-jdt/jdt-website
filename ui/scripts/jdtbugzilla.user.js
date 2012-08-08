@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120808T1718
+// @version 1.20120808T1923
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -50,7 +50,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 M2", "4.3 M3", "4.3", "BETA J8", "3.8.1", "4.2.1"];
+var target_milestones= ["4.3 M1", "4.3 M2", "4.3", "BETA J8", "3.8.1", "4.2.1"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -713,6 +713,30 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    // set initial focus:
 	    short_descElems[0].focus();
 	    
+		var summaryTr= short_descElems[0].parentNode.parentNode;
+	    
+	    // move "Possible Duplicates" after "Description":
+		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+		var commentElem= document.getElementById("comment");
+		if (possible_duplicates_containerElem && commentElem) {
+    		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
+		}
+	    
+//	    // move "Possible Duplicates" before "Summary":
+//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+//		if (possible_duplicates_containerElem) {
+//    		summaryTr.parentNode.insertBefore(possible_duplicates_containerElem, summaryTr);
+//		}
+	    
+//	    // move "Possible Duplicates" to the right of the "Description":  TODO: doesn't work, always goes to a new line...
+//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+//		var commentElem= document.getElementById("comment");
+//		if (possible_duplicates_containerElem && commentElem) {
+//		    var tableElem= document.createElement("table");
+//		    tableElem.appendChild(possible_duplicates_containerElem)
+//    		commentElem.parentNode.appendChild(tableElem);
+//		}
+		
 		// Add bug categories choosers:
 		var tr= document.createElement("tr");
 		tr.appendChild(document.createElement("th"));
@@ -721,7 +745,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		td.appendChild(createCategoryChoosers());
 		tr.appendChild(td);
 		
-		var summaryTr= short_descElems[0].parentNode.parentNode;
 		summaryTr.parentNode.insertBefore(tr, summaryTr);
     }
     
