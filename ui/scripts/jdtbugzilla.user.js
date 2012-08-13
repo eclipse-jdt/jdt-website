@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120808T1923
+// @version 1.20120813T1433
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -632,8 +632,9 @@ if (headElem) {
 	    + ".search_email_fields { width: 300px; }\n"
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
-	// Make closed bug/comment links look like links:
-	    + ".bz_closed, .bz_CLOSED td { text-decoration: underline line-through; }\n"
+	
+	// Don't show "Add Me to the CC List" button:
+	    + ".yui-dt-col-update_token { display: none; }\n"
 	    ;
 	headElem.appendChild(styleElem);
 }
@@ -715,12 +716,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    
 		var summaryTr= short_descElems[0].parentNode.parentNode;
 	    
-	    // move "Possible Duplicates" after "Description":
-		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
-		var commentElem= document.getElementById("comment");
-		if (possible_duplicates_containerElem && commentElem) {
-    		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
-		}
+//	    // move "Possible Duplicates" after "Description":
+//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+//		var commentElem= document.getElementById("comment");
+//		if (possible_duplicates_containerElem && commentElem) {
+//    		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
+//		}
 	    
 //	    // move "Possible Duplicates" before "Summary":
 //		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
@@ -728,14 +729,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 //    		summaryTr.parentNode.insertBefore(possible_duplicates_containerElem, summaryTr);
 //		}
 	    
-//	    // move "Possible Duplicates" to the right of the "Description":  TODO: doesn't work, always goes to a new line...
-//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
-//		var commentElem= document.getElementById("comment");
-//		if (possible_duplicates_containerElem && commentElem) {
-//		    var tableElem= document.createElement("table");
-//		    tableElem.appendChild(possible_duplicates_containerElem)
-//    		commentElem.parentNode.appendChild(tableElem);
-//		}
+	    // move "Possible Duplicates" to the right of the "Description":
+		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+		var commentElem= document.getElementById("comment");
+		if (possible_duplicates_containerElem && commentElem) {
+    		possible_duplicates_containerElem.setAttribute("style", "display: inline;");
+		    
+		    var tableElem= document.createElement("table");
+    		tableElem.setAttribute("style", "display: inline;");
+		    tableElem.appendChild(possible_duplicates_containerElem)
+		    
+		    possible_duplicates_containerElem.removeChild(possible_duplicates_containerElem.firstElementChild);
+		    commentElem.parentNode.removeChild(commentElem.parentNode.getElementsByTagName("br")[0]);
+    		commentElem.parentNode.appendChild(tableElem);
+		}
 		
 		// Add bug categories choosers:
 		var tr= document.createElement("tr");
