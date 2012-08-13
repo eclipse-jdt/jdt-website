@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120813T1433
+// @version 1.20120813T1836
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -56,7 +56,7 @@ var target_milestones= ["4.3 M2", "4.3 M3", "4.3", "BETA J8", "3.8.1", "4.2.1"];
 var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus_keller@ch.ibm.com",
-"DA", "deepak.azad@in.ibm.com",
+"DA", "deepakazad@gmail.com",
 ];
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
