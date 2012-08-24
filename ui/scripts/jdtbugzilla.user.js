@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120813T1836
+// @version 1.20120824T1901
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -349,6 +349,15 @@ function addEmailLink(name, email, emailElemName, parentElem) {
             + 'document.getElementsByName("' + emailElemName + '")[0].focus();'
             + 'void(0);';
     addLink(name, href, parentElem, email);
+}
+
+function addFromDateLink(parentElem, value, name) {
+    if (!name)
+        name = value;
+    var href= 'javascript:document.getElementById("chfieldfrom").value="' + value + '";'
+            + 'document.getElementById("chfieldfrom").focus();'
+            + 'void(0);';
+    addLink(name, href, parentElem);
 }
 
 function addFixedInTargetLink(parentElem) {
@@ -687,6 +696,17 @@ for (var i= 0; i < labels.length; i++) {
 	// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
     } else if (forAtt == "group_15") {
         labelElem.removeAttribute("for");
+    
+    // Add common "from" dates:
+    } else if (forAtt == "chfieldfrom") {
+        addFromDateLink(labelElem, "2h");
+        addFromDateLink(labelElem, "1ds", "today");
+        addFromDateLink(labelElem, "1d");
+        addFromDateLink(labelElem, "2d");
+        addFromDateLink(labelElem, "1w");
+        addFromDateLink(labelElem, "1m");
+        addFromDateLink(labelElem, "3m");
+        addFromDateLink(labelElem, "1y");
     }
 }
 
