@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120824T1901
+// @version 1.20120831T1249
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -76,6 +76,9 @@ var commentTemplates= [
 // Add Products and Components to which you frequently move bugs:
 var moveProducts= [ "Platform", "JDT", "PDE", "Equinox" ];
 var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
+
+// Add quick version links on the search page (<version> for exact version, <version*> for prefix match):
+var queryVersions= [ "3.*", "4.*", "4.2"];
 
 // Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...] pairs):
 var queryClassifications= [
@@ -473,6 +476,35 @@ function addQueryStatusesLink(parentElem, statuses, name) {
     }
     
     addMultiLink(name, onClick, onModifierClick, parentElem, null, false);
+}
+
+function addQueryVersionsLink(parentElem, version) {
+    var onClick= 'javascript:document.getElementById("version").selectedIndex= -1;'
+        + '    var versionOptions= document.getElementById("version").options;'
+        + 'for (var i = 0; i < versionOptions.length; i++) {';
+
+    if (version.charAt(version.length - 1) == "*")
+        onClick += 'if (versionOptions[i].text.substring(0, ' + (version.length - 2) + ') == "' + version.substring(0, version.length - 2) + '") versionOptions[i].selected= true;';
+    else
+        onClick += 'if (versionOptions[i].text == "' + version + '") versionOptions[i].selected= true;';
+
+    onClick += '}'
+        +'void(0);';
+    
+    
+    var onModifierClick= 'javascript:var versionOptions= document.getElementById("version").options;'
+        + 'for (var i = 0; i < versionOptions.length; i++) {';
+
+    if (version.charAt(version.length - 1) == "*")
+        onModifierClick += 'if (versionOptions[i].text.substring(0, ' + (version.length - 2) + ') == "' + version.substring(0, version.length - 2) + '") versionOptions[i].selected= !versionOptions[i].selected;';
+    else
+        onModifierClick += 'if (versionOptions[i].text == "' + version + '") versionOptions[i].selected= !versionOptions[i].selected;';
+
+    onModifierClick += '}'
+        +'void(0);';
+        
+        
+    addMultiLink(version, onClick, onModifierClick, parentElem);
 }
 
 function addQueryOSLink(parentElem, oses, name) {
@@ -908,7 +940,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Add quick links to detailed bug info fields:
 	var versionElem= document.getElementById("field_label_version");
 	if (versionElem) {
-		createFieldLabelClearAndQuickLinkSpan(versionElem, "version");
+		var versionLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(versionElem, "version");
+		for (var i= 0; i < queryVersions.length; i++) {
+    		addQueryVersionsLink(versionLinkSpanElem, queryVersions[i]);
+        }
     }
 	var bug_severityElem= document.getElementById("field_label_bug_severity");
 	if (bug_severityElem) {
