@@ -27,7 +27,7 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120831T1249
+// @version 1.20120905T1307
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1030,6 +1030,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 		addTargetLink(targetLinkSpanElem, "---");
 	}
+    
+    // Turn bug link into short link:
+    var bz_id_columnElems= document.getElementsByClassName("bz_id_column");
+    for (var i = 0; i < bz_id_columnElems.length; i++) {
+        var aElem= bz_id_columnElems[i].firstElementChild;
+        aElem.href= "../" + aElem.textContent;
+    }
 
 
 } else { // For all result pages:
@@ -1042,6 +1049,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var bugRegex= /Bug\s+(\d+)/i;
 	    if (short_descElem) {
 	        if (bugRegex.test(titleElem.textContent)) {
+                // Render bug link as short link:
 	            bugId= bugRegex.exec(titleElem.textContent)[1];
 			    var bugLink= document.createElement("a");
 			    bugLink.href= "../" + bugId;
