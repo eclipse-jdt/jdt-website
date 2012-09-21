@@ -25,9 +25,10 @@
 // @name          JDT UI Bugzilla Add-On
 // @namespace     http://www.eclipse.org/jdt/ui
 // @description   Script to tune Bugzilla for JDT UI
+// @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120921T2048
+// @version 1.20120921T2059
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -248,7 +249,7 @@ function fixCheckboxField(containerId, inputId, labelText) {
 }
 
 function addLink(name, href, parentElem, tooltip, separator) {
-//GM_log(name + "," + href + "," + tooltip + "," + separator)
+// console.debug(name + "," + href + "," + tooltip + "," + separator);
     var linkElem= document.createElement("a");
     linkElem.href= href;
     linkElem.innerHTML= name;
