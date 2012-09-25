@@ -37,6 +37,41 @@ ob_start();
 		</div>
 
 		<div class="homeitem3col">
+			<a name="scripts"></a>
+			<h3>Greasemonkey scripts (aka user scripts)</h3>
+			<p>JDT UI developers are heavy users of <a href="https://bugs.eclipse.org/bugs/">bugs.eclipse.org</a>.
+			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created the
+			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.
+			   The script always works with the latest release of Firefox, Greasemonkey, and bugs.eclipse.org.</p>
+			<p>Over time, we also added quick links and tweaks to improve our work experience. The team-specific
+			   tweaks can be configured at the top of the script.</p>
+			<p>For comments and enhancement requests, please file a <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT&component=UI">bug</a>.
+			   We're specially interested in ideas for how to separate parameters and the general functionality
+			   (for people who need different configurations but still want our fixes, new features, and updates to new Bugzilla versions).
+			   If someone from the Bugzilla team wants to talk about the UI bugs, please also file a bug.</p>
+			<p>Here are some of the improvements in the script (see comments in the source for full details):</p>
+			<ul>
+				<li>clicks all the useless (edit) links</li>
+				<li>makes the Advanced Search page usable without having to scroll (removes garbage and increases option list heights)</li>
+				<li>fixes alternating gray/white background for enhancements in buglist.cgi (classic skin)</li>
+				<li>removes Eclipse.org headers to save space</li>
+				<li>adds a fixed "Bug &lt;id&gt;: &lt;summary&gt;" header on top for easy triple-click, copy, paste<br>
+					hint: the link is in the short https://bugs.eclipse.org/&lt;id&gt; form</li>
+				<li>adds quick links for frequently used CCs, Assignees, Products, Components, Resolutions, Target Milestones, Git repositories, etc.</li>
+				<li>adds bug category combos (to insert "[work area]" prefixes into summary)</li>
+				<li>fixes various layout bugs on show_bug.cgi</li>
+				<li>renders Assignee next to Reporter</li>
+				<li>moves the Status fields to a useful position (between Target Milestone and Assignee in the settings block)</li>
+				<li>fixes attachment links (click on attachment predictably opens the attachment -- separate [diff] link opens patch viewer)</li>
+				<li>makes the security group checkboxes less likely to be clicked inadvertently (only checkbox is clickable; label is not)</li>
+				<li>offers two links for email addresses: simple for pasting as CC / with full name to use as Git author</li>
+				<li>adds easy-to-copy bug &lt;id&gt; comment &lt;no&gt; text</li>
+				<li>adds more Save Changes buttons</li>
+				<li>fixes wrapping-preview in Additional Comments field</li>
+			</ul>
+		</div>
+
+		<div class="homeitem3col">
 			<a name="documents"></a>
 			<h3>JDT Developer Documents</h3>
 			<ul>
@@ -145,6 +180,7 @@ ob_start();
 			<h6>Quick links</h6>
 			<ul>
 				<li><a href="#bugs">Bugs</a></li>
+				<li><a href="#scripts">Greasemonkey scripts</a></li>
 				<li><a href="#documents">Documents</a></li>
 				<li><a href="#articles">Articles and Talks</a></li>
 				<li><a href="#plugins">Plug-ins</a></li>
