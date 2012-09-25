@@ -18,9 +18,10 @@
 // @name          Eclipse Wiki Auto-login
 // @namespace     http://www.eclipse.org/jdt/ui
 // @description   Eclipse Wiki Auto-login
+// @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20120912T1218
+// @version 1.20120918T1523
 
 // @include       http://wiki.eclipse.org/*
 //
@@ -30,9 +31,9 @@ var anchors = document.getElementsByTagName("a");
 for (var i = 0; i < anchors.length; i++) {
     var anchor = anchors[i];
     if (anchor.textContent === "Log in" && anchor.href.indexOf("action=submitlogin")) {
-        GM_log("clicking 'Log in': " + anchor.href);
+        console.error("clicking 'Log in': " + anchor.href);
         location.href= anchor.href;
         return;
     }
 }
-GM_log("no 'Log in' found (probably already logged in)");
+console.error("no 'Log in' found (probably already logged in)");
