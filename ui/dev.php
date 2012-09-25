@@ -45,10 +45,11 @@ ob_start();
 			   The script always works with the latest release of Firefox, Greasemonkey, and bugs.eclipse.org.</p>
 			<p>Over time, we also added quick links and tweaks to improve our work experience. The team-specific
 			   tweaks can be configured at the top of the script.</p>
-			<p>For comments and enhancement requests, please file a <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=JDT&component=UI">bug</a>.
+			<p>For comments and enhancement requests, please use <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=390332">bug 390332</a> or file a new bug.
 			   We're specially interested in ideas for how to separate parameters and the general functionality
 			   (for people who need different configurations but still want our fixes, new features, and updates to new Bugzilla versions).
-			   If someone from the Bugzilla team wants to talk about the UI bugs, please also file a bug.</p>
+			   If someone from the Bugzilla team wants to talk about the UI bugs, please also file a bug or directly talk to
+			   <a href="mailto:markus_keller[at]ch.ibm.com">Markus</a>.</p>
 			<p>Here are some of the improvements in the script (see comments in the source for full details):</p>
 			<ul>
 				<li>clicks all the useless (edit) links</li>
