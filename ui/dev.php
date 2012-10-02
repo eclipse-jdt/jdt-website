@@ -146,10 +146,12 @@ ob_start();
 			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.
 			   The script always works with the latest release of Firefox, Greasemonkey, and bugs.eclipse.org.</p>
 			<p>Over time, we also added quick links and tweaks to improve our work experience. The team-specific
-			   tweaks can be configured at the top of the script.</p>
+			   tweaks are being configured at the top of the script.<br>
+			   After installing the default script, you can override some or all of these settings locally by editing the file
+			   <code>&lt;firefox-profile&gt;/gm_scripts/JDT_UI_Bugzilla_Add-On/jdtbugzilla.config.js</code>.
+			   Just copy a <code>var xxx= ...;</code> declaration from the script, remove the <code>var</code>,
+			   and change the value to suit your needs.</p>
 			<p>For comments and enhancement requests, please use <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=390332">bug 390332</a> or file a new bug.
-			   We're specially interested in ideas for how to separate parameters and the general functionality
-			   (for people who need different configurations but still want our fixes, new features, and updates to new Bugzilla versions).
 			   If someone from the Bugzilla team wants to talk about the UI bugs, please also file a bug or directly talk to
 			   <a href="mailto:markus_keller[at]ch.ibm.com">Markus</a>.</p>
 			<p>Here are some of the improvements in the script (see comments in the source for full details):</p>
