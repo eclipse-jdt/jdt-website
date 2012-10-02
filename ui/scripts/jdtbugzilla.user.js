@@ -11,6 +11,7 @@
 //---------------------------------------------------------------------
 //
 // JDT UI Bugzilla Add-on for Bugzilla at bugs.eclipse.org.
+// For a longer description, see http://www.eclipse.org/jdt/ui/dev.php#scripts
 //
 // This is a Greasemonkey user script.  To install it, you need
 // Greasemonkey: http://www.greasespot.net/
@@ -25,10 +26,11 @@
 // @name          JDT UI Bugzilla Add-On
 // @namespace     http://www.eclipse.org/jdt/ui
 // @description   Script to tune Bugzilla for JDT UI
-// @grant         none
+// @grant         GM_getResourceText
+// @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20120921T2059
+// @version 1.20121002T1836
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -220,6 +222,8 @@ categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
 // --- /Configurable options ------------------------------------------
 
+var config = GM_getResourceText("config");
+eval(config);
 
 //----------- Functions:
 function hideElem(id) {
