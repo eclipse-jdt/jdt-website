@@ -148,7 +148,7 @@ ob_start();
 			<p>Over time, we also added quick links and tweaks to improve our work experience. The team-specific
 			   tweaks are being configured at the top of the script.<br>
 			   After installing the default script, you can override some or all of these settings locally by editing the file
-			   <code>&lt;firefox-profile&gt;/gm_scripts/JDT_UI_Bugzilla_Add-On/jdtbugzilla.config.js</code>.
+			   <code style="white-space:nowrap;">&lt;firefox-profile&gt;/gm_scripts/JDT_UI_Bugzilla_Add-On/jdtbugzilla.config.js</code>.
 			   Just copy a <code>var xxx= ...;</code> declaration from the script, remove the <code>var</code>,
 			   and change the value to suit your needs.</p>
 			<p>For comments and enhancement requests, please use <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=390332">bug 390332</a> or file a new bug.
