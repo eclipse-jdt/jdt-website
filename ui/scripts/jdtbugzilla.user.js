@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121002T1836
+// @version 1.20121005T1607
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -339,12 +339,15 @@ function addComponentLink(name, parentElem) {
     addLink(name, href, parentElem);
 }
 
-function addEmailLinks(emailElemName) {
+function addEmailLinks(emailElemName, myMail) {
 	var emailElem= document.getElementById(emailElemName);
 	if (emailElem) {
 	    emailElem.parentNode.setAttribute("style", "width: 100%");
 		var sp= document.createElement("span");
 		emailElem.parentNode.parentNode.insertBefore(sp, emailElem.parentNode);
+		if (myMail) {
+	        addEmailLink("Me", myMail, emailElemName, sp);
+		}
 	    for (var i= 0; i < ccs.length; i= i+2) {
 	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
 	    }
@@ -828,7 +831,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 
 } else if (window.location.pathname.match(/.*query\.cgi/)) {
+	var myMail;
 
+	// Loop over <a>s:
+	var anchors= document.getElementsByTagName("a");
+	for (var i= 0; i < anchors.length; i++) {
+	    var aElem= anchors[i];
+	    var aElemHref= aElem.getAttribute("href");
+	    if (!aElemHref)
+	        continue;
+	        
+	    if (aElemHref == "index.cgi?logout=1") {
+	        myMail= aElem.nextSibling.textContent.trim();
+	    }
+    }
+    
 //    // Fix "'Edit Search' on bug list does not fill in 'Comment' field": https://bugs.eclipse.org/bugs/show_bug.cgi?id=288654
 //    var longdescRegex= /.*&longdesc=([^\&]+)&.*/;
 //    if (location.search.match(longdescRegex)) {
@@ -987,9 +1004,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	setOptionSize("chfield", 5);
 	
     // Add shortcut email links:
-	addEmailLinks("email1");
-	addEmailLinks("email2");
-	addEmailLinks("email3");
+	addEmailLinks("email1", myMail);
+	addEmailLinks("email2", myMail);
+	addEmailLinks("email3", myMail);
 
     // Fix layout of date fields:
     var history_filter_sectionElem= document.getElementById("history_filter_section");
@@ -1046,6 +1063,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 } else { // For all result pages:
 	var bugId;
+	var myMail;
 
 	// Rewrite header for direct copy/paste as CVS comment ("Bug xxx: Summary"):
 	var titleElem= document.getElementById("title");
@@ -1098,6 +1116,79 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
   		}
 	}
 
+	// Loop over <a>s:
+	var anchors= document.getElementsByTagName("a");
+	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
+	var commentIdRegex= /^c(\d+)$/; // c42
+	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
+	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
+	for (var i= 0; i < anchors.length; i++) {
+	    var aElem= anchors[i];
+	    var aElemHref= aElem.getAttribute("href");
+	    if (!aElemHref)
+	        continue;
+	    
+	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
+	    if (aElem.name.substr(0, 7) == "attach_" && aElemHref.match(diffRegex)) {
+	        aElem.setAttribute("href", aElemHref.replace(diffRegex, "attachment.cgi?id=$1"));
+	        
+	        // Add [diff] after [details] in attachment references:
+	        var diffElem= document.createElement("a");
+	        diffElem.textContent= "[diff]";
+	        diffElem.href= aElemHref.replace(diffRegex, "attachment.cgi?id=$1&action=diff");
+	        aElem.parentNode.appendChild(document.createTextNode(" "));
+	        aElem.parentNode.appendChild(diffElem);
+	        i+= 2; //skip [details] and new anchor
+	    
+	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
+	    } else if (aElemHref.match(commentRegex) && aElem.parentNode.getAttribute("class") == "bz_comment_number") {
+	        aElem.textContent= "comment " + commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
+	        
+	        var pre= document.createTextNode("bug " + bugId + " ");
+	        aElem.parentNode.insertBefore(pre, aElem);
+	        
+	    // Remove link in bug header to allow easy copying of bug number:
+	    } else if (aElemHref.match(bugrefRegex)) {
+	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
+	            var pre= document.createTextNode("bug " + bugId);
+	            aElem.parentNode.insertBefore(pre, aElem);
+	            aElem.parentNode.removeChild(aElem);
+            }
+        
+	    // Turn "Add comment" link into a button:
+	    } else if (aElem.parentNode.getAttribute("class") == "bz_add_comment") {
+	        var buttonElem= document.createElement("button");
+	        buttonElem.setAttribute("onclick", aElem.getAttribute("onclick"));
+	        buttonElem.textContent= aElem.textContent + "...";
+	        aElem.parentNode.replaceChild(buttonElem, aElem);
+	    
+	    // Tune user links into
+	    // (1) link containing name <email_address> (e.g. to copy-paste as Git author), and
+	    // (2) link containing plain email address
+	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
+		    var fullElem= aElem.cloneNode();
+		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
+		    fullElem.style.textDecoration="none";
+		    fullElem.title= aElemHref.substr(7);
+		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
+		    
+	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
+		    i+= 1; // skip new link
+		    
+	    } else if (aElemHref == "index.cgi?logout=1") {
+	        myMail= aElem.nextSibling.textContent.trim();
+	    }
+	    
+	//    // Show obsolete attachments initially:
+	//    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
+	//        aElem.setAttribute("name", "toggle_display"); // have to give this a name so we can refer to it from the embedded script afterwards
+	//        var scriptElem= document.createElement("script");
+	//        scriptElem.type="text/javascript";
+	//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
+	//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
+	//    }
+	}
+	
 	// Edit summary:
 	hideElem("summary_alias_container");
 	showElem("summary_alias_input");
@@ -1290,6 +1381,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 		
 	    // Add shortcut assignee links:
+	    if (myMail) {
+            addAssigneeLink("Me", myMail, bz_assignee_inputElem);
+        }
 	    for (var i= 0; i < assignees.length; i= i+2) {
             addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem);
         }
@@ -1340,73 +1434,4 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(pElem);
 	}
 	
-	// Loop over <a>s:
-	var anchors= document.getElementsByTagName("a");
-	var diffRegex   = /attachment\.cgi\?id=(\d+)&action=diff/;
-	var commentIdRegex= /^c(\d+)$/; // c42
-	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
-	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
-	for (var i= 0; i < anchors.length; i++) {
-	    var aElem= anchors[i];
-	    var aElemHref= aElem.getAttribute("href");
-	    if (!aElemHref)
-	        continue;
-	    
-	    // Fix attachment link (revert the new Bugzilla 3.6 "feature" that shows fancy patch viewer but kills copy/paste of patch into Eclipse):
-	    if (aElem.name.substr(0, 7) == "attach_" && aElemHref.match(diffRegex)) {
-	        aElem.setAttribute("href", aElemHref.replace(diffRegex, "attachment.cgi?id=$1"));
-	        
-	        // Add [diff] after [details] in attachment references:
-	        var diffElem= document.createElement("a");
-	        diffElem.textContent= "[diff]";
-	        diffElem.href= aElemHref.replace(diffRegex, "attachment.cgi?id=$1&action=diff");
-	        aElem.parentNode.appendChild(document.createTextNode(" "));
-	        aElem.parentNode.appendChild(diffElem);
-	        i+= 2; //skip [details] and new anchor
-	    
-	    // Change "Comment 42" to ">bug 170000 comment 42<" (simplifies copy/paste of reference):
-	    } else if (aElemHref.match(commentRegex) && aElem.parentNode.getAttribute("class") == "bz_comment_number") {
-	        aElem.textContent= "comment " + commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
-	        
-	        var pre= document.createTextNode("bug " + bugId + " ");
-	        aElem.parentNode.insertBefore(pre, aElem);
-	        
-	    // Remove link in bug header to allow easy copying of bug number:
-	    } else if (aElemHref.match(bugrefRegex)) {
-	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
-	            var pre= document.createTextNode("bug " + bugId);
-	            aElem.parentNode.insertBefore(pre, aElem);
-	            aElem.parentNode.removeChild(aElem);
-            }
-        
-	    // Turn "Add comment" link into a button:
-	    } else if (aElem.parentNode.getAttribute("class") == "bz_add_comment") {
-	        var buttonElem= document.createElement("button");
-	        buttonElem.setAttribute("onclick", aElem.getAttribute("onclick"));
-	        buttonElem.textContent= aElem.textContent + "...";
-	        aElem.parentNode.replaceChild(buttonElem, aElem);
-	    
-	    // Tune user links into
-	    // (1) link containing name <email_address> (e.g. to copy-paste as Git author), and
-	    // (2) link containing plain email address
-	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
-		    var fullElem= aElem.cloneNode();
-		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
-		    fullElem.style.textDecoration="none";
-		    fullElem.title= aElemHref.substr(7);
-		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
-		    
-	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
-		    i+= 1; // skip new link
-	    }
-	    
-	//    // Show obsolete attachments initially:
-	//    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
-	//        aElem.setAttribute("name", "toggle_display"); // have to give this a name so we can refer to it from the embedded script afterwards
-	//        var scriptElem= document.createElement("script");
-	//        scriptElem.type="text/javascript";
-	//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
-	//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
-	//    }
-	}
 }
