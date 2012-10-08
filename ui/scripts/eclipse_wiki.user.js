@@ -21,19 +21,34 @@
 // @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20120918T1523
+// @version 1.20121008T1253
 
 // @include       http://wiki.eclipse.org/*
 //
 // ==/UserScript==
 
+if (window.location.href.match(/.*Special:Userlogout.*/)) {
+    console.debug("Logout page -- don't run into endless loop");
+    return;
+}
+
 var anchors = document.getElementsByTagName("a");
 for (var i = 0; i < anchors.length; i++) {
     var anchor = anchors[i];
     if (anchor.textContent === "Log in" && anchor.href.indexOf("action=submitlogin")) {
-        console.error("clicking 'Log in': " + anchor.href);
-        location.href= anchor.href;
+        console.debug("clicking 'Log in': " + anchor.href);
+        location.href = anchor.href;
         return;
     }
 }
-console.error("no 'Log in' found (probably already logged in)");
+console.debug("no 'Log in' found (probably already logged in)");
+
+var firstHeadings = document.getElementsByClassName("firstHeading");
+for (var i = 0; i < firstHeadings.length; i++) {
+    var firstHeading = firstHeadings[i];
+    console.debug(firstHeading);
+	if (firstHeading.textContent == "Login successful") {
+	    window.back();
+	    return;
+	}
+}
