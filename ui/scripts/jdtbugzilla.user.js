@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121005T1607
+// @version 1.20121009T1901
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -79,6 +79,13 @@ var commentTemplates= [
 // Add Products and Components to which you frequently move bugs:
 var moveProducts= [ "Platform", "JDT", "PDE", "Equinox" ];
 var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
+
+// Add quick platform links ("<name>", "<hardware>", "<os>" triplets):
+var platforms= [
+"Win7", "PC", "Windows 7",
+"GTK", "PC", "Linux-GTK",
+"Mac", "PC", "Mac OS X",
+];
 
 // Add quick version links on the search page (<version> for exact version, <version*> for prefix match):
 var queryVersions= [ "3.*", "4.*", "4.2"];
@@ -335,6 +342,13 @@ function addComponentLink(name, parentElem) {
             + 'document.getElementById("set_default_assignee").checked= true;'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
             + 'document.getElementById("component").focus();'
+            + 'void(0);';
+    addLink(name, href, parentElem);
+}
+
+function addPlatformLink(parentElem, name, hardware, os) {
+    var href= 'javascript:document.getElementById("rep_platform").value="' + hardware + '";'
+            + 'document.getElementById("op_sys").value="' + os + '";'
             + 'void(0);';
     addLink(name, href, parentElem);
 }
@@ -698,14 +712,18 @@ if (headElem) {
 var rep_platformElem= document.getElementById("rep_platform");
 var op_sysElem= document.getElementById("op_sys");
 if (rep_platformElem && op_sysElem) {
-	var allLinkSpanElem= document.createElement("span");
-	allLinkSpanElem.style.marginLeft= "1em";
-	op_sysElem.parentNode.insertBefore(allLinkSpanElem, op_sysElem.nextSibling);
+	var platformLinkSpanElem= document.createElement("span");
+	platformLinkSpanElem.style.marginLeft= "1em";
+	op_sysElem.parentNode.insertBefore(platformLinkSpanElem, op_sysElem.nextSibling);
 	
     var href= 'javascript:document.getElementById("rep_platform").value="All";'
             + 'document.getElementById("op_sys").value="All";'
             + 'void(0);';
-    addLink("All", href, allLinkSpanElem);
+    addLink("All", href, platformLinkSpanElem);
+    
+	for (var i= 0; i < platforms.length; i+= 3) {
+		addPlatformLink(platformLinkSpanElem, platforms[i], platforms[i+1], platforms[i+2]);
+	}
 }
 
 // Fix the "Comment" field size (too small on the "Attachment Details" page,
