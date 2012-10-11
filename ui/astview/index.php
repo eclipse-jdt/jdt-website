@@ -57,42 +57,42 @@ ob_start();
 				<ul>
 					<li>
 						for Eclipse 3.7.1 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.8.201108081127.jar">org.eclipse.jdt.astview_1.1.8.201108081127.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.8.201108081127.jar">org.eclipse.jdt.astview_1.1.8.201108081127.jar</a>
 						(copy to 'dropins' directory)
 					</li>
 					<li>
 						for Eclipse 3.5 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.7.201103211622.jar">org.eclipse.jdt.astview_1.1.7.201103211622.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.7.201103211622.jar">org.eclipse.jdt.astview_1.1.7.201103211622.jar</a>
 						(copy to 'dropins' directory)
 					</li>
 					<li>
 						for Eclipse 3.4 M6 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.6.200803260035.jar">org.eclipse.jdt.astview_1.1.6.200803260035.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.6.200803260035.jar">org.eclipse.jdt.astview_1.1.6.200803260035.jar</a>
 						(copy to 'dropins' directory)
 					</li>				
 					<li>
 						for Eclipse 3.4 M3 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.5.200710301359.jar">org.eclipse.jdt.astview_1.1.5.200710301359.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.5.200710301359.jar">org.eclipse.jdt.astview_1.1.5.200710301359.jar</a>
 						(copy to 'plugins' directory)
 					</li>				
 					<li>
 						for Eclipse 3.3.*:
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.4.jar">org.eclipse.jdt.astview_1.1.4.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.4.jar">org.eclipse.jdt.astview_1.1.4.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 					<li>
 						for Eclipse 3.2.*:
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.1.3.jar">org.eclipse.jdt.astview_1.1.3.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.3.jar">org.eclipse.jdt.astview_1.1.3.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 					<li>
 						for Eclipse 3.1.*:
-						<a href="../update-site/plugins/org.eclipse.jdt.astview_1.0.10.jar">org.eclipse.jdt.astview_1.0.10.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.0.10.jar">org.eclipse.jdt.astview_1.0.10.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 					<li>
 						for Eclipse 3.0.*:
-						<a href="org.eclipse.jdt.astview_1.0.1.zip">org.eclipse.jdt.astview_1.0.1.zip</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.0.1.jar">org.eclipse.jdt.astview_1.0.1.jar</a>
 						(<i>extract</i> into 'plugins' directory)
 					</li>
 				</ul>
