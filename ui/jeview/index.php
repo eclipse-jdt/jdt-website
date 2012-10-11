@@ -58,17 +58,17 @@ ob_start();
 				<ul>
 					<li>
 						for Eclipse 3.7 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.jeview_1.0.8.201103211622.jar">org.eclipse.jdt.jeview_1.0.8.201103211622.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.jeview_1.0.8.201103211622.jar">org.eclipse.jdt.jeview_1.0.8.201103211622.jar</a>
 						(copy to 'dropins' directory)
 					</li>
 					<li>
 						for Eclipse 3.4 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.jeview_1.0.6.200803121213.jar">org.eclipse.jdt.jeview_1.0.6.200803121213.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.jeview_1.0.6.200803121213.jar">org.eclipse.jdt.jeview_1.0.6.200803121213.jar</a>
 						(copy to 'dropins' directory)
 					</li>
 					<li>
 						for Eclipse 3.3 and higher
-						<a href="../update-site/plugins/org.eclipse.jdt.jeview_1.0.5.200710301359.jar">org.eclipse.jdt.jeview_1.0.5.200710301359.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.jeview_1.0.5.200710301359.jar">org.eclipse.jdt.jeview_1.0.5.200710301359.jar</a>
 						(copy to 'plugins' directory)
 					</li>
 				</ul>
