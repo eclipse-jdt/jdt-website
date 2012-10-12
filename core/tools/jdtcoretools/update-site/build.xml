@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="project" default="default">
+
 	<target name="default" description="Creates the composite update site that forwards to the actual update site">
-    	<p2.composite.repository>
-    	  <repository location="file:/${basedir}" name="JDT/Core tools" />
-    	  <add>
-    	    <repository location="http://archive.eclipse.org/jdt/core/tools/jdtcoretools/update-site" />
-    	  </add>
-    	</p2.composite.repository>
-    </target>
+		<delete>
+			<fileset dir="${basedir}">
+				<include name="composite*.jar" />
+			</fileset>
+		</delete>
+
+		<p2.composite.repository>
+			<repository location="file:/${basedir}" name="JDT/Core tools" />
+			<add>
+				<repository location="http://archive.eclipse.org/jdt/core/tools/jdtcoretools/update-site" />
+			</add>
+		</p2.composite.repository>
+	</target>
 </project>
