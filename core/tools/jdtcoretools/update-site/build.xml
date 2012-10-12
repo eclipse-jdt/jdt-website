@@ -4,7 +4,7 @@
     	<p2.composite.repository>
     	  <repository location="file:/${basedir}" name="JDT/Core tools" />
     	  <add>
-    	    <repository location="http://www.eclipse.org/jdt/core/tools/jdtcoretools/update-site" />
+    	    <repository location="http://archive.eclipse.org/jdt/core/tools/jdtcoretools/update-site" />
     	  </add>
     	</p2.composite.repository>
     </target>
