@@ -131,13 +131,13 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3RC3.jar">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</td>
 			<td valign="top">posted on 2006/05/09, 1,24 MB (click on picture)</td>
           </tr>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3RC3src.zip">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</td>
 			<td valign="top">posted on 2006/05/09, 1,0 MB (click on picture)</td>
            </tr>         
            <tr>
@@ -149,8 +149,8 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.3 integration preview </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.0.200604051115.jar">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></td>
 			<td valign="top">posted on 2006/04/05, 3.78 MB (click on picture)</td>
           </tr>
           <tr>

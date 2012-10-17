@@ -502,13 +502,13 @@ please inform the JDT/Core team by entering a <a
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.1.2.jar">
-                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+            <td valign="top">
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</td>
             <td valign="top">posted on 2006/05/09, 1,11 MB (click on picture)</td>
           </tr>
           <tr>
-            <td valign="top"><a href="../patches/ecj_3.1.2src.zip">
-                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
+            <td valign="top">
+                             <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</td>
             <td valign="top">posted on 2006/05/09, 921 KB (click on picture)</td>
          </tr>
           <tr>
@@ -522,9 +522,8 @@ please inform the JDT/Core team by entering a <a
  height="16" width="16">&nbsp;<b>Post 3.1.2 update</b>
       <table>
           <tr>
-            <td valign="top"><a
- href="../patches/org.eclipse.jdt.core_3.1.3.zip"><img
- src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+            <td valign="top"><img
+ src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></td>
             <td valign="top">posted on 2007/11/02, 6,258 KB (click on
 picture)</td>
           </tr>
@@ -581,9 +580,8 @@ build notes</a>.
  height="16" width="16">&nbsp;<b>3.1.2 preview</b>
       <table>
           <tr>
-            <td valign="top"><a
- href="../patches/org.eclipse.jdt.core_3.1.1.zip"><img
- src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+            <td valign="top"><img
+ src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></td>
             <td valign="top">posted on 2005/11/03, 6,119 KB (click on
 picture)</td>
           </tr>

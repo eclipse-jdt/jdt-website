@@ -345,8 +345,8 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>3.4.x update</b>
 	<table>
 		<tr>
-			<td valign="top"><a href="../patches/patch2.zip">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</td>
 			<td valign="top">posted on 2010/01/27, 7.77 MB (click on picture)<br>
 			Install by unzipping in the dropins folder.</td>
 		</tr>

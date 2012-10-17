@@ -241,13 +241,13 @@ ob_start();
 			<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Batch compiler</b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.7.jar">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Binary)</td>
 			<td valign="top">posted on 2009/01/30, 1,49 MB (click on picture)</td>
           </tr>
           <tr>
-			<td valign="top"><a href="../patches/ecj_3.3.7src.zip">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20">(Source)</td>
 			<td valign="top">posted on 2009/01/30, 1,06 MB (click on picture)</td>
            </tr>         
 	  </table>
@@ -255,8 +255,8 @@ ob_start();
 		<p><img src="http://dev.eclipse.org/images/Adarrow.gif" nosave="" border="0" height="16" width="16">&nbsp;<b>Post 3.3.2 update </b>
       <table>
           <tr>
-			<td valign="top"><a href="../patches/org.eclipse.jdt.core_3.3.7.jar">
-						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></a></td>
+			<td valign="top">
+						     <img src="../jar_l_obj.gif" nosave="" border="0" height="20" width="20"></td>
 			<td valign="top">posted on 2009/01/30, 7.18 MB (click on picture)</td>
           </tr>
           <tr>

@@ -4,20 +4,4 @@
    <description url="http://www.eclipse.org/jdt/core/update-site/">
       Java development tool previews
    </description>
-   <feature url="features/org.eclipse.jdt.cheetah06_0.0.6.jar" id="org.eclipse.jdt.cheetah06" version="0.0.6">
-      <category name="JDT Previews"/>
-   </feature>
-   <feature url="features/org.eclipse.jdt.patch_v_678_R32x_1.0.2.jar" id="org.eclipse.jdt.patch_v_678_R32x" version="1.0.2">
-      <category name="JDT Patches"/>
-   </feature>
-   <category-def name="JDT Previews" label="JDT Previews">
-      <description>
-         Early access to future features
-      </description>
-   </category-def>
-   <category-def name="JDT Patches" label="JDT Patches">
-      <description>
-         JDT patches fixing important issues
-      </description>
-   </category-def>
 </site>

@@ -5,6 +5,4 @@
       autobuild="false"
       scrub-output="false"
       use-console="true">
-   <feature id="org.eclipse.jdt.cheetah06" version="0.0.6"/>
-   <feature id="org.eclipse.jdt.patch_v_678_R32x" version="1.0.2"/>
 </site-build>
