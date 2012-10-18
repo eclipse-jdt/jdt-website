@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project" default="default">
+
+	<target name="default" description="Creates the composite update site that forwards to the actual update site">
+		<delete>
+			<fileset dir="${basedir}">
+				<include name="composite*.jar" />
+			</fileset>
+		</delete>
+
+		<p2.composite.repository>
+			<repository location="file:/${basedir}" name="Experimental updates of JDT 4.2" />
+			<add>
+				<repository location="http://archive.eclipse.org/jdt/core/beta-null-annotations-for-fields/R4.2" />
+			</add>
+		</p2.composite.repository>
+	</target>
+</project>
