@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121009T1901
+// @version 1.20121018T1254
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -229,8 +229,10 @@ categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
 // --- /Configurable options ------------------------------------------
 
-var config = GM_getResourceText("config");
-eval(config);
+if (typeof GM_getResourceText !== "undefined") { // GM_getResourceText is not available in Google Chrome, so let's go with the defaults.
+	var config = GM_getResourceText("config");
+	eval(config);
+}
 
 //----------- Functions:
 function hideElem(id) {
