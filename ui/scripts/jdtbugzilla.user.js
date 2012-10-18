@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121018T1254
+// @version 1.20121018T1303
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -713,7 +713,7 @@ if (headElem) {
 // Add shortcut to set Platform to All/All:
 var rep_platformElem= document.getElementById("rep_platform");
 var op_sysElem= document.getElementById("op_sys");
-if (rep_platformElem && op_sysElem) {
+if (rep_platformElem && op_sysElem && ! window.location.pathname.match(/.*query\.cgi/)) {
 	var platformLinkSpanElem= document.createElement("span");
 	platformLinkSpanElem.style.marginLeft= "1em";
 	op_sysElem.parentNode.insertBefore(platformLinkSpanElem, op_sysElem.nextSibling);
