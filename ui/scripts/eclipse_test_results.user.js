@@ -14,7 +14,7 @@
 // @description   adds links to raw XML test result files and fixes broken "Properties >>" links
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20120723T1922
+// @version       1.20121023T1243
 
 
 // @include       http*://*/downloads/drops*/*/testResults.php

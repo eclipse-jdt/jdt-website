@@ -29,6 +29,9 @@
     	<antcall target="copyfile">
     		<param name="file" value="@{file}"/>
     	</antcall>
+    	<antcall target="update_time_stamp">
+    		<param name="file" value="@{file}"/>
+    	</antcall>
 	  </sequential>
 	</macrodef>
 	
@@ -40,7 +43,6 @@
     <target name="copyfile" if="${file}">
     	<propertycopy name="filepath" from="${file}"/>
     	<uptodate property="isUpToDate" srcfile="${file}" targetfile="${filepath}"/>
-    	<antcall target="update_time_stamp"/>
     	
         <copy file="${file}" tofile="${filepath}" verbose="true"/>
 <!-- 

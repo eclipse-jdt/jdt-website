@@ -21,7 +21,7 @@
 // @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20121008T1253
+// @version 1.20121023T1243
 
 // @include       http://wiki.eclipse.org/*
 //
