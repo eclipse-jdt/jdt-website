@@ -59,6 +59,7 @@ var target_milestones= ["4.3 M3", "4.3 M4", "4.3", "BETA J8", "3.8.2", "4.2.2"];
 var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus_keller@ch.ibm.com",
+"MM", "manju_mathew@in.ibm.com",
 "DA", "deepakazad@gmail.com",
 ];
 
