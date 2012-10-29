@@ -46,17 +46,20 @@ Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a> and <a href="mailto:
 <h4>Copy/move of annotations (Manju, Dani - Questions: Markus)</h4>
 <ul>
 	<li>verify that Pull Up, Push Down and Extract Superclass do move/copy annotations</li>
-	<li>verify that Extract Interface doesn't copy annotations to the super interface</li>
-	<li>verify that Override/Implement Methods doesn't copy annotations to the new method</li>
+	<li>* verify that Extract Interface doesn't copy annotations to the super interface</li>
+	<li>* verify that Override/Implement Methods doesn't copy annotations to the new method</li>
 </ul>
+* caveat: @Nullable and @NonNull have special rules. By default, they are copied up and down
+the hierarchy. But if null annotation inheritance is enabled in the preferences, they should only be on the top method
+in the inheritance hierarchy.
 
 <h4>Out-of-sync resource deletion (Dani, Manju - Questions: Markus)</h4>
 <ul>
 	<li>verify that we don't silently delete out-of-sync resources (files, folders and projects)</li>
-	<li>verify that we the user can continue to delete once he confirms the dialog</li>
+	<li>verify that the user can continue to delete once he confirms the dialog</li>
 </ul>
 
-<h4>Improved generations of @Override annotations (Dani, Manju - Questions: Markus)</h4>
+<h4>Improved generation of @Override annotations (Dani, Manju - Questions: Markus)</h4>
 <ul>
 	<li>verify that that the link on the 'Code Style' property and preference page works</li>
 	<li>verify that we honor the 'Include implementations of interface methods' compiler setting when generating code</li>
