@@ -3,7 +3,12 @@
      ====================================================================== -->
 <project name="project" default="default">
     <description>
-        install Greasemonkey scripts if
+      - updates timestamp if the file is dirty (according to git)
+    	  This hacks around missing support for
+    	    - gitattributes: https://bugs.eclipse.org/342372
+    	    - pre-commit hook: https://bugs.eclipse.org/299315
+    	
+      - installs script if
          1. file got modified, and
          2. global Ant property of file name exists (with full OS path to file as value)
             E.g. set property jdtbugzilla.user.js to C:\Users\[user]\AppData\Roaming\Mozilla\Firefox\Profiles\[random].default\gm_scripts\JDT_UI_Bugzilla_Add-On\jdtbugzilla.user.js
@@ -23,13 +28,13 @@
 	<macrodef name="doinstall">
 	  <attribute name="file"/>
 	  <sequential>
+    	<antcall target="update_time_stamp">
+    		<param name="file" value="@{file}"/>
+    	</antcall>
     	<antcall target="undefined">
     		<param name="file" value="@{file}"/>
     	</antcall>
     	<antcall target="copyfile">
-    		<param name="file" value="@{file}"/>
-    	</antcall>
-    	<antcall target="update_time_stamp">
     		<param name="file" value="@{file}"/>
     	</antcall>
 	  </sequential>
@@ -42,19 +47,33 @@
 	
     <target name="copyfile" if="${file}">
     	<propertycopy name="filepath" from="${file}"/>
-    	<uptodate property="isUpToDate" srcfile="${file}" targetfile="${filepath}"/>
-    	
         <copy file="${file}" tofile="${filepath}" verbose="true"/>
 <!-- 
     	<echo>copy file="${file}" tofile="${filepath}"</echo>
 -->
     </target>
 	
-	<target name="update_time_stamp" unless="${isUpToDate}">
-    	<tstamp>
+	<target name="update_time_stamp" depends="up_to_date_check" unless="${isUpToDate}">
+		<tstamp>
     		<format property="DTSTAMP" pattern="yyyyMMdd'T'HHmm" timezone="Europe/Zurich"/>
     	</tstamp>
     	<replaceregexp file="${file}" match="(// @version\s+\d+\.)\d+T\d+" replace="\1${DTSTAMP}"/>
+	</target>
+	
+	<target name="up_to_date_check">
+		<exec executable="git" outputproperty="gitstatus" failifexecutionfails="false">
+			<arg value="status"/>
+			<arg value="-z"/>
+			<arg value="${file}"/>
+		</exec>
+		<condition property="isUpToDate">
+			<or>
+				<not>
+					<isset property="gitstatus"/>
+				</not>
+				<equals arg1="${gitstatus}" arg2=""/>
+			</or>
+		</condition>
 	</target>
 
 	<macrodef name="propertycopy">
