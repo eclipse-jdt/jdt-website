@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121023T1243
+// @version 1.20121106T2041
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -53,7 +53,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 M3", "4.3 M4", "4.3", "BETA J8", "3.8.2", "4.2.2"];
+var target_milestones= ["4.3 M4", "4.3 M5", "4.3", "BETA J8", "3.8.2", "4.2.2"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
