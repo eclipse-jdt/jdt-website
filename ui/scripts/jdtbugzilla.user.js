@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20121106T2041
+// @version 1.20121109T1446
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1116,6 +1116,24 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    var subtitleElem= document.getElementById("subtitle");
 			    if (subtitleElem) {
 				    subtitleElem.textContent= "";
+				}
+				
+				// Fix vscroll when jumping to hash locations (accommodate for fixed header table):
+				var bodyElem= document.getElementsByTagName("body")[0];
+				if (headElem && bodyElem) {
+					var scriptElem= document.createElement("script");
+					scriptElem.type= "text/javascript";
+					scriptElem.innerHTML=
+					      "function locationHashChanged() {\n"
+					    + "  var off= - document.getElementById('titles').offsetHeight - 3;\n"
+					    + "  console.log(off);\n"
+					    + "  window.scrollBy(0, off);\n"
+					    + "}\n"
+					    ;
+					headElem.appendChild(scriptElem);
+					bodyElem.setAttribute("onhashchange", "locationHashChanged();");
+					//TODO: Maybe the pageshow event would also work if the location hash did not change (e.g. on second click to hash link):
+					// http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html#event-pageshow
 				}
 			}
 			
