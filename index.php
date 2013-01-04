@@ -41,7 +41,7 @@ ob_start();
           <td width="82%"><b>Description</b></td>
         </tr>
         <tr> 
-          <td valign="top" width="20%"><a href="http://www.eclipse.org/jdt/apt/index.html" target="_top">APT</a></td>
+          <td valign="top" width="20%"><a href="apt/index.php" target="_top">APT</a></td>
 		  <td width="82%">Java 5.0 annotation processing infrastructure</td>
         </tr>
         <tr> 

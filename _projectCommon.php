@@ -25,8 +25,8 @@
 	$Nav->addCustomNav("Mailing Lists",     "http://www.eclipse.org/mail/", "_self", 1);
 	$Nav->addNavSeparator("Platform",       "http://www.eclipse.org/platform/");
 	$Nav->addNavSeparator("JDT Components", "http://www.eclipse.org/jdt/index.php");
-	$Nav->addCustomNav("APT", 	"http://www.eclipse.org/jdt/apt/index.html", "_self", 1);
-	$Nav->addCustomNav("Core", 	"http://www.eclipse.org/jdt/core/index.php", "_self", 1);
-	$Nav->addCustomNav("Debug", "http://dev.eclipse.org/viewcvs/index.cgi/%7Echeckout%7E/jdt-debug-home/index.html", "_self", 1);
-	$Nav->addCustomNav("UI", 	"http://www.eclipse.org/jdt/ui/index.php", "_self", 1);
+	$Nav->addCustomNav("APT", 	"/jdt/apt/index.php", "_self", 1);
+	$Nav->addCustomNav("Core", 	"/jdt/core/index.php", "_self", 1);
+	$Nav->addCustomNav("Debug", "http://www.eclipse.org/eclipse/debug/index.php", "_self", 1);
+	$Nav->addCustomNav("UI", 	"/jdt/ui/index.php", "_self", 1);
 ?>
