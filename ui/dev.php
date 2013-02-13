@@ -103,7 +103,6 @@ ob_start();
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit/">org.eclipse.jdt.junit</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit.runtime/">org.eclipse.jdt.junit.runtime</a></li>
 				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.junit4.runtime/">org.eclipse.jdt.junit4.runtime</a></li>
-				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.junit4/">org.junit4</a></li>
 			</ul>
 			<br>
 			<h4>Tests:</h4>
