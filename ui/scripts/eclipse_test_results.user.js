@@ -11,66 +11,82 @@
 // ==UserScript==
 // @name          Eclipse Test Results
 // @namespace     org.eclipse.jdt.ui
-// @description   adds links to raw XML test result files and fixes broken "Properties >>" links
+// @description   adds links to raw XML test result files and implements https://issues.apache.org/bugzilla/show_bug.cgi?id=54180
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20121023T1243
+// @version       1.20130225T1413
 
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
+// @include       http*://hudson.eclipse.org/hudson/view/*/eclipse-testing/results/html/*.html
 // ==/UserScript==
 
 
-// ************************** hack around https://bugs.eclipse.org/342441 ****************************
-if (window.location.pathname.match(/.*\/testresults\/html\/.*\.html/)) {
-    var scripts= document.getElementsByTagName("script");
-    if (scripts && scripts[0]) {
-	    var sElem= scripts[0];
-        
-        var text= sElem.textContent;
-	    var regex= /(= '[^'\r\n]*)[\r\n]+([^']*')/g;
-        
-        var fixed= false;
-		var index= text.search(regex);
-		if (index != -1) {
-//	    	GM_log(index + ": " + text.match(regex));
-			while (index != -1) {
-			    fixed= true;
-	            text= text.replace(regex, "$1<br>$2");
-				index= text.search(regex);
-//				GM_log(index + ": " + text.match(regex));
-	        }
-	        
-	        sElem.textContent= text;
-	        
-	        //unsafeWindow.eval(text); // really shouldn't do this
-	        
-	        // Add/remove a script node (adding runs the script, removing cleans up)
-	        var script= document.createElement("script");
-	        script.setAttribute("type", "application/javascript");
-	        script.textContent= text;
-		    document.body.appendChild(script);
-		    document.body.removeChild(script);
-		}
-		
-		if (fixed && scripts[1]) {
-            var text= scripts[1].textContent;
-	        regex= /(Properties of )/g;
-	        index= text.search(regex);
-	        if (index != -1) {
-	            text= text.replace(regex, "<u>Tweaked by Greasemonkey script to work around <a href='https://bugs.eclipse.org/342441'>bug 342441</a>!</u> $1");
-		        var script= document.createElement("script");
-		        script.setAttribute("type", "application/javascript");
-		        script.textContent= text;
-			    document.body.appendChild(script);
-			    document.body.removeChild(script);
-	        }
-	    }
-	}
+if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
 
+    var script= document.createElement("script");
+    script.setAttribute("type", "application/javascript");
+    script.textContent=
+'        function findTop(obj) {\n' +
+'          var curtop = 0;\n' +
+'          if (obj.offsetParent) {\n' +
+'            do {\n' +
+'              curtop += obj.offsetTop;\n' +
+'            } while (obj = obj.offsetParent);\n' +
+'            return curtop;\n' +
+'          }\n' +
+'        }\n' +
+'        \n' +
+'        function keyHandler(e) {\n' +
+'          if (typeof(e) == "undefined") {\n' +
+'            e = event;\n' +
+'          }\n' +
+'          if (e && e.ctrlKey && e.keyCode == 190 /*Ctrl+.*/) {\n' +
+'            if (typeof(document.getElementsByClassName) == "undefined") {\n' +
+'              document.getElementsByClassName = function (className) {\n' +
+'                var trs = document.getElementsByTagName("tr");\n' +
+'                var res = new Array();\n' +
+'                for (i = 0; i < trs.length; i++) {\n' +
+'                  var tr = trs[i];\n' +
+'                  var cls = tr.className;\n' +
+'                  if (cls == className) {\n' +
+'                    res.push(tr);\n' +
+'                  }\n' +
+'                }\n' +
+'                return res;\n' +
+'              }\n' +
+'            }\n' +
+'            var windowY = typeof(window.scrollY) != "undefined" ? window.scrollY : document.body.scrollTop;\n' +
+'            windowY++; // want to jump to the next\n' +
+'            var targetY = Number.MAX_VALUE;\n' +
+'            var target;\n' +
+'            var errs = document.getElementsByClassName("Error");\n' +
+'            for (var i = 0; i < errs.length; i++) {\n' +
+'              var elt = errs[i];\n' +
+'              if (elt.childNodes.length > 2) {\n' +
+'                  var status = elt.childNodes[2].firstChild.nodeValue;\n' +
+'                  if (status != "Error" && status != "Failure")\n' +
+'                      continue; // only stop in test results, not in summary header\n' +
+'              }\n' +
+'              var y = findTop(elt);\n' +
+'              if (y > windowY && y < targetY) {\n' +
+'                target = elt;\n' +
+'                targetY = y;\n' +
+'              }\n' +
+'            }\n' +
+'            if (target) {\n' +
+'              target.scrollIntoView();\n' +
+'            }\n' +
+'            \n' +
+'            return false;\n' +
+'          }\n' +
+'        }\n' +
+'        document.onkeydown = keyHandler;\n';
+
+    document.body.appendChild(script);
+    
 } else {
-// ************************** END hack around https://bugs.eclipse.org/342441 ****************************
 
 
 var anchors= document.getElementsByTagName("a");
