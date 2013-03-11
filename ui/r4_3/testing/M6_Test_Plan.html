@@ -21,8 +21,8 @@ Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gup
 </ul>
 <h3>Platforms</h3>
 <ul>
-  <li>Windows 7: Dani, Manju, Noopur</li>
-  <li>Linux-GTK (sanity check only): Dani</li>
+  <li>Windows 7: Dani, Manju</li>
+  <li>Linux-GTK: Noopur</li>
   <li>Mac OS X 10.8: Markus</li>
 </ul>
 
@@ -42,21 +42,71 @@ Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gup
 	<li>test Sub-Tab traversal</li>
 </ul>
 
+<h4>Info views indicate when they are out of sync (Noopur, Markus - Questions: Dani)</h4>
+Test the Javadoc and the Declaration view.
+<ul>
+	<li>test that the view indicates when it goes out of sync</li>
+	<li>test that the out of sync indication goes away when back in sync</li>
+	<li>test that the out of sync indication goes away when clicking the link button twice</li>
+</ul>
+
+<h4>if-else closing bracket hover includes else statement (Dani, Manju - Questions: Noopur)</h4> 
+<ul>
+	<li>test that the else statement is shown in the hover</li>
+</ul>
+
+<h4>Convert to if-return quick assist (Markus, Dani - Questions: Noopur)</h4> 
+<ul>
+	<li>verify that the quick assist works as expected</li>
+	<li>verify that the quick assist appears at the expected locations</li>
+	<li>verify that the quick assist does not appear at unexpected locations</li>
+</ul>
+
+<h4>Extract field access to checked local variable quick fix (Manju, Markus - Questions: Stephan or Dani)</h4> 
+<ul>
+	<li>verify that the quick fix works as expected</li>
+</ul>
+
+<h4>Package segments in Javadoc headers appear as links (Dani, Noopur - Questions: Manju)</h4> 
+<ul>
+	<li>verify it in the Javadoc view and the Javadoc hovers</li>
+</ul>
+
+<h4>Report to user if attached Javadoc is not accessible (Markus, Noopur - Questions: Manju)</h4> 
+<ul>
+	<li>verify different scenarios where the attached Javadoc can't be accessed</li>
+	<li>verify it in the Javadoc view and the Javadoc hovers</li>
+</ul>
+
+<h4>Whole word search option on File Search page (Manju, Noopur - Questions: Dani)</h4> 
+<ul>
+	<li>test that the option works</li>
+</ul>
+You don't need to test regex+whole word being enabled, as this will go away for M6 (see bug 402009).
+
+<h4>New option to use last used search page (Noopur, Manju - Questions: Dani)</h4>
+The Search dialog has a new option, which allows to remember the last used search page, instead of computing the
+page which matches best. The option is available via 'Customize...' dialog.
+<ul>
+	<li>test that the option works when enabled</li>
+	<li>test that opening on the best fitting page works again when disabling the option</li>
+</ul>
+
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
 <ul>
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3%20M6&amp;target_milestone=3.8.2&amp;target_milestone=3.8.2%2B&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  P1 JDT UI bugs, 4.3 M6 and 3.8.2</a></li>
+  P1 JDT UI bugs, 4.3 M6</a></li>
 
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3%20M6&amp;target_milestone=3.8.2&amp;target_milestone=3.8.2%2B&amp;target_milestone=4.2.2&amp;target_milestone=4.2.2%2B&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  P1 Text and Search bugs, 4.3 M6 and 3.8.2</a></li>
+  P1 Text and Search bugs, 4.3 M6</a></li>
 
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3%20M6&amp;target_milestone=3.8.2&amp;target_milestone=3.8.2%2B&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  JDT UI bugs blocker/critical/major, 4.3 M6 and 3.8.2</a></li>
+  JDT UI bugs blocker/critical/major, 4.3 M6</a></li>
 
   <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3%20M6&amp;target_milestone=3.8.2&amp;target_milestone=3.8.2%2B&amp;query_format=advanced&amp;target_milestone=4.2.2&amp;target_milestone=4.2.2%2B&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
-  Text and Search bugs blocker/critical/major, 4.3 M6 and 3.8.2</a></li>
+  Text and Search bugs blocker/critical/major, 4.3 M6</a></li>
 </ul>
 
 
