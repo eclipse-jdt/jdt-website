@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130321T1629
+// @version 1.20130321T1956
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -53,7 +53,7 @@
 // --- Configurable options --------------------------------------------
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 M7", "4.3", "BETA J8", "3.8.2+", "4.2.2+"];
+var target_milestones= ["4.3 M7", "BETA J8", "4.3", "3.8.2+", "4.2.2+"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -364,7 +364,7 @@ function addEmailLinks(emailElemName, myMail) {
 		var sp= document.createElement("span");
 		emailElem.parentNode.parentNode.insertBefore(sp, emailElem.parentNode);
 		if (myMail) {
-	        addEmailLink("Me", myMail, emailElemName, sp);
+	        addEmailLink("me", myMail, emailElemName, sp);
 		}
 	    for (var i= 0; i < ccs.length; i= i+2) {
 	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
@@ -700,7 +700,7 @@ if (headElem) {
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
 	
-	// Don't show "Add Me to the CC List" button:
+	// Don't show "Add Me to the CC List" button in "Possible Duplicates" on enter_bug.cgi:
 	    + ".yui-dt-col-update_token { display: none; }\n"
 	    ;
 	headElem.appendChild(styleElem);
@@ -1422,7 +1422,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		
 	    // Add shortcut assignee links:
 	    if (myMail) {
-            addAssigneeLink("Me", myMail, bz_assignee_inputElem);
+            addAssigneeLink("me", myMail, bz_assignee_inputElem);
         }
 	    for (var i= 0; i < assignees.length; i= i+2) {
             addAssigneeLink(assignees[i], assignees[i + 1], bz_assignee_inputElem);
