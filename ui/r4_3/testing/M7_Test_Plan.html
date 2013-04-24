@@ -36,11 +36,22 @@ Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gup
 <h2>Test New Functionality </h2>
 <em>First test the items where listed as first tester, then go to the other ones.</em>
 
-<h4>Item 1 (Tester1, Tester2 - Questions: BugOwner)</h4> 
+<h4>Pressing ';' as trigger to select a method should work with all methods. ( - Questions: Manju)</h4> 
 <ul>
-	<li>....</li>
+	<li>Verify that pressing ';' to select a method through content assist works for all method types.</li>
+	<li>Verify duplicate ';' is not added in any case. Test this after enabling smart insert of semicolon in preference page.</li>
 </ul>
 
+<h4>Append ';' when a void method is inserted via content assist. ( - Questions: Manju)</h4> 
+<ul>
+	<li>Verify that when a void method is inserted via content assist, ';' is appended to the end of the method.</li>	
+</ul>
+
+<h4>Refresh on call hierarchy should bring back previously removed nodes. ( - Questions: Manju)</h4> 
+<ul>
+	<li>Verify that in call hierarchy view, deleting a node and then refreshing the view should bring back the removed node.</li>
+	<li>Verify that duplicate nodes are not displayed when user perform drag and drop of the previously removed node in the view.</li>
+</ul> 
 
 <h2>Bug Verification (All)</h2>
 <em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
