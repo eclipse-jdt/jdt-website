@@ -36,39 +36,69 @@ Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gup
 <h2>Test New Functionality </h2>
 <em>First test the items where listed as first tester, then go to the other ones.</em>
 
-<h4>Pressing ';' as trigger to select a method should work with all methods. ( - Questions: Manju)</h4> 
+<h4>Pressing ';' as trigger to select a method should work with all methods. (Markus, Noopur - Questions: Manju)</h4> 
 <ul>
 	<li>Verify that pressing ';' to select a method through content assist works for all method types.</li>
 	<li>Verify duplicate ';' is not added in any case. Test this after enabling smart insert of semicolon in preference page.</li>
 </ul>
 
-<h4>Append ';' when a void method is inserted via content assist. ( - Questions: Manju)</h4> 
+<h4>Append ';' when a void method is inserted via content assist. (Noopur, Markus - Questions: Manju)</h4> 
 <ul>
 	<li>Verify that when a void method is inserted via content assist, ';' is appended to the end of the method.</li>	
 </ul>
 
-<h4>Refresh on call hierarchy should bring back previously removed nodes. ( - Questions: Manju)</h4> 
+<h4>Refresh on call hierarchy should bring back previously removed nodes. (Dani, Markus - Questions: Manju)</h4> 
 <ul>
 	<li>Verify that in call hierarchy view, deleting a node and then refreshing the view should bring back the removed node.</li>
 	<li>Verify that duplicate nodes are not displayed when user perform drag and drop of the previously removed node in the view.</li>
 </ul>
 
-<h4>Remove text up to '>' on deleting '<' ( - Questions: Noopur)</h4> 
+<h4>Remove text up to '>' on deleting '<' (Markus, Manju - Questions: Noopur)</h4> 
 <ul>
 	<li>Verify that when content assist adds type parameters along with '<' and '>' for generic types, 
 	deleting '<' in linked mode removes the entire text up to '>'.</li>
 </ul>
 
-<h4>'Restore Defaults' for Colors and Fonts Preferences ( - Questions: Noopur)</h4> 
+<h4>'Restore Defaults' for Colors and Fonts Preferences (Manju, Dani - Questions: Noopur)</h4> 
 <ul>
 	<li>Verify that 'Restore Defaults' for Colors and Fonts Preferences works as expected.</li>
 </ul>
  
-<h4>Completions without prefix ( - Questions: Dani)</h4> 
+<h4>Completions without prefix (Noopur, Manju - Questions: Dani)</h4> 
 <ul>
 	<li>verify that template proposals appear without typing a prefix</li>
 	<li>verify that keyword proposals appear without typing a prefix</li>
 	<li>verify that we don't get unexpected proposals when invoking content assist without a prefix</li>
+</ul> 
+
+<h4>Quick Fix to create loop variable (Dani, Noopur - Questions: Markus)</h4> 
+When an enhanced for loop misses the type of the loop variable, the compiler generates 3 errors that are not too helpful (bug 180456).
+<ul>
+	<li>verify that the quick fix works when the caret is on either of the errors</li>
+	<li>verify that no exceptions are thrown when the for loop's expression cannot be resolved</li>
+</ul> 
+
+<h4>JUnit view renders assumptions as skipped (Manju, Noopur - Questions: Markus)</h4> 
+<ul>
+	<li>verify that JUnit 3 test runs are rendered as before</li>
+	<li>verify that JUnit 4 tests are rendered correctly:
+		<ul>
+		<li>ignored tests have an empty icon with a slash</li>
+		<li>tests whose assumption was not met have an icon with a slash and a non-empty failure trace</li>
+		</ul>
+	</li>
+	<li>verify that counters are correct</li>
+	<li>verify that test runs are still rendered correctly after switching back and forth in history</li>
+</ul>
+
+<h4>Open Resource drop-down buttons (Noopur, Dani - Questions: Markus)</h4> 
+<ul>
+	<li>verify that button enablement makes sense</li>
+	<li>verify that Show In works with multi-selection</li>
+	<li>verify that context menus still work</li>
+	<li>verify that corner cases with button menu opening & closing are handled correctly
+		<ul><li>e.g. open with click, close with Esc</li></ul>
+	</li>
 </ul> 
 
 <h2>Bug Verification (All)</h2>
