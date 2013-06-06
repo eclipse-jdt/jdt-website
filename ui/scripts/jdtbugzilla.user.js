@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130522T1246
+// @version 1.20130606T1250
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -51,9 +51,10 @@
 // ==/UserScript==
 
 // --- Configurable options --------------------------------------------
+// These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["4.3 RC2", "BETA J8", "4.3 RC3", "4.3", "4.4", "3.8.2+", "4.2.2+"];
+var target_milestones= ["4.3.1", "BETA J8", "4.4", "3.8.2+", "4.2.2+"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -90,7 +91,7 @@ var platforms= [
 ];
 
 // Add quick version links on the search page (<version> for exact version, <version*> for prefix match):
-var queryVersions= [ "3.*", "4.*", "4.2"];
+var queryVersions= [ "3.*", "4.*", "4.3"];
 
 // Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...] pairs):
 var queryClassifications= [
