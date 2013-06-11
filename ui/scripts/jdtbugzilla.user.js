@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130606T1250
+// @version 1.20130611T1953
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -616,6 +616,8 @@ function createCategoryChoosers() {
 //-----------
 
 //----------- Start the real work
+
+function main() { // GM 1.0 belches for "return" outside of function, see http://www.greasespot.net/2012/08/greasemonkey-10-release.html
 
 // Don't run in frames or iframes:
 if (window.top != window.self) {
@@ -1476,3 +1478,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	
 }
+
+}
+main();
