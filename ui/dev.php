@@ -142,7 +142,8 @@ ob_start();
 			<h3>Greasemonkey scripts (aka user scripts)</h3>
 			<p>JDT UI developers are heavy users of <a href="https://bugs.eclipse.org/bugs/">bugs.eclipse.org</a>.
 			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created the
-			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.
+			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.</p>
+			<p>
 			   The script always works with the latest release of Firefox, Greasemonkey, and bugs.eclipse.org.
 			   It should also work with Chrome, see the "Learn more" link in the message that appears when you try to open the link.
 			   Auto-updates don't seem to work in Chrome (would probably need some special packaging as a Chrome extension).</p>
