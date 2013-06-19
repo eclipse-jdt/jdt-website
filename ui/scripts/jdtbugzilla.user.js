@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130611T1953
+// @version 1.20130619T1227
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -772,6 +772,21 @@ for (var i= 0; i < labels.length; i++) {
         addFromDateLink(labelElem, "1m");
         addFromDateLink(labelElem, "3m");
         addFromDateLink(labelElem, "1y");
+    
+    // Bug 367944: Bug fields doc doesn't describe severity any more:
+    } else if (forAtt == "priority" || forAtt == "bug_severity") {
+        labelElem.setAttribute("title",
+              "- blocker: blocks development and/or testing work\n"
+            + "- critical: crashes, loss of data, severe memory leak\n"
+            + "- major: major loss of function\n"
+            + "- normal: regular issue, some loss of functionality under specific circumstances\n"
+            + "- minor: minor loss of function, or other problem where easy workaround is present\n"
+            + "- trivial: cosmetic problem like misspelled words or misaligned text\n"
+            + "- enhancement: request for enhancement");
+         var field_help_linkElems= labelElem.getElementsByClassName("field_help_link");
+         if (field_help_linkElems.length > 0) {
+             field_help_linkElems[0].removeAttribute("title");
+         }
     }
 }
 
