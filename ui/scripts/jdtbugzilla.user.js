@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130619T1304
+// @version 1.20130709T1225
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -672,7 +672,7 @@ if (headElem) {
 	// Fix color of comment number:
 	    + ".bz_comment_number { color: #65379c; }\n"
 	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
-	    + ".bz_enhancement { background-color: transparent ! important; }\n"
+	    + ".bz_enhancement { background-color: #FFFFFF ! important; }\n"
 	    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
 	    
 	// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
