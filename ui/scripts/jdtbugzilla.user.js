@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130709T1225
+// @version 1.20130717T1712
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1228,9 +1228,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
 		    fullElem.style.textDecoration="none";
 		    fullElem.title= aElemHref.substr(7);
-		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
-		    
 	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
+	        
+		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
+		    aElem.parentNode.insertBefore(document.createTextNode(" "), fullElem.nextSibling);
+		    
 		    i+= 1; // skip new link
 		    
 	    } else if (aElemHref == "index.cgi?logout=1") {
