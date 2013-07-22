@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130717T1712
+// @version 1.20130722T1858
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1237,6 +1237,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    
 	    } else if (aElemHref == "index.cgi?logout=1") {
 	        myMail= aElem.nextSibling.textContent.trim();
+	    
+	    // Hide CLA flags until mouseovered:
+	    } else if (aElemHref == "http://wiki.eclipse.org/CLA") {
+	        aElem.firstChild.setAttribute("style", "visibility: hidden;");
+	        aElem.setAttribute("onmouseout", "this.firstChild.style.visibility='hidden';")
+	        aElem.setAttribute("onmouseover", "this.firstChild.style.visibility='visible';")
 	    }
 	    
 	//    // Show obsolete attachments initially:
