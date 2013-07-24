@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130723T1822
+// @version 1.20130724T1155
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -229,6 +229,59 @@ categories["JDT"]= [
 ];
 categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
+// Various CSS fixes:
+var css =
+	// Fix baseline of labels:
+	      ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
+	// Fix colors in title:
+	    + "#titles a { color: #039 ! important; }\n"
+	    + "#titles a:visited { color: #636 ! important; }\n"
+	    + "#titles a:hover { color: #333 ! important; }\n"
+	    + "#titles a:active { color: #000 ! important; }\n"
+	    + "#titles { background-color: #C0C0C0; color: #000000; }\n"
+	// Decrease height of title:
+	    + "#titles { padding-top: 0.3em; padding-bottom: 0.3em; }\n"
+	// Fix color of comment number:
+	    + ".bz_comment_number { color: #65379c; }\n"
+	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
+	    + ".bz_enhancement { background-color: #FFFFFF ! important; }\n"
+	    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
+	    
+	// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
+	    + "tr.bz_buglist_header th a { white-space: nowrap; }\n"
+	// Remove disgusting underlines:
+	    + "td.bz_short_desc_column a { text-decoration: none; }\n"
+	    + "td.bz_short_desc_column a:hover { text-decoration: underline; }\n"
+	// Highlight row background on hover:
+	//    + "tr.bz_bugitem:hover { background-color: #CCCCFF; ! important }" // doesnt work, since other rules are more important...
+	
+	// Fix attachments table width:
+	    + "#attachment_table { width: auto ! important; }\n"
+	// Make "Show Obsolete" more prominent:
+	    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }\n"
+	// Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
+	    + "#comment { overflow-y:scroll; }\n"
+	// Render <button> like <input>:
+	    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
+	// Make auto-complete drop-downs look like drop-downs:
+	    + ".yui-ac-content { box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); }\n"
+	// Don't fill whole line with email field on bug page (Bugzilla sets to 100% which makes quick links wrap):
+	    + ".bz_userfield { width: 300px; }\n"
+	    
+	// Search field dimensions:
+	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
+	    + ".search_field_grid { margin-top: 0em; }\n"
+	    + ".search_email_fields { width: 300px; }\n"
+	// Don't waste another line for Search > Bugs numbered:
+	    + "#bug_id_container .field_help { display:inline; }\n"
+	
+	// Don't show "Add Me to the CC List" button in "Possible Duplicates" on enter_bug.cgi:
+	    + ".yui-dt-col-update_token { display: none; }\n"
+	
+	// Dim CLA flags until hovered:
+	    + ".cla_dec { opacity: 0.2; }\n"
+	    + ".cla_dec:hover { opacity: 1.0; }\n"
+	    ;
 
 // --- /Configurable options ------------------------------------------
 
@@ -659,57 +712,7 @@ var headElem= document.getElementsByTagName("head")[0];
 if (headElem) {
 	var styleElem= document.createElement("style");
 	styleElem.type= "text/css";
-	// Fix baseline of labels:
-	styleElem.innerHTML= ".field_label { padding-top: .25em; padding-bottom: .3em; }\n"
-	// Fix colors in title:
-	    + "#titles a { color: #039 ! important; }\n"
-	    + "#titles a:visited { color: #636 ! important; }\n"
-	    + "#titles a:hover { color: #333 ! important; }\n"
-	    + "#titles a:active { color: #000 ! important; }\n"
-	    + "#titles { background-color: #C0C0C0; color: #000000; }\n"
-	// Decrease height of title:
-	    + "#titles { padding-top: 0.3em; padding-bottom: 0.3em; }\n"
-	// Fix color of comment number:
-	    + ".bz_comment_number { color: #65379c; }\n"
-	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
-	    + ".bz_enhancement { background-color: #FFFFFF ! important; }\n"
-	    + ".bz_row_odd { background-color: #F7F7F7 ! important; }\n"
-	    
-	// Don't wrap headers in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333392#c4 :
-	    + "tr.bz_buglist_header th a { white-space: nowrap; }\n"
-	// Remove disgusting underlines:
-	    + "td.bz_short_desc_column a { text-decoration: none; }\n"
-	    + "td.bz_short_desc_column a:hover { text-decoration: underline; }\n"
-	// Highlight row background on hover:
-	//    + "tr.bz_bugitem:hover { background-color: #CCCCFF; ! important }" // doesnt work, since other rules are more important...
-	
-	// Fix attachments table width:
-	    + "#attachment_table { width: auto ! important; }\n"
-	// Make "Show Obsolete" more prominent:
-	    + ".bz_attach_view_hide { font-weight: bold ! important; color: red ! important; }\n"
-	// Always show vertical scroll bar for Description field (gives proper wrapping-preview for short comments):
-	    + "#comment { overflow-y:scroll; }\n"
-	// Render <button> like <input>:
-	    + "button { font-family: Verdana, sans-serif; font-size: small; }\n"
-	// Make auto-complete drop-downs look like drop-downs:
-	    + ".yui-ac-content { box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); }\n"
-	// Don't fill whole line with email field on bug page (Bugzilla sets to 100% which makes quick links wrap):
-	    + ".bz_userfield { width: 300px; }\n"
-	    
-	// Search field dimensions:
-	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
-	    + ".search_field_grid { margin-top: 0em; }\n"
-	    + ".search_email_fields { width: 300px; }\n"
-	// Don't waste another line for Search > Bugs numbered:
-	    + "#bug_id_container .field_help { display:inline; }\n"
-	
-	// Don't show "Add Me to the CC List" button in "Possible Duplicates" on enter_bug.cgi:
-	    + ".yui-dt-col-update_token { display: none; }\n"
-	
-	// Dim CLA flags until hovered:
-	    + ".cla_dec { opacity: 0.2; }\n"
-	    + ".cla_dec:hover { opacity: 1.0; }\n"
-	    ;
+	styleElem.innerHTML = css;
 	headElem.appendChild(styleElem);
 }
 

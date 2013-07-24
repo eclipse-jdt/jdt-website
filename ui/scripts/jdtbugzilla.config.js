@@ -3,8 +3,12 @@
 // To override configuration options, just assign new values to the variables
 // that are defined at the beginning of the script. 
 
-/* Example (commented out):
+/* Examples (commented out):
+
 ccs= [
 "EX", "mail@example.com",
-]; 
+];
+
+css+= ".cla_dec { opacity: 0.1; }";
+
 */
