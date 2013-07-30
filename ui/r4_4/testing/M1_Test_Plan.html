@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Luna M1 Test Plan</title>
+</head>
+<body>
+<h1>Luna M1 Test Plan</h1>
+Testing day: Monday 2013-08-05<br>
+Test Builds: M20130731-0800 and latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gupta@in.ibm.com">Noopur</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.3.1 build: everybody</li>
+  <li>4.4 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Manju</li>
+  <li>Linux-GTK: Noopur</li>
+  <li>Mac OS X 10.6 / 10.7: -</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.3</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>verify that all 4.3.1 bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<h4>Monospace font option for the Junit view (Manju, Noopur - Questions: Noopur)</h4>
+<ul>
+	<li>verify that the preference is there and correctly spelled</li>
+	<li>verify that the font is updated in the view when the preference is changed, even if only 'Apply' is pressed</li>
+	<li>verify that the font is updated in the view when the preference is changed via 'Apply' button</li>
+</ul>
+
+<h4>Improved Recenter command (Noopur, Manju) - Questions: Dani)</h4>
+<ul>
+	<li>verify that first invocation still does the same as in 4.3</li>
+	<li>verify that further invocations rotate between top, bottom and center</li>
+</ul>
+
+
+<h2>4.3.1 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3.1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3.1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.4 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.4 M1</a></li>
+</ul>
+
+<h2>Sanity Check The Build</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
