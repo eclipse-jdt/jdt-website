@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130812T1205
+// @version 1.20130813T1808
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -271,7 +271,7 @@ var css =
 	// Search field dimensions:
 	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
 	    + ".search_field_grid { margin-top: 0em; }\n"
-	    + ".search_email_fields { width: 300px; }\n"
+	    + ".search_email_fields { width: 365px; }\n"
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
 	
@@ -414,16 +414,26 @@ function addPlatformLink(parentElem, name, hardware, os) {
 function addEmailLinks(emailElemName, myMail) {
 	var emailElem= document.getElementById(emailElemName);
 	if (emailElem) {
-	    emailElem.parentNode.setAttribute("style", "width: 100%");
-		var sp= document.createElement("span");
-		emailElem.parentNode.parentNode.insertBefore(sp, emailElem.parentNode);
-		if (myMail) {
-	        addEmailLink("me", myMail, emailElemName, sp);
-		}
-	    for (var i= 0; i < ccs.length; i= i+2) {
-	        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
+	    emailElem.setAttribute("style", "width: 100%");
+	    var emailtypeElems= emailElem.parentNode.getElementsByTagName("select");
+	    if (!(emailtypeElems && emailtypeElems[0])) { // intermediate <div id="email1_autocomplete" class="yui-ac">
+	        emailtypeElems= emailElem.parentNode.parentNode.getElementsByTagName("select");
+	        emailElem.parentNode.setAttribute("style", "width: 100%");
 	    }
-		emailElem.parentNode.parentNode.insertBefore(document.createElement("br"), emailElem.parentNode);
+	    if (emailtypeElems && emailtypeElems[0]) {
+	        var emailtypeElem= emailtypeElems[0];
+	        
+			var sp= document.createElement("span");
+			emailtypeElem.parentNode.insertBefore(sp, emailtypeElem.nextElementSibling);
+			if (myMail) {
+		        addEmailLink("me", myMail, emailElemName, sp);
+			}
+		    for (var i= 0; i < ccs.length; i= i+2) {
+		        addEmailLink(ccs[i], ccs[i + 1], emailElemName, sp);
+		    }
+			emailtypeElem.parentNode.insertBefore(document.createElement("br"), emailtypeElem.nextElementSibling.nextElementSibling);
+	        
+	    }
 	}
 }
 
@@ -682,11 +692,12 @@ var bannerElem= document.getElementById("banner");
 if (bannerElem) {
     bannerElem.parentNode.removeChild(bannerElem);
 } else {
+    // for https://bugs.eclipse.org/bugstest/*:
     var headerElem= document.getElementById("header");
     if (headerElem) {
-        var tableElem= headerElem.getElementsByTagName("table");
-        if (tableElem && tableElem[0] && tableElem[0].parentNode == headerElem) {
-            headerElem.removeChild(tableElem[0]);
+        var fontElem= headerElem.getElementsByTagName("font");
+        if (fontElem && fontElem[0] && fontElem[0].parentNode == headerElem) {
+            headerElem.removeChild(fontElem[0]);
         }
     }
 }
@@ -953,7 +964,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		}
 		addTargetLink(targetLinkSpanElem, "---");
 		
-		targetLinkSpanElem.replaceChild(document.createElement("br"), targetLinkSpanElem.childNodes[2]);
+		var sep= targetLinkSpanElem.childNodes[6];
+		if (sep) {
+		    targetLinkSpanElem.replaceChild(document.createElement("br"), sep);
+		}
 	}
 	
 	// Add quick classification links:
@@ -1500,6 +1514,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(pElem);
 	}
+	
+//	unsafeWindow.console.log("alias: " + document.getElementById("alias"));
 	
 }
 
