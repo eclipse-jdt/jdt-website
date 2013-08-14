@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130813T1808
+// @version 1.20130814T1216
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1274,6 +1274,18 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	hideElem("summary_alias_container");
 	showElem("summary_alias_input");
 	
+	// Move alias field to bug id line:
+	var aliasElem= document.getElementById("alias");
+	var summary_alias_inputElem= document.getElementById("summary_alias_input");
+	if (aliasElem && summary_alias_inputElem) {
+		var aliasTrElem= aliasElem.parentNode.parentNode;
+		var spacer= document.createTextNode(" ");
+		summary_alias_inputElem.parentNode.insertBefore(spacer, summary_alias_inputElem.previousElementSibling);
+		var table= document.createElement("table");
+		table.setAttribute("style", "display: inline; vertical-align: -5px");
+		table.appendChild(aliasTrElem);
+		summary_alias_inputElem.parentNode.insertBefore(table, summary_alias_inputElem.previousElementSibling);
+	}
 	
 	// Edit CC list (already badly hacked on bugs.eclipse.org, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=334083 ):
 	hideElem("cc_edit_area_showhide_container");
