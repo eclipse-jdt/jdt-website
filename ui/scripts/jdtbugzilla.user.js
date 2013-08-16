@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130814T1216
+// @version 1.20130816T1856
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1129,19 +1129,19 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Rewrite header for direct copy/paste as CVS comment ("Bug xxx: Summary"):
 	var titleElem= document.getElementById("title");
 	if (titleElem) {
-	    var short_descElem= document.getElementById("short_desc");
-	    var bugRegex= /Bug\s+(\d+)/i;
-	    if (short_descElem) {
-	        if (bugRegex.test(titleElem.textContent)) {
+	    var changeformElem= document.getElementById("changeform");
+		if (changeformElem) {
+		    bugId= changeformElem.elements["id"].value;
+		    var short_desc_nonedit_displayElem= document.getElementById("short_desc_nonedit_display");
+		    if (short_desc_nonedit_displayElem) {
                 // Render bug link as short link:
-	            bugId= bugRegex.exec(titleElem.textContent)[1];
 			    var bugLink= document.createElement("a");
 			    bugLink.href= "../" + bugId;
 			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
 			    
 			    var bugElem= document.createElement("p");
 			    bugElem.appendChild(bugLink);
-			    bugElem.appendChild(document.createTextNode(": " + short_descElem.value));
+			    bugElem.appendChild(document.createTextNode(": " + short_desc_nonedit_displayElem.textContent));
 
 				titleElem.replaceChild(bugElem, titleElem.firstChild.nextSibling);
 			    
@@ -1178,20 +1178,23 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			}
 			
 			// Add bug categories choosers:
-            // Insert before summary:
-//            var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
-//            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
-
-            // Insert after summary:
-            var choosers= createCategoryChoosers();
-            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
-            short_descElem.setAttribute("style", "width: 60%;");
-            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
-            var summaryElem= document.getElementById("summary");
-            if (summaryElem) {
-                summaryElem.setAttribute("style", "width: 100%;"); // necessary for process_bug.cgi, dont ask...
-                summaryElem.parentNode.parentNode.setAttribute("style", "width: 99%;"); // fix horizonal scrollbars
-            }
+			var short_descElem= document.getElementById("short_desc");
+			if (short_descElem) {
+	            // Insert before summary:
+//	            var short_desc_divElem= short_descElem.parentNode.parentNode.parentNode.parentNode.parentNode;
+//	            short_desc_divElem.parentNode.insertBefore(createCategoryChoosers(), short_desc_divElem);
+	
+	            // Insert after summary:
+	            var choosers= createCategoryChoosers();
+	            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
+	            short_descElem.setAttribute("style", "width: 60%;");
+	            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
+	            var summaryElem= document.getElementById("summary");
+	            if (summaryElem) {
+	                summaryElem.setAttribute("style", "width: 100%;"); // necessary for process_bug.cgi, dont ask...
+	                summaryElem.parentNode.parentNode.setAttribute("style", "width: 99%;"); // fix horizonal scrollbars
+	            }
+	        }
   		}
 	}
 
