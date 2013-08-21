@@ -98,7 +98,7 @@ ob_start();
 			<p><b>Pre 4.3 builds</b></p>
 			<ul>
 				<li>3.8.2/4.2.2 builds are available from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>all other 1.x, 2.x, 3.x and 4.x builds are available from the <a
+				<li>All other 1.x, 2.x, 3.x and 4.x builds are available from the <a
 					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
 			</ul>
 		</div>
