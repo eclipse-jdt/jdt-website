@@ -91,14 +91,14 @@ ob_start();
 			
 			<p><b>R4.3 Maintenance</b></p>
 		    <ul>
-		    	<li>Information about R4.3 maintenance releases can be found <a href="http://wiki.eclipse.org/Kepler/Simultaneous_Release_Plan#Service_Releases">here</a>
+		    	<li>Information about the R4.3 maintenance release can be found <a href="http://wiki.eclipse.org/Kepler/Simultaneous_Release_Plan#Service_Releases">here</a>
 		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
 		    </ul>
 			
 			<p><b>Pre 4.3 builds</b></p>
 			<ul>
 				<li>3.8.2/4.2.2 builds are available from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>1.x, 2.x, 3.2.x, 3.3.x, 3.4.x, 3.5.x, 3.6.x, 3.7.x and 3.8.1/4.2.1 builds are available from the <a
+				<li>all other 1.x, 2.x, 3.x and 4.x builds are available from the <a
 					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
 			</ul>
 		</div>
