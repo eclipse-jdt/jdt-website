@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130816T1856
+// @version 1.20130830T1641
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -54,7 +54,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["BETA J8", "4.4 M2", "4.4", "4.3.1", "4.2.2+", "3.8.2+"];
+var target_milestones= ["BETA J8", "4.4 M2", "4.4", "4.3.1", "4.3.2", "4.2.2+", "3.8.2+"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -477,10 +477,7 @@ function addTargetLink(parentElem, milestone) {
     var onClick=
               'var target_milestoneElem= document.getElementById("target_milestone");'
             + 'target_milestoneElem.value="' + milestone + '";'
-            + 'var assigned_toElem= document.getElementById("assigned_to");'
-            + 'if (assigned_toElem) {'
-            +   'assigned_toElem.focus();assigned_toElem.select();'
-            + '}';
+            + 'target_milestoneElem.focus();';
     
     addMultiLink(milestone, onClick, onModifierClick, parentElem);
 }
