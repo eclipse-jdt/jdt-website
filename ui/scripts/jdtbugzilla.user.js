@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130830T1641
+// @version 1.20130903T1400
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -715,13 +715,20 @@ if (headerElem && headerElem.lastElementChild) {
         + 'title="Page tweaked by jdtbugzilla.user.js ' + ver + '" >Tweaked</a>!</li>';
 }
 
-// Various CSS fixes:
 var headElem= document.getElementsByTagName("head")[0];
 if (headElem) {
+	// Various CSS fixes:
 	var styleElem= document.createElement("style");
 	styleElem.type= "text/css";
 	styleElem.innerHTML = css;
 	headElem.appendChild(styleElem);
+	
+	// workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=416359 : Wrong favicon
+	// append <link rel="shortcut icon" href="images/favicon.ico" > and hope the browser will pick the last one:
+	var faviconElem= document.createElement("link");
+	faviconElem.setAttribute("rel", "shortcut icon")
+	faviconElem.setAttribute("href", "/favicon.ico")
+	headElem.appendChild(faviconElem);
 }
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
