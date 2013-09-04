@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130904T1137
+// @version 1.20130904T1308
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1506,6 +1506,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		if (bz_group_visibility_sectionElems.length > 0) {
 			bz_collapse_expand_commentsElems[0].setAttribute("style", "padding-top: 4em;");
 			bz_group_visibility_sectionElems[0].parentNode.appendChild(bz_collapse_expand_commentsElems[0]);
+		} else {
+			var add_commentElem= document.getElementById("add_comment");
+			if (add_commentElem) {
+				var tdRightOfadd_commentElem= add_commentElem.parentNode.nextElementSibling;
+				var spacer= document.createElement("div");
+				spacer.setAttribute("style", "padding-top: 9em");
+				tdRightOfadd_commentElem.appendChild(spacer);
+				tdRightOfadd_commentElem.appendChild(bz_collapse_expand_commentsElems[0]);
+			}
 		}
 		
 		// Add links to help enter a URL to a Git commit:
