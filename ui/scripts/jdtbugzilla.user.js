@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130903T1400
+// @version 1.20130904T1137
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -39,15 +39,10 @@
 // @include       https://bugs.eclipse.org/bugs/post_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
 // @include       https://bugs.eclipse.org/bugs/buglist.cgi*
+// @include       https://bugs.eclipse.org/bugs/show_activity.cgi*
 //
 // Test install for new Bugzilla versions:
-// @include       https://bugs.eclipse.org/bugstest/show_bug.cgi*
-// @include       https://bugs.eclipse.org/bugstest/process_bug.cgi
-// @include       https://bugs.eclipse.org/bugstest/attachment.cgi*
-// @include       https://bugs.eclipse.org/bugstest/enter_bug.cgi*
-// @include       https://bugs.eclipse.org/bugstest/post_bug.cgi*
-// @include       https://bugs.eclipse.org/bugstest/query.cgi*
-// @include       https://bugs.eclipse.org/bugstest/buglist.cgi*
+// @include       https://bugs.eclipse.org/bugstest/*
 // ==/UserScript==
 
 // --- Configurable options --------------------------------------------
