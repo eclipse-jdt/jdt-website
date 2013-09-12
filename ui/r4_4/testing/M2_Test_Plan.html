@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Luna M2 Test Plan</title>
+</head>
+<body>
+<h1>Luna M2 Test Plan</h1>
+Testing day: Tuesday 2013-09-17<br>
+Test Build: latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="noopur_gupta@in.ibm.com">Noopur</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.4 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Manju and Dani</li>
+  <li>Linux-GTK: Noopur</li>
+  <li>Mac OS X 10.6 / 10.7: -</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.4 M1</li>
+  <li>verify that severe bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<h4>Support label decorators in JUnit view (TestRunnerViewPart)  (Manju, Noopur - Questions: Dani)</h4>
+<ul>
+	<li>create an example plug-in which shows that it is possible to add decorators to the JUnit view</li>
+	<li>use that example (take a screenshot) to make the New & Noteworthy entry</li>
+</ul>
+
+
+
+<h2>4.4 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.4 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.4 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.4 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.4 M2</a></li>
+</ul>
+
+<h2>Sanity Check The Build</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project).
+
+</body>
+</html>
