@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20130904T1308
+// @version 1.20131001T1928
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["BETA J8", "4.4 M2", "4.4", "4.3.1", "4.3.2", "4.2.2+", "3.8.2+"];
+var target_milestones= ["BETA J8", "4.4 M3", "4.4", "4.3.2", "4.2.2+", "3.8.2+"];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -668,6 +668,31 @@ function createCategoryChoosers() {
 	return choosers;
 }
 
+function fixSelectElementQuickAccess(selectElemName) {
+	// Workaround for Bug 416542: Keyboard navigation in search page tables no longer works (quick jump to <select> option broken in Firefox):
+	var selectElem= document.getElementById(selectElemName);
+	if (selectElem) {
+		// Fix is to prepend a '.' to disabled options' text, so that they are excluded from prefix matches.
+		// Only do this while the list has focus.
+		selectElem.setAttribute("onfocus",
+			'var selectOptions= document.getElementById("' + selectElemName + '").options;' +
+			'for (var i = 0; i < selectOptions.length; i++) {' +
+			'    if (selectOptions[i].disabled) {' +
+			'        selectOptions[i].text = "." + selectOptions[i].text;' +
+			'    }' +
+			'}'
+		);
+		selectElem.setAttribute("onblur",
+			'var selectOptions= document.getElementById("' + selectElemName + '").options;' +
+			'for (var i = 0; i < selectOptions.length; i++) {' +
+			'    if (selectOptions[i].disabled) {' +
+			'        selectOptions[i].text = selectOptions[i].text.substr(1);' +
+			'    }' +
+			'}'
+		);
+	}
+}
+
 //-----------
 
 //----------- Start the real work
@@ -1086,6 +1111,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	setAccessKey("resolution", "r");
 	setAccessKey("target_milestone", "m");
 	setAccessKey("chfieldfrom", "b");
+	
+	// Workaround for Bug 416542: Keyboard navigation in search page tables no longer works (quick jump to <select> option broken in Firefox):
+	fixSelectElementQuickAccess("product");
+	fixSelectElementQuickAccess("component");
+	
 	
 } else if (window.location.pathname.match(/.*buglist\.cgi/)) {
     // Add access key to Edit Query:
