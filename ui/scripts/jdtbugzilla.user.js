@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20131001T1928
+// @version 1.20131009T1234
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -484,8 +484,10 @@ function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
 	var spanElem= document.createElement("span");
 //	spanElem.style.marginLeft= ".5em";
 	spanElem.style.fontWeight= "normal";
-	var href= 'javascript:document.getElementById("' + fieldId + '").selectedIndex= -1;'
-			+ 'document.getElementById("' + fieldId + '").focus();'
+	var href= 'javascript:var fieldElem= document.getElementById("' + fieldId + '");'
+			+ 'fieldElem.selectedIndex= -1;'
+			+ 'fieldElem.focus();'
+			+ 'bz_fireEvent(fieldElem, "change");;'
 			+ 'void(0);';
 	addLink("&empty;", href, spanElem, "select none", false);
 	spanElem.appendChild(document.createTextNode(" "));
@@ -495,7 +497,8 @@ function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
 }
 
 function addQueryClassificationsLink(parentElem, classifications, name) {
-    var href= 'javascript:document.getElementById("classification").selectedIndex= -1;'
+    var href= 'javascript:var classificationElem= document.getElementById("classification");'
+        + '    classificationElem.selectedIndex= -1;'
         + '    var classificationOptions= document.getElementById("classification").options;';
     
     for (var i = 0; i < classifications.length; i++) {
@@ -503,23 +506,25 @@ function addQueryClassificationsLink(parentElem, classifications, name) {
               + '    if (classificationOptions[i].text == "' + classifications[i] + '") classificationOptions[i].selected= true'
               + '}';
     }
-    href += 'doOnSelectProduct(1);'
+    href += 'bz_fireEvent(classificationElem, "change");'
             + 'void(0);';
     addLink(name, href, parentElem, classifications, false);
 }
 
 function addQueryProductsLink(parentElem, classification, products, name) {
-    var href= 'javascript:document.getElementById("classification").value="' + classification + '";'
-            + 'doOnSelectProduct(1);'
-            + 'document.getElementById("product").value="' + products[0] + '";';
+    var href= 'javascript:var classificationElem= document.getElementById("classification");'
+            + 'classificationElem.value="' + classification + '";'
+            + 'bz_fireEvent(classificationElem, "change");'
+            + 'var productElem= document.getElementById("product");'
+            + 'productElem.value="' + products[0] + '";';
     
     for (var i = 0; i < products.length; i++) {
-        href += 'var productOptions= document.getElementById("product").options;'
+        href += 'var productOptions= productElem.options;'
               + 'for (var i = 0; i < productOptions.length; i++) {'
               + '    if (productOptions[i].text == "' + products[i] + '") productOptions[i].selected= true'
               + '}';
     }
-    href += 'doOnSelectProduct(2);'
+    href += 'bz_fireEvent(productElem, "change");'
             + 'void(0);';
     addLink(name, href, parentElem, products, false);
 }
