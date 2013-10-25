@@ -21,11 +21,17 @@
 // @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20121023T1243
+// @version 1.20131025T1145
 
 // @include       http://wiki.eclipse.org/*
+// @include       https://wiki.eclipse.org/*
 //
 // ==/UserScript==
+
+if (window.location.href.substr(0, 5) == "http:") {
+    // workaround for Bug 411348: Wiki login discarded on normal pages.
+    window.location.replace("https:" + window.location.href.substr(5));
+}
 
 if (window.location.href.match(/.*Special:Userlogout.*/)) {
     console.debug("Logout page -- don't run into endless loop");
@@ -49,6 +55,7 @@ for (var i = 0; i < firstHeadings.length; i++) {
     console.debug(firstHeading);
 	if (firstHeading.textContent == "Login successful") {
 	    window.back();
+	    history.go
 	    return;
 	}
 }
