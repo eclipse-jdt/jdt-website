@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20131009T1234
+// @version 1.20131101T1811
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -48,8 +48,11 @@
 // --- Configurable options --------------------------------------------
 // These can be overridden in your local jdtbugzilla.config.js .
 
-// Add as many milestones as you like. First will be used for "Fixed (in <TM>)" link:
-var target_milestones= ["BETA J8", "4.4 M3", "4.4", "4.3.2", "4.2.2+", "3.8.2+"];
+// Add as many milestones as you like:
+var target_milestones= ["BETA J8", "4.4 M4", "4.4", "4.3.2", "4.2.2+", "3.8.2+"];
+
+// Indexes into target_milestones to be used for "Fixed (in <TM>)" links
+var main_target_milestones= [0, 1];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -448,15 +451,15 @@ function addFromDateLink(parentElem, value, name) {
     addLink(name, href, parentElem);
 }
 
-function addFixedInTargetLink(parentElem) {
-    var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestones[0] + '";'
+function addFixedInTargetLink(parentElem, target_milestone) {
+    var href= 'javascript:document.getElementById("target_milestone").value="' + target_milestone + '";'
             + 'document.getElementById("bug_status").value="RESOLVED";'
             + 'document.getElementById("resolution").value="FIXED";'
             + 'showHideStatusItems("", ["",""]);'
             + 'document.getElementById("assigned_to").focus();'
             + 'document.getElementById("assigned_to").select();';
             + 'void(0);';
-    addLink("(in " + target_milestones[0] + ")", href, parentElem);
+    addLink("(in " + target_milestone + ")", href, parentElem);
 }
 
 function addTargetLink(parentElem, milestone) {
@@ -1106,7 +1109,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     
     // Fix label height:
     styleElem.innerHTML= styleElem.innerHTML
-        + ".field_label { line-height: 1.3em ! important; }\n";
+        + ".field_label { line-height: 1.3em ! important; }\n"
         + ".search_field_row { line-height: auto ! important; }\n";
 
 	// Add accesskeys:
@@ -1153,6 +1156,67 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     for (var i = 0; i < bz_id_columnElems.length; i++) {
         var aElem= bz_id_columnElems[i].firstElementChild;
         aElem.href= "../" + aElem.textContent;
+    }
+    
+    // Add "Create buglist" functionality in "Change Several Bugs at Once" form:
+    var check_allElems= document.getElementsByName("check_all");
+    if (check_allElems && check_allElems[0]) {
+        var lastElem= check_allElems[0];
+        
+        var spaceElem= document.createTextNode("\n");
+        lastElem.parentNode.insertBefore(spaceElem, lastElem.nextSibling);
+        lastElem= spaceElem;
+        
+        var invertElem= document.createElement("input");
+        invertElem.type= "button";
+        invertElem.value= "Invert";
+        invertElem.name= "check_invert";
+        invertElem.setAttribute("onclick", "javascript:"
+            + "var inputs= document.getElementsByTagName('input');\n"
+            + "for (var i= 0; i < inputs.length; i++) {\n"
+            + "    if (inputs[i].type === 'checkbox' && inputs[i].name.substr(0, 3) == 'id_') {\n"
+            + "        inputs[i].checked= !inputs[i].checked == true;\n"
+            + "    }\n"
+            + "}\n"
+            + "void(0);");
+        lastElem.parentNode.insertBefore(invertElem, lastElem.nextSibling);
+        lastElem= invertElem;
+        
+        spaceElem= document.createTextNode("\n");
+        lastElem.parentNode.insertBefore(spaceElem, lastElem.nextSibling);
+        lastElem= spaceElem;
+        
+        var updateElem= document.createElement("a");
+        updateElem.innerHTML= "Update buglist link (checked bugs) -&gt;";
+        updateElem.href= "javascript:"
+            + "var inputs= document.getElementsByTagName('input');\n"
+            + "var bugs= '';\n"
+            + "for (var i= 0; i < inputs.length; i++) {\n"
+            + "  var input= inputs[i];\n"
+            + "  if (input.type == 'checkbox' && input.name.substr(0, 3) == 'id_' && input.checked) {\n"
+            + "    bugs += input.name.substr(3) + ',';\n"
+            + "  }\n"
+            + "}\n"
+            + "var buglistLinkElem= document.getElementById('buglistLink');\n"
+            + "buglistLinkElem.value= 'https://bugs.eclipse.org/bugs/buglist.cgi?bug_id=' + bugs;\n"
+            + "buglistLinkElem.focus();\n"
+            + "buglistLinkElem.select();\n"
+            + "void(0);";
+        
+        lastElem.parentNode.insertBefore(updateElem, lastElem.nextSibling);
+        lastElem= updateElem;
+        
+        spaceElem= document.createTextNode("\n");
+        lastElem.parentNode.insertBefore(spaceElem, lastElem.nextSibling);
+        lastElem= spaceElem;
+        
+        var buglistLinkElem= document.createElement("input");
+        buglistLinkElem.type= "text";
+        buglistLinkElem.size= 100;
+        buglistLinkElem.style= "width: auto";
+        buglistLinkElem.id= "buglistLink";
+        
+        lastElem.parentNode.insertBefore(buglistLinkElem, lastElem.nextSibling);
     }
 
 
@@ -1499,10 +1563,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    
 		    addStatusLink("FIXED", "RESOLVED", "FIXED", statusLinksDivElem);
 		    // Add shortcut target milestone link:
-		    var targetLinkSpanElem= document.createElement("span");
-		    targetLinkSpanElem.style.marginLeft= ".5em";
-		    statusLinksDivElem.appendChild(targetLinkSpanElem);
-		    addFixedInTargetLink(targetLinkSpanElem);
+		    for (var i = 0; i < main_target_milestones.length; i++) {
+		        var targetLinkSpanElem= document.createElement("span");
+		        targetLinkSpanElem.style.marginLeft= ".5em";
+		        statusLinksDivElem.appendChild(targetLinkSpanElem);
+		        addFixedInTargetLink(targetLinkSpanElem, target_milestones[main_target_milestones[i]]);
+		    }
 		    
 		    addStatusLink("INVALID", "RESOLVED", "INVALID", statusLinksDivElem);
 		    addStatusLink("WONTFIX", "RESOLVED", "WONTFIX", statusLinksDivElem);
