@@ -14,14 +14,14 @@
 // @description   implements Bug 290883: Add links to XML test results and Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20131113T2202
+// @version       1.20131113T2223
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
 // @include       http*://hudson.eclipse.org/hudson/view/*/eclipse-testing/results/html/*.html
 // ==/UserScript==
 
-if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
+if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // individual test results page
 
 	function sortTable(table) {
 		var rows= Array.prototype.slice.call(table.getElementsByTagName('tr'), 0);
@@ -32,7 +32,7 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
 		for (var i= 0; i < rows.length; i++) {
 			table.appendChild(rows[i]);
 		}
-	};
+	}
 	
 	function sortTables() {
 		var tables= document.getElementsByClassName('details');
@@ -41,7 +41,7 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
 			if (table.getElementsByTagName('th')[3].textContent == "Time(s)")
 				sortTable(table);
 		}
-	};
+	}
 
 	var sortElem= document.createElement("button");
 	sortElem.textContent= "Sort";
@@ -53,7 +53,7 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
 	divElem.setAttribute("style", divElem.getAttribute("style") + " text-align:right;");
 
 
-} else {
+} else { // testResults.php summary page
 
 
 var anchors= document.getElementsByTagName("a");
@@ -61,29 +61,6 @@ var htmlResultRegex= /testresults\/html\/(.*)\.html/; // <a href="testresults/ht
 
 function getXmlRef(ref) {
 	return ref.replace(htmlResultRegex, "testresults/xml/$1.xml");
-}
-
-for (var i= 0; i < anchors.length; i++) {
-    var aElem= anchors[i];
-    
-    if (aElem.href.search(htmlResultRegex) != -1) {
-        var xmlElem= document.createElement("a");
-        xmlElem.textContent= "xml";
-        xmlElem.setAttribute("style", "color:#AAAAAA");
-        xmlElem.href= getXmlRef(aElem.href);
-        xmlElem.title= "XML Test Result (e.g. for importing into the Eclipse JUnit view)";
-        aElem.parentNode.appendChild(document.createTextNode(" "));
-        aElem.parentNode.appendChild(xmlElem);
-    } else if (aElem.name == "UnitTest") {
-        var pElem= document.createElement("p");
-        pElem.style= "text-align:right;";
-        aElem.parentNode.parentNode.insertBefore(pElem, aElem.parentNode.nextElementSibling.nextElementSibling);
-        
-        var loadElem= document.createElement("button");
-        pElem.appendChild(loadElem);
-        loadElem.textContent= "Load test times";
-        loadElem.addEventListener("click", loadTestTimes, false);
-    }
 }
 
 function loadTestTimes() {
@@ -109,5 +86,29 @@ function loadTestTimes() {
 		}
 	}
 }
+
+for (var i= 0; i < anchors.length; i++) {
+    var aElem= anchors[i];
+    
+    if (aElem.href.search(htmlResultRegex) != -1) {
+        var xmlElem= document.createElement("a");
+        xmlElem.textContent= "xml";
+        xmlElem.setAttribute("style", "color:#AAAAAA");
+        xmlElem.href= getXmlRef(aElem.href);
+        xmlElem.title= "XML Test Result (e.g. for importing into the Eclipse JUnit view)";
+        aElem.parentNode.appendChild(document.createTextNode(" "));
+        aElem.parentNode.appendChild(xmlElem);
+    } else if (aElem.name == "UnitTest") {
+        var pElem= document.createElement("p");
+        pElem.style= "text-align:right;";
+        aElem.parentNode.parentNode.insertBefore(pElem, aElem.parentNode.nextElementSibling.nextElementSibling);
+        
+        var loadElem= document.createElement("button");
+        pElem.appendChild(loadElem);
+        loadElem.textContent= "Load test times";
+        loadElem.addEventListener("click", loadTestTimes, false);
+    }
+}
+
 
 }
