@@ -25,13 +25,13 @@ ob_start();
 			<p>
 				A view to visualize the AST (abstract syntax tree) of a Java
 				file open in the editor. Navigate from text selection to AST nodes and
-				from nodes to selections. Show bindings and compare them.<br>
+				from nodes to selections. Show bindings and compare them.
 			</p>
 			
 			<a name="install"></a>
 			<h3>Install</h3>
 			
-			<br>
+			<br/>
       		<h4>Update Site:</h4>
       		
 			<p>
@@ -45,13 +45,15 @@ ob_start();
       		<h4>Source:</h4>
       		<ul>
 				<li>
-					Source is included in the plugin archives or available via <href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.astview">web</a> or via Git:<br>
-					Repository: <code>git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git</code><br>
+					Source is included in the plugin archives or available via
+					<a href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.astview">web</a> or via
+					<a href="git://git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git">Git</a>:<br/>
+					Repository: <code>git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git</code><br/>
 					Project: <code>org.eclipse.jdt.astview</code>
 				</li>
 			</ul>
 				
-			<br>
+			<br/>
 			<h4>Manual Install:</h4>
 			<p>
 				<ul>
@@ -113,12 +115,12 @@ ob_start();
 		 style="width: 16px; height: 16px;" src="setfocus.gif" alt="">) to
 		populate the view: The view shows the AST of the file opened in the
 		editor and will also reveal the element corresponding to the current
-		text selection<br>
+		text selection.
 		        </li>
 		        <li><font color="#000000">Enable 'Link with editor' (</font><img
 		 style="width: 16px; height: 16px;" src="synced.gif" alt="">) to
 		automatically track the active editor and the selection in the active
-		editor.<br>
+		editor.
 		        </li>
 		        <li>Double click on AST nodes to get the corresponding element
 		revealed in the editor.</li>
@@ -128,28 +130,28 @@ ob_start();
 		        <li>Open the context menu on a binding to add it to the comparison tray</li>
 		        <li>When the AST's underlying document has been changed use
 		'Refresh' (<img style="width: 16px; height: 16px;" src="refresh.gif"
-		 alt="">)&nbsp; to update the AST.<br>
+		 alt="">)&nbsp; to update the AST.
 		        </li>
 		      </ol>
 			</p>
       
       
 			<h4>AST View Elements</h4>
-			<p>The AST view shows the following nodes:<br>
-				<img alt="AST View" src="view.gif"></p>
+			<p>The AST view shows the following nodes:</p>
+			<p><img alt="AST View" src="view.gif"></p>
 			<ul>
 				<li>AST nodes are shown in gray color and with source range
-				information. Children of AST nodes are the node properties.<br>
+				information. Children of AST nodes are the node properties.
 				</li>
 				<li>node properties have names that are all all capitalized.
 				Node properties represent lists of child nodes, a child node or a
-				primitive node attribute (String, int or boolean)<br>
+				primitive node attribute (String, int, or boolean).
 				</li>
 				<li>bindings are shown in blue. Only selected bindings are
 				shown initially. The rest can be toggled via view menu &gt; Hide Non-Relevant Attributes</li>
 			</ul>
 			
-			<br>
+			<br/>
 			<h4>Advanced Features</h4>
 			<ul>
 				<li>You can toggle between the AST Level 2 and AST level 3 in
@@ -169,7 +171,7 @@ ob_start();
 			</ul>
 				
 				
-			<br>
+			<br/>
 			<h4>Comments and Requests</h4>
 			<ul>
 				<li>Comments to
@@ -179,7 +181,7 @@ ob_start();
 				<li>
 					Thanks and credits go to Christian Hauser: The current AST view plug-in
 					is based his AST view implementation from the Zuerich Code Camp. Thanks
-					a lot!<br>
+					a lot!<br/>
 					Martin Aeschlimann productized and maintained the plug-in in the first few years.
 				</li>
 			</ul>
