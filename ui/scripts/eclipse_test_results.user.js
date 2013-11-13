@@ -11,13 +11,50 @@
 // ==UserScript==
 // @name          Eclipse Test Results
 // @namespace     org.eclipse.jdt.ui
-// @description   implements Bug 290883: Add links to XML test results
+// @description   implements Bug 290883: Add links to XML test results and Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20131113T2023
+// @version       1.20131113T2202
 
 // @include       http*://*/downloads/drops*/*/testResults.php
+// @include       http*://*/downloads/drops*/*/testresults/html/*.html
+// @include       http*://hudson.eclipse.org/hudson/view/*/eclipse-testing/results/html/*.html
 // ==/UserScript==
+
+if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) {
+
+	function sortTable(table) {
+		var rows= Array.prototype.slice.call(table.getElementsByTagName('tr'), 0);
+		rows.sort(function(a,b) {
+			function getTime(row) { return parseFloat(row.cells[3].innerHTML); }
+			return getTime(b) - getTime(a);
+		});
+		for (var i= 0; i < rows.length; i++) {
+			table.appendChild(rows[i]);
+		}
+	};
+	
+	function sortTables() {
+		var tables= document.getElementsByClassName('details');
+		for (var i= 0; i < tables.length; i++) {
+			var table= tables[i];
+			if (table.getElementsByTagName('th')[3].textContent == "Time(s)")
+				sortTable(table);
+		}
+	};
+
+	var sortElem= document.createElement("button");
+	sortElem.textContent= "Sort";
+	sortElem.addEventListener("click", sortTables, false);
+	
+	var divElem= document.getElementsByTagName("div")[0];
+	divElem.appendChild(document.createElement("br"));
+	divElem.appendChild(sortElem);
+	divElem.setAttribute("style", divElem.getAttribute("style") + " text-align:right;");
+
+
+} else {
+
 
 var anchors= document.getElementsByTagName("a");
 var htmlResultRegex= /testresults\/html\/(.*)\.html/; // <a href="testresults/html/org.eclipse.ant.tests.core_linux.gtk.x86.html">(0)</a>
@@ -71,4 +108,6 @@ function loadTestTimes() {
 			r.send();
 		}
 	}
+}
+
 }
