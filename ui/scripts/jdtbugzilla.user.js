@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20131101T1811
+// @version 1.20131120T1432
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -276,8 +276,8 @@ var css =
 	// Don't show "Add Me to the CC List" button in "Possible Duplicates" on enter_bug.cgi:
 	    + ".yui-dt-col-update_token { display: none; }\n"
 	
-	// Dim CLA flags until hovered:
-	    + ".cla_dec { opacity: 0.2; }\n"
+	// Dim CLA flags until hovered, and fix baseline:
+	    + ".cla_dec { opacity: 0.2; vertical-align: bottom; }\n"
 	    + ".cla_dec:hover { opacity: 1.0; }\n"
 	    ;
 
@@ -806,7 +806,7 @@ for (var i= 0; i < labels.length; i++) {
 	    commitElem.setAttribute("accesskey", "v");
 	    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
 	    // Of course, the "comment" area is implemented differently on each page...
-	    labelElem.parentNode.insertBefore(commitElem, labelElem.parentNode.lastChild.previousSibling);
+	    labelElem.parentNode.insertBefore(commitElem, labelElem.nextElementSibling);
 	
 	// Remove label as clickable area for Security_Advisories checkbox on "Verify Version, Component, Target Milestone" page:
     } else if (forAtt == "group_15") {
