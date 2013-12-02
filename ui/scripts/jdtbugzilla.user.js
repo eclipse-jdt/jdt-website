@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20131120T1432
+// @version 1.20131202T1737
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -153,6 +153,9 @@ categories["Text"]= [
 categories["Text"].url= "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm";
 
 categories["JDT"]= [
+"[1.7]",
+"[1.8]",
+"[5.0]",
 "[actions]",
 "[api]",
 "[ast rewrite]",
@@ -221,9 +224,6 @@ categories["JDT"]= [
 "[type wizards]",
 "[use supertype]",
 "[working sets]",
-"[5.0]",
-"[1.7]",
-"[1.8]",
 ];
 categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
@@ -643,12 +643,24 @@ function createCategoriesChooser(component, categories) {
 		"if (!form) { form= document.Create; }" +
 		"if (this.value[0] != '[') {" +
 		"    if (this.value == '-- clear categories --') {" +
-		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w ]*\\]\\s*)+/, '');" +
+		"        form.short_desc.value= form.short_desc.value.replace(/^(\\[[\\w \\.]*\\]\\s*)+/, '');" +
 		"    }" +
 		"    return;" +
 		"}" +
-		"var hasCat= form.short_desc.value.indexOf('[') == 0;" +
-		"form.short_desc.value= this.value + (hasCat ? '' : ' ') + form.short_desc.value;"
+		"var cat= this.value.substring(1);" +
+		"var regex= /^\s*\\[([\\w \\.]*)\\]/y;" +
+		"var match;" +
+		"var lastEnd= 0;" +
+		"while (true) {" +
+		"    match= regex.exec(form.short_desc.value);" +
+		"    if (match == null || match[1].localeCompare(cat, 'en', {sensitivity: \"base\"}) > 0) {" +
+		"        var space= (match == null && lastEnd == 0) ? ' ' : '';" +
+		"        form.short_desc.value= form.short_desc.value.substring(0, lastEnd) + this.value + space + form.short_desc.value.substring(lastEnd);" +
+		"        return;" +
+		"    } else {" +
+		"        lastEnd= regex.lastIndex;" +
+		"    }" +
+		"}"
 	);
 	var allCategories= [
 "-- " + component + " category --",
