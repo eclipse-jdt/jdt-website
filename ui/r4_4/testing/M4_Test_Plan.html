@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Luna M4 Test Plan</title>
+</head>
+<body>
+<h1>Luna M4 Test Plan</h1>
+Testing day: Tuesday 2013-12-10<br>
+Test Builds: M20131204-0800 and latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.3.2 build: Noopur</li>
+  <li>4.4 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Dani</li>
+  <li>Linux-GTK: Noopur</li>
+  <li>Mac OS X 10.9: Markus</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.4 M3</li>
+  <li>verify that all 4.3.2 bugs are correctly fixed</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>sanity check the build</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<h4>New Quick Assist to iterate over a collection (Dani, Noopur - Questions: Markus)</h4>
+<ul>
+	<li>verify that the Quick Assist only appears where applicable</li>
+	<li>verify that the Quick Assist works correctly</li>
+</ul>
+
+
+<h2>4.3.2 Bug Verification (Noopur)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3.2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.3.2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.4 Bug Verification (Markus)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.4 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.4 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.4 M4</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M4&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.4 M4</a></li>
+</ul>
+
+<h2>Sanity Check The Build</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project).
+
+</body>
+</html>
