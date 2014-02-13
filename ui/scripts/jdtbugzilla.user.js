@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140103T1618
+// @version 1.20140213T1851
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["BETA J8", "4.4 M5", "4.4", "4.3.2", "4.2.2+", "3.8.2+"];
+var target_milestones= ["BETA J8", "4.4 M6", "4.4", "4.3.2", "4.2.2+", "3.8.2+"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 1];
