@@ -43,7 +43,7 @@ ob_start();
 				<li><a href="doc/bug-annotation.php">bug annotation conventions</a></li>
 				<li><a href="smoke-test/smoke.html">smoke test</a></li>
 				<li><a href="ui-messages.php">common ui message issues</a></li>
-				<li><a href="http://dev.eclipse.org/conventions.html">coding conventions</a>
+				<li><a href="https://wiki.eclipse.org/Coding_Conventions">coding conventions</a>
 					<p>
 					    Additional rules used in the JDT UI project:
 					    <ul>
