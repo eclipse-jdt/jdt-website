@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140318T1201
+// @version 1.20140328T1750
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1368,7 +1368,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    aElem.parentNode.insertBefore(document.createTextNode(" "), fullElem.nextSibling);
 		    
 		    i+= 1; // skip new link
-		    
+		
+		// Dim glaring icon for "Bug 429346: Link to editing bugzilla config from bugzilla"
+	    } else if (aElemHref == "https://dev.eclipse.org/committers/bugs/bugz_manager.php") {
+	        aElem.setAttribute("class", "cla_dec");
+	        
 	    } else if (aElemHref == "index.cgi?logout=1") {
 	        myMail= aElem.nextSibling.textContent.trim();
 	    }
