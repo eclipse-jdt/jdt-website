@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140328T1750
+// @version 1.20140422T1348
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,10 +49,10 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.4 M7", "4.4"];
+var target_milestones= ["4.4 M7", "4.4", "4.5"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
-var main_target_milestones= [0, 1];
+var main_target_milestones= [0];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
