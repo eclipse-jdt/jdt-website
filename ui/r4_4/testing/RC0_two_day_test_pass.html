@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Luna Two Day Test Pass</title>
+</head>
+<body>
+<h1>Luna Two Day Test Pass</h1>
+Testing days: Monday, 2014-05-05 and Tuesday 2014-05-06<br>
+Test Build: Declared 4.4 M7/RC0 build<br>
+Testers: <a href="mailto:manju_mathew@in.ibm.com">Manju</a>, <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+<h2>Setup</h2>
+
+<h3>Platforms</h3>
+<ul>
+  <li>Linux GTK: Noopur</li>
+  <li>Mac OS X 10.8: Markus</li>
+  <li>Windows 7: Manju, Dani</li>
+</ul>
+
+
+<h3>Workbench Setup</h3>
+<em>Use the Java editor breadcrumb whenever possible.</em> 
+<ul>
+  <li>Dani tests using the Java browsing perspective</li>
+  <li>Manju tests using the Java perspective with Package Explorer replaced by the Project Explorer</li>
+  <li>Markus tests using the Java perspective with Package Explorer in working set mode</li>
+  <li>Noopur tests using the Java perspective with Package Explorer in project mode</li>
+</ul>
+
+<strong style="color:red">Each new bug must state whether it is a regression or not.</strong> 
+
+
+<h2>New Luna Functionality (All)</h2>
+Test all (not just JDT!) new features that have been added during Luna development.
+This can be done by testing the features mentioned in the M1-M7, see <a href="http://download.eclipse.org/eclipse/downloads/drops4/S-4.4M7-201405010200/news/">M7 New and Noteworthy</a>
+as an entry point.
+<h3>Test all new advertised features</h3>
+<ul>
+  <li>M1 & M2 (Manju)</li>
+  <li>M3 & M4 (Dani)</li>
+  <li>M5 & M6 (Noopur)</li>
+  <li>M7 (Markus)</li>
+</ul>
+
+<h3>Test Java 8 support</h3>
+Test that the new Java 8 features work with regards to compiler, content assist, search, mark occurrences, refactorings, type hierarchy.
+Verify that new formatter options, Quick Fixes, Quick Assist and Clean Ups work as expected.
+<ul>
+	<li>lambda expressions (Markus, Noopur)</li>
+	<li>default methods (Manju, Markus)</li>
+	<li>type annotations (Noopur, Manju)</li>
+	<li>JEP120: Repeating annotations (Noopur, Markus)</li>
+    <li>JEP118: Runtime access to parameter names (Dani, Manju)</li>
+</ul>
+
+<h2>Smoke test (Manju, Noopur)</h2>
+Peform the {JDT/UI, Text, Search}
+<a href="http://www.eclipse.org/jdt/ui/smoke-test/smoke.html">Smoke Test</a>.
+Note that the test script may be a bit out of date, since we don't run this regularly any more.
+<ul>
+  <li>Manju: <a href="http://www.eclipse.org/jdt/ui/smoke-test/smoke.html#part1">Part 1</a></li>
+  <li>Noopur: <a href="http://www.eclipse.org/jdt/ui/smoke-test/smoke.html#part2">Part 2</a></li>
+</ul>
+
+
+<h2>Views and Editors (Noopur)</h2>
+<ul>
+  <li>resize behavior</li>
+  <li>scrolling (rulers)</li>
+  <li>different fonts and colors</li>
+  <li>detached views</li>
+  <li>multiple windows</li>
+  <li>multiple editor areas</li>
+  <li>splitting editors</li>
+  <li>help support<br>
+  </li>
+</ul>
+
+
+<h2>Workspace and Project Setup (Markus)</h2>
+Setup workspaces and projects in ways unusual compared to your normal setup.
+Test the following workspace and project setups:
+<ul>
+  <li>use external projects</li>
+  <li>use linked resources
+    <ul>
+      <li>linked output folders</li>
+      <li>linked source folders</li>
+      <li>linked and nested source folders</li>
+      <li>test rendering in views</li>
+      <li>linked class folders</li>
+    </ul>
+  </li>
+  <li>use resource filters</li>
+  <li>use multiple output folders</li>
+  <li>use source folders with ignored compile problems</li>
+  <li>use combination of exclusion &amp; inclusion filters</li>
+  <li>use user defined library containers (JUnit as a user defined library)
+    <ul>
+      <li>quick fixes for unbound user libraries</li>
+      <li>quick fixes for build path problems</li>
+    </ul>
+  </li>
+  <li>full source workspace</li>
+</ul>
+
+<h2>Workspace Compatibility (Manju)</h2>
+Verify that an existing workspace can be started on the new version and is
+fully functional. Also verify that preferences exported with an older workspace can be imported and work. Check the .log for serious problems.<br>
+<ul>
+  <li>upgrade a 3.8 workspace to 4.4</li>
+  <li>upgrade a 4.2 workspace to 4.4</li>
+  <li>upgrade a 4.3 workspace to 4.4</li>
+</ul>
+Verify that projects created and checked into a repository with an older version can be checked out with Luna.
+
+<h2>About Info (Dani)</h2>
+Verify that all plug-ins and features appear correctly in the About dialog:
+<ul>
+  <li>bundles are signed</li>
+  <li>copyright notices are up-to-date</li>
+  <li>plug-in and feature versions are correct</li>
+  <li>all features and plug-ins have a license agreement</li> 
+</ul>
+
+
+<h2>Freestyle Testing (All)</h2>
+Once all of the above test items are done, start with a fresh workspace and
+change the settings in a way you normally don't work.
+<p>
+Implement a little feature or tool or create a patch for one of your favorite bugs. Use refactorings and UI gestures you don't normally use.</p>
+</body>
+</html>
