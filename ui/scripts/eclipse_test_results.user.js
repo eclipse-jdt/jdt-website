@@ -14,7 +14,7 @@
 // @description   implements Bug 290883: Add links to XML test results and Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20131113T2223
+// @version       1.20140505T1658
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -34,24 +34,33 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // i
 		}
 	}
 	
-	function sortTables() {
-		var tables= document.getElementsByClassName('details');
-		for (var i= 0; i < tables.length; i++) {
-			var table= tables[i];
-			if (table.getElementsByTagName('th')[3].textContent == "Time(s)")
+	function makeTableSortable(table) {
+		var timeElem= table.getElementsByTagName('th')[3];
+		if (timeElem.textContent == "Time(s)") {
+			var sortElem= document.createElement("a");
+			sortElem.style= "cursor: pointer; text-decoration: underline;";
+			sortElem.title= "Sort by time (descending)";
+			sortElem.innerHTML= timeElem.innerHTML;
+			var titleRewritten= false;
+			var sortTables= function () {
+				if (!titleRewritten) {
+					sortElem.innerHTML= sortElem.innerHTML + " &#x25BC;";
+					sortElem.style= "";
+					titleRewritten= true;
+				}
 				sortTable(table);
+			};
+			sortElem.addEventListener("click", sortTables, false);
+			
+			timeElem.innerHTML= "";
+			timeElem.appendChild(sortElem);
 		}
 	}
-
-	var sortElem= document.createElement("button");
-	sortElem.textContent= "Sort";
-	sortElem.addEventListener("click", sortTables, false);
 	
-	var divElem= document.getElementsByTagName("div")[0];
-	divElem.appendChild(document.createElement("br"));
-	divElem.appendChild(sortElem);
-	divElem.setAttribute("style", divElem.getAttribute("style") + " text-align:right;");
-
+	var tables= document.getElementsByClassName('details');
+	for (var i= 0; i < tables.length; i++) {
+		makeTableSortable(tables[i]);
+	}
 
 } else { // testResults.php summary page
 
@@ -63,24 +72,43 @@ function getXmlRef(ref) {
 	return ref.replace(htmlResultRegex, "testresults/xml/$1.xml");
 }
 
+function getAppendTimeFunction(myElem) { // JavaScript garbage to capture aElem
+	return function () { // function I want to assign to XMLHttpRequest::onload
+		var xml= this.responseXML;
+		var testsuites= xml.getElementsByTagName("testsuite");
+		for (var i= 0; i < testsuites.length; i++) {
+			var testsuite= testsuites[i];
+			var time= testsuite.getAttribute("time");
+			myElem.parentNode.appendChild(document.createTextNode(" " + time + "s"));
+		}
+	};
+}
+
 function loadTestTimes() {
 	for (var i= 0; i < anchors.length; i++) {
 		var aElem= anchors[i];
 		
 		if (aElem.href.search(htmlResultRegex) != -1) {
-			function appendTimeTo(myElem) { // JavaScript garbage to capture aElem
-				return function () { // function I want to assign to XMLHttpRequest::onload
-					var xml= this.responseXML;
-					var testsuites= xml.getElementsByTagName("testsuite");
-					for (var i= 0; i < testsuites.length; i++) {
-						var testsuite= testsuites[i];
-						var time= testsuite.getAttribute("time");
-						myElem.parentNode.appendChild(document.createTextNode(" " + time + "s"));
-					}
-				};
-			};
 			var r= new XMLHttpRequest();
-			r.onload= appendTimeTo(aElem); // JavaScript garbage to capture aElem
+			// JavaScript closure madness: getAppendTimeFunction(..) cannot be inlined here,
+			// since that would create a closure on variable aElem. In JavaScript, the value of is aElem not captured,
+			// but the variable becomes part of the closure and is shared among all references to the function, i.e.
+			// it *changes its value* as the 'for' loop proceeds!
+			// 
+			// The solution to capture a value is to create a dummy intermediate function.
+			// How crazy is that? Normal references to a variable work as expected (passed by object), but as soon as
+			// you reference a variable from a nested function, it's suddenly not a normal reference any more,
+			// but shares state with other invocations of the same method?
+			// In other words: The behavior of a reference to a variable is completeley different,
+			// depending on whether the variable was declared in the same function (normal scoping rules, passed by object)
+			// or in an enclosing function ('shared' variable).
+			// And to fix the crap, you have to introduce another nested function.
+			// This is another proof that JavaScript is unsuitable for real-world projects.
+			// A "language" that doesn't support local reasoning and trivial refactorings has no credibility.
+			//
+			// Note: ES5 strict mode doesn't allow a function statement here, see https://whereswalden.com/2011/01/24/new-es5-strict-mode-requirement-function-statements-not-at-top-level-of-a-program-or-function-are-prohibited/
+			// But an anonymous function has the same problem.
+			r.onload= getAppendTimeFunction(aElem); // JavaScript garbage to capture aElem
 			r.open("GET", getXmlRef(aElem.href), true);
 			r.send();
 		}
@@ -105,7 +133,7 @@ for (var i= 0; i < anchors.length; i++) {
         
         var loadElem= document.createElement("button");
         pElem.appendChild(loadElem);
-        loadElem.textContent= "Load test times";
+        loadElem.innerHTML= "Load test times <img src='http://wiki.greasespot.net/favicon.ico' style='vertical-align: top'>";
         loadElem.addEventListener("click", loadTestTimes, false);
     }
 }
