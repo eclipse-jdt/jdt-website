@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140422T1348
+// @version 1.20140505T1239
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.4 M7", "4.4", "4.5"];
+var target_milestones= ["4.4 RC1", "4.4 RC2", "4.4", "4.5"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -1372,9 +1372,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		// Dim glaring icon for "Bug 429346: Link to editing bugzilla config from bugzilla"
 	    } else if (aElemHref == "https://dev.eclipse.org/committers/bugs/bugz_manager.php") {
 	        aElem.setAttribute("class", "cla_dec");
-	        
+	    
+	    // Store user's email address
 	    } else if (aElemHref == "index.cgi?logout=1") {
 	        myMail= aElem.nextSibling.textContent.trim();
+	    
+	    // Add accesskey
+	    } else if (aElem.textContent == "Expand All Comments") {
+	        aElem.innerHTML= "E<b>x</b>pand All Comments";
+	        aElem.setAttribute("accesskey", "x");
 	    }
 	    
 	//    // Show obsolete attachments initially:
@@ -1633,6 +1639,42 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 				tdRightOfadd_commentElem.appendChild(bz_collapse_expand_commentsElems[0]);
 			}
 		}
+		
+		// Add "Collapse All Before My Last"
+		var aElem= document.createElement("a");
+		aElem.href= "#";
+		aElem.innerHTML= "Collaps<b>e</b> All Before My Last";
+		aElem.setAttribute("accesskey", "e");
+		aElem.setAttribute("onclick",
+			"var comments = YAHOO.util.Dom.getElementsByClassName('bz_comment_text');\n" +
+			"var i = comments.length - 1;\n" +
+			"for (; i >= 0; i--) {\n" +
+			"	var comment = comments[i];\n" +
+			"	if (!comment)\n" +
+			"		continue;\n" +
+			"	\n" +
+			"	var emailElems= comment.parentNode.getElementsByClassName('email');\n" +
+			"	if (emailElems[emailElems.length - 1].title == '" + myMail + "') {\n" +
+			"		i--;\n" +
+			"		break;\n" +
+			"	};\n" +
+			"}\n" +
+			"for (; i >= 0; i--) {\n" +
+			"	var comment = comments[i];\n" +
+			"	if (!comment)\n" +
+			"		continue;\n" +
+			"	\n" +
+			"	var id = comments[i].id.match(/\\d*$/);\n" +
+			"	var link = document.getElementById('comment_link_' + id);\n" +
+			"	collapse_comment(link, comment);\n" +
+			"}\n" +
+			"return false;"
+		);
+		
+		var liElem= document.createElement("li");
+		liElem.appendChild(aElem);
+		bz_collapse_expand_commentsElems[0].appendChild(liElem);
+		
 		
 		// Add links to help enter a URL to a Git commit:
 		var pElem= document.createElement("p");
