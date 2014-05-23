@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140520T1224
+// @version 1.20140523T1523
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.4 RC2", "4.4 RC3", "4.4.1", "4.5"];
+var target_milestones= ["4.4 RC3", "4.4 RC4", "4.4.1", "4.5"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -89,7 +89,7 @@ var platforms= [
 ];
 
 // Add quick version links on the search page (<version> for exact version, <version*> for prefix match):
-var queryVersions= [ "3.*", "4.*", "4.3"];
+var queryVersions= [ "3.*", "4.*"];
 
 // Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...] pairs):
 var queryClassifications= [
@@ -1381,6 +1381,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    } else if (aElem.textContent == "Expand All Comments") {
 	        aElem.innerHTML= "E<b>x</b>pand All Comments";
 	        aElem.setAttribute("accesskey", "x");
+	        
+	    // Add "Clone This Bug (in <originating project>)":
+	    } else if (aElem.textContent == "Clone This Bug") {
+		    var cloneElem= aElem.cloneNode();
+		    var product= document.getElementById("product").value;
+		    cloneElem.textContent= "(in " + product + ")";
+		    cloneElem.href= aElem.href + "&product=" + product;
+		    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
+		    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
 	    }
 	    
 	//    // Show obsolete attachments initially:
