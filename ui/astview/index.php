@@ -59,7 +59,7 @@ ob_start();
 				<ul>
 					<li>
 						for Eclipse Luna (4.4) and higher
-						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.9.201406161921.jar">org.eclipse.jdt.astview_1.1.8.201108081127.jar</a>
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.9.201406161921.jar">org.eclipse.jdt.astview_1.1.9.201406161921.jar</a>
 						(copy to 'dropins' directory)
 					</li>
 					<li>
