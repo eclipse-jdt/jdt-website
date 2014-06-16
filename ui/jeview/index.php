@@ -57,6 +57,11 @@ ob_start();
 			<p>
 				<ul>
 					<li>
+						for Eclipse Luna (4.4) and higher
+						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.jeview_1.0.9.201406161921.jar">org.eclipse.jdt.jeview_1.0.8.201103211622.jar</a>
+						(copy to 'dropins' directory)
+					</li>
+					<li>
 						for Eclipse 3.7 and higher
 						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.jeview_1.0.8.201103211622.jar">org.eclipse.jdt.jeview_1.0.8.201103211622.jar</a>
 						(copy to 'dropins' directory)
