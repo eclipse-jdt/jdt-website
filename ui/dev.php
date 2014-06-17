@@ -132,7 +132,7 @@ ob_start();
 				</li>
 				<li>
 					For user questions:
-					<a href="news://news.eclipse.org/eclipse.tools.jdt" title="News server"/>eclipse.tools.jdt</a> (<a href="http://www.eclipse.org/newsportal/thread.php?group=eclipse.tools.jdt">web interface</a>)
+					<a href="news://news.eclipse.org/eclipse.tools.jdt" title="News server">eclipse.tools.jdt</a> (<a href="http://www.eclipse.org/newsportal/thread.php?group=eclipse.tools.jdt">web interface</a>)
 				</li>
 			</ul>
 		</div>
@@ -177,7 +177,7 @@ ob_start();
 				<li>adds easy-to-copy bug &lt;id&gt; comment &lt;no&gt; text</li>
 				<li>adds more Save Changes buttons</li>
 				<li>fixes wrapping-preview in Additional Comments field</li>
-				<li>adds "Clone This Bug (in <originating project>)" link</li>
+				<li>adds "Clone This Bug (in &lt;originating project&gt;)" link</li>
 			</ul>
 		</div>
 	
