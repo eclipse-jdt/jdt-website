@@ -144,9 +144,11 @@ ob_start();
 			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created the
 			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.</p>
 			<p>
-			   The script always works with the latest release of Firefox, Greasemonkey, and bugs.eclipse.org.
-			   It should also work with Chrome, see the "Learn more" link in the message that appears when you try to open the link.
-			   Auto-updates don't seem to work in Chrome (would probably need some special packaging as a Chrome extension).</p>
+			   The script always works with the latest release of Firefox,
+			   <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey</a>, and bugs.eclipse.org.
+			   In Chrome, it used to work out of the box until Google decided to break this functionality (in spring 2014).
+			   Now, you have to install <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a>
+			   in Chrome and reinstall the script from there.</p>
 			<p>Over time, we also added quick links and tweaks to improve our work experience. The team-specific
 			   tweaks are being configured at the top of the script.<br>
 			   After installing the default script, you can override some or all of these settings locally by editing the file
@@ -175,6 +177,7 @@ ob_start();
 				<li>adds easy-to-copy bug &lt;id&gt; comment &lt;no&gt; text</li>
 				<li>adds more Save Changes buttons</li>
 				<li>fixes wrapping-preview in Additional Comments field</li>
+				<li>adds "Clone This Bug (in <originating project>)" link</li>
 			</ul>
 		</div>
 	
