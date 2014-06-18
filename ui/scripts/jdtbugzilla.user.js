@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140612T1916
+// @version 1.20140618T1550
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1388,6 +1388,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    var product= document.getElementById("product").value;
 		    cloneElem.textContent= "(in " + product + ")";
 		    cloneElem.href= aElem.href + "&product=" + product;
+		    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
+		    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
+	        
+	    // Add "New (in <originating project>)":
+	    } else if (aElemHref == "enter_bug.cgi") {
+		    var cloneElem= aElem.cloneNode();
+		    var component= document.getElementById("component").value;
+		    var product= document.getElementById("product").value;
+		    cloneElem.textContent= "(in " + product + "/" + component + ")";
+		    cloneElem.href= aElem.href + "?product=" + product + "&component=" + component;
 		    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
 		    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
 	    }
