@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140618T1550
+// @version 1.20140729T1241
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 M1", "4.5", "4.4.1"];
+var target_milestones= ["4.5 M1", "4.5 M2", "4.5", "4.4.1"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -58,9 +58,8 @@ var main_target_milestones= [0];
 var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus_keller@ch.ibm.com",
-"MM", "manju_mathew@in.ibm.com",
 "NG", "noopur_gupta@in.ibm.com",
-"DA", "deepakazad@gmail.com",
+"MM", "manju656@gmail.com ",
 ];
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
@@ -1659,12 +1658,11 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			}
 		}
 		
-		// Add "Collapse All Before My Last" (Alt+Shift+E)
-		var aElem= document.createElement("a");
-		aElem.href= "#";
-		aElem.innerHTML= "Collaps<b>e</b> All Before My Last";
-		aElem.setAttribute("accesskey", "e");
-		aElem.setAttribute("onclick",
+		// Add "Collapse All Before My Last" (Alt+Shift+E) and "Jump To My Last" (Alt+Shift+Y)
+		var scriptElem= document.createElement("script");
+		scriptElem.type= "text/javascript";
+		scriptElem.innerHTML=
+		  "function collapse_all_comments_before_my_last() {\n" +
 			"var comments = YAHOO.util.Dom.getElementsByClassName('bz_comment_text');\n" +
 			"var i = comments.length - 1;\n" +
 			"var scrollTarget;\n" +
@@ -1693,12 +1691,53 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			"	scrollTarget.scrollIntoView(true);\n" +
 			"	locationHashChanged();\n" +
 			"};\n" +
-			"return false;"
-		);
+		  "}\n" +
+		  
+		  "function scroll_to_my_last_comment() {\n" +
+			"var comments = YAHOO.util.Dom.getElementsByClassName('bz_comment_text');\n" +
+			"var i = comments.length - 1;\n" +
+			"var scrollTarget;\n" +
+			"for (; i >= 0; i--) {\n" +
+			"	var comment = comments[i];\n" +
+			"	if (!comment)\n" +
+			"		continue;\n" +
+			"	\n" +
+			"	var emailElems= comment.parentNode.getElementsByClassName('email');\n" +
+			"	if (emailElems[emailElems.length - 1].title == '" + myMail + "') {\n" +
+			"		scrollTarget= emailElems[emailElems.length - 1];\n" +
+			"		i--;\n" +
+			"		break;\n" +
+			"	};\n" +
+			"}\n" +
+			"if (scrollTarget) {\n" +
+			"	scrollTarget.scrollIntoView(true);\n" +
+			"	locationHashChanged();\n" +
+			"};\n" +
+		  "}\n" +
+		  
+		// Click "Collapse All Before My Last":
+//		      + "collapse_all_comments_before_my_last();\n" // turned out to be inconvenient
+		    "";
+		headElem.appendChild(scriptElem);
+
+		var aElem= document.createElement("a");
+		aElem.href= "#";
+		aElem.innerHTML= "Collaps<b>e</b> All Before My Last";
+		aElem.setAttribute("accesskey", "e");
+		aElem.setAttribute("onclick","javascript:collapse_all_comments_before_my_last();\nreturn false;");
 		
 		var liElem= document.createElement("li");
 		liElem.appendChild(aElem);
 		bz_collapse_expand_commentsElems[0].appendChild(liElem);
+		
+		liElem.appendChild(document.createTextNode(" ("))
+		aElem= document.createElement("a");
+		aElem.href= "#";
+		aElem.innerHTML= "Jump To M<b>y</b> Last";
+		aElem.setAttribute("accesskey", "y");
+		aElem.setAttribute("onclick","javascript:scroll_to_my_last_comment();\nreturn false;");
+		liElem.appendChild(aElem);
+		liElem.appendChild(document.createTextNode(")"))
 		
 		
 		// Add links to help enter a URL to a Git commit:
@@ -1721,8 +1760,6 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         }
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(pElem);
 	}
-	
-//	unsafeWindow.console.log("alias: " + document.getElementById("alias"));
 	
 }
 
