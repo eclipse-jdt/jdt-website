@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2013 IBM Corporation and others.
+ * Copyright (c) 2012, 2014 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140729T1241
+// @version 1.20140729T1502
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -718,6 +718,8 @@ function fixSelectElementQuickAccess(selectElemName) {
 
 function main() { // GM 1.0 belches for "return" outside of function, see http://www.greasespot.net/2012/08/greasemonkey-10-release.html
 
+console.log("Running jdtbugzilla.user.js on " + window.location);
+
 // Don't run in frames or iframes:
 if (window.top != window.self) {
     return;
@@ -749,6 +751,7 @@ if (headerElem && headerElem.lastElementChild) {
     if (typeof GM_info !== "undefined") {
         ver= GM_info.script.version;
     }
+    console.log(ver);
     headerElem.lastElementChild.innerHTML +=
         '<span class="separator">| </span><li><a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js" '
         + 'title="Page tweaked by jdtbugzilla.user.js ' + ver + '" >Tweaked</a>!</li>';
