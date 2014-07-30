@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140729T1502
+// @version 1.20140730T1404
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -712,6 +712,28 @@ function fixSelectElementQuickAccess(selectElemName) {
 	}
 }
 
+function createCommentTemplateLinks() {
+	// Add links to help enter a URL to a Git commit:
+	var pElem= document.createElement("p");
+	pElem.style.marginLeft= "1em";
+	pElem.style.lineHeight= "2em";
+	pElem.appendChild(document.createElement("br"));
+	for (var i = 0; i < commentTemplates.length; i+= 2) {
+        var aElem= document.createElement("a");
+		aElem.appendChild(document.createTextNode(commentTemplates[i]));
+        aElem.href='javascript:var cElem=document.getElementById("comment");'
+            + 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
+            + 'var url= "' + commentTemplates[i + 1] + '";'
+            + 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
+            + 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
+            + 'void(0);';
+        aElem.title= "Insert comment template at caret";
+		pElem.appendChild(aElem);
+		pElem.appendChild(document.createElement("br"));
+    }
+    return pElem;
+}
+
 //-----------
 
 //----------- Start the real work
@@ -875,38 +897,44 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
 	    short_descElems[0].size= 76;
 	    
-	    // set initial focus:
+	    // Set initial focus:
 	    short_descElems[0].focus();
 	    
 		var summaryTr= short_descElems[0].parentNode.parentNode;
 	    
-//	    // move "Possible Duplicates" after "Description":
-//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
-//		var commentElem= document.getElementById("comment");
-//		if (possible_duplicates_containerElem && commentElem) {
-//    		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
-//		}
+	    // Move "Possible Duplicates" after "Description":
+		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+		var commentElem= document.getElementById("comment");
+		if (possible_duplicates_containerElem && commentElem) {
+    		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
+			// Add links to help enter a URL to a Git commit:
+			commentElem.parentNode.setAttribute("colspan", "2");
+			var td= document.createElement("td");
+			td.appendChild(createCommentTemplateLinks());
+			commentElem.parentNode.parentNode.insertBefore(td, commentElem.parentNode.nextSibling);
+		}
+		
 	    
-//	    // move "Possible Duplicates" before "Summary":
+//	    // Move "Possible Duplicates" before "Summary":
 //		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
 //		if (possible_duplicates_containerElem) {
 //    		summaryTr.parentNode.insertBefore(possible_duplicates_containerElem, summaryTr);
 //		}
 	    
-	    // move "Possible Duplicates" to the right of the "Description":
-		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
-		var commentElem= document.getElementById("comment");
-		if (possible_duplicates_containerElem && commentElem) {
-    		possible_duplicates_containerElem.setAttribute("style", "display: inline;");
-		    
-		    var tableElem= document.createElement("table");
-    		tableElem.setAttribute("style", "display: inline;");
-		    tableElem.appendChild(possible_duplicates_containerElem)
-		    
-		    possible_duplicates_containerElem.removeChild(possible_duplicates_containerElem.firstElementChild);
-		    commentElem.parentNode.removeChild(commentElem.parentNode.getElementsByTagName("br")[0]);
-    		commentElem.parentNode.appendChild(tableElem);
-		}
+//	    // Move "Possible Duplicates" to the right of the "Description":
+//		var possible_duplicates_containerElem= document.getElementById("possible_duplicates_container");
+//		var commentElem= document.getElementById("comment");
+//		if (possible_duplicates_containerElem && commentElem) {
+//    		possible_duplicates_containerElem.setAttribute("style", "display: inline;");
+//		    
+//		    var tableElem= document.createElement("table");
+//    		tableElem.setAttribute("style", "display: inline;");
+//		    tableElem.appendChild(possible_duplicates_containerElem)
+//		    
+//		    possible_duplicates_containerElem.removeChild(possible_duplicates_containerElem.firstElementChild);
+//		    commentElem.parentNode.removeChild(commentElem.parentNode.getElementsByTagName("br")[0]);
+//    		commentElem.parentNode.appendChild(tableElem);
+//		}
 		
 		// Add bug categories choosers:
 		var tr= document.createElement("tr");
@@ -1744,24 +1772,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		
 		
 		// Add links to help enter a URL to a Git commit:
-		var pElem= document.createElement("p");
-		pElem.style.marginLeft= "1em";
-		pElem.style.lineHeight= "2em";
-		pElem.appendChild(document.createElement("br"));
-		for (var i = 0; i < commentTemplates.length; i+= 2) {
-            var aElem= document.createElement("a");
-			aElem.appendChild(document.createTextNode(commentTemplates[i]));
-            aElem.href='javascript:var cElem=document.getElementById("comment");'
-                + 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
-                + 'var url= "' + commentTemplates[i + 1] + '";'
-                + 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
-                + 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
-                + 'void(0);';
-            aElem.title= "Insert comment template at caret";
-			pElem.appendChild(aElem);
-			pElem.appendChild(document.createElement("br"));
-        }
-		bz_collapse_expand_commentsElems[0].parentNode.appendChild(pElem);
+		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
 	}
 	
 }
