@@ -6,8 +6,10 @@
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla-start.user.js
 // @include     https://bugs.eclipse.org/bugs/buglist.cgi*
 
-// @version 1.20140730T1404
+// @version 1.20140804T1246
 // @grant       none
 // @run-at document-start
 // ==/UserScript==
-history.replaceState = function() { console.log("history.replaceState caught"); };
+history.replaceState = function(data, title, url) {
+	console.log("caught history.replaceState(" + data + ", " + title + ", " + url + ")");
+};

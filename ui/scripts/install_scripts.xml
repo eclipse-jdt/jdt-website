@@ -19,6 +19,7 @@
          ================================= -->
     <target name="default" description="install">
     	<doinstall file="jdtbugzilla.user.js"/>
+    	<doinstall file="jdtbugzilla-start.user.js"/>
     	<doinstall file="eclipse_test_results.user.js"/>
     	<doinstall file="eclipse_wiki.user.js"/>
     </target>
