@@ -4,9 +4,11 @@
 // @description Removes history.replaceState from buglist.cgi to work around https://github.com/greasemonkey/greasemonkey/issues/1970
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla-start.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla-start.user.js
-// @include     https://bugs.eclipse.org/bugs/buglist.cgi*
 
-// @version 1.20140804T1246
+// @include     https://bugs.eclipse.org/bugs/buglist.cgi*
+// @include     https://bugs.eclipse.org/bugs/show_bug.cgi*
+
+// @version 1.20140804T1410
 // @grant       none
 // @run-at document-start
 // ==/UserScript==
