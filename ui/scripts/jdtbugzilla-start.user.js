@@ -7,8 +7,9 @@
 
 // @include     https://bugs.eclipse.org/bugs/buglist.cgi*
 // @include     https://bugs.eclipse.org/bugs/show_bug.cgi*
+// @include     https://bugs.eclipse.org/bugs/process_bug.cgi*
 
-// @version 1.20140804T1410
+// @version 1.20140804T1417
 // @grant       none
 // @run-at document-start
 // ==/UserScript==
