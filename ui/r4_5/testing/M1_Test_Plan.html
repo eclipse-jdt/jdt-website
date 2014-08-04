@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Mars M1 Test Plan</title>
+</head>
+<body>
+<h1>Mars M1 Test Plan</h1>
+Testing day: Tuesday 2014-08-05<br>
+Test Builds: M20140731-1200 and latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.4.1 build: everybody</li>
+  <li>4.5 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Dani</li>
+  <li>Linux-GTK: Noopur</li>
+  <li>Mac OS X 10.9: Markus</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.4</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>verify that all 4.4.1 bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<h4>Copy action does not add 'copy of' prefix  (Dani, Markus - Questions: Yves, Noopur)</h4>
+<ul>
+	<li>verify that the copy action does not add 'copy of' prefix</li>
+	<li>verify that a number is added to the name (not the extension)</li>
+	<li>verify the number is increased if the name (not the extension) ends with a number</li>
+</ul>
+
+<h4>Resource rename dialog does not pre-select the extension (Dani, Markus) - Questions: Jerome, Noopur)</h4>
+<ul>
+	<li>verify that the resource rename dialog does not pre-select the extension</li>
+</ul>
+
+<h4>New Quick Fix to unqualify enum constants in switch-case labels (Markus, Dani) - Questions: Sandra, Noopur)</h4>
+<ul>
+	<li>verify that the Quick Fix appears at the correct locations</li>
+	<li>verify that the Quick Fix works</li>
+</ul>
+
+<h4>Move/copy refactoring dialog allow to expand and collapse folders by by clicking on the label (Noopur, Dani) - Questions: <a href="mailto:dirk@xanthippe.ping.de">Dirk</a>, Manju, Dani)</h4>
+<ul>
+	<li>verify that folders can be expanded and collapsed on the page by clicking on the label</li>
+</ul>
+
+<h4>Don't generate redundant modifiers "public static final abstract" for interface members (Markus, Noopur) - Questions: Jerome, Manju)</h4>
+<ul>
+	<li>verify that no redundant modifiers are generated</li>
+</ul>
+
+<h4>Runnable JAR exporter now produces Ant file with workspace-relative paths (Noopur, Markus) - Questions: <a href="mailto:ferenc.hechler@web.de">Ferenc</a>, Manju)</h4>
+<ul>
+	<li>verify that the Ant file produced by Runnable JAR exporter contains paths relative to the workspace</li>
+</ul>
+
+
+<h2>4.4.1 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4.1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4.1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.5 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.4 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.4%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.4 M1</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
