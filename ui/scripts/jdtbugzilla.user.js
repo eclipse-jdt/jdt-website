@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140808T1337
+// @version 1.20140815T1649
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1412,25 +1412,27 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        aElem.innerHTML= "E<b>x</b>pand All Comments";
 	        aElem.setAttribute("accesskey", "x");
 	        
-	    // Add "Clone This Bug (in <originating project>)":
-	    } else if (aElem.textContent == "Clone This Bug") {
-		    var cloneElem= aElem.cloneNode();
-		    var product= document.getElementById("product").value;
-		    cloneElem.textContent= "(in " + product + ")";
-		    cloneElem.href= aElem.href + "&product=" + product;
-		    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
-		    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
-	        
-	    // Add "New (in <originating project>)":
-	    } else if (aElemHref == "enter_bug.cgi") {
-		    var cloneElem= aElem.cloneNode();
-		    var component= document.getElementById("component").value;
-		    var product= document.getElementById("product").value;
-		    cloneElem.textContent= "(in " + product + "/" + component + ")";
-		    cloneElem.href= aElem.href + "?product=" + product + "&component=" + component;
-		    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
-		    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
-	    }
+	    } else if (document.getElementById("product") && document.getElementById("component")) { // e.g. not in attachment.cgi?id=*&action=edit
+		    // Add "Clone This Bug (in <originating project>)":
+		    if (aElem.textContent == "Clone This Bug") {
+			    var cloneElem= aElem.cloneNode();
+			    var product= document.getElementById("product").value;
+			    cloneElem.textContent= "(in " + product + ")";
+			    cloneElem.href= aElem.href + "&product=" + product;
+			    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
+			    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
+		        
+		    // Add "New (in <originating project>)":
+		    } else if (aElemHref == "enter_bug.cgi") {
+			    var cloneElem= aElem.cloneNode();
+			    var component= document.getElementById("component").value;
+			    var product= document.getElementById("product").value;
+			    cloneElem.textContent= "(in " + product + "/" + component + ")";
+			    cloneElem.href= aElem.href + "?product=" + product + "&component=" + component;
+			    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
+			    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
+		    }
+		}
 	    
 	//    // Show obsolete attachments initially:
 	//    if (aElem.getAttribute("onclick") == "return toggle_display(this);") {
