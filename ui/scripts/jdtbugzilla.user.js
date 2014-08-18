@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140815T1649
+// @version 1.20140818T1441
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -753,6 +753,12 @@ if (bannerElem) {
     bannerElem.parentNode.removeChild(bannerElem);
 } else {
     // for https://bugs.eclipse.org/bugstest/*:
+    var headerElems= document.evaluate("//header[@role='banner']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (var i = 0; i < headerElems.snapshotLength; i++) {
+        var headerElem= headerElems.snapshotItem(i);
+        headerElem.parentNode.removeChild(headerElem);
+    }
+    // old (pre-solstice):
     var headerElem= document.getElementById("header");
     if (headerElem) {
         var fontElem= headerElem.getElementsByTagName("font");
