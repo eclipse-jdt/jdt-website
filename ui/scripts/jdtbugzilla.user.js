@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140818T1441
+// @version 1.20140819T1223
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -748,17 +748,18 @@ if (window.top != window.self) {
 }
 
 // Remove Eclipse ads:
+// old school:
 var bannerElem= document.getElementById("banner");
 if (bannerElem) {
     bannerElem.parentNode.removeChild(bannerElem);
 } else {
-    // for https://bugs.eclipse.org/bugstest/*:
+    // for solstice (bug 437404):
     var headerElems= document.evaluate("//header[@role='banner']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
     for (var i = 0; i < headerElems.snapshotLength; i++) {
         var headerElem= headerElems.snapshotItem(i);
         headerElem.parentNode.removeChild(headerElem);
     }
-    // old (pre-solstice):
+    // old (pre-solstice) bugstest:
     var headerElem= document.getElementById("header");
     if (headerElem) {
         var fontElem= headerElem.getElementsByTagName("font");
@@ -792,13 +793,6 @@ if (headElem) {
 	styleElem.type= "text/css";
 	styleElem.innerHTML = css;
 	headElem.appendChild(styleElem);
-	
-	// workaround for https://bugs.eclipse.org/bugs/show_bug.cgi?id=416359 : Wrong favicon
-	// append <link rel="shortcut icon" href="images/favicon.ico" > and hope the browser will pick the last one:
-	var faviconElem= document.createElement("link");
-	faviconElem.setAttribute("rel", "shortcut icon")
-	faviconElem.setAttribute("href", "/favicon.ico")
-	headElem.appendChild(faviconElem);
 }
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
