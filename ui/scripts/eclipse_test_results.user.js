@@ -14,7 +14,7 @@
 // @description   implements Bug 290883: Add links to XML test results and Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20140505T1658
+// @version       1.20140903T1726
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -133,7 +133,7 @@ for (var i= 0; i < anchors.length; i++) {
         
         var loadElem= document.createElement("button");
         pElem.appendChild(loadElem);
-        loadElem.innerHTML= "Load test times <img src='http://wiki.greasespot.net/favicon.ico' style='vertical-align: top'>";
+        loadElem.innerHTML= "Load test times <img src='https://addons.cdn.mozilla.net/user-media/addon_icons/0/748-64.png' style='vertical-align: top' height='16px' width='16px'>";
         loadElem.addEventListener("click", loadTestTimes, false);
     }
 }
