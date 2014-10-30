@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20140923T1348
+// @version 1.20141030T1804
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 M3", "4.5 M4", "4.5", "4.4.2"];
+var target_milestones= ["4.5 M4", "4.5 M5", "4.5", "4.4.2"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -734,6 +734,13 @@ function createCommentTemplateLinks() {
     return pElem;
 }
 
+function createScript(script) {
+	var scriptElem= document.createElement("script");
+	scriptElem.type= "text/javascript";
+	scriptElem.innerHTML= script;
+	return scriptElem;
+}
+
 //-----------
 
 //----------- Start the real work
@@ -1238,20 +1245,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         
         var updateElem= document.createElement("a");
         updateElem.innerHTML= "Update buglist link (checked bugs) -&gt;";
-        updateElem.href= "javascript:"
-            + "var inputs= document.getElementsByTagName('input');\n"
-            + "var bugs= '';\n"
-            + "for (var i= 0; i < inputs.length; i++) {\n"
-            + "  var input= inputs[i];\n"
-            + "  if (input.type == 'checkbox' && input.name.substr(0, 3) == 'id_' && input.checked) {\n"
-            + "    bugs += input.name.substr(3) + ',';\n"
-            + "  }\n"
-            + "}\n"
-            + "var buglistLinkElem= document.getElementById('buglistLink');\n"
-            + "buglistLinkElem.value= 'https://bugs.eclipse.org/bugs/buglist.cgi?bug_id=' + bugs;\n"
-            + "buglistLinkElem.focus();\n"
-            + "buglistLinkElem.select();\n"
-            + "void(0);";
+        updateElem.href= "javascript:void(0);";
+        updateElem.setAttribute("onclick", "updateBuglistLink();");
         
         lastElem.parentNode.insertBefore(updateElem, lastElem.nextSibling);
         lastElem= updateElem;
@@ -1267,6 +1262,27 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         buglistLinkElem.id= "buglistLink";
         
         lastElem.parentNode.insertBefore(buglistLinkElem, lastElem.nextSibling);
+        
+		var scriptElem= createScript(
+		    "function updateBuglistLink(init) {\n"
+	            + "var inputs= document.getElementsByTagName('input');\n"
+	            + "var bugs= '';\n"
+	            + "for (var i= 0; i < inputs.length; i++) {\n"
+	            + "  var input= inputs[i];\n"
+	            + "  if (input.type == 'checkbox' && input.name.substr(0, 3) == 'id_' && (init || input.checked)) {\n"
+	            + "    bugs += input.name.substr(3) + ',';\n"
+	            + "  }\n"
+	            + "}\n"
+	            + "var buglistLinkElem= document.getElementById('buglistLink');\n"
+	            + "buglistLinkElem.value= 'https://bugs.eclipse.org/bugs/buglist.cgi?bug_id=' + bugs;\n"
+	            + "if (!init) {\n"
+	            + "  buglistLinkElem.select();\n"
+	            + "}\n"
+	            + "void(0);\n"
+		    + "}\n"
+		    + "updateBuglistLink(true);\n"
+		);
+        lastElem.parentNode.appendChild(scriptElem);
     }
 
 
@@ -1304,20 +1320,29 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    var subtitleElem= document.getElementById("subtitle");
 			    if (subtitleElem) {
 				    subtitleElem.textContent= "";
+				    
+					// Add a convenient Commit button to the fixed header:
+					var commitElem= document.createElement("button");
+					commitElem.setAttribute("type", "submit");
+					commitElem.setAttribute("class", "knob-buttons");
+					commitElem.setAttribute("style", "margin: -3px 14px");
+					commitElem.innerHTML= "Sa<u>v</u>e&nbsp;Changes";
+					commitElem.setAttribute("accesskey", "v");
+					var tdElem= document.createElement("td");
+					tdElem.appendChild(commitElem);
+					subtitleElem.parentNode.insertBefore(tdElem, null);
 				}
 				
 				// Fix vscroll when jumping to hash locations (accommodate for fixed header table):
 				var bodyElem= document.getElementsByTagName("body")[0];
 				if (headElem && bodyElem) {
-					var scriptElem= document.createElement("script");
-					scriptElem.type= "text/javascript";
-					scriptElem.innerHTML=
-					      "function locationHashChanged() {\n"
+					var scriptElem= createScript(
+					    "function locationHashChanged() {\n"
 					    + "  var off= - document.getElementById('titles').offsetHeight - 3;\n"
 					    + "  console.log(off);\n"
 					    + "  window.scrollBy(0, off);\n"
 					    + "}\n"
-					    ;
+					);
 					headElem.appendChild(scriptElem);
 					bodyElem.setAttribute("onhashchange", "locationHashChanged();");
 					//TODO: Maybe the pageshow event would also work if the location hash did not change (e.g. on second click to hash link):
@@ -1674,6 +1699,16 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
 	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
+		
+		var scriptElem= createScript(
+			'document.addEventListener("keydown", function(e) {\n'
+			+ '  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode == 83) {\n'
+			+ '    e.preventDefault();\n'
+			+ '    document.getElementById("changeform").submit();\n'
+			+ '  }\n'
+			+ '}, false);\n'
+		);
+		headElem.appendChild(scriptElem);
 	}
 		
 	// Edit attachment details: 
@@ -1762,7 +1797,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		headElem.appendChild(scriptElem);
 
 		var aElem= document.createElement("a");
-		aElem.href= "#";
+		aElem.href= "javascript:void(0);";
 		aElem.innerHTML= "Collaps<b>e</b> All Before My Last";
 		aElem.setAttribute("accesskey", "e");
 		aElem.setAttribute("onclick","javascript:collapse_all_comments_before_my_last();\nreturn false;");
@@ -1773,7 +1808,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		
 		liElem.appendChild(document.createTextNode(" ("))
 		aElem= document.createElement("a");
-		aElem.href= "#";
+		aElem.href= "javascript:void(0);";
 		aElem.innerHTML= "Jump To M<b>y</b> Last";
 		aElem.setAttribute("accesskey", "y");
 		aElem.setAttribute("onclick","javascript:scroll_to_my_last_comment();\nreturn false;");
