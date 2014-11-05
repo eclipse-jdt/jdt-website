@@ -142,7 +142,9 @@ ob_start();
 			<h3>Greasemonkey scripts (aka user scripts)</h3>
 			<p>JDT UI developers are heavy users of <a href="https://bugs.eclipse.org/bugs/">bugs.eclipse.org</a>.
 			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created the
-			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a> Greasemonkey script to ease our daily pain.</p>
+			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a>
+			   (<a href="http://git.eclipse.org/c/www.eclipse.org/jdt.git/log/ui/scripts/jdtbugzilla.user.js">log</a>)
+			   Greasemonkey script to ease our daily pain.</p>
 			<p>
 			   The script always works with the latest release of Firefox,
 			   <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey</a>, and bugs.eclipse.org.
@@ -158,7 +160,7 @@ ob_start();
 			<p>For comments and enhancement requests, please use <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=390332">bug 390332</a> or file a new bug.
 			   If someone from the Bugzilla team wants to talk about the UI bugs, please also file a bug or directly talk to
 			   <a href="mailto:markus_keller[at]ch.ibm.com">Markus</a>.</p>
-			<p>Here are some of the improvements in the script (see comments in the source for full details):</p>
+			<p>Here are some of the improvements in the script (see comments and bug links in the source for full details):</p>
 			<ul>
 				<li>clicks all the useless (edit) links</li>
 				<li>makes the Advanced Search page usable without having to scroll (removes garbage and increases option list heights)</li>
