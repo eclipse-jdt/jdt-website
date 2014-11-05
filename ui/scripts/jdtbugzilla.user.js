@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20141030T1804
+// @version 1.20141105T1642
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -841,6 +841,64 @@ if (commentElem) {
     commentElem.setAttribute("rows", "10");
     commentElem.setAttribute("cols", "81");
     commentElem.setAttribute("onFocus", "this.rows=25");
+
+	// Fix line wrapping for links in reply comments, see https://bugzilla.mozilla.org/show_bug.cgi?id=810801 :
+	
+	// This script is a copy of the original wrapReplyText function in comments.js
+	// (with string delimiters regularized to ' , \ replaced by \\, and surrounded with '+ "' ... '\n"'):
+	var script= ""
++ "function wrapReplyText(text) {\n"
++ "    // This is -3 to account for '\\n> '\n"
++ "    var maxCol = BUGZILLA.constant.COMMENT_COLS - 3;\n"
++ "    var text_lines = text.replace(/[\\s\\n]+$/, '').split('\\n');\n"
++ "    var wrapped_lines = new Array();\n"
++ "\n"
++ "    for (var i = 0; i < text_lines.length; i++) {\n"
++ "        var paragraph = text_lines[i];\n"
++ "        // Don't wrap already-quoted text.\n"
++ "        if (paragraph.indexOf('>') == 0) {\n"
++ "            wrapped_lines.push('> ' + paragraph);\n"
++ "            continue;\n"
++ "        }\n"
++ "\n"
++ "        var replace_lines = new Array();\n"
++ "        while (paragraph.length > maxCol) {\n"
+//Fix:
++ "            var testLine = paragraph;\n"
+//+ "            var testLine = paragraph.substring(0, maxCol);\n"
++ "            var pos = testLine.search(/\\s\\S*$/);\n"
++ "\n"
++ "            if (pos < 1) {\n"
+// fix:
++ "                pos = paragraph.length;\n"
+//+ "                // Try to find some ASCII punctuation that's reasonable\n"
+//+ "                // to break on.\n"
+//+ "                var punct = '\\\\-\\\\./,!;:';\n"
+//+ "                var punctRe = new RegExp('[' + punct + '][^' + punct + ']+$');\n"
+//+ "                pos = testLine.search(punctRe) + 1;\n"
+//+ "                // Try to find some CJK Punctuation that's reasonable\n"
+//+ "                // to break on.\n"
+//+ "                if (pos == 0)\n"
+//+ "                    pos = testLine.search(/[\\u3000\\u3001\\u3002\\u303E\\u303F]/) + 1;\n"
+//+ "                // If we can't find any break point, we simply break long\n"
+//+ "                // words. This makes long, punctuation-less CJK text wrap,\n"
+//+ "                // even if it wraps incorrectly.\n"
+//+ "                if (pos == 0) pos = maxCol;\n"
++ "            }\n"
++ "\n"
++ "            var wrapped_line = paragraph.substring(0, pos);\n"
++ "            replace_lines.push(wrapped_line);\n"
++ "            paragraph = paragraph.substring(pos);\n"
++ "            // Strip whitespace from the start of the line\n"
++ "            paragraph = paragraph.replace(/^\\s+/, '');\n"
++ "        }\n"
++ "        replace_lines.push(paragraph);\n"
++ "        wrapped_lines.push('> ' + replace_lines.join('\\n> '));\n"
++ "    }\n"
++ "    return wrapped_lines.join('\\n') + '\\n\\n';\n"
++ "}\n"
+;
+	commentElem.parentNode.appendChild(createScript(script));
 }
 
 // Loop over <label>s:
