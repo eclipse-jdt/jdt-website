@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20141105T1642
+// @version 1.20141106T1919
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -863,14 +863,17 @@ if (commentElem) {
 + "\n"
 + "        var replace_lines = new Array();\n"
 + "        while (paragraph.length > maxCol) {\n"
-//Fix:
-+ "            var testLine = paragraph;\n"
-//+ "            var testLine = paragraph.substring(0, maxCol);\n"
++ "            var testLine = paragraph.substring(0, maxCol);\n"
 + "            var pos = testLine.search(/\\s\\S*$/);\n"
 + "\n"
 + "            if (pos < 1) {\n"
 // fix:
-+ "                pos = paragraph.length;\n"
++ "                if (paragraph.length > maxCol) {\n"
++ "                    pos = maxCol + paragraph.substring(maxCol).search(/\\s\\S*/);\n"
++ "                    if (pos == maxCol - 1) pos = paragraph.length;\n"
++ "                } else {\n"
++ "                    pos = maxCol;\n"
++ "                }\n"
 //+ "                // Try to find some ASCII punctuation that's reasonable\n"
 //+ "                // to break on.\n"
 //+ "                var punct = '\\\\-\\\\./,!;:';\n"
