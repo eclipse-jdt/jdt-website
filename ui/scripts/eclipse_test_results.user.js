@@ -11,10 +11,10 @@
 // ==UserScript==
 // @name          Eclipse Test Results
 // @namespace     org.eclipse.jdt.ui
-// @description   implements Bug 290883: Add links to XML test results and Bug 420296: devise "poor mans" performance assessment of unit tests
+// @description   adds links to sort test results pages by execution time, and implements Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20140903T1726
+// @version       1.20141201T1041
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -115,28 +115,16 @@ function loadTestTimes() {
 	}
 }
 
-for (var i= 0; i < anchors.length; i++) {
-    var aElem= anchors[i];
-    
-    if (aElem.href.search(htmlResultRegex) != -1) {
-        var xmlElem= document.createElement("a");
-        xmlElem.textContent= "xml";
-        xmlElem.setAttribute("style", "color:#AAAAAA");
-        xmlElem.href= getXmlRef(aElem.href);
-        xmlElem.title= "XML Test Result (e.g. for importing into the Eclipse JUnit view)";
-        aElem.parentNode.appendChild(document.createTextNode(" "));
-        aElem.parentNode.appendChild(xmlElem);
-    } else if (aElem.name == "UnitTest") {
-        var pElem= document.createElement("p");
-        pElem.style= "text-align:right;";
-        aElem.parentNode.parentNode.insertBefore(pElem, aElem.parentNode.nextElementSibling.nextElementSibling);
-        
-        var loadElem= document.createElement("button");
-        pElem.appendChild(loadElem);
-        loadElem.innerHTML= "Load test times <img src='https://addons.cdn.mozilla.net/user-media/addon_icons/0/748-64.png' style='vertical-align: top' height='16px' width='16px'>";
-        loadElem.addEventListener("click", loadTestTimes, false);
-    }
+var unitTestElem= document.getElementById("UnitTest");
+if (unitTestElem) {
+	var pElem= document.createElement("p");
+	pElem.style= "text-align:right;";
+	unitTestElem.parentNode.insertBefore(pElem, unitTestElem.nextElementSibling.nextElementSibling);
+	
+	var loadElem= document.createElement("button");
+	pElem.appendChild(loadElem);
+	loadElem.innerHTML= "Load test times <img src='https://addons.cdn.mozilla.net/user-media/addon_icons/0/748-64.png' style='vertical-align: top' height='16px' width='16px'>";
+	loadElem.addEventListener("click", loadTestTimes, false);
 }
-
 
 }
