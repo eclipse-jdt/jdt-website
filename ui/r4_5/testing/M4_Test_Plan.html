@@ -43,18 +43,35 @@ Testers:
 
 <strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
 
-<!--
-<h4>XXX (???, ??? - Questions: ???)</h4>
+<h4>Separate preference for "Unused exception parameter" (Dani, Noopur - Questions: Markus)</h4>
+Detection for unused exception parameters has been added in an early 4.5 milestone.
+Initially, it was controlled by the "Unused method parameter" option, but for 4.5 M4,
+a separate option has been introduced.
 <ul>
-	<li>verify that XXX</li>
+	<li>verify that no unused exception parameters are reported if only "Unused method parameter" is set to "Warning"</li>
+	<li>verify that the new option works</li>
 </ul>
--->
+
+<h4>Custom code formatter implementations (Noopur, Markus - Questions: Markus)</h4>
+<ul>
+	<li>verify that the code formatter preference page looks and works as in the past</li>
+	<li>write a plug-in that contributes to the <code>org.eclipse.jdt.core.codeFormatter</code> extension point</li>
+	<li>verify that the code formatter preference page now shows an option to choose the formatter implementation</li>
+	<li>verify that the toggling works and your formatter is used</li>
+	<li>verify for workspace- and project-specific preferences</li>
+</ul>
 
 <h4>Links in Javadoc hovers/view (Noopur, Dani - Questions: Markus)</h4>
 <ul>
 	<li>verify that links in Javadoc hovers still work after bug 431768 (see steps in <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=431768#c21">comment 21</a>)</li>
 	<li>verify that links still work if Javadoc is not inherited</li>
 	<li>verify that links still work if Javadoc is extracted from source</li>
+</ul>
+
+<h4>JUnit view supports re-running parameterized tests (Markus, Noopur - Questions: Markus)</h4>
+<ul>
+	<li>use <a href="http://blog.moritz.eysholdt.de/2014/11/new-eclipse-junit-feature-run-subtrees.html">Moritz' blog post</a>
+	    as inspiration and try to break the added features, e.g. by using a custom test runner</li>
 </ul>
 
 
