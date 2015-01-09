@@ -21,7 +21,7 @@
 // @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20150109T1737
+// @version 1.20150109T1817
 
 // @include       http://wiki.eclipse.org/*
 // @include       https://wiki.eclipse.org/*
@@ -67,16 +67,20 @@ for (var i = 0; i < firstHeadings.length; i++) {
 	}
 }
 
-// workaround for bug 455651: Watchlist: changed pages not identifiable (all links bold in Solstice)
+
+// workaround for Bug 447578: Edit field (textarea) needs a monospace font-family
+var css = "#editform textarea, #wpTextbox1 { font-family: monospace; }";
+
+// workaround for Bug 455651: Watchlist: changed pages not identifiable (all links bold in Solstice)
 if (window.location.href.match(/.*Special:Watchlist.*/)) {
-	var css = "a { font-weight: inherit; }";
-	var headElem= document.getElementsByTagName("head")[0];
-	if (headElem) {
-		var styleElem= document.createElement("style");
-		styleElem.type= "text/css";
-		styleElem.innerHTML = css;
-		headElem.appendChild(styleElem);
-	}
+	css += "\na { font-weight: unset; }";
+}
+var headElem= document.getElementsByTagName("head")[0];
+if (headElem) {
+	var styleElem= document.createElement("style");
+	styleElem.type= "text/css";
+	styleElem.innerHTML = css;
+	headElem.appendChild(styleElem);
 }
 
 } // main function
