@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2014 IBM Corporation and others.
+ * Copyright (c) 2012, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20141218T1514
+// @version 1.20150115T1143
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -915,6 +915,7 @@ for (var i= 0; i < labels.length; i++) {
 	    commitElem.setAttribute("type", "submit");
 	    commitElem.setAttribute("class", "knob-buttons");
 	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+		commitElem.setAttribute("title", "[Ctrl+S]");
 	    commitElem.setAttribute("accesskey", "v");
 	    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
 	    // Of course, the "comment" area is implemented differently on each page...
@@ -1387,8 +1388,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 					commitElem.setAttribute("type", "submit");
 					commitElem.setAttribute("class", "knob-buttons");
 					commitElem.setAttribute("style", "margin: -3px 14px");
+					commitElem.setAttribute("form", "changeform");
 					commitElem.innerHTML= "Sa<u>v</u>e&nbsp;Changes";
 					commitElem.setAttribute("accesskey", "v");
+					commitElem.setAttribute("title", "[Ctrl+S]");
 					var tdElem= document.createElement("td");
 					tdElem.appendChild(commitElem);
 					subtitleElem.parentNode.insertBefore(tdElem, null);
@@ -1758,6 +1761,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
 	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
+		commitElem.setAttribute("title", "[Ctrl+S]");
 	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 		
