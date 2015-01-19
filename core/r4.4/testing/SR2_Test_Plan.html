@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Luna SR2 Test Plan</title>
+</head>
+<body>
+<h1>Luna SR2 Test Plan</h1>
+Testing day: 20-01-2015, Tuesday<br>
+Test Builds: M20150114-1500 or latest<br>
+Components: JDT Core, JDT APT<br>
+Testers: <a href="mailto:jarthana@in.ibm.com">Jay</a>, <a href="mailto:manpalat@in.ibm.com">Manoj</a>, <a href="mailto:saammana@in.ibm.com">Sasi</a> and <a href="mailto:shankhba@in.ibm.com">Shankha</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.4.2 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows: Jay/Sasi</li>
+  <li>Linux: Shankha</li>
+  <li>Mac OS X 10.9: Manoj</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>Test new functionality added since 4.4</li>
+  <li>Verify that severe bugs are correctly fixed</li>
+  <li>Verify that all 4.4.2 bugs are correctly fixed</li>
+</ul>
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4>Lambda expressions (Manoj/Shankha)</h4>
+	Overload resolution and type inference
+	Method/Constructor references
+	Scope, variables with similar names, effectively final
+	Generic lambda parameters
+	Default/Static interface methods
+	Try compiling and running various combinations of lambda programs.
+
+<h4>Type annotation (Sasi/Jay)</h4>
+	Type annotations with TYPE_USE and TYPE_PARAM at various locations
+	Annotations with other target types at various locations
+	Annotations with various runtime attributes at various locations
+
+<h4>Null Analysis (Jay/Sasi)</h4>
+
+<h4>Recovery/Code assist/Code completion (Shankha/Manoj)</h4>
+	Within lambda body
+	Within type annotation definitions
+	
+<h4>Search (Jay/Sasi)</h4>
+	Search for elements, type hierarchy etc.
+
+<h2>4.4.2 Bug Verification (All)</h2>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&classification=Eclipse&component=APT&component=Core&list_id=10894123&product=JDT&query_format=advanced&resolution=FIXED&target_milestone=4.4.2">
+  JDT Core bugs</a></li>
+ </ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project).
+
+</body>
+</html>
