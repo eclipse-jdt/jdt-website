@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150115T1143
+// @version 1.20150202T1519
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 M5", "4.5 M6", "4.5", "4.4.2"];
+var target_milestones= ["4.5 M6", "4.5 M7", "4.5", "4.4.2"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -59,7 +59,6 @@ var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus_keller@ch.ibm.com",
 "NG", "noopur_gupta@in.ibm.com",
-"MM", "manju656@gmail.com ",
 ];
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
@@ -734,6 +733,12 @@ function createCommentTemplateLinks() {
     return pElem;
 }
 
+function setCommitElemNameTitleShortcut(commitElem) {
+	commitElem.setAttribute("title", window.navigator.platform.match("Mac") ? "[Command+S]" : "[Ctrl+S]");
+	commitElem.innerHTML= "Sa<u>v</u>e&nbsp;Changes";
+	commitElem.setAttribute("accesskey", "v");
+}
+
 function createScript(script) {
 	var scriptElem= document.createElement("script");
 	scriptElem.type= "text/javascript";
@@ -914,9 +919,7 @@ for (var i= 0; i < labels.length; i++) {
 	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
 	    commitElem.setAttribute("class", "knob-buttons");
-	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
-		commitElem.setAttribute("title", "[Ctrl+S]");
-	    commitElem.setAttribute("accesskey", "v");
+		setCommitElemNameTitleShortcut(commitElem);
 	    // Caveat: attachment.cgi is used for 3 purposes: add new, edit details, result after adding.
 	    // Of course, the "comment" area is implemented differently on each page...
 	    labelElem.parentNode.insertBefore(commitElem, labelElem.nextElementSibling);
@@ -1389,9 +1392,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 					commitElem.setAttribute("class", "knob-buttons");
 					commitElem.setAttribute("style", "margin: -3px 14px");
 					commitElem.setAttribute("form", "changeform");
-					commitElem.innerHTML= "Sa<u>v</u>e&nbsp;Changes";
-					commitElem.setAttribute("accesskey", "v");
-					commitElem.setAttribute("title", "[Ctrl+S]");
+					setCommitElemNameTitleShortcut(commitElem);
 					var tdElem= document.createElement("td");
 					tdElem.appendChild(commitElem);
 					subtitleElem.parentNode.insertBefore(tdElem, null);
@@ -1760,8 +1761,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	if (bz_qa_contact_inputElem) {
 	    var commitElem= document.createElement("button");
 	    commitElem.setAttribute("type", "submit");
-	    commitElem.innerHTML= "Sa<u>v</u>e Changes";
-		commitElem.setAttribute("title", "[Ctrl+S]");
+		setCommitElemNameTitleShortcut(commitElem);
 	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 		
