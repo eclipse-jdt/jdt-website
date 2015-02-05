@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150202T1519
+// @version 1.20150204T1725
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -82,7 +82,7 @@ var moveComponents= [ "Core", "Debug", "Doc", "SWT", "Text", "UI" ];
 // Add quick platform links ("<name>", "<hardware>", "<os>" triplets):
 var platforms= [
 "Win7", "PC", "Windows 7",
-"GTK", "PC", "Linux-GTK",
+"Linux", "PC", "Linux",
 "Mac", "PC", "Mac OS X",
 ];
 
@@ -1199,6 +1199,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var op_sysLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(op_sysElem, "op_sys");
 		addQueryOSLink(op_sysLinkSpanElem, new Array("Mac OS X"), "Mac");
 		addQueryOSLink(op_sysLinkSpanElem, new Array("AIX", "HP-UX", "Linux", "Solaris", "Unix"), "*nix");
+		addQueryOSLink(op_sysLinkSpanElem, new Array("Windows"), "W");
     }
 	
 	
