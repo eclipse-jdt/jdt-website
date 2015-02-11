@@ -1,6 +1,7 @@
 How to release a new version
 ============================
 
+- check out org.eclipse.license from git://git.eclipse.org/gitroot/cbi/org.eclipse.license.git
 - open site.xml
 - add a new feature version or select the current feature version to rebuild
 
