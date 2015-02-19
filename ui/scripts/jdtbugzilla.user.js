@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150204T1725
+// @version 1.20150219T1216
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1443,6 +1443,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var commentIdRegex= /^c(\d+)$/; // c42
 	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
 	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
+	var gerritRegex = /https:\/\/git\.eclipse\.org\/r\/(?:#\/c\/)?(\d+(?:\/.*)?)/;
+	var gitRegex = /\.git\/commit\/\?id=([0-9a-f]{7})[0-9a-f]+/;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    var aElemHref= aElem.getAttribute("href");
@@ -1510,7 +1512,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	    } else if (aElem.textContent == "Expand All Comments") {
 	        aElem.innerHTML= "E<b>x</b>pand All Comments";
 	        aElem.setAttribute("accesskey", "x");
-	        
+		
+		// Improve link rendering for https://bugs.eclipse.org/434841#c37
+		} else if (aElem.textContent.match(/\s*Gerrit Change\s*/) && aElemHref.match(gerritRegex)) {
+			aElem.textContent = "r/" + gerritRegex.exec(aElemHref)[1];
+		} else if (aElem.textContent.match(/\s*Git Commit\s*/) && aElemHref.match(gitRegex)) {
+			aElem.textContent = gitRegex.exec(aElemHref)[1];
+		
 	    } else if (document.getElementById("product") && document.getElementById("component")) { // e.g. not in attachment.cgi?id=*&action=edit
 		    // Add "Clone This Bug (in <originating project>)":
 		    if (aElem.textContent == "Clone This Bug") {
@@ -1531,6 +1539,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    aElem.parentNode.insertBefore(cloneElem, aElem.nextSibling);
 			    aElem.parentNode.insertBefore(document.createTextNode(" "), cloneElem);
 		    }
+		// insert more general stuff further up (not here; previous "else if" was pretty broad...)
 		}
 	    
 	//    // Show obsolete attachments initially:
