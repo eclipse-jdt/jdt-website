@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150219T1216
+// @version 1.20150225T1223
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -277,7 +277,11 @@ var css =
 	// Dim CLA flags until hovered, and fix baseline:
 	    + ".cla_dec { opacity: 0.2; vertical-align: bottom; }\n"
 	    + ".cla_dec:hover { opacity: 1.0; }\n"
-	    ;
+	
+	// "See Also" list: Avoid jagged "Remove" checkboxes and move them out of the way
+	    + "#field_container_see_also ul li label { float:right }\n"
+	    + "#field_container_see_also ul li:hover { background-color:#F4F4F4 }\n"
+	;
 
 // --- /Configurable options ------------------------------------------
 
@@ -1444,7 +1448,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
 	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
 	var gerritRegex = /https:\/\/git\.eclipse\.org\/r\/(?:#\/c\/)?(\d+(?:\/.*)?)/;
-	var gitRegex = /\.git\/commit\/\?id=([0-9a-f]{7})[0-9a-f]+/;
+	var gitRegex = /\.git\/commit\/\?.*id=([0-9a-f]{7})[0-9a-f]+/;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    var aElemHref= aElem.getAttribute("href");
