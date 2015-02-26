@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150225T1223
+// @version 1.20150226T1407
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -279,7 +279,7 @@ var css =
 	    + ".cla_dec:hover { opacity: 1.0; }\n"
 	
 	// "See Also" list: Avoid jagged "Remove" checkboxes and move them out of the way
-	    + "#field_container_see_also ul li label { float:right }\n"
+	    + "#field_container_see_also ul li label { float:right; clear: right; }\n"
 	    + "#field_container_see_also ul li:hover { background-color:#F4F4F4 }\n"
 	;
 
