@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150320T1632
+// @version 1.20150505T1455
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 M7", "4.6"];
+var target_milestones= ["4.5 RC1", "4.5 RC2", "4.5 RC3", "4.5 RC4", "4.6"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -63,6 +63,9 @@ var ccs= [
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
 var assignees= ccs;
+
+// Add "<name>", "<email>" pairs for people you frequently assign bugs to:
+var requestees= ccs;
 
 // Add "<name>", "<string>" pairs for template strings that you frequently insert into the comment field (e.g. repo URLs):
 var commentTemplates= [
@@ -385,6 +388,13 @@ function addCcLink(name, email, parentElem, fieldName) {
             + 'document.getElementById("' + fieldName + '").focus();'
             + 'document.getElementById("' + fieldName + '").selectionStart= 0;'
             + 'document.getElementById("' + fieldName + '").selectionEnd= ' + (email.length + 2) + ';'
+            + 'void(0);';
+    addLink(name, href, parentElem, email);
+}
+
+function addRequesteeLink(name, email, parentElem, fieldId) {
+    var href= 'javascript:document.getElementById("' + fieldId + '").value="' + email + '";'
+            + 'document.getElementById("' + fieldId + '").focus();'
             + 'void(0);';
     addLink(name, href, parentElem, email);
 }
@@ -964,6 +974,15 @@ for (var i= 0; i < labels.length; i++) {
     }
 }
 
+// Add quick links for requestee fields:
+var requesteeElems= document.getElementsByClassName("requestee");
+for (var i = 0; i < requesteeElems.length; i++) {
+    var requesteeElem= requesteeElems[i];
+    for (var j= 0; j < requestees.length; j= j+2) {
+        addRequesteeLink(requestees[j], requestees[j + 1], requesteeElem.parentNode, requesteeElem.id);
+    }
+}
+
 //----------- Page-specific fixes:
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
@@ -1524,8 +1543,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		// Improve link rendering for https://bugs.eclipse.org/434841#c37
 		} else if (aElem.textContent.match(/\s*Gerrit Change\s*/) && aElemHref.match(gerritRegex)) {
 			aElem.textContent = "r/" + gerritRegex.exec(aElemHref)[1];
+			var label= document.createElement("span");
+			label.textContent= " (Gerrit Change)";
+			aElem.parentNode.insertBefore(label, aElem.nextElementSibling);
 		} else if (aElem.textContent.match(/\s*Git Commit\s*/) && aElemHref.match(gitRegex)) {
 			aElem.textContent = gitRegex.exec(aElemHref)[1];
+			var label= document.createElement("span");
+			label.textContent= " (Git Commit)";
+			aElem.parentNode.insertBefore(label, aElem.nextElementSibling);
 		
 		// Show resolved bugs in dependency tree:
 		} else if (aElemHref.match(/showdependencytree\.cgi\?id=\d+&hide_resolved=1/)) {
