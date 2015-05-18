@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150518T2019
+// @version 1.20150518T2029
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -857,6 +857,8 @@ if (rep_platformElem && op_sysElem && ! window.location.pathname.match(/.*query\
 	}
 }
 
+var noWrapLinesRegex= /(^\s*at .*|\s*- locked <.*$)/m
+
 // Fix the "Comment" field size (too small on the "Attachment Details" page,
 //     default cols=80 is too narrow for proper wrapping preview):
 var commentElem= document.getElementById("comment");
@@ -883,6 +885,12 @@ if (commentElem) {
 + "            wrapped_lines.push('> ' + paragraph);\n"
 + "            continue;\n"
 + "        }\n"
+// avoid wrapping noWrapLinesRegex:
++ "        if (paragraph.match(" + noWrapLinesRegex + ")) {\n"
++ "            wrapped_lines.push('> ' + paragraph);\n"
++ "            continue;\n"
++ "        }\n"
+// END avoid wrapping noWrapLinesRegex.
 + "\n"
 + "        var replace_lines = new Array();\n"
 + "        while (paragraph.length > maxCol) {\n"
@@ -1545,13 +1553,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			aElem.textContent = "r/" + gerritRegex.exec(aElemHref)[1];
 			var label= document.createElement("span");
 			label.style.marginLeft= "1.5em";
-			label.textContent= " (Gerrit Change)";
+			label.textContent= "(Gerrit Change)";
 			aElem.parentNode.insertBefore(label, aElem.nextSibling);
 		} else if (aElem.textContent.match(/\s*Git Commit\s*/) && aElemHref.match(gitRegex)) {
 			aElem.textContent = gitRegex.exec(aElemHref)[1];
 			var label= document.createElement("span");
 			label.style.marginLeft= "1.5em";
-			label.textContent= " (Git Commit)";
+			label.textContent= "(Git Commit)";
 			aElem.parentNode.insertBefore(label, aElem.nextSibling);
 		
 		// Show resolved bugs in dependency tree:
@@ -1934,6 +1942,30 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
 	}
 	
+	// Don't wrap lines that match noWrapLinesRegex: (alternative to bug 446727: Increase line length to 140chars in Bugzilla)
+	var bz_comment_textElems= document.getElementsByClassName("bz_comment_text");
+	for (var i= 0; i < bz_comment_textElems.length; i++) {
+		var childNodesElems= bz_comment_textElems[i].childNodes;
+		for (var j= 0; j < childNodesElems.length; j++) {
+			var child= childNodesElems[j];
+			if (child.nodeType == 3 /*text*/) {
+				var split= child.textContent.split(noWrapLinesRegex);
+				if (split.length > 1) {
+					for (var k= 0; k < split.length; k+= 2) {
+						var span= document.createTextNode(split[k]);
+						child.parentNode.insertBefore(span, child);
+						
+						var span= document.createElement("span");
+						span.textContent= split[k + 1];
+						span.style= "white-space: pre";
+						child.parentNode.insertBefore(span, child);
+					}
+					child.parentNode.removeChild(child);
+				}
+			}
+		}
+	}
+
 }
 
 }
