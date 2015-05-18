@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150505T1455
+// @version 1.20150518T2019
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 RC1", "4.5 RC2", "4.5 RC3", "4.5 RC4", "4.6"];
+var target_milestones= ["4.5 RC2", "4.5 RC3", "4.5 RC4", "4.6"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -1544,13 +1544,15 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		} else if (aElem.textContent.match(/\s*Gerrit Change\s*/) && aElemHref.match(gerritRegex)) {
 			aElem.textContent = "r/" + gerritRegex.exec(aElemHref)[1];
 			var label= document.createElement("span");
+			label.style.marginLeft= "1.5em";
 			label.textContent= " (Gerrit Change)";
-			aElem.parentNode.insertBefore(label, aElem.nextElementSibling);
+			aElem.parentNode.insertBefore(label, aElem.nextSibling);
 		} else if (aElem.textContent.match(/\s*Git Commit\s*/) && aElemHref.match(gitRegex)) {
 			aElem.textContent = gitRegex.exec(aElemHref)[1];
 			var label= document.createElement("span");
+			label.style.marginLeft= "1.5em";
 			label.textContent= " (Git Commit)";
-			aElem.parentNode.insertBefore(label, aElem.nextElementSibling);
+			aElem.parentNode.insertBefore(label, aElem.nextSibling);
 		
 		// Show resolved bugs in dependency tree:
 		} else if (aElemHref.match(/showdependencytree\.cgi\?id=\d+&hide_resolved=1/)) {
