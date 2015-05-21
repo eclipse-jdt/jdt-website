@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150518T2029
+// @version 1.20150521T1222
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 RC2", "4.5 RC3", "4.5 RC4", "4.6"];
+var target_milestones= ["4.5 RC3", "4.5 RC4", "4.5.1", "4.6"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -64,7 +64,7 @@ var ccs= [
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
 var assignees= ccs;
 
-// Add "<name>", "<email>" pairs for people you frequently assign bugs to:
+// Add "<name>", "<email>" pairs for people you frequently use as flag requestees:
 var requestees= ccs;
 
 // Add "<name>", "<string>" pairs for template strings that you frequently insert into the comment field (e.g. repo URLs):
@@ -857,7 +857,7 @@ if (rep_platformElem && op_sysElem && ! window.location.pathname.match(/.*query\
 	}
 }
 
-var noWrapLinesRegex= /(^\s*at .*|\s*- locked <.*$)/m
+var noWrapLinesRegex= /^(\s*at \S+|\s*- locked <0x[0-9a-fA-F]+> \(a \S+)$/m
 
 // Fix the "Comment" field size (too small on the "Attachment Details" page,
 //     default cols=80 is too narrow for proper wrapping preview):
