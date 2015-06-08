@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150521T1222
+// @version 1.20150608T1656
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.5 RC3", "4.5 RC4", "4.5.1", "4.6"];
+var target_milestones= ["4.6 M1", "4.6", "4.5.1"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -92,11 +92,11 @@ var platforms= [
 // Add quick version links on the search page (<version> for exact version, <version*> for prefix match):
 var queryVersions= [ "3.*", "4.*"];
 
-// Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...] pairs):
+// Add quick classifications links on the search page (<name>", ["<classification1>", "<classification2>", ...], ["<product1>", "<product2>", ...] triplets):
 var queryClassifications= [
-"E", ["Eclipse"],
-" & ", ["Eclipse", "RT"],
-"RT", ["RT"],
+"E", ["Eclipse"], ["JDT", "PDE", "Platform"],
+" & ", ["Eclipse", "RT"], ["Equinox", "JDT", "PDE", "Platform"],
+"RT", ["RT"], ["Equinox"],
 ];
 
 // Add quick product links on the search page ("<name>", "<Classification>", ["<product1>", "<product2>", ...] triplets):
@@ -240,6 +240,7 @@ var css =
 	    + "#titles { background-color: #C0C0C0; color: #000000; }\n"
 	// Decrease height of title:
 	    + "#titles { padding-top: 0.3em; padding-bottom: 0.3em; }\n"
+	    + "#titles span { padding-top: 0em ! important; padding-bottom: 0em ! important; }\n"
 	// Fix color of comment number:
 	    + ".bz_comment_number { color: #65379c; }\n"
 	// Fix bg color of enhancements in bug lists, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=331415 :
@@ -515,7 +516,7 @@ function createFieldLabelClearAndQuickLinkSpan(fieldLabelElem, fieldId) {
 	return spanElem;
 }
 
-function addQueryClassificationsLink(parentElem, classifications, name) {
+function addQueryClassificationsLink(parentElem, classifications, products, name) {
     var href= 'javascript:var classificationElem= document.getElementById("classification");'
         + '    classificationElem.selectedIndex= -1;'
         + '    var classificationOptions= document.getElementById("classification").options;';
@@ -526,7 +527,18 @@ function addQueryClassificationsLink(parentElem, classifications, name) {
               + '}';
     }
     href += 'bz_fireEvent(classificationElem, "change");'
-            + 'void(0);';
+          + 'var productElem= document.getElementById("product");'
+    if (products.length > 0) {
+        href += 'productElem.value="' + products[0] + '";';
+        for (var i = 0; i < products.length; i++) {
+            href += 'var productOptions= productElem.options;'
+                  + 'for (var i = 0; i < productOptions.length; i++) {'
+                  + '    if (productOptions[i].text == "' + products[i] + '") productOptions[i].selected= true'
+                  + '}';
+        }
+        href += 'bz_fireEvent(productElem, "change");';
+    }
+    href+= 'void(0);';
     addLink(name, href, parentElem, classifications, false);
 }
 
@@ -812,7 +824,10 @@ if (headerIconsElem) {
 }
 
 // Identify ourselves:
-var headerElem= document.getElementById("header");
+var headerElem= document.getElementById("common_links");
+if (!headerElem) { // Bugzilla < 5.0
+	headerElem= document.getElementById("header");
+}
 if (headerElem && headerElem.lastElementChild) {
     var ver= "";
     if (typeof GM_info !== "undefined") {
@@ -1163,8 +1178,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	var classificationElem= document.getElementById("field_label_classification");
 	if (classificationElem) {
 		var classificationLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(classificationElem, "classification");
-		for (var i= 0; i < queryClassifications.length; i= i+2) {
-            addQueryClassificationsLink(classificationLinkSpanElem, queryClassifications[i+1], queryClassifications[i]);
+		for (var i= 0; i < queryClassifications.length; i= i+3) {
+            addQueryClassificationsLink(classificationLinkSpanElem, queryClassifications[i+1], queryClassifications[i+2], queryClassifications[i]);
         }
 	}
 	
@@ -1408,10 +1423,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			    bugElem.appendChild(bugLink);
 			    bugElem.appendChild(document.createTextNode(": " + short_desc_nonedit_displayElem.textContent));
 
-				titleElem.replaceChild(bugElem, titleElem.firstChild.nextSibling);
+				if (titleElem.firstElementChild) { // Bugzilla < 5.0
+					titleElem.replaceChild(bugElem, titleElem.firstElementChild);
+				} else {
+					titleElem.replaceChild(bugElem, titleElem.firstChild);
+				}
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
-			    var tableElem= titleElem.parentNode.parentNode.parentNode;
+			    var tableElem= document.getElementById("titles");
 			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px; z-index:1000;");
 			    // leave some space behind the fixed table:
 			    var spacerElem= document.createElement("div");
@@ -1600,8 +1619,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
 	
 	// Edit summary:
-	hideElem("summary_alias_container");
-	showElem("summary_alias_input");
+	if (!hideElem("summary_alias_container")) { // Bugzilla < 5.0
+		hideElem("summary_container");
+	}
+	if (!showElem("summary_alias_input")) { // Bugzilla < 5.0
+		showElem("summary_input");
+	}
 	
 	// Move alias field to bug id line:
 	var aliasElem= document.getElementById("alias");
