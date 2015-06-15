@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2014 IBM Corporation and others.
+ * Copyright (c) 2012, 2015 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@
 // @grant         none
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_wiki.user.js
-// @version 1.20150526T1916
+// @version 1.20150615T1237
 
 // @include       http://wiki.eclipse.org/*
 // @include       https://wiki.eclipse.org/*
@@ -50,22 +50,24 @@ for (var i = 0; i < anchors.length; i++) {
     var anchor = anchors[i];
     if (anchor.href.indexOf("title=Special:UserLogin") != -1) {
         console.debug("clicking 'Log in': " + anchor.href);
-        location.href = anchor.href;
+        // for unknown reasons, this doesn't take us back to the original wiki page after logging in:
+//        location.href = anchor.href;
+        anchor.click();
         return;
     }
 }
 console.debug("no 'Log in' found (probably already logged in)");
 
-var firstHeadings = document.getElementsByClassName("firstHeading");
-for (var i = 0; i < firstHeadings.length; i++) {
-    var firstHeading = firstHeadings[i];
-    console.debug(firstHeading);
-	if (firstHeading.textContent == "Login successful") {
-	    window.back();
-	    history.go
-	    return;
-	}
-}
+//var firstHeadings = document.getElementsByClassName("firstHeading");
+//for (var i = 0; i < firstHeadings.length; i++) {
+//    var firstHeading = firstHeadings[i];
+//    console.debug(firstHeading);
+//	if (firstHeading.textContent == "Login successful") {
+//	    window.back();
+//	    history.go
+//	    return;
+//	}
+//}
 
 
 // workaround for Bug 455651: Watchlist: changed pages not identifiable (all links bold in Solstice)
