@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150608T1656
+// @version 1.20150619T1518
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -49,7 +49,7 @@
 // These can be overridden in your local jdtbugzilla.config.js .
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M1", "4.6", "4.5.1"];
+var target_milestones= ["4.6 M1", "4.6", "4.5.1", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0];
@@ -289,6 +289,10 @@ var css =
 	    // in order to avoid overlaps. clear:right would solve the pushing to the left, but it still stops the floated
 	    // elements from overlapping. With more than a few elements, the checkboxes quickly gets out of sync with the
 	    // corresponding link on the left. The fix is to set a height that is smaller than the line height.
+	
+	// CSS for: Add ">>" link to make comment wider:
+	    + ".wide { width: 100%; }\n"
+	
 	;
 
 // --- /Configurable options ------------------------------------------
@@ -872,7 +876,7 @@ if (rep_platformElem && op_sysElem && ! window.location.pathname.match(/.*query\
 	}
 }
 
-var noWrapLinesRegex= /^(\s*at \S+|\s*- locked <0x[0-9a-fA-F]+> \(a \S+)$/m
+var noWrapLinesRegex = /^(\s*(?:\[\w+\]\s*)?(?:at \S+(?:\(Native Method\)|\(Unknown Source\))?|- locked <0x[0-9a-fA-F]+> \(a \S+))$/m;
 
 // Fix the "Comment" field size (too small on the "Attachment Details" page,
 //     default cols=80 is too narrow for proper wrapping preview):
@@ -1430,6 +1434,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 				}
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
+			    //     Better solution would be to use absolute positioning and only have a scroll-y on the bugzilla-body div:
+			    //     http://blog.stevensanderson.com/2011/10/05/full-height-app-layouts-a-css-trick-to-make-it-easier/
 			    var tableElem= document.getElementById("titles");
 			    tableElem.setAttribute("style", "position:fixed; top:0px; left:0px; right:0px; z-index:1000;");
 			    // leave some space behind the fixed table:
@@ -1523,6 +1529,17 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
+	        
+	    // Add ">>" link to make comment wider:
+	    } else if (aElem.getAttribute("class") == "bz_collapse_comment") {
+	        var commentId= commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
+	        var wideElem= document.createElement("a");
+	        wideElem.textContent= ">>";
+	        wideElem.href= "#";
+	        wideElem.style= "text-decoration: none;";
+	        wideElem.title="Toggle wide comment display";
+	        wideElem.setAttribute("onclick", "toggle_wide_comment_display(this, " + commentId + "); return false;");
+	        aElem.parentNode.insertBefore(wideElem, aElem.nextElementSibling);
 	        
 	    // Remove link in bug header to allow easy copying of bug number:
 	    } else if (aElemHref.match(bugrefRegex)) {
@@ -1964,6 +1981,29 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		// Add links to help enter a URL to a Git commit:
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
 	}
+	
+	// Script for: Add ">>" link to make comment wider:
+	var scriptElem= createScript(
+		"function toggle_wide_comment_display (link, comment_id) {\n"+
+		"  var comment = document.getElementById('comment_text_' + comment_id);\n" +
+		"  var re = new RegExp(/\\bwide\\b/);\n" +
+		"  if (comment.className.match(re))\n" +
+		"    unwiden_comment(link, comment);\n" +
+		"  else\n" +
+		"    widen_comment(link, comment);\n" +
+		"}\n" +
+		"function widen_comment(link, comment) {\n"+
+		"    link.textContent = '<<';\n"+
+		"    YAHOO.util.Dom.addClass(comment, 'wide');\n"+
+		"}\n"+
+		"\n"+
+		"function unwiden_comment(link, comment) {\n"+
+		"    link.textContent = '>>';\n"+
+		"    YAHOO.util.Dom.removeClass(comment, 'wide');\n"+
+		"}\n"+
+		""
+	);
+	headElem.appendChild(scriptElem);
 	
 	// Don't wrap lines that match noWrapLinesRegex: (alternative to bug 446727: Increase line length to 140chars in Bugzilla)
 	var bz_comment_textElems= document.getElementsByClassName("bz_comment_text");
