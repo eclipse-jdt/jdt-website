@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150619T1518
+// @version 1.20150624T1702
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -154,8 +154,9 @@ categories["Text"]= [
 categories["Text"].url= "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm";
 
 categories["JDT"]= [
-"[1.7]",
+"[1.9]",
 "[1.8]",
+"[1.7]",
 "[5.0]",
 "[actions]",
 "[api]",
@@ -290,7 +291,7 @@ var css =
 	    // elements from overlapping. With more than a few elements, the checkboxes quickly gets out of sync with the
 	    // corresponding link on the left. The fix is to set a height that is smaller than the line height.
 	
-	// CSS for: Add ">>" link to make comment wider:
+	// CSS for "toggle wide comments"
 	    + ".wide { width: 100%; }\n"
 	
 	;
@@ -1530,17 +1531,20 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
 	        
-	    // Add ">>" link to make comment wider:
+	    // Modifier+click on [-] to toggle wide comments
 	    } else if (aElem.getAttribute("class") == "bz_collapse_comment") {
 	        var commentId= commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
-	        var wideElem= document.createElement("a");
-	        wideElem.textContent= ">>";
-	        wideElem.href= "#";
-	        wideElem.style= "text-decoration: none;";
-	        wideElem.title="Toggle wide comment display";
-	        wideElem.setAttribute("onclick", "toggle_wide_comment_display(this, " + commentId + "); return false;");
-	        aElem.parentNode.insertBefore(wideElem, aElem.nextElementSibling);
-	        
+	        var action=
+	              'var modClick= event.shiftKey || event.ctrlKey || event.altKey || event.metaKey || event.button == 1;'
+	            + 'if (modClick) {'
+	            + '  toggle_wide_comment_display(' + commentId + '); return false;'
+	            + '} else {'
+	            +   aElem.getAttribute("onclick")
+	            + '}'
+	            + 'return false;';
+	        aElem.setAttribute("onclick", action);
+	        aElem.title="Toggle comment display (Modifier+click to toggle wide)";
+	    
 	    // Remove link in bug header to allow easy copying of bug number:
 	    } else if (aElemHref.match(bugrefRegex)) {
 	        if (aElem.parentNode.getAttribute("class") == "bz_alias_short_desc_container edit_form") {
@@ -1982,23 +1986,21 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
 	}
 	
-	// Script for: Add ">>" link to make comment wider:
+	// Script for "toggle wide comments":
 	var scriptElem= createScript(
-		"function toggle_wide_comment_display (link, comment_id) {\n"+
+		"function toggle_wide_comment_display (comment_id) {\n"+
 		"  var comment = document.getElementById('comment_text_' + comment_id);\n" +
 		"  var re = new RegExp(/\\bwide\\b/);\n" +
 		"  if (comment.className.match(re))\n" +
-		"    unwiden_comment(link, comment);\n" +
+		"    unwiden_comment(comment);\n" +
 		"  else\n" +
-		"    widen_comment(link, comment);\n" +
+		"    widen_comment(comment);\n" +
 		"}\n" +
-		"function widen_comment(link, comment) {\n"+
-		"    link.textContent = '<<';\n"+
+		"function widen_comment(comment) {\n"+
 		"    YAHOO.util.Dom.addClass(comment, 'wide');\n"+
 		"}\n"+
 		"\n"+
-		"function unwiden_comment(link, comment) {\n"+
-		"    link.textContent = '>>';\n"+
+		"function unwiden_comment(comment) {\n"+
 		"    YAHOO.util.Dom.removeClass(comment, 'wide');\n"+
 		"}\n"+
 		""
