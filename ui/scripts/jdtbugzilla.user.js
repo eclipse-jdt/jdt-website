@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150626T1318
+// @version 1.20150706T1800
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1018,6 +1018,17 @@ for (var i = 0; i < requesteeElems.length; i++) {
 //----------- Page-specific fixes:
 
 if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
+	process_enter_bug();
+} else if (window.location.pathname.match(/.*query\.cgi/)) {
+	process_query();
+} else if (window.location.pathname.match(/.*buglist\.cgi/)) {
+	process_buglist();
+} else { // For all result pages:
+	process_result_pages();
+}
+
+
+function process_enter_bug() {
     // Remove empty <td colspan="2">&nbsp;</td>, <th>&nbsp;</th>, and <td colspan="3" class="comment">We've made a guess at your...:
     var os_guess_noteElem= document.getElementById("os_guess_note");
 	if (os_guess_noteElem) {
@@ -1098,10 +1109,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
         // fix width: (default is 100%, which would make the CC links overflow into flags table)
         ccElem.setAttribute("style", "width: 300px");
 	}
+}
 
 
-
-} else if (window.location.pathname.match(/.*query\.cgi/)) {
+function process_query() {
 	var myMail;
 
 	// Loop over <a>s:
@@ -1150,13 +1161,13 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
     // Remove section headers and expand contents:
     var bz_section_titleElems= document.evaluate("//div[@class='bz_section_title']", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
     for (var i = 0; i < bz_section_titleElems.snapshotLength; i++) {
-        bz_section_titleElem= bz_section_titleElems.snapshotItem(i);
+        var bz_section_titleElem= bz_section_titleElems.snapshotItem(i);
         bz_section_titleElem.parentNode.replaceChild(document.createElement("hr"), bz_section_titleElem);
     }
     
     var bz_search_sectionElems= document.evaluate("//div[contains(@class,'bz_search_section')] | //ul[contains(@class,'bz_search_section')]", document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
     for (var i = 0; i < bz_search_sectionElems.snapshotLength; i++) {
-        bz_search_sectionElem= bz_search_sectionElems.snapshotItem(i);
+        var bz_search_sectionElem= bz_search_sectionElems.snapshotItem(i);
         bz_search_sectionElem.setAttribute("style", "display: block ! important;");
     }
     
@@ -1305,9 +1316,10 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	// Workaround for Bug 416542: Keyboard navigation in search page tables no longer works (quick jump to <select> option broken in Firefox):
 	fixSelectElementQuickAccess("product");
 	fixSelectElementQuickAccess("component");
+}
 	
-	
-} else if (window.location.pathname.match(/.*buglist\.cgi/)) {
+
+function process_buglist() {
     // Add access key to Edit Query:
     var bz_query_editElems= document.getElementsByClassName("bz_query_edit");
 	if (bz_query_editElems.length > 0) {
@@ -1318,6 +1330,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		var mnemonic= document.createElement("b");
 		mnemonic.appendChild(document.createTextNode("E"));
 		aElem.insertBefore(mnemonic, aElem.firstChild);
+		
 	}
 
 	// Add target milestone links (for "Change Several Bugs at Once"):
@@ -1411,9 +1424,9 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		);
         lastElem.parentNode.appendChild(scriptElem);
     }
+}
 
-
-} else { // For all result pages:
+function process_result_pages() {
 	var bugId;
 	var myMail;
 
@@ -2040,8 +2053,8 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 			}
 		}
 	}
-
 }
 
-}
+} // main()
+
 main();
