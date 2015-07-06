@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150624T1702
+// @version 1.20150626T1318
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -296,6 +296,10 @@ var css =
 	
 	;
 
+// Features like short bug links (https://bugs.eclipse.org/123456), quick links for product, component, target milestone, etc. only
+// make sense in the main Eclipse Bugzilla install. Disable them in other Bugzillas, where the rest of the script still works fine.
+var isBugsEclipseOrg= location.href.startsWith("https://bugs.eclipse.org/bugs/");
+	
 // --- /Configurable options ------------------------------------------
 
 if (typeof GM_getResourceText !== "undefined") { // GM_getResourceText is not available in Google Chrome, so let's go with the defaults.
@@ -1166,7 +1170,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 	// Add target milestone links:
 	var targetElem= document.getElementById("field_label_target_milestone");
-	if (targetElem) {
+	if (targetElem && isBugsEclipseOrg) {
 		var targetLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(targetElem, "target_milestone");
 		for (var i= 0; i < target_milestones.length; i++) {
 			addTargetLink(targetLinkSpanElem, target_milestones[i]);
@@ -1181,7 +1185,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Add quick classification links:
 	var classificationElem= document.getElementById("field_label_classification");
-	if (classificationElem) {
+	if (classificationElem && isBugsEclipseOrg) {
 		var classificationLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(classificationElem, "classification");
 		for (var i= 0; i < queryClassifications.length; i= i+3) {
             addQueryClassificationsLink(classificationLinkSpanElem, queryClassifications[i+1], queryClassifications[i+2], queryClassifications[i]);
@@ -1190,7 +1194,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Add quick product links:
 	var productElem= document.getElementById("field_label_product");
-	if (productElem) {
+	if (productElem && isBugsEclipseOrg) {
 		var productLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(productElem, "product");
 		for (var i= 0; i < queryProducts.length; i= i+3) {
             addQueryProductsLink(productLinkSpanElem, queryProducts[i+1], queryProducts[i+2], queryProducts[i]);
@@ -1199,7 +1203,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Add quick component links:
 	var componentElem= document.getElementById("field_label_component");
-	if (componentElem) {
+	if (componentElem && isBugsEclipseOrg) {
 		var componentLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(componentElem, "component");
 		for (var i= 0; i < queryComponents.length; i= i+2) {
             addQueryComponentsLink(componentLinkSpanElem, queryComponents[i+1], queryComponents[i]);
@@ -1318,7 +1322,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 
 	// Add target milestone links (for "Change Several Bugs at Once"):
 	var targetElem= document.getElementById("target_milestone");
-	if (targetElem) {
+	if (targetElem && isBugsEclipseOrg) {
 		var targetLinkSpanElem= document.createElement("span");
 		targetLinkSpanElem.style.marginLeft= ".5em";
 		targetLinkSpanElem.style.fontWeight= "normal";
@@ -1330,10 +1334,12 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	}
     
     // Turn bug link into short link:
-    var bz_id_columnElems= document.getElementsByClassName("bz_id_column");
-    for (var i = 0; i < bz_id_columnElems.length; i++) {
-        var aElem= bz_id_columnElems[i].firstElementChild;
-        aElem.href= "../" + aElem.textContent;
+    if (isBugsEclipseOrg) {
+        var bz_id_columnElems= document.getElementsByClassName("bz_id_column");
+        for (var i = 0; i < bz_id_columnElems.length; i++) {
+            var aElem= bz_id_columnElems[i].firstElementChild;
+            aElem.href= "../" + aElem.textContent;
+        }
     }
     
     // Add "Create buglist" functionality in "Change Several Bugs at Once" form:
@@ -1421,7 +1427,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 		    if (short_desc_nonedit_displayElem) {
                 // Render bug link as short link:
 			    var bugLink= document.createElement("a");
-			    bugLink.href= "../" + bugId;
+			    bugLink.href= (isBugsEclipseOrg ? "../" : "show_bug.cgi?id=") + bugId;
 			    bugLink.appendChild(document.createTextNode("Bug " + bugId));
 			    
 			    var bugElem= document.createElement("p");
@@ -1706,12 +1712,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	                );
 	    
 	    // Add shortcuts to set Product:
-		var productsLinkSpanElem= document.createElement("span");
-		productsLinkSpanElem.style.marginLeft= "1em";
-		productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
-	    for (var i= 0; i < moveProducts.length; i++) {
-	        addProductLink(moveProducts[i], productsLinkSpanElem);
-        }
+		if (isBugsEclipseOrg) {
+			var productsLinkSpanElem= document.createElement("span");
+			productsLinkSpanElem.style.marginLeft= "1em";
+			productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
+			for (var i= 0; i < moveProducts.length; i++) {
+				addProductLink(moveProducts[i], productsLinkSpanElem);
+			}
+		}
 	}
 	var componentElem= document.getElementById("component");
 	if (componentElem) {
@@ -1722,12 +1730,14 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	                );
 	    
 	    // Add shortcuts to set Component:
-		var componentsLinkSpanElem= document.createElement("span");
-		componentsLinkSpanElem.style.marginLeft= "1em";
-		componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
-	    for (var i= 0; i < moveComponents.length; i++) {
-	        addComponentLink(moveComponents[i], componentsLinkSpanElem);
-        }
+		if (isBugsEclipseOrg) {
+			var componentsLinkSpanElem= document.createElement("span");
+			componentsLinkSpanElem.style.marginLeft= "1em";
+			componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
+			for (var i= 0; i < moveComponents.length; i++) {
+				addComponentLink(moveComponents[i], componentsLinkSpanElem);
+			}
+		}
 	}
 	
 	// Copy QA and Assignee to the right (read-only):
@@ -1797,7 +1807,7 @@ if (window.location.pathname.match(/.*enter_bug\.cgi/)) {
 	
 	// Add shortcut target milestone links:
 	var targetElem= document.getElementById("target_milestone");
-	if (targetElem) {
+	if (targetElem && isBugsEclipseOrg) {
 		var targetLinkSpanElem= document.createElement("span");
 		targetLinkSpanElem.style.marginLeft= "1em";
 		targetElem.parentNode.insertBefore(targetLinkSpanElem, targetElem.nextSibling);
