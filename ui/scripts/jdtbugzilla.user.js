@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150706T1800
+// @version 1.20150706T1835
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1141,6 +1141,51 @@ function process_query() {
 //	if (queryformElem.length > 0) {
 //	    queryformElem[0].method= "get";
 //	}
+
+	// Add "Generate Report" button to Search page:
+	var searchElem= document.getElementById("Search");
+	if (searchElem) {
+		var generateElem= document.createElement("input");
+		generateElem.value= "Generate Report";
+		generateElem.type= "submit";
+		generateElem.setAttribute("onclick", ""
+			+ "var formElem= document.forms['queryform'];"
+			+ "var input= document.createElement('input');"
+			+ "input.type= 'hidden';"
+			+ "input.name= 'x_axis_field';"
+			+ "input.value= 'product';"
+			+ "formElem.appendChild(input);"
+			
+			+ "input= document.createElement('input');"
+			+ "input.type= 'hidden';"
+			+ "input.name= 'y_axis_field';"
+			+ "input.value= 'component';"
+			+ "formElem.appendChild(input);"
+			
+			+ "input= document.createElement('input');"
+			+ "input.type= 'hidden';"
+			+ "input.name= 'query_format';"
+			+ "input.value= 'report-table';"
+			+ "formElem.appendChild(input);"
+			
+			+ "input= document.createElement('input');"
+			+ "input.type= 'hidden';"
+			+ "input.name= 'format';"
+			+ "input.value= 'table';"
+			+ "formElem.appendChild(input);"
+			
+			+ "input= document.createElement('input');"
+			+ "input.type= 'hidden';"
+			+ "input.name= 'action';"
+			+ "input.value= 'wrap';"
+			+ "formElem.appendChild(input);"
+			
+			+ "formElem.action= 'report.cgi';"
+			+ "return true;");
+		
+		searchElem.parentNode.appendChild(generateElem);
+	}
+
 	
     // Remove spam headers:
     var search_helpElem= document.getElementById("search_help");
