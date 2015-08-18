@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150806T2157
+// @version 1.20150818T1545
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -294,6 +294,11 @@ var css =
 	// CSS for "toggle wide comments"
 	    + ".wide { width: 100%; }\n"
 	
+	// Fix font of <select> elements:
+	//     Firefox 40 changed the default font for <select> to OS default ("Tahoma" for me). Before (FF <= 39), it used "MS Sans Serif".
+	//     The new font is even uglier than the old one. Let's just inherit the page font:
+		+ "select { font-family: inherit; }\n"
+
 	;
 
 // Features like short bug links (https://bugs.eclipse.org/123456), quick links for product, component, target milestone, etc. only
