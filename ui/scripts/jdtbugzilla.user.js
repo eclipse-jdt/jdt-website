@@ -30,7 +30,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150818T1545
+// @version 1.20150820T1633
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -46,7 +46,12 @@
 // ==/UserScript==
 
 // --- Configurable options --------------------------------------------
-// These can be overridden in your local jdtbugzilla.config.js .
+// These values can be overridden in your local jdtbugzilla.config.js.
+// Steps in Firefox:
+// - Greasemonkey > Manage User Scripts
+// - open context menu on "JDT UI Bugzilla Add-On"
+// - choose "Show Containing Folder"
+// - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
 var target_milestones= ["4.6 M2", "4.6 M3", "4.6", "4.5.1", "BETA J9"];
@@ -295,8 +300,9 @@ var css =
 	    + ".wide { width: 100%; }\n"
 	
 	// Fix font of <select> elements:
-	//     Firefox 40 changed the default font for <select> to OS default ("Tahoma" for me). Before (FF <= 39), it used "MS Sans Serif".
-	//     The new font is even uglier than the old one. Let's just inherit the page font:
+	//     Workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1123654 / https://bugzilla.mozilla.org/show_bug.cgi?id=1194055
+	//     Firefox 40 changed the default font for <select> to the OS default font ("Tahoma" for me), but not using the OS default font size.
+	//     Firefox <= 39 used "MS Sans Serif". Tahoma 10 is very ugly. Let's just inherit the page font:
 		+ "select { font-family: inherit; }\n"
 
 	;
@@ -1755,6 +1761,40 @@ function process_result_pages() {
 	    for (var i= 0; i < ccs.length; i= i+2) {
             addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
         }
+        
+		// Add "(^ edit)" to CC list:
+		var ccElem= document.getElementById("cc");
+		if (ccElem) {
+			var href= 'javascript:'
+			+ 'var newccElem= document.getElementById("newcc");'
+			+ 'var ccElem= document.getElementById("cc");'
+			+ 'var ccElems= ccElem.children;'
+			+ 'var email= "";'
+			+ 'for (var i= 0; i < ccElems.length; i++) {'
+			+ '  if (ccElems[i].selected || ccElem.selectedOptions.length == 0) {'
+			+ '    if (email.length != 0) {'
+			+ '      email += ", ";'
+			+ '    }'
+			+ '    email += ccElems[i].value;'
+			+ '  }'
+			+ '}'
+			+ 'var endWithComma= newccElem.value.length != 0;'
+			+ 'if (endWithComma) {'
+			+ '  email += ", ";'
+			+ '}'
+			+ 'newccElem.value= email + newccElem.value;'
+			+ 'newccElem.focus();'
+			+ 'newccElem.selectionStart= 0;'
+			+ 'newccElem.selectionEnd= email.length - (endWithComma ? 2 : 0);'
+			+ 'void(0);';
+			
+			var linkElem= document.createElement("a");
+			linkElem.href= href;
+			linkElem.style= "vertical-align:top";
+			linkElem.innerHTML= "(^ edit)";
+			linkElem.title= "Copy selected CCs to editable field";
+			ccElem.parentNode.insertBefore(linkElem, ccElem.nextElementSibling);
+		}
 	}
 	
 	// Edit see_also:
@@ -1889,7 +1929,6 @@ function process_result_pages() {
 		bz_assignee_inputTRElem.parentNode.insertBefore(statusTRElem, bz_assignee_inputTRElem);
 		
 		// Add shortcut status links:
-		var dup_id_discoverableElem= document.getElementById("dup_id_discoverable");
 		var dup_id_discoverableElem= document.getElementById("dup_id_discoverable");
 		var statusLinksDivElem= document.createElement("div");
 		dup_id_discoverableElem.parentNode.insertBefore(statusLinksDivElem, dup_id_discoverableElem.nextSibling);
