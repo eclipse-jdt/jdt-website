@@ -27,10 +27,11 @@
 // @namespace     http://www.eclipse.org/jdt/ui
 // @description   Script to tune Bugzilla for JDT UI
 // @grant         GM_getResourceText
+// @grant         GM_xmlhttpRequest
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150820T1633
+// @version 1.20150904T1610
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -54,7 +55,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M2", "4.6 M3", "4.6", "4.5.1", "BETA J9"];
+var target_milestones= ["4.6 M2", "4.6 M3", "4.6", "4.5.2", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 3];
@@ -290,11 +291,8 @@ var css =
 	
 	// "See Also" list: Avoid jagged "Remove" checkboxes and move them out of the way
 	    + "#field_container_see_also ul li:hover { background-color:#F4F4F4 }\n"
-	    + "#field_container_see_also ul li label { float: right; height: 10px; }\n"
-	    // Multiple float:right elements below each other can make the 2nd+ elements be pushed to the left on their line,
-	    // in order to avoid overlaps. clear:right would solve the pushing to the left, but it still stops the floated
-	    // elements from overlapping. With more than a few elements, the checkboxes quickly gets out of sync with the
-	    // corresponding link on the left. The fix is to set a height that is smaller than the line height.
+	    + "#field_container_see_also ul li:hover label { background-color:#F4F4F4 }\n"
+	    + "#field_container_see_also ul li label { position:absolute; right:16px; background-color:white }\n"
 	
 	// CSS for "toggle wide comments"
 	    + ".wide { width: 100%; }\n"
@@ -794,6 +792,41 @@ function createScript(script) {
 	scriptElem.type= "text/javascript";
 	scriptElem.innerHTML= script;
 	return scriptElem;
+}
+
+function escapeHtml(text) {
+	if (typeof text === "boolean") {
+		return text;
+	} if (typeof text != "string") {
+		return "";
+	}
+	var r = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+	};
+	return text.replace(/[&<>"']/g, function(i) { return r[i]; });
+}
+
+function getAppendGerritStatusFunction(myElem) {
+	return function (res) {
+		var jsonText= res.responseText.substr(5);
+		var json= JSON.parse(jsonText);
+		myElem.textContent+= " " + escapeHtml(json.status)
+				+ (json.mergeable ? " (mergeable) " : " ")
+				+ escapeHtml(json.project)
+				+ " [" + escapeHtml(json.branch) + "]"
+		;
+		myElem.title=
+				  "Updated: " + escapeHtml(json.updated) + "\n"
+				+ "Branch: " + escapeHtml(json.branch) + "\n"
+				+ "ChangeId: " + escapeHtml(json.change_id) + "\n"
+				+ "Subject: " + escapeHtml(json.subject) + "\n"
+		;
+//		myElem.title+= jsonText;
+	};
 }
 
 //-----------
@@ -1580,7 +1613,8 @@ function process_result_pages() {
 	var commentRegex= /^show_bug\.cgi\?id=(\d+)#c(\d+)$/;
 	var bugrefRegex = /show_bug\.cgi\?id=(\d+)/;
 	var gerritRegex = /https:\/\/git\.eclipse\.org\/r\/(?:#\/c\/)?(\d+(?:\/.*)?)/;
-	var gitRegex = /\.git\/commit\/\?.*id=([0-9a-f]{7})[0-9a-f]+/;
+	// https://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id=d609946a67b70c2afbdfe936f9883720e6e2d489
+	var gitRegex =    /https:\/\/git\.eclipse\.org\/c\/([^?]+)\.git\/commit\/\?.*id=([0-9a-f]{7})[0-9a-f]+/;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    var aElemHref= aElem.getAttribute("href");
@@ -1665,16 +1699,26 @@ function process_result_pages() {
 		
 		// Improve link rendering for https://bugs.eclipse.org/434841#c37
 		} else if (aElem.textContent.match(/\s*Gerrit Change\s*/) && aElemHref.match(gerritRegex)) {
-			aElem.textContent = "r/" + gerritRegex.exec(aElemHref)[1];
-			var label= document.createElement("span");
-			label.style.marginLeft= "1.5em";
-			label.textContent= "(Gerrit Change)";
-			aElem.parentNode.insertBefore(label, aElem.nextSibling);
+			var changeId= gerritRegex.exec(aElemHref)[1];
+			aElem.textContent = "r/" + changeId;
+			
+			// Lazily load/append Gerrit status:
+			// can't use XMLHttpRequest due to Cross-Origin Request blocking (Same Origin Policy)
+			if (typeof GM_xmlhttpRequest !== "undefined") {
+				GM_xmlhttpRequest({
+					method: "GET",
+					url: "https://git.eclipse.org/r/changes/" + changeId,
+					onload: getAppendGerritStatusFunction(aElem)
+				});
+			}
+			
 		} else if (aElem.textContent.match(/\s*Git Commit\s*/) && aElemHref.match(gitRegex)) {
-			aElem.textContent = gitRegex.exec(aElemHref)[1];
+			var match= gitRegex.exec(aElemHref);
+			aElem.textContent = match[2];
+			
 			var label= document.createElement("span");
 			label.style.marginLeft= "1.5em";
-			label.textContent= "(Git Commit)";
+			label.textContent= "(" + match[1] + ")";
 			aElem.parentNode.insertBefore(label, aElem.nextSibling);
 		
 		// Show resolved bugs in dependency tree:
