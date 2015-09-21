@@ -31,7 +31,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150904T1610
+// @version 1.20150921T1519
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -55,7 +55,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M2", "4.6 M3", "4.6", "4.5.2", "BETA J9"];
+var target_milestones= ["4.6 M3", "4.6 M4", "4.6", "4.5.2", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 3];
@@ -939,6 +939,11 @@ if (commentElem) {
 	
 	// This script is a copy of the original wrapReplyText function in comments.js
 	// (with string delimiters regularized to ' , \ replaced by \\, and surrounded with '+ "' ... '\n"'):
+	
+	// TODO: should not wrap at the space between "bug 1234".
+	// Fix idea: instead of cutting hard, use a regex like this:
+	// ^.{0,80}\s(?<![Bb]ug\s)(?!\s*\d+)
+	// Note that this still wouldn't completely fix "bug 1234 comment 1".
 	var script= ""
 + "function wrapReplyText(text) {\n"
 + "    // This is -3 to account for '\\n> '\n"
