@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Neon M3 Test Plan</title>
+</head>
+<body>
+<h1>Neon M3 Test Plan</h1>
+Testing day: Tuesday 2015-10-27<br>
+Test Builds: latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.6 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Dani, Noopur and Markus</li>
+  <li>Linux-GTK: -</li>
+  <li>Mac OS X 10.10: Markus</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.5</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>verify that all 4.5.2 bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4>Java 9 Feature Patch (Markus, Noopur - Questions: Jay)</h4>
+Sanity test our Java 9 Feature patch from the Marketplace.
+<ul>
+	<li>verify that it installs on our M3 candidate</li>
+	<li>verify that it works with latest Java 9 JRE</li>
+	<li>verify that pre-Java 9 stuff works as usual</li>
+</ul>
+
+<h4>New severity level "information" in the UI (Dani, Markus - Questions: Noopur, Jay)</h4>
+<ul>
+	<li>verify that changing the preferences is correctly reflected</li>
+	<li>verify that the "problem" is correctly rendered in the UI (editor, Problems view, file/element decorators)</li>
+	<li>verify that quick fixes work on info</li>
+</ul>
+
+<h4>Templates that check for 'null'  (Markus, Dani - Questions: Lars, Noopur)</h4>
+<ul>
+	<li>verify that the templates are shown at the correct locations</li>
+	<li>verify that they insert the correct text</li>
+</ul>
+
+<h4>Declaration view background color uses same default as Source hover (Noopur, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify that the Declaration view background color uses same default as Source hover</li>
+</ul>
+
+<h4>Text Search gets enabled even if file name patterns is empty (Markus, Noopur - Questions: Dani)</h4>
+<ul>
+	<li>verify that Text Search gets enabled even if file name patterns is empty</li>
+</ul>
+
+
+<h2>4.5.2 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.5.2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.5.2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.6 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.6 M3</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M3&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.6 M3</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
