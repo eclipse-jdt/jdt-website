@@ -28,10 +28,12 @@
 // @description   Script to tune Bugzilla for JDT UI
 // @grant         GM_getResourceText
 // @grant         GM_xmlhttpRequest
+// @grant         GM_addStyle
+// @run-at document-start
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20150921T1519
+// @version 1.20151030T1830
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -55,7 +57,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M3", "4.6 M4", "4.6", "4.5.2", "BETA J9"];
+var target_milestones= ["4.6 M4", "4.6 M5", "4.6", "4.5.2", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 3];
@@ -2195,4 +2197,10 @@ function process_result_pages() {
 
 } // main()
 
-main();
+
+GM_addStyle(css);
+document.addEventListener('DOMContentLoaded', function() {
+  //page has been loaded, run DOM interactive parts (aka "@run-at document-end") here:
+  main();
+}, true);
+
