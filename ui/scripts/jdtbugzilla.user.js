@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20151030T1830
+// @version 1.20151120T1509
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -822,9 +822,10 @@ function getAppendGerritStatusFunction(myElem) {
 				+ " [" + escapeHtml(json.branch) + "]"
 		;
 		myElem.title=
-				  "Updated: " + escapeHtml(json.updated) + "\n"
+				  "Owner: " + escapeHtml(json.owner.name) + "<" + escapeHtml(json.owner.email) + ">\n"
+				+ "Updated: " + escapeHtml(json.updated) + "\n"
 				+ "Branch: " + escapeHtml(json.branch) + "\n"
-				+ "ChangeId: " + escapeHtml(json.change_id) + "\n"
+				+ "Change-Id: " + escapeHtml(json.change_id) + "\n"
 				+ "Subject: " + escapeHtml(json.subject) + "\n"
 		;
 //		myElem.title+= jsonText;
@@ -1622,6 +1623,7 @@ function process_result_pages() {
 	var gerritRegex = /https:\/\/git\.eclipse\.org\/r\/(?:#\/c\/)?(\d+(?:\/.*)?)/;
 	// https://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id=d609946a67b70c2afbdfe936f9883720e6e2d489
 	var gitRegex =    /https:\/\/git\.eclipse\.org\/c\/([^?]+)\.git\/commit\/\?.*id=([0-9a-f]{7})[0-9a-f]+/;
+	var lastComment;
 	for (var i= 0; i < anchors.length; i++) {
 	    var aElem= anchors[i];
 	    var aElemHref= aElem.getAttribute("href");
@@ -1646,6 +1648,7 @@ function process_result_pages() {
 	        
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
+	        lastComment= aElem;
 	        
 	    // Modifier+click on [-] to toggle wide comments
 	    } else if (aElem.getAttribute("class") == "bz_collapse_comment") {
@@ -1714,7 +1717,7 @@ function process_result_pages() {
 			if (typeof GM_xmlhttpRequest !== "undefined") {
 				GM_xmlhttpRequest({
 					method: "GET",
-					url: "https://git.eclipse.org/r/changes/" + changeId,
+					url: "https://git.eclipse.org/r/changes/" + changeId + "?o=DETAILED_ACCOUNTS",
 					onload: getAppendGerritStatusFunction(aElem)
 				});
 			}
@@ -1763,6 +1766,20 @@ function process_result_pages() {
 	//        scriptElem.innerHTML= 'toggle_display(document.anchors["toggle_display"]);';
 	//        aElem.parentNode.insertBefore(scriptElem, aElem.nextSibling)
 	//    }
+	}
+
+	// add "Jump to my last comment" and "Jump to last comment and Reload" links in header:
+	if (lastComment) {
+		var header_addl_infoElems= document.getElementsByClassName("header_addl_info");
+		if (header_addl_infoElems[0]) {
+			// original text: Last modified: 2015-11-09 11:15:40 CET
+			var newHTML= '(<a href="javascript:scroll_to_my_last_comment();void(0);" title="Jump to my last comment">My</a>) '
+					+ '<a href="javascript:'
+					+ 'window.location.href=\'' + lastComment.href
+					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">Last modified</a>'
+					+ header_addl_infoElems[0].innerHTML.substr(13);
+			header_addl_infoElems[0].innerHTML= newHTML;
+		}
 	}
 	
 	// Edit summary:
@@ -2099,24 +2116,23 @@ function process_result_pages() {
 		  "}\n" +
 		  
 		  "function scroll_to_my_last_comment() {\n" +
-			"var comments = YAHOO.util.Dom.getElementsByClassName('bz_comment_text');\n" +
+			"var comments = YAHOO.util.Dom.getElementsByClassName('bz_comment');\n" +
 			"var i = comments.length - 1;\n" +
-			"var scrollTarget;\n" +
+			"var scrollTargetId;\n" +
 			"for (; i >= 0; i--) {\n" +
 			"	var comment = comments[i];\n" +
 			"	if (!comment)\n" +
 			"		continue;\n" +
 			"	\n" +
-			"	var emailElems= comment.parentNode.getElementsByClassName('email');\n" +
+			"	var emailElems= comment.getElementsByClassName('email');\n" +
 			"	if (emailElems[emailElems.length - 1].title == '" + myMail + "') {\n" +
-			"		scrollTarget= emailElems[emailElems.length - 1];\n" +
+			"		scrollTargetId= comment.id;\n" +
 			"		i--;\n" +
 			"		break;\n" +
 			"	};\n" +
 			"}\n" +
-			"if (scrollTarget) {\n" +
-			"	scrollTarget.scrollIntoView(true);\n" +
-			"	locationHashChanged();\n" +
+			"if (scrollTargetId) {\n" +
+			"	window.location.hash= scrollTargetId;\n" +
 			"};\n" +
 		  "}\n" +
 		  
