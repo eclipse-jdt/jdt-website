@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20151120T1509
+// @version 1.20151210T1856
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -57,7 +57,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M4", "4.6 M5", "4.6", "4.5.2", "BETA J9"];
+var target_milestones= ["4.6 M5", "4.6 M6", "4.6", "4.5.2", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 3];
@@ -812,11 +812,15 @@ function escapeHtml(text) {
 	return text.replace(/[&<>"']/g, function(i) { return r[i]; });
 }
 
-function getAppendGerritStatusFunction(myElem) {
+function getAppendGerritStatusFunction(link) {
 	return function (res) {
+		var myElem= document.createElement("a");
+		myElem.href= link.href;
+		myElem.style.marginLeft= "1em";
+		
 		var jsonText= res.responseText.substr(5);
 		var json= JSON.parse(jsonText);
-		myElem.textContent+= " " + escapeHtml(json.status)
+		myElem.textContent= escapeHtml(json.status)
 				+ (json.mergeable ? " (mergeable) " : " ")
 				+ escapeHtml(json.project)
 				+ " [" + escapeHtml(json.branch) + "]"
@@ -829,6 +833,8 @@ function getAppendGerritStatusFunction(myElem) {
 				+ "Subject: " + escapeHtml(json.subject) + "\n"
 		;
 //		myElem.title+= jsonText;
+		
+		link.parentNode.insertBefore(myElem, link.nextSibling);
 	};
 }
 
@@ -1200,6 +1206,7 @@ function process_query() {
 		var generateElem= document.createElement("input");
 		generateElem.value= "Generate Report";
 		generateElem.type= "submit";
+		generateElem.style.marginLeft = "29em";
 		generateElem.setAttribute("onclick", ""
 			+ "var formElem= document.forms['queryform'];"
 			+ "var input= document.createElement('input');"
@@ -1670,6 +1677,15 @@ function process_result_pages() {
 	            var pre= document.createTextNode("bug " + bugId);
 	            aElem.parentNode.insertBefore(pre, aElem);
 	            aElem.parentNode.removeChild(aElem);
+	            
+	        // Show title of "See Also" bugs:
+			} else if (aElem.parentNode.parentNode.parentNode.id == "field_container_see_also"
+					&& aElem.getAttribute("class") && aElem.getAttribute("class").contains("bz_bug_link")) {
+				var myElem= document.createElement("span");
+				myElem.style.marginLeft= "1em";
+				myElem.textContent= aElem.title;
+				myElem.title= aElem.title;
+				aElem.parentNode.insertBefore(myElem, aElem.nextSibling);
             }
         
 	    // Turn "Add comment" link into a button:
@@ -1860,7 +1876,7 @@ function process_result_pages() {
 			linkElem.href= href;
 			linkElem.style= "vertical-align:top";
 			linkElem.innerHTML= "(^ edit)";
-			linkElem.title= "Copy selected CCs to editable field";
+			linkElem.title= "Copy selected CCs to editable/copyable field";
 			ccElem.parentNode.insertBefore(linkElem, ccElem.nextElementSibling);
 		}
 	}

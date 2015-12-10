@@ -14,7 +14,7 @@
 // @description   adds links to sort test results pages by execution time, and implements Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20141201T1041
+// @version       1.20151210T1856
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -79,7 +79,12 @@ function getAppendTimeFunction(myElem) { // JavaScript garbage to capture aElem
 		for (var i= 0; i < testsuites.length; i++) {
 			var testsuite= testsuites[i];
 			var time= testsuite.getAttribute("time");
-			myElem.parentNode.appendChild(document.createTextNode(" " + time + "s"));
+			var parentElem= myElem.parentNode;
+			if (parentElem.tagName == "B") {
+				parentElem= parentElem.parentNode;
+			}
+			parentElem.appendChild(document.createTextNode(" " + time + "s"));
+			parentElem.removeAttribute("align");
 		}
 	};
 }
