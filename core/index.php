@@ -67,113 +67,6 @@ dependencies, it also does not depend on any particular Java UI and can
 be run headless.</p>
 		</div>
 		<div class="homeitem3col">
-			<a name="HAPPENING"></a>
-			<h2><b>What&#8217;s Happening?</b></h2>
-
-<h3>R3.7 Development</h3>
-<ul>
-  <li>Most active development goes into this stream.
-  </li>
-  <li> The 3.7 plan is posted <a href="r3.7/plan.php">here</a>.
-  </li>
-  <li> The 3.7 next-milestone plan is posted <a href="r3.7/plan.php#current-milestone">here</a>.
-  </li>
-</ul>
-
-<h3>R3.6 Development</h3>
-<ul>
-  <li> Release 3.6 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.6/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.6/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>	
-			
-				<h3>R3.5 Maintenance</h3>
-<ul>
-  <li> Release 3.5 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.5/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.5/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>	
-				<h3>R3.4 Maintenance</h3>
-<ul>
-  <li> Release 3.4 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.4/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.4/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R3.3 Maintenance</h3>
-<ul>
-  <li> Rollup 3.3.2 available on the <a href=" http://download.eclipse.org/eclipse/downloads">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.3/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.3/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R3.2 Maintenance</h3>
-<ul>
-  <li> Rollup 3.2.2 available on the <a href=" http://archive.eclipse.org/eclipse/downloads">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.2/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.2/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R3.1 Maintenance</h3>
-<ul>
-  <li> Rollup 3.1.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.1/index.php#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.1/index.php#UPDATES">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R3.0 Maintenance</h3>
-<ul>
-  <li> Rollup 3.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r3.0/main.html#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r3.0/main.html#updates">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R2.1 Maintenance</h3>
-<ul>
-  <li> Rollup 2.1.3 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r2.1/main.html#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r2.1/main.html#updates">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R2.0 Maintenance</h3>
-<ul>
-  <li> Rollup 2.0.2 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r2.0/main.html#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r2.0/main.html#updates">update</a> area (for testing purpose).
-  </li>
-</ul>
-				<h3>R1.0 Maintenance</h3>
-<ul>
-  <li> Release 1.0 available on the <a href="http://archive.eclipse.org/eclipse/downloads/index.php">download</a> area.
-  </li>
-  <li> Latest information on further maintenance is available <a href="r1.0/main.html#maintenance">here</a>.
-  </li>
-  <li> Patch available in <a href="r1.0/main.html#updates">update</a> area (for testing purpose).
-  </li>
-</ul>
-<p>For more detailed information, check out the <a href="dev.php">Development Resources</a>.</p>
-		</div>
-		<div class="homeitem3col">
 			<a name="INVOLVED"></a>
 			<h2><b>Get Involved!</b></h2>
 			<p>If you are interested in participating in the development of the JDT
@@ -198,7 +91,6 @@ Resources</a>.</p>
 			<ul>
 				<li><a href="#DEV">Development Resources</a></li>
 				<li><a href="#JDT_CORE">JDT Core</a></li>
-				<li><a href="#HAPPENING">What&#8217;s Happening?</a></li>
 				<li><a href="#INVOLVED">Get Involved!</a></li>
 			</ul>
 		</div>
