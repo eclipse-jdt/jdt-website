@@ -75,34 +75,6 @@ ob_start();
 				</ul>
 		</div>
 		<div class="homeitem3col">
-			<a name="happening"></a>
-			<h3>What&#8217;s Happening?</h3>
-			<p><b>R4.4 Development</b></p>
-			<ul>
-				<li>Most active development goes into this stream which can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>The combined JDT Text and JDT UI 4.4 plan is posted <a href="r4_4/plan.php">here</a>.</li>
-			</ul>
-			
-		    <h4>R4.3</h4>
-			<ul>
-				<li>The current release is R4.3 which is available on the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area
-				or bundled in different packages on the <a href="http://www.eclipse.org/downloads/index.php" target="newdownload&quot;">download</a> area.</li>
-			</ul>
-			
-			<p><b>R4.3 Maintenance</b></p>
-		    <ul>
-		    	<li>Information about the R4.3 maintenance release can be found <a href="http://wiki.eclipse.org/Kepler/Simultaneous_Release_Plan#Service_Releases">here</a>
-		    	and builds can be downloaded from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-		    </ul>
-			
-			<p><b>Pre 4.3 builds</b></p>
-			<ul>
-				<li>3.8.2/4.2.2 builds are available from the <a href="http://download.eclipse.org/eclipse/downloads/">eclipse project download</a> area.</li>
-				<li>All other 1.x, 2.x, 3.x and 4.x builds are available from the <a
-					href="http://archive.eclipse.org/eclipse/downloads/">archive download</a> area.</li>
-			</ul>
-		</div>
-		<div class="homeitem3col">
 			<a name="involved"></a>
 			<h3>Get Involved!</h3>
 			<p>If you are interested in participating in the development of the
@@ -128,7 +100,6 @@ ob_start();
 				<li><a href="#dev">Development Resources</a></li>
 				<li><a href="#jdt ui">JDT UI</a></li>
 				<li><a href="#optional">Optional Plug-ins</a></li>				
-				<li><a href="#happening">What&#8217;s Happening?</a></li>
 				<li><a href="#involved">Get Involved!</a></li>
 			</ul>
 		</div>
