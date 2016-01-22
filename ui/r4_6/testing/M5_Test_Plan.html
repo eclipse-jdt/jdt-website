@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Neon M5 Test Plan</title>
+</head>
+<body>
+<h1>Neon M5 Test Plan</h1>
+Testing days: Monday 2016-01-25 and Tuesday 2016-01-26<br>
+Test Builds: latest available I-build<br>
+Components: Platform Search, Platform Text, JDT Text and JDT UI<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.6 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows 7: Dani</li>
+  <li>Linux-GTK: Noopur</li>
+  <li>Mac OS X 10.10: Markus</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.5</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>verify that all 4.5.2 bugs are correctly fixed</li>
+</ul>
+
+<h2>General Functionality</h2>
+<ul>
+	<li>Look for potential layout issues. Several places in the code got changed to use <code>Composite#requestLayout</code>.</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4> Quick Assist to configure problem severity (Dani, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>verify that the quick fix appears where expected</li>
+	<li>verify that the quick fix works</li>
+	<li>verify that the quick fix no longer appears in the hover</li>
+</ul>
+
+<h4>Substring completion (Markus, Dani - Questions: Noopur)</h4>
+<ul>
+	<li>verify that substring completion works for members</li>
+	<li>verify that substring completion works for templates</li>
+	<li><strike>verify that substring completion works for keywords</strike> (this is not yet ready, see <a href="https://bugs.eclipse.org/486359"> bug 486359</a>)</li>
+</ul>
+
+<h4>Emphasized matching characters in completion proposals (Markus, Dani - Questions: Noopur)</h4>
+<ul>
+	<li>verify that the characters who match the content assist string are emphasized in the proposal list for all proposals</li>
+</ul>
+
+
+<h2>4.5.2 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.5.2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.5.2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.6 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.6 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.6 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.6 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.6 M5</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
