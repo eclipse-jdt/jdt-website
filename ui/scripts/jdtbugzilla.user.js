@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20151210T1856
+// @version 1.20160128T1743
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -83,7 +83,8 @@ var commentTemplates= [
 "platform.common", "http://git.eclipse.org/c/platform/eclipse.platform.common.git/commit/?id=",
 "platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id=",
 "platform.team", "http://git.eclipse.org/c/platform/eclipse.platform.team.git/commit/?id=",
-"pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id="
+"pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id=",
+"equinox.bundles", "http://git.eclipse.org/c/equinox/rt.equinox.bundles.git/commit/?id=",
 ];
 
 // Add Products and Components to which you frequently move bugs:
@@ -394,13 +395,28 @@ function addStatusLink(name, status, resolution, parentElem) {
     addLink(name, href, parentElem);
 }
 
-function addAssigneeLink(name, email, parentElem) {
-    var href= 'javascript:document.getElementById("assigned_to").value="' + email + '";'
+var addOldAssigneeAsCcScript=
+              'var assignee= document.getElementById("assigned_to").value;'
+            + 'if (assignee.search(/(?:inbox|triaged)@eclipse.org/i) == -1 && !document.getElementById("newcc").value.contains(assignee)) {'
+            + '  document.getElementById("newcc").value= assignee + ", " + document.getElementById("newcc").value;'
+            + '  document.getElementById("newcc").focus();'
+            + '  document.getElementById("newcc").selectionStart= 0;'
+            + '  document.getElementById("newcc").selectionEnd= assignee.length + 2;'
+            + '}';
+
+function getAssigneeLinkScript(email) {
+    return 'javascript:'
+            + addOldAssigneeAsCcScript
+            + 'document.getElementById("assigned_to").value="' + email + '";'
             + 'document.getElementById("set_default_assignee").checked= false;'
             + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");'
             + 'document.getElementById("assigned_to").focus();'
             + 'void(0);';
+}
+
+function addAssigneeLink(name, email, parentElem) {
+	var href= getAssigneeLinkScript(email);
     addLink(name, href, parentElem, email);
 }
 
@@ -421,7 +437,9 @@ function addRequesteeLink(name, email, parentElem, fieldId) {
 }
 
 function addProductLink(name, parentElem) {
-    var href= 'javascript:document.getElementById("product").value="' + name + '";'
+    var href= 'javascript:'
+			+ addOldAssigneeAsCcScript
+            + 'document.getElementById("product").value="' + name + '";'
             + 'document.getElementById("set_default_assignee").checked= true;'
             + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
@@ -431,7 +449,9 @@ function addProductLink(name, parentElem) {
 }
 
 function addComponentLink(name, parentElem) {
-    var href= 'javascript:document.getElementById("component").value="' + name + '";'
+    var href= 'javascript:'
+			+ addOldAssigneeAsCcScript
+            + 'document.getElementById("component").value="' + name + '";'
             + 'document.getElementById("set_default_assignee").checked= true;'
             + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "bold");'
             + 'document.getElementById("component").focus();'
@@ -1695,18 +1715,46 @@ function process_result_pages() {
 	        buttonElem.textContent= aElem.textContent + "...";
 	        aElem.parentNode.replaceChild(buttonElem, aElem);
 	    
-	    // Tune user links into
-	    // (1) link containing name <email_address> (e.g. to copy-paste as Git author), and
-	    // (2) link containing plain email address
 	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
+	        var email= aElemHref.substr(7);
+	        
+		    // Add "envelope" mail link, containing "name <email_address>" (e.g. to copy-paste as Git author)
 		    var fullElem= aElem.cloneNode();
 		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
 		    fullElem.style.textDecoration="none";
-		    fullElem.title= aElemHref.substr(7);
-	        aElem.setAttribute("href", "mailto:" + aElem.firstElementChild.textContent + " <" + aElemHref.substr(7) + ">");
+	        var fullEmail= aElem.firstElementChild.textContent + " <" + email + ">";
+		    fullElem.title= fullEmail;
+	        aElem.title= email;
+	        fullElem.setAttribute("href", "mailto:" + fullEmail);
 	        
 		    aElem.parentNode.insertBefore(fullElem, aElem.nextSibling.nextSibling);
 		    aElem.parentNode.insertBefore(document.createTextNode(" "), fullElem.nextSibling);
+		    
+		    i+= 1; // skip new link
+		    
+		    // Add "assign to" link
+		    var assignToElem= aElem.cloneNode();
+		    assignToElem.innerHTML+= "&#x1f448;"; //Left white hand pointing index
+//		    assignToElem.innerHTML+= "&#x2318;"; //PLACE OF INTEREST SIGN
+//		    assignToElem.innerHTML+= ":=";
+//		    assignToElem.innerHTML+= "&#x25C0;"; //Black triangle left
+//		    assignToElem.innerHTML+= "&#x21b0;"; //Upwards Arrow With Tip Leftwards
+//		    assignToElem.innerHTML+= "&#x270D;"; //WRITING HAND
+//		    assignToElem.innerHTML+= "&#x270E;"; //LOWER RIGHT PENCIL
+//		    assignToElem.innerHTML+= "&#x1f4bb;"; //Computer
+//		    assignToElem.innerHTML+= "&#x21F1;"; //North west arrow to corner
+//		    assignToElem.innerHTML+= "&#x25C6;"; //Black diamond
+		    // not supported:
+//		    assignToElem.innerHTML+= "&#x23FA;"; //Black Circle for Record
+//		    assignToElem.innerHTML+= "&#x1F844;"; //Leftwards Heavy Arrow
+//		    assignToElem.innerHTML+= "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
+//		    assignToElem.innerHTML+= "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
+		    assignToElem.style.textDecoration="none";
+		    assignToElem.title= "Assign to " + aElem.title;
+	        assignToElem.setAttribute("href", getAssigneeLinkScript(email));
+	        
+		    fullElem.parentNode.insertBefore(assignToElem, fullElem.nextSibling.nextSibling);
+		    fullElem.parentNode.insertBefore(document.createTextNode(" "), assignToElem.nextSibling);
 		    
 		    i+= 1; // skip new link
 		
@@ -1888,6 +1936,11 @@ function process_result_pages() {
 	// Edit & rearrange Assignee & QA:
 	fixCheckboxField("bz_assignee_edit_container", "bz_assignee_input", "Default Ass.");
 	fixCheckboxField("bz_qa_contact_edit_container", "bz_qa_contact_input", "Default QA");
+	
+	var set_default_assigneeElem= document.getElementById("set_default_assignee");
+	if (set_default_assigneeElem) {
+		set_default_assigneeElem.setAttribute("onclick", addOldAssigneeAsCcScript);
+	}
 
     // Fix Product & Component (lose focus on change):
 	var productElem= document.getElementById("product");
@@ -2141,7 +2194,7 @@ function process_result_pages() {
 			"		continue;\n" +
 			"	\n" +
 			"	var emailElems= comment.getElementsByClassName('email');\n" +
-			"	if (emailElems[emailElems.length - 1].title == '" + myMail + "') {\n" +
+			"	if (emailElems[0].title == '" + myMail + "') {\n" +
 			"		scrollTargetId= comment.id;\n" +
 			"		i--;\n" +
 			"		break;\n" +
