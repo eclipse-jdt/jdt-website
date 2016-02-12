@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160201T1243
+// @version 1.20160321T1804
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -57,7 +57,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M6", "4.6 M7", "4.6", "4.5.2", "BETA J9"];
+var target_milestones= ["4.6 M7", "4.7", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0, 3];
@@ -308,6 +308,14 @@ var css =
 
 	;
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith#Polyfill for Chromium 37 on Ubuntu 12.04:
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position){
+      position = position || 0;
+      return this.substr(position, searchString.length) === searchString;
+  };
+}
+
 // Features like short bug links (https://bugs.eclipse.org/123456), quick links for product, component, target milestone, etc. only
 // make sense in the main Eclipse Bugzilla install. Disable them in other Bugzillas, where the rest of the script still works fine.
 var isBugsEclipseOrg= location.href.startsWith("https://bugs.eclipse.org/bugs/");
@@ -407,11 +415,7 @@ var addOldAssigneeAsCcScript=
 function getAssigneeLinkScript(email) {
     return 'javascript:'
             + addOldAssigneeAsCcScript
-            + 'document.getElementById("assigned_to").value="' + email + '";'
-            + 'document.getElementById("set_default_assignee").checked= false;'
-            + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
-            + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");'
-            + 'document.getElementById("assigned_to").focus();'
+            + 'assignTo("' + email + '");'
             + 'void(0);';
 }
 
@@ -466,7 +470,7 @@ function addPlatformLink(parentElem, name, hardware, os) {
     addLink(name, href, parentElem);
 }
 
-function addEmailLinks(emailElemName, myMail) {
+function addSearch_email_fieldsLinks(emailElemName, myMail) {
 	var emailElem= document.getElementById(emailElemName);
 	if (emailElem) {
 	    emailElem.setAttribute("style", "width: 100%");
@@ -489,6 +493,33 @@ function addEmailLinks(emailElemName, myMail) {
 			emailtypeElem.parentNode.insertBefore(document.createElement("br"), emailtypeElem.nextElementSibling.nextElementSibling);
 	        
 	    }
+		
+		// Add "None" and "All" links after "Any of:" labels:
+		var sp= document.createElement("span");
+		sp.style.marginLeft= ".5em";
+		emailElem.parentNode.insertBefore(sp, emailElem.parentNode.firstElementChild);
+		var noneHref= 'javascript:'
+					+ 'var emailElem= document.getElementById("' + emailElemName + '");'
+					+ 'var allInputs= emailElem.parentNode.getElementsByTagName("input");'
+					+ 'for (var i= 0; i < allInputs.length; i++) {'
+					+ '  var inputElem= allInputs[i];'
+					+ '  if (inputElem.type == "checkbox") {'
+					+ '    inputElem.checked= false;'
+					+ '  }'
+					+ '}'
+					+ 'void(0);';
+		addLink("&empty;", noneHref, sp, "select none", false);
+		var allHref= 'javascript:'
+					+ 'var emailElem= document.getElementById("' + emailElemName + '");'
+					+ 'var allInputs= emailElem.parentNode.getElementsByTagName("input");'
+					+ 'for (var i= 0; i < allInputs.length; i++) {'
+					+ '  var inputElem= allInputs[i];'
+					+ '  if (inputElem.type == "checkbox") {'
+					+ '    inputElem.checked= true;'
+					+ '  }'
+					+ '}'
+					+ 'void(0);';
+		addLink("All", allHref, sp, null, true);
 	}
 }
 
@@ -1226,7 +1257,7 @@ function process_query() {
 		var generateElem= document.createElement("input");
 		generateElem.value= "Generate Report";
 		generateElem.type= "submit";
-		generateElem.style.marginLeft = "29em";
+		generateElem.style.marginLeft = "2em";
 		generateElem.setAttribute("onclick", ""
 			+ "var formElem= document.forms['queryform'];"
 			+ "var input= document.createElement('input');"
@@ -1414,9 +1445,9 @@ function process_query() {
 	setOptionSize("chfield", 5);
 	
     // Add shortcut email links:
-	addEmailLinks("email1", myMail);
-	addEmailLinks("email2", myMail);
-	addEmailLinks("email3", myMail);
+	addSearch_email_fieldsLinks("email1", myMail);
+	addSearch_email_fieldsLinks("email2", myMail);
+	addSearch_email_fieldsLinks("email3", myMail);
 
     // Fix layout of date fields:
     var history_filter_sectionElem= document.getElementById("history_filter_section");
@@ -1640,6 +1671,18 @@ function process_result_pages() {
 	        }
   		}
 	}
+	
+	headElem.appendChild(
+		createScript(
+              'function assignTo(email) {\n'
+            + 'document.getElementById("assigned_to").value= email;\n'
+            + 'document.getElementById("set_default_assignee").checked= false;\n'
+            + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";\n'
+            + 'YAHOO.util.Dom.setStyle(document.getElementById("set_default_assignee_label"), "font-weight", "normal");\n'
+            + 'document.getElementById("assigned_to").focus();\n'
+            + '}\n'
+		)
+	);
 
 	// Loop over <a>s:
 	var anchors= document.getElementsByTagName("a");
@@ -1717,7 +1760,6 @@ function process_result_pages() {
 	    
 	    } else if (aElem.getAttribute("class") == "email" && aElem.firstElementChild) {
 	        var email= aElemHref.substr(7);
-	        
 		    // Add "envelope" mail link, containing "name <email_address>" (e.g. to copy-paste as Git author)
 		    var fullElem= aElem.cloneNode();
 		    fullElem.innerHTML= "&#x2709;"; //ENVELOPE
@@ -1732,31 +1774,34 @@ function process_result_pages() {
 		    
 		    i+= 1; // skip new link
 		    
-		    // Add "assign to" link
-		    var assignToElem= aElem.cloneNode();
-		    assignToElem.innerHTML+= "&#x1f448;"; //Left white hand pointing index
-//		    assignToElem.innerHTML+= "&#x2318;"; //PLACE OF INTEREST SIGN
-//		    assignToElem.innerHTML+= ":=";
-//		    assignToElem.innerHTML+= "&#x25C0;"; //Black triangle left
-//		    assignToElem.innerHTML+= "&#x21b0;"; //Upwards Arrow With Tip Leftwards
-//		    assignToElem.innerHTML+= "&#x270D;"; //WRITING HAND
-//		    assignToElem.innerHTML+= "&#x270E;"; //LOWER RIGHT PENCIL
-//		    assignToElem.innerHTML+= "&#x1f4bb;"; //Computer
-//		    assignToElem.innerHTML+= "&#x21F1;"; //North west arrow to corner
-//		    assignToElem.innerHTML+= "&#x25C6;"; //Black diamond
-		    // not supported:
-//		    assignToElem.innerHTML+= "&#x23FA;"; //Black Circle for Record
-//		    assignToElem.innerHTML+= "&#x1F844;"; //Leftwards Heavy Arrow
-//		    assignToElem.innerHTML+= "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
-//		    assignToElem.innerHTML+= "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
-		    assignToElem.style.textDecoration="none";
-		    assignToElem.title= "Assign to " + aElem.title;
-	        assignToElem.setAttribute("href", getAssigneeLinkScript(email));
-	        
-		    fullElem.parentNode.insertBefore(assignToElem, fullElem.nextSibling.nextSibling);
-		    fullElem.parentNode.insertBefore(document.createTextNode(" "), assignToElem.nextSibling);
-		    
-		    i+= 1; // skip new link
+			// Add "assign to" link (unless already assigned)
+			var assigned_toElem= document.getElementById("assigned_to");
+			if (assigned_toElem && assigned_toElem.value != email) {
+			    var assignToElem= aElem.cloneNode();
+			    assignToElem.innerHTML+= "&#x1f448;"; //Left white hand pointing index
+	//		    assignToElem.innerHTML+= "&#x2318;"; //PLACE OF INTEREST SIGN
+	//		    assignToElem.innerHTML+= ":=";
+	//		    assignToElem.innerHTML+= "&#x25C0;"; //Black triangle left
+	//		    assignToElem.innerHTML+= "&#x21b0;"; //Upwards Arrow With Tip Leftwards
+	//		    assignToElem.innerHTML+= "&#x270D;"; //WRITING HAND
+	//		    assignToElem.innerHTML+= "&#x270E;"; //LOWER RIGHT PENCIL
+	//		    assignToElem.innerHTML+= "&#x1f4bb;"; //Computer
+	//		    assignToElem.innerHTML+= "&#x21F1;"; //North west arrow to corner
+	//		    assignToElem.innerHTML+= "&#x25C6;"; //Black diamond
+			    // not supported:
+	//		    assignToElem.innerHTML+= "&#x23FA;"; //Black Circle for Record
+	//		    assignToElem.innerHTML+= "&#x1F844;"; //Leftwards Heavy Arrow
+	//		    assignToElem.innerHTML+= "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
+	//		    assignToElem.innerHTML+= "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
+			    assignToElem.style.textDecoration="none";
+			    assignToElem.title= "Assign to " + aElem.title;
+		        assignToElem.setAttribute("href", getAssigneeLinkScript(email));
+		        
+			    fullElem.parentNode.insertBefore(assignToElem, fullElem.nextSibling.nextSibling);
+			    fullElem.parentNode.insertBefore(document.createTextNode(" "), assignToElem.nextSibling);
+			    
+			    i+= 1; // skip new link
+			}
 		
 		// Dim glaring icon for "Bug 429346: Link to editing bugzilla config from bugzilla"
 	    } else if (aElemHref == "https://dev.eclipse.org/committers/bugs/bugz_manager.php") {
@@ -1894,10 +1939,10 @@ function process_result_pages() {
             addCcLink(ccs[i], ccs[i + 1], addDiv, "newcc");
         }
         
-		// Add "(^ edit)" to CC list:
 		var ccElem= document.getElementById("cc");
 		if (ccElem) {
-			var href= 'javascript:'
+			// Add "(^ edit)" to CC list:
+			var eHref= 'javascript:'
 			+ 'var newccElem= document.getElementById("newcc");'
 			+ 'var ccElem= document.getElementById("cc");'
 			+ 'var ccElems= ccElem.children;'
@@ -1920,12 +1965,38 @@ function process_result_pages() {
 			+ 'newccElem.selectionEnd= email.length - (endWithComma ? 2 : 0);'
 			+ 'void(0);';
 			
-			var linkElem= document.createElement("a");
-			linkElem.href= href;
-			linkElem.style= "vertical-align:top";
-			linkElem.innerHTML= "(^ edit)";
-			linkElem.title= "Copy selected CCs to editable/copyable field";
-			ccElem.parentNode.insertBefore(linkElem, ccElem.nextElementSibling);
+			var eLinkElem= document.createElement("a");
+			eLinkElem.href= eHref;
+			eLinkElem.style= "vertical-align:top";
+			eLinkElem.innerHTML= "(^ edit)";
+			eLinkElem.title= "Copy selected CCs to editable/copyable field";
+			ccElem.parentNode.insertBefore(eLinkElem, ccElem.nextElementSibling);
+			
+			var spaceElem= document.createTextNode(" ");
+			ccElem.parentNode.insertBefore(spaceElem, eLinkElem.nextSibling);
+			
+			// Add "Assign to selected CC" to CC list:
+			var aHref= 'javascript:'
+			+ 'var ccElem= document.getElementById("cc");'
+			+ 'var ccElems= ccElem.children;'
+			+ 'var email;'
+			+ 'for (var i= 0; i < ccElems.length; i++) {'
+			+ '  if (ccElems[i].selected || ccElem.selectedOptions.length == 0) {'
+			+ '    email = ccElems[i].value;'
+			+ '    break;'
+			+ '  }'
+			+ '}'
+			+ 'if (email) {'
+			+ '  assignTo(email);'
+			+ '}'
+			+ 'void(0);';
+			
+			var aLinkElem= document.createElement("a");
+			aLinkElem.href= aHref;
+			aLinkElem.style= "vertical-align:top";
+			aLinkElem.innerHTML= "&#x1f448;"; //Left white hand pointing index
+			aLinkElem.title= "Assign to selected CC";
+			ccElem.parentNode.insertBefore(aLinkElem, spaceElem.nextElementSibling);
 		}
 	}
 	
