@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160321T1804
+// @version 1.20160329T1252
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -238,6 +238,24 @@ categories["JDT"]= [
 ];
 categories["JDT"].url= "http://www.eclipse.org/jdt/ui/doc/bug-annotation.php";
 
+var assignToSymbol = "&#x261A;"; //BLACK LEFT POINTING INDEX
+//var assignToSymbol = "&#x25C1;"; //White triangle left
+//var assignToSymbol = "&#x25C0;"; //Black triangle left
+//var assignToSymbol = "&#x2318;"; //PLACE OF INTEREST SIGN
+//var assignToSymbol = ":=";
+//var assignToSymbol = "&#x21b0;"; //Upwards Arrow With Tip Leftwards
+//var assignToSymbol = "&#x270D;"; //WRITING HAND
+//var assignToSymbol = "&#x270E;"; //LOWER RIGHT PENCIL
+//var assignToSymbol = "&#x1f4bb;"; //Computer
+//var assignToSymbol = "&#x21F1;"; //North west arrow to corner
+//var assignToSymbol = "&#x25C6;"; //Black diamond
+//var assignToSymbol = "&#x1f448;"; //Left white hand pointing index (not available on Ubuntu up to 14.04)
+//	// not supported:
+//var assignToSymbol = "&#x23FA;"; //Black Circle for Record
+//var assignToSymbol = "&#x1F844;"; //Leftwards Heavy Arrow
+//var assignToSymbol = "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
+//var assignToSymbol = "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
+
 // Various CSS fixes:
 var css =
 	// Fix baseline of labels:
@@ -282,6 +300,7 @@ var css =
 	    + ".search_field_grid select { height: 19ex ! important; width: 12em ! important; }\n"
 	    + ".search_field_grid { margin-top: 0em; }\n"
 	    + ".search_email_fields { width: 365px; }\n"
+	    + "#field_label_short_desc { width: auto; }\n"
 	// Don't waste another line for Search > Bugs numbered:
 	    + "#bug_id_container .field_help { display:inline; }\n"
 	
@@ -1330,13 +1349,14 @@ function process_query() {
 	var Search_topElem= document.getElementById("Search_top");
 	if (Search_topElem) {
 	    var choosers= createCategoryChoosers();
-	    choosers.style.paddingRight = "1em";
-	    Search_topElem.parentNode.insertBefore(choosers, Search_topElem);
+	    choosers.style.paddingLeft = "1em";
+	    Search_topElem.parentNode.insertBefore(choosers, Search_topElem.nextElementSibling);
 	}
 
 	// Add target milestone links:
 	var targetElem= document.getElementById("field_label_target_milestone");
 	if (targetElem && isBugsEclipseOrg) {
+//		targetElem.firstElementChild.firstElementChild.textContent = "Target M:";
 		var targetLinkSpanElem= createFieldLabelClearAndQuickLinkSpan(targetElem, "target_milestone");
 		for (var i= 0; i < target_milestones.length; i++) {
 			addTargetLink(targetLinkSpanElem, target_milestones[i]);
@@ -1778,21 +1798,7 @@ function process_result_pages() {
 			var assigned_toElem= document.getElementById("assigned_to");
 			if (assigned_toElem && assigned_toElem.value != email) {
 			    var assignToElem= aElem.cloneNode();
-			    assignToElem.innerHTML+= "&#x1f448;"; //Left white hand pointing index
-	//		    assignToElem.innerHTML+= "&#x2318;"; //PLACE OF INTEREST SIGN
-	//		    assignToElem.innerHTML+= ":=";
-	//		    assignToElem.innerHTML+= "&#x25C0;"; //Black triangle left
-	//		    assignToElem.innerHTML+= "&#x21b0;"; //Upwards Arrow With Tip Leftwards
-	//		    assignToElem.innerHTML+= "&#x270D;"; //WRITING HAND
-	//		    assignToElem.innerHTML+= "&#x270E;"; //LOWER RIGHT PENCIL
-	//		    assignToElem.innerHTML+= "&#x1f4bb;"; //Computer
-	//		    assignToElem.innerHTML+= "&#x21F1;"; //North west arrow to corner
-	//		    assignToElem.innerHTML+= "&#x25C6;"; //Black diamond
-			    // not supported:
-	//		    assignToElem.innerHTML+= "&#x23FA;"; //Black Circle for Record
-	//		    assignToElem.innerHTML+= "&#x1F844;"; //Leftwards Heavy Arrow
-	//		    assignToElem.innerHTML+= "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
-	//		    assignToElem.innerHTML+= "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
+			    assignToElem.innerHTML+= assignToSymbol;
 			    assignToElem.style.textDecoration="none";
 			    assignToElem.title= "Assign to " + aElem.title;
 		        assignToElem.setAttribute("href", getAssigneeLinkScript(email));
@@ -1994,7 +2000,8 @@ function process_result_pages() {
 			var aLinkElem= document.createElement("a");
 			aLinkElem.href= aHref;
 			aLinkElem.style= "vertical-align:top";
-			aLinkElem.innerHTML= "&#x1f448;"; //Left white hand pointing index
+			aLinkElem.innerHTML= assignToSymbol;
+			aLinkElem.style.textDecoration="none";
 			aLinkElem.title= "Assign to selected CC";
 			ccElem.parentNode.insertBefore(aLinkElem, spaceElem.nextElementSibling);
 		}
