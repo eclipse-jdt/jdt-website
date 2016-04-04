@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160329T1252
+// @version 1.20160404T1252
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -60,7 +60,7 @@
 var target_milestones= ["4.6 M7", "4.7", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
-var main_target_milestones= [0, 3];
+var main_target_milestones= [0, 2];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -932,22 +932,6 @@ if (bannerElem) {
     for (var i = 0; i < headerElems.snapshotLength; i++) {
         var headerElem= headerElems.snapshotItem(i);
         headerElem.parentNode.removeChild(headerElem);
-    }
-    // old (pre-solstice) bugstest:
-    var headerElem= document.getElementById("header");
-    if (headerElem) {
-        // hack around https://bugs.eclipse.org/bugs/show_bug.cgi?id=437404#c9 :
-        var headerChildElems= headerElem.children;
-        if (headerChildElems.length >= 3) {
-            headerElem.removeChild(headerChildElems[2]);
-            headerElem.removeChild(headerChildElems[1]);
-            headerElem.removeChild(headerChildElems[0]);
-        }
-        
-        var fontElem= headerElem.getElementsByTagName("font");
-        if (fontElem && fontElem[0] && fontElem[0].parentNode == headerElem) {
-            headerElem.removeChild(fontElem[0]);
-        }
     }
 }
 var headerIconsElem= document.getElementById("header-icons");
