@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160404T1252
+// @version 1.20160413T2219
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -908,6 +908,18 @@ function getAppendGerritStatusFunction(link) {
 	};
 }
 
+function addSaveShortcutCtrlS(form) {
+	var scriptElem= createScript(
+		'document.addEventListener("keydown", function(e) {\n'
+		+ '  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode == 83) {\n'
+		+ '    e.preventDefault();\n'
+		+ '    document.getElementById("' + form + '").submit();\n'
+		+ '  }\n'
+		+ '}, false);\n'
+	);
+	document.getElementsByTagName("head")[0].appendChild(scriptElem);
+}
+
 //-----------
 
 //----------- Start the real work
@@ -1159,6 +1171,9 @@ function process_enter_bug() {
 	    short_descElems[0].parentNode.insertBefore(commitElem, space.nextSibling);
 	    short_descElems[0].size= 76;
 	    
+		commitElem.setAttribute("title", window.navigator.platform.match("Mac") ? "[Command+S]" : "[Ctrl+S]");
+		addSaveShortcutCtrlS("Create");
+
 	    // Set initial focus:
 	    short_descElems[0].focus();
 	    
@@ -2177,15 +2192,7 @@ function process_result_pages() {
 	    commitElem.style.marginLeft= "1em";
 	    bz_qa_contact_inputElem.appendChild(commitElem);
 		
-		var scriptElem= createScript(
-			'document.addEventListener("keydown", function(e) {\n'
-			+ '  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode == 83) {\n'
-			+ '    e.preventDefault();\n'
-			+ '    document.getElementById("changeform").submit();\n'
-			+ '  }\n'
-			+ '}, false);\n'
-		);
-		headElem.appendChild(scriptElem);
+		addSaveShortcutCtrlS("changeform");
 	}
 		
 	// Edit attachment details: 
