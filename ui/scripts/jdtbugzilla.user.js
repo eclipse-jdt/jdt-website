@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160413T2219
+// @version 1.20160425T2022
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -57,10 +57,10 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M7", "4.7", "BETA J9"];
+var target_milestones= ["4.6 M7", "4.6 RC1", "4.6.1", "4.7", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
-var main_target_milestones= [0, 2];
+var main_target_milestones= [0/*, 2*/];
 
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
@@ -1888,9 +1888,10 @@ function process_result_pages() {
 		if (header_addl_infoElems[0]) {
 			// original text: Last modified: 2015-11-09 11:15:40 CET
 			var newHTML= '(<a href="javascript:scroll_to_my_last_comment();void(0);" title="Jump to my last comment">My</a>) '
+					+ '<a href="' + lastComment.href + '" title="Jump to last comment">Last</a> '
 					+ '<a href="javascript:'
 					+ 'window.location.href=\'' + lastComment.href
-					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">Last modified</a>'
+					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">modified</a>'
 					+ header_addl_infoElems[0].innerHTML.substr(13);
 			header_addl_infoElems[0].innerHTML= newHTML;
 		}
