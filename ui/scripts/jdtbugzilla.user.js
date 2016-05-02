@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160425T2022
+// @version 1.20160502T1214
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -57,7 +57,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 M7", "4.6 RC1", "4.6.1", "4.7", "BETA J9"];
+var target_milestones= ["4.6 RC1", "4.6 RC2", "4.6.1", "4.7", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0/*, 2*/];
@@ -424,11 +424,14 @@ function addStatusLink(name, status, resolution, parentElem) {
 
 var addOldAssigneeAsCcScript=
               'var assignee= document.getElementById("assigned_to").value;'
-            + 'if (assignee.search(/(?:inbox|triaged)@eclipse.org/i) == -1 && !document.getElementById("newcc").value.contains(assignee)) {'
-            + '  document.getElementById("newcc").value= assignee + ", " + document.getElementById("newcc").value;'
-            + '  document.getElementById("newcc").focus();'
-            + '  document.getElementById("newcc").selectionStart= 0;'
-            + '  document.getElementById("newcc").selectionEnd= assignee.length + 2;'
+            + 'var newccElem= document.getElementById("newcc");'
+            + 'if (assignee.search(/(?:inbox|triaged)@eclipse.org/i) == -1' // don't copy inbox
+            + '      && assignee.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/)'   // don't copy incomplete addresses
+            + '      && !newccElem.value.contains(assignee)) {' // don't copy if already there
+            + '  newccElem.value= assignee + ", " + newccElem.value;'
+            + '  newccElem.focus();'
+            + '  newccElem.selectionStart= 0;'
+            + '  newccElem.selectionEnd= assignee.length + 2;'
             + '}';
 
 function getAssigneeLinkScript(email) {
