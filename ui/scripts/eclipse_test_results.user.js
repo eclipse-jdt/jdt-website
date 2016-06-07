@@ -14,7 +14,7 @@
 // @description   adds links to sort test results pages by execution time, and implements Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20151210T1856
+// @version       1.20160607T1519
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -131,5 +131,104 @@ if (unitTestElem) {
 	loadElem.innerHTML= "Load test times <img src='https://addons.cdn.mozilla.net/user-media/addon_icons/0/748-64.png' style='vertical-align: top' height='16px' width='16px'>";
 	loadElem.addEventListener("click", loadTestTimes, false);
 }
+
+// stolen/adapted from /eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/JUNIT.XSL:
+        function findTop(obj) {
+          var curtop = 0;
+          if (obj.offsetParent) {
+            do {
+              curtop += obj.offsetTop;
+            } while (obj = obj.offsetParent);
+            return curtop;
+          }
+        }
+
+        function keyHandler(e) {
+          if (typeof(e) == "undefined") {
+            e = event;
+          }
+          if (e && e.ctrlKey) {
+            if (e.keyCode == 188 /*Ctrl+,*/) {
+              jumpToNextError(false);
+            } else if (e.keyCode == 190 /*Ctrl+.*/) {
+              jumpToNextError(true);
+            }
+          }
+        }
+
+        function jumpToNextError(forward) {
+          if (typeof(document.getElementsByClassName) == "undefined") {
+            document.getElementsByClassName = function (className) {
+              var trs = document.getElementsByTagName("tr");
+              var res = new Array();
+              for (i = 0; i < trs.length; i++) {
+                var tr = trs[i];
+                var cls = tr.className;
+                if (cls == className) {
+                  res.push(tr);
+                }
+              }
+              return res;
+            }
+          }
+          var windowY = typeof(window.scrollY) != "undefined" ? window.scrollY : document.body.scrollTop;
+          if (forward) {  // want to jump to the next/prev
+              windowY++;
+          } else {
+              windowY--;
+          }
+          var targetY = forward ? Number.MAX_VALUE : 0;
+          var target;
+          var errs = document.getElementsByClassName("errorcell");
+          for (var i = 0; i < errs.length; i++) {
+            var elt = errs[i];
+            var y = findTop(elt);
+            if (forward) {
+                if (y > windowY && y < targetY) {
+                    target = elt;
+                    targetY = y;
+                }
+            } else {
+                if (y < windowY && y > targetY) {
+                    target = elt;
+                    targetY = y;
+                }
+            }
+          }
+          if (target) {
+            target.firstElementChild.focus();
+            target.scrollIntoView();
+          } else {
+            window.scrollTo(0, forward ? document.body.scrollHeight : 0);
+          }
+
+          return false;
+        }
+
+        document.onkeydown = keyHandler;
+        
+        // add navigation buttons:
+        var div = document.createElement("div");
+        div.setAttribute("style", "position:fixed; top:8px; right:8px; _position:absolute; _top:expression(eval(document.body.scrollTop + 8));");
+        unitTestElem.appendChild(div);
+        
+        function jumpPrev() {
+            jumpToNextError(false);
+        }
+        function jumpNext() {
+            jumpToNextError(true);
+        }
+        
+        var buttonPrev = document.createElement("button");
+        buttonPrev.setAttribute("title", "Jump to previous failure/error (Ctrl+,)");
+        buttonPrev.innerHTML = "&#x25B2;"
+        buttonPrev.addEventListener("click", jumpPrev, false);
+        div.appendChild(buttonPrev);
+        
+        var buttonNext = document.createElement("button");
+        buttonNext.setAttribute("title", "Jump to next failure/error (Ctrl+.)");
+        buttonNext.innerHTML = "&#x25BC;"
+        buttonNext.addEventListener("click", jumpNext, false);
+        div.appendChild(buttonNext);
 
 }
