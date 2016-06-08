@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160530T2132
+// @version 1.20160608T2011
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -57,7 +57,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.6 RC4", "4.6.1", "4.7", "BETA J9"];
+var target_milestones= ["4.7 M1", "4.6.1", "4.7", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0/*, 2*/];
@@ -381,8 +381,14 @@ function addLink(name, href, parentElem, tooltip, separator) {
     if (tooltip) {
         linkElem.title= tooltip;
     }
-    if (parentElem.hasChildNodes() && !(separator == false)) {
-        parentElem.appendChild(document.createTextNode(" | "));
+    if (parentElem.hasChildNodes()) {
+        if (separator == false) {
+            //nop
+        } else if (typeof separator == "string") {
+            parentElem.appendChild(document.createTextNode(separator));
+        } else {
+            parentElem.appendChild(document.createTextNode(" | "));
+        }
     }
     parentElem.appendChild(linkElem);
 }
@@ -1890,7 +1896,8 @@ function process_result_pages() {
 		var header_addl_infoElems= document.getElementsByClassName("header_addl_info");
 		if (header_addl_infoElems[0]) {
 			// original text: Last modified: 2015-11-09 11:15:40 CET
-			var newHTML= '(<a href="javascript:scroll_to_my_last_comment();void(0);" title="Jump to my last comment">My</a>) '
+			var newHTML= '<a href="#">Top</a> '
+					+ '(<a href="javascript:scroll_to_my_last_comment();void(0);" title="Jump to my last comment">My</a>) '
 					+ '<a href="' + lastComment.href + '" title="Jump to last comment">Last</a> '
 					+ '<a href="javascript:'
 					+ 'window.location.href=\'' + lastComment.href
@@ -2024,8 +2031,10 @@ function process_result_pages() {
 	}
 
     // Fix Product & Component (lose focus on change):
+	var classificationElem= document.getElementById("classification");
 	var productElem= document.getElementById("product");
-	if (productElem) {
+	var componentElem= document.getElementById("component");
+	if (classificationElem && productElem) {
 	    productElem.setAttribute("onchange", "window.setTimeout(function() {"
 	                + "document.getElementById('product').focus();"
 	                + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
@@ -2040,10 +2049,21 @@ function process_result_pages() {
 			for (var i= 0; i < moveProducts.length; i++) {
 				addProductLink(moveProducts[i], productsLinkSpanElem);
 			}
+			// Add shortcut to search Product:
+			addLink("&#x1F50E;", "query.cgi"
+								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+								 + "&product=" + productElem.options[productElem.selectedIndex].value
+								 , productsLinkSpanElem, "Search in this product", " | (");
+			addLink("1w", "buglist.cgi"
+								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+								 + "&product=" + productElem.options[productElem.selectedIndex].value
+								 + "&chfieldfrom=1w"
+								 , productsLinkSpanElem, "Changed in the last 7 days");
+			productsLinkSpanElem.appendChild(document.createTextNode(")"));
 		}
 	}
-	var componentElem= document.getElementById("component");
-	if (componentElem) {
+	
+	if (classificationElem && productElem && componentElem) {
 	    componentElem.setAttribute("onchange", "window.setTimeout(function() {"
 	                + "document.getElementById('component').focus();"
 	                + 'document.getElementById("addselfcc") != null ? document.getElementById("addselfcc").checked= true : "";'
@@ -2058,6 +2078,19 @@ function process_result_pages() {
 			for (var i= 0; i < moveComponents.length; i++) {
 				addComponentLink(moveComponents[i], componentsLinkSpanElem);
 			}
+			// Add shortcut to search Component:
+			addLink("&#x1F50E;", "query.cgi"
+								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+								 + "&product=" + productElem.options[productElem.selectedIndex].value
+								 + "&component=" + componentElem.options[componentElem.selectedIndex].value
+								 , componentsLinkSpanElem, "Search in this component", " | (");
+			addLink("1w", "buglist.cgi"
+								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+								 + "&product=" + productElem.options[productElem.selectedIndex].value
+								 + "&component=" + componentElem.options[componentElem.selectedIndex].value
+								 + "&chfieldfrom=1w"
+								 , componentsLinkSpanElem, "Changed in the last 7 days");
+			componentsLinkSpanElem.appendChild(document.createTextNode(")"));
 		}
 	}
 	
