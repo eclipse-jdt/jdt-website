@@ -14,7 +14,7 @@
 // @description   adds links to sort test results pages by execution time, and implements Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20160607T1519
+// @version       1.20160628T1337
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -171,6 +171,12 @@ if (unitTestElem) {
               return res;
             }
           }
+          
+          var parent;
+          if (document.activeElement) {
+            parent = document.activeElement.parentElement;
+          }
+        
           var windowY = typeof(window.scrollY) != "undefined" ? window.scrollY : document.body.scrollTop;
           if (forward) {  // want to jump to the next/prev
               windowY++;
@@ -180,25 +186,50 @@ if (unitTestElem) {
           var targetY = forward ? Number.MAX_VALUE : 0;
           var target;
           var errs = document.getElementsByClassName("errorcell");
-          for (var i = 0; i < errs.length; i++) {
-            var elt = errs[i];
-            var y = findTop(elt);
-            if (forward) {
-                if (y > windowY && y < targetY) {
-                    target = elt;
-                    targetY = y;
+          if (forward) {
+            for (var i = 0; i < errs.length; i++) {
+              var elt = errs[i];
+              if (elt == parent) {
+                if (i + 1 < errs.length) {
+                  target = errs[i + 1];
+                } else {
+                  target = null;
                 }
-            } else {
-                if (y < windowY && y > targetY) {
-                    target = elt;
-                    targetY = y;
+                break;
+              }
+              var y = findTop(elt);
+              if (y > windowY && y < targetY) {
+                target = elt;
+                targetY = y;
+              }
+            }
+          } else {
+            for (var i = errs.length - 1; 0 <= i; i--) {
+              var elt = errs[i];
+              if (elt == parent) {
+                if (0 < i) {
+                  target = errs[i - 1];
+                } else {
+                  target = null;
                 }
+                break;
+              }
+              var y = findTop(elt);
+              if (y < windowY && y > targetY) {
+                target = elt;
+                targetY = y;
+              }
             }
           }
           if (target) {
-            target.firstElementChild.focus();
+            if (target.firstElementChild) {
+              target.firstElementChild.focus();
+            } else {
+              document.activeElement.blur();
+            }
             target.scrollIntoView();
           } else {
+            document.activeElement.blur();
             window.scrollTo(0, forward ? document.body.scrollHeight : 0);
           }
 
