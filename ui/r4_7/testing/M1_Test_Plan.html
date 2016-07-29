@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title>Oxygen (4.7) M1 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+  <script type="text/javascript" src="../../linkifyBugs.js"></script>
+</head>
+
+<body onload="linkifyBugs();">
+
+<h1>Oxygen M1 Test Plan</h1>
+Test day: Tuesday, 2016-08-02<br>
+Test Build: Latest I-build<br>
+Components: JDT UI, JDT Text, Platform Search, Platform Text<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+
+<h3>Platforms</h3>
+<ul>
+  <li>Linux GTK: Noopur</li>
+  <li>Mac OS X 10.11: Markus</li>
+  <li>Windows 7: Dani</li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.6</li>
+  <li>verify that severe bugs are correctly fixed</li>
+  <li>verify that all 4.6.1 bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4>JUnit View: "Show Stack Trace in Console View" button (Markus, Dani - Questions: Noopur)</h4>
+<ul>
+	<li>verify that the button behaves reasonably for test results that contain 2 failures</li>
+	<li>verify that the button behaves reasonably for exception messages with strange characters</li>
+</ul>
+
+<h4>'Skip' in Organize Imports dialog (Dani, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>verify that the feature works</li>
+	<li>verify that going back and forward in the wizard doesn't create duplicate imports</li>
+</ul>
+
+<h4>New Java type dialogs - name field (Noopur, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>verify that pasting qualified names into the name field still works</li>
+	<li>verify in other dialogs than New Java Class</li>
+	<li>verify that there's a nice error message if you enter "TypeName.java"</li>
+</ul>
+
+<h4>Content assist in Javadocs (Noopur, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>the fix for bug 429340 was released quite late and is hard to understand</li>
+	<li>try to find problems with various kinds of code completions in Javadocs</li>
+	<li>test with and without @deprecated Javadoc tag and @Deprecated annotation</li>
+</ul>
+
+<h4>Pull Up (Noopur, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>test pulling up methods and constants to a super interface and to a super class</li>
+	<li>watch out for problems with imports (when types in method declaration are / are not used elsewhere in the types)</li>
+</ul>
+
+
+<h2>4.6.1 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6.1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.6.1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs</a></li>
+</ul>
+
+
+<h2>4.7 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.7 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.7 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.7 M1</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M1&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.7 M1</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
