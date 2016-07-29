@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160608T2011
+// @version 1.20160726T1135
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -391,6 +391,7 @@ function addLink(name, href, parentElem, tooltip, separator) {
         }
     }
     parentElem.appendChild(linkElem);
+    return linkElem;
 }
 
 function addMultiLink(name, onClick, onModifierClick, parentElem, tooltip, separator) {
@@ -1167,6 +1168,53 @@ function process_enter_bug() {
 	if (os_guess_noteElem) {
 	    os_guess_noteElem.parentNode.parentNode.removeChild(os_guess_noteElem.parentNode);
 	}
+
+	// Add shortcuts to search Product:
+	var field_container_productElem= document.getElementById("field_container_product");
+	var productElem= document.getElementsByName("product")[0];
+	if (field_container_productElem && productElem) {
+		addLink("&#x1F50E;", "query.cgi"
+							 + "?product=" + productElem.value
+							 , field_container_productElem, "Search in this product", " | (");
+		addLink("1w", "buglist.cgi"
+							 + "?product=" + productElem.value
+							 + "&chfieldfrom=1w"
+							 , field_container_productElem, "Changed in the last 7 days");
+		field_container_productElem.appendChild(document.createTextNode(")"));
+		
+		// Add shortcuts to search Component:
+		var field_label_componentElem= document.getElementById("field_label_component");
+		var componentElem= document.getElementById("component");
+		if (field_label_componentElem && componentElem) {
+			var spanElem = document.createElement("span");
+			spanElem.setAttribute("style" , "font-weight:normal;");
+			
+			field_label_componentElem.appendChild(spanElem);
+			
+			spanElem.appendChild(document.createTextNode("("));
+			
+			var queryLink= addLink("&#x1F50E;", "query.cgi?product=" + productElem.value, spanElem, "Search in selected component", false);
+			queryLink.setAttribute("id", "queryLink");
+			
+			var changedLink= addLink("1w", "buglist.cgi?chfieldfrom=1w&product=" + productElem.value, spanElem, "Changed in the last 7 days");
+			changedLink.setAttribute("id", "changedLink");
+			spanElem.appendChild(document.createTextNode(")"));
+
+			componentElem.setAttribute("onchange",
+				"set_assign_to();"
+				
+				+ "document.getElementById('queryLink').href=\"query.cgi"
+				+ "?product=" + productElem.value
+				+ "&component=\"+document.getElementById('component').value;"
+				
+				+ "document.getElementById('changedLink').href=\"buglist.cgi"
+				+ "?product=" + productElem.value
+				+ "&chfieldfrom=1w"
+				+ "&component=\"+document.getElementById('component').value;"
+			);
+		}
+	}
+	
     // Add another Commit button after Subject):
     var short_descElems= document.getElementsByName("short_desc");
     if (short_descElems.length > 0) {
@@ -1901,7 +1949,7 @@ function process_result_pages() {
 					+ '<a href="' + lastComment.href + '" title="Jump to last comment">Last</a> '
 					+ '<a href="javascript:'
 					+ 'window.location.href=\'' + lastComment.href
-					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">modified</a>'
+					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">modified &#x1F503;</a>'
 					+ header_addl_infoElems[0].innerHTML.substr(13);
 			header_addl_infoElems[0].innerHTML= newHTML;
 		}
