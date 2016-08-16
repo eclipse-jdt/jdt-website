@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160810T1545
+// @version 1.20160816T1951
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -434,7 +434,7 @@ var addOldAssigneeAsCcScript=
             + 'var newccElem= document.getElementById("newcc");'
             + 'if (assignee.search(/(?:inbox|triaged)@eclipse.org/i) == -1' // don't copy inbox
             + '      && assignee.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/)'   // don't copy incomplete addresses
-            + '      && !newccElem.value.contains(assignee)) {' // don't copy if already there
+            + '      && !newccElem.value.includes(assignee)) {' // don't copy if already there
             + '  newccElem.value= assignee + ", " + newccElem.value;'
             + '  newccElem.focus();'
             + '  newccElem.selectionStart= 0;'
@@ -1819,7 +1819,7 @@ function process_result_pages() {
 	            
 	        // Show title of "See Also" bugs:
 			} else if (aElem.parentNode.parentNode.parentNode.id == "field_container_see_also"
-					&& aElem.getAttribute("class") && aElem.getAttribute("class").contains("bz_bug_link")) {
+					&& aElem.getAttribute("class") && aElem.getAttribute("class").includes("bz_bug_link")) {
 				var myElem= document.createElement("span");
 				myElem.style.marginLeft= "1em";
 				myElem.textContent= aElem.title;
