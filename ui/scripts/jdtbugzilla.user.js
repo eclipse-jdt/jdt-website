@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160816T1951
+// @version 1.20160817T1845
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1193,10 +1193,13 @@ function process_enter_bug() {
 			
 			spanElem.appendChild(document.createTextNode("("));
 			
-			var queryLink= addLink("&#x1F50E;", "query.cgi?product=" + productElem.value, spanElem, "Search in selected component", false);
+			var queryLink= addLink("&#x1F50E;", "query.cgi?product=" + productElem.value
+												+ "&component=" + componentElem.value, spanElem, "Search in selected component", false);
 			queryLink.setAttribute("id", "queryLink");
 			
-			var changedLink= addLink("1w", "buglist.cgi?chfieldfrom=1w&product=" + productElem.value, spanElem, "Changed in the last 7 days");
+			var changedLink= addLink("1w", "buglist.cgi?product=" + productElem.value
+												+ "&component=" + componentElem.value
+												+ "&chfieldfrom=1w", spanElem, "Changed in the last 7 days");
 			changedLink.setAttribute("id", "changedLink");
 			spanElem.appendChild(document.createTextNode(")"));
 
@@ -1209,8 +1212,8 @@ function process_enter_bug() {
 				
 				+ "document.getElementById('changedLink').href=\"buglist.cgi"
 				+ "?product=" + productElem.value
-				+ "&chfieldfrom=1w"
-				+ "&component=\"+document.getElementById('component').value;"
+				+ "&component=\"+document.getElementById('component').value+\""
+				+ "&chfieldfrom=1w\";"
 			);
 		}
 	}
