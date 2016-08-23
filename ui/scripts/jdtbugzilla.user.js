@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160817T1845
+// @version 1.20160823T1653
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -307,9 +307,9 @@ var css =
 	// Don't show "Add Me to the CC List" button in "Possible Duplicates" on enter_bug.cgi:
 	    + ".yui-dt-col-update_token { display: none; }\n"
 	
-	// Dim CLA flags until hovered, and fix baseline:
-	    + ".cla_dec { opacity: 0.2; vertical-align: bottom; }\n"
-	    + ".cla_dec:hover { opacity: 1.0; }\n"
+//	// Dim CLA flags until hovered, and fix baseline: // fixed via bug 498088 comment 14:
+//	    + ".cla_dec { opacity: 0.33; vertical-align: bottom; }\n"
+//	    + ".cla_dec:hover { opacity: 1.0; }\n"
 	
 	// "See Also" list: Avoid jagged "Remove" checkboxes and move them out of the way
 	    + "#field_container_see_also ul li:hover { background-color:#F4F4F4 }\n"
