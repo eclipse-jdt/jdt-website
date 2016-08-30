@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160831T1542
+// @version 1.20160831T1558
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -818,31 +818,6 @@ function createCategoryChoosers() {
 	return choosers;
 }
 
-function fixSelectElementQuickAccess(selectElemName) {
-	// Workaround for Bug 416542: Keyboard navigation in search page tables no longer works (quick jump to <select> option broken in Firefox):
-	var selectElem= document.getElementById(selectElemName);
-	if (selectElem) {
-		// Fix is to prepend a '.' to disabled options' text, so that they are excluded from prefix matches.
-		// Only do this while the list has focus.
-		selectElem.setAttribute("onfocus",
-			'var selectOptions= document.getElementById("' + selectElemName + '").options;' +
-			'for (var i = 0; i < selectOptions.length; i++) {' +
-			'    if (selectOptions[i].disabled) {' +
-			'        selectOptions[i].text = "." + selectOptions[i].text;' +
-			'    }' +
-			'}'
-		);
-		selectElem.setAttribute("onblur",
-			'var selectOptions= document.getElementById("' + selectElemName + '").options;' +
-			'for (var i = 0; i < selectOptions.length; i++) {' +
-			'    if (selectOptions[i].disabled) {' +
-			'        selectOptions[i].text = selectOptions[i].text.substr(1);' +
-			'    }' +
-			'}'
-		);
-	}
-}
-
 function createCommentTemplateLinks() {
 	// Add links to help enter a URL to a Git commit:
 	var pElem= document.createElement("p");
@@ -1557,16 +1532,20 @@ function process_query() {
         + ".search_field_row { line-height: auto ! important; }\n";
 
 	// Add accesskeys:
-	setAccessKey("short_desc", "s");
-	setAccessKey("longdesc", "c");
-	setAccessKey("bug_status", "t");
-	setAccessKey("resolution", "r");
-	setAccessKey("target_milestone", "m");
+	// ("c" is broken in Bugzilla, see https://bugzilla.mozilla.org/show_bug.cgi?id=1299141 )
+	setAccessKey("target_milestone", "g");
 	setAccessKey("chfieldfrom", "b");
+	setAccessKey("Search_top", "q");
 	
-	// Workaround for Bug 416542: Keyboard navigation in search page tables no longer works (quick jump to <select> option broken in Firefox):
-	fixSelectElementQuickAccess("product");
-	fixSelectElementQuickAccess("component");
+	// Add tooltip for shortcut for "Search" buttons:
+	if (searchElem) {
+		searchElem.setAttribute("title", "[Accesskey+Q]");
+	}
+	var Search_topElem= document.getElementById("Search_top");
+	if (Search_topElem) {
+		Search_topElem.setAttribute("title", "[Accesskey+Q]");
+		//addSaveShortcutCtrlS("queryform");
+	}
 }
 	
 
