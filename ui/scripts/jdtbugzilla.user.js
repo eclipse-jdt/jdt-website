@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20160825T1724
+// @version 1.20160831T1542
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -46,6 +46,9 @@
 //
 // Test install for new Bugzilla versions:
 // @include       https://bugs.eclipse.org/bugstest/*
+//
+// Locally saved query.cgi (requires about:config setting greasemonkey.fileIsGreaseable = true):
+// @include       file://*/Search%20for%20bugs.htm*
 // ==/UserScript==
 
 // --- Configurable options --------------------------------------------
@@ -764,7 +767,7 @@ function setAccessKey(elementId, key) {
 
 function createCategoriesChooser(component, categories) {
 	var categoriesElem= document.createElement("select");
-	categoriesElem.setAttribute("name", "categories_selection");
+	categoriesElem.setAttribute("name", ""); // empty name => field will not be submitted with enclosing form
 	categoriesElem.setAttribute("onchange", 
 		"var form= document.changeform;" +
 		"if (!form) { form= document.queryform; }" +
@@ -806,8 +809,7 @@ function createCategoriesChooser(component, categories) {
 }
 
 function createCategoryChoosers() {
-    var choosers= document.createElement("form"); // dummy form to avoid submitting fields with main form
-	choosers.setAttribute("style", "font-size: small; font-weight: normal; display: inline;"); // make form behave like a <span> (inline element)
+	var choosers= document.createElement("span");
 	for (var component in categories) {
 	    addLink(component + ":", categories[component].url, choosers);
 		choosers.appendChild(document.createTextNode(" "));
@@ -943,6 +945,8 @@ if (window.top != window.self) {
     return;
 }
 
+var isLocalQuery = window.location.pathname.match(/\/Search%20for%20bugs\.htm/i);
+
 // Remove Eclipse ads:
 // old school:
 var bannerElem= document.getElementById("banner");
@@ -972,9 +976,14 @@ if (headerElem && headerElem.lastElementChild) {
         ver= GM_info.script.version;
     }
     console.log(ver);
-    headerElem.lastElementChild.innerHTML +=
-        '<span class="separator">| </span><li><a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js" '
-        + 'title="Page tweaked by jdtbugzilla.user.js ' + ver + '" >Tweaked</a>!</li>';
+	if (isLocalQuery) {
+		headerElem.lastElementChild.innerHTML +=
+			' <span class="separator">| </span><li>not <a href="https://bugs.eclipse.org/bugs/query.cgi">live</a>!</li>';
+	} else {
+		headerElem.lastElementChild.innerHTML +=
+			'<span class="separator">| </span><li><a href="https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js" '
+			+ 'title="Page tweaked by jdtbugzilla.user.js ' + ver + '" >Tweaked</a>!</li>';
+	}
 }
 
 var headElem= document.getElementsByTagName("head")[0];
@@ -984,6 +993,14 @@ if (headElem) {
 	styleElem.type= "text/css";
 	styleElem.innerHTML = css;
 	headElem.appendChild(styleElem);
+	
+	if (isLocalQuery) {
+		// Set a base href to make <form method="post" action="buglist.cgi" id="queryform" ...> work in a local copy of the search page:
+		var baseElem= document.createElement("base");
+		baseElem.href= "http://bugs.eclipse.org/bugs/";
+		headElem.appendChild(baseElem);
+		return; // early return
+	}
 }
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
