@@ -114,6 +114,7 @@ ob_start();
 				bugsWithSummaryJDT("[generate constructor]", "Bugs related to the generate constructor wizards");   
 				bugsWithSummaryJDT("[generate delegate]", "Bugs related to the generate delegate wizard");   
 				bugsWithSummaryJDT("[getter setter]", "Bugs related to the generate getter/setter wizard");
+				bugsWithSummaryJDT("[graphics]", "Bugs related to icons and images");
 				bugsWithSummaryJDT("[hashcode/equals]", "Bugs related to the generate hashCode/equals wizard");
 				bugsWithSummaryJDT("[imports on paste]", "Bugs related to imports on paste functionality");
 				bugsWithSummaryJDT("[infer type arguments]", "Bugs related to the infer type arguments refactoring");  
