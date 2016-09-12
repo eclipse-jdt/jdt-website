@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title>Oxygen (4.7) M2 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+  <script type="text/javascript" src="../../linkifyBugs.js"></script>
+</head>
+
+<body onload="linkifyBugs();">
+
+<h1>Oxygen M2 Test Plan</h1>
+Test day: Tuesday, 2016-09-13<br>
+Test Build: Latest I-build<br>
+Components: JDT UI, JDT Text, Platform Search, Platform Text<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+
+<h3>Platforms</h3>
+<ul>
+  <li>Linux GTK: Noopur</li>
+  <li>Mac OS X 10.11: Markus</li>
+  <li>Windows 7: Dani</li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.6</li>
+  <li>verify that severe bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4>New Class Wizard: Verify that '.java' is ignored (Dani, Markus - Questions: Noopur)</h4>
+<ul>
+	<li>verify that a class can be created even if one appends ".java" to the name</li>
+	<li>verify that any else appended via '.' is rejected</li>
+</ul>
+
+<h4>API to take a screenshot from running tests (Noopur, Dani - Questions: Markus)</h4>
+<ul>
+	<li>verify the API</li>
+</ul>
+
+<h4>Verify new wizard icons and new icons in general (Markus, Noopur - Questions: -)</h4>
+<ul>
+	<li>verify the JDT wizards</li>
+	<li>verify other wizards</li>
+	<li>query bugzilla and verify other icon changes for M2</li>
+</ul>
+
+
+<h2>4.7 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.7 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.7 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.7 M2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.7 M2</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
