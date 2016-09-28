@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2013 IBM Corporation and others.
+ * Copyright (c) 2012, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,14 +11,14 @@
 // ==UserScript==
 // @name          Eclipse Test Results
 // @namespace     org.eclipse.jdt.ui
-// @description   adds links to sort test results pages by execution time, and implements Bug 420296: devise "poor mans" performance assessment of unit tests
+// @description   adds: links to sort test results pages by execution time, links to console logs, quick navigation with Ctrl+,/., Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20160628T1337
+// @version       1.20160928T1734
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
-// @include       http*://hudson.eclipse.org/hudson/view/*/eclipse-testing/results/html/*.html
+// @include       http*://hudson.eclipse.org/*/eclipse-testing/results/html/*.html
 // ==/UserScript==
 
 if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // individual test results page
@@ -56,10 +56,55 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // i
 			timeElem.appendChild(sortElem);
 		}
 	}
+
+	function addLinksToStdout(table) {
+		var h3= table.previousElementSibling;
+		if (h3.tagName == "H3") {
+			var match= h3.textContent.match(/Package (.*)/);
+			if (match) {
+				var pack= match[1];
+				var hrefs= table.getElementsByTagName("a");
+				hrefs= Array.prototype.slice.call(hrefs); // take a copy, since we're going to add more <a>s
+				for (var i= 0; i < hrefs.length; i++) {
+					var pathmatch= window.location.pathname.match(/.*\/html\/[^_]+_(.*)\.html/);
+					var a= document.createElement("a");
+					a.textContent= "stdout";
+					a.href= "../" + pathmatch[1] + "/" + pack + "." + hrefs[i].textContent + ".txt";
+					hrefs[i].parentElement.insertBefore(a, hrefs[i].nextElementSibling);
+					hrefs[i].parentElement.insertBefore(document.createTextNode(" ("), a);
+					hrefs[i].parentElement.insertBefore(document.createTextNode(")"), a.nextElementSibling);
+				}
+			}
+		}
+	}
 	
 	var tables= document.getElementsByClassName('details');
 	for (var i= 0; i < tables.length; i++) {
 		makeTableSortable(tables[i]);
+		addLinksToStdout(tables[i]);
+	}
+	
+	// add link to consolelog / stderr:
+	var xmlRegex= /..\/xml\/([^_]+)_(.*)\.xml/;
+	var as= document.getElementsByTagName("a");
+	for (var i= 0; i < as.length; i++) {
+		var a= as[i];
+		var match= a.href.match(xmlRegex);
+		if (match) {
+			a.parentNode.appendChild(document.createTextNode(" | stderr: search for "));
+			var input= document.createElement("input");
+			input.value= match[1] + "_*";
+			a.parentNode.appendChild(input);
+			input.onfocus = function() {
+				this.select();
+			};
+			a.parentNode.appendChild(document.createTextNode(" in "));
+			var consolelog= document.createElement("a");
+			consolelog.textContent= match[2] + "_consolelog.txt";
+			consolelog.href= "../consolelogs/" + consolelog.textContent;
+			a.parentNode.appendChild(consolelog);
+			break;
+		}
 	}
 
 } else { // testResults.php summary page
