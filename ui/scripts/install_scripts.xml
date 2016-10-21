@@ -21,6 +21,7 @@
     	<doinstall file="jdtbugzilla.user.js"/>
     	<doinstall file="eclipse_test_results.user.js"/>
     	<doinstall file="eclipse_wiki.user.js"/>
+    	<doinstall file="always_show_directory_contents.user.js"/>
     </target>
 	
 	<target name="dummy_clean"/>
