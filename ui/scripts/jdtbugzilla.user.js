@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20161107T1236
+// @version 1.20161107T1957
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -43,6 +43,7 @@
 // @include       https://bugs.eclipse.org/bugs/query.cgi*
 // @include       https://bugs.eclipse.org/bugs/buglist.cgi*
 // @include       https://bugs.eclipse.org/bugs/show_activity.cgi*
+// @include       https://bugs.eclipse.org/bugs/report.cgi*
 //
 // Test install for new Bugzilla versions:
 // @include       https://bugs.eclipse.org/bugstest/*
@@ -980,10 +981,21 @@ if (headElem) {
 	}
 }
 
-// Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
+// Add "Hide" link to info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403
+//   The "Hide" link stores the last hidden message in localStorage => Only hides this exact message in this browser.
+//   To show it again, execute localStorage.clear(); in a bug page.
 var messageElem= document.getElementById("message");
-if (messageElem && messageElem.textContent == "Due to SPAM if you are a *NEW* user and wish to file bugs you will need to contact webmaster at eclipse dot org to be granted permission.  All other users should be unaffected by this change.") {
-    messageElem.parentNode.removeChild(messageElem);
+if (messageElem && messageElem.textContent) {
+	var key= "message.suppressed";
+	var msgString= JSON.stringify(messageElem.textContent);
+	if (localStorage[key] == msgString) {
+		messageElem.parentNode.removeChild(messageElem);
+	} else {
+		messageElem.appendChild(document.createTextNode(" "));
+		// Don't rename hideMessageElem to hideElem. JavaScript is a "language" from hell. See function hideElem().
+		var hideMessageElem= addLink("Hide", "javascript:void(0)", messageElem, "Hide this message", false);
+		hideMessageElem.setAttribute("onclick" , "localStorage['" + key + "']='" + msgString + "';this.parentNode.parentNode.removeChild(this.parentNode);return false;");
+	}
 }
 
 // Add shortcut to set Platform to All/All:
@@ -2446,6 +2458,7 @@ function process_result_pages() {
 	}
 }
 
+console.log("jdtbugzilla.user.js done.");
 } // main()
 
 
