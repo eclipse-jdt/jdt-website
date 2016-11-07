@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20161107T1235
+// @version 1.20161107T1236
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -981,10 +981,10 @@ if (headElem) {
 }
 
 // Remove info message, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=333403 :
-//var messageElem= document.getElementById("message");
-//if (messageElem) {
-//    messageElem.parentNode.removeChild(messageElem);
-//}
+var messageElem= document.getElementById("message");
+if (messageElem && messageElem.textContent == "Due to SPAM if you are a *NEW* user and wish to file bugs you will need to contact webmaster at eclipse dot org to be granted permission.  All other users should be unaffected by this change.") {
+    messageElem.parentNode.removeChild(messageElem);
+}
 
 // Add shortcut to set Platform to All/All:
 var rep_platformElem= document.getElementById("rep_platform");
