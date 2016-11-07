@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20161031T1541
+// @version 1.20161107T1235
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1851,6 +1851,8 @@ function process_result_pages() {
 		    
 		    i+= 1; // skip new link
 		    
+		    var nextNode= fullElem.nextSibling.nextSibling;
+		    
 			// Add "assign to" link (unless already assigned)
 			var assigned_toElem= document.getElementById("assigned_to");
 			if (assigned_toElem && assigned_toElem.value != email) {
@@ -1860,11 +1862,20 @@ function process_result_pages() {
 			    assignToElem.title= "Assign to " + aElem.title;
 		        assignToElem.setAttribute("href", getAssigneeLinkScript(email));
 		        
-			    fullElem.parentNode.insertBefore(assignToElem, fullElem.nextSibling.nextSibling);
-			    fullElem.parentNode.insertBefore(document.createTextNode(" "), assignToElem.nextSibling);
+			    fullElem.parentNode.insertBefore(assignToElem, nextNode);
+			    fullElem.parentNode.insertBefore(document.createTextNode(" "), nextNode);
 			    
 			    i+= 1; // skip new link
 			}
+			
+			// add link to search for changes by this user in the last week
+			var changesElem= addLink("&#x1F50E;", "buglist.cgi?chfieldfrom=1w"
+						 + "&email1=" + email + "&emailassigned_to1=1&emailcc1=1&emaillongdesc1=1&emailqa_contact1=1&emailreporter1=1&emailtype1=exact&order=Last Changed"
+					, fullElem.parentNode, "Changes by this user in the last 7 days", false);
+			changesElem.setAttribute("style", "text-decoration: none");
+			nextNode.parentNode.insertBefore(changesElem, nextNode);
+			nextNode.parentNode.insertBefore(document.createTextNode(" "), nextNode);
+			i+= 1; // skip new link
 		
 		// Dim glaring icon for "Bug 429346: Link to editing bugzilla config from bugzilla"
 	    } else if (aElemHref == "https://dev.eclipse.org/committers/bugs/bugz_manager.php") {
