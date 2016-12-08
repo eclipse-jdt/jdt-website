@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20161124T1349
+// @version 1.20161208T1357
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1697,6 +1697,15 @@ function process_result_pages() {
 				} else {
 					titleElem.replaceChild(bugElem, titleElem.firstChild);
 				}
+				
+				// emergency workaround for Bug 508888: Bugzilla page rendering is broken
+				if (headElem) {
+					var titleTag= document.getElementsByTagName("title")[0];
+					if (titleTag && titleTag.textContent == "") {
+						titleTag.textContent= "Bug " + bugId + " - " + short_desc_nonedit_displayElem.textContent;
+					}
+				}
+
 			    
 			    // Hack to stitch header to top, so that it is also visible when scrolled down:
 			    //     Better solution would be to use absolute positioning and only have a scroll-y on the bugzilla-body div:
