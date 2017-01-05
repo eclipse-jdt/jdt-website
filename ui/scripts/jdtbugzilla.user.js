@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20161215T1220
+// @version 1.20170105T1322
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -262,6 +262,12 @@ var assignToSymbol = "&#x261A;"; //BLACK LEFT POINTING INDEX
 //var assignToSymbol = "&#x1F844;"; //Leftwards Heavy Arrow
 //var assignToSymbol = "&#x1F87C;"; //Wide-Headed North West Heavy Barb Arrow
 //var assignToSymbol = "&#x1F884;"; //Wide-Headed North West Very Heavy Barb Arrow
+
+var searchSymbol = "&#x1F50E;"; //RIGHT-POINTING MAGNIFYING GLASS
+// Fix bad "emoticon" icon in FF 50:
+//  https://bugzilla.mozilla.org/show_bug.cgi?id=1231701 Use EmojiOne by default
+//  https://bugzilla.mozilla.org/show_bug.cgi?id=1321586 How to go back to previous emoji set 
+var searchSymbolStyle = "font-family: Segoe UI Emoji, Segoe UI Symbol, sans-serif;"
 
 // Various CSS fixes:
 var css =
@@ -1180,9 +1186,10 @@ function process_enter_bug() {
 	var field_container_productElem= document.getElementById("field_container_product");
 	var productElem= document.getElementsByName("product")[0];
 	if (field_container_productElem && productElem) {
-		addLink("&#x1F50E;", "query.cgi"
+		var queryLink= addLink(searchSymbol, "query.cgi"
 							 + "?product=" + productElem.value
 							 , field_container_productElem, "Search in this product", " | (");
+		queryLink.style= searchSymbolStyle;
 		addLink("1w", "buglist.cgi"
 							 + "?product=" + productElem.value
 							 + "&chfieldfrom=1w"
@@ -1200,9 +1207,10 @@ function process_enter_bug() {
 			
 			spanElem.appendChild(document.createTextNode("("));
 			
-			var queryLink= addLink("&#x1F50E;", "query.cgi?product=" + productElem.value
+			queryLink= addLink(searchSymbol, "query.cgi?product=" + productElem.value
 												+ "&component=" + componentElem.value, spanElem, "Search in selected component", false);
 			queryLink.setAttribute("id", "queryLink");
+			queryLink.style= searchSymbolStyle;
 			
 			var changedLink= addLink("1w", "buglist.cgi?product=" + productElem.value
 												+ "&component=" + componentElem.value
@@ -1771,6 +1779,16 @@ function process_result_pages() {
   		}
 	}
 	
+	var confirm_product_changeElem= document.getElementsByName("confirm_product_change")[0];
+	if (confirm_product_changeElem) {
+		var productElem= document.getElementsByName("product")[0];
+		var componentElem= document.getElementsByName("component")[0];
+		if (productElem && componentElem) {
+			addLink("Descriptions", "https://bugs.eclipse.org/bugs/describecomponents.cgi?product=" + productElem.value,
+					componentElem.parentNode.firstElementChild);
+		}
+	}
+	
 	headElem.appendChild(
 		createScript(
               'function assignTo(email) {\n'
@@ -1891,10 +1909,10 @@ function process_result_pages() {
 			}
 			
 			// add link to search for changes by this user in the last week
-			var changesElem= addLink("&#x1F50E;", "buglist.cgi?chfieldfrom=1w"
+			var changesElem= addLink(searchSymbol, "buglist.cgi?chfieldfrom=1w"
 						 + "&email1=" + email + "&emailassigned_to1=1&emailcc1=1&emaillongdesc1=1&emailqa_contact1=1&emailreporter1=1&emailtype1=exact&order=Last Changed"
 					, fullElem.parentNode, "Changes by this user in the last 7 days", false);
-			changesElem.setAttribute("style", "text-decoration: none");
+			changesElem.setAttribute("style", "text-decoration: none; " + searchSymbolStyle);
 			nextNode.parentNode.insertBefore(changesElem, nextNode);
 			nextNode.parentNode.insertBefore(document.createTextNode(" "), nextNode);
 			i+= 1; // skip new link
@@ -2132,10 +2150,10 @@ function process_result_pages() {
 				addProductLink(moveProducts[i], productsLinkSpanElem);
 			}
 			// Add shortcut to search Product:
-			addLink("&#x1F50E;", "query.cgi"
+			addLink(searchSymbol, "query.cgi"
 								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
 								 + "&product=" + productElem.options[productElem.selectedIndex].value
-								 , productsLinkSpanElem, "Search in this product", " | (");
+								 , productsLinkSpanElem, "Search in this product", " | (").style= searchSymbolStyle;
 			addLink("1w", "buglist.cgi"
 								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
 								 + "&product=" + productElem.options[productElem.selectedIndex].value
@@ -2161,11 +2179,11 @@ function process_result_pages() {
 				addComponentLink(moveComponents[i], componentsLinkSpanElem);
 			}
 			// Add shortcut to search Component:
-			addLink("&#x1F50E;", "query.cgi"
+			addLink(searchSymbol, "query.cgi"
 								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
 								 + "&product=" + productElem.options[productElem.selectedIndex].value
 								 + "&component=" + componentElem.options[componentElem.selectedIndex].value
-								 , componentsLinkSpanElem, "Search in this component", " | (");
+								 , componentsLinkSpanElem, "Search in this component", " | (").style= searchSymbolStyle;
 			addLink("1w", "buglist.cgi"
 								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
 								 + "&product=" + productElem.options[productElem.selectedIndex].value
