@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170105T1322
+// @version 1.20170111T1239
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -47,6 +47,9 @@
 //
 // Test install for new Bugzilla versions:
 // @include       https://bugs.eclipse.org/bugstest/*
+//
+// IBM-internal:
+// @include       https://bugs.ottawa.ibm.com/*
 //
 // Locally saved query.cgi (requires about:config setting greasemonkey.fileIsGreaseable = true):
 // @include       file://*/Search%20for%20bugs.htm*
@@ -1891,7 +1894,7 @@ function process_result_pages() {
 		    
 		    i+= 1; // skip new link
 		    
-		    var nextNode= fullElem.nextSibling.nextSibling;
+		    var nextNode= fullElem.nextElementSibling; // ECA | Friend | null!
 		    
 			// Add "assign to" link (unless already assigned)
 			var assigned_toElem= document.getElementById("assigned_to");
@@ -1913,8 +1916,8 @@ function process_result_pages() {
 						 + "&email1=" + email + "&emailassigned_to1=1&emailcc1=1&emaillongdesc1=1&emailqa_contact1=1&emailreporter1=1&emailtype1=exact&order=Last Changed"
 					, fullElem.parentNode, "Changes by this user in the last 7 days", false);
 			changesElem.setAttribute("style", "text-decoration: none; " + searchSymbolStyle);
-			nextNode.parentNode.insertBefore(changesElem, nextNode);
-			nextNode.parentNode.insertBefore(document.createTextNode(" "), nextNode);
+			fullElem.parentNode.insertBefore(changesElem, nextNode);
+			fullElem.parentNode.insertBefore(document.createTextNode(" "), nextNode);
 			i+= 1; // skip new link
 		
 		// Dim glaring icon for "Bug 429346: Link to editing bugzilla config from bugzilla"
