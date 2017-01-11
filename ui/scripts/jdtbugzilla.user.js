@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170111T1239
+// @version 1.20170111T1327
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -2144,26 +2144,29 @@ function process_result_pages() {
                     + "}, 10)"
 	                );
 	    
-	    // Add shortcuts to set Product:
+		var productsLinkSpanElem= document.createElement("span");
+		productsLinkSpanElem.style.marginLeft= "1em";
+		productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
 		if (isBugsEclipseOrg) {
-			var productsLinkSpanElem= document.createElement("span");
-			productsLinkSpanElem.style.marginLeft= "1em";
-			productElem.parentNode.insertBefore(productsLinkSpanElem, productElem.nextSibling);
+			// Add shortcuts to set Product:
 			for (var i= 0; i < moveProducts.length; i++) {
 				addProductLink(moveProducts[i], productsLinkSpanElem);
 			}
-			// Add shortcut to search Product:
-			addLink(searchSymbol, "query.cgi"
-								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
-								 + "&product=" + productElem.options[productElem.selectedIndex].value
-								 , productsLinkSpanElem, "Search in this product", " | (").style= searchSymbolStyle;
-			addLink("1w", "buglist.cgi"
-								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
-								 + "&product=" + productElem.options[productElem.selectedIndex].value
-								 + "&chfieldfrom=1w"
-								 , productsLinkSpanElem, "Changed in the last 7 days");
-			productsLinkSpanElem.appendChild(document.createTextNode(")"));
+			productsLinkSpanElem.appendChild(document.createTextNode(" | "));
+		} else {
+			productsLinkSpanElem.appendChild(document.createTextNode(" "));
 		}
+		// Add shortcut to search Product:
+		addLink(searchSymbol, "query.cgi"
+							 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+							 + "&product=" + productElem.options[productElem.selectedIndex].value
+							 , productsLinkSpanElem, "Search in this product", " (").style= searchSymbolStyle;
+		addLink("1w", "buglist.cgi"
+							 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+							 + "&product=" + productElem.options[productElem.selectedIndex].value
+							 + "&chfieldfrom=1w"
+							 , productsLinkSpanElem, "Changed in the last 7 days");
+		productsLinkSpanElem.appendChild(document.createTextNode(")"));
 	}
 	
 	if (classificationElem && productElem && componentElem) {
@@ -2173,28 +2176,31 @@ function process_result_pages() {
                     + "}, 10)"
 	                );
 	    
-	    // Add shortcuts to set Component:
+		var componentsLinkSpanElem= document.createElement("span");
+		componentsLinkSpanElem.style.marginLeft= "1em";
+		componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
 		if (isBugsEclipseOrg) {
-			var componentsLinkSpanElem= document.createElement("span");
-			componentsLinkSpanElem.style.marginLeft= "1em";
-			componentElem.parentNode.insertBefore(componentsLinkSpanElem, componentElem.nextSibling);
+			// Add shortcuts to set Component:
 			for (var i= 0; i < moveComponents.length; i++) {
 				addComponentLink(moveComponents[i], componentsLinkSpanElem);
 			}
-			// Add shortcut to search Component:
-			addLink(searchSymbol, "query.cgi"
-								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
-								 + "&product=" + productElem.options[productElem.selectedIndex].value
-								 + "&component=" + componentElem.options[componentElem.selectedIndex].value
-								 , componentsLinkSpanElem, "Search in this component", " | (").style= searchSymbolStyle;
-			addLink("1w", "buglist.cgi"
-								 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
-								 + "&product=" + productElem.options[productElem.selectedIndex].value
-								 + "&component=" + componentElem.options[componentElem.selectedIndex].value
-								 + "&chfieldfrom=1w"
-								 , componentsLinkSpanElem, "Changed in the last 7 days");
-			componentsLinkSpanElem.appendChild(document.createTextNode(")"));
+			componentsLinkSpanElem.appendChild(document.createTextNode(" | "));
+		} else {
+			componentsLinkSpanElem.appendChild(document.createTextNode(" "));
 		}
+		// Add shortcut to search Component:
+		addLink(searchSymbol, "query.cgi"
+							 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+							 + "&product=" + productElem.options[productElem.selectedIndex].value
+							 + "&component=" + componentElem.options[componentElem.selectedIndex].value
+							 , componentsLinkSpanElem, "Search in this component", " (").style= searchSymbolStyle;
+		addLink("1w", "buglist.cgi"
+							 + "?classification=" + classificationElem.options[classificationElem.selectedIndex].value
+							 + "&product=" + productElem.options[productElem.selectedIndex].value
+							 + "&component=" + componentElem.options[componentElem.selectedIndex].value
+							 + "&chfieldfrom=1w"
+							 , componentsLinkSpanElem, "Changed in the last 7 days");
+		componentsLinkSpanElem.appendChild(document.createTextNode(")"));
 	}
 	
 	// Copy QA and Assignee to the right (read-only):
