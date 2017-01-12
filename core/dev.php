@@ -56,6 +56,35 @@ ob_start();
       <ul>
         <li><a href="http://www.eclipse.org/jdt/core/index.php" >org.eclipse.jdt.core</a></li>
       </ul>
+      <h4>Main Plug-ins:</h4>
+			<ul>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.core/">org.eclipse.jdt.core</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.annotation/">org.eclipse.jdt.annotation</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.annotation_v1/">org.eclipse.jdt.annotation_v1</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.apt.core/">org.eclipse.jdt.apt.core</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.apt.pluggable.core/">org.eclipse.jdt.apt.pluggable.core</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.apt.ui/">org.eclipse.jdt.apt.ui</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.compiler.apt/">org.eclipse.jdt.compiler.apt</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.compiler.tool/">org.eclipse.jdt.compiler.tool</a></li>
+			</ul>
+			<br>
+			<h4>Tests:</h4>
+			<ul>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.apt.pluggable.tests/">org.eclipse.jdt.apt.pluggable.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.apt.tests/">org.eclipse.jdt.apt.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.compiler.apt.tests/">org.eclipse.jdt.compiler.apt.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.compiler.tool.tests/">org.eclipse.jdt.compiler.tool.tests</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.core.tests.builder/">org.eclipse.jdt.core.tests.builder</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.core.tests.compiler/">org.eclipse.jdt.core.tests.compiler</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.core.tests.model/">org.eclipse.jdt.core.tests.model</a></li>
+				<li><a href="http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/tree/org.eclipse.jdt.core.tests.performance/">org.eclipse.jdt.core.tests.performance</a></li>
+			</ul>
+			<br>
+			<h4>Documentation:</h4>
+			<ul>
+				<li><a href="http://git.eclipse.org/c/platform/eclipse.platform.common.git/tree/bundles/org.eclipse.jdt.doc.user/">org.eclipse.jdt.doc.user</a></li>
+				<li><a href="http://git.eclipse.org/c/platform/eclipse.platform.common.git/tree/bundles/org.eclipse.jdt.doc.isv/">org.eclipse.jdt.doc.isv</a></li>
+			</ul>
     </td>
   </tr>
   <tr>
@@ -93,103 +122,6 @@ ob_start();
       </ul>
     </td>
   </tr></table>
-		</div>
-		<div class="homeitem3col">
-			<a name="#RELEASES"></a>
-			<h3>Releases</h3>
-<p>JDT/Core exists in multiple flavors, depending on which delivery it is part of.</p>
-			<table>
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.4.x</b>
-<ul>
-<li>Detailed <a href="r3.4/index.php">description</a></li>
-<li>Get the official <a href="r3.4/index.php#SOURCES">sources for JDT/Core</a></li>
-<li><a href="r3.4/index.php#BUG_RESOLUTION">Bug resolution</a></li>
-<li>Available <a href="r3.4/index.php#UPDATES">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.3.x</b>
-<ul>
-<li>Detailed <a href="r3.3/index.php">description</a></li>
-<li>Get the official <a href="r3.3/index.php#SOURCES">sources for JDT/Core</a></li>
-<li><a href="r3.3/index.php#BUG_RESOLUTION">Bug resolution</a></li>
-<li>Available <a href="r3.3/index.php#UPDATES">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.2.x</b>
-<ul>
-<li>Detailed <a href="r3.2/index.php">description</a></li>
-<li>Get the official <a href="r3.2/index.php#SOURCES">sources for JDT/Core</a></li>
-<li><a href="r3.2/index.php#BUG_RESOLUTION">Bug resolution</a></li>
-<li>Available <a href="r3.2/index.php#UPDATES">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.1.x</b>
-<ul>
-<li>Detailed <a href="r3.1/index.php">description</a></li>
-<li>Get the official <a href="r3.1/index.php#SOURCES">sources for JDT/Core</a></li>
-<li><a href="r3.1/index.php#BUGS">Bug resolution</a></li>
-<li>Available <a href="r3.1/index.php#UPDATES">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R3.0.x</b>
-<ul>
-<li>Detailed <a href="r3.0/main.html">description</a></li>
-<li>Get the official <a href="r3.0/main.html#source">sources for JDT/Core</a></li>
-<li><a href="r3.0/main.html#bugs">Bug</a> resolution</li>
-<li>Design <a href="r3.0/main.html#notes">notes</a></li>
-<li>Available <a href="r3.0/main.html#updates">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R2.1.x</b>
-<ul>
-<li>Detailed <a href="r2.1/main.html">description</a></li>
-<li>Get the official <a href="r2.1/main.html#source">sources for JDT/Core</a></li>
-<li><a href="r2.1/main.html#bugs">Bug</a> resolution</li>
-<li>Design <a href="r2.1/main.html#notes">notes</a></li>
-<li>Available <a href="r2.1/main.html#updates">updates</a></li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R2.0.x</b>
-<ul>
-<li>Detailed <a href="r2.0/main.html">description</a></li>
-<li>Get the official <a href="r2.0/main.html#source">sources for JDT/Core</a></li>
-<li><a href="r2.0/main.html#bugs">Bug</a> resolution</li>
-<li>Design <a href="r2.0/main.html#notes">notes</a></li>
-<li>Available <a href="r2.0/main.html#updates">updates</a></li>
-<li><a href="r2.0/main.html#maintenance">Maintenance</a> effort</li>
-</ul>
-</td></tr>
-
-<tr>
-<td ALIGN=RIGHT VALIGN=TOP WIDTH="2%"><img SRC="http://dev.eclipse.org/images/Adarrow.gif" NOSAVE BORDER=0 height=16 width=16></td>
-<td WIDTH="98%"><b>R1.0.x </b>
-<ul>
-<li>Some <a href="r1.0/main.html">description</a></li>
-<li>Get the official <a href="r1.0/main.html#source">sources for JDT/Core</a></li>
-<li>Available <a href="r1.0/main.html#updates">updates</a></li>
-</ul>
-</td></tr>
-			</table>
 		</div>
 	</div>
 
