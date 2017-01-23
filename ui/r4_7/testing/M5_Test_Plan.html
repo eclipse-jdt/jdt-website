@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  
+  <title>Oxygen (4.7) M5 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+  <script type="text/javascript" src="../../linkifyBugs.js"></script>
+</head>
+
+<body onload="linkifyBugs();">
+
+<h1>Oxygen M5 Test Plan</h1>
+Test day: Tuesday, 2017-01-24<br>
+Test Build: Latest I-build<br>
+Components: JDT UI and JDT Text<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a>, <a href="mailto:markus_keller@ch.ibm.com">Markus</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+
+<h3>Platforms</h3>
+<ul>
+  <li>Linux GTK: Noopur</li>
+  <li>Mac OS X 10.11: Markus</li>
+  <li>Windows 7: Dani</li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>test new functionality added since 4.6 M4</li>
+  <li>verify that severe bugs are correctly fixed</li>
+</ul>
+
+
+<h2>Test New Functionality </h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+
+<h4>M5 New and Noteworthy (Markus, Dani - Questions: ...)</h4>
+Test the items that are currently listed in the <a href="https://www.eclipse.org/eclipse/news/4.7/M5/"> M5 New and Noteworthy</a></li>.
+
+<h4>Asynchronous code completion (Noopur, Markus - Questions: Mickael)</h4>
+This can be tested using the PDE Target editor and the .projecct editor in 'org.eclipse.ui.genericeditor.examples'.
+
+<h4>'Convert to method reference' should be available at more locations inside lambda expression (Dani, Noopur - Questions: Markus)</h4>
+Verify that it is availbale at more locations.
+
+<h4>PDE: Adding variable in interface gives error and suggests major version change, but adding to class is OK? (Markus, Dani - Questions: Vikas)</h4>
+Verify the fix for <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=496145">bug 496145</a></li>. 
+
+<h2>4.7 Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 JDT UI bugs, 4.7 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;priority=P1&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  P1 Text and Search bugs, 4.7 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs blocker/critical/major, 4.7 M5</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20M5&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_severity=blocker&amp;bug_severity=critical&amp;bug_severity=major&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs blocker/critical/major, 4.7 M5</a></li>
+</ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project), with focus on changes made in Platform UI.
+
+</body>
+</html>
