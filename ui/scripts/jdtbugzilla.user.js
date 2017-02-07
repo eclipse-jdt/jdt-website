@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170131T1242
+// @version 1.20170207T1641
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -340,6 +340,9 @@ var css =
 	//     Firefox 40 changed the default font for <select> to the OS default font ("Tahoma" for me), but not using the OS default font size.
 	//     Firefox <= 39 used "MS Sans Serif". Tahoma 10 is very ugly. Let's just inherit the page font:
 		+ "select { font-family: inherit; }\n"
+	
+	// Fix for "See Also" bug references with huge unbreakable summary (bug 511841 referring to bug 511743):
+		+ ".bug_urls { max-width: 45em; overflow-wrap: break-word; }\n"
 
 	;
 
