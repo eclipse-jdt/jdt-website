@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170207T1641
+// @version 1.20170227T1236
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1006,7 +1006,7 @@ if (messageElem && messageElem.textContent) {
 	} else {
 		messageElem.appendChild(document.createTextNode(" "));
 		// Don't rename hideMessageElem to hideElem. JavaScript is a "language" from hell. See function hideElem().
-		var hideMessageElem= addLink("Hide", "javascript:void(0)", messageElem, "Hide this message", false);
+		var hideMessageElem= addLink("Hide", "javascript:void(0)", messageElem, "Hide this message\n\nLast hidden message: " + localStorage[key], false);
 		hideMessageElem.setAttribute("onclick" , "localStorage['" + key + "']='" + msgString + "';this.parentNode.parentNode.removeChild(this.parentNode);return false;");
 	}
 }
