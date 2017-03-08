@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170227T1236
+// @version 1.20170308T1633
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -64,7 +64,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.7 M6", "4.7 M7", "4.7", "4.6.3", "BETA J9"];
+var target_milestones= ["4.7 M6", "4.7 M7", "4.7", "4.8", "4.6.3", "BETA J9"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0/*, 2*/];
@@ -92,6 +92,35 @@ var commentTemplates= [
 "platform.team", "http://git.eclipse.org/c/platform/eclipse.platform.team.git/commit/?id=",
 "pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id=",
 "equinox.bundles", "http://git.eclipse.org/c/equinox/rt.equinox.bundles.git/commit/?id=",
+];
+
+// Add "<name>", "<string>" pairs for template strings that you infrequently insert into the comment field (e.g. repo URLs):
+var commentTemplates2= [
+"jdt", "http://git.eclipse.org/c/jdt/eclipse.jdt.git/commit/?id=",
+"jdt.core", "http://git.eclipse.org/c/jdt/eclipse.jdt.core.git/commit/?id=",
+"jdt.debug", "http://git.eclipse.org/c/jdt/eclipse.jdt.debug.git/commit/?id=",
+"jdt.ui", "http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/commit/?id=",
+"pde.build", "http://git.eclipse.org/c/pde/eclipse.pde.build.git/commit/?id=",
+"pde.ui", "http://git.eclipse.org/c/pde/eclipse.pde.ui.git/commit/?id=",
+"platform", "http://git.eclipse.org/c/platform/eclipse.platform.git/commit/?id=",
+"platform.common", "http://git.eclipse.org/c/platform/eclipse.platform.common.git/commit/?id=",
+"platform.debug", "http://git.eclipse.org/c/platform/eclipse.platform.debug.git/commit/?id=",
+"platform.images", "http://git.eclipse.org/c/platform/eclipse.platform.images.git/commit/?id=",
+"platform.releng", "http://git.eclipse.org/c/platform/eclipse.platform.releng.git/commit/?id=",
+"platform.releng.aggregator", "http://git.eclipse.org/c/platform/eclipse.platform.releng.aggregator.git/commit/?id=",
+"platform.resources", "http://git.eclipse.org/c/platform/eclipse.platform.resources.git/commit/?id=",
+"platform.runtime", "http://git.eclipse.org/c/platform/eclipse.platform.runtime.git/commit/?id=",
+"platform.swt", "http://git.eclipse.org/c/platform/eclipse.platform.swt.git/commit/?id=",
+"platform.swt.binaries", "http://git.eclipse.org/c/platform/eclipse.platform.swt.binaries.git/commit/?id=",
+"platform.team", "http://git.eclipse.org/c/platform/eclipse.platform.team.git/commit/?id=",
+"platform.text", "http://git.eclipse.org/c/platform/eclipse.platform.text.git/commit/?id=",
+"platform.ua", "http://git.eclipse.org/c/platform/eclipse.platform.ua.git/commit/?id=",
+"platform.ui", "http://git.eclipse.org/c/platform/eclipse.platform.ui.git/commit/?id=",
+"equinox.binaries", "http://git.eclipse.org/c/equinox/rt.equinox.binaries.git/commit/?id=",
+"equinox.bundles", "http://git.eclipse.org/c/equinox/rt.equinox.bundles.git/commit/?id=",
+"equinox.framework", "http://git.eclipse.org/c/equinox/rt.equinox.framework.git/commit/?id=",
+"equinox.p2", "http://git.eclipse.org/c/equinox/rt.equinox.p2.git/commit/?id=",
+"eclipse/news", "http://git.eclipse.org/c/equinox/www.eclipse.org/eclipse/news.git/commit/?id=",
 ];
 
 // Add Products and Components to which you frequently move bugs:
@@ -853,7 +882,32 @@ function createCommentTemplateLinks() {
 		pElem.appendChild(aElem);
 		pElem.appendChild(document.createElement("br"));
     }
+    pElem.appendChild(createCommentTemplates2Chooser());
     return pElem;
+}
+
+function createCommentTemplates2Chooser() {
+	var commentTemplate2ChooserElem= document.createElement("select");
+	commentTemplate2ChooserElem.setAttribute("name", ""); // empty name => field will not be submitted with enclosing form
+	commentTemplate2ChooserElem.setAttribute("style", "max-height: 500px;");
+	commentTemplate2ChooserElem.setAttribute("onchange", 
+            'var cElem=document.getElementById("comment");'
+            + 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
+            + 'var url= this.value;'
+            + 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
+            + 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
+	);
+	var allCommentTemplates2= [
+"-- more... --", ""
+];
+    allCommentTemplates2= allCommentTemplates2.concat(commentTemplates2);
+	for (var k= 0; k < allCommentTemplates2.length; k+= 2) {
+		var newOption= document.createElement("option");
+		newOption.innerHTML = allCommentTemplates2[k];
+		newOption.setAttribute("value", allCommentTemplates2[k+1]);
+		commentTemplate2ChooserElem.appendChild(newOption);
+	}
+	return commentTemplate2ChooserElem;
 }
 
 function setCommitElemNameTitleShortcut(commitElem) {
