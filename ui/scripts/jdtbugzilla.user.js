@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170313T1315
+// @version 1.20170313T1714
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -915,13 +915,16 @@ function createCommentTemplates2Links() {
 		for (var j = 0; j < commentTemplates2group.length; j+= 2) {
 			var aElem= document.createElement("a");
 			aElem.appendChild(document.createTextNode(commentTemplates2group[j]));
-			aElem.href='javascript:var cElem=document.getElementById("comment");'
+			var ref= commentTemplates2group[j + 1];
+			aElem.href= ref.replace(/commit\/\?id=$/, "log/");
+			aElem.setAttribute('onclick', 'if (event.ctrlKey || event.metaKey) { return true; }'
+				+ 'var cElem=document.getElementById("comment");'
 				+ 'var s= cElem.selectionStart;var e= cElem.selectionEnd;'
 				+ 'var url= "' + commentTemplates2group[j + 1] + '";'
 				+ 'cElem.value= cElem.value.substring(0, s) + url + cElem.value.substring(e, cElem.value.length);'
 				+ 'cElem.focus();cElem.selectionStart= s + url.length;cElem.selectionEnd= cElem.selectionStart;'
-				+ 'void(0);';
-			aElem.title= "Insert comment template at caret";
+				+ 'return false;');
+			aElem.title= "Click: Insert commit link at caret\nCtrl+/Middle-Click: Open log link in new tab";
 			pElem.appendChild(aElem);
 			pElem.appendChild(document.createTextNode(" "));
 		}
