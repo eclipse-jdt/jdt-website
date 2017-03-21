@@ -141,10 +141,11 @@ ob_start();
 			<a name="scripts"></a>
 			<h3>Greasemonkey scripts (aka user scripts)</h3>
 			<p>JDT UI developers are heavy users of <a href="https://bugs.eclipse.org/bugs/">bugs.eclipse.org</a>.
-			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created the
+			   Since we could not stand the increasing number of UI bloopers in Bugzilla, we created a
+			   Greasemonkey script to ease our daily pain:</p>
+			<p>
 			   <a href="scripts/jdtbugzilla.user.js">jdtbugzilla.user.js</a>
-			   (<a href="http://git.eclipse.org/c/www.eclipse.org/jdt.git/log/ui/scripts/jdtbugzilla.user.js">log</a>)
-			   Greasemonkey script to ease our daily pain.</p>
+			   (<a href="http://git.eclipse.org/c/www.eclipse.org/jdt.git/log/ui/scripts/jdtbugzilla.user.js">log</a>)</p>
 			<p>
 			   The script always works with the latest release of Firefox,
 			   <a href="https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/">Greasemonkey</a>, and bugs.eclipse.org.
@@ -162,12 +163,19 @@ ob_start();
 			   <a href="mailto:markus_keller[at]ch.ibm.com">Markus</a>.</p>
 			<p>Here are some of the improvements in the script (see comments and bug links in the source for full details):</p>
 			<ul>
-				<li>clicks all the useless (edit) links</li>
-				<li>makes the Advanced Search page usable without having to scroll (removes garbage and increases option list heights)</li>
-				<li>fixes alternating gray/white background for enhancements in buglist.cgi (classic skin)</li>
+				<li>clicks all the useless (edit) links (<a href="https://bugs.eclipse.org/334083">bug 334083</a>)</li>
+				<li>makes the "Advanced Search" page usable without having to scroll (removes garbage and increases option list heights)</li>
 				<li>removes Eclipse.org headers to save space</li>
-				<li>adds a fixed "Bug &lt;id&gt;: &lt;summary&gt;" header on top for easy triple-click, copy, paste<br>
-					hint: the link is in the short https://bugs.eclipse.org/&lt;id&gt; form</li>
+				<li>fixes wrapping of stacktraces in comments and replies (<a href="https://bugs.eclipse.org/446727">bug 446727</a>)</li>
+				<li>adds a fixed "Bug &lt;id&gt;: &lt;summary&gt;" header on top for easy triple-click, copy, paste
+					<ul><li>hint: the link is in the short https://bugs.eclipse.org/&lt;id&gt; form</li></ul>
+				</li>
+				<li>adds more links on the right side of the fixed header to:
+					<ul>
+						<li>jump to your last comment</li>
+						<li>jump to last comment and reload page</li>
+					</ul>
+				</li>
 				<li>adds quick links for frequently used CCs, Assignees, Products, Components, Resolutions, Target Milestones, Git repositories, etc.</li>
 				<li>adds bug category combos (to insert "[work area]" prefixes into summary)</li>
 				<li>fixes various layout bugs on show_bug.cgi</li>
@@ -176,10 +184,14 @@ ob_start();
 				<li>fixes attachment links (click on attachment predictably opens the attachment -- separate [diff] link opens patch viewer)</li>
 				<li>makes the security group checkboxes less likely to be clicked inadvertently (only checkbox is clickable; label is not)</li>
 				<li>offers two links for email addresses: simple for pasting as CC / with full name to use as Git author</li>
+				<li>offers "Assign to" links next to email addresses and CC list</li>
 				<li>adds easy-to-copy bug &lt;id&gt; comment &lt;no&gt; text</li>
-				<li>adds more Save Changes buttons</li>
-				<li>fixes wrapping-preview in Additional Comments field</li>
-				<li>adds "Clone This Bug (in &lt;originating project&gt;)" link</li>
+				<li>adds more "Save Changes" buttons and supports Ctrl+S to save</li>
+				<li>fixes wrapping-preview in "Additional Comments" field</li>
+				<li>improves rendering of "See Also" links (e.g. shows all relevant infos for Gerrit links and shows bug titles) (follow-up to <a href="https://bugs.eclipse.org/434841#c37">bug 434841#c37</a>)</li>
+				<li>adds "Clone This Bug (in &lt;originating project&gt;)" and "New (in &lt;project/component&gt;)" links (<a href="https://bugs.eclipse.org/463055">bug 463055</a>)</li>
+				<li>adds link to hide old admin messages (<a href="https://bugs.eclipse.org/333403">bug 333403</a>)</li>
+				<li>fixes alternating gray/white background for enhancements in buglist.cgi (classic skin) (<a href="https://bugs.eclipse.org/331415">bug 331415</a>)</li>
 			</ul>
 		</div>
 	
