@@ -167,15 +167,11 @@ ob_start();
 				<li>makes the "Advanced Search" page usable without having to scroll (removes garbage and increases option list heights)</li>
 				<li>removes Eclipse.org headers to save space</li>
 				<li>fixes wrapping of stacktraces in comments and replies (<a href="https://bugs.eclipse.org/446727">bug 446727</a>)</li>
-				<li>adds a fixed "Bug &lt;id&gt;: &lt;summary&gt;" header on top for easy triple-click, copy, paste
-					<ul><li>hint: the link is in the short https://bugs.eclipse.org/&lt;id&gt; form</li></ul>
-				</li>
-				<li>adds more links on the right side of the fixed header to:
-					<ul>
-						<li>jump to your last comment</li>
-						<li>jump to last comment and reload page</li>
-					</ul>
-				</li>
+				<li>adds a fixed "Bug &lt;id&gt;: &lt;summary&gt;" header on top for easy triple-click, copy, paste</br>
+					- hint: the link is in the short https://bugs.eclipse.org/&lt;id&gt; form</li>
+				<li>adds more links on the right side of the fixed header to:<br>
+					- jump to your last comment<br>
+					- jump to last comment and reload page</li>
 				<li>adds quick links for frequently used CCs, Assignees, Products, Components, Resolutions, Target Milestones, Git repositories, etc.</li>
 				<li>adds bug category combos (to insert "[work area]" prefixes into summary)</li>
 				<li>fixes various layout bugs on show_bug.cgi</li>
