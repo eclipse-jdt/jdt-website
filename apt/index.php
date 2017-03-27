@@ -89,28 +89,27 @@ ob_start();
 			need to do anything at all! Many project creation wizards will
 			automatically install and enable the necessary processors. To check
 			whether this is the case, or to install and enable your own
-			processors, use the Java Compiler -&gt; Annotation Processing pane of
+			processors, use the Java Compiler &gt; Annotation Processing pane of
 			the project properties.</p>
 		<p>
-			If you need to write your own annotation processor, see <a
-				href="introToAPT.php">Intro to APT</a> to get started using APT,
-			and also see the EclipseCon 2007 tutorial mentioned above.
+			For details, see the <a href="http://help.eclipse.org/topic/org.eclipse.jdt.doc.isv/guide/jdt_apt_getting_started.htm">
+			Getting Started</a> guide in the Eclipse documentation (Help &gt; Help Contents &gt; 
+			JDT Plug-in Developer Guide &gt; Programmer's Guide &gt; JDT Annotation Processing).
 		</p>
 	</div>
 	<div class="homeitem3col">
 		<h3>How can I contribute?</h3>
 		<p>
-			If you're interested in contributing, start by checking the code out of CVS. 
-			See the instructions <a href="howtobuildme.txt">here</a>.
+			If you're interested in contributing, start by checking out the code in the <a href="https://git.eclipse.org/c/jdt/eclipse.jdt.core.git/">
+			eclipse.jdt.core</a> Git repository. See the instructions <a href="https://wiki.eclipse.org/JDT_Core_Committer_FAQ#Coding">here</a>.
 		</p>
 		<p>
 			You can also check out the mailing list, 
 			<a href="http://dev.eclipse.org/mailman/listinfo/jdt-apt-dev">jdt-apt-dev@eclipse.org</a>,
-			or post questions to the eclipse.tools.jdt 
-			<a href="http://www.eclipse.org/newsgroups/">newsgroup</a>. 
+			or post questions to the Java Development Tools (JDT) <a href="https://www.eclipse.org/forums/">forum</a>. 
 			The mailing list is primarily for announcements and discussion by people working
 			on the APT tooling in Eclipse; if you have technical questions, it is
-			best to use the newsgroup.
+			best to use the forum.
 		</p>
 	</div>
 </div>
