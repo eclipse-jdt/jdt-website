@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170313T1714
+// @version 1.20170420T1818
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1919,7 +1919,11 @@ function process_result_pages() {
 	        var pre= document.createTextNode("bug " + bugId + " ");
 	        aElem.parentNode.insertBefore(pre, aElem);
 	        lastComment= aElem;
-	        
+
+	    // Fix the Status "Edit" link
+	    } else if (aElemHref == "#add_comment" && aElem.parentNode.getAttribute("id") == "static_bug_status") {
+	    	aElem.setAttribute("href", "#bug_status");
+
 	    // Modifier+click on [-] to toggle wide comments
 	    } else if (aElem.getAttribute("class") == "bz_collapse_comment") {
 	        var commentId= commentIdRegex.exec(aElem.parentNode.parentNode.parentNode.id)[1];
