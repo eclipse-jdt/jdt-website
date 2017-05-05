@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <title>Mars M7 Test Plan</title>
+</head>
+<body>
+<h1>Mars M7 Test Plan</h1>
+Testing day: 8-05-2017, Tuesday<br>
+Test Builds: I20170504-2000 or latest<br>
+Components: JDT Core, JDT APT<br>
+Testers: <a href="mailto:jarthana@in.ibm.com">Jay</a>, <a href="mailto:manpalat@in.ibm.com">Manoj</a> and <a href="mailto:sasikanth.bharadwaj@in.ibm.com">Sasi</a><br>
+
+
+<h2>Setup</h2>
+<h3>Builds</h3>
+<ul>
+  <li>4.7 M7 build: everybody</li>
+</ul>
+<h3>Platforms</h3>
+<ul>
+  <li>Windows: Jay/Sasi</li>
+  <li>Mac OS X 10.9: Manoj</li>
+  <li>Linux: Sasi?</li>
+</ul>
+
+<h2>Goal</h2>
+<ul>
+  <li>Test new functionality added since 4.7</li>
+  <li>Verify that severe bugs are correctly fixed</li>
+  <li>Verify that all 4.7 bugs are correctly fixed</li>
+</ul>
+
+<h2>Test New Functionality</h2>
+
+<strong>Note:</strong> First test the items where your name is listed first. Then test the other items.
+
+<h4>Code Assist with Lambda (Jay/Manoj/Sasi)</h4>
+	<ul>
+	<li>Content assist, invoking completion etc. within a lambda block, nested lambda block, combination of anonymous with lambda etc.</li>
+	<li>Code select in the context of lambda, nested lambda, combination of anonymous types with lambda etc.</li>
+	</ul>
+<h4>Null Analysis (Manoj)</h4>
+	<ul>
+	<li>Test around null analysis with generic code</li>
+	<li>Also test generally around type inference with complex generic code that involves method overriding etc.</li>
+	</ul>
+<h4>Indexer (Jay/Sasi) </h4>
+	<ul>
+	<li>Test around search feature in general</li>
+	<li>Disable the new indexer and test how it affects related features, such as type hierarchy etc.</li>
+	</ul>
+
+<h4>Formatter (Jay/Manoj/Sasi)</h4>
+	<ul>
+	<li>Formatter testing, whitespace line wrapping and indentation to be on focus</li>
+	</ul>
+
+<h2>4.7 M7 Bug Verification (All)</h2>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?classification=Eclipse&component=APT&component=Core&list_id=16243609&product=JDT&query_format=advanced&resolution=FIXED&target_milestone=4.7%20M7">
+  JDT Core bugs in 4.7</a></li>
+ </ul>
+
+<h2>Sanity Check The Build (All)</h2>
+Sanity check the build by using it for development (either on "real" code or your pet project).
+
+</body>
+</html>
