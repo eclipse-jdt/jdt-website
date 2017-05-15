@@ -14,15 +14,46 @@
 // @description   adds: links to sort test results pages by execution time, links to console logs, quick navigation with Ctrl+,/., Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20160928T1734
+// @version       1.20170515T1423
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
 // @include       http*://hudson.eclipse.org/*/eclipse-testing/results/html/*.html
 // ==/UserScript==
 
-if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // individual test results page
+var resultPageRegex= /(.*\/)([-\.A-Z0-9]+)(\/(?:test)?results\/html\/.*\.html)/;
+var matchR= window.location.pathname.match(resultPageRegex);
+if (matchR) { // individual test results page
 
+	function getOpenPrevBuildResultFunction(prev) {
+		return function() {
+			var buildIds= new Set();
+			var testResultsRegex= /drops4\/([-A-Z0-9]+)\/testResults\.php/;
+			console.log(this.status);
+			var xml= this.responseXML;
+			var bs= xml.getElementsByTagName("a");
+			for (var j= 0; j < bs.length; j++) {
+				var b= bs[j];
+				var matchb= b.href.match(testResultsRegex);
+				if (matchb) {
+					buildIds.add(matchb[1]);
+				}
+			}
+			buildIds= [...buildIds].sort();
+			
+			for (var i = 0; i < buildIds.length; i++) {
+				if (buildIds[i] == matchR[2]) {
+					if (i > 0 && buildIds[i-1].charAt() == buildIds[i].charAt()) {
+						var prevResultPageHref= matchR[1] + buildIds[i-1] + matchR[3];
+						prev.href= prevResultPageHref;
+						return;
+					}
+				}
+			}
+			prev.href= 'javascript:alert("No previous build found for ' + matchR[2] + '.");';
+		}
+	}
+	
 	function sortTable(table) {
 		var rows= Array.prototype.slice.call(table.getElementsByTagName('tr'), 0);
 		rows.sort(function(a,b) {
@@ -104,6 +135,32 @@ if (window.location.pathname.match(/.*\/(test)?results\/html\/.*\.html/)) { // i
 			consolelog.href= "../consolelogs/" + consolelog.textContent;
 			a.parentNode.appendChild(consolelog);
 			break;
+			
+		} else if (a.name == "top") {
+			// Add link to result of this test run in previous build.
+			// Only loaded on mouseover. That's a hack, but I don't know of a better solution that doesn't
+			// always resolve the link and that doesn't break the browser's click / ctrl+click etc. behavior.
+			var div= a.nextElementSibling.nextElementSibling;
+			
+			var prev = document.createElement("a");
+			
+			function loadPrevBuildResultHref() {
+				var r= new XMLHttpRequest();
+				r.onload= getOpenPrevBuildResultFunction(prev);
+				r.responseType= "document";
+				r.open("GET", "../../../../index.html", true);
+				r.send();
+				prev.removeEventListener("mouseover", loadPrevBuildResultHref, false);
+				prev.removeEventListener("focus", loadPrevBuildResultHref, false);
+			}
+			
+			prev.href = "#";
+			prev.title = "Open test result from previous build \n(may not exist)";
+			prev.innerHTML = "previous build"
+			prev.addEventListener("mouseover", loadPrevBuildResultHref, false);
+			prev.addEventListener("focus", loadPrevBuildResultHref, false);
+			div.insertBefore(document.createTextNode(" "), div.firstElementChild);
+			div.insertBefore(prev, div.firstChild);
 		}
 	}
 
@@ -123,12 +180,23 @@ function getAppendTimeFunction(myElem) { // JavaScript garbage to capture aElem
 		var testsuites= xml.getElementsByTagName("testsuite");
 		for (var i= 0; i < testsuites.length; i++) {
 			var testsuite= testsuites[i];
+			var tests= testsuite.getAttribute("tests");
+			var skipped= testsuite.getAttribute("skipped");
+			if (skipped != 0) {
+				tests= tests + "(" + skipped + ")";
+			}
 			var time= testsuite.getAttribute("time");
 			var parentElem= myElem.parentNode;
 			if (parentElem.tagName == "B") {
 				parentElem= parentElem.parentNode;
 			}
-			parentElem.appendChild(document.createTextNode(" " + time + "s"));
+			var span= document.createElement("span");
+			span.style= "float:right";
+//			span.appendChild(document.createTextNode(tests + " in " + Math.round(time) + "s"));
+			span.appendChild(document.createTextNode(Math.round(time)));
+			span.title= time + "s";
+			parentElem.appendChild(span);
+			parentElem.appendChild(document.createElement("br"));
 			parentElem.removeAttribute("align");
 		}
 	};
@@ -141,7 +209,7 @@ function loadTestTimes() {
 		if (aElem.href.search(htmlResultRegex) != -1) {
 			var r= new XMLHttpRequest();
 			// JavaScript closure madness: getAppendTimeFunction(..) cannot be inlined here,
-			// since that would create a closure on variable aElem. In JavaScript, the value of is aElem not captured,
+			// since that would create a closure on variable aElem. In JavaScript, the value of aElem is not captured,
 			// but the variable becomes part of the closure and is shared among all references to the function, i.e.
 			// it *changes its value* as the 'for' loop proceeds!
 			// 
@@ -175,7 +243,6 @@ if (unitTestElem) {
 	pElem.appendChild(loadElem);
 	loadElem.innerHTML= "Load test times <img src='https://addons.cdn.mozilla.net/user-media/addon_icons/0/748-64.png' style='vertical-align: top' height='16px' width='16px'>";
 	loadElem.addEventListener("click", loadTestTimes, false);
-}
 
 // stolen/adapted from /eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/src/main/scripts/JUNIT.XSL:
         function findTop(obj) {
@@ -306,5 +373,6 @@ if (unitTestElem) {
         buttonNext.innerHTML = "&#x25BC;"
         buttonNext.addEventListener("click", jumpNext, false);
         div.appendChild(buttonNext);
+}
 
 }
