@@ -7,6 +7,9 @@
     	  This hacks around missing support for
     	    - gitattributes: https://bugs.eclipse.org/342372
     	    - pre-commit hook: https://bugs.eclipse.org/299315
+    	  [Update 2017-05-15: EGit now implements smudge/clean filters: https://bugs.eclipse.org/bugs/show_bug.cgi?id=342372#c101
+    	   The Eclipse builder and this part of the script could be replaced by Git-native filters now
+    	   (if sombody writes a portable filter command that generates the version numbers in the right format)]
     	
       - installs script if
          1. file got modified, and
@@ -56,7 +59,7 @@
 	
 	<target name="update_time_stamp" depends="up_to_date_check" unless="${isUpToDate}">
 		<tstamp>
-    		<format property="DTSTAMP" pattern="yyyyMMdd'T'HHmm" timezone="Europe/Zurich"/>
+    		<format property="DTSTAMP" pattern="yyyyMMdd'T'HHmm" timezone="UTC"/>
     	</tstamp>
     	<replaceregexp file="${file}" match="(// @version\s+\d+\.)\d+T\d+" replace="\1${DTSTAMP}"/>
 	</target>
