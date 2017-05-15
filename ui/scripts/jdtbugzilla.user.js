@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170515T1038
+// @version 1.20170515T1407
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -2086,9 +2086,10 @@ function process_result_pages() {
 			var newHTML= '<a href="#">Top</a> '
 					+ '(<a href="javascript:scroll_to_my_last_comment();void(0);" title="Jump to my last comment">My</a>) '
 					+ '<a href="' + lastComment.href + '" title="Jump to last comment">Last</a> '
-					+ '<a href="javascript:'
-					+ 'window.location.href=\'' + lastComment.href
-					+ '\';window.location.reload(false);void(0);" title="Jump to last comment and Reload">modified &#x1F503;</a>'
+					+ '<a href="' + lastComment.href + '" '
+					+ 'onclick="var modClick= event.shiftKey || event.ctrlKey || event.altKey || event.metaKey || event.button == 1;'
+					  + 'if (!modClick) { window.location.href=\'' + lastComment.href + '\';window.location.reload(false);}" '
+					+ 'title="Jump to last comment and Reload">modified &#x1F503;</a>'
 					+ header_addl_infoElems[0].innerHTML.substr(13);
 			header_addl_infoElems[0].innerHTML= newHTML;
 		}
