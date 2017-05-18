@@ -14,7 +14,7 @@
 // @description   adds: links to sort test results pages by execution time, links to console logs, quick navigation with Ctrl+,/., Bug 420296: devise "poor mans" performance assessment of unit tests
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/eclipse_test_results.user.js
-// @version       1.20170515T1423
+// @version       1.20170518T1251
 
 // @include       http*://*/downloads/drops*/*/testResults.php
 // @include       http*://*/downloads/drops*/*/testresults/html/*.html
@@ -181,20 +181,16 @@ function getAppendTimeFunction(myElem) { // JavaScript garbage to capture aElem
 		for (var i= 0; i < testsuites.length; i++) {
 			var testsuite= testsuites[i];
 			var tests= testsuite.getAttribute("tests");
-			var skipped= testsuite.getAttribute("skipped");
-			if (skipped != 0) {
-				tests= tests + "(" + skipped + ")";
-			}
 			var time= testsuite.getAttribute("time");
 			var parentElem= myElem.parentNode;
 			if (parentElem.tagName == "B") {
 				parentElem= parentElem.parentNode;
 			}
+			var name= testsuite.getAttribute("name");
 			var span= document.createElement("span");
-			span.style= "float:right";
-//			span.appendChild(document.createTextNode(tests + " in " + Math.round(time) + "s"));
+			span.style= "float:right;color:initial;";
 			span.appendChild(document.createTextNode(Math.round(time)));
-			span.title= time + "s";
+			span.title= time + "s\n" + name + " (" + tests + " tests)";
 			parentElem.appendChild(span);
 			parentElem.appendChild(document.createElement("br"));
 			parentElem.removeAttribute("align");
