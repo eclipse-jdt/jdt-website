@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Oxygen RC2 Test Plan</title>
+
+  <style type="text/css">
+    h4 { margin-bottom: .5em; margin-top: 1.5em }
+    ul { margin-top: .5em }
+    ul li ul { margin-top: 0em; margin-bottom: .25em }
+  </style>
+
+<script type="text/javascript">
+function linkifyBugs() {
+	// Replaces plain text 'bug xyz' by a link to Eclipse's bugzilla.
+	traverseLinkifyBugs(document.getElementsByTagName("body")[0]);
+}
+function nextNode(node, stopNode) {
+	if (node.nextSibling) {
+		return node.nextSibling;
+	} else if (node.parentNode == stopNode) {
+		return null;
+	} else {
+		return nextNode(node.parentNode);
+	}
+}
+function traverseLinkifyBugs(node) {
+    var stopNode= node.parentNode;
+	var regex= /(Bug\s*)(\d+)/i;
+	while (node) {
+		if (node.nodeType == 1/*element*/ && node.nodeName == "a") {
+			node= nextNode(node, stopNode);
+
+		} else if (node.childNodes != null && node.childNodes.length > 0) {
+			node= node.childNodes[0];
+
+		} else if (node.nodeType == 3/*text*/) {
+			var txt= node.data;
+			var res= regex.exec(txt);
+			if (res) {
+				var matchStart= txt.indexOf(res[0]);
+
+				var beforeNode= document.createTextNode(txt.substring(0, matchStart));
+				node.parentNode.insertBefore(beforeNode, node);
+
+				var linkNode= document.createElement("a");
+				linkNode.href= "https://bugs.eclipse.org/bugs/show_bug.cgi?id=" + res[2];
+				linkNode.appendChild(document.createTextNode(res[1] + res[2]));
+				node.parentNode.insertBefore(linkNode, node);
+
+				node.data= txt.substr(matchStart + res[0].length);
+				// continue with current (shortened) node...
+			} else {
+				node= nextNode(node, stopNode);
+			}
+
+		} else {
+			node= nextNode(node, stopNode);
+		}
+	}
+}
+</script>
+
+</head>
+
+
+<body onload="linkifyBugs();">
+<h1>Oxygen RC2 Test Plan</h1>
+Test day: Thursday, 2016-05-25<br>
+Test Build: 4.7 RC2 build<br>
+Components: JDT Text and JDT UI<br>
+Testers: <a href="mailto:noopur_gupta@in.ibm.com">Noopur</a> and <a href="mailto:daniel_megert@ch.ibm.com">Dani</a><br>
+
+
+<h2>Setup</h2>
+
+<h3>Platforms</h3>
+<ul>
+  <li>Linux GTK: Noopur</li>
+  <li>Mac OS X 10.11: -</li>
+  <li>Windows 7: Dani</li>
+</ul>
+
+
+<h2>Goal</h2>
+<ul>
+  <li>verify all RC2 bug fixes</li>
+  <li>free-style testing with focus on JDT and Text</li>
+</ul>
+
+
+<h2>Test items</h2>
+
+<h4>Run link checker on doc (Dani)</h4>
+
+<h4>Free-style testing with focus on JDT and Text (All)</h4>
+<ul>
+	<li>work on a pet project or on a bug fix</li>
+	<li>goal is to use as many JDT and Text features as possible</li>
+	<li>no doc writing (since that doesn't test our features)</li>
+</ul>
+
+
+<h2>Bug Verification (All)</h2>
+<em>Before starting to verify a bug add a comment indicating that you are about to verify it.</em>
+<ul>
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20RC2&amp;query_format=advanced&amp;classification=Eclipse&amp;product=JDT&amp;component=UI&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  JDT UI bugs, 4.7 RC2</a></li>
+
+  <li><a href="https://bugs.eclipse.org/bugs/buglist.cgi?target_milestone=4.7%20RC2&amp;query_format=advanced&amp;classification=Eclipse&amp;component=Text&amp;component=Search&amp;bug_status=RESOLVED&amp;resolution=FIXED&amp;order=bugs.priority,bugs.target_milestone,bugs.bug_id">
+  Text and Search bugs, 4.7 RC2</a></li>
+</ul>
+
+</body></html>
