@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20170620T1018
+// @version 1.20170718T0919
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -72,7 +72,7 @@ var main_target_milestones= [0/*, 2*/];
 // Add "<name>", "<email>" pairs for people you frequently CC:
 var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
-"MK", "markus_keller@ch.ibm.com",
+"MK", "markus.kell.r@gmail.com",
 "NG", "noopur_gupta@in.ibm.com",
 ];
 
