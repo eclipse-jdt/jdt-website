@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20171011T1533
+// @version 1.20171021T1721
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -74,6 +74,7 @@ var ccs= [
 "DM", "daniel_megert@ch.ibm.com",
 "MK", "markus.kell.r@gmail.com",
 "NG", "noopur_gupta@in.ibm.com",
+"KP", "kalyan_prasad@in.ibm.com",
 ];
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
