@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2016 IBM Corporation and others.
+ * Copyright (c) 2012, 2017 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20171102T0805
+// @version 1.20171127T1258
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1852,7 +1852,7 @@ function process_result_pages() {
 	            // Insert after summary:
 	            var choosers= createCategoryChoosers();
 	            choosers.insertBefore(document.createTextNode(" "), choosers.firstChild);
-	            short_descElem.setAttribute("style", "width: 60%;");
+	            short_descElem.setAttribute("style", "width: 53%;");
 	            short_descElem.parentNode.insertBefore(choosers, short_descElem.nextSibling);
 	            var summaryElem= document.getElementById("summary");
 	            if (summaryElem) {
