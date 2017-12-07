@@ -33,7 +33,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20171206T1633
+// @version 1.20171207T0850
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -377,6 +377,9 @@ var css =
 	// CSS for "toggle wide comments"
 	    + ".wide { width: 100%; }\n"
 	
+	// Fix to hide horizontal scroll bar in quoted comments	
+		+ ".bz_comment_text span.quote { overflow: visible; }\n"
+
 	// Fix font of <select> elements:
 	//     Workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=1123654 / https://bugzilla.mozilla.org/show_bug.cgi?id=1194055
 	//     Firefox 40 changed the default font for <select> to the OS default font ("Tahoma" for me), but not using the OS default font size.
