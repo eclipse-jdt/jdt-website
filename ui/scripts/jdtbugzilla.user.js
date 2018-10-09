@@ -26,14 +26,15 @@
 // @name          JDT UI Bugzilla Add-On
 // @namespace     http://www.eclipse.org/jdt/ui
 // @description   Script to tune Bugzilla for JDT UI
-// @grant         GM_getResourceText
+// @require  https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
+// Broken by Greasemonkey 4 (resource is not available on file system, so it can't be edited locally): @grant         GM_getResourceText
 // @grant         GM_xmlhttpRequest
-// @grant         GM_addStyle
+// @grant         GM.xmlHttpRequest
 // @run-at document-start
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20180912T0924
+// @version 1.20181016T1047
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -407,10 +408,11 @@ var isBugsEclipseOrg= location.href.startsWith("https://bugs.eclipse.org/bugs/")
 	
 // --- /Configurable options ------------------------------------------
 
-if (typeof GM_getResourceText !== "undefined") { // GM_getResourceText is not available in Google Chrome, so let's go with the defaults.
-	var config = GM_getResourceText("config");
-	eval(config);
-}
+// Broken by Greasemonkey 4:
+//if (typeof GM_getResourceText !== "undefined") { // GM_getResourceText is not available in Google Chrome, so let's go with the defaults.
+//	var config = GM_getResourceText("config");
+//	eval(config);
+//}
 
 //----------- Functions:
 function hideElem(id) {
@@ -2030,8 +2032,8 @@ function process_result_pages() {
 			
 			// Lazily load/append Gerrit status:
 			// can't use XMLHttpRequest due to Cross-Origin Request blocking (Same Origin Policy)
-			if (typeof GM_xmlhttpRequest !== "undefined") {
-				GM_xmlhttpRequest({
+			if (typeof GM.xmlHttpRequest !== "undefined") {
+				GM.xmlHttpRequest({
 					method: "GET",
 					url: "https://git.eclipse.org/r/changes/" + changeId + "?o=DETAILED_ACCOUNTS",
 					onload: getAppendGerritStatusFunction(aElem)
@@ -2590,9 +2592,15 @@ console.log("jdtbugzilla.user.js done.");
 } // main()
 
 
-GM_addStyle(css);
+var headElem= document.getElementsByTagName("head")[0];
+if (headElem) {
+	var styleElem= document.createElement("style");
+	styleElem.type= "text/css";
+	styleElem.innerHTML = css;
+	headElem.appendChild(styleElem);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   //page has been loaded, run DOM interactive parts (aka "@run-at document-end") here:
   main();
 }, true);
-
