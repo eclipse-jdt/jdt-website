@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20181018T1124
+// @version 1.20181030T0057
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1014,7 +1014,7 @@ function addSaveShortcutCtrlS(form) {
 
 function main() { // GM 1.0 belches for "return" outside of function, see http://www.greasespot.net/2012/08/greasemonkey-10-release.html
 
-console.log("Running jdtbugzilla.user.js on " + window.location);
+console.log("Running jdtbugzilla.user.js on " + window.location + ", title: " + document.title);
 
 // Don't run in frames or iframes:
 if (window.top != window.self) {
@@ -2592,10 +2592,17 @@ console.log("jdtbugzilla.user.js done.");
 } // main()
 
 
+if (document.getElementById("jdtbugzilla")) {
+	// Workaround for https://github.com/greasemonkey/greasemonkey/issues/3012 :
+	// Script runs twice for Content-Type: multipart/x-mixed-replace
+	return;
+}
+
 var headElem= document.getElementsByTagName("head")[0];
 if (headElem) {
 	var styleElem= document.createElement("style");
 	styleElem.type= "text/css";
+	styleElem.id= "jdtbugzilla";
 	styleElem.innerHTML = css;
 	headElem.appendChild(styleElem);
 }
