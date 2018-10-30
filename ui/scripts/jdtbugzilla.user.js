@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20181030T0057
+// @version 1.20181030T0113
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1700,10 +1700,8 @@ function process_buglist() {
     }
     
     // Add "Create buglist" functionality in "Change Several Bugs at Once" form:
-    var check_allElems= document.getElementsByName("check_all");
-    if (check_allElems && check_allElems[0]) {
-        var lastElem= check_allElems[0];
-        
+    var lastElem= document.getElementById("check_all");
+    if (lastElem) {
         var spaceElem= document.createTextNode("\n");
         lastElem.parentNode.insertBefore(spaceElem, lastElem.nextSibling);
         lastElem= spaceElem;
