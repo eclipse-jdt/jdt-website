@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20181203T1244
+// @version 1.20181213T0444
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -65,7 +65,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.10 RC2", "4.10", "4.11", "BETA J12", "BETA J13"];
+var target_milestones= ["4.11 M1", "4.11", "BETA J12", "BETA J13"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0/*, 2*/];
@@ -214,6 +214,7 @@ categories["Text"]= [
 categories["Text"].url= "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm";
 
 categories["JDT"]= [
+"[12]",
 "[11]",
 "[10]",
 "[9]",
@@ -230,6 +231,7 @@ categories["JDT"]= [
 "[ccp]",
 "[change method signature]",
 "[clean up]",
+"[code mining]",
 "[code style]",
 "[code templates]",
 "[common navigator]",
