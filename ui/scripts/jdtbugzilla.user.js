@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190107T1135
+// @version 1.20190107T1514
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -599,7 +599,7 @@ function addSearch_email_fieldsLinks(emailElemName, myMail) {
 		emailElem.parentNode.insertBefore(sp, emailElem.parentNode.firstElementChild);
 		var noneHref= 'javascript:'
 					+ 'var emailElem= document.getElementById("' + emailElemName + '");'
-					+ 'var allInputs= emailElem.parentNode.getElementsByTagName("input");'
+					+ 'var allInputs= emailElem.parentNode.parentNode.getElementsByTagName("input");'
 					+ 'for (var i= 0; i < allInputs.length; i++) {'
 					+ '  var inputElem= allInputs[i];'
 					+ '  if (inputElem.type == "checkbox") {'
@@ -610,7 +610,7 @@ function addSearch_email_fieldsLinks(emailElemName, myMail) {
 		addLink("&empty;", noneHref, sp, "select none", false);
 		var allHref= 'javascript:'
 					+ 'var emailElem= document.getElementById("' + emailElemName + '");'
-					+ 'var allInputs= emailElem.parentNode.getElementsByTagName("input");'
+					+ 'var allInputs= emailElem.parentNode.parentNode.getElementsByTagName("input");'
 					+ 'for (var i= 0; i < allInputs.length; i++) {'
 					+ '  var inputElem= allInputs[i];'
 					+ '  if (inputElem.type == "checkbox") {'
