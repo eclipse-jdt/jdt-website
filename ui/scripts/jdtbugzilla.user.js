@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190219T0458
+// @version 1.20190219T0606
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -84,12 +84,16 @@ var ccs= [
 "SL", "sravankumarl@in.ibm.com",
 "NM", "niraj.modi@in.ibm.com",
 ];
-
+var ccs_req= [
+"DM", "daniel_megert@ch.ibm.com",
+"NG", "noopur_gupta@in.ibm.com",
+"KP", "kalyan_prasad@in.ibm.com",
+];
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
 var assignees= ccs;
 
 // Add "<name>", "<email>" pairs for people you frequently use as flag requestees:
-var requestees= ccs;
+var requestees= ccs_req;
 
 // Add "<name>", "<string>" pairs for template strings that you frequently insert into the comment field (e.g. repo URLs):
 var commentTemplates= [
