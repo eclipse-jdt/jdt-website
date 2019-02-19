@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012, 2018 IBM Corporation and others.
+ * Copyright (c) 2012, 2019 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190218T0907
+// @version 1.20190219T0458
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -76,6 +76,13 @@ var ccs= [
 "MK", "markus.kell.r@gmail.com",
 "NG", "noopur_gupta@in.ibm.com",
 "KP", "kalyan_prasad@in.ibm.com",
+"SS", "sarika.sinha@in.ibm.com",
+"JA", "jarthana@in.ibm.com",
+"MP", "manoj.palat@in.ibm.com",
+"VC", "Vikas.Chandra@in.ibm.com",
+"LS", "lshanmug@in.ibm.com",
+"SL", "sravankumarl@in.ibm.com",
+"NM", "niraj.modi@in.ibm.com",
 ];
 
 // Add "<name>", "<email>" pairs for people you frequently assign bugs to:
