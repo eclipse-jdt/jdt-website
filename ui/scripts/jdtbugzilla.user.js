@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190219T0606
+// @version 1.20190220T1759
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -2433,6 +2433,27 @@ function process_result_pages() {
         }
 	}
 	
+	// Add JDT Core Java 12 root bug to 'Blocks'
+	var blocksLabel= document.getElementById("field_label_blocked");
+	if (blocksLabel) {
+        var rootBugButton= document.createElement("button");
+        var rootTextElem = document.createTextNode("ROOT");
+        rootBugButton.appendChild(rootTextElem);
+        rootBugButton.style.marginLeft= "1em";
+
+        rootBugButton.addEventListener('click', function() {
+            var blockedElem= document.getElementById("blocked");
+            if (blockedElem) {
+                blockedElem.value += 536055;
+            }
+        });
+        
+        var trElem= blocksLabel.parentNode;
+        var tdElem= document.createElement("td");
+		tdElem.appendChild(rootBugButton);
+        trElem.appendChild(tdElem);
+	}
+
 	// Add a convenient Commit button:
 	var bz_qa_contact_inputElem= document.getElementById("bz_qa_contact_input");
 	if (bz_qa_contact_inputElem) {
