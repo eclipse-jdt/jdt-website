@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190222T0626
+// @version 1.20190222T0628
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -65,7 +65,7 @@
 // - edit jdtbugzilla.config.js
 
 // Add as many milestones as you like:
-var target_milestones= ["4.11 M3", "4.11 RC1", "4.11 RC2", "4.11", "4.12", "BETA J12", "BETA J13"];
+var target_milestones= ["4.11 RC1", "4.11 RC2", "4.11", "4.12", "BETA J12", "BETA J13"];
 
 // Indexes into target_milestones to be used for "Fixed (in <TM>)" links
 var main_target_milestones= [0/*, 2*/];
