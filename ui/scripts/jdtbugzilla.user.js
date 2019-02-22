@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190220T1759
+// @version 1.20190222T0626
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -2437,7 +2437,7 @@ function process_result_pages() {
 	var blocksLabel= document.getElementById("field_label_blocked");
 	if (blocksLabel) {
         var rootBugButton= document.createElement("button");
-        var rootTextElem = document.createTextNode("ROOT");
+        var rootTextElem = document.createTextNode("ROOT_12");
         rootBugButton.appendChild(rootTextElem);
         rootBugButton.style.marginLeft= "1em";
 
