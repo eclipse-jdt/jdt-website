@@ -118,7 +118,7 @@ ob_start();
     <td width="98%"> <b>Compiler DTD file</b><p>
       The compiler DTD for XML compiler log can be found here: </p>
       <ul>
-       <li><a href="compiler_32_005.dtd" type="text/plain">Version 3.2.005 compiler.dtd</a></li>
+       <li><a href="compiler_32_006.dtd" type="text/plain">Version 3.2.006 compiler.dtd</a></li>
       </ul>
     </td>
   </tr></table>
