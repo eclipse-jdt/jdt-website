@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190222T0628
+// @version 1.20190222T1041
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -1364,10 +1364,10 @@ function process_enter_bug() {
 		if (possible_duplicates_containerElem && commentElem) {
     		commentElem.parentNode.parentNode.parentNode.insertBefore(possible_duplicates_containerElem, commentElem.parentNode.parentNode.nextSibling);
 			// Add links to help enter a URL to a Git commit:
-			commentElem.parentNode.setAttribute("colspan", "2");
-			var td= document.createElement("td");
-			td.appendChild(createCommentTemplateLinks());
-			commentElem.parentNode.parentNode.insertBefore(td, commentElem.parentNode.nextSibling);
+//			commentElem.parentNode.setAttribute("colspan", "2");
+//			var td= document.createElement("td");
+//			td.appendChild(createCommentTemplateLinks());
+//			commentElem.parentNode.parentNode.insertBefore(td, commentElem.parentNode.nextSibling);
 		}
 		
 	    
@@ -2571,7 +2571,7 @@ function process_result_pages() {
 		
 		
 		// Add links to help enter a URL to a Git commit:
-		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
+//		bz_collapse_expand_commentsElems[0].parentNode.appendChild(createCommentTemplateLinks());
 	}
 	
 	// Script for "toggle wide comments":
