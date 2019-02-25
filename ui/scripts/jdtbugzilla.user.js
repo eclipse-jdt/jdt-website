@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190222T1041
+// @version 1.20190225T0703
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -78,7 +78,7 @@ var ccs= [
 "KP", "kalyan_prasad@in.ibm.com",
 "SS", "sarika.sinha@in.ibm.com",
 "JA", "jarthana@in.ibm.com",
-"MP", "manoj.palat@in.ibm.com",
+"MP", "manpalat@in.ibm.com",
 "VC", "Vikas.Chandra@in.ibm.com",
 "LS", "lshanmug@in.ibm.com",
 "SL", "sravankumarl@in.ibm.com",
