@@ -10,8 +10,6 @@ How to release a new version
   - generates features/<feature_version>.jar
   - generates plugins/<plugin_version>.jar
   - updates site.xml
-  - artifacts.jar
-  - content.jar
 
-- delete logs.zip
+- delete logs.zip, artifacts.jar, content.jar 
 - commit all the remaining files.
