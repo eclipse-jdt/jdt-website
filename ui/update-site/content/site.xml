@@ -24,7 +24,7 @@
    <feature url="features/org.eclipse.jdt.astview.feature_1.1.9.201406161921.jar" id="org.eclipse.jdt.astview.feature" version="1.1.9.201406161921">
       <category name="ast-view-1-1-9"/>
    </feature>
-   <feature url="features/org.eclipse.jdt.astview.feature_1.1.10.201502101843.jar" id="org.eclipse.jdt.astview.feature" version="1.1.10.201502101843">
+   <feature url="features/org.eclipse.jdt.astview.feature_1.1.10.201906121540.jar" id="org.eclipse.jdt.astview.feature" version="1.1.10.201906121540">
       <category name="ast-view-1-1-10"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.3.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.3">
@@ -42,7 +42,7 @@
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.9.201406161921.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.9.201406161921">
       <category name="java-element-view-1-0-9"/>
    </feature>
-   <feature url="features/org.eclipse.jdt.jeview.feature_1.0.10.201502112039.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.10.201502112039">
+   <feature url="features/org.eclipse.jdt.jeview.feature_1.0.10.201906121852.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.10.201906121852">
       <category name="java-element-view-1-0-10"/>
    </feature>
    <feature url="features/org.eclipse.reftracker.feature_1.0.0.jar" id="org.eclipse.reftracker.feature" version="1.0.0">
