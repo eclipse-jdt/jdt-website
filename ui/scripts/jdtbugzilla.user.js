@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190610T1211
+// @version 1.20190614T0856
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -225,6 +225,7 @@ categories["Text"]= [
 categories["Text"].url= "http://www.eclipse.org/eclipse/platform-text/development/bug-annotation.htm";
 
 categories["JDT"]= [
+"[13]",
 "[12]",
 "[11]",
 "[10]",
