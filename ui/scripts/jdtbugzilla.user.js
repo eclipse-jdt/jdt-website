@@ -34,7 +34,7 @@
 // @resource      config   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.config.js
 // @downloadURL   https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
 // @updateURL     https://www.eclipse.org/jdt/ui/scripts/jdtbugzilla.user.js
-// @version 1.20190903T1046
+// @version 1.20190930T0826
 
 // @include       https://bugs.eclipse.org/bugs/show_bug.cgi*
 // @include       https://bugs.eclipse.org/bugs/process_bug.cgi
@@ -2434,18 +2434,18 @@ function process_result_pages() {
         }
 	}
 	
-	// Add JDT UI Java 13 root bug to 'Blocks'
+	// Add JDT UI Java 14 root bug to 'Blocks'
 	var blocksLabel= document.getElementById("field_label_blocked");
 	if (blocksLabel) {
         var rootBugButton= document.createElement("button");
-        var rootTextElem = document.createTextNode("UI13");
+        var rootTextElem = document.createTextNode("UI14");
         rootBugButton.appendChild(rootTextElem);
         rootBugButton.style.marginLeft= "1em";
 
         rootBugButton.addEventListener('click', function() {
             var blockedElem= document.getElementById("blocked");
             if (blockedElem) {
-                blockedElem.value += 548096;
+                blockedElem.value += 551616;
             }
         });
         
@@ -2455,18 +2455,18 @@ function process_result_pages() {
         trElem.appendChild(tdElem);
 	}
 
-    // Add JDT Core Java 13 root bug to 'Blocks'
+    // Add JDT Core Java 14 root bug to 'Blocks'
 	var blocksLabel= document.getElementById("field_label_blocked");
 	if (blocksLabel) {
         var rootBugButton= document.createElement("button");
-        var rootTextElem = document.createTextNode("CORE13");
+        var rootTextElem = document.createTextNode("CORE14");
         rootBugButton.appendChild(rootTextElem);
         //rootBugButton.style.marginLeft= "1em";
 
         rootBugButton.addEventListener('click', function() {
             var blockedElem= document.getElementById("blocked");
             if (blockedElem) {
-                blockedElem.value += 539066;
+                blockedElem.value += 549808;
             }
         });
         
