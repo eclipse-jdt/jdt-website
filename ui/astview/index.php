@@ -57,6 +57,11 @@ ob_start();
 			<h4>Manual Install:</h4>
 			<p>
 				<ul>
+				    <li>
+						for Eclipse Luna (4.4) and higher
+						<a href="http://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.astview_1.4.0.201906121540.jar">org.eclipse.jdt.astview_1.4.0.201906121540.jar</a>
+						(copy to 'dropins' directory)
+					</li>
 					<li>
 						for Eclipse Luna (4.4) and higher
 						<a href="http://archive.eclipse.org/jdt/ui/update-site/plugins/org.eclipse.jdt.astview_1.1.9.201406161921.jar">org.eclipse.jdt.astview_1.1.9.201406161921.jar</a>
