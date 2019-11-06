@@ -67,7 +67,7 @@ ob_start();
 			<h3>Optional Plug-ins (maintained by JDT UI)</h3>
 				<p>JDT UI contributes some plugins that are not part of
 				the Eclipse SDK but can be downloaded from this update site:</p>
-				<div style="margin-left: 40px;"><b>http://www.eclipse.org/jdt/ui/update-site</b></div>
+				<div style="margin-left: 40px;"><b>http://www.eclipse.org/jdt/ui/update-site/content</b></div>
 				<p>Consult the plugin description pages for more information:</p>
 				<ul>
 					<li><a href="astview/index.php">org.eclipse.jdt.astview</a> - ASTView</li>
