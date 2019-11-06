@@ -37,7 +37,7 @@ ob_start();
 			<p>
 				<ul>
 					<li>
-						<span style="font-weight: bold;">http://www.eclipse.org/jdt/ui/update-site</span>
+						<span style="font-weight: bold;">http://www.eclipse.org/jdt/ui/update-site/content</span>
 					</li>
 				</ul>
 			</p>
