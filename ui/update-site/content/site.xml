@@ -22,10 +22,13 @@
       <category name="ast-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.astview.feature_1.1.9.201406161921.jar" id="org.eclipse.jdt.astview.feature" version="1.1.9.201406161921">
-      <category name="ast-view-1-1-9"/>
+      <category name="ast-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.astview.feature_1.1.10.201906121540.jar" id="org.eclipse.jdt.astview.feature" version="1.1.10.201906121540">
-      <category name="ast-view-1-1-10"/>
+      <category name="ast-view"/>
+   </feature>
+   <feature url="features/org.eclipse.jdt.astview.feature_1.1.11.201912041606.jar" id="org.eclipse.jdt.astview.feature" version="1.1.11.201912041606">
+      <category name="ast-view-1-1-11"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.3.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.3">
       <category name="java-element-view"/>
@@ -40,9 +43,12 @@
       <category name="java-element-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.9.201406161921.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.9.201406161921">
-      <category name="java-element-view-1-0-9"/>
+      <category name="java-element-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.10.201906121852.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.10.201906121852">
+      <category name="java-element-view"/>
+   </feature>
+   <feature url="features/org.eclipse.jdt.jeview.feature_1.0.10.201912041606.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.10.201912041606">
       <category name="java-element-view-1-0-10"/>
    </feature>
    <feature url="features/org.eclipse.reftracker.feature_1.0.0.jar" id="org.eclipse.reftracker.feature" version="1.0.0">
@@ -53,12 +59,7 @@
          View to visualize the Java compiler&apos;s abstract syntax tree generated for a Java file.
       </description>
    </category-def>
-   <category-def name="ast-view-1-1-9" label="AST View 1.1.9 for Eclipse Luna (4.4) and later">
-      <description>
-         View to visualize the Java compiler&apos;s abstract syntax tree generated for a Java file.
-      </description>
-   </category-def>
-   <category-def name="ast-view-1-1-10" label="AST View 1.1.10 for Eclipse Luna (4.4) and later">
+   <category-def name="ast-view-1-1-11" label="AST View 1.1.1 for Eclipse 2019-12 and later">
       <description>
          View to visualize the Java compiler&apos;s abstract syntax tree generated for a Java file.
       </description>
@@ -68,12 +69,7 @@
          View to visualize IJavaElement and IResource handles in the Eclipse SDK.
       </description>
    </category-def>
-   <category-def name="java-element-view-1-0-9" label="JavaElement View 1.0.9 for Eclipse Luna (4.4) and later">
-      <description>
-         View to visualize IJavaElement and IResource handles in the Eclipse SDK.
-      </description>
-   </category-def>
-   <category-def name="java-element-view-1-0-10" label="JavaElement View 1.0.10 for Eclipse Mars (4.5) and later">
+   <category-def name="java-element-view-1-0-10" label="JavaElement View 1.0.10 for Eclipse 2019-12 and later">
       <description>
          View to visualize IJavaElement and IResource handles in the Eclipse SDK.
       </description>
