@@ -31,7 +31,10 @@
       <category name="ast-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.astview.feature_1.1.12.202006151600.jar" id="org.eclipse.jdt.astview.feature" version="1.1.12.202006151600">
-      <category name="ast-view-1-1-12"/>
+      <category name="ast-view"/>
+   </feature>
+   <feature url="features/org.eclipse.jdt.astview.feature_1.1.13.202012071300.jar" id="org.eclipse.jdt.astview.feature" version="1.1.13.202012071300">
+      <category name="ast-view-1-1-13"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.3.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.3">
       <category name="java-element-view"/>
@@ -55,7 +58,10 @@
       <category name="java-element-view"/>
    </feature>
    <feature url="features/org.eclipse.jdt.jeview.feature_1.0.11.202006151600.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.11.202006151600">
-      <category name="java-element-view-1-0-11"/>
+      <category name="java-element-view"/>
+   </feature>
+   <feature url="features/org.eclipse.jdt.jeview.feature_1.0.12.202012071300.jar" id="org.eclipse.jdt.jeview.feature" version="1.0.12.202012071300">
+      <category name="java-element-view-1-0-12"/>
    </feature>
    <feature url="features/org.eclipse.reftracker.feature_1.0.0.jar" id="org.eclipse.reftracker.feature" version="1.0.0">
       <category name="heap-search"/>
@@ -65,7 +71,7 @@
          View to visualize the Java compiler&apos;s abstract syntax tree generated for a Java file.
       </description>
    </category-def>
-   <category-def name="ast-view-1-1-12" label="AST View 1.1.12 for Eclipse 2020-06 and later">
+   <category-def name="ast-view-1-1-13" label="AST View 1.1.13 for Eclipse 2020-12 and later">
       <description>
          View to visualize the Java compiler&apos;s abstract syntax tree generated for a Java file.
       </description>
@@ -75,7 +81,7 @@
          View to visualize IJavaElement and IResource handles in the Eclipse SDK.
       </description>
    </category-def>
-   <category-def name="java-element-view-1-0-11" label="JavaElement View 1.0.11 for Eclipse 2020-06 and later">
+   <category-def name="java-element-view-1-0-12" label="JavaElement View 1.0.12 for Eclipse 2020-12 and later">
       <description>
          View to visualize IJavaElement and IResource handles in the Eclipse SDK.
       </description>

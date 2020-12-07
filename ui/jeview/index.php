@@ -57,6 +57,11 @@ ob_start();
 			<p>
 				<ul>
 					<li>
+						for Eclipse 2020-12 and higher
+						<a href="http://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.jeview_1.3.300.202012071300.jar">org.eclipse.jdt.jeview_1.3.300.202012071300.jar</a>
+						(copy to 'dropins' directory)
+					</li>
+					<li>
 						for Eclipse 2020-06 and higher
 						<a href="http://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.jeview_1.3.300.202006151600.jar">org.eclipse.jdt.jeview_1.3.300.202006151600.jar</a>
 						(copy to 'dropins' directory)
