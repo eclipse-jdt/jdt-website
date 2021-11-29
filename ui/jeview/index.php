@@ -46,7 +46,7 @@ ob_start();
 			<h4>Source:</h4>
 				<ul>
 				<li>
-					Source is included in the plugin archives or available via <href="https://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.jeview">web</a> or via Git:<br>
+					Source is included in the plugin archives or available via <a href="https://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.jeview">web</a> or via
 					Project: <code>org.eclipse.jdt.jeview</code>
 				</li>
 			</ul>
