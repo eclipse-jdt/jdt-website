@@ -46,8 +46,7 @@ ob_start();
 			<h4>Source:</h4>
 				<ul>
 				<li>
-					Source is included in the plugin archives or available via <href="http://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.jeview">web</a> or via Git:<br>
-					Repository: <code>git.eclipse.org/gitroot/jdt/eclipse.jdt.ui.git</code><br>
+					Source is included in the plugin archives or available via <href="https://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.jeview">web</a> or via Git:<br>
 					Project: <code>org.eclipse.jdt.jeview</code>
 				</li>
 			</ul>
@@ -56,6 +55,11 @@ ob_start();
 			<h4>Manual Install:</h4>
 			<p>
 				<ul>
+					<li>
+						for Eclipse 2021-12 and higher
+						<a href="https://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.jeview_1.4.0.202111291415.jar">org.eclipse.jdt.jeview_1.4.0.202111291415.jar</a>
+						(copy to 'dropins' directory)
+					</li>
 					<li>
 						for Eclipse 2020-12 and higher
 						<a href="http://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.jeview_1.3.300.202012071300.jar">org.eclipse.jdt.jeview_1.3.300.202012071300.jar</a>
