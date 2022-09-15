@@ -46,7 +46,7 @@ ob_start();
       		<ul>
 				<li>
 					Source is included in the plugin archives or available via
-					<a href="https://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.astview">web</a> or via
+					<a href="https://github.com/eclipse-jdt/eclipse.jdt.ui/tree/master/org.eclipse.jdt.astview">web</a> or via
 					Project: <code>org.eclipse.jdt.astview</code>
 				</li>
 			</ul>
@@ -55,6 +55,11 @@ ob_start();
 			<h4>Manual Install:</h4>
 			<p>
 				<ul>
+					<li>
+						for Eclipse 2022-09 and higher
+						<a href="https://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.astview_1.5.100.202209122059.jar">org.eclipse.jdt.astview_1.5.100.202209122059.jar</a>
+						(copy to 'dropins' directory)
+					</li>
 					<li>
 						for Eclipse 2021-12 and higher
 						<a href="https://www.eclipse.org/jdt/ui/update-site/content/plugins/org.eclipse.jdt.astview_1.5.0.202111291414.jar">org.eclipse.jdt.astview_1.5.0.202111291414.jar</a>
