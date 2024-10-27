@@ -35,9 +35,13 @@ ob_start();
       		<h4>Update Site:</h4>
       		
 			<p>
+				Since Eclipse Release 2023-03, the view is shipped with the Eclipse SDK package and 
+				can be installed in other packages via the eclipse release update site:
+			</p>
+			<p>
 				<ul>
 					<li>
-						<span style="font-weight: bold;">http://www.eclipse.org/jdt/ui/update-site/content</span>
+						<span style="font-weight: bold;">https://download.eclipse.org/eclipse/updates/latest/</span>
 					</li>
 				</ul>
 			</p>
@@ -45,8 +49,8 @@ ob_start();
       		<h4>Source:</h4>
       		<ul>
 				<li>
-					Source is included in the plugin archives or available via
-					<a href="https://git.eclipse.org/c/jdt/eclipse.jdt.ui.git/tree/org.eclipse.jdt.astview">web</a> or via
+					Source is included in the plugin archives or available on
+					<a href="https://github.com/eclipse-jdt/eclipse.jdt.ui/tree/master/org.eclipse.jdt.astview">GitHub</a> or via
 					Project: <code>org.eclipse.jdt.astview</code>
 				</li>
 			</ul>
@@ -205,7 +209,7 @@ ob_start();
 				<li>Comments to
 					<a href="mailto:markus_keller%5Bat%5Dch.ibm.com">markus_keller[at]ch.ibm.com</a>
 				</li>
-				<li>Bugs / enhancement requests go to the JDT/UI component (preferably with patches;-)</li>
+				<li>Bugs / enhancement requests go to the <a href="https://github.com/eclipse-jdt/eclipse.jdt.ui">JDT/UI component</a> (preferably with patches;-)</li>
 				<li>
 					Thanks and credits go to Christian Hauser: The current AST view plug-in
 					is based his AST view implementation from the Zuerich Code Camp. Thanks
